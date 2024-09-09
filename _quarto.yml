@@ -26,7 +26,6 @@ format:
     theme: 
       light: cosmo
       dark: [cosmo, theme-dark.scss]
-    fontsize: 1.0em
     css: styles.css
     toc: true
 
