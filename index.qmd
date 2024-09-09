@@ -11,8 +11,10 @@ about:
           url: https://github.com/felipelmc
         - text: "Email"
           url: mailto:felipe.lamarca@hotmail.com
-        - text: "CV"
+        - text: "CV 🇺🇸"
           url: https://drive.google.com/file/d/1-gCNDi-t3uZO87_fVRIEpkCRfN3o18Zd/view
+        - text: "CV 🇧🇷"
+          url: https://drive.google.com/file/d/1wsCk8MK5-UoYg8DkYIYpxRLTVr54sIYt/view?usp=sharing
         - text: "Lattes"
           url: http://lattes.cnpq.br/2606938112682925
 image: img/profilepic/me-removebg.png
