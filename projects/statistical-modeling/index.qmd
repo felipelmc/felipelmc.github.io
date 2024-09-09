@@ -1,0 +1,32 @@
+---
+title: "Statistical Modeling"
+description: |
+    This repository gathers the data, scripts, and analyses conducted for the final project of the Statistical Modeling course, taught by [Professor Luiz Max Fagundes de Carvalho (FGV EMAp)](https://emap.fgv.br/professores/luiz-max-fagundes-de-carvalho) ([@maxbiostat](https://github.com/maxbiostat)). The objective was to apply modeling, inference, and prediction techniques, learned throughout this course and the Statistical Inference course, to real-world data.
+author:
+  - name: Felipe Lamarca
+    email: felipe.lamarca@hotmail.com
+date: 2023-07-15
+categories: ["Statistics", "Computational Social Sciences"]
+image: ../../img/projects/statistical-modeling.png
+format:
+  html:
+    df-print: paged
+    toc: true
+google-scholar: false
+citation:
+    url: https://github.com/felipelmc/Statistical-Modeling
+---
+
+## About the project
+
+I chose to analyze the electoral dynamics for the position of federal deputy in the 2022 elections. Specifically, I explore multilevel (hierarchical) models, logistic regression, and model evaluation methods, such as AUC, AIC, accuracy, and $R^2$. Additionally, I engage with part of the Political Science literature that uses Statistical Modeling techniques to extract information about Brazilian elections.
+
+This work resulted in [this report](https://github.com/felipelmc/ElectoralDynamics/blob/main/report.pdf), the summary of which is as follows:
+
+## *Who Wants to Be a Deputy?* A Multilevel Analysis of the 2022 Elections for the Chamber of Deputies
+
+What increases a candidate’s chances of being elected? The specialized Political Science literature has sought to answer this question through various approaches over time. This work provides a statistical analysis of the 2022 electoral data to evaluate what impacts the chances of federal deputy candidates being elected in Brazil. Statistical modeling techniques are applied, including multilevel logistic regression models and metrics for evaluating the explanatory and predictive capacity of models. The [results](https://github.com/felipelmc/ElectoralDynamics/blob/main/report.pdf) suggest that campaign expenditures, with variations between parties, account for a significant portion of the results at the polls.
+
+**Keywords:** Legislative Elections; Logistic Regression; Multilevel Models; Model Evaluation.
+
+The work has been completed and received the highest grade.

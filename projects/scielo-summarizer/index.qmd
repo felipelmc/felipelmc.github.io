@@ -1,0 +1,26 @@
+---
+title: "SciELO-Summarizer"
+description: |
+    SciELO-Summarizer consists of a summarizer for scientific articles in Portuguese. It scrapes the content of the article from the SciELO website and generates a personalized summary for the user using Large Language Models (LLMs), especifically Llama3.
+author:
+  - name: Felipe Lamarca, Claudia Fernandes, Daniel Zacarias, Gabriellen Carmo, Lauriano Benazzi, Marcelle Amaral, and Talita Ribeiro
+    email: felipe.lamarca@hotmail.com
+date: 2024-07-15
+categories: ["Computational Social Sciences", "Deep Learning"]
+image: ../../img/projects/scielo-summarizer.png
+format:
+  html:
+    df-print: paged
+    toc: true
+google-scholar: false
+citation:
+    url: https://github.com/felipelmc/SciELO-Summarizer
+---
+
+## About the project
+
+SciELO-Summarizer consists of a summarizer for scientific articles in Portuguese. It scrapes the content of the article from the SciELO website and generates a personalized summary for the user using Large Language Models (LLMs), especifically Llama3.
+
+To run the project locally, you need to have both Python 3.8 or higher and Llama3 installed. It is also possible to run the project on Google Colab, following this [link](https://colab.research.google.com/drive/1iwNWhNh3KhchKre6p6Kl8Dw55t30Zp-7?usp=sharing).
+
+The program was developed during the [Summer Institute in Computational Social Sciences (SICSS) 2024, hosted by FGV ECMI, Brazil](https://sicss.io/2024/fgv-ecmi-brazil/), in July 2024. 

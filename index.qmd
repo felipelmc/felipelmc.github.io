@@ -1,0 +1,40 @@
+---
+title: "Felipe Lamarca"
+about:
+    template: trestles
+    links:
+        - icon: linkedin
+          text: LinkedIn
+          url: https://www.linkedin.com/in/felipe-lamarca/?locale=en_US
+        - icon: github
+          text: Github
+          url: https://github.com/felipelmc
+        - text: "Email"
+          url: mailto:felipe.lamarca@hotmail.com
+        - text: "CV"
+          url: https://drive.google.com/file/d/1-gCNDi-t3uZO87_fVRIEpkCRfN3o18Zd/view
+        - text: "Lattes"
+          url: http://lattes.cnpq.br/2606938112682925
+image: img/profilepic/me-removebg.png
+comments: false
+---
+
+### Welcome!👋🏼
+
+I am an undergraduate student pursuing dual degrees in Data Science & Artificial Intelligence at the [School of Applied Mathematics](https://emap.fgv.br/en) (FGV EMAp) and Social Sciences at the [Superior School of Social Sciences](https://cpdoc.fgv.br/en) (FGV CPDOC). My academic background combines a strong foundation in mathematics, programming, and social sciences, with a focus on political science and computational social science. I apply this knowledge to tackle complex challenges in both the public and private sectors, while also contributing to the scientific community.
+
+### 👨🏻‍💻My current work
+
+I work as a Data Scientist at [Instituto Rio21](https://rio21.org/) and serve as a freelance consultant, providing expertise in data analysis and social sciences to Brazilian politicians, NGOs, companies, and researchers. Additionally, I am a teaching assistant for the "Quantitative Methods II" course at FGV CPDOC.
+
+I'm mainly interested in the following topics:
+
+- Statistics, Machine Learning & Deep Learning
+- Computational Social Sciences & Political Science
+- AI Safety & Governance
+- Open Science [🔗](https://github.com/felipelmc)
+
+### Fun Facts
+
+- Born and raised in Rio de Janeiro, Brazil 🇧🇷
+- Enjoy playing video games🎮 and (occasionally) exercising🏃🏻

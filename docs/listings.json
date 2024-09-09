@@ -1,0 +1,13 @@
+[
+  {
+    "listing": "/projects/projects.html",
+    "items": [
+      "/projects/scielo-summarizer/index.html",
+      "/projects/deep-learning/index.html",
+      "/projects/datagrid/index.html",
+      "/projects/statistical-modeling/index.html",
+      "/projects/machine-learning/index.html",
+      "/projects/data-visualization/index.html"
+    ]
+  }
+]
