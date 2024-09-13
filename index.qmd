@@ -17,7 +17,7 @@ about:
           url: https://drive.google.com/file/d/1wsCk8MK5-UoYg8DkYIYpxRLTVr54sIYt/view?usp=sharing
         - text: "Lattes"
           url: http://lattes.cnpq.br/2606938112682925
-image: img/profilepic/me-removebg.png
+image: img/profilepic/me_&_stochastic.png
 comments: false
 ---
 
