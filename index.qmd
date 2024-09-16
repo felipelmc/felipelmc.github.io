@@ -23,20 +23,16 @@ comments: false
 
 ### Welcome!👋🏼
 
-I am an undergraduate student pursuing dual degrees in Data Science & Artificial Intelligence at the [School of Applied Mathematics](https://emap.fgv.br/en) (FGV EMAp) and Social Sciences at the [Superior School of Social Sciences](https://cpdoc.fgv.br/en) (FGV CPDOC). My academic background combines a strong foundation in mathematics, programming, and social sciences, with a focus on political science and computational social science. I apply this knowledge to tackle complex challenges in both the public and private sectors, while also contributing to the scientific community.
-
-📧 [felipe.lamarca@hotmail.com](mailto:felipe.lamarca@hotmail.com)
-
-### 👨🏻‍💻My current work
-
-I work as a Data Scientist at [Instituto Rio21](https://rio21.org/) and serve as a freelance consultant, providing expertise in data analysis and social sciences to Brazilian politicians, NGOs, companies, and researchers. Additionally, I am a teaching assistant for the "Quantitative Methods II" course at FGV CPDOC.
+I am an undergraduate student pursuing dual degrees in Data Science & Artificial Intelligence at the [School of Applied Mathematics](https://emap.fgv.br/en) (FGV EMAp) and Social Sciences at the [Superior School of Social Sciences](https://cpdoc.fgv.br/en) (FGV CPDOC). My academic background combines a strong foundation in mathematics, programming, and social sciences, with a focus on political science and computational social sciences. I apply this knowledge to tackle complex challenges in both the public and private sectors, while also contributing to the scientific community.
 
 I'm mainly interested in the following topics:
 
-- Statistics, Machine Learning & Deep Learning
-- Computational Social Sciences & Political Science
-- AI Safety & Governance
-- Open Science
+- Statistics, Machine Learning, and Deep Learning
+- Computational Social Sciences, Political Science, and Public Policy
+- AI Safety and Governance
+- Open source tools and reproducible research
+
+📧 [felipe.lamarca@hotmail.com](mailto:felipe.lamarca@hotmail.com)
 
 ### Fun Facts
 

@@ -3,8 +3,10 @@ title: "DataGrid"
 description: |
     Implementation of search, sorting & selection algorithms to build an efficient datagrid. Project developed within the scope of the Algorithm Design and Analysis discipline, lectured by Professor Thiago Pinheiro de Araújo (FGV EMAp). 
 author:
-  - name: Felipe Lamarca and Cristiano Larréa
+  - name: Felipe Lamarca
     email: felipe.lamarca@hotmail.com
+  - Cristiano Larréa
+email: felipe.lamarca@hotmail.com
 date: 2023-10-18
 categories: ["Algorithms"]
 image: ../../img/projects/datagrid.png

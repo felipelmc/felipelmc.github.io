@@ -3,8 +3,10 @@ title: "Deep Learning"
 description: |
     Assignments and presentation developed in the scope of the Deep Learning discipline, taught by [Professor Dário Oliveira](https://emap.fgv.br/professores/dario-oliveira) (FGV EMAp). Co-authored with [@anacarolerthal](https://github.com/anacarolerthal), whom I thank for the ongoing partnership.
 author:
-  - name: Felipe Lamarca and Ana Carolina Erthal
+  - name: Felipe Lamarca
     email: felipe.lamarca@hotmail.com
+  - Ana Carolina Erthal
+email: felipe.lamarca@hotmail.com
 date: 2023-12-05
 categories: ["Deep Learning"]
 image: ../../img/projects/deep-learning.png

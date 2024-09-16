@@ -8,6 +8,8 @@ website:
     left:
       - href: index.qmd
         text: about-me
+      - href: my-work/my-work.qmd
+        text: my-work
       - href: projects/projects.qmd
         text: projects
       - href: publications/publications.qmd
@@ -18,9 +20,7 @@ website:
         text: posts
       - href: https://drive.google.com/file/d/1-gCNDi-t3uZO87_fVRIEpkCRfN3o18Zd/view
         text: cv
-      - href: https://github.com/felipelmc
-        text: github
-
+        
 format:
   html:
     theme: 
