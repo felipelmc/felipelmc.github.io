@@ -10,12 +10,12 @@ I also work as a **freelance consultant**, offering expertise in data and social
 
 You can also see some of my open-source projects [here](../projects/projects.qmd).
 
-## Courses taught
+## Teaching Assistant
 
 - [2024.2] **Quantitative Methods II** (FGV CPDOC), Professor [Jairo Nicolau](https://cpdoc.fgv.br/equipe/jaironicolau), Ph.D.
 - [2020.2] **Introduction to R** (FGV CPDOC), Professor [Jimmy Medeiros](https://cpdoc.fgv.br/equipe/JimmyMedeiros), Ph.D.
 
-## Training and workshops attended
+## Training and Workshops attended
 
 - [July 2024] [**Summer Institute in Computational Social Sciences**](https://sicss.io/2024/fgv-ecmi-brazil/), FGV ECMI
 - [July 2024] [**ML4Good**](https://www.ml4good.org/)

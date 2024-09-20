@@ -79,9 +79,23 @@
   {
     "objectID": "posts/posts.html",
     "href": "posts/posts.html",
-    "title": "📬Posts",
+    "title": "felipelamarca@website/",
     "section": "",
-    "text": "Loading…"
+    "text": "Loading…\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScience and Statistics: a brief review\n\n\n\n\n\n\nStatistics\n\n\nScience\n\n\n\nAll models are wrong; some are useful. But why is that? In this article, we review Box’s (1976) paper on the iterative process of scientific knowledge production. \n\n\n\n\n\nSep 19, 2024\n\n\nFelipe Lamarca\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "news/news.html",
+    "href": "news/news.html",
+    "title": "📰News",
+    "section": "",
+    "text": "September 04, 2024\nI have been accepted in the first position to pursue a Master’s degree in Political Science at the Institute of Social and Political Studies (IESP-UERJ), starting in March 2025. This opportunity will allow me to contribute to impactful research, particularly in the application of Data Science and AI to the field.\nAugust 06, 2024\nI’ve been accepted into the AI Safety Fundamentals: Governance course, offered by BlueDot Impact. I look forward to deepening my understanding of AI Governance, connecting with others in the field, and contributing to impactful work in AI Safety.\nAugust 01, 2024\nI’ve started a new role as a Teaching Assistant for Quantitative Methods II, under the supervision of Professor Jairo Nicolau, PhD. My goal is to help students from the Social Sciences to learn useful skills for industry, academia, and government, such as programming and statistics.\nJune 18, 2024\nThe research project of my undergraduate thesis, titled The determinants of electoral success in legislative elections in Brazil: an approach using Bayesian multilevel models, was approved with full marks. I am deeply grateful to Professors Jaqueline Zulini, PhD and Luiz Max Carvalho, PhD for their outstanding supervision. I’m excited to dive deep into this research!\nJune 18, 2024\nI have been accepted to participate in the Summer Institute in Computational Social Sciences, hosted by FGV ECMI, in July 2024. It’s an intensive two-week program that offers training in CSS techniques useful for academia, industry, and government.\nJune 11, 2024\nI have been accepted to participate in the next edition of ML4Good, in São Paulo, Brazil, in July 2024. It’s a ten-day bootcamp that promotes upskilling in Deep Learning and AI Safety topics."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Felipe Lamarca",
+    "section": "",
+    "text": "Welcome!👋🏼\nI am an undergraduate student pursuing dual degrees in Data Science & Artificial Intelligence at the School of Applied Mathematics (FGV EMAp) and Social Sciences at the Superior School of Social Sciences (FGV CPDOC). My academic background combines a strong foundation in mathematics, programming, and social sciences, with a focus on political science and computational social sciences. I apply this knowledge to tackle complex challenges in both the public and private sectors, while also contributing to the scientific community.\nI’m mainly interested in the following topics:\n\nStatistics, Machine Learning, and Deep Learning\nComputational Social Sciences, Political Science, and Public Policy\nAI Safety and Governance\nOpen source tools and reproducible research\n\n📧 felipe.lamarca@hotmail.com\n\n\nFun Facts\n\nBorn and raised in Rio de Janeiro, Brazil 🇧🇷\nEnjoy playing video games🎮 and (occasionally) exercising🏃🏻"
   },
   {
     "objectID": "my-work/my-work.html",
@@ -98,18 +112,18 @@
     "text": "I am a Data Scientist and Researcher at Instituto Rio21. Here, I work on projects related data collection, analysis, and visualization. I also conduct opinion polls and surveys such as the Municipal Management Assessment Survey and Election Polls using post-stratification techniques. We provide services to the project Aliança CentroRio, which aims to improve the quality of life in the downtown area of Rio de Janeiro by monitoring the city hall performance in services related to conservation and security. My work involves geo-referencing data, creating interactive maps and dashboards, and conducting statistical analysis.\nI also work as a freelance consultant, offering expertise in data and social sciences to Brazilian politicians, NGOs, companies, and researchers. Companies and think tanks I have worked with include Fundação Roberto Marinho, Artplan, Instituto Vini.Jr, FGV, and CEBRAP. The scope of my work ranges from data analysis and business intelligence to social science research and policy analysis. I use a variety of tools and methods, such as Python, R, SQL, Statistics, Machine Learning, and Deep Learning.\nYou can also see some of my open-source projects here."
   },
   {
-    "objectID": "my-work/my-work.html#courses-taught",
-    "href": "my-work/my-work.html#courses-taught",
+    "objectID": "my-work/my-work.html#teaching-assistant",
+    "href": "my-work/my-work.html#teaching-assistant",
     "title": "👨🏻‍💻My work",
-    "section": "Courses taught",
-    "text": "Courses taught\n\n[2024.2] Quantitative Methods II (FGV CPDOC), Professor Jairo Nicolau, Ph.D.\n[2020.2] Introduction to R (FGV CPDOC), Professor Jimmy Medeiros, Ph.D."
+    "section": "Teaching Assistant",
+    "text": "Teaching Assistant\n\n[2024.2] Quantitative Methods II (FGV CPDOC), Professor Jairo Nicolau, Ph.D.\n[2020.2] Introduction to R (FGV CPDOC), Professor Jimmy Medeiros, Ph.D."
   },
   {
     "objectID": "my-work/my-work.html#training-and-workshops-attended",
     "href": "my-work/my-work.html#training-and-workshops-attended",
     "title": "👨🏻‍💻My work",
-    "section": "Training and workshops attended",
-    "text": "Training and workshops attended\n\n[July 2024] Summer Institute in Computational Social Sciences, FGV ECMI\n[July 2024] ML4Good"
+    "section": "Training and Workshops attended",
+    "text": "Training and Workshops attended\n\n[July 2024] Summer Institute in Computational Social Sciences, FGV ECMI\n[July 2024] ML4Good"
   },
   {
     "objectID": "my-work/my-work.html#past-work",
@@ -119,18 +133,18 @@
     "text": "Past work\n\nData Scientist @ Visagio: In this position, I applied Data Science tools to solve a range of challenges in Pricing. My work included leading optimization and simulation analyses, designing and executing A/B tests, creating Power BI dashboards to track KPIs and prevent revenue leakage, developing automated data pipelines from a Data Warehouse using SQL, and preparing executive presentations for senior management.\nStudent Consultant @ CBVela: this field project aimed to develop ranking models for Brazilian sailors based on their performance in regattas. I worked with a team of students from FGV EMAp and applied web scraping, data cleaning, and machine learning techniques to build a ranking model that could effectively reflect the sailors’ performance.\nJunior Research Fellow @ FGV CPDOC: with scholarships from FGV (2019-2021) and CNPq (2021-2022), I worked on a research project that aimed to analyze the Executive-Legislative relations during the Brazilian First Republic (1900-1930) under the supervision of Professor Jaqueline Porto Zulini, Ph.D. \nResearcher @ FGV: I helped bringing to life the Programming Historian in Portuguese, a project that aims to teach digital methods and tools for historians and social scientists. I was responsible for translating and adapting tutorials under the supervision of Professor Jimmy Medeiros, Ph.D."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Felipe Lamarca",
+    "objectID": "posts/box_1976/index.html",
+    "href": "posts/box_1976/index.html",
+    "title": "Science and Statistics: a brief review",
     "section": "",
-    "text": "Welcome!👋🏼\nI am an undergraduate student pursuing dual degrees in Data Science & Artificial Intelligence at the School of Applied Mathematics (FGV EMAp) and Social Sciences at the Superior School of Social Sciences (FGV CPDOC). My academic background combines a strong foundation in mathematics, programming, and social sciences, with a focus on political science and computational social sciences. I apply this knowledge to tackle complex challenges in both the public and private sectors, while also contributing to the scientific community.\nI’m mainly interested in the following topics:\n\nStatistics, Machine Learning, and Deep Learning\nComputational Social Sciences, Political Science, and Public Policy\nAI Safety and Governance\nOpen source tools and reproducible research\n\n📧 felipe.lamarca@hotmail.com\n\n\nFun Facts\n\nBorn and raised in Rio de Janeiro, Brazil 🇧🇷\nEnjoy playing video games🎮 and (occasionally) exercising🏃🏻"
+    "text": "In practically all disciplines across different fields of Science — Natural, Exact, or Social — one of the most fundamental discussions debated by scholars is the conceptualization of the discipline in question. In other words, it is a process of identification in order to apply. To conduct research in Statistics, one must know what Statistics is; to produce a historiographical work, one must know what History is, and so on. The task of defining a discipline, however, is not trivial, and more importantly: given a definition, it is certainly not unique, uncontested, or static. This is precisely why, over time, new methods of producing scientific knowledge are suggested and executed.\nThe article Science and Statistics (Box 1976) may, at first glance, seem like an uninteresting digression on how Ronald Fisher (1890-1962) contributed to the evolution of Statistics, in particular, and Science in general, through the methods he developed and improved. On the other hand, a more attentive reading reveals that Box (1976) actually presents his ideal view of how scientific knowledge should be produced1\\footnote: “[…] not by mere theoretical speculation on one hand, nor by the undirected accumulation of practical facts on the other, but rather a motivated iteration between theory and practice […]” (Box 1976, 791).\nScientific practice, therefore, is understood by Box (1976) as a kind of loop, or a tentative theory. The researcher analyzes the available theory, makes deductions from it, and compares them to the facts — or data — that can be accessed. These two pieces of information, of distinct natures, do not necessarily converge, so the theory needs to be adjusted to explain a certain phenomenon. This new theory is compared to the facts again and so on, in a literally iterative process. The question is, therefore, the following: the confrontation between facts and theory produces errors, which imply the need to reassess one or the other element.\nThat is why “[…] all models are wrong […].” (Box 1976, 792). Naturally, all models are wrong because scientific practice results from a continuous comparison between theory and practice, so no matter how much a scientist elaborates their model in advance, it will likely need to be adapted when confronted with the factual. Box (1976), in this regard, refers to the fact that, in practice, there are no normal distributions or linearity in nature. That is, even though they are incorrect models (because they do not precisely correspond to what is found in nature), they are still useful for making approximations of what is found in the real world, as the result comes from the iteration between theory and practice. From a statistician’s point of view, the iterative process develops through a stage in which the scientist chooses the best statistical procedures to analyze the data and supports the model; in the next stage, after the analysis, they assume that the model contains errors and apply a series of residual analyses to improve it, and so on.\nThe examples based on a pseudo-biography of Fisher serve, in practice, to illustrate the “best practices” of acquiring scientific knowledge. They focus on Fisher’s initial concern with solving some practical problem of scientific relevance and highlight Box (1976)’s ideal regarding scientific practice: one must not lose sight of the real problem to which certain statistical knowledge is being applied or even developed. Hence, the critiques of Mathematistry2, which is often disconnected from practical issues. It thus reinforces the importance of statisticians who can combine and confront theory and practice to, in fact, produce scientific knowledge."
   },
   {
-    "objectID": "news/news.html",
-    "href": "news/news.html",
-    "title": "📰News",
-    "section": "",
-    "text": "September 04, 2024\nI have been accepted in the first position to pursue a Master’s degree in Political Science at the Institute of Social and Political Studies (IESP-UERJ), starting in March 2025. This opportunity will allow me to contribute to impactful research, particularly in the application of Data Science and AI to the field.\nAugust 06, 2024\nI’ve been accepted into the AI Safety Fundamentals: Governance course, offered by BlueDot Impact. I look forward to deepening my understanding of AI Governance, connecting with others in the field, and contributing to impactful work in AI Safety.\nAugust 01, 2024\nI’ve started a new role as a Teaching Assistant for Quantitative Methods II, under the supervision of Professor Jairo Nicolau, PhD. My goal is to help students from the Social Sciences to learn useful skills for industry, academia, and government, such as programming and statistics.\nJune 18, 2024\nThe research project of my undergraduate thesis, titled The determinants of electoral success in legislative elections in Brazil: an approach using Bayesian multilevel models, was approved with full marks. I am deeply grateful to Professors Jaqueline Zulini, PhD and Luiz Max Carvalho, PhD for their outstanding supervision. I’m excited to dive deep into this research!\nJune 18, 2024\nI have been accepted to participate in the Summer Institute in Computational Social Sciences, hosted by FGV ECMI, in July 2024. It’s an intensive two-week program that offers training in CSS techniques useful for academia, industry, and government.\nJune 11, 2024\nI have been accepted to participate in the next edition of ML4Good, in São Paulo, Brazil, in July 2024. It’s a ten-day bootcamp that promotes upskilling in Deep Learning and AI Safety topics."
+    "objectID": "posts/box_1976/index.html#footnotes",
+    "href": "posts/box_1976/index.html#footnotes",
+    "title": "Science and Statistics: a brief review",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIn his argument, the author addresses Science in general. Ultimately, we must keep in mind that this proposition does not necessarily encompass all scientific disciplines. Nevertheless, we know that his concern is with the Exact Sciences in general, especially Statistics.↩︎\n“Mathematistry is characterized by development of theory for theory’s sake which since it seldom touches down with practice, has a tendency to redefine the problem rather than solve it.” (Box 1976, 798).↩︎"
   },
   {
     "objectID": "projects/data-visualization/index.html",
