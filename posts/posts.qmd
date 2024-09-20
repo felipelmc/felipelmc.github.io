@@ -1,4 +1,5 @@
 ---
+title: 📬Posts
 listing:
     contents: .
     sort: date desc
@@ -10,5 +11,3 @@ listing:
 page-layout: full
 title-block-bannerrR: false
 ---
-
-Loading...
