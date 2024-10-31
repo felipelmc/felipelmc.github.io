@@ -102,14 +102,14 @@
     "href": "my-work/my-work.html",
     "title": "👨🏻‍💻My work",
     "section": "",
-    "text": "I am a Data Scientist and Researcher at Instituto Rio21. Here, I work on projects related data collection, analysis, and visualization. I also conduct opinion polls and surveys such as the Municipal Management Assessment Survey and Election Polls using post-stratification techniques. We provide services to the project Aliança CentroRio, which aims to improve the quality of life in the downtown area of Rio de Janeiro by monitoring the city hall performance in services related to conservation and security. My work involves geo-referencing data, creating interactive maps and dashboards, and conducting statistical analysis.\nI also work as a freelance consultant, offering expertise in data and social sciences to Brazilian politicians, NGOs, companies, and researchers. Companies and think tanks I have worked with include Fundação Roberto Marinho, Artplan, Instituto Vini.Jr, FGV, and CEBRAP. The scope of my work ranges from data analysis and business intelligence to social science research and policy analysis. I use a variety of tools and methods, such as Python, R, SQL, Statistics, Machine Learning, and Deep Learning.\nYou can also see some of my open-source projects here."
+    "text": "Objective: Empower clients, including companies, public officials, NGOs, and researchers, to make data-driven decisions.\nCurrent and past clients: Fundação Roberto Marinho,Artplan, Instituto Vini.Jr, FGV CPDOC, and CEBRAP, as well as independent researchers and politicians\nTools: Python, R, PowerBI, SQL, Statistics, Machine Learning, Deep Learning, including GenAI applications\n\n\n\n\n\nScope: Data collection, analysis, and visualization, focusing on opinion polls and social surveys\nHighlighted Projects: Municipal Management Assessment Survey and Election Polls\nProject Partner: Aliança CentroRio, improving city life through data on conservation and security\nTechnical Skills: Geo-referencing, interactive maps, dashboards, statistical analysis\n\n\n\n\n\nRole: Support FGV’s units in achieving institutional goals through KPI monitoring and fostering a data-driven culture. I have been working mainly on incorporating advanced GenAI techniques into the area’s data pipeline and identifying opportunities for automation and process improvement.\nTools: Python, R, SQL, PowerBI, GenAI applications\n\nYou can explore my open-source projects here or on GitHub profile."
   },
   {
     "objectID": "my-work/my-work.html#current-work",
     "href": "my-work/my-work.html#current-work",
     "title": "👨🏻‍💻My work",
     "section": "",
-    "text": "I am a Data Scientist and Researcher at Instituto Rio21. Here, I work on projects related data collection, analysis, and visualization. I also conduct opinion polls and surveys such as the Municipal Management Assessment Survey and Election Polls using post-stratification techniques. We provide services to the project Aliança CentroRio, which aims to improve the quality of life in the downtown area of Rio de Janeiro by monitoring the city hall performance in services related to conservation and security. My work involves geo-referencing data, creating interactive maps and dashboards, and conducting statistical analysis.\nI also work as a freelance consultant, offering expertise in data and social sciences to Brazilian politicians, NGOs, companies, and researchers. Companies and think tanks I have worked with include Fundação Roberto Marinho, Artplan, Instituto Vini.Jr, FGV, and CEBRAP. The scope of my work ranges from data analysis and business intelligence to social science research and policy analysis. I use a variety of tools and methods, such as Python, R, SQL, Statistics, Machine Learning, and Deep Learning.\nYou can also see some of my open-source projects here."
+    "text": "Data Scientist & Researcher @ Instituto Rio21 - Scope: Data collection, analysis, and visualization, focusing on opinion polls and social surveys. - Highlighted Projects: Municipal Management Assessment Survey and Election Polls - Project Partner: Aliança CentroRio, improving city life through data on conservation and security - Technical Skills: Geo-referencing, interactive maps, dashboards, statistical analysis.\nI am a Data Scientist and Researcher at Instituto Rio21. Here, I work on projects related data collection, analysis, and visualization. I also conduct opinion polls and surveys such as the Municipal Management Assessment Survey and Election Polls using post-stratification techniques. We provide services to the project Aliança CentroRio, which aims to improve the quality of life in the downtown area of Rio de Janeiro by monitoring the city hall performance in services related to conservation and security. My work involves geo-referencing data, creating interactive maps and dashboards, and conducting statistical analysis.\nI also work as a freelance consultant, offering expertise in data and social sciences to Brazilian politicians, NGOs, companies, and researchers. Companies and think tanks I have worked with include Fundação Roberto Marinho, Artplan, Instituto Vini.Jr, FGV, and CEBRAP. The scope of my work ranges from data analysis and business intelligence to social science research and policy analysis. I use a variety of tools and methods, such as Python, R, SQL, Statistics, Machine Learning, and Deep Learning.\nYou can also see some of my open-source projects here."
   },
   {
     "objectID": "my-work/my-work.html#teaching-assistance",
@@ -129,8 +129,8 @@
     "objectID": "my-work/my-work.html#past-work",
     "href": "my-work/my-work.html#past-work",
     "title": "👨🏻‍💻My work",
-    "section": "Past work",
-    "text": "Past work\n\nData Scientist @ Visagio: In this position, I applied Data Science tools to solve a range of challenges in Pricing. My work included leading optimization and simulation analyses, designing and executing A/B tests, creating Power BI dashboards to track KPIs and prevent revenue leakage, developing automated data pipelines from a Data Warehouse using SQL, and preparing executive presentations for senior management.\nStudent Consultant @ CBVela: this field project aimed to develop ranking models for Brazilian sailors based on their performance in regattas. I worked with a team of students from FGV EMAp and applied web scraping, data cleaning, and machine learning techniques to build a ranking model that could effectively reflect the sailors’ performance.\nJunior Research Fellow @ FGV CPDOC: with scholarships from FGV (2019-2021) and CNPq (2021-2022), I worked on a research project that aimed to analyze the Executive-Legislative relations during the Brazilian First Republic (1900-1930) under the supervision of Professor Jaqueline Porto Zulini, Ph.D. \nResearcher @ FGV: I helped bringing to life the Programming Historian in Portuguese, a project that aims to teach digital methods and tools for historians and social scientists. I was responsible for translating and adapting tutorials under the supervision of Professor Jimmy Medeiros, Ph.D."
+    "section": "👔 Past Work",
+    "text": "👔 Past Work\n\nData Scientist @ Visagio\n\nFocus: Optimization, pricing, A/B testing, and Power BI dashboard development.\nImpact: Led data pipeline automation using SQL and presented KPI-driven insights to senior management.\n\n\n\nStudent Consultant @ Brazilian Sailing Confederation\n\nProject: Created ranking models for Brazilian sailors, integrating web scraping and ML to analyze regatta performance.\n\n\n\nJunior Research Fellow @ FGV CPDOC\n\nProject: Analyzed Executive-Legislative relations (1900-1930), under Prof. Jaqueline Porto Zulini, Ph.D.\n\n\n\nResearcher @ FGV\n\nContribution: Translated and adapted tutorials for the Programming Historian in Portuguese under Prof. Jimmy Medeiros, Ph.D."
   },
   {
     "objectID": "posts/box_1976/index.html",
@@ -201,5 +201,33 @@
     "title": "Statistical Modeling",
     "section": "Who Wants to Be a Deputy? A Multilevel Analysis of the 2022 Elections for the Chamber of Deputies",
     "text": "Who Wants to Be a Deputy? A Multilevel Analysis of the 2022 Elections for the Chamber of Deputies\nWhat increases a candidate’s chances of being elected? The specialized Political Science literature has sought to answer this question through various approaches over time. This work provides a statistical analysis of the 2022 electoral data to evaluate what impacts the chances of federal deputy candidates being elected in Brazil. Statistical modeling techniques are applied, including multilevel logistic regression models and metrics for evaluating the explanatory and predictive capacity of models. The results suggest that campaign expenditures, with variations between parties, account for a significant portion of the results at the polls.\nKeywords: Legislative Elections; Logistic Regression; Multilevel Models; Model Evaluation.\nThe work has been completed and received the highest grade."
+  },
+  {
+    "objectID": "my-work/my-work.html#current-role",
+    "href": "my-work/my-work.html#current-role",
+    "title": "👨🏻‍💻My work",
+    "section": "👨🏻‍💻 Current Role",
+    "text": "👨🏻‍💻 Current Role\n\nData Scientist & Researcher @ Instituto Rio21\n\nScope: Data collection, analysis, and visualization, focusing on opinion polls and social surveys\nHighlighted Projects: Municipal Management Assessment Survey and Election Polls\nProject Partner: Aliança CentroRio, improving city life through data on conservation and security\nTechnical Skills: Geo-referencing, interactive maps, dashboards, statistical analysis\n\n\n\nFreelance Consulting\n\nExpertise Provided: Data science, social science insights, and policy analysis for diverse clients.\nNotable Clients:\n\nFundação Roberto Marinho\nArtplan\nInstituto Vini.Jr\nFGV\nCEBRAP\n\nTech Stack: Python, R, SQL, Statistics, Machine Learning, Deep Learning.\n\nYou can explore my open-source projects here."
+  },
+  {
+    "objectID": "my-work/my-work.html#teaching-experience",
+    "href": "my-work/my-work.html#teaching-experience",
+    "title": "👨🏻‍💻My work",
+    "section": "🏫 Teaching Experience",
+    "text": "🏫 Teaching Experience\n\n\n\nSemester\nCourse\nInstitution\nProfessor\n\n\n\n\n2024.2\nQuantitative Methods II\nFGV CPDOC\nJairo Nicolau, Ph.D.\n\n\n2020.2\nIntroduction to R\nFGV CPDOC\nJimmy Medeiros, Ph.D."
+  },
+  {
+    "objectID": "my-work/my-work.html#training-workshops",
+    "href": "my-work/my-work.html#training-workshops",
+    "title": "👨🏻‍💻My work",
+    "section": "📜 Training & Workshops",
+    "text": "📜 Training & Workshops\n\n[July 2024] Summer Institute in Computational Social Sciences (FGV ECMI)\n[July 2024] ML4Good (Centre pour la Sécurité de l’IA and EffiSciences)"
+  },
+  {
+    "objectID": "my-work/my-work.html#current-roles",
+    "href": "my-work/my-work.html#current-roles",
+    "title": "👨🏻‍💻My work",
+    "section": "",
+    "text": "Objective: Empower clients, including companies, public officials, NGOs, and researchers, to make data-driven decisions.\nCurrent and past clients: Fundação Roberto Marinho,Artplan, Instituto Vini.Jr, FGV CPDOC, and CEBRAP, as well as independent researchers and politicians\nTools: Python, R, PowerBI, SQL, Statistics, Machine Learning, Deep Learning, including GenAI applications\n\n\n\n\n\nScope: Data collection, analysis, and visualization, focusing on opinion polls and social surveys\nHighlighted Projects: Municipal Management Assessment Survey and Election Polls\nProject Partner: Aliança CentroRio, improving city life through data on conservation and security\nTechnical Skills: Geo-referencing, interactive maps, dashboards, statistical analysis\n\n\n\n\n\nRole: Support FGV’s units in achieving institutional goals through KPI monitoring and fostering a data-driven culture. I have been working mainly on incorporating advanced GenAI techniques into the area’s data pipeline and identifying opportunities for automation and process improvement.\nTools: Python, R, SQL, PowerBI, GenAI applications\n\nYou can explore my open-source projects here or on GitHub profile."
   }
 ]
