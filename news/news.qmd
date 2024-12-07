@@ -2,8 +2,11 @@
 title: "📰News"
 ---
 
-**September 04, 2024**  
-I have been accepted in the first position to pursue a Master's degree in Political Science at the Institute of Social and Political Studies ([IESP-UERJ](https://www.iesp.uerj.br/)), starting in March 2025. This opportunity will allow me to contribute to impactful research, particularly in the application of Data Science and AI to the field.
+**November 26, 2024**  
+I have successfully delivered my undergraduate thesis, marking the official completion of my dual degrees in Data Science & Artificial Intelligence from the [School of Applied Mathematics](https://emap.fgv.br/en) (FGV EMAp) and Social Sciences from the [Superior School of Social Sciences](https://cpdoc.fgv.br/en) (FGV CPDOC). I'm very grateful for the support of my family, friends, and advisors throughout this journey, which I'm very proud of.
+
+**November 21, 2024**  
+I have been [accepted](https://iesp.uerj.br/wp-content/uploads/2024/11/Aprovados-por-ordem-de-classificacao-Ciencia-Politica.pdf) in the first position to pursue a Master's degree in Political Science at the Institute of Social and Political Studies ([IESP-UERJ](https://www.iesp.uerj.br/)), starting in March 2025. This opportunity will allow me to contribute to impactful research, particularly in the application of Data Science and AI to the field.
 
 **August 06, 2024**  
 I've been accepted into the [AI Safety Fundamentals: Governance](https://aisafetyfundamentals.com/governance/?utm_campaign=Send+email%3A+Application+decisions&utm_content=Accept+participant&utm_medium=email_action&utm_source=customer.io) course, offered by [BlueDot Impact](https://bluedot.org/). I look forward to deepening my understanding of AI Governance, connecting with others in the field, and contributing to impactful work in AI Safety.
