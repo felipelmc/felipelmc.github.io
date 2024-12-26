@@ -9,7 +9,7 @@ about:
         - icon: github
           text: GitHub
           url: https://github.com/felipelmc
-        - text: "Email"
+        - text: "E-mail"
           url: mailto:felipe.lamarca@hotmail.com
         - text: "CV 🇺🇸"
           url: https://drive.google.com/file/d/1-gCNDi-t3uZO87_fVRIEpkCRfN3o18Zd/view
@@ -23,7 +23,9 @@ comments: false
 
 ### Welcome!👋🏼
 
-I am a data scientist from the [School of Applied Mathematics](https://emap.fgv.br/en) (FGV EMAp) and a social scientist from the [Superior School of Social Sciences](https://cpdoc.fgv.br/en) (FGV CPDOC). My academic background combines a strong foundation in mathematics, programming, and social sciences, with a focus on political science and computational social sciences. I apply this interdisciplinary expertise to tackle complex challenges in both the public and private sectors while contributing to the advancement of scientific knowledge.
+I'm a data scientist from the [School of Applied Mathematics](https://emap.fgv.br/en) (FGV EMAp) and a social scientist from the [Superior School of Social Sciences](https://cpdoc.fgv.br/en) (FGV CPDOC). My academic background combines training in mathematics, programming, and social sciences, with a focus on political science and computational social sciences. 
+
+I've been working as a consultant in data science and research, helping clients solve data-related problems and engaging in a wide range of projects.
 
 I'm mainly interested in the following topics:
 
@@ -34,7 +36,7 @@ I'm mainly interested in the following topics:
 
 📧 [felipe.lamarca@hotmail.com](mailto:felipe.lamarca@hotmail.com)
 
-### Fun Facts
+<!-- ### Fun Facts
 
 - I'm a proud Carioca 🌴🌊🌞. Born and raised in Rio de Janeiro, Brazil 🇧🇷
-- Enjoy playing video games🎮 and (occasionally) exercising🏃🏻
+- Enjoy playing video games🎮 and (occasionally) exercising🏃🏻 -->
