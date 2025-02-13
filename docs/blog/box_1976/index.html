@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Felipe Lamarca">
+<meta name="dcterms.date" content="2024-09-19">
+<meta name="description" content="All models are wrong; some are useful. But why is that? In this article, I review Box’s (1976) paper on the iterative process of scientific knowledge production.">
 
-<title>📰News – felipelamarca.com/</title>
+<title>Science and Statistics: a brief review – felipelamarca.com/</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +23,47 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -80,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">felipelamarca.com/</span>
     </a>
   </div>
@@ -91,31 +114,31 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">about-me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../my-work/my-work.html"> 
+    <a class="nav-link" href="../../my-work/my-work.html"> 
 <span class="menu-text">my-work</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../projects/projects.html"> 
+    <a class="nav-link" href="../../projects/projects.html"> 
 <span class="menu-text">projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../publications/publications.html"> 
+    <a class="nav-link" href="../../publications/publications.html"> 
 <span class="menu-text">publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../blog/blog.html"> 
-<span class="menu-text">blog</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../news/news.html" aria-current="page"> 
+    <a class="nav-link" href="../../news/news.html"> 
 <span class="menu-text">news</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://drive.google.com/file/d/1dFBrI109flg6zSQHnFIxUd1DRfieCYAT/view?usp=sharing"> 
+    <a class="nav-link" href="../../posts/posts.qmd"> 
+<span class="menu-text">posts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://drive.google.com/file/d/1-gCNDi-t3uZO87_fVRIEpkCRfN3o18Zd/view"> 
 <span class="menu-text">cv</span></a>
   </li>  
 </ul>
@@ -138,14 +161,35 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">📰News</h1>
-</div>
+<h1 class="title">Science and Statistics: a brief review</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Statistics</div>
+    <div class="quarto-category">Science</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    <p>All models are wrong; some are useful. But why is that? In this article, I review Box’s (1976) paper on the iterative process of scientific knowledge production.</p>
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Felipe Lamarca <a href="mailto:felipe.lamarca@hotmail.com" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 19, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -155,30 +199,42 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>December 13, 2024</strong><br>
-I have been accepted to pursue a Master’s degree in Applied Mathematics and Data Science at the <a href="https://emap.fgv.br/en">School of Applied Mathematics</a> (FGV EMAp). Even though I’m not accepting the offer, I’m very grateful for the opportunity and excited to continue my journey in Political Science at <a href="https://www.iesp.uerj.br/">IESP-UERJ</a>.</p>
-<p><strong>November 26, 2024</strong><br>
-I have successfully delivered my undergraduate thesis, marking the official completion of my dual degrees in Data Science &amp; Artificial Intelligence from the <a href="https://emap.fgv.br/en">School of Applied Mathematics</a> (FGV EMAp) and Social Sciences from the <a href="https://cpdoc.fgv.br/en">Superior School of Social Sciences</a> (FGV CPDOC). I’m very grateful for the support of my family, friends, and advisors throughout this journey, which I’m very proud of.</p>
-<p><strong>November 21, 2024</strong><br>
-I have been <a href="https://iesp.uerj.br/wp-content/uploads/2024/11/Aprovados-por-ordem-de-classificacao-Ciencia-Politica.pdf">accepted</a> in the first position to pursue a Master’s degree in Political Science at the Institute of Social and Political Studies (<a href="https://www.iesp.uerj.br/">IESP-UERJ</a>), starting in March 2025. This opportunity will allow me to contribute to impactful research, particularly in the application of Data Science and AI to the field.</p>
-<!-- **August 06, 2024**  
-I've been accepted into the [AI Safety Fundamentals: Governance](https://aisafetyfundamentals.com/governance/?utm_campaign=Send+email%3A+Application+decisions&utm_content=Accept+participant&utm_medium=email_action&utm_source=customer.io) course, offered by [BlueDot Impact](https://bluedot.org/). I look forward to deepening my understanding of AI Governance, connecting with others in the field, and contributing to impactful work in AI Safety.
-
-**August 01, 2024**  
-I've started a new role as a Teaching Assistant for Quantitative Methods II, under the supervision of [Professor Jairo Nicolau, PhD](https://cpdoc.fgv.br/equipe/jaironicolau). My goal is to help students from the Social Sciences to learn useful skills for industry, academia, and government, such as programming and statistics.
-
-**June 18, 2024**  
-The research project of my undergraduate thesis, titled _The determinants of electoral success in legislative elections in Brazil: an approach using Bayesian multilevel models_, was approved with full marks. I am deeply grateful to Professors [Jaqueline Zulini, PhD](https://cpdoc.fgv.br/equipe/jaquelinezulini) and [Luiz Max Carvalho, PhD](https://emap.fgv.br/en/professors/luiz-max-fagundes-de-carvalho) for their outstanding supervision. I'm excited to dive deep into this research!
-
-**June 18, 2024**  
-I have been accepted to participate in the [Summer Institute in Computational Social Sciences](https://sicss.io/2024/fgv-ecmi-brazil/), hosted by [FGV ECMI](https://ecmi.fgv.br/en), in July 2024. It's an intensive two-week program that offers training in CSS techniques useful for academia, industry, and government.
-
-**June 11, 2024**  
-I have been accepted to participate in the next edition of [ML4Good](https://www.ml4good.org/courses/brasil-july-2024), in São Paulo, Brazil, in July 2024. It's a ten-day bootcamp that promotes upskilling in Deep Learning and AI Safety topics. -->
+<p>In practically all disciplines across different fields of Science — Natural, Exact, or Social — one of the most fundamental discussions debated by scholars is the conceptualization of the discipline in question. In other words, it is a process of identification in order to apply. To conduct research in Statistics, one must know <em>what</em> Statistics is; to produce a historiographical work, one must know <em>what</em> History is, and so on. The task of defining a discipline, however, is not trivial, and more importantly: given a definition, it is certainly not unique, uncontested, or static. This is precisely why, over time, new methods of producing scientific knowledge are suggested and executed.</p>
+<p>The article <em>Science and Statistics</em> <span class="citation" data-cites="box_1976">(<a href="#ref-box_1976" role="doc-biblioref">Box 1976</a>)</span> may, at first glance, seem like an uninteresting digression on how Ronald Fisher (1890-1962) contributed to the evolution of Statistics, in particular, and Science in general, through the methods he developed and improved. On the other hand, a more attentive reading reveals that <span class="citation" data-cites="box_1976">Box (<a href="#ref-box_1976" role="doc-biblioref">1976</a>)</span> actually presents his ideal view of how scientific knowledge should be produced<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>: “[…] not by mere theoretical speculation on one hand, nor by the undirected accumulation of practical facts on the other, but rather a motivated iteration between theory and practice […]” <span class="citation" data-cites="box_1976">(<a href="#ref-box_1976" role="doc-biblioref">Box 1976, 791</a>)</span>.</p>
+<p>Scientific practice, therefore, is understood by <span class="citation" data-cites="box_1976">Box (<a href="#ref-box_1976" role="doc-biblioref">1976</a>)</span> as a kind of <em>loop</em>, or a tentative theory. The researcher analyzes the available theory, makes deductions from it, and compares them to the facts — or data — that can be accessed. These two pieces of information, of distinct natures, do not necessarily converge, so the theory needs to be adjusted to explain a certain phenomenon. This new theory is compared to the facts again and so on, in a literally iterative process. The question is, therefore, the following: the confrontation between facts and theory produces errors, which imply the need to reassess one or the other element.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../img/posts/box_1976.png" class="img-fluid figure-img" style="width:70.0%" alt="Box (1976)"></p>
+<figcaption>Scheme taken from Box (1976)</figcaption>
+</figure>
+</div>
+<p>That is why “[…] all models are wrong […].” <span class="citation" data-cites="box_1976">(<a href="#ref-box_1976" role="doc-biblioref">Box 1976, 792</a>)</span>. Naturally, all models are wrong because scientific practice results from a continuous comparison between theory and practice, so no matter how much a scientist elaborates their model in advance, it will likely need to be adapted when confronted with the factual. <span class="citation" data-cites="box_1976">Box (<a href="#ref-box_1976" role="doc-biblioref">1976</a>)</span>, in this regard, refers to the fact that, in practice, there are no normal distributions or linearity in nature. That is, even though they are incorrect models (because they do not precisely correspond to what is found in nature), they are still useful for making approximations of what is found in the real world, as the result comes from the iteration between theory and practice. From a statistician’s point of view, the iterative process develops through a stage in which the scientist chooses the best statistical procedures to analyze the data and supports the model; in the next stage, after the analysis, they assume that the model contains errors and apply a series of residual analyses to improve it, and so on.</p>
+<p>The examples based on a brief biography of Fisher serve, in practice, to illustrate the “best practices” of acquiring scientific knowledge. They focus on Fisher’s initial concern with solving some practical problem of scientific relevance and highlight <span class="citation" data-cites="box_1976">Box (<a href="#ref-box_1976" role="doc-biblioref">1976</a>)</span>’s ideal regarding scientific practice: one must not lose sight of the real problem to which certain statistical knowledge is being applied or even developed. Hence, the critiques of <em>Mathematistry</em><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, which is often disconnected from practical issues. It thus reinforces the importance of statisticians who can combine and confront theory and practice to, in fact, produce scientific knowledge.</p>
 
 
 
-</main> <!-- /main -->
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-box_1976" class="csl-entry" role="listitem">
+Box, George E. P. 1976. <span>“<span class="nocase">Science and Statistics</span>.”</span> <em>Journal of the American Statistical Association</em> 71 (356): 791–99.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>In his argument, the author addresses Science in general. Ultimately, we must keep in mind that this proposition does not necessarily encompass all scientific disciplines. Nevertheless, we know that his concern is with the Exact Sciences in general, especially Statistics.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>“Mathematistry is characterized by development of theory for theory’s sake which since it seldom touches down with practice, has a tendency to redefine the problem rather than solve it.” <span class="citation" data-cites="box_1976">(<a href="#ref-box_1976" role="doc-biblioref">Box 1976, 798</a>)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{lamarca2024,
+  author = {Lamarca, Felipe},
+  title = {Science and {Statistics:} A Brief Review},
+  date = {2024-09-19},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-lamarca2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Lamarca, Felipe. 2024. <span>“Science and Statistics: A Brief
+Review.”</span> September 19, 2024.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

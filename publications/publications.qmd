@@ -1,11 +1,20 @@
 ---
-title: "✍🏼Publications"
+title: "🗃Publications"
 ---
 
 ## Papers
 
-F. Lamarca, "As relações Executivo-Legislativo na Primeira República: uma análise das mensagens presidenciais ao Congresso (1910-1920)", *Mosaico*, vol. 13, no. 20, pp. 525-546, 2021. [[link]](https://hml-bibliotecadigital.fgv.br/ojs/index.php/mosaico/article/view/82665) [[pdf]](https://hml-bibliotecadigital.fgv.br/ojs/index.php/mosaico/article/view/82665/79990)
+### Published/Accepted -- peer-reviewed
 
+📄 As relações Executivo-Legislativo na Primeira República: uma análise das mensagens presidenciais ao Congresso (1910-1920). *Mosaico*. 2021. [[pdf]](https://periodicos.fgv.br/mosaico/article/view/82665/79990)
+
+
+### Under review
+
+📄 Fatores explicativos do apoio ou rejeição à criação de uma política municipal de renda básica: modelando a percepção dos cariocas. 2025. _Joint work with Jimmy Medeiros (FGV CPDOC), Antônio Mariano (FGV CPDOC), and Philippe Chaves Guedon (FGV CPDOC)_.
+
+
+<!-- 
 ## Translations
 
 J. Baker and I. Milligan, "Contagem e mineração de dados de investigação com Unix," translated by F. Lamarca, *Programming Historian em português*, Dec. 2021. [[link]](https://programminghistorian.org/pt/licoes/contagem-mineracao-dados-investigacao-unix)
@@ -28,5 +37,5 @@ W. Turkel and A. Crymble, "Saída de Dados como um ficheiro HTML com Python," tr
 
 A. Crymble, "Download de Múltiplos Registros usando Query Strings," translated by F. Lamarca, *Programming Historian em português*, Nov. 2022. [[link]](https://programminghistorian.org/pt/licoes/download-multiplos-registros-query-strings)
 
-W. Turkel and A. Crymble, "De HTML para Lista de Palavras (parte 2)," translated by F. Lamarca, *Programming Historian em português*, Dec. 2022. [[link]](https://programminghistorian.org/pt/licoes/HTML-lista-palavras-2)
+W. Turkel and A. Crymble, "De HTML para Lista de Palavras (parte 2)," translated by F. Lamarca, *Programming Historian em português*, Dec. 2022. [[link]](https://programminghistorian.org/pt/licoes/HTML-lista-palavras-2) -->
 

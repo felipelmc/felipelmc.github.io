@@ -2,16 +2,16 @@
   {
     "objectID": "publications/publications.html",
     "href": "publications/publications.html",
-    "title": "✍🏼Publications",
+    "title": "🗃Publications",
     "section": "",
-    "text": "F. Lamarca, “As relações Executivo-Legislativo na Primeira República: uma análise das mensagens presidenciais ao Congresso (1910-1920)”, Mosaico, vol. 13, no. 20, pp. 525-546, 2021. [link] [pdf]"
+    "text": "📄 As relações Executivo-Legislativo na Primeira República: uma análise das mensagens presidenciais ao Congresso (1910-1920). Mosaico. 2021. [pdf]\n\n\n\n📄 Fatores explicativos do apoio ou rejeição à criação de uma política municipal de renda básica: modelando a percepção dos cariocas. 2025. Joint work with Jimmy Medeiros (FGV CPDOC), Antônio Mariano (FGV CPDOC), and Philippe Chaves Guedon (FGV CPDOC)."
   },
   {
     "objectID": "publications/publications.html#papers",
     "href": "publications/publications.html#papers",
-    "title": "✍🏼Publications",
+    "title": "🗃Publications",
     "section": "",
-    "text": "F. Lamarca, “As relações Executivo-Legislativo na Primeira República: uma análise das mensagens presidenciais ao Congresso (1910-1920)”, Mosaico, vol. 13, no. 20, pp. 525-546, 2021. [link] [pdf]"
+    "text": "📄 As relações Executivo-Legislativo na Primeira República: uma análise das mensagens presidenciais ao Congresso (1910-1920). Mosaico. 2021. [pdf]\n\n\n\n📄 Fatores explicativos do apoio ou rejeição à criação de uma política municipal de renda básica: modelando a percepção dos cariocas. 2025. Joint work with Jimmy Medeiros (FGV CPDOC), Antônio Mariano (FGV CPDOC), and Philippe Chaves Guedon (FGV CPDOC)."
   },
   {
     "objectID": "publications/publications.html#translations",
@@ -95,14 +95,14 @@
     "href": "index.html",
     "title": "Felipe Lamarca",
     "section": "",
-    "text": "Welcome!👋🏼\nI’m a data scientist from the School of Applied Mathematics (FGV EMAp) and a social scientist from the Superior School of Social Sciences (FGV CPDOC). My academic background combines training in mathematics, programming, and social sciences, with a focus on political science and computational social sciences.\nI’ve been working as a consultant in data science and research, helping clients solve data-related problems and engaging in a wide range of projects.\nI’m mainly interested in the following topics:\n\nStatistics, Machine Learning, and Deep Learning\nComputational Social Sciences, Political Science, and Public Policy\nAI Safety and Governance\nOpen source tools and reproducible research\n\n📧 felipe.lamarca@hotmail.com"
+    "text": "Welcome!👋🏼\nI’m a data scientist from the School of Applied Mathematics (FGV EMAp) and a social scientist from the School of Social Sciences (FGV CPDOC). Currently, I am pursuing a Master’s degree in Political Science at the Institute of Social and Political Studies (IESP-UERJ). My academic background combines training in mathematics, programming, and social sciences, with a focus on political science and computational social sciences.\nI’ve been working as a data scientist and researcher for a few years now, gaining experience through a variety of projects along the way.\nI’m mainly interested in the following topics:\n\nStatistics, Machine Learning, and Deep Learning\nComputational Social Sciences, Political Science, and Public Policy\nOpen source tools and reproducible research\nAI Safety and Governance\n\n📧 felipe.lamarca@hotmail.com"
   },
   {
     "objectID": "my-work/my-work.html",
     "href": "my-work/my-work.html",
-    "title": "👨🏻‍💻My work",
+    "title": "👨🏻‍💻 My work",
     "section": "",
-    "text": "I’m a data science consultant specializing in end-to-end solutions for data challenges. My expertise spans the entire data pipeline, from designing ETL systems to implementing machine learning models, including GenAI applications. My services include:\n\nCustom data science solutions and ML model development\nResearch support, including data collection, analysis, and visualization\nTailored training and workshops in data science and programming fundamentals\n\nCurrent and past clients include NGOs, companies, public officials, politicians, and researchers from Brazilian think tanks and universities. If you think I can help you in any way, please reach out to me at felipe.lamarca@hotmail.com.\nYou can also explore my open-source projects here or on GitHub profile.\n\n\n\nI have been working at Instituto Rio21 since 2022, focusing on data collection, analysis, and visualization, with a special emphasis on opinion polls and social surveys. I have been involved in projects such as the Municipal Management Assessment Survey and Election Polls, while also working closely with Aliança CentroRio to improve city life by turning data on conservation and security into intelligence.\nIn a daily basis, I use tools such as Python and R to build interactive maps, dashboards, and statistical analysis."
+    "text": "My expertise spans the entire data pipeline—designing ETL systems, conducting causal inference, and implementing machine learning models (including Generative AI solutions). Current services include:\n\nEnd-to-end data science and AI development, including RAG pipelines and chatbot solutions\nResearch support (survey design, causal analysis, data visualization)\nTailored training and workshops in data science and programming fundamentals\n\nI have partnered with NGOs, public agencies, think tanks, and private firms to offer data-driven solutions. If you think I can help you in any way, please reach out at felipe.lamarca@hotmail.com.\nFeel free to explore my open-source projects here or on my GitHub profile.\n\n\n\nI conduct quantitative research (such as opinion polls and social surveys), focusing on data collection, analysis, and visualization. I have participated in projects like the Municipal Management Assessment Survey and Election Polls, while collaborating with Aliança CentroRio to transform citywide conservation and security data into actionable intelligence.\nOn a day-to-day basis, I use Python and R to build statistical analyses, interactive maps, and dashboards. I also automate post-stratification processes for survey data and develop geoprocessing solutions for mapping projects.\n\n\n\nI build custom tools for data extraction and analysis, particularly those leveraging large language models. This includes creating Retrieval Augmented Generation (RAG) pipelines and solutions to automatically format unstructured data.\n\n\n\nI am part of a project to systematize databases for election results from the 1970s, using OCR and large language models to digitize and format historical documents. I work under the supervision of Prof. Cesar Zucco, Ph.D."
   },
   {
     "objectID": "my-work/my-work.html#current-work",
@@ -128,9 +128,9 @@
   {
     "objectID": "my-work/my-work.html#past-work",
     "href": "my-work/my-work.html#past-work",
-    "title": "👨🏻‍💻My work",
+    "title": "👨🏻‍💻 My work",
     "section": "📁 Past Work",
-    "text": "📁 Past Work\n\nData Science Intern @ FGV SPE\nI worked mainly on the incorporation of advanced GenAI techniques into the area’s data pipeline and identifying opportunities for automation and process improvement. I also supported the development of presentations for C-level executives, including the FGV’s President.\n\n\nData Scientist @ Visagio\nAs a part-time data scientist at Visagio, I worked on a variety of projects, including optimization, pricing, A/B testing, and Power BI dashboard development. I led the automation of the data pipeline using SQL and presented KPI-driven insights to senior management.\n\n\nStudent Consultant @ Brazilian Sailing Confederation\nWith the help of some friends, I developed a ranking model for Brazilian sailors, integrating web scraping and machine learning to analyze regatta performance.\n\n\nJunior Research Fellow @ FGV CPDOC\nUnder the supervision of Prof. Jaqueline Porto Zulini, Ph.D., I analyzed Executive-Legislative relations (1900-1930) qualitatively, and a little bit quantitatively, using R. This was my very first experience with quantitative text analysis, even though it was not the main focus of the project.\n\n\nResearcher @ FGV\nUnder the supervision of Prof. Jimmy Medeiros, Ph.D., I translated and adapted tutorials for the Programming Historian in Portuguese."
+    "text": "📁 Past Work\n\nData Science Consultant @ Brazilian Center for Analysis and Planning (CEBRAP) (10/2024 – 02/2025)\nI provided technical data analysis services—ranging from OCR techniques to language model applications—for the Center for Critical Imagination project under José Szwako, Ph.D.\n\n\nData Science Intern @ Strategic Planning Superintendence, FGV (10/2024 – 12/2024)\nI integrated advanced Generative AI techniques into institutional data pipelines, identifying opportunities for automation and process improvement. I also prepared presentations for C-level executives, including the President of FGV.\n\n\nData Scientist @ Visagio (01/2024 – 06/2024)\nI worked on optimization, pricing, A/B testing, and data pipeline automation with SQL. I developed Power BI dashboards and presented KPI-driven insights to senior management.\n\n\nStudent Consultant @ Brazilian Sailing Confederation (08/2023 – 12/2023)\nI collaborated with colleagues to develop a ranking model for Brazilian sailors, integrating web scraping and machine learning to analyze regatta performance.\n\n\nJunior Research Fellow @ FGV CPDOC (06/2019 – 09/2022)\nSupported by an FGV/CNPq scholarship under the supervision of Prof. Jaqueline Porto Zulini, Ph.D., I examined Executive-Legislative relations in the early 20th century, applying both qualitative methods and introductory quantitative text analysis."
   },
   {
     "objectID": "posts/box_1976/index.html",
@@ -219,22 +219,43 @@
   {
     "objectID": "my-work/my-work.html#training-workshops",
     "href": "my-work/my-work.html#training-workshops",
-    "title": "👨🏻‍💻My work",
+    "title": "👨🏻‍💻 My work",
     "section": "📜 Training & Workshops",
-    "text": "📜 Training & Workshops\n\n[July 2024] Summer Institute in Computational Social Sciences (FGV ECMI)\n[July 2024] ML4Good (Centre pour la Sécurité de l’IA and EffiSciences)"
+    "text": "📜 Training & Workshops\n\n[July 2024] Summer Institute in Computational Social Sciences (FGV ECMI)\nCollaborated with international researchers on computational social science projects during a two-week program.\n[July 2024] ML4Good (Centre pour la Sécurité de l’IA and EffiSciences)\nTen-day bootcamp on AI Safety, focusing on alignment, governance, and responsible AI development."
   },
   {
     "objectID": "my-work/my-work.html#current-roles",
     "href": "my-work/my-work.html#current-roles",
-    "title": "👨🏻‍💻My work",
+    "title": "👨🏻‍💻 My work",
     "section": "",
-    "text": "I’m a data science consultant specializing in end-to-end solutions for data challenges. My expertise spans the entire data pipeline, from designing ETL systems to implementing machine learning models, including GenAI applications. My services include:\n\nCustom data science solutions and ML model development\nResearch support, including data collection, analysis, and visualization\nTailored training and workshops in data science and programming fundamentals\n\nCurrent and past clients include NGOs, companies, public officials, politicians, and researchers from Brazilian think tanks and universities. If you think I can help you in any way, please reach out to me at felipe.lamarca@hotmail.com.\nYou can also explore my open-source projects here or on GitHub profile.\n\n\n\nI have been working at Instituto Rio21 since 2022, focusing on data collection, analysis, and visualization, with a special emphasis on opinion polls and social surveys. I have been involved in projects such as the Municipal Management Assessment Survey and Election Polls, while also working closely with Aliança CentroRio to improve city life by turning data on conservation and security into intelligence.\nIn a daily basis, I use tools such as Python and R to build interactive maps, dashboards, and statistical analysis."
+    "text": "My expertise spans the entire data pipeline—designing ETL systems, conducting causal inference, and implementing machine learning models (including Generative AI solutions). Current services include:\n\nEnd-to-end data science and AI development, including RAG pipelines and chatbot solutions\nResearch support (survey design, causal analysis, data visualization)\nTailored training and workshops in data science and programming fundamentals\n\nI have partnered with NGOs, public agencies, think tanks, and private firms to offer data-driven solutions. If you think I can help you in any way, please reach out at felipe.lamarca@hotmail.com.\nFeel free to explore my open-source projects here or on my GitHub profile.\n\n\n\nI conduct quantitative research (such as opinion polls and social surveys), focusing on data collection, analysis, and visualization. I have participated in projects like the Municipal Management Assessment Survey and Election Polls, while collaborating with Aliança CentroRio to transform citywide conservation and security data into actionable intelligence.\nOn a day-to-day basis, I use Python and R to build statistical analyses, interactive maps, and dashboards. I also automate post-stratification processes for survey data and develop geoprocessing solutions for mapping projects.\n\n\n\nI build custom tools for data extraction and analysis, particularly those leveraging large language models. This includes creating Retrieval Augmented Generation (RAG) pipelines and solutions to automatically format unstructured data.\n\n\n\nI am part of a project to systematize databases for election results from the 1970s, using OCR and large language models to digitize and format historical documents. I work under the supervision of Prof. Cesar Zucco, Ph.D."
   },
   {
     "objectID": "my-work/my-work.html#teaching-assistant-experience",
     "href": "my-work/my-work.html#teaching-assistant-experience",
-    "title": "👨🏻‍💻My work",
-    "section": "🏫 Teaching Assistant experience",
-    "text": "🏫 Teaching Assistant experience\n\n\n\nSemester\nCourse\nInstitution\nProfessor\n\n\n\n\n2024.2\nQuantitative Methods II\nFGV CPDOC\nJairo Nicolau, Ph.D.\n\n\n2020.2\nIntroduction to R\nFGV CPDOC\nJimmy Medeiros, Ph.D."
+    "title": "👨🏻‍💻 My work",
+    "section": "🏫 Teaching Assistant Experience",
+    "text": "🏫 Teaching Assistant Experience\n\n\n\nSemester\nCourse\nInstitution\nProfessor\n\n\n\n\n2024.2\nQuantitative Methods II\nFGV CPDOC\nJairo Nicolau, Ph.D.\n\n\n2020.2\nIntroduction to R\nFGV CPDOC\nJimmy Medeiros, Ph.D.\n\n\n\n(Previously, I also worked on “Digital Literacy” projects and translated materials for the Programming Historian in Portuguese in partnership with Universidade Nova de Lisboa.)"
+  },
+  {
+    "objectID": "blog/blog.html",
+    "href": "blog/blog.html",
+    "title": "📬Blog",
+    "section": "",
+    "text": "Science and Statistics: a brief review\n\n\n\n\n\n\nStatistics\n\n\nScience\n\n\n\nAll models are wrong; some are useful. But why is that? In this article, I review Box’s (1976) paper on the iterative process of scientific knowledge production. \n\n\n\n\n\nSep 19, 2024\n\n\nFelipe Lamarca\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "blog/box_1976/index.html",
+    "href": "blog/box_1976/index.html",
+    "title": "Science and Statistics: a brief review",
+    "section": "",
+    "text": "In practically all disciplines across different fields of Science — Natural, Exact, or Social — one of the most fundamental discussions debated by scholars is the conceptualization of the discipline in question. In other words, it is a process of identification in order to apply. To conduct research in Statistics, one must know what Statistics is; to produce a historiographical work, one must know what History is, and so on. The task of defining a discipline, however, is not trivial, and more importantly: given a definition, it is certainly not unique, uncontested, or static. This is precisely why, over time, new methods of producing scientific knowledge are suggested and executed.\nThe article Science and Statistics (Box 1976) may, at first glance, seem like an uninteresting digression on how Ronald Fisher (1890-1962) contributed to the evolution of Statistics, in particular, and Science in general, through the methods he developed and improved. On the other hand, a more attentive reading reveals that Box (1976) actually presents his ideal view of how scientific knowledge should be produced1: “[…] not by mere theoretical speculation on one hand, nor by the undirected accumulation of practical facts on the other, but rather a motivated iteration between theory and practice […]” (Box 1976, 791).\nScientific practice, therefore, is understood by Box (1976) as a kind of loop, or a tentative theory. The researcher analyzes the available theory, makes deductions from it, and compares them to the facts — or data — that can be accessed. These two pieces of information, of distinct natures, do not necessarily converge, so the theory needs to be adjusted to explain a certain phenomenon. This new theory is compared to the facts again and so on, in a literally iterative process. The question is, therefore, the following: the confrontation between facts and theory produces errors, which imply the need to reassess one or the other element.\nThat is why “[…] all models are wrong […].” (Box 1976, 792). Naturally, all models are wrong because scientific practice results from a continuous comparison between theory and practice, so no matter how much a scientist elaborates their model in advance, it will likely need to be adapted when confronted with the factual. Box (1976), in this regard, refers to the fact that, in practice, there are no normal distributions or linearity in nature. That is, even though they are incorrect models (because they do not precisely correspond to what is found in nature), they are still useful for making approximations of what is found in the real world, as the result comes from the iteration between theory and practice. From a statistician’s point of view, the iterative process develops through a stage in which the scientist chooses the best statistical procedures to analyze the data and supports the model; in the next stage, after the analysis, they assume that the model contains errors and apply a series of residual analyses to improve it, and so on.\nThe examples based on a brief biography of Fisher serve, in practice, to illustrate the “best practices” of acquiring scientific knowledge. They focus on Fisher’s initial concern with solving some practical problem of scientific relevance and highlight Box (1976)’s ideal regarding scientific practice: one must not lose sight of the real problem to which certain statistical knowledge is being applied or even developed. Hence, the critiques of Mathematistry2, which is often disconnected from practical issues. It thus reinforces the importance of statisticians who can combine and confront theory and practice to, in fact, produce scientific knowledge."
+  },
+  {
+    "objectID": "blog/box_1976/index.html#footnotes",
+    "href": "blog/box_1976/index.html#footnotes",
+    "title": "Science and Statistics: a brief review",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIn his argument, the author addresses Science in general. Ultimately, we must keep in mind that this proposition does not necessarily encompass all scientific disciplines. Nevertheless, we know that his concern is with the Exact Sciences in general, especially Statistics.↩︎\n“Mathematistry is characterized by development of theory for theory’s sake which since it seldom touches down with practice, has a tendency to redefine the problem rather than solve it.” (Box 1976, 798).↩︎"
   }
 ]

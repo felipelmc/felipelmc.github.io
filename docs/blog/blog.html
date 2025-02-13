@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>📰News – felipelamarca.com/</title>
+<title>📬Blog – felipelamarca.com/</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,7 +70,65 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -107,11 +167,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../blog/blog.html"> 
+    <a class="nav-link active" href="../blog/blog.html" aria-current="page"> 
 <span class="menu-text">blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../news/news.html" aria-current="page"> 
+    <a class="nav-link" href="../news/news.html"> 
 <span class="menu-text">news</span></a>
   </li>  
   <li class="nav-item">
@@ -127,23 +187,23 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Science">Science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistics">Statistics <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">📰News</h1>
+<h1 class="title">📬Blog</h1>
 </div>
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
     
   
@@ -155,30 +215,53 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>December 13, 2024</strong><br>
-I have been accepted to pursue a Master’s degree in Applied Mathematics and Data Science at the <a href="https://emap.fgv.br/en">School of Applied Mathematics</a> (FGV EMAp). Even though I’m not accepting the offer, I’m very grateful for the opportunity and excited to continue my journey in Political Science at <a href="https://www.iesp.uerj.br/">IESP-UERJ</a>.</p>
-<p><strong>November 26, 2024</strong><br>
-I have successfully delivered my undergraduate thesis, marking the official completion of my dual degrees in Data Science &amp; Artificial Intelligence from the <a href="https://emap.fgv.br/en">School of Applied Mathematics</a> (FGV EMAp) and Social Sciences from the <a href="https://cpdoc.fgv.br/en">Superior School of Social Sciences</a> (FGV CPDOC). I’m very grateful for the support of my family, friends, and advisors throughout this journey, which I’m very proud of.</p>
-<p><strong>November 21, 2024</strong><br>
-I have been <a href="https://iesp.uerj.br/wp-content/uploads/2024/11/Aprovados-por-ordem-de-classificacao-Ciencia-Politica.pdf">accepted</a> in the first position to pursue a Master’s degree in Political Science at the Institute of Social and Political Studies (<a href="https://www.iesp.uerj.br/">IESP-UERJ</a>), starting in March 2025. This opportunity will allow me to contribute to impactful research, particularly in the application of Data Science and AI to the field.</p>
-<!-- **August 06, 2024**  
-I've been accepted into the [AI Safety Fundamentals: Governance](https://aisafetyfundamentals.com/governance/?utm_campaign=Send+email%3A+Application+decisions&utm_content=Accept+participant&utm_medium=email_action&utm_source=customer.io) course, offered by [BlueDot Impact](https://bluedot.org/). I look forward to deepening my understanding of AI Governance, connecting with others in the field, and contributing to impactful work in AI Safety.
-
-**August 01, 2024**  
-I've started a new role as a Teaching Assistant for Quantitative Methods II, under the supervision of [Professor Jairo Nicolau, PhD](https://cpdoc.fgv.br/equipe/jaironicolau). My goal is to help students from the Social Sciences to learn useful skills for industry, academia, and government, such as programming and statistics.
-
-**June 18, 2024**  
-The research project of my undergraduate thesis, titled _The determinants of electoral success in legislative elections in Brazil: an approach using Bayesian multilevel models_, was approved with full marks. I am deeply grateful to Professors [Jaqueline Zulini, PhD](https://cpdoc.fgv.br/equipe/jaquelinezulini) and [Luiz Max Carvalho, PhD](https://emap.fgv.br/en/professors/luiz-max-fagundes-de-carvalho) for their outstanding supervision. I'm excited to dive deep into this research!
-
-**June 18, 2024**  
-I have been accepted to participate in the [Summer Institute in Computational Social Sciences](https://sicss.io/2024/fgv-ecmi-brazil/), hosted by [FGV ECMI](https://ecmi.fgv.br/en), in July 2024. It's an intensive two-week program that offers training in CSS techniques useful for academia, industry, and government.
-
-**June 11, 2024**  
-I have been accepted to participate in the next edition of [ML4Good](https://www.ml4good.org/courses/brasil-july-2024), in São Paulo, Brazil, in July 2024. It's a ten-day bootcamp that promotes upskilling in Deep Learning and AI Safety topics. -->
 
 
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="Statistics,Science" data-listing-date-sort="1726714800000" data-listing-file-modified-sort="1727218708691" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="659">
+<div class="thumbnail">
+<p><a href="../blog/box_1976/index.html" class="no-external"></a></p><a href="../blog/box_1976/index.html" class="no-external">
+<p><img loading="lazy" src="../img/posts/box_1976.png" class="thumbnail-image"></p>
+</a><p><a href="../blog/box_1976/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blog/box_1976/index.html" class="no-external">Science and Statistics: a brief review</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../blog/box_1976/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Statistics'); return false;">
+Statistics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Science'); return false;">
+Science
+</div>
+</div>
+<div class="listing-description">
+<a href="../blog/box_1976/index.html" class="no-external">All models are wrong; some are useful. But why is that? In this article, I review Box’s (1976) paper on the iterative process of scientific knowledge production. </a>
+</div>
+</div>
+<div class="metadata">
+<a href="../blog/box_1976/index.html" class="no-external">
+<div class="listing-date">
+Sep 19, 2024
+</div>
+<div class="listing-author">
+Felipe Lamarca
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -14,11 +14,11 @@ website:
         text: projects
       - href: publications/publications.qmd
         text: publications
+      - href: blog/blog.qmd
+        text: blog
       - href: news/news.qmd
         text: news
-      - href: posts/posts.qmd
-        text: posts
-      - href: https://drive.google.com/file/d/1-gCNDi-t3uZO87_fVRIEpkCRfN3o18Zd/view
+      - href: https://drive.google.com/file/d/1dFBrI109flg6zSQHnFIxUd1DRfieCYAT/view?usp=sharing
         text: cv
         
 format:
