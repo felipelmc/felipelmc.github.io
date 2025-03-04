@@ -2,9 +2,11 @@
 title: "👨🏻‍💻 My work"
 ---
 
+---
+
 ## 💼 Current Roles
 
-### Consultant in Data Science & Research (07/2024 – Present)
+#### 📍 **Consultant in Data Science & Research** (07/2024 – Present)
 
 My expertise spans the entire data pipeline—designing ETL systems, conducting causal inference, and implementing machine learning models (including Generative AI solutions). Current services include:
 
@@ -16,17 +18,17 @@ I have partnered with NGOs, public agencies, think tanks, and private firms to o
 
 Feel free to explore my open-source projects [here](../projects/projects.qmd) or on my [GitHub profile](https://github.com/felipelmc).
 
-### Data Scientist & Researcher @ [Instituto Rio21](https://rio21.org/) (04/2022 – Present)
+#### 📍 **Data Scientist & Researcher** @ [Instituto Rio21](https://rio21.org/) (04/2022 – Present)
 
 I conduct quantitative research (such as opinion polls and social surveys), focusing on data collection, analysis, and visualization. I have participated in projects like the [Municipal Management Assessment Survey](https://drive.google.com/file/d/1nUVQnHgi2kvHHau5rcxC-5DzTkeuOk75/view?usp=sharing) and [Election Polls](https://drive.google.com/file/d/1Q1y1tIzLF4i6bh9W0K6SvRm_XvSt4ISr/view?usp=sharing), while collaborating with [Aliança CentroRio](https://alianca-cidade.org/) to transform citywide conservation and security data into actionable intelligence.  
 
 On a day-to-day basis, I use Python and R to build statistical analyses, interactive maps, and dashboards. I also automate post-stratification processes for survey data and develop geoprocessing solutions for mapping projects.
 
-### Data Science Consultant @ [Study Group on New Illegalisms](https://geni.uff.br/) (GENI/UFF) (01/2025 – Present)
+#### 📍 **Data Science Consultant** @ [Study Group on New Illegalisms](https://geni.uff.br/) (GENI/UFF) (01/2025 – Present)
 
 I build custom tools for data extraction and analysis, particularly those leveraging large language models. This includes creating Retrieval Augmented Generation (RAG) pipelines and solutions to automatically format unstructured data.
 
-### Research Assistant @ [FGV EBAPE](https://ebape.fgv.br/en) (02/2025 – Present)
+#### 📍 **Research Assistant** @ [FGV EBAPE](https://ebape.fgv.br/en) (02/2025 – Present)
 
 I am part of a project to systematize databases for election results from the 1970s, using OCR and large language models to digitize and format historical documents. I work under the supervision of Prof. Cesar Zucco, Ph.D.
 
@@ -34,24 +36,24 @@ I am part of a project to systematize databases for election results from the 19
 
 ## 📁 Past Work
 
-### Data Science Consultant @ [Brazilian Center for Analysis and Planning (CEBRAP)](https://cebrap.org.br/) (10/2024 – 02/2025)
+#### 📍 **Data Science Consultant** @ [Brazilian Center for Analysis and Planning (CEBRAP)](https://cebrap.org.br/) (10/2024 – 02/2025)
 I provided technical data analysis services—ranging from OCR techniques to language model applications—for the Center for Critical Imagination project under José Szwako, Ph.D.
 
-### Data Science Intern @ Strategic Planning Superintendence, FGV (10/2024 – 12/2024)
+#### 📍 **Data Science Intern** @ Strategic Planning Superintendence, FGV (10/2024 – 12/2024)
 I integrated advanced Generative AI techniques into institutional data pipelines, identifying opportunities for automation and process improvement. I also prepared presentations for C-level executives, including the President of FGV.
 
-### Data Scientist @ [Visagio](https://visagio.com/en/home/) (01/2024 – 06/2024)
+#### 📍 **Part-time Data Scientist** @ [Visagio](https://visagio.com/en/home/) (01/2024 – 06/2024)
 I worked on optimization, pricing, A/B testing, and data pipeline automation with SQL. I developed Power BI dashboards and presented KPI-driven insights to senior management.
 
-### Student Consultant @ [Brazilian Sailing Confederation](https://www.cbvela.org.br/) (08/2023 – 12/2023)
+#### 📍 **Student Consultant** @ [Brazilian Sailing Confederation](https://www.cbvela.org.br/) (08/2023 – 12/2023)
 I collaborated with colleagues to develop a ranking model for Brazilian sailors, integrating web scraping and machine learning to analyze regatta performance.
 
-### Junior Research Fellow @ [FGV CPDOC](https://cpdoc.fgv.br/en) (06/2019 – 09/2022)
+#### 📍 **Junior Research Fellow** @ [FGV CPDOC](https://cpdoc.fgv.br/en) (06/2019 – 09/2022)
 Supported by an FGV/CNPq scholarship under the supervision of Prof. [Jaqueline Porto Zulini](https://cpdoc.fgv.br/equipe/jaquelinezulini), Ph.D., I examined Executive-Legislative relations in the early 20th century, applying both qualitative methods and introductory quantitative text analysis.
 
 ---
 
-## 🏫 Teaching Assistant Experience
+## 📚 Teaching Assistance
 
 | Semester | Course                          | Institution      | Professor                                    |
 |----------|--------------------------------|------------------|----------------------------------------------|
@@ -76,8 +78,8 @@ Supported by an FGV/CNPq scholarship under the supervision of Prof. [Jaqueline P
 
 | Name                      | Institution                           | Email                           |
 |---------------------------|--------------------------------------|---------------------------------|
-| Jaqueline Zulini, PhD | School of Social Sciences (FGV CPDOC) | jaqueline `dot` zulini `at` fgv `dot` br |
-| Luiz Max Carvalho, PhD | School of Applied Mathematics (FGV EMAp) | luiz `dot` fagundes `at` fgv `dot` br |
-| Renato Rocha Souza, PhD | University of Vienna | renato `dot` rocha `dot` souza `at` univie `dot` ac `dot` at |
-| Danielle Sanches, PhD | School of Communication, Media and Information (FGV ECMI) | danielle `dot` sanches `at` fgv `dot` br |
-| Jimmy Medeiros, PhD | School of Social Sciences (FGV CPDOC) | jimmy `dot` medeiros `at` fgv `dot` br |
+| Prof. Jaqueline Zulini, PhD | School of Social Sciences (FGV CPDOC) | jaqueline `dot` zulini `at` fgv `dot` br |
+| Prof. Luiz Max Carvalho, PhD | School of Applied Mathematics (FGV EMAp) | luiz `dot` fagundes `at` fgv `dot` br |
+| Prof. Renato Rocha Souza, PhD | University of Vienna | renato `dot` rocha `dot` souza `at` univie `dot` ac `dot` at |
+| Prof. Danielle Sanches, PhD | School of Communication, Media and Information (FGV ECMI) | danielle `dot` sanches `at` fgv `dot` br |
+| Prof. Jimmy Medeiros, PhD | School of Social Sciences (FGV CPDOC) | jimmy `dot` medeiros `at` fgv `dot` br |
