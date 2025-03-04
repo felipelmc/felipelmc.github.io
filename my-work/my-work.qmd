@@ -32,6 +32,25 @@ I am part of a project to systematize databases for election results from the 19
 
 ---
 
+## 📁 Past Work
+
+### Data Science Consultant @ [Brazilian Center for Analysis and Planning (CEBRAP)](https://cebrap.org.br/) (10/2024 – 02/2025)
+I provided technical data analysis services—ranging from OCR techniques to language model applications—for the Center for Critical Imagination project under José Szwako, Ph.D.
+
+### Data Science Intern @ Strategic Planning Superintendence, FGV (10/2024 – 12/2024)
+I integrated advanced Generative AI techniques into institutional data pipelines, identifying opportunities for automation and process improvement. I also prepared presentations for C-level executives, including the President of FGV.
+
+### Data Scientist @ [Visagio](https://visagio.com/en/home/) (01/2024 – 06/2024)
+I worked on optimization, pricing, A/B testing, and data pipeline automation with SQL. I developed Power BI dashboards and presented KPI-driven insights to senior management.
+
+### Student Consultant @ [Brazilian Sailing Confederation](https://www.cbvela.org.br/) (08/2023 – 12/2023)
+I collaborated with colleagues to develop a ranking model for Brazilian sailors, integrating web scraping and machine learning to analyze regatta performance.
+
+### Junior Research Fellow @ [FGV CPDOC](https://cpdoc.fgv.br/en) (06/2019 – 09/2022)
+Supported by an FGV/CNPq scholarship under the supervision of Prof. [Jaqueline Porto Zulini](https://cpdoc.fgv.br/equipe/jaquelinezulini), Ph.D., I examined Executive-Legislative relations in the early 20th century, applying both qualitative methods and introductory quantitative text analysis.
+
+---
+
 ## 🏫 Teaching Assistant Experience
 
 | Semester | Course                          | Institution      | Professor                                    |
@@ -51,21 +70,14 @@ I am part of a project to systematize databases for election results from the 19
 - **[July 2024]** [ML4Good](https://www.ml4good.org/) (Centre pour la Sécurité de l'IA and EffiSciences)  
   *Ten-day bootcamp on AI Safety, focusing on alignment, governance, and responsible AI development.*
 
----
+--- 
 
-## 📁 Past Work
+## 📞 References
 
-### Data Science Consultant @ [Brazilian Center for Analysis and Planning (CEBRAP)](https://cebrap.org.br/) (10/2024 – 02/2025)
-I provided technical data analysis services—ranging from OCR techniques to language model applications—for the Center for Critical Imagination project under José Szwako, Ph.D.
-
-### Data Science Intern @ Strategic Planning Superintendence, FGV (10/2024 – 12/2024)
-I integrated advanced Generative AI techniques into institutional data pipelines, identifying opportunities for automation and process improvement. I also prepared presentations for C-level executives, including the President of FGV.
-
-### Data Scientist @ [Visagio](https://visagio.com/en/home/) (01/2024 – 06/2024)
-I worked on optimization, pricing, A/B testing, and data pipeline automation with SQL. I developed Power BI dashboards and presented KPI-driven insights to senior management.
-
-### Student Consultant @ [Brazilian Sailing Confederation](https://www.cbvela.org.br/) (08/2023 – 12/2023)
-I collaborated with colleagues to develop a ranking model for Brazilian sailors, integrating web scraping and machine learning to analyze regatta performance.
-
-### Junior Research Fellow @ [FGV CPDOC](https://cpdoc.fgv.br/en) (06/2019 – 09/2022)
-Supported by an FGV/CNPq scholarship under the supervision of Prof. [Jaqueline Porto Zulini](https://cpdoc.fgv.br/equipe/jaquelinezulini), Ph.D., I examined Executive-Legislative relations in the early 20th century, applying both qualitative methods and introductory quantitative text analysis.
+| Name                      | Institution                           | Email                           |
+|---------------------------|--------------------------------------|---------------------------------|
+| Jaqueline Zulini, PhD | School of Social Sciences (FGV CPDOC) | jaqueline `dot` zulini `at` fgv `dot` br |
+| Luiz Max Carvalho, PhD | School of Applied Mathematics (FGV EMAp) | luiz `dot` fagundes `at` fgv `dot` br |
+| Renato Rocha Souza, PhD | University of Vienna | renato `dot` rocha `dot` souza `at` univie `dot` ac `dot` at |
+| Danielle Sanches, PhD | School of Communication, Media and Information (FGV ECMI) | danielle `dot` sanches `at` fgv `dot` br |
+| Jimmy Medeiros, PhD | School of Social Sciences (FGV CPDOC) | jimmy `dot` medeiros `at` fgv `dot` br |
