@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.23">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Felipe Lamarca">
+<meta name="description" content="Neste artigo, discuto o conceito de Retrieval-Augmented Generation (RAG). Através de um exemplo prático com o LlamaIndex e a API da OpenAI, demonstro como RAG permite gerar respostas mais precisas, incorporando contexto específico a modelos fundacionais já existentes.">
+
+<title>RAG pipelines: o que são e como construí-los – felipelamarca.com/</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-7271f29f9498218151f3120baddb7363.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-226bd0f977fa82dfae4534cac220d79a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-bb5f9278568ae542f8467bdb635b70ac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-c0b1abbcb6fb7b8e4950b7e6cbcff455.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-bb5f9278568ae542f8467bdb635b70ac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Nenhum resultado",
+    "search-matching-documents-text": "documentos correspondentes",
+    "search-copy-link-title": "Copiar link para a busca",
+    "search-hide-matches-text": "Esconder correspondências adicionais",
+    "search-more-match-text": "mais correspondência neste documento",
+    "search-more-matches-text": "mais correspondências neste documento",
+    "search-clear-button-title": "Limpar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Procurar"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    window.setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      window.setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    window.hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(darkModeDefault) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const darkModeDefault = false;
+    document.querySelector('link.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !window.hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+    };
+    // Switch to dark mode if need be
+    if (window.hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">felipelamarca.com/</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Procurar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Alternar de navegação" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">about-me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../my-work/my-work.html"> 
+<span class="menu-text">my-work</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects/projects.html"> 
+<span class="menu-text">projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications/publications.html"> 
+<span class="menu-text">publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../learning/learning.html"> 
+<span class="menu-text">learning</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog/blog.html"> 
+<span class="menu-text">blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../news/news.html"> 
+<span class="menu-text">news</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://drive.google.com/file/d/1dFBrI109flg6zSQHnFIxUd1DRfieCYAT/view?usp=sharing"> 
+<span class="menu-text">cv</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo escuro"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Nesta página</h2>
+   
+  <ul>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a></li>
+  <li><a href="#o-que-são-pipelines-de-rag-e-para-que-servem" id="toc-o-que-são-pipelines-de-rag-e-para-que-servem" class="nav-link" data-scroll-target="#o-que-são-pipelines-de-rag-e-para-que-servem">O que são pipelines de RAG e para que servem?</a></li>
+  <li><a href="#aplicação-com-llamaindex-e-api-da-openai" id="toc-aplicação-com-llamaindex-e-api-da-openai" class="nav-link" data-scroll-target="#aplicação-com-llamaindex-e-api-da-openai">Aplicação com LlamaIndex e API da OpenAI</a></li>
+  <li><a href="#para-fechar" id="toc-para-fechar" class="nav-link" data-scroll-target="#para-fechar">Para fechar</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">RAG pipelines: o que são e como construí-los</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">RAG</div>
+    <div class="quarto-category">Deep Learning</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    <p>Neste artigo, discuto o conceito de Retrieval-Augmented Generation (RAG). Através de um exemplo prático com o LlamaIndex e a API da OpenAI, demonstro como RAG permite gerar respostas mais precisas, incorporando contexto específico a modelos fundacionais já existentes.</p>
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor</div>
+    <div class="quarto-title-meta-contents">
+             <p>Felipe Lamarca <a href="mailto:felipe.lamarca@hotmail.com" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Data de Publicação</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">6 de março de 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introdução" class="level2">
+<h2 class="anchored" data-anchor-id="introdução">Introdução</h2>
+<p>Hoje em dia temos acesso uma quantidade razoavelmente extensa de Large Language Models disponíveis para uso, como os oferecidos pela OpenAI, Meta, Anthropic e xAI. Essas redes neurais “grandes”, normalmente caracterizadas dessa maneira em função do enorme número de parâmetros estimados durante o processo de treinamento, são frequentemente chamados de <em>foundation models</em>. Tratam-se de modelos treinados em quantidades massivas de dados e que, no fim das contas, servem de base para uma série de aplicações de naturezas distintas, como geração de texto, tradução automática, sumarização, etc.</p>
+<p>É verdade, no entanto, que esses modelos podem não ser capazes de, por si só, lidar com tarefas mais específicas. Por exemplo, suponha que queremos responder a perguntas sobre os dados de uma determinada empresa, um conjunto específico de artigos ou discursos… enfim, qualquer coisa do gênero. Como esses modelos são generalistas por natureza, eles provavelmente não serão capazes de fornecer respostas específicas o suficiente para os nossos objetivos. Além disso, os modelos são treinados com dados de até uma determinada data, o que significa que eles podem não ser capazes de fornecer detalhes sobre eventos mais recentes.</p>
+<p>Nesse caso, existem duas abordagens principais que podemos seguir: (i) <em>fine-tuning</em>, que consiste essencialmente em ajustar os parâmetros dessas redes neurais usando um conjunto de dados mais específico; e (ii) <em>RAG pipelines</em>, em que combinamos os modelos de linguagem com bases de conhecimento próprias, oferecendo contextos mais específicos para a geração de respostas.</p>
+<p>A abordagem de <em>fine-tuning</em>, apesar de eficaz, pode ser muito custosa, especialmente se levarmos em consideração que dependemos de conjuntos de dados grandes o suficiente para fazer alguma diferença no desempenho do modelo. Por isso, <em>RAG pipelines</em> podem ser uma alternativa preferível e mais simples em vários casos.</p>
+<p>Tenho trabalhado com alguma frequência com <em>RAG pipelines</em> nos últimos meses e já apliquei essa abordagem em projetos de naturezas bastante distintas – por exemplo, desde responder perguntas sobre bases de dados em SQL até a construção de chatbots para responder perguntas sobre documentos em PDF. Neste post, meu objetivo é explicar o que são <em>RAG pipelines</em> e como construí-los, utilizando um exemplo prático com o LlamaIndex e a API da OpenAI.</p>
+</section>
+<section id="o-que-são-pipelines-de-rag-e-para-que-servem" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-são-pipelines-de-rag-e-para-que-servem">O que são pipelines de RAG e para que servem?</h2>
+<p>RAG significa Retrieval-Augmented Generation. Em termos simplificados, estamos basicamente inserindo um contexto mais específico para a geração de respostas de um modelo de linguagem. A expectativa é que, dado o contexto necessário, o modelo seja capaz de gerar respostas mais adequadas para a tarefa em questão.</p>
+<p>Pense na situação em que você trabalha em uma empresa que possui uma série de documentos em PDF com diretrizes de atuação dos funcionários. A maneira mais trabalhosa de responder perguntas a respeito de cada um deles seria, é claro, ler cada documento e tirar conclusões a partir da leitura.</p>
+<p>Por outro lado, poderíamos construir um esquema de conversação de um chatbot com esses documentos para facilitar a recuperação de informações. Pense que o funcionário pode ter recebido um e-mail de um endereço suspeito e quer saber, com certa rapidez, qual é a medida que ele deve tomar em seguida.</p>
+<p>É claro, o funcionário poderia ler os documentos e procurar a diretriz de atuação definida. Ele também poderia fazer uma pergunta para o ChatGPT e receber uma resposta razoável com diretrizes gerais de segurança da informação. Mas, se você alimenta um modelo modelo com as diretrizes da sua própria empresa, a resposta será muito mais efetiva e rápida. É isso que um RAG faz: ele informa ao modelo de linguagem quais partes desses documentos são mais relevantes para as suas perguntas, permitindo que ele gere respostas mais precisas.</p>
+<p>A ideia de <em>embedding</em> é central para a construção desse tipo de pipeline. <em>Grosso modo</em>, um <em>embedding</em> é uma representação numérica de um texto — muito útil porque, além de permitir a realização de cálculos matemáticos, também é capaz de incorporar a semântica (isto é, o significado) do texto.</p>
+<p>No caso do RAG, esses <em>embeddings</em> são utilizados para calcular a similaridade entre o texto de entrada – ou seja, a sua pergunta – e os documentos que servirão de contexto para a geração de respostas. Com isso, podemos identificar quais partes desses documentos são mais relevantes para a pergunta e, a partir daí, alimentar o modelo de linguagem com essas informações.</p>
+<p>A imagem abaixo é uma representação visual de um pipeline de RAG:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../img/posts/rag_pipeline.png" class="img-fluid figure-img"></p>
+<figcaption>Representação visual de um pipeline de RAG inspirado <a href="https://medium.com/@drjulija/what-is-retrieval-augmented-generation-rag-938e4f6e03d1">neste</a> artigo do Medium.</figcaption>
+</figure>
+</div>
+<p>Bom, isso é o RAG! Na realidade, se utilizarmos ferramentas como o <a href="https://www.llamaindex.ai/">LlamaIndex</a>, podemos construir esses pipelines de maneira razoavelmente simples.</p>
+<p>A seguir, vou mostrar uma implementação de um RAG integrando modelos oferecidos pela OpenAI com o LlamaIndex. Embora o exemplo seja bastante simples, a ideia é que ele possa ser facilmente adaptado para outras tarefas.</p>
+</section>
+<section id="aplicação-com-llamaindex-e-api-da-openai" class="level2">
+<h2 class="anchored" data-anchor-id="aplicação-com-llamaindex-e-api-da-openai">Aplicação com LlamaIndex e API da OpenAI</h2>
+<p>Usando os termos do LlamaIndex<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, nossos documentos são ingeridos por containers da classe <code>Document</code>, que são compostos por <code>Nodes</code> — cada um deles guardando parte do documento em questão. A última etapa é gerar os <em>embeddings</em> do texto nesses <code>Nodes</code> e, a partir daí, podemos calcular a similaridade entre eles e o texto de entrada.</p>
+<p>Como exemplo, vamos testar fazer perguntas sobre a opinião de parlamentares brasileiros a respeito da reforma tributária. Como contexto, vamos utilizar esse documento fornecido pela Câmara dos Deputados com 23 discursos de parlamentares sobre o tema ao longo do mês de março de 2021: <a href="https://www2.camara.leg.br/atividade-legislativa/discursos-e-notas-taquigraficas/discursos-em-destaque/reforma-tributaria/DiscursosdeMarode202123discursos.pdf">[link]</a>.</p>
+<p>Primeiro, vamos perguntar para o ChatGPT (mais especificamente utilizando o modelo <code>gpt-4o</code>) sobre a opinião dos parlamentares a respeito da reforma tributária, sem fornecer nenhum contexto adicional. Depois, vamos fazer a mesma pergunta no contexto de um pipeline RAG, onde o modelo de linguagem será alimentado com o documento que comentei.</p>
+<p>Bom, vejamos como isso funciona na prática. Primeiro, vamos fazer a pergunta para o ChatGPT:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> openai</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">"OPENAI_API_KEY"</span>] <span class="op">=</span> <span class="st">"sua_chave_de_api"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>openai.api_key <span class="op">=</span> os.environ[<span class="st">"OPENAI_API_KEY"</span>]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> openai.OpenAI()</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.chat.completions.create(model<span class="op">=</span><span class="st">"gpt-4o-mini"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                                          messages<span class="op">=</span>[{<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: <span class="st">"Qual era a tônica das relações Executivo-Legislativo na Primeira República? Responda em um parágrafo curto."</span>}],</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                                          temperature<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                                          )</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A resposta que obtemos é a seguinte:</p>
+<blockquote class="blockquote">
+<p>Na Primeira República Brasileira (1889-1930), as relações entre o Executivo e o Legislativo foram marcadas por um forte clientelismo e uma política de alianças, onde o presidente buscava apoio no Congresso Nacional para garantir a governabilidade. O sistema político era dominado por oligarquias regionais, especialmente de São Paulo e Minas Gerais, que exerciam grande influência sobre as decisões legislativas. A prática do “coronelismo” e a troca de favores entre os políticos eram comuns, resultando em um Executivo que frequentemente se via dependente do Legislativo para a aprovação de suas propostas. Essa dinâmica, por sua vez, gerou instabilidade e crises políticas, culminando na Revolução de 1930, que pôs fim à Primeira República.</p>
+</blockquote>
+<p>Conforme o esperado, ela reforça a interpretação clássica sobre o período e sequer menciona visões mais recentes. Agora, vamos testar fazer a mesma pergunta a um pipeline que integra o meu artigo.</p>
+<p>Primeiro, vamos carregar as bibliotecas:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> llama_index.core <span class="im">import</span> VectorStoreIndex, SimpleDirectoryReader, Settings</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> llama_index.embeddings.openai <span class="im">import</span> OpenAIEmbedding</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> llama_index.core.retrievers <span class="im">import</span> VectorIndexRetriever</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> llama_index.llms.openai <span class="im">import</span> OpenAI</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Agora, vamos definir os modelos que serão utilizados — tanto o modelo responsável por dar a resposta quanto o modelo que será utilizado para mapear os textos em <em>embeddings</em>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># define o modelo de geracao de texto</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> OpenAI(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>            model<span class="op">=</span><span class="st">"gpt-4o-mini"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>            temperature<span class="op">=</span><span class="fl">0.0</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>            api_key<span class="op">=</span>os.environ[<span class="st">"OPENAI_API_KEY"</span>],</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># define o modelo de embedding</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>Settings.embed_model <span class="op">=</span> OpenAIEmbedding(model<span class="op">=</span><span class="st">"text-embedding-3-small"</span>, api_key<span class="op">=</span>os.environ[<span class="st">"OPENAI_API_KEY"</span>])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Depois disso, lemos os documentos (neste caso, apenas um artigo guardado numa pasta <code>documents</code>), criamos o índice e definimos uma <code>query_engine</code>, responsável por recuperar as partes dos documentos que são mais similares ao texto de entrada:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># carrega os documentos no diretorio</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>documents <span class="op">=</span> SimpleDirectoryReader(input_dir<span class="op">=</span><span class="st">'documents'</span>).load_data()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># cria o index</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>index <span class="op">=</span> VectorStoreIndex.from_documents(documents)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># cria a query_engine</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>query_engine <span class="op">=</span> index.as_query_engine(</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    similarity_top_k <span class="op">=</span> <span class="dv">1</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    llm<span class="op">=</span>model,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note que, nesse código em particular, estou utilizando o <code>similarity_top_k = 1</code>, o que significa que a query engine irá recuperar apenas o nó mais similar ao texto de entrada e passar esse nó para o modelo de linguagem, que vai incorporar esse contexto na geração da resposta.</p>
+<p>Minha expectativa é que, feita a mesma pergunta, o modelo seja capaz de oferecer uma resposta mais específica, que leve em consideração a literatura mais recente sobre o tema. Vamos ver o que acontece:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># faz a query ao modelo</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> query_engine.query(<span class="st">"Qual era a tônica das relações Executivo-Legislativo na Primeira República? Responda em um parágrafo curto."</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A resposta que obtemos é a seguinte:</p>
+<blockquote class="blockquote">
+<p>A tônica das relações Executivo-Legislativo na Primeira República era marcada pela percepção de que o Legislativo se tornava uma instituição figurativa, com o presidente negociando diretamente com os governadores para evitar a eleição de opositores ao Congresso Nacional. No entanto, análises mais recentes indicam que havia conflitos entre os dois poderes, desafiando a visão clássica sobre a dinâmica dessas relações.</p>
+</blockquote>
+<p>De fato, o resultado é exatamente o esperado. A resposta do modelo incorpora o contexto do artigo, que argumenta contra a visão clássica sobre a relação entre Executivo e Legislativo na Primeira República.</p>
+<p>Uma característica útil desse pipeline é que conseguimos, além da resposta, identificar quais informações foram inseridas como contexto. Nesse caso em particular, esse pipeline incorporou o resumo do artigo como contexto. Podemos ver isso da seguinte maneira:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>response.source_nodes[<span class="dv">0</span>].text</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A indexação <code>[0]</code> nesse caso mostra o primeiro item utilizado como contexto adicional. Neste caso apenas um item foi incluído (dado o <code>similarity_top_k = 1</code>), mas isso pode variar. O resultado é o seguinte:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../img/posts/rag_context.png" class="img-fluid figure-img"></p>
+<figcaption>Contexto passado para o modelo de linguagem.</figcaption>
+</figure>
+</div>
+</section>
+<section id="para-fechar" class="level2">
+<h2 class="anchored" data-anchor-id="para-fechar">Para fechar</h2>
+<p>Neste texto, discutimos o conceito e a construção de pipelines do tipo RAG (Retrieval-Augmented Generation), abordando especificamente como essa abordagem permite integrar informações contextuais específicas aos modelos fundacionais já existentes, como aqueles oferecidos pela OpenAI, Meta e Anthropic.</p>
+<p>Através da implementação prática utilizando o LlamaIndex e um modelo específico da OpenAI, mostramos que é possível obter respostas mais precisas e informadas ao integrar documentos como contexto aos modelos. No exemplo apresentado, ficou claro como o uso do pipeline RAG permitiu ao modelo oferecer respostas que não apenas reproduzem interpretações generalistas, mas que incorporam análises mais recentes e específicas sobre o tema.</p>
+<p>É claro, esse é só um exemplo de como utilizar um RAG. Na realidade, as possibilidades são vastas e podem ser adaptadas para uma série de tarefas. Em particular, a integração de RAGs com bases de dados em SQL tem se mostrado bastante promissora, permitindo a construção de sistemas de perguntas e respostas que são capazes de responder a perguntas relativamente complexas sobre conjuntos de dados.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas de rodapé</h2>
+
+<ol>
+<li id="fn1"><p>Estou me referindo mais especificamente ao <code>VectorStoreIndex</code>, uma técnica de indexação que guarda os nós na forma de uma lista e permite a recuperação de apenas alguns deles - os <span class="math inline">\(k\)</span> mais semelhantes ao texto de entrada, sendo <span class="math inline">\(k\)</span> um valor arbitrário definido pelo desenvolvedor da aplicação.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citação</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{lamarca2025,
+  author = {Lamarca, Felipe},
+  title = {RAG pipelines: o que são e como construí-los},
+  date = {2025-03-06},
+  langid = {pt}
+}
+</code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">Por favor, cite este trabalho como:</div><div id="ref-lamarca2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+Lamarca, Felipe. 2025. <span>“RAG pipelines: o que são e como
+construí-los.”</span> March 6, 2025.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    window.setColorSchemeToggle(window.hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiada");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiada");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
