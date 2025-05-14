@@ -1,5 +1,6 @@
 ---
 title: "🗃Publications"
+subtitle: "A list of my working papers and peer-reviewed publications"
 ---
 
 ## Papers

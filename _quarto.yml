@@ -14,6 +14,8 @@ website:
         text: projects
       - href: publications/publications.qmd
         text: publications
+      - href: learning/learning.qmd
+        text: learning
       - href: blog/blog.qmd
         text: blog
       - href: news/news.qmd

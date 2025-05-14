@@ -1,12 +1,11 @@
 ---
 title: "👨🏻‍💻 My work"
----
-
+subtitle: "What I have been doing lately and what I have done in the past"
 ---
 
 ## 💼 Current Roles
 
-#### 📍 **Consultant in Data Science & Research** (07/2024 – Present)
+#### **Consultant in Data Science & Research** (07/2024 – Present)
 
 My expertise spans the entire data pipeline—designing ETL systems, conducting causal inference, and implementing machine learning models (including Generative AI solutions). Current services include:
 
@@ -14,30 +13,33 @@ My expertise spans the entire data pipeline—designing ETL systems, conducting 
 - Research support (survey design, causal analysis, data visualization)
 - Tailored training and workshops in data science and programming fundamentals
 
-I have partnered with NGOs, public agencies, think tanks, and private firms to offer data-driven solutions. If you think I can help you in any way, please reach out at [felipe.lamarca@hotmail.com](mailto:felipe.lamarca@hotmail.com).
+**Selected consulting projects:**
 
-Feel free to explore my open-source projects [here](../projects/projects.qmd) or on my [GitHub profile](https://github.com/felipelmc).
+📌 [Artplan](https://artplan.com.br/): Social media data analysis with Deep Learning for user segmentation and image clustering
 
-#### 📍 **Data Scientist & Researcher** @ [Instituto Rio21](https://rio21.org/) (04/2022 – Present)
+📌 [Fundação Roberto Marinho](https://www.frm.org.br/): AWS data lake implementation (S3, Glue, Lambda), dashboard development (Power BI, Streamlit), and training in Python and ML
 
-I conduct quantitative research (such as opinion polls and social surveys), focusing on data collection, analysis, and visualization. I have participated in projects like the [Municipal Management Assessment Survey](https://drive.google.com/file/d/1nUVQnHgi2kvHHau5rcxC-5DzTkeuOk75/view?usp=sharing) and [Election Polls](https://drive.google.com/file/d/1Q1y1tIzLF4i6bh9W0K6SvRm_XvSt4ISr/view?usp=sharing), while collaborating with [Aliança CentroRio](https://alianca-cidade.org/) to transform citywide conservation and security data into actionable intelligence.  
+📌 [CEBRAP](https://cebrap.org.br/): Technical analysis using OCR, LLMs, and quantitative research support for Prof. Dr. José Szwako (IESP-UERJ)
 
-On a day-to-day basis, I use Python and R to build statistical analyses, interactive maps, and dashboards. I also automate post-stratification processes for survey data and develop geoprocessing solutions for mapping projects.
+📌 [Plataforma CIPÓ](https://plataformacipo.org/): Instructor for data analysis and machine learning training program
 
-#### 📍 **Data Science Consultant** @ [Study Group on New Illegalisms](https://geni.uff.br/) (GENI/UFF) (01/2025 – Present)
+📌 [GENI/UFF](https://geni.uff.br/): Built customized tools using LLMs and RAG pipelines for extracting and interacting with data
 
-I build custom tools for data extraction and analysis, particularly those leveraging large language models. This includes creating Retrieval Augmented Generation (RAG) pipelines and solutions to automatically format unstructured data.
+If you think I can help you in any way, please reach out at [felipe.lamarca@hotmail.com](mailto:felipe.lamarca@hotmail.com).
 
-#### 📍 **Research Assistant** @ [FGV EBAPE](https://ebape.fgv.br/en) (02/2025 – Present)
+#### **Data Scientist & Researcher** @ [Instituto Rio21](https://rio21.org/) (04/2022 – Present)
 
-I am part of a project to systematize databases for election results from the 1970s, using OCR and large language models to digitize and format historical documents. I work under the supervision of Prof. Cesar Zucco, Ph.D.
+I conduct quantitative research (such as opinion polls and other surveys), focusing on data collection, analysis, and visualization. I have participated in projects like the [Municipal Management Assessment Survey](https://drive.google.com/file/d/1nUVQnHgi2kvHHau5rcxC-5DzTkeuOk75/view?usp=sharing) and [Election Polls](https://drive.google.com/file/d/1Q1y1tIzLF4i6bh9W0K6SvRm_XvSt4ISr/view?usp=sharing), while collaborating with [Aliança CentroRio](https://alianca-cidade.org/) to transform citywide conservation and security data into actionable intelligence.
 
 ---
 
 ## 📁 Past Work
 
-#### 📍 **Data Science Consultant** @ [Brazilian Center for Analysis and Planning (CEBRAP)](https://cebrap.org.br/) (10/2024 – 02/2025)
-I provided technical data analysis services—ranging from OCR techniques to language model applications—for the Center for Critical Imagination project under José Szwako, Ph.D.
+#### 📍 **Research Assistant** @ [FGV EBAPE](https://ebape.fgv.br/en) (02/2025 – 04/2025)
+I worked on a project to systematize databases for election results from the 1970s, using OCR and large language models to digitize and format historical documents. I worked under the supervision of Prof. [Cesar Zucco](https://professor.fgv.br/ebape/cesar-zucco), Ph.D.
+
+<!-- #### 📍 **Data Science Consultant** @ [Brazilian Center for Analysis and Planning (CEBRAP)](https://cebrap.org.br/) (10/2024 – 02/2025)
+I provided technical data analysis services—ranging from OCR techniques to language model applications—for the Center for Critical Imagination project under the supervision of Prof. José Szwako, Ph.D. -->
 
 #### 📍 **Data Science Intern** @ Strategic Planning Superintendence, FGV (10/2024 – 12/2024)
 I integrated advanced Generative AI techniques into institutional data pipelines, identifying opportunities for automation and process improvement. I also prepared presentations for C-level executives, including the President of FGV.
@@ -61,16 +63,6 @@ Supported by an FGV/CNPq scholarship under the supervision of Prof. [Jaqueline P
 | 2020.2   | Introduction to R              | FGV CPDOC        | [Jimmy Medeiros](https://cpdoc.fgv.br/equipe/JimmyMedeiros), Ph.D. |
 
 *(Previously, I also worked on “Digital Literacy” projects and translated materials for the [Programming Historian in Portuguese](https://programminghistorian.org/pt/) in partnership with Universidade Nova de Lisboa.)*
-
----
-
-## 📜 Training & Workshops
-
-- **[July 2024]** [Summer Institute in Computational Social Sciences](https://sicss.io/2024/fgv-ecmi-brazil/) (FGV ECMI)  
-  *Collaborated with international researchers on computational social science projects during a two-week program.*
-
-- **[July 2024]** [ML4Good](https://www.ml4good.org/) (Centre pour la Sécurité de l'IA and EffiSciences)  
-  *Ten-day bootcamp on AI Safety, focusing on alignment, governance, and responsible AI development.*
 
 --- 
 

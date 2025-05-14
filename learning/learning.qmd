@@ -1,0 +1,40 @@
+---
+title: "Learning"
+subtitle: "Repositories of my studies and workshops I have attended"
+---
+
+## 📦 Repositories
+
+### School of Applied Mathematics (FGV EMAp)
+
+📌 **Techniques and Algorithms in Data Science:** an introduction to some of the most important ML algorithms in Data Science -- regression, neural networks, decision trees, ensemble learning and unsupervised approaches. [[repository]](https://github.com/felipelmc/MLAlgorithms-from-scratch)
+
+📌 **Numerical Linear Algebra:** numerical methods for solving linear algebra problems. [[repository]](https://github.com/felipelmc/Numerical-Linear-Algebra)
+
+📌 **Data Visualization:** the fundamentals of data visualization using a variety of tools such as D3.js, Python and Power BI. [[repository]](https://github.com/felipelmc/Data-Visualization)
+
+📌 **Machine Learning:** a more advanced and probabilistic approach to machine learning models, including mixture models and approximate bayesian inference. [[repository]](https://github.com/felipelmc/Machine-Learning)
+
+📌 **Deep Learning:** the mathematical foundation of neural networks, covering topics such as CNNs, LSTMs, GANs, Transformers, Transfer Learning and deep autoencoders. [[repository]](https://github.com/felipelmc/Deep-Learning)
+
+### Institute of Social and Political Studies (IESP-UERJ)
+
+📌 **Lego I:** an introduction to quantitative social sciences, covering the fundamentals of data analysis, research design, probability and inference. [[repository]](https://github.com/felipelmc/Lego-I) [[website]](https://felipelamarca.com/Lego-I/)
+
+📌 **Pesquisa de Survey**: the fundamentals of survey research, including the total survey error paradigm, sampling, questionnaire design, post-stratification and other more advanced topics such as non-response and likely voter models. [[repository]](https://github.com/felipelmc/Survey-Research) [[website]](https://felipelamarca.com/Survey-Research/)
+
+📌 **Teoria Política I:** the fundamental problems of political theory, from classical antiquity to the period immediately prior to the revolutions of the 18th century. [[repository]](https://github.com/felipelmc/Political-Theory-I) [[website]](https://felipelamarca.com/Political-Theory-I/)
+
+### Other / Miscellaneous
+
+📌 **Studying Math:** a series of books I have been reading to keep practicing with math. [[repository]](https://github.com/felipelmc/Studying-Math)
+
+## 💡 Training & Workshops
+
+- **[July 2024]** [Summer Institute in Computational Social Sciences](https://sicss.io/2024/fgv-ecmi-brazil/) (FGV ECMI)  
+  *Collaborated with international researchers on computational social science projects during a two-week program.*
+
+- **[July 2024]** [ML4Good](https://www.ml4good.org/) (Centre pour la Sécurité de l'IA and EffiSciences)  
+  *Ten-day bootcamp on AI Safety, focusing on alignment, governance, and responsible AI development.*
+
+<!-- [Repository](https://github.com/felipelmc/Studying-Math){.btn .btn-sm .btn-primary role="button" data-toggle="tooltip" title="Here's a tooltip"} -->
