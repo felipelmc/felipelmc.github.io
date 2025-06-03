@@ -25,11 +25,11 @@ comments: false
 
 I'm a data scientist with a degree from the [School of Applied Mathematics](https://emap.fgv.br/en) (FGV EMAp) and a social scientist with a degree from the [School of Social Sciences](https://cpdoc.fgv.br/en) (FGV CPDOC). Currently, I'm pursuing a Master's degree in Political Science at the [Institute of Social and Political Studies](https://iesp.uerj.br/en/) (IESP-UERJ). 
 
+I work as a data scientist at [AtlasIntel](https://atlasintel.org/) and do research at the Policy and Election Monitoring and Evaluation Laboratory ([MAPE](https://mape.org.br/)).
+
 <!-- My academic background combines training in mathematics, programming, and social sciences, with a focus on political science and computational social sciences.  -->
 
-I've been working as a data scientist and researcher for a few years now, gaining experience through a variety of projects along the way.
-
-My interests include Statistical Modeling, Machine Learning, Deep Learning, and Computational Social Sciences, as well as AI safety and governance. I also have experience in ETL pipelines (SQL and NoSQL), GenAI applications, and survey methods.
+My interests include Statistical Modeling, Machine Learning, Deep Learning, and Computational Social Sciences. I also have experience in GenAI applications, survey methods, and ETL pipelines (SQL and NoSQL).
 
 📧 [felipe.lamarca@hotmail.com](mailto:felipe.lamarca@hotmail.com)
 

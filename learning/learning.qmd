@@ -1,40 +1,59 @@
 ---
-title: "Learning"
-subtitle: "Repositories of my studies and workshops I have attended"
+title: "📚 Learning"
+subtitle: "Curated repositories and workshops from my studies"
 ---
 
 ## 📦 Repositories
 
-### School of Applied Mathematics (FGV EMAp)
+### 🎓 School of Applied Mathematics (FGV EMAp)
 
-📌 **Techniques and Algorithms in Data Science:** an introduction to some of the most important ML algorithms in Data Science -- regression, neural networks, decision trees, ensemble learning and unsupervised approaches. [[repository]](https://github.com/felipelmc/MLAlgorithms-from-scratch)
+- **Techniques and Algorithms in Data Science**  
+  _An introduction to some of the most important ML algorithms in Data Science – regression, neural networks, decision trees, ensemble learning and unsupervised approaches._  
+  🔗 [GitHub](https://github.com/felipelmc/MLAlgorithms-from-scratch)
 
-📌 **Numerical Linear Algebra:** numerical methods for solving linear algebra problems. [[repository]](https://github.com/felipelmc/Numerical-Linear-Algebra)
+- **Numerical Linear Algebra**  
+  _Numerical methods for solving linear algebra problems._  
+  🔗 [GitHub](https://github.com/felipelmc/Numerical-Linear-Algebra)
 
-📌 **Data Visualization:** the fundamentals of data visualization using a variety of tools such as D3.js, Python and Power BI. [[repository]](https://github.com/felipelmc/Data-Visualization)
+- **Data Visualization**  
+  _The fundamentals of data visualization using a variety of tools such as D3.js, Python and Power BI_  
+  🔗 [GitHub](https://github.com/felipelmc/Data-Visualization)
 
-📌 **Machine Learning:** a more advanced and probabilistic approach to machine learning models, including mixture models and approximate bayesian inference. [[repository]](https://github.com/felipelmc/Machine-Learning)
+- **Machine Learning**  
+  _A more advanced and probabilistic approach to machine learning models, including mixture models and approximate bayesian inference._  
+  🔗 [GitHub](https://github.com/felipelmc/Machine-Learning)
 
-📌 **Deep Learning:** the mathematical foundation of neural networks, covering topics such as CNNs, LSTMs, GANs, Transformers, Transfer Learning and deep autoencoders. [[repository]](https://github.com/felipelmc/Deep-Learning)
+- **Deep Learning**  
+  _The mathematical foundation of neural networks, covering topics such as CNNs, LSTMs, GANs, Transformers, Transfer Learning and deep autoencoders._  
+  🔗 [GitHub](https://github.com/felipelmc/Deep-Learning)
 
-### Institute of Social and Political Studies (IESP-UERJ)
+### 🏛 Institute of Social and Political Studies (IESP-UERJ)
 
-📌 **Lego I:** an introduction to quantitative social sciences, covering the fundamentals of data analysis, research design, probability and inference. [[repository]](https://github.com/felipelmc/Lego-I) [[website]](https://felipelamarca.com/Lego-I/)
+- **Lego I**  
+  _An introduction to quantitative social sciences, covering the fundamentals of data analysis, research design, probability and inference._  
+  🔗 [GitHub](https://github.com/felipelmc/Lego-I) · 🌐 [Website](https://felipelamarca.com/Lego-I/)
 
-📌 **Pesquisa de Survey**: the fundamentals of survey research, including the total survey error paradigm, sampling, questionnaire design, post-stratification and other more advanced topics such as non-response and likely voter models. [[repository]](https://github.com/felipelmc/Survey-Research) [[website]](https://felipelamarca.com/Survey-Research/)
+- **Pesquisa de Survey**  
+  _The fundamentals of survey research, including the total survey error paradigm, sampling, questionnaire design, post-stratification and topics such as non-response and likely voter models._  
+  🔗 [GitHub](https://github.com/felipelmc/Survey-Research) · 🌐 [Website](https://felipelamarca.com/Survey-Research/)
 
-📌 **Teoria Política I:** the fundamental problems of political theory, from classical antiquity to the period immediately prior to the revolutions of the 18th century. [[repository]](https://github.com/felipelmc/Political-Theory-I) [[website]](https://felipelamarca.com/Political-Theory-I/)
+- **Teoria Política I**  
+  _The fundamental problems of political theory, from classical antiquity to the period immediately prior to the revolutions of the 18th century_  
+  🔗 [GitHub](https://github.com/felipelmc/Political-Theory-I) · 🌐 [Website](https://felipelamarca.com/Political-Theory-I/)
 
-### Other / Miscellaneous
+### 🧮 Miscellaneous
 
-📌 **Studying Math:** a series of books I have been reading to keep practicing with math. [[repository]](https://github.com/felipelmc/Studying-Math)
+- **Studying Math**  
+  _Personal notes and exercises from ongoing math reading._  
+  🔗 [GitHub](https://github.com/felipelmc/Studying-Math)
 
-## 💡 Training & Workshops
+---
 
-- **[July 2024]** [Summer Institute in Computational Social Sciences](https://sicss.io/2024/fgv-ecmi-brazil/) (FGV ECMI)  
-  *Collaborated with international researchers on computational social science projects during a two-week program.*
+## 💡 Workshops & Training
 
-- **[July 2024]** [ML4Good](https://www.ml4good.org/) (Centre pour la Sécurité de l'IA and EffiSciences)  
-  *Ten-day bootcamp on AI Safety, focusing on alignment, governance, and responsible AI development.*
+- **[July 2024]** [SICSS: Summer Institute in Computational Social Science](https://sicss.io/2024/fgv-ecmi-brazil/)  
+  _Collaborated with international researchers on CSS projects during a two-week program at FGV._
 
-<!-- [Repository](https://github.com/felipelmc/Studying-Math){.btn .btn-sm .btn-primary role="button" data-toggle="tooltip" title="Here's a tooltip"} -->
+- **[July 2024]** [ML4Good Bootcamp](https://www.ml4good.org/)  
+  _Ten-day program on AI Safety, alignment, and responsible development._
+

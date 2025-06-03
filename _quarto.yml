@@ -10,16 +10,16 @@ website:
         text: about-me
       - href: my-work/my-work.qmd
         text: my-work
-      - href: projects/projects.qmd
-        text: projects
+      # - href: projects/projects.qmd
+      #   text: projects
       - href: publications/publications.qmd
         text: publications
       - href: learning/learning.qmd
         text: learning
-      - href: blog/blog.qmd
-        text: blog
-      - href: news/news.qmd
-        text: news
+      # - href: blog/blog.qmd
+      #   text: blog
+      # - href: news/news.qmd
+      #   text: news
       - href: https://drive.google.com/file/d/1dFBrI109flg6zSQHnFIxUd1DRfieCYAT/view?usp=sharing
         text: cv
         
