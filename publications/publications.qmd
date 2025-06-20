@@ -1,19 +1,34 @@
 ---
 title: "🗃Publications"
-subtitle: "A list of my working papers and peer-reviewed publications"
+subtitle: "A list of my working papers, peer-reviewed publications and open-source tools"
 ---
 
 ## Papers
 
 ### Published/Accepted -- peer-reviewed
 
-📄 As relações Executivo-Legislativo na Primeira República: uma análise das mensagens presidenciais ao Congresso (1910-1920). *Mosaico*. 2021. [[pdf]](https://periodicos.fgv.br/mosaico/article/view/82665/79990)
+📄 As relações Executivo-Legislativo na Primeira República: uma análise das mensagens presidenciais ao Congresso (1910-1920). *Mosaico*. 2021.  
+🌐 [Access link](https://periodicos.fgv.br/mosaico/article/view/82665/79990)
 
 
 ### Under review
 
 📄 Fatores explicativos do apoio ou rejeição à criação de uma política municipal de renda básica: modelando a percepção dos cariocas. 2025.  
 _Joint work with Jimmy Medeiros (FGV CPDOC), Antônio Mariano (FGV CPDOC), and Philippe Chaves Guedon (FGV CPDOC)_.
+
+## Open-source tools
+
+💻 `mape_municipios-dashboard`: a dashboard to interact with one of the most complete databases with information on Brazilian municipalities, collected by [MAPE](https://mape.org.br/). 2025.  
+_Joint work with Fernando Meireles (IESP-UERJ)_.  
+🔗 [Source code](https://github.com/mape-iesp/MAPEmunicipios-Dashboard) · 🌐 [Access link](https://mape-municipios-dashboard.streamlit.app/)
+
+💻  `RelicárIA`: a digital platform that combines AI and data analysis to extract and visualize information from documents. 2025.  
+_Joint work with Danielle Sanches de Almeida (FGV ECMI)_.  
+🔗 [Source code](https://github.com/felipelmc/RelicarIA) · 🌐 [Access link](https://relicaria.streamlit.app/)
+
+💻  `BoticárIA`: a RAG-based conversational AI that simulates an 18th-century apothecary, providing information on medicinal practices based on historical pharmacological sources from the late 18th century. 2025.  
+_Joint work with Danielle Sanches de Almeida (FGV ECMI)_.  
+🔗 [Source code](https://github.com/felipelmc/BoticarIA) · 🌐 [Access link](https://boticaria.streamlit.app/)
 
 
 <!-- 

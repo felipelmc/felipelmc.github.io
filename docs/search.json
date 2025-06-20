@@ -4,14 +4,21 @@
     "href": "publications/publications.html",
     "title": "🗃Publications",
     "section": "",
-    "text": "📄 As relações Executivo-Legislativo na Primeira República: uma análise das mensagens presidenciais ao Congresso (1910-1920). Mosaico. 2021. [pdf]\n\n\n\n📄 Fatores explicativos do apoio ou rejeição à criação de uma política municipal de renda básica: modelando a percepção dos cariocas. 2025.\nJoint work with Jimmy Medeiros (FGV CPDOC), Antônio Mariano (FGV CPDOC), and Philippe Chaves Guedon (FGV CPDOC)."
+    "text": "📄 As relações Executivo-Legislativo na Primeira República: uma análise das mensagens presidenciais ao Congresso (1910-1920). Mosaico. 2021.\n🌐 Access link\n\n\n\n📄 Fatores explicativos do apoio ou rejeição à criação de uma política municipal de renda básica: modelando a percepção dos cariocas. 2025.\nJoint work with Jimmy Medeiros (FGV CPDOC), Antônio Mariano (FGV CPDOC), and Philippe Chaves Guedon (FGV CPDOC)."
   },
   {
     "objectID": "publications/publications.html#papers",
     "href": "publications/publications.html#papers",
     "title": "🗃Publications",
     "section": "",
-    "text": "📄 As relações Executivo-Legislativo na Primeira República: uma análise das mensagens presidenciais ao Congresso (1910-1920). Mosaico. 2021. [pdf]\n\n\n\n📄 Fatores explicativos do apoio ou rejeição à criação de uma política municipal de renda básica: modelando a percepção dos cariocas. 2025.\nJoint work with Jimmy Medeiros (FGV CPDOC), Antônio Mariano (FGV CPDOC), and Philippe Chaves Guedon (FGV CPDOC)."
+    "text": "📄 As relações Executivo-Legislativo na Primeira República: uma análise das mensagens presidenciais ao Congresso (1910-1920). Mosaico. 2021.\n🌐 Access link\n\n\n\n📄 Fatores explicativos do apoio ou rejeição à criação de uma política municipal de renda básica: modelando a percepção dos cariocas. 2025.\nJoint work with Jimmy Medeiros (FGV CPDOC), Antônio Mariano (FGV CPDOC), and Philippe Chaves Guedon (FGV CPDOC)."
+  },
+  {
+    "objectID": "publications/publications.html#open-source-tools",
+    "href": "publications/publications.html#open-source-tools",
+    "title": "🗃Publications",
+    "section": "Open-source tools",
+    "text": "Open-source tools\n💻 mape_municipios-dashboard: a dashboard to interact with one of the most complete databases with information on Brazilian municipalities, collected by MAPE. 2025.\nJoint work with Fernando Meireles (IESP-UERJ).\n🔗 Source code · 🌐 Access link\n💻 RelicárIA: a digital platform that combines AI and data analysis to extract and visualize information from documents. 2025.\nJoint work with Danielle Sanches de Almeida (FGV ECMI).\n🔗 Source code · 🌐 Access link\n💻 BoticárIA: a RAG-based conversational AI that simulates an 18th-century apothecary, providing information on medicinal practices based on historical pharmacological sources from the late 18th century. 2025.\nJoint work with Danielle Sanches de Almeida (FGV ECMI).\n🔗 Source code · 🌐 Access link"
   },
   {
     "objectID": "projects/scielo-summarizer/index.html",
