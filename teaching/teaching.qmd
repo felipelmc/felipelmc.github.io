@@ -5,21 +5,22 @@ subtitle: "Courses I've taught or assisted in, across social science and data sc
 
 ## 🎓 Teaching
 
-#### 📍 Automated Text Analysis -- SICSS Brazil (2025.1)  
-A crash course on modern approaches to text-as-data in social science as part of the [Summer Institute in Computational Social Science, Brazil](https://sicss.io/2025/fgv-ecmi-brazil/).
+**Automated Text Analysis** -- SICSS Brazil (2025.1)  
+  _A crash course on modern approaches to text-as-data in social science as part of the [Summer Institute in Computational Social Science, Brazil](https://sicss.io/2025/fgv-ecmi-brazil/)._  
 
 ---
 
 ## 🧑‍🏫 Teaching Assistance
 
-#### 📍 Advanced Text-as-Data -- IESP-UERJ Winter School (2025.1, Graduate)  
-Assisted with instruction on word embeddings, deep learning, and LLMs for political science research.  
-Instructors: [Tiago Ventura](https://www.venturatiago.com/), Ph.D., and [Sebastián Vallejo Vera](https://www.svallejovera.com/), Ph.D.
+**Advanced Text-as-Data** -- IESP-UERJ Winter School (2025.1, Graduate)  
+  _Deep Learning, Transformers, Embeddings, and Large Language Models applied to political science research._  
+  Instructors: [Tiago Ventura](https://www.venturatiago.com/), Ph.D., and [Sebastián Vallejo Vera](https://www.svallejovera.com/), Ph.D.  
+  🔗 [Course website](https://tiagoventura.github.io/tad_iesp_workshop/)
 
-#### 📍 Quantitative Methods II -- FGV CPDOC (2024.2, Undergraduate)  
-Supported assignments and data analysis labs in an applied quantitative methods course.  
-Instructor: [Jairo Nicolau](https://cpdoc.fgv.br/equipe/jaironicolau), Ph.D.
+**Quantitative Methods II** -- FGV CPDOC (2024.2, Undergraduate)    
+  _Exploratory data analysis, basic statistical inference, and regression models._    
+  Instructor: [Jairo Nicolau](https://cpdoc.fgv.br/equipe/jaironicolau), Ph.D.
 
-#### 📍 Introduction to R -- FGV CPDOC (2020.2, Graduate)  
-Helped students navigate R and RStudio in a practical introduction to programming for social sciences.  
-Instructor: [Jimmy Medeiros](https://cpdoc.fgv.br/equipe/JimmyMedeiros), Ph.D.
+**Introduction to R** -- FGV CPDOC (2020.2, Graduate)  
+  _Introduction to programming for social sciences._  
+  Instructor: [Jimmy Medeiros](https://cpdoc.fgv.br/equipe/JimmyMedeiros), Ph.D.

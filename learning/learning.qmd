@@ -25,11 +25,11 @@ subtitle: "Selected repositories and workshops from my studies"
   _Visual storytelling using D3.js, Python, and Power BI._  
   🔗 [GitHub](https://github.com/felipelmc/Data-Visualization) -->
 
-**Pesquisa de Survey (Survey Research)** (IESP-UERJ, 2024.1, Graduate)  
+**Pesquisa de Survey (Survey Research)** (IESP-UERJ, 2025.1, Graduate)  
   _Total survey error paradigm, sampling, questionnaire design, post-stratification._  
   🔗 [GitHub](https://github.com/felipelmc/Survey-Research) · 🌐 [Website](https://felipelamarca.com/Survey-Research/)
 
-**Lego I** (IESP-UERJ, 2024.1, Graduate)  
+**Lego I** (IESP-UERJ, 2025.1, Graduate)  
   _Quantitative social science: data analysis, research design, probability, inference._  
   🔗 [GitHub](https://github.com/felipelmc/Lego-I) · 🌐 [Website](https://felipelamarca.com/Lego-I/)
 

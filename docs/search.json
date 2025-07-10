@@ -4,21 +4,21 @@
     "href": "teaching/teaching.html",
     "title": "👨🏻‍💻 Teaching",
     "section": "",
-    "text": "A crash course on modern approaches to text-as-data in social science as part of the Summer Institute in Computational Social Science, Brazil."
+    "text": "Automated Text Analysis – SICSS Brazil (2025.1)\nA crash course on modern approaches to text-as-data in social science as part of the Summer Institute in Computational Social Science, Brazil."
   },
   {
     "objectID": "teaching/teaching.html#teaching",
     "href": "teaching/teaching.html#teaching",
     "title": "👨🏻‍💻 Teaching",
     "section": "",
-    "text": "A crash course on modern approaches to text-as-data in social science as part of the Summer Institute in Computational Social Science, Brazil."
+    "text": "Automated Text Analysis – SICSS Brazil (2025.1)\nA crash course on modern approaches to text-as-data in social science as part of the Summer Institute in Computational Social Science, Brazil."
   },
   {
     "objectID": "teaching/teaching.html#teaching-assistance",
     "href": "teaching/teaching.html#teaching-assistance",
     "title": "👨🏻‍💻 Teaching",
     "section": "🧑‍🏫 Teaching Assistance",
-    "text": "🧑‍🏫 Teaching Assistance\n\n📍 Advanced Text-as-Data – IESP-UERJ Winter School (2025.1, Graduate)\nAssisted with instruction on word embeddings, deep learning, and LLMs for political science research.\nInstructors: Tiago Ventura, Ph.D., and Sebastián Vallejo Vera, Ph.D.\n\n\n📍 Quantitative Methods II – FGV CPDOC (2024.2, Undergraduate)\nSupported assignments and data analysis labs in an applied quantitative methods course.\nInstructor: Jairo Nicolau, Ph.D.\n\n\n📍 Introduction to R – FGV CPDOC (2020.2, Graduate)\nHelped students navigate R and RStudio in a practical introduction to programming for social sciences.\nInstructor: Jimmy Medeiros, Ph.D."
+    "text": "🧑‍🏫 Teaching Assistance\nAdvanced Text-as-Data – IESP-UERJ Winter School (2025.1, Graduate)\nDeep Learning, Transformers, Embeddings, and Large Language Models applied to political science research.\nInstructors: Tiago Ventura, Ph.D., and Sebastián Vallejo Vera, Ph.D.\n🔗 Course website\nQuantitative Methods II – FGV CPDOC (2024.2, Undergraduate)\nExploratory data analysis, basic statistical inference, and regression models.\nInstructor: Jairo Nicolau, Ph.D.\nIntroduction to R – FGV CPDOC (2020.2, Graduate)\nIntroduction to programming for social sciences.\nInstructor: Jimmy Medeiros, Ph.D."
   },
   {
     "objectID": "projects/statistical-modeling/index.html",
@@ -151,14 +151,14 @@
     "href": "learning/learning.html",
     "title": "📚 Learning",
     "section": "",
-    "text": "Numerical Linear Algebra (FGV EMAp, 2023.1, Undergraduate)\nSolving linear systems with numerical stability and efficiency.\n🔗 GitHub\nMachine Learning (FGV EMAp, 2024.1, Undergraduate)\nProbabilistic machine learning, mixture models, and approximate Bayesian inference.\n🔗 GitHub\nDeep Learning (FGV EMAp, 2024.2, Undergraduate)\nFoundations of NN, CNNs, LSTMs, GANs, Transformers, transfer learning, and autoencoders.\n🔗 GitHub\n\nPesquisa de Survey (Survey Research) (IESP-UERJ, 2024.1, Graduate)\nTotal survey error paradigm, sampling, questionnaire design, post-stratification.\n🔗 GitHub · 🌐 Website\nLego I (IESP-UERJ, 2024.1, Graduate)\nQuantitative social science: data analysis, research design, probability, inference.\n🔗 GitHub · 🌐 Website"
+    "text": "Numerical Linear Algebra (FGV EMAp, 2023.1, Undergraduate)\nSolving linear systems with numerical stability and efficiency.\n🔗 GitHub\nMachine Learning (FGV EMAp, 2024.1, Undergraduate)\nProbabilistic machine learning, mixture models, and approximate Bayesian inference.\n🔗 GitHub\nDeep Learning (FGV EMAp, 2024.2, Undergraduate)\nFoundations of NN, CNNs, LSTMs, GANs, Transformers, transfer learning, and autoencoders.\n🔗 GitHub\n\nPesquisa de Survey (Survey Research) (IESP-UERJ, 2025.1, Graduate)\nTotal survey error paradigm, sampling, questionnaire design, post-stratification.\n🔗 GitHub · 🌐 Website\nLego I (IESP-UERJ, 2025.1, Graduate)\nQuantitative social science: data analysis, research design, probability, inference.\n🔗 GitHub · 🌐 Website"
   },
   {
     "objectID": "learning/learning.html#repositories",
     "href": "learning/learning.html#repositories",
     "title": "📚 Learning",
     "section": "",
-    "text": "Numerical Linear Algebra (FGV EMAp, 2023.1, Undergraduate)\nSolving linear systems with numerical stability and efficiency.\n🔗 GitHub\nMachine Learning (FGV EMAp, 2024.1, Undergraduate)\nProbabilistic machine learning, mixture models, and approximate Bayesian inference.\n🔗 GitHub\nDeep Learning (FGV EMAp, 2024.2, Undergraduate)\nFoundations of NN, CNNs, LSTMs, GANs, Transformers, transfer learning, and autoencoders.\n🔗 GitHub\n\nPesquisa de Survey (Survey Research) (IESP-UERJ, 2024.1, Graduate)\nTotal survey error paradigm, sampling, questionnaire design, post-stratification.\n🔗 GitHub · 🌐 Website\nLego I (IESP-UERJ, 2024.1, Graduate)\nQuantitative social science: data analysis, research design, probability, inference.\n🔗 GitHub · 🌐 Website"
+    "text": "Numerical Linear Algebra (FGV EMAp, 2023.1, Undergraduate)\nSolving linear systems with numerical stability and efficiency.\n🔗 GitHub\nMachine Learning (FGV EMAp, 2024.1, Undergraduate)\nProbabilistic machine learning, mixture models, and approximate Bayesian inference.\n🔗 GitHub\nDeep Learning (FGV EMAp, 2024.2, Undergraduate)\nFoundations of NN, CNNs, LSTMs, GANs, Transformers, transfer learning, and autoencoders.\n🔗 GitHub\n\nPesquisa de Survey (Survey Research) (IESP-UERJ, 2025.1, Graduate)\nTotal survey error paradigm, sampling, questionnaire design, post-stratification.\n🔗 GitHub · 🌐 Website\nLego I (IESP-UERJ, 2025.1, Graduate)\nQuantitative social science: data analysis, research design, probability, inference.\n🔗 GitHub · 🌐 Website"
   },
   {
     "objectID": "learning/learning.html#workshops-training",
