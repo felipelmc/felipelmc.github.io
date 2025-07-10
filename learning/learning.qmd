@@ -1,59 +1,48 @@
 ---
 title: "📚 Learning"
-subtitle: "Curated repositories and workshops from my studies"
+subtitle: "Selected repositories and workshops from my studies"
 ---
 
 ## 📦 Repositories
 
-### 🎓 School of Applied Mathematics (FGV EMAp)
-
-- **Techniques and Algorithms in Data Science**  
-  _An introduction to some of the most important ML algorithms in Data Science – regression, neural networks, decision trees, ensemble learning and unsupervised approaches._  
-  🔗 [GitHub](https://github.com/felipelmc/MLAlgorithms-from-scratch)
-
-- **Numerical Linear Algebra**  
-  _Numerical methods for solving linear algebra problems._  
+**Numerical Linear Algebra** (FGV EMAp, 2023.1, Undergraduate)  
+  _Solving linear systems with numerical stability and efficiency._  
   🔗 [GitHub](https://github.com/felipelmc/Numerical-Linear-Algebra)
 
-- **Data Visualization**  
-  _The fundamentals of data visualization using a variety of tools such as D3.js, Python and Power BI_  
-  🔗 [GitHub](https://github.com/felipelmc/Data-Visualization)
-
-- **Machine Learning**  
-  _A more advanced and probabilistic approach to machine learning models, including mixture models and approximate bayesian inference._  
+**Machine Learning**  (FGV EMAp, 2024.1, Undergraduate)  
+  _Probabilistic machine learning, mixture models, and approximate Bayesian inference._  
   🔗 [GitHub](https://github.com/felipelmc/Machine-Learning)
 
-- **Deep Learning**  
-  _The mathematical foundation of neural networks, covering topics such as CNNs, LSTMs, GANs, Transformers, Transfer Learning and deep autoencoders._  
+**Deep Learning**  (FGV EMAp, 2024.2, Undergraduate)  
+  _Foundations of NN, CNNs, LSTMs, GANs, Transformers, transfer learning, and autoencoders._  
   🔗 [GitHub](https://github.com/felipelmc/Deep-Learning)
 
-### 🏛 Institute of Social and Political Studies (IESP-UERJ)
+<!-- - **ML Algorithms from Scratch**  
+  _Implements foundational ML algorithms including regression, trees, neural nets, and clustering._  
+  🔗 [GitHub](https://github.com/felipelmc/MLAlgorithms-from-scratch)
 
-- **Lego I**  
-  _An introduction to quantitative social sciences, covering the fundamentals of data analysis, research design, probability and inference._  
-  🔗 [GitHub](https://github.com/felipelmc/Lego-I) · 🌐 [Website](https://felipelamarca.com/Lego-I/)
+- **Data Visualization**  
+  _Visual storytelling using D3.js, Python, and Power BI._  
+  🔗 [GitHub](https://github.com/felipelmc/Data-Visualization) -->
 
-- **Pesquisa de Survey**  
-  _The fundamentals of survey research, including the total survey error paradigm, sampling, questionnaire design, post-stratification and topics such as non-response and likely voter models._  
+**Pesquisa de Survey (Survey Research)** (IESP-UERJ, 2024.1, Graduate)  
+  _Total survey error paradigm, sampling, questionnaire design, post-stratification._  
   🔗 [GitHub](https://github.com/felipelmc/Survey-Research) · 🌐 [Website](https://felipelamarca.com/Survey-Research/)
 
-- **Teoria Política I**  
-  _The fundamental problems of political theory, from classical antiquity to the period immediately prior to the revolutions of the 18th century_  
-  🔗 [GitHub](https://github.com/felipelmc/Political-Theory-I) · 🌐 [Website](https://felipelamarca.com/Political-Theory-I/)
+**Lego I** (IESP-UERJ, 2024.1, Graduate)  
+  _Quantitative social science: data analysis, research design, probability, inference._  
+  🔗 [GitHub](https://github.com/felipelmc/Lego-I) · 🌐 [Website](https://felipelamarca.com/Lego-I/)
 
-### 🧮 Miscellaneous
-
-- **Studying Math**  
-  _Personal notes and exercises from ongoing math reading._  
-  🔗 [GitHub](https://github.com/felipelmc/Studying-Math)
+<!-- - **Teoria Política I**  
+  _From classical antiquity to early modern political thought._  
+  🔗 [GitHub](https://github.com/felipelmc/Political-Theory-I) · 🌐 [Website](https://felipelamarca.com/Political-Theory-I/) -->
 
 ---
 
-## 💡 Workshops & Training
+## 🛠 Workshops & Training
 
-- **[July 2024]** [SICSS: Summer Institute in Computational Social Science](https://sicss.io/2024/fgv-ecmi-brazil/)  
+**[July 2024]** [SICSS: Summer Institute in Computational Social Science](https://sicss.io/2024/fgv-ecmi-brazil/)  
   _Collaborated with international researchers on CSS projects during a two-week program at FGV._
 
-- **[July 2024]** [ML4Good Bootcamp](https://www.ml4good.org/)  
-  _Ten-day program on AI Safety, alignment, and responsible development._
-
+**[July 2024]** [ML4Good Bootcamp](https://www.ml4good.org/)  
+  _Ten-day intensive on AI Safety, alignment, and responsible development._

@@ -1,171 +1,59 @@
 [
   {
-    "objectID": "publications/publications.html",
-    "href": "publications/publications.html",
-    "title": "🗃Publications",
+    "objectID": "teaching/teaching.html",
+    "href": "teaching/teaching.html",
+    "title": "👨🏻‍💻 Teaching",
     "section": "",
-    "text": "📄 As relações Executivo-Legislativo na Primeira República: uma análise das mensagens presidenciais ao Congresso (1910-1920). Mosaico. 2021.\n🌐 Access link\n\n\n\n📄 Fatores explicativos do apoio ou rejeição à criação de uma política municipal de renda básica: modelando a percepção dos cariocas. 2025.\nJoint work with Jimmy Medeiros (FGV CPDOC), Antônio Mariano (FGV CPDOC), and Philippe Chaves Guedon (FGV CPDOC)."
+    "text": "A crash course on modern approaches to text-as-data in social science as part of the Summer Institute in Computational Social Science, Brazil."
   },
   {
-    "objectID": "publications/publications.html#papers",
-    "href": "publications/publications.html#papers",
-    "title": "🗃Publications",
+    "objectID": "teaching/teaching.html#teaching",
+    "href": "teaching/teaching.html#teaching",
+    "title": "👨🏻‍💻 Teaching",
     "section": "",
-    "text": "📄 As relações Executivo-Legislativo na Primeira República: uma análise das mensagens presidenciais ao Congresso (1910-1920). Mosaico. 2021.\n🌐 Access link\n\n\n\n📄 Fatores explicativos do apoio ou rejeição à criação de uma política municipal de renda básica: modelando a percepção dos cariocas. 2025.\nJoint work with Jimmy Medeiros (FGV CPDOC), Antônio Mariano (FGV CPDOC), and Philippe Chaves Guedon (FGV CPDOC)."
+    "text": "A crash course on modern approaches to text-as-data in social science as part of the Summer Institute in Computational Social Science, Brazil."
   },
   {
-    "objectID": "publications/publications.html#open-source-tools",
-    "href": "publications/publications.html#open-source-tools",
-    "title": "🗃Publications",
-    "section": "Open-source tools",
-    "text": "Open-source tools\n💻 mape_municipios-dashboard: a dashboard to interact with one of the most complete databases with information on Brazilian municipalities, collected by MAPE. 2025.\nJoint work with Fernando Meireles (IESP-UERJ).\n🔗 Source code · 🌐 Access link\n💻 RelicárIA: a digital platform that combines AI and data analysis to extract and visualize information from documents. 2025.\nJoint work with Danielle Sanches de Almeida (FGV ECMI).\n🔗 Source code · 🌐 Access link\n💻 BoticárIA: a RAG-based conversational AI that simulates an 18th-century apothecary, providing information on medicinal practices based on historical pharmacological sources from the late 18th century. 2025.\nJoint work with Danielle Sanches de Almeida (FGV ECMI).\n🔗 Source code · 🌐 Access link"
+    "objectID": "teaching/teaching.html#teaching-assistance",
+    "href": "teaching/teaching.html#teaching-assistance",
+    "title": "👨🏻‍💻 Teaching",
+    "section": "🧑‍🏫 Teaching Assistance",
+    "text": "🧑‍🏫 Teaching Assistance\n\n📍 Advanced Text-as-Data – IESP-UERJ Winter School (2025.1, Graduate)\nAssisted with instruction on word embeddings, deep learning, and LLMs for political science research.\nInstructors: Tiago Ventura, Ph.D., and Sebastián Vallejo Vera, Ph.D.\n\n\n📍 Quantitative Methods II – FGV CPDOC (2024.2, Undergraduate)\nSupported assignments and data analysis labs in an applied quantitative methods course.\nInstructor: Jairo Nicolau, Ph.D.\n\n\n📍 Introduction to R – FGV CPDOC (2020.2, Graduate)\nHelped students navigate R and RStudio in a practical introduction to programming for social sciences.\nInstructor: Jimmy Medeiros, Ph.D."
   },
   {
-    "objectID": "projects/scielo-summarizer/index.html",
-    "href": "projects/scielo-summarizer/index.html",
-    "title": "SciELO-Summarizer",
+    "objectID": "projects/statistical-modeling/index.html",
+    "href": "projects/statistical-modeling/index.html",
+    "title": "Statistical Modeling",
     "section": "",
-    "text": "SciELO-Summarizer consists of a summarizer for scientific articles in Portuguese. It scrapes the content of the article from the SciELO website and generates a personalized summary for the user using Large Language Models (LLMs), especifically Llama3.\nTo run the project locally, you need to have both Python 3.8 or higher and Llama3 installed. It is also possible to run the project on Google Colab, following this link.\nThe program was developed during the Summer Institute in Computational Social Sciences (SICSS) 2024, hosted by FGV ECMI, Brazil, in July 2024."
+    "text": "I chose to analyze the electoral dynamics for the position of federal deputy in the 2022 elections. Specifically, I explore multilevel (hierarchical) models, logistic regression, and model evaluation methods, such as AUC, AIC, accuracy, and \\(R^2\\). Additionally, I engage with part of the Political Science literature that uses Statistical Modeling techniques to extract information about Brazilian elections.\nThis work resulted in this report, the summary of which is as follows:"
   },
   {
-    "objectID": "projects/scielo-summarizer/index.html#about-the-project",
-    "href": "projects/scielo-summarizer/index.html#about-the-project",
-    "title": "SciELO-Summarizer",
+    "objectID": "projects/statistical-modeling/index.html#about-the-project",
+    "href": "projects/statistical-modeling/index.html#about-the-project",
+    "title": "Statistical Modeling",
     "section": "",
-    "text": "SciELO-Summarizer consists of a summarizer for scientific articles in Portuguese. It scrapes the content of the article from the SciELO website and generates a personalized summary for the user using Large Language Models (LLMs), especifically Llama3.\nTo run the project locally, you need to have both Python 3.8 or higher and Llama3 installed. It is also possible to run the project on Google Colab, following this link.\nThe program was developed during the Summer Institute in Computational Social Sciences (SICSS) 2024, hosted by FGV ECMI, Brazil, in July 2024."
+    "text": "I chose to analyze the electoral dynamics for the position of federal deputy in the 2022 elections. Specifically, I explore multilevel (hierarchical) models, logistic regression, and model evaluation methods, such as AUC, AIC, accuracy, and \\(R^2\\). Additionally, I engage with part of the Political Science literature that uses Statistical Modeling techniques to extract information about Brazilian elections.\nThis work resulted in this report, the summary of which is as follows:"
   },
   {
-    "objectID": "projects/machine-learning/index.html",
-    "href": "projects/machine-learning/index.html",
-    "title": "Machine Learning",
+    "objectID": "projects/statistical-modeling/index.html#who-wants-to-be-a-deputy-a-multilevel-analysis-of-the-2022-elections-for-the-chamber-of-deputies",
+    "href": "projects/statistical-modeling/index.html#who-wants-to-be-a-deputy-a-multilevel-analysis-of-the-2022-elections-for-the-chamber-of-deputies",
+    "title": "Statistical Modeling",
+    "section": "Who Wants to Be a Deputy? A Multilevel Analysis of the 2022 Elections for the Chamber of Deputies",
+    "text": "Who Wants to Be a Deputy? A Multilevel Analysis of the 2022 Elections for the Chamber of Deputies\nWhat increases a candidate’s chances of being elected? The specialized Political Science literature has sought to answer this question through various approaches over time. This work provides a statistical analysis of the 2022 electoral data to evaluate what impacts the chances of federal deputy candidates being elected in Brazil. Statistical modeling techniques are applied, including multilevel logistic regression models and metrics for evaluating the explanatory and predictive capacity of models. The results suggest that campaign expenditures, with variations between parties, account for a significant portion of the results at the polls.\nKeywords: Legislative Elections; Logistic Regression; Multilevel Models; Model Evaluation.\nThe work has been completed and received the highest grade."
+  },
+  {
+    "objectID": "projects/projects.html",
+    "href": "projects/projects.html",
+    "title": "⚙Projects",
     "section": "",
-    "text": "Nearest Neighbours Method (\\(k\\)-NN) (10/10)\nLinear Regression (8.5/10)\nLogistic Regression and Approximate Bayesian Inference (10/10)\nSelection of Models and Hyperparameters (9.25/10)\nGaussian Processes for Regression (10/10)\nNeural Networks (10/10)\nDimensionality Reduction (10/10)\nK-means and Mixture models (8.5/10)"
+    "text": "SciELO-Summarizer\n\n\n\nComputational Social Sciences\n\nDeep Learning\n\n\n\nSciELO-Summarizer consists of a summarizer for scientific articles in Portuguese. It scrapes the content of the article from the SciELO website and generates a personalized summary for the user using Large Language Models (LLMs), especifically Llama3.\n\n\n\n\n\nJul 15, 2024\n\n\nFelipe Lamarca, Claudia Fernandes, Daniel Zacarias, Gabriellen Carmo, Lauriano Benazzi, Marcelle Amaral, Talita Ribeiro\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Learning\n\n\n\nDeep Learning\n\n\n\nAssignments and presentation developed in the scope of the Deep Learning discipline, taught by Professor Dário Oliveira (FGV EMAp). Co-authored with @anacarolerthal, whom I thank for the ongoing partnership.\n\n\n\n\n\nDec 5, 2023\n\n\nFelipe Lamarca, Ana Carolina Erthal\n\n\n\n\n\n\n\n\n\n\n\n\nDataGrid\n\n\n\nAlgorithms\n\n\n\nImplementation of search, sorting & selection algorithms to build an efficient datagrid. Project developed within the scope of the Algorithm Design and Analysis discipline, lectured by Professor Thiago Pinheiro de Araújo (FGV EMAp).\n\n\n\n\n\nOct 18, 2023\n\n\nFelipe Lamarca, Cristiano Larréa\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Modeling\n\n\n\nStatistics\n\nComputational Social Sciences\n\n\n\nThis repository gathers the data, scripts, and analyses conducted for the final project of the Statistical Modeling course, taught by Professor Luiz Max Fagundes de Carvalho (FGV EMAp) (@maxbiostat). The objective was to apply modeling, inference, and prediction techniques, learned throughout this course and the Statistical Inference course, to real-world data.\n\n\n\n\n\nJul 15, 2023\n\n\nFelipe Lamarca\n\n\n\n\n\n\n\n\n\n\n\n\nMachine Learning\n\n\n\nMachine Learning\n\nStatistics\n\n\n\nThis repository contains all the assignments and the project I did for the Machine Learning course at the School of Applied Mathematics of the Getulio Vargas Foundation (FGV EMAp). The course was taught by Professor Diego Mesquita.\n\n\n\n\n\nJul 5, 2023\n\n\nFelipe Lamarca\n\n\n\n\n\n\n\n\n\n\n\n\nData Visualization\n\n\n\nData Visualization\n\n\n\nRepository where I keep all the assignments and projects developed in the scope of the Data Visualization discipline, taught by Professor Jorge Poco (@jpocom) (FGV EMAp).\n\n\n\n\n\nJun 30, 2023\n\n\nFelipe Lamarca, Ana Carolina Erthal, Guilherme de Melo\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "projects/machine-learning/index.html#assignments",
-    "href": "projects/machine-learning/index.html#assignments",
-    "title": "Machine Learning",
+    "objectID": "projects/deep-learning/index.html",
+    "href": "projects/deep-learning/index.html",
+    "title": "Deep Learning",
     "section": "",
-    "text": "Nearest Neighbours Method (\\(k\\)-NN) (10/10)\nLinear Regression (8.5/10)\nLogistic Regression and Approximate Bayesian Inference (10/10)\nSelection of Models and Hyperparameters (9.25/10)\nGaussian Processes for Regression (10/10)\nNeural Networks (10/10)\nDimensionality Reduction (10/10)\nK-means and Mixture models (8.5/10)"
-  },
-  {
-    "objectID": "projects/machine-learning/index.html#final-project",
-    "href": "projects/machine-learning/index.html#final-project",
-    "title": "Machine Learning",
-    "section": "Final Project",
-    "text": "Final Project\nThe final project was co-authored by Ana Carolina Erthal, Guilherme de Melo and Bernardo Vargas. The project implements a way of comparing Conformal Prediction with traditional machine learning approaches to generate confidence intervals."
-  },
-  {
-    "objectID": "projects/datagrid/index.html",
-    "href": "projects/datagrid/index.html",
-    "title": "DataGrid",
-    "section": "",
-    "text": "The DataGrid class is specifically designed to work with datasets that follow the structure below:\n\n\n\nColumn\nData Type\nSearch Type\nExtra\n\n\n\n\nid\ninteger\nexact\nunique\n\n\nowner_id\nstring\nexact\nExactly 5 alphanumeric characters\n\n\ncreation_date\nstring\nrange\nFormat: YYYY-MM-DD hh:mm:ss\n\n\ncount\ninteger\nrange\n\n\n\nname\nstring\ncontains\nMaximum length of 20 characters\n\n\ncontent\nstring\ncontains\n\n\n\n\nEach record in the DataGrid is considered an Event.\nTo initialize the DataGrid class, simply import the module and instantiate the class. Make sure your script can access the folder where the DataGrid module is located, for example:\nimport sys\nsys.path.append('src/')\n\nfrom datagrid import DataGrid\nInitialize the DataGrid class with:\ndatagrid = DataGrid()\nThe DataGrid class has the following methods:\n\nread_csv(file, sep = ',', encoding = 'utf-8'): populates the DataGrid from the data in the CSV file whose path is provided as a parameter, considering the specified separator and encoding;\nshow(start=0, end=100, prints = False, returns = True): displays the entries in the DataGrid, limiting the display to the range defined by the parameters. returns=True returns the list of Event objects between start and end, and prints=True shows the content of these objects. It displays the table in its current sorted state.\ninsert_row(row): inserts new events into the DataGrid. It takes a dictionary containing the data of the event to be inserted and creates an Event instance from this data. The dictionary must have the column names as keys and the data to be inserted as values, following the structure described in the table above.\ndelete_row(column, value): removes events from the DataGrid. It takes the name of the column and the value to search for in that column. It removes all events that have the searched value in the specified column. If column = 'positions', it removes elements based on their position (index) in the table. In this case, value can be either a range identified by a tuple (start, end) or a single positive integer.\nsearch(column, value): searches for events in the DataGrid. It takes the name of the column and the value to search for in that column. It returns a list of Event objects that contain the searched value in the specified column.\nsort(column, direction = 'asc'): sorts the DataGrid. It takes the name of the column and the sorting direction. To sort in descending order, simply pass direction = 'desc'.\nselect_count(i, j, how = 'median-of-medians'): returns the list of Event objects between positions i and j in the table, considering the count column sorted in ascending order. This operation does not alter the internal structure of the DataGrid. It is also possible to pass the parameter how = 'quickselect' or how = 'heapsort' to choose which algorithm will be used to perform the operation.\n\nThe file demo.ipynb contains an example of how to use the DataGrid class with data randomly generated by the file dataGenerator.py. The comments on the operations performed in the notebook refer to the results obtained using the file fake_data_100.csv, which contains 100 rows."
-  },
-  {
-    "objectID": "projects/datagrid/index.html#user-guide",
-    "href": "projects/datagrid/index.html#user-guide",
-    "title": "DataGrid",
-    "section": "",
-    "text": "The DataGrid class is specifically designed to work with datasets that follow the structure below:\n\n\n\nColumn\nData Type\nSearch Type\nExtra\n\n\n\n\nid\ninteger\nexact\nunique\n\n\nowner_id\nstring\nexact\nExactly 5 alphanumeric characters\n\n\ncreation_date\nstring\nrange\nFormat: YYYY-MM-DD hh:mm:ss\n\n\ncount\ninteger\nrange\n\n\n\nname\nstring\ncontains\nMaximum length of 20 characters\n\n\ncontent\nstring\ncontains\n\n\n\n\nEach record in the DataGrid is considered an Event.\nTo initialize the DataGrid class, simply import the module and instantiate the class. Make sure your script can access the folder where the DataGrid module is located, for example:\nimport sys\nsys.path.append('src/')\n\nfrom datagrid import DataGrid\nInitialize the DataGrid class with:\ndatagrid = DataGrid()\nThe DataGrid class has the following methods:\n\nread_csv(file, sep = ',', encoding = 'utf-8'): populates the DataGrid from the data in the CSV file whose path is provided as a parameter, considering the specified separator and encoding;\nshow(start=0, end=100, prints = False, returns = True): displays the entries in the DataGrid, limiting the display to the range defined by the parameters. returns=True returns the list of Event objects between start and end, and prints=True shows the content of these objects. It displays the table in its current sorted state.\ninsert_row(row): inserts new events into the DataGrid. It takes a dictionary containing the data of the event to be inserted and creates an Event instance from this data. The dictionary must have the column names as keys and the data to be inserted as values, following the structure described in the table above.\ndelete_row(column, value): removes events from the DataGrid. It takes the name of the column and the value to search for in that column. It removes all events that have the searched value in the specified column. If column = 'positions', it removes elements based on their position (index) in the table. In this case, value can be either a range identified by a tuple (start, end) or a single positive integer.\nsearch(column, value): searches for events in the DataGrid. It takes the name of the column and the value to search for in that column. It returns a list of Event objects that contain the searched value in the specified column.\nsort(column, direction = 'asc'): sorts the DataGrid. It takes the name of the column and the sorting direction. To sort in descending order, simply pass direction = 'desc'.\nselect_count(i, j, how = 'median-of-medians'): returns the list of Event objects between positions i and j in the table, considering the count column sorted in ascending order. This operation does not alter the internal structure of the DataGrid. It is also possible to pass the parameter how = 'quickselect' or how = 'heapsort' to choose which algorithm will be used to perform the operation.\n\nThe file demo.ipynb contains an example of how to use the DataGrid class with data randomly generated by the file dataGenerator.py. The comments on the operations performed in the notebook refer to the results obtained using the file fake_data_100.csv, which contains 100 rows."
-  },
-  {
-    "objectID": "projects/datagrid/index.html#random-data-generation",
-    "href": "projects/datagrid/index.html#random-data-generation",
-    "title": "DataGrid",
-    "section": "Random Data Generation",
-    "text": "Random Data Generation\nIf you want to generate random data to test the DataGrid module, simply run the file dataGenerator.py. Remember to adjust the value(s) in the n list at the end of the file to define how many files you want to generate and how many rows each should contain."
-  },
-  {
-    "objectID": "news/news.html",
-    "href": "news/news.html",
-    "title": "📰News",
-    "section": "",
-    "text": "February 27, 2025\nI received the Professor Carlos Eduardo Sarmento Academic Distinction Award from the School of Social Sciences at Fundação Getulio Vargas (FGV CPDOC) for achieving the highest academic performance among the 2025 graduates of the CPDOC undergraduate program! 😃🎓\nDecember 13, 2024\nI have been accepted to pursue a Master’s degree in Applied Mathematics and Data Science at the School of Applied Mathematics (FGV EMAp). Even though I’m not accepting the offer, I’m very grateful for the opportunity and excited to continue my journey in Political Science at IESP-UERJ.\nNovember 26, 2024\nI have successfully delivered my undergraduate thesis, marking the official completion of my dual degrees in Data Science & Artificial Intelligence from the School of Applied Mathematics (FGV EMAp) and Social Sciences from the Superior School of Social Sciences (FGV CPDOC). I’m very grateful for the support of my family, friends, and advisors throughout this journey, which I’m very proud of.\nNovember 21, 2024\nI have been accepted in the first position to pursue a Master’s degree in Political Science at the Institute of Social and Political Studies (IESP-UERJ), starting in March 2025. This opportunity will allow me to contribute to impactful research, particularly in the application of Data Science and AI to the field."
-  },
-  {
-    "objectID": "learning/learning.html",
-    "href": "learning/learning.html",
-    "title": "📚 Learning",
-    "section": "",
-    "text": "Techniques and Algorithms in Data Science\nAn introduction to some of the most important ML algorithms in Data Science – regression, neural networks, decision trees, ensemble learning and unsupervised approaches.\n🔗 GitHub\nNumerical Linear Algebra\nNumerical methods for solving linear algebra problems.\n🔗 GitHub\nData Visualization\nThe fundamentals of data visualization using a variety of tools such as D3.js, Python and Power BI\n🔗 GitHub\nMachine Learning\nA more advanced and probabilistic approach to machine learning models, including mixture models and approximate bayesian inference.\n🔗 GitHub\nDeep Learning\nThe mathematical foundation of neural networks, covering topics such as CNNs, LSTMs, GANs, Transformers, Transfer Learning and deep autoencoders.\n🔗 GitHub\n\n\n\n\n\nLego I\nAn introduction to quantitative social sciences, covering the fundamentals of data analysis, research design, probability and inference.\n🔗 GitHub · 🌐 Website\nPesquisa de Survey\nThe fundamentals of survey research, including the total survey error paradigm, sampling, questionnaire design, post-stratification and topics such as non-response and likely voter models.\n🔗 GitHub · 🌐 Website\nTeoria Política I\nThe fundamental problems of political theory, from classical antiquity to the period immediately prior to the revolutions of the 18th century\n🔗 GitHub · 🌐 Website\n\n\n\n\n\nStudying Math\nPersonal notes and exercises from ongoing math reading.\n🔗 GitHub"
-  },
-  {
-    "objectID": "learning/learning.html#repositories",
-    "href": "learning/learning.html#repositories",
-    "title": "📚 Learning",
-    "section": "",
-    "text": "Techniques and Algorithms in Data Science\nAn introduction to some of the most important ML algorithms in Data Science – regression, neural networks, decision trees, ensemble learning and unsupervised approaches.\n🔗 GitHub\nNumerical Linear Algebra\nNumerical methods for solving linear algebra problems.\n🔗 GitHub\nData Visualization\nThe fundamentals of data visualization using a variety of tools such as D3.js, Python and Power BI\n🔗 GitHub\nMachine Learning\nA more advanced and probabilistic approach to machine learning models, including mixture models and approximate bayesian inference.\n🔗 GitHub\nDeep Learning\nThe mathematical foundation of neural networks, covering topics such as CNNs, LSTMs, GANs, Transformers, Transfer Learning and deep autoencoders.\n🔗 GitHub\n\n\n\n\n\nLego I\nAn introduction to quantitative social sciences, covering the fundamentals of data analysis, research design, probability and inference.\n🔗 GitHub · 🌐 Website\nPesquisa de Survey\nThe fundamentals of survey research, including the total survey error paradigm, sampling, questionnaire design, post-stratification and topics such as non-response and likely voter models.\n🔗 GitHub · 🌐 Website\nTeoria Política I\nThe fundamental problems of political theory, from classical antiquity to the period immediately prior to the revolutions of the 18th century\n🔗 GitHub · 🌐 Website\n\n\n\n\n\nStudying Math\nPersonal notes and exercises from ongoing math reading.\n🔗 GitHub"
-  },
-  {
-    "objectID": "learning/learning.html#workshops-training",
-    "href": "learning/learning.html#workshops-training",
-    "title": "📚 Learning",
-    "section": "💡 Workshops & Training",
-    "text": "💡 Workshops & Training\n\n[July 2024] SICSS: Summer Institute in Computational Social Science\nCollaborated with international researchers on CSS projects during a two-week program at FGV.\n[July 2024] ML4Good Bootcamp\nTen-day program on AI Safety, alignment, and responsible development."
-  },
-  {
-    "objectID": "blog/box_1976/index.html",
-    "href": "blog/box_1976/index.html",
-    "title": "Science and Statistics: a brief review",
-    "section": "",
-    "text": "In practically all disciplines across different fields of Science — Natural, Exact, or Social — one of the most fundamental discussions debated by scholars is the conceptualization of the discipline in question. In other words, it is a process of identification in order to apply. To conduct research in Statistics, one must know what Statistics is; to produce a historiographical work, one must know what History is, and so on. The task of defining a discipline, however, is not trivial, and more importantly: given a definition, it is certainly not unique, uncontested, or static. This is precisely why, over time, new methods of producing scientific knowledge are suggested and executed.\nThe article Science and Statistics (Box 1976) may, at first glance, seem like an uninteresting digression on how Ronald Fisher (1890-1962) contributed to the evolution of Statistics, in particular, and Science in general, through the methods he developed and improved. On the other hand, a more attentive reading reveals that Box (1976) actually presents his ideal view of how scientific knowledge should be produced1: “[…] not by mere theoretical speculation on one hand, nor by the undirected accumulation of practical facts on the other, but rather a motivated iteration between theory and practice […]” (Box 1976, 791).\nScientific practice, therefore, is understood by Box (1976) as a kind of loop, or a tentative theory. The researcher analyzes the available theory, makes deductions from it, and compares them to the facts — or data — that can be accessed. These two pieces of information, of distinct natures, do not necessarily converge, so the theory needs to be adjusted to explain a certain phenomenon. This new theory is compared to the facts again and so on, in a literally iterative process. The question is, therefore, the following: the confrontation between facts and theory produces errors, which imply the need to reassess one or the other element.\nThat is why “[…] all models are wrong […].” (Box 1976, 792). Naturally, all models are wrong because scientific practice results from a continuous comparison between theory and practice, so no matter how much a scientist elaborates their model in advance, it will likely need to be adapted when confronted with the factual. Box (1976), in this regard, refers to the fact that, in practice, there are no normal distributions or linearity in nature. That is, even though they are incorrect models (because they do not precisely correspond to what is found in nature), they are still useful for making approximations of what is found in the real world, as the result comes from the iteration between theory and practice. From a statistician’s point of view, the iterative process develops through a stage in which the scientist chooses the best statistical procedures to analyze the data and supports the model; in the next stage, after the analysis, they assume that the model contains errors and apply a series of residual analyses to improve it, and so on.\nThe examples based on a brief biography of Fisher serve, in practice, to illustrate the “best practices” of acquiring scientific knowledge. They focus on Fisher’s initial concern with solving some practical problem of scientific relevance and highlight Box (1976)’s ideal regarding scientific practice: one must not lose sight of the real problem to which certain statistical knowledge is being applied or even developed. Hence, the critiques of Mathematistry2, which is often disconnected from practical issues. It thus reinforces the importance of statisticians who can combine and confront theory and practice to, in fact, produce scientific knowledge."
-  },
-  {
-    "objectID": "blog/box_1976/index.html#footnotes",
-    "href": "blog/box_1976/index.html#footnotes",
-    "title": "Science and Statistics: a brief review",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nIn his argument, the author addresses Science in general. Ultimately, we must keep in mind that this proposition does not necessarily encompass all scientific disciplines. Nevertheless, we know that his concern is with the Exact Sciences in general, especially Statistics.↩︎\n“Mathematistry is characterized by development of theory for theory’s sake which since it seldom touches down with practice, has a tendency to redefine the problem rather than solve it.” (Box 1976, 798).↩︎"
-  },
-  {
-    "objectID": "blog/blog.html",
-    "href": "blog/blog.html",
-    "title": "📬Blog",
-    "section": "",
-    "text": "Science and Statistics: a brief review\n\n\n\nStatistics\n\nScience\n\n\n\nAll models are wrong; some are useful. But why is that? In this article, I review Box’s (1976) paper on the iterative process of scientific knowledge production.\n\n\n\n\n\nSep 19, 2024\n\n\nFelipe Lamarca\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Felipe Lamarca",
-    "section": "",
-    "text": "Welcome!👋🏼\nI’m a data scientist with a degree from the School of Applied Mathematics (FGV EMAp) and a social scientist with a degree from the School of Social Sciences (FGV CPDOC). Currently, I’m pursuing a Master’s degree in Political Science at the Institute of Social and Political Studies (IESP-UERJ).\nI work as a data scientist at AtlasIntel and do research at the Policy and Election Monitoring and Evaluation Laboratory (MAPE).\n\nMy interests include Statistical Modeling, Machine Learning, Deep Learning, and Computational Social Sciences. I also have experience in GenAI applications, survey methods, and ETL pipelines (SQL and NoSQL).\n📧 felipe.lamarca@hotmail.com"
-  },
-  {
-    "objectID": "my-work/my-work.html",
-    "href": "my-work/my-work.html",
-    "title": "👨🏻‍💻 My work",
-    "section": "",
-    "text": "AtlasIntel provides advanced data products for political intelligence and economic forecasting.\n\n\n\nMAPE is dedicated to studying public policies, elections, and their connections. Our goal is to improve academic production on the subject and to have a decisive impact on public debate. In particular, we combine different methodologies to study policies and elections, including causal inference techniques and machine learning.\nIf you think I can help you in any way, please reach out at felipe.lamarca@hotmail.com."
-  },
-  {
-    "objectID": "my-work/my-work.html#current-roles",
-    "href": "my-work/my-work.html#current-roles",
-    "title": "👨🏻‍💻 My work",
-    "section": "",
-    "text": "AtlasIntel provides advanced data products for political intelligence and economic forecasting.\n\n\n\nMAPE is dedicated to studying public policies, elections, and their connections. Our goal is to improve academic production on the subject and to have a decisive impact on public debate. In particular, we combine different methodologies to study policies and elections, including causal inference techniques and machine learning.\nIf you think I can help you in any way, please reach out at felipe.lamarca@hotmail.com."
-  },
-  {
-    "objectID": "my-work/my-work.html#past-work",
-    "href": "my-work/my-work.html#past-work",
-    "title": "👨🏻‍💻 My work",
-    "section": "📁 Past Work",
-    "text": "📁 Past Work\n\n📍 Consultant in Data Science & Research (07/2024 – 06/2025)\nProvided end-to-end data and AI solutions (ETL, ML, Generative AI, RAG), research support, and training.\nSelected consulting projects:\n\n📌 Artplan: Deep Learning for social media segmentation\n📌 Fundação Roberto Marinho: AWS data lake, dashboards (Streamlit and Power BI), Python/ML training\n📌 CEBRAP: OCR, LLMs, and quantitative research support for Prof. José Szwako\n📌 Plataforma CIPÓ: Training in ML and data analysis\n📌 GENI/UFF: Built LLM and RAG-based data tools\n\n\n\n📍 Data Scientist & Researcher @ Instituto Rio21 (04/2022 – 06/2025)\nI conducted quantitative research such as opinion polls and other surveys such as the [Municipal Management Assessment Survey] and [Election Polls]. I also collaborated with Aliança CentroRio to transform citywide conservation and security data into actionable intelligence.\n\n\n📍 Research Assistant @ FGV EBAPE (02/2025 – 04/2025)\nI worked on a project to systematize databases for election results from the 1970s, using OCR and large language models to digitize and format historical documents. I worked under the supervision of Prof. Cesar Zucco, Ph.D.\n\n\n\n📍 Data Science Intern @ Strategic Planning Superintendence, FGV (10/2024 – 12/2024)\nI integrated advanced Generative AI techniques into institutional data pipelines, identifying opportunities for automation and process improvement. I also prepared presentations for C-level executives, including the President of FGV.\n\n\n📍 Part-time Data Scientist @ Visagio (01/2024 – 06/2024)\nI worked on optimization, pricing, A/B testing, and data pipeline automation with SQL. I developed Power BI dashboards and presented KPI-driven insights to senior management.\n\n\n📍 Student Consultant @ Brazilian Sailing Confederation (08/2023 – 12/2023)\nI collaborated with colleagues to develop a ranking model for Brazilian sailors, integrating web scraping and machine learning to analyze regatta performance.\n\n\n📍 Junior Research Fellow @ FGV CPDOC (06/2019 – 09/2022)\nSupported by an FGV/CNPq scholarship under the supervision of Prof. Jaqueline Porto Zulini, Ph.D., I examined Executive-Legislative relations in the early 20th century, applying both qualitative methods and introductory quantitative text analysis."
-  },
-  {
-    "objectID": "my-work/my-work.html#teaching-assistance",
-    "href": "my-work/my-work.html#teaching-assistance",
-    "title": "👨🏻‍💻 My work",
-    "section": "📚 Teaching Assistance",
-    "text": "📚 Teaching Assistance\n\n\n\nSemester\nCourse\nInstitution\nProfessor\n\n\n\n\n2024.2\nQuantitative Methods II\nFGV CPDOC\nJairo Nicolau, Ph.D.\n\n\n2020.2\nIntroduction to R\nFGV CPDOC\nJimmy Medeiros, Ph.D.\n\n\n\n(Previously, I also worked on “Digital Literacy” projects and translated materials for the Programming Historian in Portuguese in partnership with Universidade Nova de Lisboa.)"
-  },
-  {
-    "objectID": "my-work/my-work.html#references",
-    "href": "my-work/my-work.html#references",
-    "title": "👨🏻‍💻 My work",
-    "section": "📞 References",
-    "text": "📞 References\n\n\n\n\n\n\n\n\nName\nInstitution\nEmail\n\n\n\n\nProf. Jaqueline Zulini, PhD\nSchool of Social Sciences (FGV CPDOC)\njaqueline dot zulini at fgv dot br\n\n\nProf. Luiz Max Carvalho, PhD\nSchool of Applied Mathematics (FGV EMAp)\nluiz dot fagundes at fgv dot br\n\n\nProf. Renato Rocha Souza, PhD\nUniversity of Vienna\nrenato dot rocha dot souza at univie dot ac dot at\n\n\nProf. Danielle Sanches, PhD\nSchool of Communication, Media and Information (FGV ECMI)\ndanielle dot sanches at fgv dot br\n\n\nProf. Jimmy Medeiros, PhD\nSchool of Social Sciences (FGV CPDOC)\njimmy dot medeiros at fgv dot br"
+    "text": "Assignment 1: Transfer Learning (10/10)\nAssignment 2: Semantic Segmentation (10/10)\nAssignment 3: Action Recognition (10/10)\nAssignment 4: Generative Adversarial Networks + Autoencoders (10/10)\nAssignment 5: Deep \\(k\\)-Means (10/10)\nPresentation: YUN, S. et al. Graph Transformer Networks. In: NeurIPS, 2019. [pdf] [slides]\nAll notebooks were ran on Google Colab.\nThe repository also contains the cheatsheets folder with some useful concepts of Deep Learning I have written down during the course.\n\n\n\nCitationBibTeX citation:@online{lamarca2023,\n  author = {Lamarca, Felipe and Carolina Erthal, Ana},\n  title = {Deep {Learning}},\n  date = {2023-12-05},\n  url = {https://github.com/felipelmc/Deep-Learning},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nLamarca, Felipe, and Ana Carolina Erthal. 2023. “Deep\nLearning.” December 5, 2023. https://github.com/felipelmc/Deep-Learning."
   },
   {
     "objectID": "projects/data-visualization/index.html",
@@ -189,38 +77,178 @@
     "text": "Projects\n\nProject 1: Você em Dados\nProject co-developed with Ana Carolina Erthal and Guilherme de Melo.\nSee the project here.\n\n\nProject 2: Visual F1\nProject co-developed with Ana Carolina Erthal and Guilherme de Melo.\nSee the project here."
   },
   {
-    "objectID": "projects/deep-learning/index.html",
-    "href": "projects/deep-learning/index.html",
-    "title": "Deep Learning",
+    "objectID": "my-work/my-work.html",
+    "href": "my-work/my-work.html",
+    "title": "👨🏻‍💻 My work",
     "section": "",
-    "text": "Assignment 1: Transfer Learning (10/10)\nAssignment 2: Semantic Segmentation (10/10)\nAssignment 3: Action Recognition (10/10)\nAssignment 4: Generative Adversarial Networks + Autoencoders (10/10)\nAssignment 5: Deep \\(k\\)-Means (10/10)\nPresentation: YUN, S. et al. Graph Transformer Networks. In: NeurIPS, 2019. [pdf] [slides]\nAll notebooks were ran on Google Colab.\nThe repository also contains the cheatsheets folder with some useful concepts of Deep Learning I have written down during the course.\n\n\n\nCitationBibTeX citation:@online{lamarca2023,\n  author = {Lamarca, Felipe and Carolina Erthal, Ana},\n  title = {Deep {Learning}},\n  date = {2023-12-05},\n  url = {https://github.com/felipelmc/Deep-Learning},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nLamarca, Felipe, and Ana Carolina Erthal. 2023. “Deep\nLearning.” December 5, 2023. https://github.com/felipelmc/Deep-Learning."
+    "text": "AtlasIntel provides advanced data products for political intelligence and economic forecasting.\n\n\n\nMAPE is the Policy and Election Monitoring and Evaluation Laboratory. We are dedicated to studying public policies, elections, and their connections. Our goal is to improve academic production on the subject and to have a decisive impact on public debate. In particular, we combine different methodologies to study policies and elections, including causal inference techniques and machine learning.\nIf you think I can help you in any way, please reach out at felipe.lamarca@hotmail.com."
   },
   {
-    "objectID": "projects/projects.html",
-    "href": "projects/projects.html",
-    "title": "⚙Projects",
+    "objectID": "my-work/my-work.html#current-roles",
+    "href": "my-work/my-work.html#current-roles",
+    "title": "👨🏻‍💻 My work",
     "section": "",
-    "text": "SciELO-Summarizer\n\n\n\nComputational Social Sciences\n\nDeep Learning\n\n\n\nSciELO-Summarizer consists of a summarizer for scientific articles in Portuguese. It scrapes the content of the article from the SciELO website and generates a personalized summary for the user using Large Language Models (LLMs), especifically Llama3.\n\n\n\n\n\nJul 15, 2024\n\n\nFelipe Lamarca, Claudia Fernandes, Daniel Zacarias, Gabriellen Carmo, Lauriano Benazzi, Marcelle Amaral, Talita Ribeiro\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Learning\n\n\n\nDeep Learning\n\n\n\nAssignments and presentation developed in the scope of the Deep Learning discipline, taught by Professor Dário Oliveira (FGV EMAp). Co-authored with @anacarolerthal, whom I thank for the ongoing partnership.\n\n\n\n\n\nDec 5, 2023\n\n\nFelipe Lamarca, Ana Carolina Erthal\n\n\n\n\n\n\n\n\n\n\n\n\nDataGrid\n\n\n\nAlgorithms\n\n\n\nImplementation of search, sorting & selection algorithms to build an efficient datagrid. Project developed within the scope of the Algorithm Design and Analysis discipline, lectured by Professor Thiago Pinheiro de Araújo (FGV EMAp).\n\n\n\n\n\nOct 18, 2023\n\n\nFelipe Lamarca, Cristiano Larréa\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Modeling\n\n\n\nStatistics\n\nComputational Social Sciences\n\n\n\nThis repository gathers the data, scripts, and analyses conducted for the final project of the Statistical Modeling course, taught by Professor Luiz Max Fagundes de Carvalho (FGV EMAp) (@maxbiostat). The objective was to apply modeling, inference, and prediction techniques, learned throughout this course and the Statistical Inference course, to real-world data.\n\n\n\n\n\nJul 15, 2023\n\n\nFelipe Lamarca\n\n\n\n\n\n\n\n\n\n\n\n\nMachine Learning\n\n\n\nMachine Learning\n\nStatistics\n\n\n\nThis repository contains all the assignments and the project I did for the Machine Learning course at the School of Applied Mathematics of the Getulio Vargas Foundation (FGV EMAp). The course was taught by Professor Diego Mesquita.\n\n\n\n\n\nJul 5, 2023\n\n\nFelipe Lamarca\n\n\n\n\n\n\n\n\n\n\n\n\nData Visualization\n\n\n\nData Visualization\n\n\n\nRepository where I keep all the assignments and projects developed in the scope of the Data Visualization discipline, taught by Professor Jorge Poco (@jpocom) (FGV EMAp).\n\n\n\n\n\nJun 30, 2023\n\n\nFelipe Lamarca, Ana Carolina Erthal, Guilherme de Melo\n\n\n\n\n\nNo matching items"
+    "text": "AtlasIntel provides advanced data products for political intelligence and economic forecasting.\n\n\n\nMAPE is the Policy and Election Monitoring and Evaluation Laboratory. We are dedicated to studying public policies, elections, and their connections. Our goal is to improve academic production on the subject and to have a decisive impact on public debate. In particular, we combine different methodologies to study policies and elections, including causal inference techniques and machine learning.\nIf you think I can help you in any way, please reach out at felipe.lamarca@hotmail.com."
   },
   {
-    "objectID": "projects/statistical-modeling/index.html",
-    "href": "projects/statistical-modeling/index.html",
-    "title": "Statistical Modeling",
-    "section": "",
-    "text": "I chose to analyze the electoral dynamics for the position of federal deputy in the 2022 elections. Specifically, I explore multilevel (hierarchical) models, logistic regression, and model evaluation methods, such as AUC, AIC, accuracy, and \\(R^2\\). Additionally, I engage with part of the Political Science literature that uses Statistical Modeling techniques to extract information about Brazilian elections.\nThis work resulted in this report, the summary of which is as follows:"
+    "objectID": "my-work/my-work.html#research-academia",
+    "href": "my-work/my-work.html#research-academia",
+    "title": "👨🏻‍💻 My work",
+    "section": "🧪 Research & Academia",
+    "text": "🧪 Research & Academia\n\n📍 Research Assistant @ FGV EBAPE (02/2025 – 04/2025)\nWorked on digitizing and systematizing historical election results using OCR and LLMs. Supervised by Prof. Cesar Zucco, Ph.D.\n\n\n📍 Junior Research Fellow @ FGV CPDOC (06/2019 – 09/2022)\nSupported by an FGV/CNPq scholarship, I examined Executive-Legislative relations in the early 20th century using qualitative and quantitative methods. Supervised by Prof. Jaqueline Porto Zulini, Ph.D.\n\n\n📍 Data Science Consultant @ CEBRAP (10/2024 – 02/2025)\nContributed to the Center for Critical Imagination project with OCR and LLM techniques. Assisted Prof. José Szwako, Ph.D."
   },
   {
-    "objectID": "projects/statistical-modeling/index.html#about-the-project",
-    "href": "projects/statistical-modeling/index.html#about-the-project",
-    "title": "Statistical Modeling",
-    "section": "",
-    "text": "I chose to analyze the electoral dynamics for the position of federal deputy in the 2022 elections. Specifically, I explore multilevel (hierarchical) models, logistic regression, and model evaluation methods, such as AUC, AIC, accuracy, and \\(R^2\\). Additionally, I engage with part of the Political Science literature that uses Statistical Modeling techniques to extract information about Brazilian elections.\nThis work resulted in this report, the summary of which is as follows:"
+    "objectID": "my-work/my-work.html#industry-consulting",
+    "href": "my-work/my-work.html#industry-consulting",
+    "title": "👨🏻‍💻 My work",
+    "section": "💼 Industry & Consulting",
+    "text": "💼 Industry & Consulting\n\n📍 Consultant in Data Science & Research (07/2024 – 06/2025)\nProvided end-to-end data and AI solutions (ETL, ML, Generative AI, RAG), research support, and training.\nSelected projects:\n\n📌 Artplan: Deep Learning for social media segmentation\n\n📌 Fundação Roberto Marinho: AWS data lake, dashboards (Streamlit & Power BI), Python/ML training\n\n📌 Plataforma CIPÓ: Training in ML and data analysis\n\n📌 GENI/UFF: LLM and RAG-based tools for document analysis\n\n\n\n📍 Data Scientist & Researcher @ Instituto Rio21 (04/2022 – 06/2025)\nLed and analyzed opinion polls, including the Municipal Management Assessment Survey and Election Polls. Supported Aliança Centro-Rio with actionable intelligence from conservation and security data."
   },
   {
-    "objectID": "projects/statistical-modeling/index.html#who-wants-to-be-a-deputy-a-multilevel-analysis-of-the-2022-elections-for-the-chamber-of-deputies",
-    "href": "projects/statistical-modeling/index.html#who-wants-to-be-a-deputy-a-multilevel-analysis-of-the-2022-elections-for-the-chamber-of-deputies",
-    "title": "Statistical Modeling",
-    "section": "Who Wants to Be a Deputy? A Multilevel Analysis of the 2022 Elections for the Chamber of Deputies",
-    "text": "Who Wants to Be a Deputy? A Multilevel Analysis of the 2022 Elections for the Chamber of Deputies\nWhat increases a candidate’s chances of being elected? The specialized Political Science literature has sought to answer this question through various approaches over time. This work provides a statistical analysis of the 2022 electoral data to evaluate what impacts the chances of federal deputy candidates being elected in Brazil. Statistical modeling techniques are applied, including multilevel logistic regression models and metrics for evaluating the explanatory and predictive capacity of models. The results suggest that campaign expenditures, with variations between parties, account for a significant portion of the results at the polls.\nKeywords: Legislative Elections; Logistic Regression; Multilevel Models; Model Evaluation.\nThe work has been completed and received the highest grade."
+    "objectID": "my-work/my-work.html#internships-student-roles",
+    "href": "my-work/my-work.html#internships-student-roles",
+    "title": "👨🏻‍💻 My work",
+    "section": "📚 Internships & Student Roles",
+    "text": "📚 Internships & Student Roles\n\n📍 Data Science Intern @ Strategic Planning, FGV (10/2024 – 12/2024)\nIntegrated advanced Generative AI techniques into institutional data pipelines, identifying opportunities for automation and process improvement. I also prepared presentations for C-level executives, including the President of FGV.\n\n\n\n📍 Part-time Data Scientist @ Visagio (01/2024 – 06/2024)\nWorked on optimization, pricing, SQL pipelines, and KPI dashboards using Power BI. Delivered insights to senior leadership."
+  },
+  {
+    "objectID": "my-work/my-work.html#references",
+    "href": "my-work/my-work.html#references",
+    "title": "👨🏻‍💻 My work",
+    "section": "📞 References",
+    "text": "📞 References\n\n\n\n\n\n\n\n\nName\nInstitution\nEmail\n\n\n\n\nProf. Jaqueline Zulini, Ph. D.\nSchool of Social Sciences (FGV CPDOC)\njaqueline dot zulini at fgv dot br\n\n\nProf. Luiz Max Carvalho, Ph. D.\nSchool of Applied Mathematics (FGV EMAp)\nluiz dot fagundes at fgv dot br\n\n\nProf. Renato Rocha Souza, Ph. D.\nUniversity of Vienna\nrenato dot rocha dot souza at univie dot ac dot at\n\n\nProf. Danielle Sanches, Ph. D.\nSchool of Communication, Media and Information (FGV ECMI)\ndanielle dot sanches at fgv dot br\n\n\nProf. Jimmy Medeiros, Ph. D.\nSchool of Social Sciences (FGV CPDOC)\njimmy dot medeiros at fgv dot br"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Felipe Lamarca",
+    "section": "",
+    "text": "Welcome!👋🏼\nI’m a data scientist with a degree from the School of Applied Mathematics (FGV EMAp) and a social scientist with a degree from the School of Social Sciences (FGV CPDOC). Currently, I’m pursuing a Master’s degree in Political Science at the Institute of Social and Political Studies (IESP-UERJ).\nI work as a data scientist at AtlasIntel and do research at the Policy and Election Monitoring and Evaluation Laboratory (MAPE).\n\nMy interests include Statistical Modeling, Machine Learning, Deep Learning, and Computational Social Sciences. I also have experience in GenAI applications, survey methods, and ETL pipelines (SQL and NoSQL).\n📧 felipe.lamarca@hotmail.com"
+  },
+  {
+    "objectID": "blog/blog.html",
+    "href": "blog/blog.html",
+    "title": "📬Blog",
+    "section": "",
+    "text": "Science and Statistics: a brief review\n\n\n\nStatistics\n\nScience\n\n\n\nAll models are wrong; some are useful. But why is that? In this article, I review Box’s (1976) paper on the iterative process of scientific knowledge production.\n\n\n\n\n\nSep 19, 2024\n\n\nFelipe Lamarca\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "blog/box_1976/index.html",
+    "href": "blog/box_1976/index.html",
+    "title": "Science and Statistics: a brief review",
+    "section": "",
+    "text": "In practically all disciplines across different fields of Science — Natural, Exact, or Social — one of the most fundamental discussions debated by scholars is the conceptualization of the discipline in question. In other words, it is a process of identification in order to apply. To conduct research in Statistics, one must know what Statistics is; to produce a historiographical work, one must know what History is, and so on. The task of defining a discipline, however, is not trivial, and more importantly: given a definition, it is certainly not unique, uncontested, or static. This is precisely why, over time, new methods of producing scientific knowledge are suggested and executed.\nThe article Science and Statistics (Box 1976) may, at first glance, seem like an uninteresting digression on how Ronald Fisher (1890-1962) contributed to the evolution of Statistics, in particular, and Science in general, through the methods he developed and improved. On the other hand, a more attentive reading reveals that Box (1976) actually presents his ideal view of how scientific knowledge should be produced1: “[…] not by mere theoretical speculation on one hand, nor by the undirected accumulation of practical facts on the other, but rather a motivated iteration between theory and practice […]” (Box 1976, 791).\nScientific practice, therefore, is understood by Box (1976) as a kind of loop, or a tentative theory. The researcher analyzes the available theory, makes deductions from it, and compares them to the facts — or data — that can be accessed. These two pieces of information, of distinct natures, do not necessarily converge, so the theory needs to be adjusted to explain a certain phenomenon. This new theory is compared to the facts again and so on, in a literally iterative process. The question is, therefore, the following: the confrontation between facts and theory produces errors, which imply the need to reassess one or the other element.\nThat is why “[…] all models are wrong […].” (Box 1976, 792). Naturally, all models are wrong because scientific practice results from a continuous comparison between theory and practice, so no matter how much a scientist elaborates their model in advance, it will likely need to be adapted when confronted with the factual. Box (1976), in this regard, refers to the fact that, in practice, there are no normal distributions or linearity in nature. That is, even though they are incorrect models (because they do not precisely correspond to what is found in nature), they are still useful for making approximations of what is found in the real world, as the result comes from the iteration between theory and practice. From a statistician’s point of view, the iterative process develops through a stage in which the scientist chooses the best statistical procedures to analyze the data and supports the model; in the next stage, after the analysis, they assume that the model contains errors and apply a series of residual analyses to improve it, and so on.\nThe examples based on a brief biography of Fisher serve, in practice, to illustrate the “best practices” of acquiring scientific knowledge. They focus on Fisher’s initial concern with solving some practical problem of scientific relevance and highlight Box (1976)’s ideal regarding scientific practice: one must not lose sight of the real problem to which certain statistical knowledge is being applied or even developed. Hence, the critiques of Mathematistry2, which is often disconnected from practical issues. It thus reinforces the importance of statisticians who can combine and confront theory and practice to, in fact, produce scientific knowledge."
+  },
+  {
+    "objectID": "blog/box_1976/index.html#footnotes",
+    "href": "blog/box_1976/index.html#footnotes",
+    "title": "Science and Statistics: a brief review",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIn his argument, the author addresses Science in general. Ultimately, we must keep in mind that this proposition does not necessarily encompass all scientific disciplines. Nevertheless, we know that his concern is with the Exact Sciences in general, especially Statistics.↩︎\n“Mathematistry is characterized by development of theory for theory’s sake which since it seldom touches down with practice, has a tendency to redefine the problem rather than solve it.” (Box 1976, 798).↩︎"
+  },
+  {
+    "objectID": "learning/learning.html",
+    "href": "learning/learning.html",
+    "title": "📚 Learning",
+    "section": "",
+    "text": "Numerical Linear Algebra (FGV EMAp, 2023.1, Undergraduate)\nSolving linear systems with numerical stability and efficiency.\n🔗 GitHub\nMachine Learning (FGV EMAp, 2024.1, Undergraduate)\nProbabilistic machine learning, mixture models, and approximate Bayesian inference.\n🔗 GitHub\nDeep Learning (FGV EMAp, 2024.2, Undergraduate)\nFoundations of NN, CNNs, LSTMs, GANs, Transformers, transfer learning, and autoencoders.\n🔗 GitHub\n\nPesquisa de Survey (Survey Research) (IESP-UERJ, 2024.1, Graduate)\nTotal survey error paradigm, sampling, questionnaire design, post-stratification.\n🔗 GitHub · 🌐 Website\nLego I (IESP-UERJ, 2024.1, Graduate)\nQuantitative social science: data analysis, research design, probability, inference.\n🔗 GitHub · 🌐 Website"
+  },
+  {
+    "objectID": "learning/learning.html#repositories",
+    "href": "learning/learning.html#repositories",
+    "title": "📚 Learning",
+    "section": "",
+    "text": "Numerical Linear Algebra (FGV EMAp, 2023.1, Undergraduate)\nSolving linear systems with numerical stability and efficiency.\n🔗 GitHub\nMachine Learning (FGV EMAp, 2024.1, Undergraduate)\nProbabilistic machine learning, mixture models, and approximate Bayesian inference.\n🔗 GitHub\nDeep Learning (FGV EMAp, 2024.2, Undergraduate)\nFoundations of NN, CNNs, LSTMs, GANs, Transformers, transfer learning, and autoencoders.\n🔗 GitHub\n\nPesquisa de Survey (Survey Research) (IESP-UERJ, 2024.1, Graduate)\nTotal survey error paradigm, sampling, questionnaire design, post-stratification.\n🔗 GitHub · 🌐 Website\nLego I (IESP-UERJ, 2024.1, Graduate)\nQuantitative social science: data analysis, research design, probability, inference.\n🔗 GitHub · 🌐 Website"
+  },
+  {
+    "objectID": "learning/learning.html#workshops-training",
+    "href": "learning/learning.html#workshops-training",
+    "title": "📚 Learning",
+    "section": "🛠 Workshops & Training",
+    "text": "🛠 Workshops & Training\n[July 2024] SICSS: Summer Institute in Computational Social Science\nCollaborated with international researchers on CSS projects during a two-week program at FGV.\n[July 2024] ML4Good Bootcamp\nTen-day intensive on AI Safety, alignment, and responsible development."
+  },
+  {
+    "objectID": "news/news.html",
+    "href": "news/news.html",
+    "title": "📰News",
+    "section": "",
+    "text": "February 27, 2025\nI received the Professor Carlos Eduardo Sarmento Academic Distinction Award from the School of Social Sciences at Fundação Getulio Vargas (FGV CPDOC) for achieving the highest academic performance among the 2025 graduates of the CPDOC undergraduate program! 😃🎓\nDecember 13, 2024\nI have been accepted to pursue a Master’s degree in Applied Mathematics and Data Science at the School of Applied Mathematics (FGV EMAp). Even though I’m not accepting the offer, I’m very grateful for the opportunity and excited to continue my journey in Political Science at IESP-UERJ.\nNovember 26, 2024\nI have successfully delivered my undergraduate thesis, marking the official completion of my dual degrees in Data Science & Artificial Intelligence from the School of Applied Mathematics (FGV EMAp) and Social Sciences from the Superior School of Social Sciences (FGV CPDOC). I’m very grateful for the support of my family, friends, and advisors throughout this journey, which I’m very proud of.\nNovember 21, 2024\nI have been accepted in the first position to pursue a Master’s degree in Political Science at the Institute of Social and Political Studies (IESP-UERJ), starting in March 2025. This opportunity will allow me to contribute to impactful research, particularly in the application of Data Science and AI to the field."
+  },
+  {
+    "objectID": "projects/datagrid/index.html",
+    "href": "projects/datagrid/index.html",
+    "title": "DataGrid",
+    "section": "",
+    "text": "The DataGrid class is specifically designed to work with datasets that follow the structure below:\n\n\n\nColumn\nData Type\nSearch Type\nExtra\n\n\n\n\nid\ninteger\nexact\nunique\n\n\nowner_id\nstring\nexact\nExactly 5 alphanumeric characters\n\n\ncreation_date\nstring\nrange\nFormat: YYYY-MM-DD hh:mm:ss\n\n\ncount\ninteger\nrange\n\n\n\nname\nstring\ncontains\nMaximum length of 20 characters\n\n\ncontent\nstring\ncontains\n\n\n\n\nEach record in the DataGrid is considered an Event.\nTo initialize the DataGrid class, simply import the module and instantiate the class. Make sure your script can access the folder where the DataGrid module is located, for example:\nimport sys\nsys.path.append('src/')\n\nfrom datagrid import DataGrid\nInitialize the DataGrid class with:\ndatagrid = DataGrid()\nThe DataGrid class has the following methods:\n\nread_csv(file, sep = ',', encoding = 'utf-8'): populates the DataGrid from the data in the CSV file whose path is provided as a parameter, considering the specified separator and encoding;\nshow(start=0, end=100, prints = False, returns = True): displays the entries in the DataGrid, limiting the display to the range defined by the parameters. returns=True returns the list of Event objects between start and end, and prints=True shows the content of these objects. It displays the table in its current sorted state.\ninsert_row(row): inserts new events into the DataGrid. It takes a dictionary containing the data of the event to be inserted and creates an Event instance from this data. The dictionary must have the column names as keys and the data to be inserted as values, following the structure described in the table above.\ndelete_row(column, value): removes events from the DataGrid. It takes the name of the column and the value to search for in that column. It removes all events that have the searched value in the specified column. If column = 'positions', it removes elements based on their position (index) in the table. In this case, value can be either a range identified by a tuple (start, end) or a single positive integer.\nsearch(column, value): searches for events in the DataGrid. It takes the name of the column and the value to search for in that column. It returns a list of Event objects that contain the searched value in the specified column.\nsort(column, direction = 'asc'): sorts the DataGrid. It takes the name of the column and the sorting direction. To sort in descending order, simply pass direction = 'desc'.\nselect_count(i, j, how = 'median-of-medians'): returns the list of Event objects between positions i and j in the table, considering the count column sorted in ascending order. This operation does not alter the internal structure of the DataGrid. It is also possible to pass the parameter how = 'quickselect' or how = 'heapsort' to choose which algorithm will be used to perform the operation.\n\nThe file demo.ipynb contains an example of how to use the DataGrid class with data randomly generated by the file dataGenerator.py. The comments on the operations performed in the notebook refer to the results obtained using the file fake_data_100.csv, which contains 100 rows."
+  },
+  {
+    "objectID": "projects/datagrid/index.html#user-guide",
+    "href": "projects/datagrid/index.html#user-guide",
+    "title": "DataGrid",
+    "section": "",
+    "text": "The DataGrid class is specifically designed to work with datasets that follow the structure below:\n\n\n\nColumn\nData Type\nSearch Type\nExtra\n\n\n\n\nid\ninteger\nexact\nunique\n\n\nowner_id\nstring\nexact\nExactly 5 alphanumeric characters\n\n\ncreation_date\nstring\nrange\nFormat: YYYY-MM-DD hh:mm:ss\n\n\ncount\ninteger\nrange\n\n\n\nname\nstring\ncontains\nMaximum length of 20 characters\n\n\ncontent\nstring\ncontains\n\n\n\n\nEach record in the DataGrid is considered an Event.\nTo initialize the DataGrid class, simply import the module and instantiate the class. Make sure your script can access the folder where the DataGrid module is located, for example:\nimport sys\nsys.path.append('src/')\n\nfrom datagrid import DataGrid\nInitialize the DataGrid class with:\ndatagrid = DataGrid()\nThe DataGrid class has the following methods:\n\nread_csv(file, sep = ',', encoding = 'utf-8'): populates the DataGrid from the data in the CSV file whose path is provided as a parameter, considering the specified separator and encoding;\nshow(start=0, end=100, prints = False, returns = True): displays the entries in the DataGrid, limiting the display to the range defined by the parameters. returns=True returns the list of Event objects between start and end, and prints=True shows the content of these objects. It displays the table in its current sorted state.\ninsert_row(row): inserts new events into the DataGrid. It takes a dictionary containing the data of the event to be inserted and creates an Event instance from this data. The dictionary must have the column names as keys and the data to be inserted as values, following the structure described in the table above.\ndelete_row(column, value): removes events from the DataGrid. It takes the name of the column and the value to search for in that column. It removes all events that have the searched value in the specified column. If column = 'positions', it removes elements based on their position (index) in the table. In this case, value can be either a range identified by a tuple (start, end) or a single positive integer.\nsearch(column, value): searches for events in the DataGrid. It takes the name of the column and the value to search for in that column. It returns a list of Event objects that contain the searched value in the specified column.\nsort(column, direction = 'asc'): sorts the DataGrid. It takes the name of the column and the sorting direction. To sort in descending order, simply pass direction = 'desc'.\nselect_count(i, j, how = 'median-of-medians'): returns the list of Event objects between positions i and j in the table, considering the count column sorted in ascending order. This operation does not alter the internal structure of the DataGrid. It is also possible to pass the parameter how = 'quickselect' or how = 'heapsort' to choose which algorithm will be used to perform the operation.\n\nThe file demo.ipynb contains an example of how to use the DataGrid class with data randomly generated by the file dataGenerator.py. The comments on the operations performed in the notebook refer to the results obtained using the file fake_data_100.csv, which contains 100 rows."
+  },
+  {
+    "objectID": "projects/datagrid/index.html#random-data-generation",
+    "href": "projects/datagrid/index.html#random-data-generation",
+    "title": "DataGrid",
+    "section": "Random Data Generation",
+    "text": "Random Data Generation\nIf you want to generate random data to test the DataGrid module, simply run the file dataGenerator.py. Remember to adjust the value(s) in the n list at the end of the file to define how many files you want to generate and how many rows each should contain."
+  },
+  {
+    "objectID": "projects/machine-learning/index.html",
+    "href": "projects/machine-learning/index.html",
+    "title": "Machine Learning",
+    "section": "",
+    "text": "Nearest Neighbours Method (\\(k\\)-NN) (10/10)\nLinear Regression (8.5/10)\nLogistic Regression and Approximate Bayesian Inference (10/10)\nSelection of Models and Hyperparameters (9.25/10)\nGaussian Processes for Regression (10/10)\nNeural Networks (10/10)\nDimensionality Reduction (10/10)\nK-means and Mixture models (8.5/10)"
+  },
+  {
+    "objectID": "projects/machine-learning/index.html#assignments",
+    "href": "projects/machine-learning/index.html#assignments",
+    "title": "Machine Learning",
+    "section": "",
+    "text": "Nearest Neighbours Method (\\(k\\)-NN) (10/10)\nLinear Regression (8.5/10)\nLogistic Regression and Approximate Bayesian Inference (10/10)\nSelection of Models and Hyperparameters (9.25/10)\nGaussian Processes for Regression (10/10)\nNeural Networks (10/10)\nDimensionality Reduction (10/10)\nK-means and Mixture models (8.5/10)"
+  },
+  {
+    "objectID": "projects/machine-learning/index.html#final-project",
+    "href": "projects/machine-learning/index.html#final-project",
+    "title": "Machine Learning",
+    "section": "Final Project",
+    "text": "Final Project\nThe final project was co-authored by Ana Carolina Erthal, Guilherme de Melo and Bernardo Vargas. The project implements a way of comparing Conformal Prediction with traditional machine learning approaches to generate confidence intervals."
+  },
+  {
+    "objectID": "projects/scielo-summarizer/index.html",
+    "href": "projects/scielo-summarizer/index.html",
+    "title": "SciELO-Summarizer",
+    "section": "",
+    "text": "SciELO-Summarizer consists of a summarizer for scientific articles in Portuguese. It scrapes the content of the article from the SciELO website and generates a personalized summary for the user using Large Language Models (LLMs), especifically Llama3.\nTo run the project locally, you need to have both Python 3.8 or higher and Llama3 installed. It is also possible to run the project on Google Colab, following this link.\nThe program was developed during the Summer Institute in Computational Social Sciences (SICSS) 2024, hosted by FGV ECMI, Brazil, in July 2024."
+  },
+  {
+    "objectID": "projects/scielo-summarizer/index.html#about-the-project",
+    "href": "projects/scielo-summarizer/index.html#about-the-project",
+    "title": "SciELO-Summarizer",
+    "section": "",
+    "text": "SciELO-Summarizer consists of a summarizer for scientific articles in Portuguese. It scrapes the content of the article from the SciELO website and generates a personalized summary for the user using Large Language Models (LLMs), especifically Llama3.\nTo run the project locally, you need to have both Python 3.8 or higher and Llama3 installed. It is also possible to run the project on Google Colab, following this link.\nThe program was developed during the Summer Institute in Computational Social Sciences (SICSS) 2024, hosted by FGV ECMI, Brazil, in July 2024."
+  },
+  {
+    "objectID": "publications/publications.html",
+    "href": "publications/publications.html",
+    "title": "🗃Publications",
+    "section": "",
+    "text": "📄 As relações Executivo-Legislativo na Primeira República: uma análise das mensagens presidenciais ao Congresso (1910-1920). Mosaico. 2021.\n🌐 Access link\n\n\n\n📄 Fatores explicativos do apoio ou rejeição à criação de uma política municipal de renda básica: modelando a percepção dos cariocas. 2025.\nJoint work with Jimmy Medeiros (FGV CPDOC), Antônio Mariano (FGV CPDOC), and Philippe Chaves Guedon (FGV CPDOC)."
+  },
+  {
+    "objectID": "publications/publications.html#papers",
+    "href": "publications/publications.html#papers",
+    "title": "🗃Publications",
+    "section": "",
+    "text": "📄 As relações Executivo-Legislativo na Primeira República: uma análise das mensagens presidenciais ao Congresso (1910-1920). Mosaico. 2021.\n🌐 Access link\n\n\n\n📄 Fatores explicativos do apoio ou rejeição à criação de uma política municipal de renda básica: modelando a percepção dos cariocas. 2025.\nJoint work with Jimmy Medeiros (FGV CPDOC), Antônio Mariano (FGV CPDOC), and Philippe Chaves Guedon (FGV CPDOC)."
+  },
+  {
+    "objectID": "publications/publications.html#open-source-tools",
+    "href": "publications/publications.html#open-source-tools",
+    "title": "🗃Publications",
+    "section": "Open-source tools",
+    "text": "Open-source tools\n💻 mape_municipios-dashboard: a dashboard to interact with one of the most complete databases with information on Brazilian municipalities, collected by MAPE. 2025.\nJoint work with Fernando Meireles (IESP-UERJ).\n🔗 Source code · 🌐 Access link\n💻 RelicárIA: a digital platform that combines AI and data analysis to extract and visualize information from documents. 2025.\nJoint work with Danielle Sanches de Almeida (FGV ECMI).\n🔗 Source code · 🌐 Access link\n💻 BoticárIA: a RAG-based conversational AI that simulates an 18th-century apothecary, providing information on medicinal practices based on historical pharmacological sources from the late 18th century. 2025.\nJoint work with Danielle Sanches de Almeida (FGV ECMI).\n🔗 Source code · 🌐 Access link"
   }
 ]

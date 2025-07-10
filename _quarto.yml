@@ -16,6 +16,8 @@ website:
         text: publications
       - href: learning/learning.qmd
         text: learning
+      - href: teaching/teaching.qmd
+        text: teaching
       # - href: blog/blog.qmd
       #   text: blog
       # - href: news/news.qmd

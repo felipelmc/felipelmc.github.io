@@ -1,11 +1,5 @@
 [
   {
-    "listing": "/blog/blog.html",
-    "items": [
-      "/blog/box_1976/index.html"
-    ]
-  },
-  {
     "listing": "/projects/projects.html",
     "items": [
       "/projects/scielo-summarizer/index.html",
@@ -14,6 +8,12 @@
       "/projects/statistical-modeling/index.html",
       "/projects/machine-learning/index.html",
       "/projects/data-visualization/index.html"
+    ]
+  },
+  {
+    "listing": "/blog/blog.html",
+    "items": [
+      "/blog/box_1976/index.html"
     ]
   }
 ]

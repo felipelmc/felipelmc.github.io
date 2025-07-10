@@ -8,66 +8,62 @@ subtitle: "What I have been doing lately and what I have done in the past"
 #### **Data Scientist** @ [AtlasIntel](https://atlasintel.org/)
 AtlasIntel provides advanced data products for political intelligence and economic forecasting.
 
-#### **Researcher** @ [MAPE](https://mape.org.br/)
-MAPE is dedicated to studying public policies, elections, and their connections. Our goal is to improve academic production on the subject and to have a decisive impact on public debate. In particular, we combine different methodologies to study policies and elections, including causal inference techniques and machine learning.
+#### **Researcher** @ [MAPE](https://mape.org.br/) (IESP-UERJ)
+MAPE is the Policy and Election Monitoring and Evaluation Laboratory. We are dedicated to studying public policies, elections, and their connections. Our goal is to improve academic production on the subject and to have a decisive impact on public debate. In particular, we combine different methodologies to study policies and elections, including causal inference techniques and machine learning.
 
 If you think I can help you in any way, please reach out at [felipe.lamarca@hotmail.com](mailto:felipe.lamarca@hotmail.com).
 
 ---
 
-## 📁 Past Work
+## 🧪 Research & Academia
 
-#### 📍 **Consultant in Data Science & Research** (07/2024 – 06/2025)
-Provided end-to-end data and AI solutions (ETL, ML, Generative AI, RAG), research support, and training.
+#### 📍 **Research Assistant** @ [FGV EBAPE](https://ebape.fgv.br/en) (02/2025 – 04/2025)  
+Worked on digitizing and systematizing historical election results using OCR and LLMs. Supervised by Prof. [Cesar Zucco](https://professor.fgv.br/ebape/cesar-zucco), Ph.D.
 
-**Selected consulting projects:**
+#### 📍 **Junior Research Fellow** @ [FGV CPDOC](https://cpdoc.fgv.br/en) (06/2019 – 09/2022)  
+Supported by an FGV/CNPq scholarship, I examined Executive-Legislative relations in the early 20th century using qualitative and quantitative methods. Supervised by Prof. [Jaqueline Porto Zulini](https://cpdoc.fgv.br/equipe/jaquelinezulini), Ph.D.
 
-- 📌 [Artplan](https://artplan.com.br/): Deep Learning for social media segmentation
-- 📌 [Fundação Roberto Marinho](https://www.frm.org.br/): AWS data lake, dashboards (Streamlit and Power BI), Python/ML training
-- 📌 [CEBRAP](https://cebrap.org.br/): OCR, LLMs, and quantitative research support for Prof. José Szwako
-- 📌 [Plataforma CIPÓ](https://plataformacipo.org/): Training in ML and data analysis
-- 📌 [GENI/UFF](https://geni.uff.br/): Built LLM and RAG-based data tools
-
-#### 📍 **Data Scientist & Researcher** @ [Instituto Rio21](https://rio21.org/) (04/2022 – 06/2025)
-I conducted quantitative research such as opinion polls and other surveys such as the [[Municipal Management Assessment Survey]](https://drive.google.com/file/d/1nUVQnHgi2kvHHau5rcxC-5DzTkeuOk75/view?usp=sharing) and [[Election Polls]](https://drive.google.com/file/d/1Q1y1tIzLF4i6bh9W0K6SvRm_XvSt4ISr/view?usp=sharing). I also collaborated with [Aliança CentroRio](https://alianca-cidade.org/) to transform citywide conservation and security data into actionable intelligence.
-
-#### 📍 **Research Assistant** @ [FGV EBAPE](https://ebape.fgv.br/en) (02/2025 – 04/2025)
-I worked on a project to systematize databases for election results from the 1970s, using OCR and large language models to digitize and format historical documents. I worked under the supervision of Prof. [Cesar Zucco](https://professor.fgv.br/ebape/cesar-zucco), Ph.D.
-
-<!-- #### 📍 **Data Science Consultant** @ [Brazilian Center for Analysis and Planning (CEBRAP)](https://cebrap.org.br/) (10/2024 – 02/2025)
-I provided technical data analysis services—ranging from OCR techniques to language model applications—for the Center for Critical Imagination project under the supervision of Prof. José Szwako, Ph.D. -->
-
-#### 📍 **Data Science Intern** @ Strategic Planning Superintendence, FGV (10/2024 – 12/2024)
-I integrated advanced Generative AI techniques into institutional data pipelines, identifying opportunities for automation and process improvement. I also prepared presentations for C-level executives, including the President of FGV.
-
-#### 📍 **Part-time Data Scientist** @ [Visagio](https://visagio.com/en/home/) (01/2024 – 06/2024)
-I worked on optimization, pricing, A/B testing, and data pipeline automation with SQL. I developed Power BI dashboards and presented KPI-driven insights to senior management.
-
-#### 📍 **Student Consultant** @ [Brazilian Sailing Confederation](https://www.cbvela.org.br/) (08/2023 – 12/2023)
-I collaborated with colleagues to develop a ranking model for Brazilian sailors, integrating web scraping and machine learning to analyze regatta performance.
-
-#### 📍 **Junior Research Fellow** @ [FGV CPDOC](https://cpdoc.fgv.br/en) (06/2019 – 09/2022)
-Supported by an FGV/CNPq scholarship under the supervision of Prof. [Jaqueline Porto Zulini](https://cpdoc.fgv.br/equipe/jaquelinezulini), Ph.D., I examined Executive-Legislative relations in the early 20th century, applying both qualitative methods and introductory quantitative text analysis.
+#### 📍 **Data Science Consultant** @ [CEBRAP](https://cebrap.org.br/) (10/2024 – 02/2025)  
+Contributed to the Center for Critical Imagination project with OCR and LLM techniques. Assisted Prof. José Szwako, Ph.D.
 
 ---
 
-## 📚 Teaching Assistance
+## 💼 Industry & Consulting
 
-| Semester | Course                          | Institution      | Professor                                    |
-|----------|--------------------------------|------------------|----------------------------------------------|
-| 2024.2   | Quantitative Methods II        | FGV CPDOC        | [Jairo Nicolau](https://cpdoc.fgv.br/equipe/jaironicolau), Ph.D. |
-| 2020.2   | Introduction to R              | FGV CPDOC        | [Jimmy Medeiros](https://cpdoc.fgv.br/equipe/JimmyMedeiros), Ph.D. |
+#### 📍 **Consultant in Data Science & Research** (07/2024 – 06/2025)  
+Provided end-to-end data and AI solutions (ETL, ML, Generative AI, RAG), research support, and training.
 
-*(Previously, I also worked on “Digital Literacy” projects and translated materials for the [Programming Historian in Portuguese](https://programminghistorian.org/pt/) in partnership with Universidade Nova de Lisboa.)*
+**Selected projects:**
 
---- 
+- 📌 [Artplan](https://artplan.com.br/): Deep Learning for social media segmentation  
+- 📌 [Fundação Roberto Marinho](https://www.frm.org.br/): AWS data lake, dashboards (Streamlit & Power BI), Python/ML training  
+- 📌 [Plataforma CIPÓ](https://plataformacipo.org/): Training in ML and data analysis  
+- 📌 [GENI/UFF](https://geni.uff.br/): LLM and RAG-based tools for document analysis
+
+#### 📍 **Data Scientist & Researcher** @ [Instituto Rio21](https://rio21.org/) (04/2022 – 06/2025)  
+Led and analyzed opinion polls, including the [Municipal Management Assessment Survey](https://drive.google.com/file/d/1nUVQnHgi2kvHHau5rcxC-5DzTkeuOk75/view?usp=sharing) and [Election Polls](https://drive.google.com/file/d/1Q1y1tIzLF4i6bh9W0K6SvRm_XvSt4ISr/view?usp=sharing). Supported [Aliança Centro-Rio](https://alianca-cidade.org/) with actionable intelligence from conservation and security data.
+
+---
+
+## 📚 Internships & Student Roles
+
+#### 📍 **Data Science Intern** @ Strategic Planning, [FGV](https://portal.fgv.br/) (10/2024 – 12/2024)  
+Integrated advanced Generative AI techniques into institutional data pipelines, identifying opportunities for automation and process improvement. I also prepared presentations for C-level executives, including the President of FGV.
+
+<!-- #### 📍 **Student Consultant** @ [Brazilian Sailing Confederation](https://www.cbvela.org.br/) (08/2023 – 12/2023)  
+Built a ranking model using web scraping and ML to analyze regatta performance. -->
+
+#### 📍 **Part-time Data Scientist** @ [Visagio](https://visagio.com/en/home/) (01/2024 – 06/2024)  
+Worked on optimization, pricing, SQL pipelines, and KPI dashboards using Power BI. Delivered insights to senior leadership.
+
+---
 
 ## 📞 References
 
 | Name                      | Institution                           | Email                           |
-|---------------------------|--------------------------------------|---------------------------------|
-| Prof. Jaqueline Zulini, PhD | School of Social Sciences (FGV CPDOC) | jaqueline `dot` zulini `at` fgv `dot` br |
-| Prof. Luiz Max Carvalho, PhD | School of Applied Mathematics (FGV EMAp) | luiz `dot` fagundes `at` fgv `dot` br |
-| Prof. Renato Rocha Souza, PhD | University of Vienna | renato `dot` rocha `dot` souza `at` univie `dot` ac `dot` at |
-| Prof. Danielle Sanches, PhD | School of Communication, Media and Information (FGV ECMI) | danielle `dot` sanches `at` fgv `dot` br |
-| Prof. Jimmy Medeiros, PhD | School of Social Sciences (FGV CPDOC) | jimmy `dot` medeiros `at` fgv `dot` br |
+|---------------------------|----------------------------------------|---------------------------------|
+| Prof. Jaqueline Zulini, Ph. D. | School of Social Sciences (FGV CPDOC) | jaqueline `dot` zulini `at` fgv `dot` br |
+| Prof. Luiz Max Carvalho, Ph. D. | School of Applied Mathematics (FGV EMAp) | luiz `dot` fagundes `at` fgv `dot` br |
+| Prof. Renato Rocha Souza, Ph. D. | University of Vienna | renato `dot` rocha `dot` souza `at` univie `dot` ac `dot` at |
+| Prof. Danielle Sanches, Ph. D. | School of Communication, Media and Information (FGV ECMI) | danielle `dot` sanches `at` fgv `dot` br |
+| Prof. Jimmy Medeiros, Ph. D. | School of Social Sciences (FGV CPDOC) | jimmy `dot` medeiros `at` fgv `dot` br |
