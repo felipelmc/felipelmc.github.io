@@ -123,7 +123,7 @@
     "href": "index.html",
     "title": "Felipe Lamarca",
     "section": "",
-    "text": "Welcome!👋🏼\nI’m a data scientist with a degree from the School of Applied Mathematics (FGV EMAp) and a social scientist with a degree from the School of Social Sciences (FGV CPDOC). Currently, I’m pursuing a Master’s degree in Political Science at the Institute of Social and Political Studies (IESP-UERJ).\nI work as a data scientist at AtlasIntel and do research at the Policy and Election Monitoring and Evaluation Laboratory (MAPE).\n\nMy interests include Statistical Modeling, Machine Learning, Deep Learning, and Computational Social Sciences. I also have experience in GenAI applications, survey methods, and ETL pipelines (SQL and NoSQL).\n📧 felipe.lamarca@hotmail.com"
+    "text": "Welcome!👋🏼\nI’m a data scientist with a degree from the School of Applied Mathematics (FGV EMAp) and a social scientist with a degree from the School of Social Sciences (FGV CPDOC). Currently, I’m pursuing a Master’s degree in Political Science at the Institute of Social and Political Studies (IESP-UERJ).\nI work as a data scientist at AtlasIntel and do research at the Policy and Election Monitoring and Evaluation Laboratory (MAPE).\nMy research interests include political behavior, public policy, and the application of data science techniques to social science research. This broadly encompasses the use of machine learning, deep learning, causal inference, natural language processing, and survey methods to investigate political phenomena.\n📧 felipe.lamarca@hotmail.com"
   },
   {
     "objectID": "blog/blog.html",
@@ -249,6 +249,6 @@
     "href": "publications/publications.html#open-source-tools",
     "title": "🗃Publications",
     "section": "Open-source tools",
-    "text": "Open-source tools\n💻 mape_municipios-dashboard: a dashboard to interact with one of the most complete databases with information on Brazilian municipalities, collected by MAPE. 2025.\nJoint work with Fernando Meireles (IESP-UERJ).\n🔗 Source code · 🌐 Access link\n💻 RelicárIA: a digital platform that combines AI and data analysis to extract and visualize information from documents. 2025.\nJoint work with Danielle Sanches de Almeida (FGV ECMI).\n🔗 Source code · 🌐 Access link\n💻 BoticárIA: a RAG-based conversational AI that simulates an 18th-century apothecary, providing information on medicinal practices based on historical pharmacological sources from the late 18th century. 2025.\nJoint work with Danielle Sanches de Almeida (FGV ECMI).\n🔗 Source code · 🌐 Access link"
+    "text": "Open-source tools\n💻 mape_municipios_dashboard: a dashboard to interact with one of the most complete databases with information on Brazilian municipalities, collected by MAPE. 2025.\nJoint work with Fernando Meireles (IESP-UERJ).\n🔗 Source code · 🌐 Access link\n💻 RelicárIA: a digital platform that combines AI and data analysis to extract and visualize information from documents. 2025.\nJoint work with Danielle Sanches de Almeida (FGV ECMI).\n🔗 Source code · 🌐 Access link\n💻 BoticárIA: a RAG-based conversational AI that simulates an 18th-century apothecary, providing information on medicinal practices based on historical pharmacological sources from the late 18th century. 2025.\nJoint work with Danielle Sanches de Almeida (FGV ECMI).\n🔗 Source code · 🌐 Access link"
   }
 ]

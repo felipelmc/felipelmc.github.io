@@ -18,7 +18,7 @@ _Joint work with Jimmy Medeiros (FGV CPDOC), Antônio Mariano (FGV CPDOC), and P
 
 ## Open-source tools
 
-💻 `mape_municipios-dashboard`: a dashboard to interact with one of the most complete databases with information on Brazilian municipalities, collected by [MAPE](https://mape.org.br/). 2025.  
+💻 `mape_municipios_dashboard`: a dashboard to interact with one of the most complete databases with information on Brazilian municipalities, collected by [MAPE](https://mape.org.br/). 2025.  
 _Joint work with Fernando Meireles (IESP-UERJ)_.  
 🔗 [Source code](https://github.com/mape-iesp/MAPEmunicipios-Dashboard) · 🌐 [Access link](https://mape-municipios-dashboard.streamlit.app/)
 
