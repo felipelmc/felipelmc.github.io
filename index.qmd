@@ -27,6 +27,6 @@ I'm a data scientist with a degree from the [School of Applied Mathematics](http
 
 I work as a data scientist at [AtlasIntel](https://atlasintel.org/) and do research at the Policy and Election Monitoring and Evaluation Laboratory ([MAPE](https://mape.org.br/)).
 
-My research interests include political behavior, public policy, and the application of data science techniques to social science research. This broadly encompasses the use of machine learning, deep learning, causal inference, natural language processing, and survey methods to investigate political phenomena.
+My research interests include political behavior, public policy, and the application of data science techniques to social science research. This broadly encompasses the use of machine learning, deep learning, causal inference, and survey methods to investigate political phenomena.
 
 📧 [felipe.lamarca@hotmail.com](mailto:felipe.lamarca@hotmail.com)
