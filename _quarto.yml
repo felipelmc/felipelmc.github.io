@@ -22,8 +22,8 @@ website:
       #   text: blog
       # - href: news/news.qmd
       #   text: news
-      - href: https://drive.google.com/file/d/1dFBrI109flg6zSQHnFIxUd1DRfieCYAT/view?usp=sharing
-        text: cv
+      # - href: https://drive.google.com/file/d/1dFBrI109flg6zSQHnFIxUd1DRfieCYAT/view?usp=sharing
+      #   text: cv
         
 format:
   html:

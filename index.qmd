@@ -7,14 +7,17 @@ about:
           text: LinkedIn
           url: https://www.linkedin.com/in/felipe-lamarca/?locale=en_US
         - icon: github
-          text: GitHub
+          text: "GitHub"
           url: https://github.com/felipelmc
         - text: "📧 E-mail"
           url: mailto:felipe.lamarca@hotmail.com
-        - text: "CV 🇺🇸"
+        - icon: id-card
+          text: "📁 CV"
           url: https://drive.google.com/file/d/1dFBrI109flg6zSQHnFIxUd1DRfieCYAT/view?usp=sharing
-        - text: "CV 🇧🇷"
-          url: https://drive.google.com/file/d/1PyAD9OdwWBBxuCdZ41q9vJhcvGmp5qwf/view?usp=sharing
+#        - text: "CV 🇧🇷"
+#          url: https://drive.google.com/file/d/1PyAD9OdwWBBxuCdZ41q9vJhcvGmp5qwf/view?usp=sharing
+        - text: "Google Scholar"
+          url: "https://scholar.google.com.br/citations?user=xPf8_64AAAAJ&hl=pt-BR&oi=ao"
         - text: "Lattes"
           url: http://lattes.cnpq.br/2606938112682925
 image: img/profilepic/me_&_stochastic.png
