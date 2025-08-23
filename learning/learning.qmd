@@ -17,14 +17,6 @@ subtitle: "Selected repositories and workshops from my studies"
   _Foundations of NN, CNNs, LSTMs, GANs, Transformers, transfer learning, and autoencoders._  
   🔗 [GitHub](https://github.com/felipelmc/Deep-Learning)
 
-<!-- - **ML Algorithms from Scratch**  
-  _Implements foundational ML algorithms including regression, trees, neural nets, and clustering._  
-  🔗 [GitHub](https://github.com/felipelmc/MLAlgorithms-from-scratch)
-
-- **Data Visualization**  
-  _Visual storytelling using D3.js, Python, and Power BI._  
-  🔗 [GitHub](https://github.com/felipelmc/Data-Visualization) -->
-
 **Pesquisa de Survey (Survey Research)** (IESP-UERJ, 2025.1, Graduate)  
   _Total survey error paradigm, sampling, questionnaire design, post-stratification._  
   🔗 [GitHub](https://github.com/felipelmc/Survey-Research) · 🌐 [Website](https://felipelamarca.com/Survey-Research/)
@@ -33,9 +25,13 @@ subtitle: "Selected repositories and workshops from my studies"
   _Quantitative social science: data analysis, research design, probability, inference._  
   🔗 [GitHub](https://github.com/felipelmc/Lego-I) · 🌐 [Website](https://felipelamarca.com/Lego-I/)
 
-<!-- - **Teoria Política I**  
-  _From classical antiquity to early modern political thought._  
-  🔗 [GitHub](https://github.com/felipelmc/Political-Theory-I) · 🌐 [Website](https://felipelamarca.com/Political-Theory-I/) -->
+**Lego II** (IESP-UERJ, 2025.2, Graduate)  
+  _A deep dive into regression models._  
+  🔗 [GitHub](https://github.com/felipelmc/Lego-II) · 🌐 [Website](https://felipelamarca.com/Lego-II/)
+
+**Introdução aos Estudos Legislativos (Introduction to Legislative Studies)** (IESP-UERJ, 2025.2, Graduate)  
+  _An introduction to legislative behavior according to rational choice theory._  
+  🔗 [GitHub](https://github.com/felipelmc/Intro-Legislative-Studies/) · 🌐 [Website](https://felipelamarca.com/Intro-Legislative-Studies/)
 
 ---
 

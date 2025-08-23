@@ -1,62 +1,15 @@
 ---
 title: "👨🏻‍💻 My work"
-subtitle: "What I have been doing lately and what I have done in the past"
+subtitle: "What I have been doing lately"
 ---
-
-## 💼 Current Roles
 
 #### **Data Scientist** @ [AtlasIntel](https://atlasintel.org/)
-AtlasIntel provides advanced data products for political intelligence and economic forecasting.
+AtlasIntel provides advanced data products for political intelligence and economic forecasting. I'm currently working on calibrating survey samples, political analysis, public opinion monitoring, and improving internal data pipelines.
 
 #### **Researcher** @ [MAPE](https://mape.org.br/) (IESP-UERJ)
-MAPE is the Policy and Election Monitoring and Evaluation Laboratory. We are dedicated to studying public policies, elections, and their connections. Our goal is to improve academic production on the subject and to have a decisive impact on public debate. In particular, we combine different methodologies to study policies and elections, including causal inference techniques and machine learning.
+MAPE is the Policy and Election Monitoring and Evaluation Laboratory. We are dedicated to studying public policy, elections, and their interconnections. Our goal is to improve academic production on the topic and decisively influence public debate. Specifically, we combine different methodologies to study policy and elections, including causal inference and machine learning techniques.
 
-If you think I can help you in any way, please reach out at [felipe.lamarca@hotmail.com](mailto:felipe.lamarca@hotmail.com).
-
----
-
-## 🧪 Research & Academia
-
-#### 📍 **Research Assistant** @ [FGV EBAPE](https://ebape.fgv.br/en) (02/2025 – 04/2025)  
-Worked on digitizing and systematizing historical election results using OCR and LLMs. Supervised by Prof. [Cesar Zucco](https://professor.fgv.br/ebape/cesar-zucco), Ph.D.
-
-#### 📍 **Junior Research Fellow** @ [FGV CPDOC](https://cpdoc.fgv.br/en) (06/2019 – 09/2022)  
-Supported by an FGV/CNPq scholarship, I examined Executive-Legislative relations in the early 20th century using qualitative and quantitative methods. Supervised by Prof. [Jaqueline Porto Zulini](https://cpdoc.fgv.br/equipe/jaquelinezulini), Ph.D.
-
-#### 📍 **Data Science Consultant** @ [CEBRAP](https://cebrap.org.br/) (10/2024 – 02/2025)  
-Contributed to the Center for Critical Imagination project with OCR and LLM techniques. Assisted Prof. José Szwako, Ph.D.
-
----
-
-## 💼 Industry & Consulting
-
-#### 📍 **Consultant in Data Science & Research** (07/2024 – 06/2025)  
-Provided end-to-end data and AI solutions (ETL, ML, Generative AI, RAG), research support, and training.
-
-**Selected projects:**
-
-- 📌 [Artplan](https://artplan.com.br/): Deep Learning for social media segmentation  
-- 📌 [Fundação Roberto Marinho](https://www.frm.org.br/): AWS data lake, dashboards (Streamlit & Power BI), Python/ML training  
-- 📌 [Plataforma CIPÓ](https://plataformacipo.org/): Training in ML and data analysis  
-- 📌 [GENI/UFF](https://geni.uff.br/): LLM and RAG-based tools for document analysis
-
-#### 📍 **Data Scientist & Researcher** @ [Instituto Rio21](https://rio21.org/) (04/2022 – 06/2025)  
-Led and analyzed opinion polls, including the [Municipal Management Assessment Survey](https://drive.google.com/file/d/1nUVQnHgi2kvHHau5rcxC-5DzTkeuOk75/view?usp=sharing) and [Election Polls](https://drive.google.com/file/d/1Q1y1tIzLF4i6bh9W0K6SvRm_XvSt4ISr/view?usp=sharing). Supported [Aliança Centro-Rio](https://alianca-cidade.org/) with actionable intelligence from conservation and security data.
-
----
-
-## 📚 Internships & Student Roles
-
-#### 📍 **Data Science Intern** @ Strategic Planning, [FGV](https://portal.fgv.br/) (10/2024 – 12/2024)  
-Integrated advanced Generative AI techniques into institutional data pipelines, identifying opportunities for automation and process improvement. I also prepared presentations for C-level executives, including the President of FGV.
-
-<!-- #### 📍 **Student Consultant** @ [Brazilian Sailing Confederation](https://www.cbvela.org.br/) (08/2023 – 12/2023)  
-Built a ranking model using web scraping and ML to analyze regatta performance. -->
-
-#### 📍 **Part-time Data Scientist** @ [Visagio](https://visagio.com/en/home/) (01/2024 – 06/2024)  
-Worked on optimization, pricing, SQL pipelines, and KPI dashboards using Power BI. Delivered insights to senior leadership.
-
----
+Before joining AtlasIntel and MAPE, I provided data science and research consulting services to both industry (Roberto Marinho Foundation, Artplan, Visagio) and academia (FGV EBAPE, CEBRAP, GENI/UFF). Please check my [CV](https://drive.google.com/file/d/1dFBrI109flg6zSQHnFIxUd1DRfieCYAT/view) for more information on my work experience. If you think I can help in any way, please contact me at [felipe.lamarca@hotmail.com](mailto:felipe.lamarca@hotmail.com).
 
 ## 📞 References
 

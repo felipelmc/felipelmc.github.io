@@ -18,6 +18,8 @@ website:
         text: learning
       - href: teaching/teaching.qmd
         text: teaching
+      - href: talking/talking.qmd
+        text: talking
       # - href: blog/blog.qmd
       #   text: blog
       # - href: news/news.qmd
