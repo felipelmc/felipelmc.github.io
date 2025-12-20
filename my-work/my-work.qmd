@@ -14,7 +14,7 @@ Before joining AtlasIntel and MAPE, I provided data science and research consult
 ## 📞 References
 
 | Name                      | Institution                           | Email                           |
-|---------------------------|----------------------------------------|---------------------------------|
+|---------------------------|---------------------------------------|---------------------------------|
 | Prof. Jaqueline Zulini, Ph. D. | School of Social Sciences (FGV CPDOC) | jaqueline `dot` zulini `at` fgv `dot` br |
 | Prof. Luiz Max Carvalho, Ph. D. | School of Applied Mathematics (FGV EMAp) | luiz `dot` fagundes `at` fgv `dot` br |
 | Prof. Renato Rocha Souza, Ph. D. | University of Vienna | renato `dot` rocha `dot` souza `at` univie `dot` ac `dot` at |

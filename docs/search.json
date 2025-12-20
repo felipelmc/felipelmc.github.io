@@ -4,14 +4,21 @@
     "href": "teaching/teaching.html",
     "title": "👨🏻‍💻 Teaching",
     "section": "",
-    "text": "Advanced Text-as-Data – IESP-UERJ Winter School (2025.1, Graduate)\nDeep Learning, Transformers, Embeddings, and Large Language Models applied to political science research.\nInstructors: Tiago Ventura, Ph.D., and Sebastián Vallejo Vera, Ph.D.\n🔗 Course website\nQuantitative Methods II – FGV CPDOC (2024.2, Undergraduate)\nExploratory data analysis, basic statistical inference, and regression models.\nInstructor: Jairo Nicolau, Ph.D.\nIntroduction to R – FGV CPDOC (2020.2, Graduate)\nIntroduction to programming for social sciences.\nInstructor: Jimmy Medeiros, Ph.D."
+    "text": "Machine Learning – Methodological Training of MAPE (2025.2, Graduate)\nFundamentals of machine learning, focusing on recognizing, training, interpreting, and evaluating simple predictive models applied to social research.\n🔗 Files\nDeep Learning & Text-as-Data – 10th Student Week of the Postgraduate Programs of IESP-UERJ (2025.2, Graduate)\nFundamentals of deep learning: what it is and how to train a neural network, and text-as-data with deep learning.\n🔗 Files"
+  },
+  {
+    "objectID": "teaching/teaching.html#short-courses",
+    "href": "teaching/teaching.html#short-courses",
+    "title": "👨🏻‍💻 Teaching",
+    "section": "",
+    "text": "Machine Learning – Methodological Training of MAPE (2025.2, Graduate)\nFundamentals of machine learning, focusing on recognizing, training, interpreting, and evaluating simple predictive models applied to social research.\n🔗 Files\nDeep Learning & Text-as-Data – 10th Student Week of the Postgraduate Programs of IESP-UERJ (2025.2, Graduate)\nFundamentals of deep learning: what it is and how to train a neural network, and text-as-data with deep learning.\n🔗 Files"
   },
   {
     "objectID": "teaching/teaching.html#teaching-assistance",
     "href": "teaching/teaching.html#teaching-assistance",
     "title": "👨🏻‍💻 Teaching",
-    "section": "",
-    "text": "Advanced Text-as-Data – IESP-UERJ Winter School (2025.1, Graduate)\nDeep Learning, Transformers, Embeddings, and Large Language Models applied to political science research.\nInstructors: Tiago Ventura, Ph.D., and Sebastián Vallejo Vera, Ph.D.\n🔗 Course website\nQuantitative Methods II – FGV CPDOC (2024.2, Undergraduate)\nExploratory data analysis, basic statistical inference, and regression models.\nInstructor: Jairo Nicolau, Ph.D.\nIntroduction to R – FGV CPDOC (2020.2, Graduate)\nIntroduction to programming for social sciences.\nInstructor: Jimmy Medeiros, Ph.D."
+    "section": "🧑‍🏫 Teaching Assistance",
+    "text": "🧑‍🏫 Teaching Assistance\nAdvanced Text-as-Data – IESP-UERJ Winter School (2025.1, Graduate)\nDeep Learning, Transformers, Embeddings, and Large Language Models applied to political science research.\nInstructors: Tiago Ventura, Ph.D., and Sebastián Vallejo Vera, Ph.D.\n🔗 Course website\nQuantitative Methods II – FGV CPDOC (2024.2, Undergraduate)\nExploratory data analysis, basic statistical inference, and regression models.\nInstructor: Jairo Nicolau, Ph.D.\nIntroduction to R – FGV CPDOC (2020.2, Graduate)\nIntroduction to programming for social sciences.\nInstructor: Jimmy Medeiros, Ph.D."
   },
   {
     "objectID": "publications/publications.html",
@@ -39,28 +46,28 @@
     "href": "learning/learning.html",
     "title": "📚 Learning",
     "section": "",
-    "text": "Numerical Linear Algebra (FGV EMAp, 2023.1, Undergraduate)\nSolving linear systems with numerical stability and efficiency.\n🔗 GitHub\nMachine Learning (FGV EMAp, 2024.1, Undergraduate)\nProbabilistic machine learning, mixture models, and approximate Bayesian inference.\n🔗 GitHub\nDeep Learning (FGV EMAp, 2024.2, Undergraduate)\nFoundations of NN, CNNs, LSTMs, GANs, Transformers, transfer learning, and autoencoders.\n🔗 GitHub\nPesquisa de Survey (Survey Research) (IESP-UERJ, 2025.1, Graduate)\nTotal survey error paradigm, sampling, questionnaire design, post-stratification.\n🔗 GitHub · 🌐 Website\nLego I (IESP-UERJ, 2025.1, Graduate)\nQuantitative social science: data analysis, research design, probability, inference.\n🔗 GitHub · 🌐 Website\nLego II (IESP-UERJ, 2025.2, Graduate)\nA deep dive into regression models.\n🔗 GitHub · 🌐 Website\nIntrodução aos Estudos Legislativos (Introduction to Legislative Studies) (IESP-UERJ, 2025.2, Graduate)\nAn introduction to legislative behavior according to rational choice theory.\n🔗 GitHub · 🌐 Website"
+    "text": "Machine Learning (FGV EMAp, 2024.1, Undergraduate)\nProbabilistic machine learning, mixture models, and approximate Bayesian inference.\n🔗 GitHub\nDeep Learning (FGV EMAp, 2024.2, Undergraduate)\nFoundations of NN, CNNs, LSTMs, GANs, Transformers, transfer learning, and autoencoders.\n🔗 GitHub\n\nLego I (IESP-UERJ, 2025.1, Graduate)\nQuantitative social science: data analysis, research design, probability, inference.\n🔗 GitHub · 🌐 Website\nLego II (IESP-UERJ, 2025.2, Graduate)\nLinear regression models and extensions.\n🔗 GitHub · 🌐 Website"
   },
   {
     "objectID": "learning/learning.html#repositories",
     "href": "learning/learning.html#repositories",
     "title": "📚 Learning",
     "section": "",
-    "text": "Numerical Linear Algebra (FGV EMAp, 2023.1, Undergraduate)\nSolving linear systems with numerical stability and efficiency.\n🔗 GitHub\nMachine Learning (FGV EMAp, 2024.1, Undergraduate)\nProbabilistic machine learning, mixture models, and approximate Bayesian inference.\n🔗 GitHub\nDeep Learning (FGV EMAp, 2024.2, Undergraduate)\nFoundations of NN, CNNs, LSTMs, GANs, Transformers, transfer learning, and autoencoders.\n🔗 GitHub\nPesquisa de Survey (Survey Research) (IESP-UERJ, 2025.1, Graduate)\nTotal survey error paradigm, sampling, questionnaire design, post-stratification.\n🔗 GitHub · 🌐 Website\nLego I (IESP-UERJ, 2025.1, Graduate)\nQuantitative social science: data analysis, research design, probability, inference.\n🔗 GitHub · 🌐 Website\nLego II (IESP-UERJ, 2025.2, Graduate)\nA deep dive into regression models.\n🔗 GitHub · 🌐 Website\nIntrodução aos Estudos Legislativos (Introduction to Legislative Studies) (IESP-UERJ, 2025.2, Graduate)\nAn introduction to legislative behavior according to rational choice theory.\n🔗 GitHub · 🌐 Website"
+    "text": "Machine Learning (FGV EMAp, 2024.1, Undergraduate)\nProbabilistic machine learning, mixture models, and approximate Bayesian inference.\n🔗 GitHub\nDeep Learning (FGV EMAp, 2024.2, Undergraduate)\nFoundations of NN, CNNs, LSTMs, GANs, Transformers, transfer learning, and autoencoders.\n🔗 GitHub\n\nLego I (IESP-UERJ, 2025.1, Graduate)\nQuantitative social science: data analysis, research design, probability, inference.\n🔗 GitHub · 🌐 Website\nLego II (IESP-UERJ, 2025.2, Graduate)\nLinear regression models and extensions.\n🔗 GitHub · 🌐 Website"
   },
   {
     "objectID": "learning/learning.html#workshops-training",
     "href": "learning/learning.html#workshops-training",
     "title": "📚 Learning",
     "section": "🛠 Workshops & Training",
-    "text": "🛠 Workshops & Training\n[July 2024] SICSS: Summer Institute in Computational Social Science\nCollaborated with international researchers on CSS projects during a two-week program at FGV.\n[July 2024] ML4Good Bootcamp\nTen-day intensive on AI Safety, alignment, and responsible development."
+    "text": "🛠 Workshops & Training\n[November 2025] Academic writing and publication of quantitative papers in Social Sciences @ IESP-UERJ.\n[July 2025] Advanced Text-As-Data: Word Embeddings, Deep Learning, and LLMs @ IESP-UERJ.\n[July 2024] SICSS: Summer Institute in Computational Social Science\n[July 2024] ML4Good Bootcamp"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Felipe Lamarca",
     "section": "",
-    "text": "Welcome!👋🏼\nI’m a data scientist with a degree from the School of Applied Mathematics (FGV EMAp) and a social scientist with a degree from the School of Social Sciences (FGV CPDOC). Currently, I’m pursuing a Master’s degree in Political Science at the Institute of Social and Political Studies (IESP-UERJ).\nI work as a data scientist at AtlasIntel and do research at the Policy and Election Monitoring and Evaluation Laboratory (MAPE).\nMy research interests include political behavior, public policy, and the application of data science techniques to social science research. This broadly encompasses the use of machine learning, deep learning, causal inference, and survey methods to investigate political phenomena.\n📧 felipe.lamarca@hotmail.com"
+    "text": "Welcome!👋🏼\nI’m a data scientist with a degree from the School of Applied Mathematics (FGV EMAp) and a social scientist with a degree from the School of Social Sciences (FGV CPDOC). Currently, I’m pursuing a Master’s degree in Political Science at the Institute of Social and Political Studies (IESP-UERJ).\nI work as a data scientist at AtlasIntel and do research at the Policy and Election Monitoring and Evaluation Laboratory (MAPE).\nMy research interests include political behavior, public policy, and the application of data science techniques to social science research. This broadly encompasses the use of machine learning, deep learning, causal inference, and survey methods to investigate political phenomena.\n📧 felipe dot lamarca at hotmail dot com"
   },
   {
     "objectID": "my-work/my-work.html",
@@ -81,6 +88,6 @@
     "href": "talking/talking.html",
     "title": "💬 Talking",
     "section": "",
-    "text": "[2025-08-29] Fatores explicativos do apoio ou rejeição à criação de uma política municipal de renda básica: modelando a percepção dos cariocas. BIEN Congress 2025 / 24th Congress of the Global Basic Income Network. [pdf]\n[2025-07-02] Automated Text Analysis. Summer Institute in Computation Social Science 2025, Brazil (SICSS) [pdf]"
+    "text": "[2025-11-10] Quantos votos meu partido vai fazer? Prevendo o vote share nos municípios fluminenses. 10th Student Week of the Postgraduate Programs of IESP-UERJ. 18th Working Group – Politics and institutions at the subnational level. [files]\n[2025-08-29] Fatores explicativos do apoio ou rejeição à criação de uma política municipal de renda básica: modelando a percepção dos cariocas. BIEN Congress 2025 / 24th Congress of the Global Basic Income Network. [pdf]\n[2025-07-02] Automated Text Analysis. Summer Institute in Computation Social Science 2025, Brazil (SICSS) [pdf]"
   }
 ]
