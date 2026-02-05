@@ -1,0 +1,78 @@
+{
+  "about.qmd": {
+    "about.html": "f63fa392"
+  },
+  "index.qmd": {
+    "index.html": "b8620c1a"
+  },
+  "projects.qmd": {
+    "projects.html": "55112fb3"
+  },
+  "publications.qmd": {
+    "publications.html": "7908c95c"
+  },
+  "news.qmd": {
+    "news.html": "a30bcf25"
+  },
+  "posts.qmd": {
+    "posts.html": "3b0ec7e6"
+  },
+  "news/news.qmd": {
+    "news.html": "2eedb12d"
+  },
+  "posts/posts.qmd": {
+    "posts.html": "79a421f5"
+  },
+  "projects/projects.qmd": {
+    "projects.html": "d8d15b1e"
+  },
+  "publications/publications.qmd": {
+    "publications.html": "6d91d8d1",
+    "publications.tex": "60c1c480"
+  },
+  "projects/scielo-summarizer/index.qmd": {
+    "index.html": "a88c21fa"
+  },
+  "projects/data-visualization/index.qmd": {
+    "index.html": "082c5ee9"
+  },
+  "projects/deep-learning/index.qmd": {
+    "index.html": "ac6a86ea"
+  },
+  "projects/machine-learning/index.qmd": {
+    "index.html": "b55b7e01"
+  },
+  "projects/statistical-modeling/index.qmd": {
+    "index.html": "8584c9d9"
+  },
+  "projects/datagrid/index.qmd": {
+    "index.html": "b037a224"
+  },
+  "my-work/my-work.qmd": {
+    "my-work.html": "0c5fefd8"
+  },
+  "courses/courses.qmd": {
+    "courses.html": "2377b9c0"
+  },
+  "posts/box_1976/index.qmd": {
+    "index.html": "96daabbf"
+  },
+  "blog/blog.qmd": {
+    "blog.html": "cfa57b79"
+  },
+  "blog/box_1976/index.qmd": {
+    "index.html": "7efc78d9"
+  },
+  "blog/rag/index.qmd": {
+    "index.html": "df482d15"
+  },
+  "learning/learning.qmd": {
+    "learning.html": "a9a21377"
+  },
+  "teaching/teaching.qmd": {
+    "teaching.html": "3e9891f1"
+  },
+  "talking/talking.qmd": {
+    "talking.html": "94d0d1f8"
+  }
+}

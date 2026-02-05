@@ -1,0 +1,22 @@
+---
+title: "👨🏻‍💻 My work"
+subtitle: "What I have been doing lately"
+---
+
+#### **Data Scientist** @ [AtlasIntel](https://atlasintel.org/)
+AtlasIntel provides advanced data products for political intelligence and economic forecasting. I'm currently working on calibrating survey samples, political analysis, public opinion monitoring, and improving internal data pipelines.
+
+#### **Researcher** @ [MAPE](https://mape.org.br/) (IESP-UERJ)
+MAPE is the Policy and Election Monitoring and Evaluation Laboratory. We are dedicated to studying public policy, elections, and their interconnections. Our goal is to improve academic production on the topic and decisively influence public debate. Specifically, we combine different methodologies to study policy and elections, including causal inference and machine learning techniques.
+
+Before joining AtlasIntel and MAPE, I provided data science and research consulting services to both industry (Roberto Marinho Foundation, Artplan, Visagio) and academia (FGV EBAPE, CEBRAP, GENI/UFF). Please check my [CV](https://drive.google.com/file/d/1dFBrI109flg6zSQHnFIxUd1DRfieCYAT/view) for more information on my work experience. If you think I can help in any way, please contact me at [felipe.lamarca@hotmail.com](mailto:felipe.lamarca@hotmail.com).
+
+## 📞 References
+
+| Name                      | Institution                           | Email                           |
+|---------------------------|---------------------------------------|---------------------------------|
+| Prof. Jaqueline Zulini, Ph. D. | School of Social Sciences (FGV CPDOC) | jaqueline `dot` zulini `at` fgv `dot` br |
+| Prof. Luiz Max Carvalho, Ph. D. | School of Applied Mathematics (FGV EMAp) | luiz `dot` fagundes `at` fgv `dot` br |
+| Prof. Renato Rocha Souza, Ph. D. | University of Vienna | renato `dot` rocha `dot` souza `at` univie `dot` ac `dot` at |
+| Prof. Danielle Sanches, Ph. D. | School of Communication, Media and Information (FGV ECMI) | danielle `dot` sanches `at` fgv `dot` br |
+| Prof. Jimmy Medeiros, Ph. D. | School of Social Sciences (FGV CPDOC) | jimmy `dot` medeiros `at` fgv `dot` br |

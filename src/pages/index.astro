@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+---
+
+<Layout title="About">
+  <div class="grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-12 lg:gap-16 items-start">
+    <div class="flex flex-col items-center text-center gap-4">
+      <img
+        src="/img/profilepic/me_at_iesp.png"
+        alt="Felipe Lamarca"
+        class="w-80 h-80 rounded-full object-cover border-4 border-gray-100 dark:border-gray-800"
+      />
+      <div>
+        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">
+          Felipe Lamarca
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400 mt-1">
+          Computational Political Scientist
+        </p>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <div class="prose prose-gray dark:prose-invert max-w-none space-y-4">
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          I'm a data scientist with a degree from the <a href="https://emap.fgv.br/en" class="link" target="_blank" rel="noopener noreferrer">School of Applied Mathematics</a> (FGV EMAp) and a social scientist with a degree from the <a href="https://cpdoc.fgv.br/en" class="link" target="_blank" rel="noopener noreferrer">School of Social Sciences</a> (FGV CPDOC). Currently, I'm pursuing a Master's degree in Political Science at the <a href="https://iesp.uerj.br/en/" class="link" target="_blank" rel="noopener noreferrer">Institute of Social and Political Studies</a> (IESP-UERJ).
+        </p>
+
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          I work as a data scientist at <a href="https://atlasintel.org/" class="link" target="_blank" rel="noopener noreferrer">AtlasIntel</a> and do research at the Policy and Election Monitoring and Evaluation Laboratory (<a href="https://mape.org.br/" class="link" target="_blank" rel="noopener noreferrer">MAPE</a>).
+        </p>
+
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          My research interests include political behavior, public policy, and the application of data science techniques to social science research. This broadly encompasses the use of machine learning, deep learning, causal inference, and survey methods to investigate political phenomena.
+        </p>
+      </div>
+
+      <div>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+          felipe <span class="text-gray-400 dark:text-gray-500">dot</span> lamarca <span class="text-gray-400 dark:text-gray-500">at</span> hotmail <span class="text-gray-400 dark:text-gray-500">dot</span> com
+        </p>
+        <SocialLinks />
+      </div>
+    </div>
+  </div>
+</Layout>

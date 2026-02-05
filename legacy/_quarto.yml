@@ -1,0 +1,39 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "felipelamarca.com/"
+  navbar:
+    left:
+      - href: index.qmd
+        text: about-me
+      - href: my-work/my-work.qmd
+        text: my-work
+      # - href: projects/projects.qmd
+      #   text: projects
+      - href: publications/publications.qmd
+        text: publications
+      - href: learning/learning.qmd
+        text: learning
+      - href: teaching/teaching.qmd
+        text: teaching
+      - href: talking/talking.qmd
+        text: talking
+      # - href: blog/blog.qmd
+      #   text: blog
+      # - href: news/news.qmd
+      #   text: news
+      # - href: https://drive.google.com/file/d/1dFBrI109flg6zSQHnFIxUd1DRfieCYAT/view?usp=sharing
+      #   text: cv
+        
+format:
+  html:
+    theme: 
+      light: cosmo
+      dark: [cosmo, theme-dark.scss]
+    css: styles.css
+    toc: true
+
+
+

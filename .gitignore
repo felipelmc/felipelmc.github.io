@@ -1,1 +1,7 @@
 /.quarto/
+node_modules/
+.astro/
+dist/
+
+CLAUDE.md
+.claude
