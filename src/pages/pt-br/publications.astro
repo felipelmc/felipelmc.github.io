@@ -1,221 +1,153 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('pt-br');
 ---
 
-<Layout title="Publications" description="Working papers, peer-reviewed publications and open-source tools">
+<Layout title={t('publications.title')} description="Working papers, publicações e ferramentas de código aberto" lang="pt-BR">
   <div class="space-y-12">
     <header>
-      <h1 class="font-serif text-3xl font-medium text-ink dark:text-ink-dark mb-2">Publications</h1>
-      <p class="text-ink-secondary dark:text-ink-secondary-dark">A list of my working papers, peer-reviewed publications and open-source tools</p>
+      <h1 class="font-serif text-3xl font-medium text-ink dark:text-ink-dark mb-2">{t('publications.title')}</h1>
+      <p class="text-ink-secondary dark:text-ink-secondary-dark">{t('publications.subtitle')}</p>
     </header>
 
     <section>
-      <h2 class="section-title">Papers</h2>
+      <h2 class="section-title">{t('publications.papers')}</h2>
 
       <div class="space-y-8">
         <div>
-          <h3 class="subsection-title">Published/Accepted</h3>
+          <h3 class="subsection-title">{t('publications.published')}</h3>
           <div class="card">
             <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
               As relações Executivo-Legislativo na Primeira República: uma análise das mensagens presidenciais ao Congresso (1910-1920). <em class="text-ink-muted dark:text-ink-muted-dark">Mosaico</em>. 2021.
             </p>
             <div class="mt-3 flex flex-wrap gap-4 text-sm">
-              <a href="https://doi.org/10.12660/rm.v13n20.2021.82665" class="link" target="_blank" rel="noopener noreferrer">
-                DOI →
-              </a>
-              <button
-                data-modal="abstract-1"
-                class="link cursor-pointer bg-transparent border-none p-0"
-              >
-                Abstract →
-              </button>
-              <a href="https://periodicos.fgv.br/mosaico/article/view/82665/79990" class="link" target="_blank" rel="noopener noreferrer">
-                Access link →
-              </a>
-              <button
-                data-modal="bibtex-1"
-                class="link cursor-pointer bg-transparent border-none p-0"
-              >
-                BibTeX →
-              </button>
+              <a href="https://doi.org/10.12660/rm.v13n20.2021.82665" class="link" target="_blank" rel="noopener noreferrer">DOI →</a>
+              <button data-modal="abstract-1" class="link cursor-pointer bg-transparent border-none p-0">{t('publications.abstract')}</button>
+              <a href="https://periodicos.fgv.br/mosaico/article/view/82665/79990" class="link" target="_blank" rel="noopener noreferrer">{t('publications.access')}</a>
+              <button data-modal="bibtex-1" class="link cursor-pointer bg-transparent border-none p-0">{t('publications.bibtex')}</button>
             </div>
           </div>
         </div>
 
         <div>
-          <h3 class="subsection-title">Work in progress</h3>
+          <h3 class="subsection-title">{t('publications.wip')}</h3>
           <div class="space-y-6">
-          <div class="card">
-            <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
-              A Systematic Review of Text-as-Data Approaches to Parliamentary Behavior.
-            </p>
-            <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
-              To be presented at the XIII Congreso ALACIP (Buenos Aires, July 2026).
-            </p>
-            <div class="mt-3 flex flex-wrap gap-4 text-sm">
-              <button
-                data-modal="abstract-systematic-review"
-                class="link cursor-pointer bg-transparent border-none p-0"
-              >
-                Abstract →
-              </button>
-              <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">
-                Replication materials (coming soon)
-              </a>
+            <div class="card">
+              <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
+                A Systematic Review of Text-as-Data Approaches to Parliamentary Behavior.
+              </p>
+              <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
+                A ser apresentado no XIII Congreso ALACIP (Buenos Aires, julho de 2026).
+              </p>
+              <div class="mt-3 flex flex-wrap gap-4 text-sm">
+                <button data-modal="abstract-systematic-review" class="link cursor-pointer bg-transparent border-none p-0">{t('publications.abstract')}</button>
+                <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">{t('publications.replication.soon')}</a>
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
-              Da gaveta ao plenário: os caminhos da aprovação de pautas na Câmara dos Deputados.
-            </p>
-            <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
-              Joint work with Lucas Calabró Berti (IESP-UERJ). To be presented at the 2026 Meeting of the Brazilian Political Science Association (ABCP).
-            </p>
-            <div class="mt-3 flex flex-wrap gap-4 text-sm">
-              <button
-                data-modal="abstract-gaveta"
-                class="link cursor-pointer bg-transparent border-none p-0"
-              >
-                Abstract →
-              </button>
-              <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">
-                Replication materials (coming soon)
-              </a>
+            <div class="card">
+              <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
+                Da gaveta ao plenário: os caminhos da aprovação de pautas na Câmara dos Deputados.
+              </p>
+              <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
+                Trabalho conjunto com Lucas Calabró Berti (IESP-UERJ). A ser apresentado no Encontro da ABCP 2026.
+              </p>
+              <div class="mt-3 flex flex-wrap gap-4 text-sm">
+                <button data-modal="abstract-gaveta" class="link cursor-pointer bg-transparent border-none p-0">{t('publications.abstract')}</button>
+                <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">{t('publications.replication.soon')}</a>
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
-              Quantos votos meu partido vai fazer? Prevendo o vote share nos municípios brasileiros.
-            </p>
-            <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
-              Joint work with Tomás Paixão (IESP-UERJ).
-            </p>
-            <div class="mt-3 flex flex-wrap gap-4 text-sm">
-              <button
-                data-modal="abstract-wip"
-                class="link cursor-pointer bg-transparent border-none p-0 text-ink-muted dark:text-ink-muted-dark"
-              >
-                Abstract (coming soon)
-              </button>
-              <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">
-                Replication materials (coming soon)
-              </a>
-              <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">
-                Access link (coming soon)
-              </a>
+            <div class="card">
+              <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
+                Quantos votos meu partido vai fazer? Prevendo o vote share nos municípios brasileiros.
+              </p>
+              <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
+                Trabalho conjunto com Tomás Paixão (IESP-UERJ).
+              </p>
+              <div class="mt-3 flex flex-wrap gap-4 text-sm">
+                <button data-modal="abstract-wip" class="link cursor-pointer bg-transparent border-none p-0 text-ink-muted dark:text-ink-muted-dark">{t('publications.abstract.soon')}</button>
+                <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">{t('publications.replication.soon')}</a>
+                <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">{t('publications.access.soon')}</a>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>
     </section>
 
     <section>
-      <h2 class="section-title">Discussion Texts</h2>
-
+      <h2 class="section-title">{t('publications.discussion')}</h2>
       <div class="space-y-6">
         <div class="card">
           <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
             Como a população do estado do Rio de Janeiro se informa sobre política? <em class="text-ink-muted dark:text-ink-muted-dark">DOXA — Laboratório de Estudos Eleitorais, de Comunicação Política e Opinião Pública (IESP-UERJ)</em>. 2026.
           </p>
           <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
-            Joint work with Fernando Meireles (IESP-UERJ) and Argelina Cheibub Figueiredo (IESP-UERJ).
+            Trabalho conjunto com Fernando Meireles (IESP-UERJ) e Argelina Cheibub Figueiredo (IESP-UERJ).
           </p>
           <div class="mt-3 flex flex-wrap gap-4 text-sm">
-            <button
-              data-modal="abstract-doxa-1"
-              class="link cursor-pointer bg-transparent border-none p-0 text-ink-muted dark:text-ink-muted-dark"
-            >
-              Abstract (coming soon)
-            </button>
-            <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">
-              Replication materials (coming soon)
-            </a>
-            <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">
-              Access link (coming soon)
-            </a>
+            <button data-modal="abstract-doxa-1" class="link cursor-pointer bg-transparent border-none p-0 text-ink-muted dark:text-ink-muted-dark">{t('publications.abstract.soon')}</button>
+            <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">{t('publications.replication.soon')}</a>
+            <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">{t('publications.access.soon')}</a>
           </div>
         </div>
-
       </div>
     </section>
 
     <section>
-      <h2 class="section-title">Technical Notes</h2>
-
+      <h2 class="section-title">{t('publications.technical')}</h2>
       <div class="space-y-6">
         <div class="card">
           <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
             Nota Técnica NECON sobre as próximas eleições presidenciais. <em class="text-ink-muted dark:text-ink-muted-dark">NECON — Núcleo de Estudos sobre o Congresso (IESP-UERJ)</em>. 2026.
           </p>
           <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
-            Joint work with Fabiano Santos (IESP-UERJ) and Carlos Freitas (IESP-UERJ).
+            Trabalho conjunto com Fabiano Santos (IESP-UERJ) e Carlos Freitas (IESP-UERJ).
           </p>
           <div class="mt-3 flex flex-wrap gap-4 text-sm">
-            <button
-              data-modal="abstract-necon"
-              class="link cursor-pointer bg-transparent border-none p-0"
-            >
-              Abstract →
-            </button>
-            <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">
-              Access link (coming soon)
-            </a>
+            <button data-modal="abstract-necon" class="link cursor-pointer bg-transparent border-none p-0">{t('publications.abstract')}</button>
+            <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">{t('publications.access.soon')}</a>
           </div>
         </div>
       </div>
     </section>
 
     <section>
-      <h2 class="section-title">Open-source Tools</h2>
-
+      <h2 class="section-title">{t('publications.tools')}</h2>
       <div class="space-y-6">
         <div class="card">
-          <h3 class="font-semibold text-ink dark:text-ink-dark mb-2">
-            <code class="text-accent dark:text-accent-dark">mape_municipios_dashboard</code>
-          </h3>
+          <h3 class="font-semibold text-ink dark:text-ink-dark mb-2"><code class="text-accent dark:text-accent-dark">mape_municipios_dashboard</code></h3>
           <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
-            A dashboard to interact with one of the most complete databases with information on Brazilian municipalities, collected by <a href="https://mape.org.br/" class="link" target="_blank" rel="noopener noreferrer">MAPE</a>. 2025.
+            Dashboard para interagir com uma das bases de dados mais completas sobre municípios brasileiros, coletada pelo <a href="https://mape.org.br/" class="link" target="_blank" rel="noopener noreferrer">MAPE</a>. 2025.
           </p>
-          <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
-            Joint work with Fernando Meireles (IESP-UERJ).
-          </p>
+          <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">Trabalho conjunto com Fernando Meireles (IESP-UERJ).</p>
           <div class="mt-3 flex gap-4 text-sm">
-            <a href="https://github.com/mape-iesp/MAPEmunicipios-Dashboard" class="link" target="_blank" rel="noopener noreferrer">Source code →</a>
-            <a href="https://mape-municipios-dashboard.streamlit.app/" class="link" target="_blank" rel="noopener noreferrer">Access link →</a>
+            <a href="https://github.com/mape-iesp/MAPEmunicipios-Dashboard" class="link" target="_blank" rel="noopener noreferrer">{t('publications.source')}</a>
+            <a href="https://mape-municipios-dashboard.streamlit.app/" class="link" target="_blank" rel="noopener noreferrer">{t('publications.access')}</a>
           </div>
         </div>
-
         <div class="card">
-          <h3 class="font-semibold text-ink dark:text-ink-dark mb-1">
-            <code class="text-accent dark:text-accent-dark">RelicárIA</code>
-          </h3>
-          <p class="text-xs font-medium text-amber-600 dark:text-amber-400 mb-2">★ DH Awards 2025 – 2nd Runner Up, Best DH Tool or Suite of Tools</p>
+          <h3 class="font-semibold text-ink dark:text-ink-dark mb-1"><code class="text-accent dark:text-accent-dark">RelicárIA</code></h3>
+          <p class="text-xs font-medium text-amber-600 dark:text-amber-400 mb-2">★ DH Awards 2025 – 2º Colocado, Best DH Tool or Suite of Tools</p>
           <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
-            A digital platform that combines AI and data analysis to extract and visualize information from documents. 2025.
+            Plataforma digital que combina IA e análise de dados para extrair e visualizar informações de documentos. 2025.
           </p>
-          <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
-            Joint work with Danielle Sanches de Almeida (FGV ECMI).
-          </p>
+          <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">Trabalho conjunto com Danielle Sanches de Almeida (FGV ECMI).</p>
           <div class="mt-3 flex gap-4 text-sm">
-            <a href="https://github.com/felipelmc/RelicarIA" class="link" target="_blank" rel="noopener noreferrer">Source code →</a>
-            <a href="https://relicaria.streamlit.app/" class="link" target="_blank" rel="noopener noreferrer">Access link →</a>
+            <a href="https://github.com/felipelmc/RelicarIA" class="link" target="_blank" rel="noopener noreferrer">{t('publications.source')}</a>
+            <a href="https://relicaria.streamlit.app/" class="link" target="_blank" rel="noopener noreferrer">{t('publications.access')}</a>
           </div>
         </div>
-
         <div class="card">
-          <h3 class="font-semibold text-ink dark:text-ink-dark mb-2">
-            <code class="text-accent dark:text-accent-dark">BoticárIA</code>
-          </h3>
+          <h3 class="font-semibold text-ink dark:text-ink-dark mb-2"><code class="text-accent dark:text-accent-dark">BoticárIA</code></h3>
           <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
-            A RAG-based conversational AI that simulates an 18th-century apothecary, providing information on medicinal practices based on historical pharmacological sources from the late 18th century. 2025.
+            IA conversacional baseada em RAG que simula um boticário do século XVIII, fornecendo informações sobre práticas medicinais com base em fontes farmacológicas históricas do final do século XVIII. 2025.
           </p>
-          <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
-            Joint work with Danielle Sanches de Almeida (FGV ECMI).
-          </p>
+          <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">Trabalho conjunto com Danielle Sanches de Almeida (FGV ECMI).</p>
           <div class="mt-3 flex gap-4 text-sm">
-            <a href="https://github.com/felipelmc/BoticarIA" class="link" target="_blank" rel="noopener noreferrer">Source code →</a>
-            <a href="https://boticaria.streamlit.app/" class="link" target="_blank" rel="noopener noreferrer">Access link →</a>
+            <a href="https://github.com/felipelmc/BoticarIA" class="link" target="_blank" rel="noopener noreferrer">{t('publications.source')}</a>
+            <a href="https://boticaria.streamlit.app/" class="link" target="_blank" rel="noopener noreferrer">{t('publications.access')}</a>
           </div>
         </div>
       </div>
@@ -227,11 +159,9 @@ import Layout from '../layouts/Layout.astro';
     <div class="modal-backdrop absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
     <div class="modal-content relative bg-surface dark:bg-surface-dark rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 border border-border dark:border-border-dark">
       <button class="modal-close absolute top-4 right-4 text-ink-muted dark:text-ink-muted-dark hover:text-ink dark:hover:text-ink-dark">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
       </button>
-      <h3 class="font-serif text-lg font-medium text-ink dark:text-ink-dark mb-4">Abstract</h3>
+      <h3 class="font-serif text-lg font-medium text-ink dark:text-ink-dark mb-4">Resumo</h3>
       <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed text-sm">
         A literatura clássica sobre a Primeira República assume que, a partir da instituição da política dos governadores, o Legislativo se tornou mera instituição figurativa. O presidente da República, em tese, negociava diretamente com os governadores dos estados para que estes evitassem que as oposições se elegessem ao Congresso Nacional, tornando raros os conflitos entre os poderes. Literatura mais recente, porém, relativizou o alcance dos acordos oligárquicos. No objetivo de resgatar a complexidade das relações entre os poderes na época, este artigo apresenta os resultados da análise das mensagens presidenciais encaminhadas pelos presidentes da República ao Congresso entre 1910 e 1920. Os dados levantados sinalizam para conflitos entre os dois poderes, algo impensável à abordagem clássica.
       </p>
@@ -243,11 +173,9 @@ import Layout from '../layouts/Layout.astro';
     <div class="modal-backdrop absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
     <div class="modal-content relative bg-surface dark:bg-surface-dark rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 border border-border dark:border-border-dark">
       <button class="modal-close absolute top-4 right-4 text-ink-muted dark:text-ink-muted-dark hover:text-ink dark:hover:text-ink-dark">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
       </button>
-      <h3 class="font-serif text-lg font-medium text-ink dark:text-ink-dark mb-4">BibTeX Citation</h3>
+      <h3 class="font-serif text-lg font-medium text-ink dark:text-ink-dark mb-4">Citação BibTeX</h3>
       <pre class="bg-surface-card dark:bg-surface-card-dark p-4 rounded-lg text-sm text-ink-secondary dark:text-ink-secondary-dark overflow-x-auto border border-border dark:border-border-dark"><code>@article{'{'}Lamarca2021,
   author = {'{'}Lamarca, Felipe Marques Esteves{'}'},
   title = {'{'}As relações Executivo-Legislativo na Primeira República: uma análise das mensagens presidenciais ao Congresso (1910-1920){'}'},
@@ -258,11 +186,8 @@ import Layout from '../layouts/Layout.astro';
   year = {'{'}2021{'}'},
   doi = {'{'}10.12660/rm.v13n20.2021.82665{'}'}
 {'}'}</code></pre>
-      <button
-        id="copy-bibtex-1"
-        class="mt-4 px-4 py-2 text-sm bg-accent dark:bg-accent-dark text-white rounded-lg hover:opacity-90 transition-opacity"
-      >
-        Copy to clipboard
+      <button id="copy-bibtex-1" class="mt-4 px-4 py-2 text-sm bg-accent dark:bg-accent-dark text-white rounded-lg hover:opacity-90 transition-opacity">
+        {t('publications.copy')}
       </button>
     </div>
   </div>
@@ -272,11 +197,9 @@ import Layout from '../layouts/Layout.astro';
     <div class="modal-backdrop absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
     <div class="modal-content relative bg-surface dark:bg-surface-dark rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 border border-border dark:border-border-dark">
       <button class="modal-close absolute top-4 right-4 text-ink-muted dark:text-ink-muted-dark hover:text-ink dark:hover:text-ink-dark">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
       </button>
-      <h3 class="font-serif text-lg font-medium text-ink dark:text-ink-dark mb-4">Abstract</h3>
+      <h3 class="font-serif text-lg font-medium text-ink dark:text-ink-dark mb-4">Resumo</h3>
       <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed text-sm">
         What can legislative texts tell us about the organizational logic of legislatures? Text-as-data methods, computational approaches that convert natural language into quantitative measures suitable for systematic analysis, have transformed the study of political institutions over the past two decades. Early applications relied on dictionary-based classifiers and bag-of-words models that treated words as discrete, exchangeable units. More recent advances in representation learning, from static word embeddings to contextual language models, now allow researchers to capture semantic similarity, track conceptual change over time, and scale analysis to corpora spanning decades and multiple languages. Legislative studies stand to benefit particularly from this trajectory: legislatures produce vast, structured, and often publicly available textual records, from floor speeches and written questions to committee hearings and bills, that encode information about the preferences, strategies, and organizational routines of political actors.
       </p>
@@ -291,11 +214,9 @@ import Layout from '../layouts/Layout.astro';
     <div class="modal-backdrop absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
     <div class="modal-content relative bg-surface dark:bg-surface-dark rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 border border-border dark:border-border-dark">
       <button class="modal-close absolute top-4 right-4 text-ink-muted dark:text-ink-muted-dark hover:text-ink dark:hover:text-ink-dark">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
       </button>
-      <h3 class="font-serif text-lg font-medium text-ink dark:text-ink-dark mb-4">Abstract</h3>
+      <h3 class="font-serif text-lg font-medium text-ink dark:text-ink-dark mb-4">Resumo</h3>
       <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed text-sm">
         Este trabalho analisa os determinantes da aprovação de pautas na Câmara dos Deputados, com foco em fatores políticos e institucionais que condicionam o sucesso das proposições. A literatura sobre estudos legislativos e presidencialismo destaca como variáveis relevantes organização interna do Legislativo, pork barrel, disciplina partidária, acesso à informação, patronagem e tamanho e coesão da coalizão. Partindo desse debate, o trabalho investiga em que medida esses elementos afetam a probabilidade de aprovação das pautas ao longo do processo decisório. Metodologicamente, o estudo combina análise quantitativa de proposições legislativas e votações nominais com indicadores de coordenação partidária e características institucionais do processo legislativo. Ao articular a literatura de estudos legislativos com a de presidencialismo, argumentamos que a atuação da Câmara Baixa não pode ser compreendida a partir de uma única teoria de organização, mas sim a partir de uma combinação destas.
       </p>
@@ -307,14 +228,10 @@ import Layout from '../layouts/Layout.astro';
     <div class="modal-backdrop absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
     <div class="modal-content relative bg-surface dark:bg-surface-dark rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 border border-border dark:border-border-dark">
       <button class="modal-close absolute top-4 right-4 text-ink-muted dark:text-ink-muted-dark hover:text-ink dark:hover:text-ink-dark">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
       </button>
-      <h3 class="font-serif text-lg font-medium text-ink dark:text-ink-dark mb-4">Abstract</h3>
-      <p class="text-ink-muted dark:text-ink-muted-dark leading-relaxed text-sm italic">
-        Abstract coming soon...
-      </p>
+      <h3 class="font-serif text-lg font-medium text-ink dark:text-ink-dark mb-4">Resumo</h3>
+      <p class="text-ink-muted dark:text-ink-muted-dark leading-relaxed text-sm italic">Resumo em breve...</p>
     </div>
   </div>
 
@@ -323,14 +240,10 @@ import Layout from '../layouts/Layout.astro';
     <div class="modal-backdrop absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
     <div class="modal-content relative bg-surface dark:bg-surface-dark rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 border border-border dark:border-border-dark">
       <button class="modal-close absolute top-4 right-4 text-ink-muted dark:text-ink-muted-dark hover:text-ink dark:hover:text-ink-dark">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
       </button>
-      <h3 class="font-serif text-lg font-medium text-ink dark:text-ink-dark mb-4">Abstract</h3>
-      <p class="text-ink-muted dark:text-ink-muted-dark leading-relaxed text-sm italic">
-        Abstract coming soon...
-      </p>
+      <h3 class="font-serif text-lg font-medium text-ink dark:text-ink-dark mb-4">Resumo</h3>
+      <p class="text-ink-muted dark:text-ink-muted-dark leading-relaxed text-sm italic">Resumo em breve...</p>
     </div>
   </div>
 
@@ -339,11 +252,9 @@ import Layout from '../layouts/Layout.astro';
     <div class="modal-backdrop absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
     <div class="modal-content relative bg-surface dark:bg-surface-dark rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 border border-border dark:border-border-dark">
       <button class="modal-close absolute top-4 right-4 text-ink-muted dark:text-ink-muted-dark hover:text-ink dark:hover:text-ink-dark">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
       </button>
-      <h3 class="font-serif text-lg font-medium text-ink dark:text-ink-dark mb-4">Abstract</h3>
+      <h3 class="font-serif text-lg font-medium text-ink dark:text-ink-dark mb-4">Resumo</h3>
       <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed text-sm">
         Esta nota técnica aplica conceitos de análise espacial às eleições presidenciais de 2026 no Brasil. Partimos do teorema do eleitor mediano e adicionamos algumas, poucas, camadas de complexidade a fim de exemplificar como tal instrumento pode ser aplicado a casos reais, em específico, ao provável cenário do próximo embate pelo posto máximo da República.
       </p>
@@ -352,7 +263,6 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script is:inline>
-  // Modal functionality
   document.querySelectorAll('[data-modal]').forEach(button => {
     button.addEventListener('click', () => {
       const modalId = button.getAttribute('data-modal');
@@ -365,7 +275,6 @@ import Layout from '../layouts/Layout.astro';
   document.querySelectorAll('.modal').forEach(modal => {
     const backdrop = modal.querySelector('.modal-backdrop');
     const closeBtn = modal.querySelector('.modal-close');
-
     [backdrop, closeBtn].forEach(el => {
       el?.addEventListener('click', () => {
         modal.classList.add('hidden');
@@ -374,7 +283,6 @@ import Layout from '../layouts/Layout.astro';
     });
   });
 
-  // Close on Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       document.querySelectorAll('.modal').forEach(modal => {
@@ -384,7 +292,6 @@ import Layout from '../layouts/Layout.astro';
     }
   });
 
-  // Copy BibTeX to clipboard
   document.getElementById('copy-bibtex-1')?.addEventListener('click', async () => {
     const bibtex = `@article{Lamarca2021,
   author = {Lamarca, Felipe Marques Esteves},
@@ -401,10 +308,8 @@ import Layout from '../layouts/Layout.astro';
       const btn = document.getElementById('copy-bibtex-1');
       if (btn) {
         const originalText = btn.textContent;
-        btn.textContent = 'Copied!';
-        setTimeout(() => {
-          btn.textContent = originalText;
-        }, 2000);
+        btn.textContent = 'Copiado!';
+        setTimeout(() => { btn.textContent = originalText; }, 2000);
       }
     } catch (err) {
       console.error('Failed to copy:', err);

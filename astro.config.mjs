@@ -7,5 +7,12 @@ export default defineConfig({
   integrations: [tailwind()],
   build: {
     assets: '_assets'
+  },
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'pt-br'],
+    routing: {
+      prefixDefaultLocale: false
+    }
   }
 });

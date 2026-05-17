@@ -1,0 +1,95 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('pt-br');
+---
+
+<Layout title={t('teaching.title')} description="Cursos ministrados ou como monitor, em ciências sociais e ciência de dados" lang="pt-BR">
+  <div class="space-y-12">
+    <header>
+      <h1 class="font-serif text-3xl font-medium text-ink dark:text-ink-dark mb-2">{t('teaching.title')}</h1>
+      <p class="text-ink-secondary dark:text-ink-secondary-dark">{t('teaching.subtitle')}</p>
+    </header>
+
+    <section>
+      <h2 class="section-title">{t('teaching.short')}</h2>
+
+      <div class="divide-y divide-border dark:divide-border-dark">
+        <div class="py-4">
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
+            <div class="flex flex-col sm:flex-row sm:items-baseline gap-2">
+              <span class="font-medium text-ink dark:text-ink-dark">Agentes de IA para pesquisa em ciências sociais: uma introdução ao Claude Code</span>
+              <span class="text-sm text-ink-muted dark:text-ink-muted-dark"><a href="https://ceres-iesp.uerj.br" class="link" target="_blank" rel="noopener noreferrer">CERES</a>, IESP-UERJ · Maio 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="py-4">
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
+            <div class="flex flex-col sm:flex-row sm:items-baseline gap-2">
+              <span class="font-medium text-ink dark:text-ink-dark">Machine Learning</span>
+              <span class="text-sm text-ink-muted dark:text-ink-muted-dark">Formação Metodológica do <a href="https://mape.org.br/" class="link" target="_blank" rel="noopener noreferrer">MAPE</a> · 2025.2 · Pós-Graduação</span>
+            </div>
+            <div class="flex gap-4 text-sm">
+              <a href="https://github.com/felipelmc/Presentations/tree/main/ML-FMMAPE-2025" class="link" target="_blank" rel="noopener noreferrer">Arquivos →</a>
+            </div>
+          </div>
+          <p class="text-sm text-ink-secondary dark:text-ink-secondary-dark">Fundamentos de aprendizado de máquina, com foco em reconhecer, treinar, interpretar e avaliar modelos preditivos simples aplicados à pesquisa social.</p>
+        </div>
+
+        <div class="py-4">
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
+            <div class="flex flex-col sm:flex-row sm:items-baseline gap-2">
+              <span class="font-medium text-ink dark:text-ink-dark">Deep Learning & Text-as-Data</span>
+              <span class="text-sm text-ink-muted dark:text-ink-muted-dark">10ª Jornada Discente dos Programas de Pós-Graduação, IESP-UERJ · 2025.2 · Pós-Graduação</span>
+            </div>
+            <div class="flex gap-4 text-sm">
+              <a href="https://github.com/felipelmc/Presentations/tree/main/Minicurso-DL-Jornada-Discente-IESP-2025" class="link" target="_blank" rel="noopener noreferrer">Arquivos →</a>
+            </div>
+          </div>
+          <p class="text-sm text-ink-secondary dark:text-ink-secondary-dark">Fundamentos de aprendizado profundo: o que é e como treinar uma rede neural, e text-as-data com deep learning.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">{t('teaching.assistance')}</h2>
+
+      <div class="divide-y divide-border dark:divide-border-dark">
+        <div class="py-4">
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
+            <div class="flex flex-col sm:flex-row sm:items-baseline gap-2">
+              <span class="font-medium text-ink dark:text-ink-dark">Advanced Text-as-Data</span>
+              <span class="text-sm text-ink-muted dark:text-ink-muted-dark">IESP-UERJ Winter School · 2025.1 · Pós-Graduação</span>
+            </div>
+            <div class="flex gap-4 text-sm">
+              <a href="https://tiagoventura.github.io/tad_iesp_workshop/" class="link" target="_blank" rel="noopener noreferrer">Website do curso →</a>
+            </div>
+          </div>
+          <p class="text-sm text-ink-secondary dark:text-ink-secondary-dark">Deep Learning, Transformers, Embeddings e Grandes Modelos de Linguagem aplicados à pesquisa em ciência política. Instrutores: <a href="https://www.venturatiago.com/" class="link" target="_blank" rel="noopener noreferrer">Tiago Ventura</a>, Ph.D., e <a href="https://www.svallejovera.com/" class="link" target="_blank" rel="noopener noreferrer">Sebastián Vallejo Vera</a>, Ph.D.</p>
+        </div>
+
+        <div class="py-4">
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
+            <div class="flex flex-col sm:flex-row sm:items-baseline gap-2">
+              <span class="font-medium text-ink dark:text-ink-dark">Métodos Quantitativos II</span>
+              <span class="text-sm text-ink-muted dark:text-ink-muted-dark">FGV CPDOC · 2024.2 · Graduação</span>
+            </div>
+          </div>
+          <p class="text-sm text-ink-secondary dark:text-ink-secondary-dark">Análise exploratória de dados, inferência estatística básica e modelos de regressão. Instrutor: <a href="https://cpdoc.fgv.br/equipe/jaironicolau" class="link" target="_blank" rel="noopener noreferrer">Jairo Nicolau</a>, Ph.D.</p>
+        </div>
+
+        <div class="py-4">
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
+            <div class="flex flex-col sm:flex-row sm:items-baseline gap-2">
+              <span class="font-medium text-ink dark:text-ink-dark">Introdução ao R</span>
+              <span class="text-sm text-ink-muted dark:text-ink-muted-dark">FGV CPDOC · 2020.2 · Pós-Graduação</span>
+            </div>
+          </div>
+          <p class="text-sm text-ink-secondary dark:text-ink-secondary-dark">Introdução à programação para ciências sociais. Instrutor: <a href="https://cpdoc.fgv.br/equipe/JimmyMedeiros" class="link" target="_blank" rel="noopener noreferrer">Jimmy Medeiros</a>, Ph.D.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

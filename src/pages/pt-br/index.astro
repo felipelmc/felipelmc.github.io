@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SocialLinks from '../../components/SocialLinks.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('pt-br');
+---
+
+<Layout title={t('about.title')} lang="pt-BR">
+  <div class="grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-12 lg:gap-20 items-start">
+    <div class="flex flex-col items-center text-center gap-5">
+      <img
+        src="/img/profilepic/me_at_iesp.png"
+        alt="Felipe Lamarca"
+        class="w-72 h-72 rounded-md object-cover border border-border dark:border-border-dark"
+      />
+      <div>
+        <h1 class="font-serif text-2xl font-medium text-ink dark:text-ink-dark">
+          Felipe Lamarca
+        </h1>
+        <p class="text-sm text-ink-secondary dark:text-ink-secondary-dark mt-1">
+          {t('about.role')}
+        </p>
+      </div>
+    </div>
+
+    <div class="space-y-8">
+      <div class="space-y-4">
+        <p class="text-ink dark:text-ink-dark leading-relaxed" set:html={t('about.bio1')} />
+        <p class="text-ink dark:text-ink-dark leading-relaxed" set:html={t('about.bio2')} />
+        <p class="text-ink dark:text-ink-dark leading-relaxed">{t('about.bio3')}</p>
+      </div>
+
+      <div class="text-sm text-ink-secondary dark:text-ink-secondary-dark space-x-2">
+        <span>Comportamento legislativo</span>
+        <span class="text-ink-muted dark:text-ink-muted-dark">·</span>
+        <span>Métodos computacionais</span>
+        <span class="text-ink-muted dark:text-ink-muted-dark">·</span>
+        <span>Comportamento político</span>
+        <span class="text-ink-muted dark:text-ink-muted-dark">·</span>
+        <span>Pesquisa de survey</span>
+        <span class="text-ink-muted dark:text-ink-muted-dark">·</span>
+        <span>Inferência causal</span>
+      </div>
+
+      <div>
+        <p class="text-sm text-ink-muted dark:text-ink-muted-dark mb-4">
+          felipe <span>dot</span> lamarca <span>at</span> hotmail <span>dot</span> com
+        </p>
+        <SocialLinks />
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @layer base {
   html {
@@ -10,13 +10,17 @@
   }
 
   body {
-    @apply font-sans antialiased;
-    @apply bg-white text-gray-900;
-    @apply dark:bg-[#0a0a0a] dark:text-gray-100;
+    @apply font-sans antialiased leading-relaxed;
+    @apply bg-surface text-ink;
+    @apply dark:bg-surface-dark dark:text-ink-dark;
   }
 
   ::selection {
     @apply bg-accent/20 text-accent;
+  }
+
+  .dark ::selection {
+    @apply bg-accent-dark/20 text-accent-dark;
   }
 }
 
@@ -29,19 +33,21 @@
   }
 
   .section-title {
-    @apply text-2xl font-semibold mb-8 text-gray-900 dark:text-white;
+    @apply font-serif font-normal text-2xl mb-8 tracking-[0.01em];
+    @apply text-ink dark:text-ink-dark;
   }
 
   .subsection-title {
-    @apply text-lg font-medium mb-4 text-gray-800 dark:text-gray-200;
+    @apply font-serif font-medium text-lg mb-4;
+    @apply text-ink dark:text-ink-dark;
   }
 
   .card {
-    @apply p-6 rounded-lg;
-    @apply bg-gray-50 dark:bg-gray-900/50;
-    @apply border border-gray-100 dark:border-gray-800;
+    @apply p-6 rounded-md;
+    @apply bg-surface-card border border-border;
+    @apply dark:bg-surface-card-dark dark:border-border-dark;
     @apply transition-all duration-300;
-    @apply hover:border-gray-200 dark:hover:border-gray-700;
+    @apply hover:border-border/60 dark:hover:border-border-dark/60;
   }
 }
 

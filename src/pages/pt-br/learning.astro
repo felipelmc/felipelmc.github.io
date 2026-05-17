@@ -1,101 +1,103 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('pt-br');
 ---
 
-<Layout title="Learning" description="Selected repositories and workshops from my studies">
+<Layout title={t('learning.title')} description="Repositórios e workshops selecionados dos meus estudos" lang="pt-BR">
   <div class="space-y-12">
     <header>
-      <h1 class="font-serif text-3xl font-medium text-ink dark:text-ink-dark mb-2">Learning</h1>
-      <p class="text-ink-secondary dark:text-ink-secondary-dark">Selected repositories and workshops from my studies</p>
+      <h1 class="font-serif text-3xl font-medium text-ink dark:text-ink-dark mb-2">{t('learning.title')}</h1>
+      <p class="text-ink-secondary dark:text-ink-secondary-dark">{t('learning.subtitle')}</p>
     </header>
 
     <section>
-      <h2 class="section-title">Repositories</h2>
+      <h2 class="section-title">{t('learning.repos')}</h2>
 
       <div class="divide-y divide-border dark:divide-border-dark">
         <div class="py-4">
           <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
             <div class="flex flex-col sm:flex-row sm:items-baseline gap-2">
               <span class="font-medium text-ink dark:text-ink-dark">Machine Learning</span>
-              <span class="text-sm text-ink-muted dark:text-ink-muted-dark">FGV EMAp · 2023.1 · Undergraduate</span>
+              <span class="text-sm text-ink-muted dark:text-ink-muted-dark">FGV EMAp · 2023.1 · Graduação</span>
             </div>
             <div class="flex gap-4 text-sm">
               <a href="https://github.com/felipelmc/Machine-Learning" class="link" target="_blank" rel="noopener noreferrer">GitHub →</a>
             </div>
           </div>
-          <p class="text-sm text-ink-secondary dark:text-ink-secondary-dark">Probabilistic machine learning, mixture models, and approximate Bayesian inference.</p>
+          <p class="text-sm text-ink-secondary dark:text-ink-secondary-dark">Aprendizado de máquina probabilístico, modelos de mistura e inferência bayesiana aproximada.</p>
         </div>
 
         <div class="py-4">
           <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
             <div class="flex flex-col sm:flex-row sm:items-baseline gap-2">
               <span class="font-medium text-ink dark:text-ink-dark">Deep Learning</span>
-              <span class="text-sm text-ink-muted dark:text-ink-muted-dark">FGV EMAp · 2023.2 · Undergraduate</span>
+              <span class="text-sm text-ink-muted dark:text-ink-muted-dark">FGV EMAp · 2023.2 · Graduação</span>
             </div>
             <div class="flex gap-4 text-sm">
               <a href="https://github.com/felipelmc/Deep-Learning" class="link" target="_blank" rel="noopener noreferrer">GitHub →</a>
             </div>
           </div>
-          <p class="text-sm text-ink-secondary dark:text-ink-secondary-dark">Foundations of NNs, CNNs, LSTMs, GANs, Transformers, transfer learning, and autoencoders.</p>
+          <p class="text-sm text-ink-secondary dark:text-ink-secondary-dark">Fundamentos de redes neurais, CNNs, LSTMs, GANs, Transformers, transfer learning e autoencoders.</p>
         </div>
 
         <div class="py-4">
           <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
             <div class="flex flex-col sm:flex-row sm:items-baseline gap-2">
               <span class="font-medium text-ink dark:text-ink-dark">Lego I</span>
-              <span class="text-sm text-ink-muted dark:text-ink-muted-dark">IESP-UERJ · 2025.1 · Graduate</span>
+              <span class="text-sm text-ink-muted dark:text-ink-muted-dark">IESP-UERJ · 2025.1 · Pós-Graduação</span>
             </div>
             <div class="flex gap-4 text-sm">
               <a href="https://github.com/felipelmc/Lego-I" class="link" target="_blank" rel="noopener noreferrer">GitHub →</a>
               <a href="https://felipelamarca.com/Lego-I/" class="link" target="_blank" rel="noopener noreferrer">Website →</a>
             </div>
           </div>
-          <p class="text-sm text-ink-secondary dark:text-ink-secondary-dark">Quantitative social science: data analysis, research design, probability, and inference.</p>
+          <p class="text-sm text-ink-secondary dark:text-ink-secondary-dark">Ciências sociais quantitativas: análise de dados, desenho de pesquisa, probabilidade e inferência.</p>
         </div>
 
         <div class="py-4">
           <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
             <div class="flex flex-col sm:flex-row sm:items-baseline gap-2">
               <span class="font-medium text-ink dark:text-ink-dark">Lego II</span>
-              <span class="text-sm text-ink-muted dark:text-ink-muted-dark">IESP-UERJ · 2025.2 · Graduate</span>
+              <span class="text-sm text-ink-muted dark:text-ink-muted-dark">IESP-UERJ · 2025.2 · Pós-Graduação</span>
             </div>
             <div class="flex gap-4 text-sm">
               <a href="https://github.com/felipelmc/Lego-II" class="link" target="_blank" rel="noopener noreferrer">GitHub →</a>
               <a href="https://felipelamarca.com/Lego-II/" class="link" target="_blank" rel="noopener noreferrer">Website →</a>
             </div>
           </div>
-          <p class="text-sm text-ink-secondary dark:text-ink-secondary-dark">Linear regression models and extensions.</p>
+          <p class="text-sm text-ink-secondary dark:text-ink-secondary-dark">Modelos de regressão linear e extensões.</p>
         </div>
 
         <div class="py-4">
           <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
             <div class="flex flex-col sm:flex-row sm:items-baseline gap-2">
               <span class="font-medium text-ink dark:text-ink-dark">Lego III</span>
-              <span class="text-sm text-ink-muted dark:text-ink-muted-dark">IESP-UERJ · 2026.1 · Graduate</span>
+              <span class="text-sm text-ink-muted dark:text-ink-muted-dark">IESP-UERJ · 2026.1 · Pós-Graduação</span>
             </div>
             <div class="flex gap-4 text-sm">
               <a href="https://github.com/felipelmc/Lego-III" class="link" target="_blank" rel="noopener noreferrer">GitHub →</a>
               <a href="https://felipelamarca.com/Lego-III/" class="link" target="_blank" rel="noopener noreferrer">Website →</a>
             </div>
           </div>
-          <p class="text-sm text-ink-secondary dark:text-ink-secondary-dark">Causal inference: potential outcomes, DAGs, and identification strategies.</p>
+          <p class="text-sm text-ink-secondary dark:text-ink-secondary-dark">Inferência causal: resultados potenciais, DAGs e estratégias de identificação.</p>
         </div>
       </div>
     </section>
 
     <section>
-      <h2 class="section-title">Workshops & Training</h2>
+      <h2 class="section-title">{t('learning.workshops')}</h2>
 
       <div class="space-y-4">
         <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3 border-b border-border dark:border-border-dark">
-          <span class="text-sm font-medium text-ink-muted dark:text-ink-muted-dark shrink-0">November 2025</span>
+          <span class="text-sm font-medium text-ink-muted dark:text-ink-muted-dark shrink-0">Novembro 2025</span>
           <p class="text-ink-secondary dark:text-ink-secondary-dark">
-            Academic writing and publication of quantitative papers in Social Sciences @ IESP-UERJ.
+            Escrita acadêmica e publicação de artigos quantitativos em Ciências Sociais @ IESP-UERJ.
           </p>
         </div>
-
         <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3 border-b border-border dark:border-border-dark">
-          <span class="text-sm font-medium text-ink-muted dark:text-ink-muted-dark shrink-0">July 2025</span>
+          <span class="text-sm font-medium text-ink-muted dark:text-ink-muted-dark shrink-0">Julho 2025</span>
           <p class="text-ink-secondary dark:text-ink-secondary-dark">
             Advanced Text-As-Data: Word Embeddings, Deep Learning, and LLMs @ IESP-UERJ.
           </p>
