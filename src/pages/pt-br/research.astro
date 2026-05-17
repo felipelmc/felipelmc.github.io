@@ -14,15 +14,15 @@ const t = useTranslations('pt-br');
 
     <section>
       <h2 class="section-title">{t('research.interests')}</h2>
-      <div class="space-y-4 max-w-prose">
+      <div class="space-y-4">
         <p class="text-ink dark:text-ink-dark leading-relaxed">
-          Minha pesquisa se situa na interseção entre ciência política e ciências sociais computacionais. Tenho interesse amplo em <strong class="font-medium">comportamento legislativo</strong> — como as legislaturas organizam seu trabalho, como os representantes votam e se comunicam, e o que molda a agenda de políticas. Um fio condutor central nesse trabalho é o uso de métodos de text-as-data para analisar corpora legislativos em larga escala: discursos em plenário, projetos de lei, relatórios de comissões e requerimentos escritos que, em conjunto, traçam as preferências e estratégias dos atores políticos.
+          Meu trabalho atual se divide entre ciência política e ciências sociais computacionais, ao longo de duas linhas que venho desenvolvendo desde que ingressei no mestrado do IESP-UERJ. A primeira diz respeito ao comportamento legislativo -- como as legislaturas organizam seu trabalho, o que determina o comportamento parlamentar em plenário e o que molda a agenda de políticas. A segunda diz respeito à opinião pública e ao comportamento eleitoral, em particular como os cidadãos formam e revisam preferências sobre políticas públicas e o que explica a variação no <em>vote share</em> entre municípios brasileiros.
         </p>
         <p class="text-ink dark:text-ink-dark leading-relaxed">
-          Uma segunda linha de pesquisa diz respeito à <strong class="font-medium">opinião pública e comportamento político</strong>. Isso inclui métodos de survey, modelos de voto e o estudo de como os cidadãos formam e revisam preferências sobre políticas públicas. Tenho particular interesse em questões metodológicas sobre mensuração e identificação causal na ciência política observacional.
+          Boa parte desse trabalho envolve a construção e análise de bases de dados de larga escala: discursos em plenário, proposições legislativas, microdados de <em>survey</em> e resultados eleitorais ao longo de múltiplos ciclos eleitorais. Metodologicamente, lanço mão de métodos de <em>text-as-data</em>, aprendizado de máquina e inferência causal, a depender da pergunta. Uma preocupação recorrente é acertar na mensuração antes de partir para a interpretação -- seja na escolha do modelo de <em>embedding</em> adequado para um corpus legislativo, seja na calibração de uma amostra de <em>survey</em> para a população de interesse.
         </p>
         <p class="text-ink dark:text-ink-dark leading-relaxed">
-          Metodologicamente, utilizo aprendizado de máquina, aprendizado profundo, inferência causal e métodos de survey. Boa parte do meu trabalho envolve a construção de pipelines reproduzíveis que integram essas ferramentas a questões substantivas das ciências sociais — conectando a inovação metodológica à pesquisa política empírica.
+          Venho contribuindo, no MAPE, no DOXA e no NECON, com projetos que se situam nessa interseção: estudos sobre monitoramento eleitoral, opinião pública no estado do Rio de Janeiro e os determinantes da aprovação de proposições na Câmara dos Deputados. Em paralelo, o trabalho na AtlasIntel com calibração de amostras e previsão eleitoral tem informado minha visão sobre os limites e as possibilidades dos dados observacionais em ciências sociais.
         </p>
       </div>
     </section>
@@ -45,26 +45,24 @@ const t = useTranslations('pt-br');
           <h3 class="font-serif text-xl font-medium text-ink dark:text-ink-dark">Pesquisador <span class="text-ink-muted dark:text-ink-muted-dark font-normal">@</span> IESP-UERJ</h3>
           <div class="space-y-4">
             <div>
-              <div class="flex items-center gap-3 flex-wrap">
-                <a href="https://mape.org.br/" class="link font-medium" target="_blank" rel="noopener noreferrer">MAPE</a>
-                <span class="text-ink-muted dark:text-ink-muted-dark font-normal text-sm">· coordenado por Fernando Meireles &amp; Bruno Schaefer</span>
-              </div>
+              <p class="font-medium text-ink dark:text-ink-dark">
+                <a href="https://mape.org.br/" class="link" target="_blank" rel="noopener noreferrer">MAPE</a>
+                <span class="text-ink-muted dark:text-ink-muted-dark font-normal text-sm ml-1">· coordenado por Fernando Meireles &amp; Bruno Schaefer</span>
+              </p>
               <p class="text-ink-secondary dark:text-ink-secondary-dark text-sm mt-1 leading-relaxed">Laboratório de Monitoramento e Avaliação de Políticas Públicas e Eleições. Dedicado ao estudo de políticas públicas, eleições e suas interconexões por meio de técnicas de inferência causal e aprendizado de máquina.</p>
             </div>
             <div>
-              <div class="flex items-center gap-3 flex-wrap">
-                <a href="https://www.lab-doxa.org.br/" class="link font-medium" target="_blank" rel="noopener noreferrer">DOXA</a>
-                <img src="/img/logos/doxa.svg" alt="DOXA" class="h-4 w-auto opacity-60 dark:brightness-0 dark:invert dark:opacity-50" />
-                <span class="text-ink-muted dark:text-ink-muted-dark font-normal text-sm">· coordenado por Fernando Meireles &amp; Argelina Cheibub Figueiredo</span>
-              </div>
+              <p class="font-medium text-ink dark:text-ink-dark">
+                <a href="https://www.lab-doxa.org.br/" class="link" target="_blank" rel="noopener noreferrer">DOXA</a>
+                <span class="text-ink-muted dark:text-ink-muted-dark font-normal text-sm ml-1">· coordenado por Fernando Meireles &amp; Argelina Cheibub Figueiredo</span>
+              </p>
               <p class="text-ink-secondary dark:text-ink-secondary-dark text-sm mt-1 leading-relaxed">Laboratório de Estudos Eleitorais, de Comunicação Política e Opinião Pública. Um dos principais centros de pesquisa sobre processos eleitorais, comunicação política e comportamento de voto no Brasil.</p>
             </div>
             <div>
-              <div class="flex items-center gap-3 flex-wrap">
-                <a href="http://necon.iesp.uerj.br" class="link font-medium" target="_blank" rel="noopener noreferrer">NECON</a>
-                <img src="/img/logos/necon.png" alt="NECON" class="h-4 w-auto opacity-60 dark:brightness-0 dark:invert dark:opacity-50" />
-                <span class="text-ink-muted dark:text-ink-muted-dark font-normal text-sm">· coordenado por Fabiano Santos</span>
-              </div>
+              <p class="font-medium text-ink dark:text-ink-dark">
+                <a href="http://necon.iesp.uerj.br" class="link" target="_blank" rel="noopener noreferrer">NECON</a>
+                <span class="text-ink-muted dark:text-ink-muted-dark font-normal text-sm ml-1">· coordenado por Fabiano Santos</span>
+              </p>
               <p class="text-ink-secondary dark:text-ink-secondary-dark text-sm mt-1 leading-relaxed">Núcleo de Estudos sobre o Congresso. Focado em pesquisa acadêmica sobre o Legislativo brasileiro, incluindo bases de dados sobre votações nominais, migração partidária e produção legislativa.</p>
             </div>
           </div>

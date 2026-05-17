@@ -11,15 +11,15 @@ import Layout from '../layouts/Layout.astro';
 
     <section>
       <h2 class="section-title">Research Interests</h2>
-      <div class="space-y-4 max-w-prose">
+      <div class="space-y-4">
         <p class="text-ink dark:text-ink-dark leading-relaxed">
-          My research sits at the intersection of political science and computational social science. I am broadly interested in <strong class="font-medium">legislative behavior</strong> — how legislatures organize their work, how representatives vote and communicate, and what shapes the policy agenda. A central thread in this work is the use of text-as-data methods to analyze legislative corpora at scale: floor speeches, bills, committee reports, and written questions that together trace the preferences and strategies of political actors.
+          My current work spans political science and computational social science, organized around two broad areas that I have been developing since joining IESP-UERJ as a master's student. The first concerns legislative behavior -- how legislatures organize their work, what drives floor voting, and what shapes the policy agenda. The second concerns public opinion and electoral behavior, particularly how citizens form and revise policy preferences and what explains vote choice across Brazilian municipalities.
         </p>
         <p class="text-ink dark:text-ink-dark leading-relaxed">
-          A second line of research concerns <strong class="font-medium">public opinion and political behavior</strong>. This includes survey methods, vote choice models, and the study of how citizens form and revise preferences about public policy. I am particularly interested in methodological questions about measurement and causal identification in observational political science.
+          Much of this work involves building and analyzing large-scale datasets: floor speeches, legislative proposals, survey microdata, and electoral results across multiple election cycles. Methodologically, I draw on text-as-data methods, machine learning, and causal inference depending on the question at hand. An ongoing preoccupation is getting measurement right before moving to interpretation -- whether that means choosing the right embedding model for a corpus of legislative speeches or calibrating a survey sample to match the target population.
         </p>
         <p class="text-ink dark:text-ink-dark leading-relaxed">
-          Methodologically, I draw on machine learning, deep learning, causal inference, and survey methods. Much of my work involves building reproducible pipelines that integrate these tools with substantive social science questions — bridging the gap between methodological innovation and empirical political research.
+          I have been contributing to projects at MAPE, DOXA, and NECON that sit at this intersection: studies on electoral monitoring, public opinion in the state of Rio de Janeiro, and the determinants of legislative success in the lower chamber. In parallel, my work at AtlasIntel on survey calibration and political forecasting has shaped how I think about the limits and possibilities of observational data in social science.
         </p>
       </div>
     </section>
@@ -42,26 +42,24 @@ import Layout from '../layouts/Layout.astro';
           <h3 class="font-serif text-xl font-medium text-ink dark:text-ink-dark">Researcher <span class="text-ink-muted dark:text-ink-muted-dark font-normal">@</span> IESP-UERJ</h3>
           <div class="space-y-4">
             <div>
-              <div class="flex items-center gap-3 flex-wrap">
-                <a href="https://mape.org.br/" class="link font-medium" target="_blank" rel="noopener noreferrer">MAPE</a>
-                <span class="text-ink-muted dark:text-ink-muted-dark font-normal text-sm">· coordinated by Fernando Meireles &amp; Bruno Schaefer</span>
-              </div>
+              <p class="font-medium text-ink dark:text-ink-dark">
+                <a href="https://mape.org.br/" class="link" target="_blank" rel="noopener noreferrer">MAPE</a>
+                <span class="text-ink-muted dark:text-ink-muted-dark font-normal text-sm ml-1">· coordinated by Fernando Meireles &amp; Bruno Schaefer</span>
+              </p>
               <p class="text-ink-secondary dark:text-ink-secondary-dark text-sm mt-1 leading-relaxed">Policy and Election Monitoring and Evaluation Laboratory. Dedicated to studying public policy, elections, and their interconnections using causal inference and machine learning techniques.</p>
             </div>
             <div>
-              <div class="flex items-center gap-3 flex-wrap">
-                <a href="https://www.lab-doxa.org.br/" class="link font-medium" target="_blank" rel="noopener noreferrer">DOXA</a>
-                <img src="/img/logos/doxa.svg" alt="DOXA" class="h-4 w-auto opacity-60 dark:brightness-0 dark:invert dark:opacity-50" />
-                <span class="text-ink-muted dark:text-ink-muted-dark font-normal text-sm">· coordinated by Fernando Meireles &amp; Argelina Cheibub Figueiredo</span>
-              </div>
+              <p class="font-medium text-ink dark:text-ink-dark">
+                <a href="https://www.lab-doxa.org.br/" class="link" target="_blank" rel="noopener noreferrer">DOXA</a>
+                <span class="text-ink-muted dark:text-ink-muted-dark font-normal text-sm ml-1">· coordinated by Fernando Meireles &amp; Argelina Cheibub Figueiredo</span>
+              </p>
               <p class="text-ink-secondary dark:text-ink-secondary-dark text-sm mt-1 leading-relaxed">Laboratory of Electoral Studies, Political Communication and Public Opinion. A leading center for research on electoral processes, political communication, and voting behavior in Brazil.</p>
             </div>
             <div>
-              <div class="flex items-center gap-3 flex-wrap">
-                <a href="http://necon.iesp.uerj.br" class="link font-medium" target="_blank" rel="noopener noreferrer">NECON</a>
-                <img src="/img/logos/necon.png" alt="NECON" class="h-4 w-auto opacity-60 dark:brightness-0 dark:invert dark:opacity-50" />
-                <span class="text-ink-muted dark:text-ink-muted-dark font-normal text-sm">· coordinated by Fabiano Santos</span>
-              </div>
+              <p class="font-medium text-ink dark:text-ink-dark">
+                <a href="http://necon.iesp.uerj.br" class="link" target="_blank" rel="noopener noreferrer">NECON</a>
+                <span class="text-ink-muted dark:text-ink-muted-dark font-normal text-sm ml-1">· coordinated by Fabiano Santos</span>
+              </p>
               <p class="text-ink-secondary dark:text-ink-secondary-dark text-sm mt-1 leading-relaxed">Center for Studies on Congress. Focused on academic research on the Brazilian legislature, including databases on nominal votes, party migration, and legislative production.</p>
             </div>
           </div>
