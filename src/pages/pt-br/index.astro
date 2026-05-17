@@ -12,7 +12,7 @@ const t = useTranslations('pt-br');
       <img
         src="/img/profilepic/me_at_iesp.png"
         alt="Felipe Lamarca"
-        class="w-72 h-72 rounded-md object-cover border border-border dark:border-border-dark"
+        class="w-72 h-72 rounded-xl object-cover shadow-lg"
       />
       <div>
         <h1 class="font-serif text-2xl font-medium text-ink dark:text-ink-dark">
@@ -24,23 +24,19 @@ const t = useTranslations('pt-br');
       </div>
     </div>
 
-    <div class="space-y-8">
+    <div class="space-y-10">
       <div class="space-y-4">
         <p class="text-ink dark:text-ink-dark leading-relaxed" set:html={t('about.bio1')} />
         <p class="text-ink dark:text-ink-dark leading-relaxed" set:html={t('about.bio2')} />
         <p class="text-ink dark:text-ink-dark leading-relaxed">{t('about.bio3')}</p>
       </div>
 
-      <div class="text-sm text-ink-secondary dark:text-ink-secondary-dark space-x-2">
-        <span>Comportamento legislativo</span>
-        <span class="text-ink-muted dark:text-ink-muted-dark">·</span>
-        <span>Métodos computacionais</span>
-        <span class="text-ink-muted dark:text-ink-muted-dark">·</span>
-        <span>Comportamento político</span>
-        <span class="text-ink-muted dark:text-ink-muted-dark">·</span>
-        <span>Pesquisa de survey</span>
-        <span class="text-ink-muted dark:text-ink-muted-dark">·</span>
-        <span>Inferência causal</span>
+      <div class="flex flex-wrap gap-2">
+        <span class="inline-flex items-center px-3 py-1 text-xs rounded-sm border border-border dark:border-border-dark text-ink-secondary dark:text-ink-secondary-dark">Comportamento legislativo</span>
+        <span class="inline-flex items-center px-3 py-1 text-xs rounded-sm border border-border dark:border-border-dark text-ink-secondary dark:text-ink-secondary-dark">Métodos computacionais</span>
+        <span class="inline-flex items-center px-3 py-1 text-xs rounded-sm border border-border dark:border-border-dark text-ink-secondary dark:text-ink-secondary-dark">Comportamento político</span>
+        <span class="inline-flex items-center px-3 py-1 text-xs rounded-sm border border-border dark:border-border-dark text-ink-secondary dark:text-ink-secondary-dark">Pesquisa de survey</span>
+        <span class="inline-flex items-center px-3 py-1 text-xs rounded-sm border border-border dark:border-border-dark text-ink-secondary dark:text-ink-secondary-dark">Inferência causal</span>
       </div>
 
       <div>

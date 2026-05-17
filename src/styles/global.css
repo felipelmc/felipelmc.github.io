@@ -33,8 +33,9 @@
   }
 
   .section-title {
-    @apply font-serif font-normal text-2xl mb-8 tracking-[0.01em];
+    @apply font-serif font-medium text-2xl mb-8 tracking-[0.01em];
     @apply text-ink dark:text-ink-dark;
+    @apply pt-6 border-t border-border dark:border-border-dark;
   }
 
   .subsection-title {
@@ -42,12 +43,9 @@
     @apply text-ink dark:text-ink-dark;
   }
 
-  .card {
-    @apply p-6 rounded-md;
-    @apply bg-surface-card border border-border;
-    @apply dark:bg-surface-card-dark dark:border-border-dark;
-    @apply transition-all duration-300;
-    @apply hover:border-border/60 dark:hover:border-border-dark/60;
+  .pub-entry {
+    @apply py-5 border-b border-border;
+    @apply dark:border-border-dark;
   }
 }
 
