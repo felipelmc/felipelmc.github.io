@@ -18,10 +18,11 @@ const otherLocalePath = (() => {
 
 const navItems = [
   { href: locale === 'en' ? '/' : '/pt-br', label: t('nav.about') },
-  { href: locale === 'en' ? '/work' : '/pt-br/work', label: t('nav.work') },
+  { href: locale === 'en' ? '/research' : '/pt-br/research', label: t('nav.research') },
   { href: locale === 'en' ? '/publications' : '/pt-br/publications', label: t('nav.publications') },
-  { href: locale === 'en' ? '/learning' : '/pt-br/learning', label: t('nav.learning') },
   { href: locale === 'en' ? '/teaching' : '/pt-br/teaching', label: t('nav.teaching') },
+  { href: locale === 'en' ? '/materials' : '/pt-br/materials', label: t('nav.materials') },
+  { href: locale === 'en' ? '/cv' : '/pt-br/cv', label: t('nav.cv') },
 ];
 
 const isActive = (href: string) => {
