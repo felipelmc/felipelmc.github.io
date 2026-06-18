@@ -36,14 +36,26 @@ const t = useTranslations('pt-br');
           <div>
             <div class="pub-entry">
               <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
-                Da gaveta ao plenário: os caminhos da aprovação de pautas na Câmara dos Deputados.
+                Preference estimation in the Brazilian Congress.
               </p>
               <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
-                Trabalho conjunto com Lucas Calabró Berti (IESP-UERJ). A ser apresentado no Encontro da ABCP 2026.
+                Dissertação de mestrado.
               </p>
               <div class="mt-3 flex flex-wrap gap-4 text-sm">
-                <button data-modal="abstract-gaveta" class="link cursor-pointer bg-transparent border-none p-0">{t('publications.abstract')}</button>
+                <button data-modal="abstract-dissertation" class="link cursor-pointer bg-transparent border-none p-0 text-ink-muted dark:text-ink-muted-dark">{t('publications.abstract.soon')}</button>
+              </div>
+            </div>
+            <div class="pub-entry">
+              <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
+                Como a população do estado do Rio de Janeiro se informa sobre política? <em class="text-ink-muted dark:text-ink-muted-dark">DOXA — Laboratório de Estudos Eleitorais, de Comunicação Política e Opinião Pública (IESP-UERJ)</em>. 2026.
+              </p>
+              <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
+                Trabalho conjunto com Fernando Meireles (IESP-UERJ) e Argelina Cheibub Figueiredo (IESP-UERJ).
+              </p>
+              <div class="mt-3 flex flex-wrap gap-4 text-sm">
+                <button data-modal="abstract-doxa-1" class="link cursor-pointer bg-transparent border-none p-0 text-ink-muted dark:text-ink-muted-dark">{t('publications.abstract.soon')}</button>
                 <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">{t('publications.replication.soon')}</a>
+                <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">{t('publications.access.soon')}</a>
               </div>
             </div>
             <div class="pub-entry">
@@ -61,15 +73,34 @@ const t = useTranslations('pt-br');
             </div>
             <div class="pub-entry">
               <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
-                Preference estimation in the Brazilian Congress.
+                Da gaveta ao plenário: os caminhos da aprovação de pautas na Câmara dos Deputados.
               </p>
               <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
-                Dissertação de mestrado.
+                Trabalho conjunto com Lucas Calabró Berti (IESP-UERJ). A ser apresentado no Encontro da ABCP 2026.
               </p>
               <div class="mt-3 flex flex-wrap gap-4 text-sm">
-                <button data-modal="abstract-dissertation" class="link cursor-pointer bg-transparent border-none p-0 text-ink-muted dark:text-ink-muted-dark">{t('publications.abstract.soon')}</button>
+                <button data-modal="abstract-gaveta" class="link cursor-pointer bg-transparent border-none p-0">{t('publications.abstract')}</button>
+                <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">{t('publications.replication.soon')}</a>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">{t('publications.technical')}</h2>
+      <div>
+        <div class="pub-entry">
+          <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
+            Nota Técnica NECON sobre as próximas eleições presidenciais. <em class="text-ink-muted dark:text-ink-muted-dark">NECON — Núcleo de Estudos sobre o Congresso (IESP-UERJ)</em>. 2026.
+          </p>
+          <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
+            Trabalho conjunto com Fabiano Santos (IESP-UERJ) e Carlos Freitas (IESP-UERJ).
+          </p>
+          <div class="mt-3 flex flex-wrap gap-4 text-sm">
+            <button data-modal="abstract-necon" class="link cursor-pointer bg-transparent border-none p-0">{t('publications.abstract')}</button>
+            <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">{t('publications.access.soon')}</a>
           </div>
         </div>
       </div>
@@ -96,49 +127,6 @@ const t = useTranslations('pt-br');
           <p class="text-ink-secondary dark:text-ink-secondary-dark">
             <a href="https://bien2025.com.br/" class="link" target="_blank" rel="noopener noreferrer">BIEN Congress 2025</a> – Brasil. <em>Fatores explicativos do apoio ou rejeição à criação de uma política municipal de renda básica: modelando a percepção dos cariocas</em>. <a href="https://github.com/felipelmc/Presentations/blob/main/BIEN-2025/bien2025.pdf" class="link" target="_blank" rel="noopener noreferrer">PDF →</a>
           </p>
-        </div>
-        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3 border-b border-border dark:border-border-dark">
-          <span class="text-sm font-medium text-ink-muted dark:text-ink-muted-dark shrink-0">Julho 2025</span>
-          <p class="text-ink-secondary dark:text-ink-secondary-dark">
-            <a href="https://sicss.io/2025/fgv-ecmi-brazil/" class="link" target="_blank" rel="noopener noreferrer">SICSS 2025</a> – Rio de Janeiro, RJ, Brasil. <em>Automated Text Analysis</em>. <a href="https://github.com/felipelmc/Presentations/blob/main/SICSS-2025/sicss2025.pdf" class="link" target="_blank" rel="noopener noreferrer">PDF →</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="section-title">{t('publications.discussion')}</h2>
-      <div>
-        <div class="pub-entry">
-          <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
-            Como a população do estado do Rio de Janeiro se informa sobre política? <em class="text-ink-muted dark:text-ink-muted-dark">DOXA — Laboratório de Estudos Eleitorais, de Comunicação Política e Opinião Pública (IESP-UERJ)</em>. 2026.
-          </p>
-          <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
-            Trabalho conjunto com Fernando Meireles (IESP-UERJ) e Argelina Cheibub Figueiredo (IESP-UERJ).
-          </p>
-          <div class="mt-3 flex flex-wrap gap-4 text-sm">
-            <button data-modal="abstract-doxa-1" class="link cursor-pointer bg-transparent border-none p-0 text-ink-muted dark:text-ink-muted-dark">{t('publications.abstract.soon')}</button>
-            <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">{t('publications.replication.soon')}</a>
-            <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">{t('publications.access.soon')}</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="section-title">{t('publications.technical')}</h2>
-      <div>
-        <div class="pub-entry">
-          <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
-            Nota Técnica NECON sobre as próximas eleições presidenciais. <em class="text-ink-muted dark:text-ink-muted-dark">NECON — Núcleo de Estudos sobre o Congresso (IESP-UERJ)</em>. 2026.
-          </p>
-          <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
-            Trabalho conjunto com Fabiano Santos (IESP-UERJ) e Carlos Freitas (IESP-UERJ).
-          </p>
-          <div class="mt-3 flex flex-wrap gap-4 text-sm">
-            <button data-modal="abstract-necon" class="link cursor-pointer bg-transparent border-none p-0">{t('publications.abstract')}</button>
-            <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">{t('publications.access.soon')}</a>
-          </div>
         </div>
       </div>
     </section>

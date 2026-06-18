@@ -2,7 +2,6 @@ export const translations = {
   en: {
     // Nav
     'nav.about': 'About',
-    'nav.research': 'Research',
     'nav.publications': 'Publications',
     'nav.teaching': 'Teaching',
     'nav.materials': 'Materials',
@@ -76,7 +75,6 @@ export const translations = {
   'pt-br': {
     // Nav
     'nav.about': 'Sobre',
-    'nav.research': 'Pesquisa',
     'nav.publications': 'Publicações',
     'nav.teaching': 'Ensino',
     'nav.materials': 'Materiais',
