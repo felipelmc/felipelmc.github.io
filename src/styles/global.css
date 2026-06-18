@@ -44,7 +44,7 @@
   }
 
   .pub-entry {
-    @apply py-5 border-b border-border;
+    @apply py-5 border-b border-border last:border-b-0;
     @apply dark:border-border-dark;
   }
 }
