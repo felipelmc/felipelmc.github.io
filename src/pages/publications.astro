@@ -47,25 +47,6 @@ import Layout from '../layouts/Layout.astro';
           <div>
           <div class="pub-entry">
             <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
-              A Systematic Review of Text-as-Data Approaches to Parliamentary Behavior.
-            </p>
-            <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
-              To be presented at the XIII Congreso ALACIP (Buenos Aires, July 2026).
-            </p>
-            <div class="mt-3 flex flex-wrap gap-4 text-sm">
-              <button
-                data-modal="abstract-systematic-review"
-                class="link cursor-pointer bg-transparent border-none p-0"
-              >
-                Abstract →
-              </button>
-              <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">
-                Replication materials (coming soon)
-              </a>
-            </div>
-          </div>
-          <div class="pub-entry">
-            <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
               Da gaveta ao plenário: os caminhos da aprovação de pautas na Câmara dos Deputados.
             </p>
             <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
@@ -85,17 +66,17 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <div class="pub-entry">
             <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
-              Quantos votos meu partido vai fazer? Prevendo o vote share nos municípios brasileiros.
+              Quantos votos meu partido vai fazer? Um tutorial de validação preditiva com dados abertos (2016-2024).
             </p>
             <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
               Joint work with Tomás Paixão (IESP-UERJ).
             </p>
             <div class="mt-3 flex flex-wrap gap-4 text-sm">
               <button
-                data-modal="abstract-wip"
-                class="link cursor-pointer bg-transparent border-none p-0 text-ink-muted dark:text-ink-muted-dark"
+                data-modal="abstract-tomas"
+                class="link cursor-pointer bg-transparent border-none p-0"
               >
-                Abstract (coming soon)
+                Abstract →
               </button>
               <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">
                 Replication materials (coming soon)
@@ -103,6 +84,22 @@ import Layout from '../layouts/Layout.astro';
               <a href="#" class="link text-ink-muted dark:text-ink-muted-dark pointer-events-none">
                 Access link (coming soon)
               </a>
+            </div>
+          </div>
+          <div class="pub-entry">
+            <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
+              Preference estimation in the Brazilian Congress.
+            </p>
+            <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
+              Master's dissertation.
+            </p>
+            <div class="mt-3 flex flex-wrap gap-4 text-sm">
+              <button
+                data-modal="abstract-dissertation"
+                class="link cursor-pointer bg-transparent border-none p-0 text-ink-muted dark:text-ink-muted-dark"
+              >
+                Abstract (coming soon)
+              </button>
             </div>
           </div>
           </div>
@@ -118,12 +115,6 @@ import Layout from '../layouts/Layout.astro';
           <span class="text-sm font-medium text-ink-muted dark:text-ink-muted-dark shrink-0">August 2026</span>
           <p class="text-ink-secondary dark:text-ink-secondary-dark">
             XV Encontro da ABCP – Belém, Pará, Brazil. <em>Da gaveta ao plenário: os caminhos da aprovação de pautas na Câmara dos Deputados</em>.
-          </p>
-        </div>
-        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3 border-b border-border dark:border-border-dark">
-          <span class="text-sm font-medium text-ink-muted dark:text-ink-muted-dark shrink-0">July 2026</span>
-          <p class="text-ink-secondary dark:text-ink-secondary-dark">
-            XIII Congreso ALACIP – Buenos Aires, Argentina. <em>A Systematic Review of Text-as-Data Approaches to Parliamentary Behavior</em>.
           </p>
         </div>
         <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3 border-b border-border dark:border-border-dark">
@@ -303,25 +294,6 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </div>
 
-  <!-- Modal for Systematic Review Abstract -->
-  <div id="abstract-systematic-review" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-4">
-    <div class="modal-backdrop absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-    <div class="modal-content relative bg-surface dark:bg-surface-dark rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 border border-border dark:border-border-dark">
-      <button class="modal-close absolute top-4 right-4 text-ink-muted dark:text-ink-muted-dark hover:text-ink dark:hover:text-ink-dark">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-      <h3 class="font-serif text-lg font-medium text-ink dark:text-ink-dark mb-4">Abstract</h3>
-      <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed text-sm">
-        What can legislative texts tell us about the organizational logic of legislatures? Text-as-data methods, computational approaches that convert natural language into quantitative measures suitable for systematic analysis, have transformed the study of political institutions over the past two decades. Early applications relied on dictionary-based classifiers and bag-of-words models that treated words as discrete, exchangeable units. More recent advances in representation learning, from static word embeddings to contextual language models, now allow researchers to capture semantic similarity, track conceptual change over time, and scale analysis to corpora spanning decades and multiple languages. Legislative studies stand to benefit particularly from this trajectory: legislatures produce vast, structured, and often publicly available textual records, from floor speeches and written questions to committee hearings and bills, that encode information about the preferences, strategies, and organizational routines of political actors.
-      </p>
-      <p class="mt-4 text-ink-secondary dark:text-ink-secondary-dark leading-relaxed text-sm">
-        This paper presents a systematic review of text-as-data research on legislative texts, examining how scholars have used these methods to study legislative organization. The review is built on a structured, reproducible search pipeline combining the OpenAlex API and automated AI-assisted screening, a framework designed to be scalable to broader journal sets and replicable by other researchers. Beyond retrieval, the paper applies text-as-data methods to the review process itself, using abstract embeddings to analyze how the retrieved papers distribute in a semantic space and to inform the relational reading that follows. The review reads the literature relationally, first around the substantive legislative problems these studies address, and then around the methodological strategies they employ. The paper concludes by identifying consequential gaps in both the methods and the data sources that have so far defined this emerging field.
-      </p>
-    </div>
-  </div>
-
   <!-- Modal for Da Gaveta ao Plenário Abstract -->
   <div id="abstract-gaveta" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-4">
     <div class="modal-backdrop absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
@@ -338,8 +310,24 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </div>
 
-  <!-- Modal for Work in Progress Abstract (placeholder) -->
-  <div id="abstract-wip" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+  <!-- Modal for Tomás Abstract -->
+  <div id="abstract-tomas" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="modal-backdrop absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+    <div class="modal-content relative bg-surface dark:bg-surface-dark rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 border border-border dark:border-border-dark">
+      <button class="modal-close absolute top-4 right-4 text-ink-muted dark:text-ink-muted-dark hover:text-ink dark:hover:text-ink-dark">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <h3 class="font-serif text-lg font-medium text-ink dark:text-ink-dark mb-4">Abstract</h3>
+      <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed text-sm">
+        No Brasil, a modelagem estatística é usada no campo de Ciências Sociais quase exclusivamente para explicar fenômenos, raramente para prevê-los. A difusão de técnicas de machine learning, porém, vem dissolvendo a fronteira entre estudos preditivos e causais: a predição serve de benchmark para teorias, revela onde os modelos falham e disciplina o uso da informação disponível. Tendo isto em vista, este manuscrito parte de duas questões. A primeira é substantiva: é possível prever, com boa acurácia, o desempenho eleitoral dos partidos nas eleições proporcionais para vereador usando apenas informação disponível antes do pleito? A segunda é metodológica: como se conduz, na prática, um exercício preditivo rigoroso, dos dados brutos à validação dos resultados? Respondemos com um tutorial reprodutível aplicado aos 92 municípios fluminenses em três eleições (2016, 2020 e 2024), em expansão para o conjunto dos municípios brasileiros.
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal for Dissertation Abstract (placeholder) -->
+  <div id="abstract-dissertation" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-4">
     <div class="modal-backdrop absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
     <div class="modal-content relative bg-surface dark:bg-surface-dark rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 border border-border dark:border-border-dark">
       <button class="modal-close absolute top-4 right-4 text-ink-muted dark:text-ink-muted-dark hover:text-ink dark:hover:text-ink-dark">
