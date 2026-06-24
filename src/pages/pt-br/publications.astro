@@ -154,6 +154,7 @@ const t = useTranslations('pt-br');
           <div class="mt-3 flex gap-4 text-sm">
             <a href="https://github.com/felipelmc/RelicarIA" class="link" target="_blank" rel="noopener noreferrer">{t('publications.source')}</a>
             <a href="https://relicaria.streamlit.app/" class="link" target="_blank" rel="noopener noreferrer">{t('publications.access')}</a>
+            <button data-modal="bibtex-relicaria" class="link cursor-pointer bg-transparent border-none p-0">{t('publications.bibtex')}</button>
           </div>
         </div>
         <div class="pub-entry">
@@ -175,6 +176,7 @@ const t = useTranslations('pt-br');
           </p>
           <div class="mt-3 flex gap-4 text-sm">
             <a href="https://github.com/felipelmc/Quarto-Model-IESP" class="link" target="_blank" rel="noopener noreferrer">{t('publications.source')}</a>
+            <button data-modal="bibtex-quarto" class="link cursor-pointer bg-transparent border-none p-0">{t('publications.bibtex')}</button>
           </div>
         </div>
       </div>
@@ -214,6 +216,46 @@ const t = useTranslations('pt-br');
   doi = {'{'}10.12660/rm.v13n20.2021.82665{'}'}
 {'}'}</code></pre>
       <button id="copy-bibtex-1" class="mt-4 px-4 py-2 text-sm bg-accent dark:bg-accent-dark text-white rounded-lg hover:opacity-90 transition-opacity">
+        {t('publications.copy')}
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal for RelicárIA BibTeX -->
+  <div id="bibtex-relicaria" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="modal-backdrop absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+    <div class="modal-content relative bg-surface dark:bg-surface-dark rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 border border-border dark:border-border-dark">
+      <button class="modal-close absolute top-4 right-4 text-ink-muted dark:text-ink-muted-dark hover:text-ink dark:hover:text-ink-dark">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+      </button>
+      <h3 class="font-serif text-lg font-medium text-ink dark:text-ink-dark mb-4">Citação BibTeX</h3>
+      <pre class="bg-surface-card dark:bg-surface-card-dark p-4 rounded-lg text-sm text-ink-secondary dark:text-ink-secondary-dark overflow-x-auto border border-border dark:border-border-dark"><code>@misc{'{'}LamarcaAlmeida2025relicaria,
+  author = {'{'}Lamarca, Felipe Marques Esteves and Almeida, Danielle Sanches de{'}'},
+  title = {'{'}RelicárIA{'}'},
+  year = {'{'}2025{'}'},
+  url = {'{'}https://github.com/felipelmc/RelicarIA{'}'}
+{'}'}</code></pre>
+      <button id="copy-bibtex-relicaria" class="mt-4 px-4 py-2 text-sm bg-accent dark:bg-accent-dark text-white rounded-lg hover:opacity-90 transition-opacity">
+        {t('publications.copy')}
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal for Quarto-Model-IESP BibTeX -->
+  <div id="bibtex-quarto" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="modal-backdrop absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+    <div class="modal-content relative bg-surface dark:bg-surface-dark rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 border border-border dark:border-border-dark">
+      <button class="modal-close absolute top-4 right-4 text-ink-muted dark:text-ink-muted-dark hover:text-ink dark:hover:text-ink-dark">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+      </button>
+      <h3 class="font-serif text-lg font-medium text-ink dark:text-ink-dark mb-4">Citação BibTeX</h3>
+      <pre class="bg-surface-card dark:bg-surface-card-dark p-4 rounded-lg text-sm text-ink-secondary dark:text-ink-secondary-dark overflow-x-auto border border-border dark:border-border-dark"><code>@misc{'{'}Lamarca2026quarto,
+  author = {'{'}Lamarca, Felipe Marques Esteves{'}'},
+  title = {'{'}Quarto-Model-IESP: IESP-UERJ Thesis / Dissertation Model in Quarto{'}'},
+  year = {'{'}2026{'}'},
+  url = {'{'}https://github.com/felipelmc/Quarto-Model-IESP{'}'}
+{'}'}</code></pre>
+      <button id="copy-bibtex-quarto" class="mt-4 px-4 py-2 text-sm bg-accent dark:bg-accent-dark text-white rounded-lg hover:opacity-90 transition-opacity">
         {t('publications.copy')}
       </button>
     </div>
@@ -314,6 +356,38 @@ const t = useTranslations('pt-br');
       });
       document.body.style.overflow = '';
     }
+  });
+
+  async function copyBibtex(btnId, text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      const btn = document.getElementById(btnId);
+      if (btn) {
+        const orig = btn.textContent;
+        btn.textContent = 'Copiado!';
+        setTimeout(() => { btn.textContent = orig; }, 2000);
+      }
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  }
+
+  document.getElementById('copy-bibtex-relicaria')?.addEventListener('click', () => {
+    copyBibtex('copy-bibtex-relicaria', `@misc{LamarcaAlmeida2025relicaria,
+  author = {Lamarca, Felipe Marques Esteves and Almeida, Danielle Sanches de},
+  title = {RelicárIA},
+  year = {2025},
+  url = {https://github.com/felipelmc/RelicarIA}
+}`);
+  });
+
+  document.getElementById('copy-bibtex-quarto')?.addEventListener('click', () => {
+    copyBibtex('copy-bibtex-quarto', `@misc{Lamarca2026quarto,
+  author = {Lamarca, Felipe Marques Esteves},
+  title = {Quarto-Model-IESP: IESP-UERJ Thesis / Dissertation Model in Quarto},
+  year = {2026},
+  url = {https://github.com/felipelmc/Quarto-Model-IESP}
+}`);
   });
 
   document.getElementById('copy-bibtex-1')?.addEventListener('click', async () => {
