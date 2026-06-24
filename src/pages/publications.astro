@@ -238,7 +238,10 @@ import Layout from '../layouts/Layout.astro';
             <code class="text-accent dark:text-accent-dark">Quarto-Model-IESP</code>
           </h3>
           <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
-            A Quarto template for IESP-UERJ theses and dissertations. 2025.
+            A Quarto template for IESP-UERJ theses and dissertations. 2026.
+          </p>
+          <p class="mt-2 text-sm text-ink-muted dark:text-ink-muted-dark italic">
+            Joint work with Matheus Cavalcanti Pestana (IESP-UERJ).
           </p>
           <div class="mt-3 flex gap-4 text-sm">
             <a href="https://github.com/felipelmc/Quarto-Model-IESP" class="link" target="_blank" rel="noopener noreferrer">Source code →</a>
@@ -304,11 +307,12 @@ import Layout from '../layouts/Layout.astro';
         </svg>
       </button>
       <h3 class="font-serif text-lg font-medium text-ink dark:text-ink-dark mb-4">BibTeX Citation</h3>
-      <pre class="bg-surface-card dark:bg-surface-card-dark p-4 rounded-lg text-sm text-ink-secondary dark:text-ink-secondary-dark overflow-x-auto border border-border dark:border-border-dark"><code>@misc{'{'}LamarcaAlmeida2025relicaria,
-  author = {'{'}Lamarca, Felipe Marques Esteves and Almeida, Danielle Sanches de{'}'},
-  title = {'{'}RelicárIA{'}'},
-  year = {'{'}2025{'}'},
-  url = {'{'}https://github.com/felipelmc/RelicarIA{'}'}
+      <pre class="bg-surface-card dark:bg-surface-card-dark p-4 rounded-lg text-sm text-ink-secondary dark:text-ink-secondary-dark overflow-x-auto border border-border dark:border-border-dark"><code>@misc{'{'}relicaria,
+  author    = {'{'}Almeida, D. and Lamarca, F.{'}'},
+  title     = {'{'}RelicárIA{'}'},
+  year      = {'{'}2025{'}'},
+  publisher = {'{'}Zenodo{'}'},
+  doi       = {'{'}10.5281/zenodo.15536372{'}'}
 {'}'}</code></pre>
       <button id="copy-bibtex-relicaria" class="mt-4 px-4 py-2 text-sm bg-accent dark:bg-accent-dark text-white rounded-lg hover:opacity-90 transition-opacity">
         Copy to clipboard
@@ -326,11 +330,14 @@ import Layout from '../layouts/Layout.astro';
         </svg>
       </button>
       <h3 class="font-serif text-lg font-medium text-ink dark:text-ink-dark mb-4">BibTeX Citation</h3>
-      <pre class="bg-surface-card dark:bg-surface-card-dark p-4 rounded-lg text-sm text-ink-secondary dark:text-ink-secondary-dark overflow-x-auto border border-border dark:border-border-dark"><code>@misc{'{'}Lamarca2026quarto,
-  author = {'{'}Lamarca, Felipe Marques Esteves{'}'},
-  title = {'{'}Quarto-Model-IESP: IESP-UERJ Thesis / Dissertation Model in Quarto{'}'},
-  year = {'{'}2026{'}'},
-  url = {'{'}https://github.com/felipelmc/Quarto-Model-IESP{'}'}
+      <pre class="bg-surface-card dark:bg-surface-card-dark p-4 rounded-lg text-sm text-ink-secondary dark:text-ink-secondary-dark overflow-x-auto border border-border dark:border-border-dark"><code>@software{'{'}lamarcaPestana2026quarto,
+  author    = {'{'}Lamarca, Felipe and Pestana, Matheus Cavalcanti{'}'},
+  title     = {'{'}Quarto Template for {'{'}IESP-UERJ{'}'} Dissertations and Theses{'}'},
+  year      = {'{'}2026{'}'},
+  publisher = {'{'}Zenodo{'}'},
+  version   = {'{'}v1{'}'},
+  doi       = {'{'}10.5281/zenodo.20819431{'}'},
+  url       = {'{'}https://doi.org/10.5281/zenodo.20819431{'}'}
 {'}'}</code></pre>
       <button id="copy-bibtex-quarto" class="mt-4 px-4 py-2 text-sm bg-accent dark:bg-accent-dark text-white rounded-lg hover:opacity-90 transition-opacity">
         Copy to clipboard
@@ -468,20 +475,24 @@ import Layout from '../layouts/Layout.astro';
   }
 
   document.getElementById('copy-bibtex-relicaria')?.addEventListener('click', () => {
-    copyBibtex('copy-bibtex-relicaria', `@misc{LamarcaAlmeida2025relicaria,
-  author = {Lamarca, Felipe Marques Esteves and Almeida, Danielle Sanches de},
-  title = {RelicárIA},
-  year = {2025},
-  url = {https://github.com/felipelmc/RelicarIA}
+    copyBibtex('copy-bibtex-relicaria', `@misc{relicaria,
+  author    = {Almeida, D. and Lamarca, F.},
+  title     = {RelicárIA},
+  year      = {2025},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.15536372}
 }`);
   });
 
   document.getElementById('copy-bibtex-quarto')?.addEventListener('click', () => {
-    copyBibtex('copy-bibtex-quarto', `@misc{Lamarca2026quarto,
-  author = {Lamarca, Felipe Marques Esteves},
-  title = {Quarto-Model-IESP: IESP-UERJ Thesis / Dissertation Model in Quarto},
-  year = {2026},
-  url = {https://github.com/felipelmc/Quarto-Model-IESP}
+    copyBibtex('copy-bibtex-quarto', `@software{lamarcaPestana2026quarto,
+  author    = {Lamarca, Felipe and Pestana, Matheus Cavalcanti},
+  title     = {Quarto Template for {IESP-UERJ} Dissertations and Theses},
+  year      = {2026},
+  publisher = {Zenodo},
+  version   = {v1},
+  doi       = {10.5281/zenodo.20819431},
+  url       = {https://doi.org/10.5281/zenodo.20819431}
 }`);
   });
 
