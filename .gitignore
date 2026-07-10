@@ -3,5 +3,11 @@ node_modules/
 .astro/
 dist/
 
+# Unprocessed photo originals; only the resized copies in public/img/photos/ ship.
+# Leading slash is required: a bare `photos/` would also ignore public/img/photos/.
+/photos/
+
+.DS_Store
+
 CLAUDE.md
 .claude

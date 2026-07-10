@@ -1,0 +1,156 @@
+---
+import { useTranslations } from '../i18n/utils';
+import { photos, photoSrc, photoThumb } from '../data/photos';
+
+const locale = Astro.currentLocale ?? 'en';
+const t = useTranslations(locale);
+const altLang = locale === 'pt-br' ? 'pt-br' : 'en';
+---
+
+<section class="mt-16 pt-6 border-t border-border dark:border-border-dark">
+  <p
+    class="max-w-3xl text-sm leading-relaxed text-ink-secondary dark:text-ink-secondary-dark mb-6"
+    set:html={t('about.photography')}
+  />
+
+  <ul class="grid grid-cols-2 md:grid-cols-4 gap-3">
+    {photos.map((photo, i) => (
+      <li>
+        <button
+          type="button"
+          data-photo
+          data-index={i}
+          data-full={photoSrc(photo)}
+          data-width={photo.width}
+          data-height={photo.height}
+          data-alt={photo.alt[altLang]}
+          aria-label={photo.alt[altLang]}
+          class="group block w-full overflow-hidden rounded-md cursor-zoom-in border border-border dark:border-border-dark bg-surface-card dark:bg-surface-card-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-accent dark:focus-visible:ring-accent-dark focus-visible:ring-offset-2 focus-visible:ring-offset-surface dark:focus-visible:ring-offset-surface-dark"
+        >
+          <img
+            src={photoThumb(photo)}
+            width={photo.thumbWidth}
+            height={photo.thumbHeight}
+            alt={photo.alt[altLang]}
+            loading="lazy"
+            decoding="async"
+            class="aspect-[4/3] w-full object-cover transition duration-500 ease-out group-hover:scale-[1.04] group-hover:brightness-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+          />
+        </button>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<div
+  id="photo-lightbox"
+  class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8"
+  role="dialog"
+  aria-modal="true"
+  aria-label={t('photos.gallery')}
+>
+  <div data-lightbox-backdrop class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+
+  <div class="relative w-full max-w-5xl">
+    <img
+      id="lightbox-img"
+      src=""
+      alt=""
+      class="mx-auto max-h-[78vh] w-auto max-w-full rounded-lg object-contain shadow-2xl"
+    />
+
+    <div class="mt-4 flex items-center justify-between gap-4">
+      <button
+        type="button"
+        data-lightbox-prev
+        aria-label={t('photos.previous')}
+        class="shrink-0 rounded p-2 text-white/60 transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+      >
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <div class="min-w-0 text-center">
+        <p id="lightbox-caption" class="text-sm text-white/75"></p>
+        <p id="lightbox-counter" class="mt-1 text-xs tracking-widest text-white/40"></p>
+      </div>
+
+      <button
+        type="button"
+        data-lightbox-next
+        aria-label={t('photos.next')}
+        class="shrink-0 rounded p-2 text-white/60 transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+      >
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+
+    <button
+      type="button"
+      data-lightbox-close
+      aria-label={t('photos.close')}
+      class="absolute -top-2 right-0 -translate-y-full rounded p-2 text-white/60 transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+    >
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  const lightbox = document.getElementById('photo-lightbox');
+  const triggers = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-photo]'));
+
+  const img = document.querySelector<HTMLImageElement>('#lightbox-img');
+  const caption = document.querySelector<HTMLElement>('#lightbox-caption');
+  const counter = document.querySelector<HTMLElement>('#lightbox-counter');
+  const backdrop = lightbox?.querySelector<HTMLElement>('[data-lightbox-backdrop]');
+  const btnClose = lightbox?.querySelector<HTMLButtonElement>('[data-lightbox-close]');
+  const btnPrev = lightbox?.querySelector<HTMLButtonElement>('[data-lightbox-prev]');
+  const btnNext = lightbox?.querySelector<HTMLButtonElement>('[data-lightbox-next]');
+
+  if (lightbox && triggers.length && img && caption && counter && backdrop && btnClose && btnPrev && btnNext) {
+    let index = 0;
+
+    const render = (i: number) => {
+      index = (i + triggers.length) % triggers.length;
+      const { full = '', alt = '', width = '0', height = '0' } = triggers[index].dataset;
+      img.src = full;
+      img.alt = alt;
+      img.width = Number(width);
+      img.height = Number(height);
+      caption.textContent = alt;
+      counter.textContent = `${index + 1} / ${triggers.length}`;
+    };
+
+    const open = (i: number) => {
+      render(i);
+      lightbox.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      btnClose.focus();
+    };
+
+    const close = () => {
+      lightbox.classList.add('hidden');
+      document.body.style.overflow = '';
+      triggers[index].focus();
+    };
+
+    triggers.forEach((trigger, i) => trigger.addEventListener('click', () => open(i)));
+    backdrop.addEventListener('click', close);
+    btnClose.addEventListener('click', close);
+    btnPrev.addEventListener('click', () => render(index - 1));
+    btnNext.addEventListener('click', () => render(index + 1));
+
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.classList.contains('hidden')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') render(index - 1);
+      else if (e.key === 'ArrowRight') render(index + 1);
+    });
+  }
+</script>

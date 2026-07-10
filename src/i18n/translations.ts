@@ -15,6 +15,13 @@ export const translations = {
     'about.bio3': 'My research interests include political behavior, public policy, and the application of data science techniques to social science research. This broadly encompasses the use of machine learning, deep learning, causal inference, and survey methods to investigate political phenomena.',
     'about.keywords': 'Legislative behavior · Computational methods · Political behavior · Survey research · Causal inference',
     'about.recent': 'Recent',
+    'about.photography': `Outside of research, I've been trying to learn photography as a hobby. Here are some pictures I've taken recently! I've been posting photos on my photography Instagram, <a href="https://www.instagram.com/veryfirsttake/" class="link" target="_blank" rel="noopener noreferrer">@veryfirsttake</a>.`,
+
+    // Photo lightbox
+    'photos.gallery': 'Photo gallery',
+    'photos.close': 'Close',
+    'photos.previous': 'Previous photo',
+    'photos.next': 'Next photo',
 
     // Research page
     'research.title': 'Research',
@@ -88,6 +95,13 @@ export const translations = {
     'about.bio3': 'Meus interesses de pesquisa incluem comportamento político, políticas públicas e a aplicação de técnicas de ciência de dados à pesquisa em ciências sociais. Isso abrange o uso de aprendizado de máquina, aprendizado profundo, inferência causal e métodos de survey para investigar fenômenos políticos.',
     'about.keywords': 'Comportamento legislativo · Métodos computacionais · Comportamento político · Pesquisa de survey · Inferência causal',
     'about.recent': 'Recente',
+    'about.photography': `Fora da pesquisa, tenho tentado aprender fotografia como hobby. Aqui estão algumas fotos que tirei recentemente! Tenho publicado fotos no meu Instagram de fotografia, <a href="https://www.instagram.com/veryfirsttake/" class="link" target="_blank" rel="noopener noreferrer">@veryfirsttake</a>.`,
+
+    // Photo lightbox
+    'photos.gallery': 'Galeria de fotos',
+    'photos.close': 'Fechar',
+    'photos.previous': 'Foto anterior',
+    'photos.next': 'Próxima foto',
 
     // Research page
     'research.title': 'Pesquisa',
