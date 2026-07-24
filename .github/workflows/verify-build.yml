@@ -1,0 +1,35 @@
+# The site is served by GitHub Pages straight from docs/ on main, and docs/ is
+# committed by hand after `npm run build`. This check fails whenever a push
+# changes src/ without regenerating docs/, so the published site can't silently
+# drift from the source again.
+name: Verify docs/ is up to date
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Fail if docs/ differs from a fresh build
+        # git status --porcelain (not git diff) so newly generated untracked
+        # files in docs/ also count as drift.
+        run: |
+          if [ -n "$(git status --porcelain -- docs/)" ]; then
+            echo '::error::docs/ is out of date. Run `npm run build` locally and commit the regenerated docs/ directory.'
+            git status --short -- docs/
+            exit 1
+          fi

@@ -7,7 +7,7 @@ const t = useTranslations(locale);
 const altLang = locale === 'pt-br' ? 'pt-br' : 'en';
 ---
 
-<section class="mt-16 pt-6 border-t border-border dark:border-border-dark">
+<section id="photography" class="mt-16 pt-6 border-t border-border dark:border-border-dark">
   <p
     class="max-w-3xl text-sm leading-relaxed text-ink-secondary dark:text-ink-secondary-dark mb-6"
     set:html={t('about.photography')}
@@ -151,6 +151,16 @@ const altLang = locale === 'pt-br' ? 'pt-br' : 'en';
       if (e.key === 'Escape') close();
       else if (e.key === 'ArrowLeft') render(index - 1);
       else if (e.key === 'ArrowRight') render(index + 1);
+      else if (e.key === 'Tab') {
+        // aria-modal promises the dialog is inert-outside; keep focus cycling inside it.
+        const focusables = [btnPrev, btnNext, btnClose];
+        const current = focusables.indexOf(document.activeElement as HTMLButtonElement);
+        e.preventDefault();
+        const next = e.shiftKey
+          ? (current <= 0 ? focusables.length - 1 : current - 1)
+          : (current === -1 || current === focusables.length - 1 ? 0 : current + 1);
+        focusables[next].focus();
+      }
     });
   }
 </script>

@@ -26,8 +26,8 @@ export default {
           dark: '#f0ece4',
           secondary: '#6b6560',
           'secondary-dark': '#8a8480',
-          muted: '#9c9490',
-          'muted-dark': '#605c58',
+          muted: '#706a64',
+          'muted-dark': '#9a948e',
         },
         border: {
           DEFAULT: '#e8e3dc',

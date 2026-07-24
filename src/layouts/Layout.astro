@@ -10,6 +10,16 @@ interface Props {
 }
 
 const { title, description = 'Felipe Lamarca – Computational Political Scientist', lang = 'en' } = Astro.props;
+
+const isPt = lang === 'pt-BR';
+const path = Astro.url.pathname;
+const enPath = isPt ? (path.replace(/^\/pt-br/, '') || '/') : path;
+const ptPath = isPt ? path : (path === '/' ? '/pt-br/' : `/pt-br${path}`);
+const canonicalURL = new URL(path, Astro.site);
+const enURL = new URL(enPath, Astro.site);
+const ptURL = new URL(ptPath, Astro.site);
+const ogImage = new URL('/img/profilepic/og-image.jpg', Astro.site);
+const fullTitle = `${title} | Felipe Lamarca`;
 ---
 
 <!doctype html>
@@ -18,17 +28,47 @@ const { title, description = 'Felipe Lamarca – Computational Political Scienti
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#faf8f5" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Inter:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+    />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang="en" href={enURL} />
+    <link rel="alternate" hreflang="pt-BR" href={ptURL} />
+    <link rel="alternate" hreflang="x-default" href={enURL} />
+    <link rel="alternate" type="application/rss+xml" title="Felipe Lamarca – News" href="/rss.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="Felipe Lamarca" />
+    <meta property="og:locale" content={isPt ? 'pt_BR' : 'en_US'} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <title>{title} | Felipe Lamarca</title>
     <script is:inline>
       const theme = localStorage.getItem('theme') ||
         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       document.documentElement.classList.toggle('dark', theme === 'dark');
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#0e0d0b' : '#faf8f5');
     </script>
   </head>
   <body class="min-h-screen flex flex-col">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:px-4 focus:py-2 bg-surface dark:bg-surface-dark text-accent dark:text-accent-dark rounded shadow-lg"
+    >
+      {isPt ? 'Pular para o conteúdo' : 'Skip to content'}
+    </a>
     <Header />
-    <main class="flex-1 w-full max-w-content mx-auto px-6 sm:px-8 lg:px-32 xl:px-48 2xl:px-64 py-16">
+    <main id="main" class="flex-1 w-full max-w-content mx-auto px-6 sm:px-8 lg:px-32 xl:px-48 2xl:px-64 py-16">
       <slot />
     </main>
     <Footer />

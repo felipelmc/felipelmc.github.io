@@ -3,22 +3,23 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="CV" description="Curriculum vitae – Felipe Lamarca">
-  <div class="space-y-12">
+  <div class="space-y-12 max-w-4xl">
     <header>
       <h1 class="font-serif text-3xl font-medium text-ink dark:text-ink-dark mb-2">CV</h1>
       <p class="text-ink-secondary dark:text-ink-secondary-dark">Education, scholarships, distinctions, and references</p>
-      <div class="mt-4">
+      <div class="mt-4 flex items-center gap-3">
         <a
-          href="https://drive.google.com/file/d/1dFBrI109flg6zSQHnFIxUd1DRfieCYAT/view?usp=sharing"
+          href="/files/cv.pdf"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 px-4 py-2 text-sm border border-border dark:border-border-dark rounded-sm text-ink-secondary dark:text-ink-secondary-dark hover:border-accent dark:hover:border-accent-dark hover:text-accent dark:hover:text-accent-dark transition-colors"
         >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
           Download PDF
         </a>
+        <span class="text-xs text-ink-muted dark:text-ink-muted-dark">Last updated: July 2025</span>
       </div>
     </header>
 
@@ -147,32 +148,32 @@ import Layout from '../layouts/Layout.astro';
     <section>
       <h2 class="section-title">Conferences & Training</h2>
       <p class="text-sm text-ink-muted dark:text-ink-muted-dark mb-4">Conferences attended as participant and training activities. For presentations, see <a href="/publications" class="link">Publications</a>.</p>
-      <div class="space-y-2">
-        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3 border-b border-border dark:border-border-dark">
+      <div class="divide-y divide-border dark:divide-border-dark">
+        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3">
           <span class="text-sm font-medium text-ink-muted dark:text-ink-muted-dark shrink-0">February 2026</span>
           <p class="text-ink-secondary dark:text-ink-secondary-dark">
             <a href="https://www.effectivealtruism.org/ea-global" class="link" target="_blank" rel="noopener noreferrer">Effective Altruism Global</a> – San Francisco, CA, United States (full funding).
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3 border-b border-border dark:border-border-dark">
+        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3">
           <span class="text-sm font-medium text-ink-muted dark:text-ink-muted-dark shrink-0">November 2025</span>
           <p class="text-ink-secondary dark:text-ink-secondary-dark">
             Academic writing and publication of quantitative papers in Social Sciences @ IESP-UERJ.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3 border-b border-border dark:border-border-dark">
+        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3">
           <span class="text-sm font-medium text-ink-muted dark:text-ink-muted-dark shrink-0">July 2025</span>
           <p class="text-ink-secondary dark:text-ink-secondary-dark">
             Advanced Text-As-Data: Word Embeddings, Deep Learning, and LLMs @ IESP-UERJ.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3 border-b border-border dark:border-border-dark">
+        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3">
           <span class="text-sm font-medium text-ink-muted dark:text-ink-muted-dark shrink-0">July 2024</span>
           <p class="text-ink-secondary dark:text-ink-secondary-dark">
             <a href="https://sicss.io/2024/fgv-ecmi-brazil/" class="link" target="_blank" rel="noopener noreferrer">SICSS: Summer Institute in Computational Social Science</a> – Rio de Janeiro, RJ, Brazil.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3 border-b border-border dark:border-border-dark">
+        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3">
           <span class="text-sm font-medium text-ink-muted dark:text-ink-muted-dark shrink-0">July 2024</span>
           <p class="text-ink-secondary dark:text-ink-secondary-dark">
             <a href="https://www.ml4good.org/" class="link" target="_blank" rel="noopener noreferrer">ML4Good Bootcamp</a>.

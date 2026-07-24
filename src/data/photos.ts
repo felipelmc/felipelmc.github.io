@@ -146,5 +146,5 @@ export const photos: Photo[] = [
   },
 ];
 
-export const photoSrc = (photo: Photo) => `/img/photos/${photo.slug}.jpg`;
-export const photoThumb = (photo: Photo) => `/img/photos/thumbs/${photo.slug}.jpg`;
+export const photoSrc = (photo: Photo) => `/img/photos/${photo.slug}.webp`;
+export const photoThumb = (photo: Photo) => `/img/photos/thumbs/${photo.slug}.webp`;

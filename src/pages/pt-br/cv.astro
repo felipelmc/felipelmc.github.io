@@ -6,22 +6,23 @@ const t = useTranslations('pt-br');
 ---
 
 <Layout title={t('cv.title')} description="Curriculum vitae – Felipe Lamarca" lang="pt-BR">
-  <div class="space-y-12">
+  <div class="space-y-12 max-w-4xl">
     <header>
       <h1 class="font-serif text-3xl font-medium text-ink dark:text-ink-dark mb-2">{t('cv.title')}</h1>
       <p class="text-ink-secondary dark:text-ink-secondary-dark">{t('cv.subtitle')}</p>
-      <div class="mt-4">
+      <div class="mt-4 flex items-center gap-3">
         <a
-          href="https://drive.google.com/file/d/1dFBrI109flg6zSQHnFIxUd1DRfieCYAT/view?usp=sharing"
+          href="/files/cv.pdf"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 px-4 py-2 text-sm border border-border dark:border-border-dark rounded-sm text-ink-secondary dark:text-ink-secondary-dark hover:border-accent dark:hover:border-accent-dark hover:text-accent dark:hover:text-accent-dark transition-colors"
         >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
           {t('cv.download')}
         </a>
+        <span class="text-xs text-ink-muted dark:text-ink-muted-dark">Atualizado em julho de 2025</span>
       </div>
     </header>
 
@@ -126,7 +127,7 @@ const t = useTranslations('pt-br');
       <div class="divide-y divide-border dark:divide-border-dark">
         <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3">
           <span class="text-sm font-medium text-ink-muted dark:text-ink-muted-dark shrink-0 sm:w-28">2026</span>
-          <p class="text-ink-secondary dark:text-ink-secondary-dark">2º Colocado, Best DH Tool or Suite of Tools – <a href="http://dhawards.org/dhawards2025/results/" class="link" target="_blank" rel="noopener noreferrer">DH Awards 2025</a>, pelo projeto <a href="https://github.com/felipelmc/RelicarIA" class="link" target="_blank" rel="noopener noreferrer">RelicarIA</a> (trabalho conjunto com Danielle Sanches de Almeida).</p>
+          <p class="text-ink-secondary dark:text-ink-secondary-dark">2nd Runner Up (3º lugar), Best DH Tool or Suite of Tools – <a href="http://dhawards.org/dhawards2025/results/" class="link" target="_blank" rel="noopener noreferrer">DH Awards 2025</a>, pelo projeto <a href="https://github.com/felipelmc/RelicarIA" class="link" target="_blank" rel="noopener noreferrer">RelicarIA</a> (trabalho conjunto com Danielle Sanches de Almeida).</p>
         </div>
         <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3">
           <span class="text-sm font-medium text-ink-muted dark:text-ink-muted-dark shrink-0 sm:w-28">2026</span>
@@ -150,32 +151,32 @@ const t = useTranslations('pt-br');
     <section>
       <h2 class="section-title">{t('cv.conferences')}</h2>
       <p class="text-sm text-ink-muted dark:text-ink-muted-dark mb-4">Conferências frequentadas como participante e atividades de treinamento. Para apresentações, ver <a href="/pt-br/publications" class="link">Publicações</a>.</p>
-      <div class="space-y-2">
-        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3 border-b border-border dark:border-border-dark">
+      <div class="divide-y divide-border dark:divide-border-dark">
+        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3">
           <span class="text-sm font-medium text-ink-muted dark:text-ink-muted-dark shrink-0">Fevereiro 2026</span>
           <p class="text-ink-secondary dark:text-ink-secondary-dark">
             <a href="https://www.effectivealtruism.org/ea-global" class="link" target="_blank" rel="noopener noreferrer">Effective Altruism Global</a> – San Francisco, CA, Estados Unidos (financiamento integral).
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3 border-b border-border dark:border-border-dark">
+        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3">
           <span class="text-sm font-medium text-ink-muted dark:text-ink-muted-dark shrink-0">Novembro 2025</span>
           <p class="text-ink-secondary dark:text-ink-secondary-dark">
             Escrita acadêmica e publicação de artigos quantitativos em Ciências Sociais @ IESP-UERJ.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3 border-b border-border dark:border-border-dark">
+        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3">
           <span class="text-sm font-medium text-ink-muted dark:text-ink-muted-dark shrink-0">Julho 2025</span>
           <p class="text-ink-secondary dark:text-ink-secondary-dark">
             Advanced Text-As-Data: Word Embeddings, Deep Learning, and LLMs @ IESP-UERJ.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3 border-b border-border dark:border-border-dark">
+        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3">
           <span class="text-sm font-medium text-ink-muted dark:text-ink-muted-dark shrink-0">Julho 2024</span>
           <p class="text-ink-secondary dark:text-ink-secondary-dark">
             <a href="https://sicss.io/2024/fgv-ecmi-brazil/" class="link" target="_blank" rel="noopener noreferrer">SICSS: Summer Institute in Computational Social Science</a> – Rio de Janeiro, RJ, Brasil.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3 border-b border-border dark:border-border-dark">
+        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 py-3">
           <span class="text-sm font-medium text-ink-muted dark:text-ink-muted-dark shrink-0">Julho 2024</span>
           <p class="text-ink-secondary dark:text-ink-secondary-dark">
             <a href="https://www.ml4good.org/" class="link" target="_blank" rel="noopener noreferrer">ML4Good Bootcamp</a>.

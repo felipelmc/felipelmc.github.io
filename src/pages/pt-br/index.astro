@@ -3,16 +3,24 @@ import Layout from '../../layouts/Layout.astro';
 import SocialLinks from '../../components/SocialLinks.astro';
 import PhotoStrip from '../../components/PhotoStrip.astro';
 import { useTranslations } from '../../i18n/utils';
+import { news } from '../../data/news';
 
 const t = useTranslations('pt-br');
 ---
 
-<Layout title={t('about.title')} lang="pt-BR">
+<Layout
+  title={t('about.title')}
+  description="Felipe Lamarca – Cientista Político Computacional (IESP-UERJ)"
+  lang="pt-BR"
+>
   <div class="grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-12 lg:gap-20 items-start">
     <div class="flex flex-col items-center text-center gap-5">
       <img
-        src="/img/profilepic/me_at_iesp.png"
+        src="/img/profilepic/me_at_iesp.webp"
         alt="Felipe Lamarca"
+        width="576"
+        height="576"
+        fetchpriority="high"
         class="w-72 h-72 rounded-full object-cover shadow-md"
       />
       <div>
@@ -42,13 +50,28 @@ const t = useTranslations('pt-br');
 
       <div>
         <p class="text-sm text-ink-muted dark:text-ink-muted-dark mb-4">
-          felipe <span>dot</span> lamarca <span>at</span> hotmail <span>dot</span> com
+          <a href="mailto:felipe.lamarca@hotmail.com" class="link">felipe.lamarca@hotmail.com</a>
         </p>
         <SocialLinks />
       </div>
 
     </div>
   </div>
+
+  <section class="mt-16 pt-6 border-t border-border dark:border-border-dark" aria-label={t('about.recent')}>
+    <h2 class="font-serif text-2xl font-medium text-ink dark:text-ink-dark mb-6">{t('about.recent')}</h2>
+    <ul class="space-y-3 max-w-3xl">
+      {news.map((item) => (
+        <li class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+          <span class="text-sm font-medium text-ink-muted dark:text-ink-muted-dark shrink-0 sm:w-28 leading-relaxed">{item.label['pt-br']}</span>
+          <p class="text-ink-secondary dark:text-ink-secondary-dark leading-relaxed">
+            {item.text['pt-br']}
+            {item.href && <a href={`/pt-br${item.href}`} class="link text-sm whitespace-nowrap ml-1">Mais →</a>}
+          </p>
+        </li>
+      ))}
+    </ul>
+  </section>
 
   <PhotoStrip />
 </Layout>
