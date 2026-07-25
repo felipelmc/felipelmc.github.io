@@ -48,8 +48,8 @@ Os `.qmd` são markdown puro, com três exceções pequenas.
 Entradas são sempre `###`, mesmo quando não há um `##` acima — pular o nível
 é proposital.
 
-**Data da entrada.** O `[...]{.date}` no fim do título vira a etiqueta preta
-alinhada à direita. Título longo demais empurra a etiqueta para a linha de
+**Data da entrada.** O `[...]{.date}` no fim do título vira a data em itálico
+cinza, alinhada à direita. Título longo demais empurra a data para a linha de
 baixo; quando isso acontecer, encurte o título e mande o resto para o corpo.
 
 **Ícones.** Vêm do pacote `fontawesome5` e entram como LaTeX cru
@@ -57,13 +57,29 @@ baixo; quando isso acontecer, encurte o título e mande o resto para o corpo.
 A lista de nomes está em <https://ctan.org/pkg/fontawesome5>.
 
 Fora isso: `--` vira travessão curto (–), uma barra invertida no fim da linha
-quebra a linha sem abrir parágrafo, e listas de data (`Fevereiro de 2026` +
-linha começando com `:   `) viram aquelas entradas com o rótulo à esquerda.
+quebra a linha sem abrir parágrafo, e listas de data (`ago 2026` + linha
+começando com `:   `) viram entradas com o rótulo numa coluna à esquerda —
+o rótulo precisa caber em ~5,8 em, senão transborda.
+
+## Duas coisas que quebram fácil
+
+**Paginação.** Os dois currículos fecham em 4 páginas cheias, sem seção órfã
+no pé nem página final quase vazia. Isso é apertado: qualquer parágrafo novo
+pode empurrar as Referências sozinhas para uma quinta página. Depois de
+editar, olhe a última página. Se ela ficar rala, corte ou encurte alguma coisa
+— o português corre ~15% mais longo que o inglês e é sempre o primeiro a
+estourar.
+
+**Ordem das seções.** É a ordem que bancas de doutorado esperam: interesses,
+formação, publicações, software, apresentações, bolsas e prêmios, e só então
+as experiências. O que você produziu vem antes de onde você trabalhou. Se
+mexer nisso, mexa nos dois arquivos.
 
 ## Dependências
 
 - [Quarto](https://quarto.org) 1.9 ou mais novo.
 - TinyTeX: `quarto install tinytex` (uma vez só).
 
-O PDF é compilado com `pdflatex` — não troque para `xelatex` sem motivo, o
-nome do topo perde os versaletes.
+O PDF é compilado com `pdflatex` em TeX Gyre Pagella. Não troque para
+`xelatex` sem motivo: o `fontfamily` do `_quarto.yml` é um mecanismo de
+pdflatex e o nome do topo perde os versaletes.

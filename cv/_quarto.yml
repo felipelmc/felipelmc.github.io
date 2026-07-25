@@ -9,17 +9,18 @@ format:
   pdf:
     documentclass: article
     papersize: a4
-    fontsize: 11pt
+    fontsize: 10pt
+    fontfamily: tgpagella
     geometry:
       - left=2cm
       - right=2cm
       - top=2cm
-      - bottom=2cm
+      - bottom=2.2cm
     include-in-header: _preamble.tex
     colorlinks: true
-    linkcolor: blue
-    urlcolor: blue
-    citecolor: blue
+    linkcolor: cvlink
+    urlcolor: cvlink
+    citecolor: cvlink
     number-sections: false
     pdf-engine: pdflatex
     keep-tex: false
