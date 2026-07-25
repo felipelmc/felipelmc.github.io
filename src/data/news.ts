@@ -9,6 +9,15 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    date: '2026-09-30',
+    label: { en: 'Sep–Oct 2026', 'pt-br': 'set–out 2026' },
+    text: {
+      en: '“Quantos votos meu partido vai fazer?”, joint work with Tomás Paixão, will be presented at the 50th ANPOCS Annual Meeting (SPG 31 — Methodology and Research Methods in the Social Sciences).',
+      'pt-br': '“Quantos votos meu partido vai fazer?”, trabalho conjunto com Tomás Paixão, será apresentado no 50º Encontro Anual da ANPOCS (SPG 31 — Metodologia e Métodos de Pesquisa em Ciências Sociais).',
+    },
+    href: '/publications',
+  },
+  {
     date: '2026-08-01',
     label: { en: 'Aug 2026', 'pt-br': 'ago 2026' },
     text: {
@@ -16,15 +25,6 @@ export const news: NewsItem[] = [
       'pt-br': '“Da gaveta ao plenário”, trabalho conjunto com Lucas Calabró Berti, será apresentado no XV Encontro da ABCP, em Belém.',
     },
     href: '/publications',
-  },
-  {
-    date: '2026-07-01',
-    label: { en: 'Jul 2026', 'pt-br': 'jul 2026' },
-    text: {
-      en: 'Taught the Text Analysis session at SICSS 2026 (Summer Institute in Computational Social Science).',
-      'pt-br': 'Ministrei a sessão de Análise de Texto no SICSS 2026 (Summer Institute in Computational Social Science).',
-    },
-    href: '/teaching',
   },
   {
     date: '2026-06-01',
