@@ -1,7 +1,14 @@
-/.quarto/
+.quarto/
 node_modules/
 .astro/
 dist/
+
+# Build artifacts of the Quarto CV. The PDFs that ship live in public/files/,
+# copied there by cv/render.sh. `_preamble.tex` is source, hence the negation.
+cv/*.pdf
+cv/*.tex
+!cv/_preamble.tex
+cv/*.log
 
 # Unprocessed photo originals; only the resized copies in public/img/photos/ ship.
 # Leading slash is required: a bare `photos/` would also ignore public/img/photos/.

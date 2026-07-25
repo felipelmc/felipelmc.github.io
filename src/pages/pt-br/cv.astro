@@ -10,9 +10,9 @@ const t = useTranslations('pt-br');
     <header>
       <h1 class="font-serif text-3xl font-medium text-ink dark:text-ink-dark mb-2">{t('cv.title')}</h1>
       <p class="text-ink-secondary dark:text-ink-secondary-dark">{t('cv.subtitle')}</p>
-      <div class="mt-4 flex items-center gap-3">
+      <div class="mt-4 flex flex-wrap items-center gap-3">
         <a
-          href="/files/cv.pdf"
+          href="/files/cv-pt.pdf"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 px-4 py-2 text-sm border border-border dark:border-border-dark rounded-sm text-ink-secondary dark:text-ink-secondary-dark hover:border-accent dark:hover:border-accent-dark hover:text-accent dark:hover:text-accent-dark transition-colors"
@@ -22,7 +22,8 @@ const t = useTranslations('pt-br');
           </svg>
           {t('cv.download')}
         </a>
-        <span class="text-xs text-ink-muted dark:text-ink-muted-dark">Atualizado em julho de 2025</span>
+        <a href="/files/cv-en.pdf" target="_blank" rel="noopener noreferrer" class="link text-sm">{t('cv.downloadOther')}</a>
+        <span class="text-xs text-ink-muted dark:text-ink-muted-dark">Atualizado em julho de 2026</span>
       </div>
     </header>
 

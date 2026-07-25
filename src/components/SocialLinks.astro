@@ -5,6 +5,9 @@ interface Props {
 
 const { class: className = '' } = Astro.props;
 
+// Shared by both locales, so the CV link follows the page it sits on.
+const cvPdf = Astro.currentLocale === 'pt-br' ? '/files/cv-pt.pdf' : '/files/cv-en.pdf';
+
 const links = [
   {
     name: 'LinkedIn',
@@ -18,7 +21,7 @@ const links = [
   },
   {
     name: 'CV',
-    url: '/files/cv.pdf',
+    url: cvPdf,
     icon: 'cv',
   },
   {

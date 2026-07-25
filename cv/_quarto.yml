@@ -1,0 +1,25 @@
+project:
+  title: cv
+  output-dir: .
+
+filters:
+  - _cv.lua
+
+format:
+  pdf:
+    documentclass: article
+    papersize: a4
+    fontsize: 11pt
+    geometry:
+      - left=2cm
+      - right=2cm
+      - top=2cm
+      - bottom=2cm
+    include-in-header: _preamble.tex
+    colorlinks: true
+    linkcolor: blue
+    urlcolor: blue
+    citecolor: blue
+    number-sections: false
+    pdf-engine: pdflatex
+    keep-tex: false

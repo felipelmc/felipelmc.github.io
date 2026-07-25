@@ -1,0 +1,95 @@
+% ---------------------------------------------------------------------------
+% Formatação do currículo. Portado do template LaTeX antigo (Overleaf).
+% Nada aqui precisa ser tocado no dia a dia: para editar o conteúdo,
+% mexa apenas nos arquivos cv-en.qmd e cv-pt.qmd.
+% ---------------------------------------------------------------------------
+
+\usepackage{fontawesome5}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{needspace}
+\usepackage{etoolbox}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.15cm}
+\pagestyle{empty}
+
+% --- Nome + linha de contato ------------------------------------------------
+
+% Versaletes sem negrito: é o que o template antigo produzia na prática,
+% já que a família Latin Modern não tem versaletes em negrito.
+\newcommand{\cvname}[1]{%
+  \begingroup
+  \centering
+  \huge\scshape #1\par
+  \vspace{0.4ex}
+  \rule{\textwidth}{1.2pt}\par
+  \endgroup
+  \vspace{0.3cm}%
+}
+
+% O título do YAML (title:) vira o cabeçalho do currículo.
+\makeatletter
+\renewcommand{\maketitle}{\cvname{\@title}}
+\makeatother
+
+% Linha de contato: o bloco ::: contact do .qmd cai aqui.
+\newenvironment{cvcontact}
+  {\par\centering\small}
+  {\par\vspace{0.3cm}}
+
+% Separador entre os itens da linha de contato.
+\newcommand{\cvsep}{\hspace{0.85em}}
+
+% --- Seções (\section) ------------------------------------------------------
+
+\titleformat{\section}
+  [hang]
+  {\Large\bfseries}
+  {}{0pt}
+  {}
+  [\vspace{-0.25cm}\rule{\textwidth}{0.8pt}]
+\titlespacing*{\section}{0pt}{0.45cm}{0.2cm}
+
+% --- Subseções (\subsection): agrupamentos dentro de uma seção --------------
+
+\titleformat{\subsection}
+  [hang]
+  {\large\bfseries}
+  {}{0pt}
+  {}
+\titlespacing*{\subsection}{0pt}{0.35cm}{0.12cm}
+
+% --- Entradas (\subsubsection): cada emprego, curso, publicação etc. --------
+
+\titleformat{\subsubsection}
+  [hang]
+  {\normalsize\bfseries}
+  {\faAngleRight}{0.45em}
+  {}
+\titlespacing*{\subsubsection}{0pt}{0.32cm}{0.06cm}
+
+% Evita que uma entrada fique órfã (ou quase) no pé da página.
+\pretocmd{\subsubsection}{\Needspace*{4\baselineskip}}{}{}
+\widowpenalty=10000
+\clubpenalty=10000
+
+% --- Etiqueta de data (caixa preta à direita) -------------------------------
+% Gerada pelo filtro _cv.lua a partir de [texto]{.date} num título de entrada.
+
+\newcommand{\cvdate}[1]{%
+  \hfill\colorbox{black}{\hspace{0.1cm}\textcolor{white}{\small #1}\hspace{0.1cm}}%
+}
+
+% --- Listas -----------------------------------------------------------------
+
+\setlist[itemize]{leftmargin=1.1em, topsep=0.08cm, itemsep=0.04cm, parsep=0pt}
+\setlist[itemize,1]{label=\textendash}
+
+% --- Tabelas (referências) --------------------------------------------------
+
+\usepackage{booktabs}
+\renewcommand{\arraystretch}{1.15}
+\AtBeginEnvironment{longtable}{\small}

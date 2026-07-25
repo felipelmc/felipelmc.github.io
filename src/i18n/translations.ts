@@ -50,7 +50,8 @@ export const translations = {
     // CV page
     'cv.title': 'CV',
     'cv.subtitle': 'Education, scholarships, distinctions, and references',
-    'cv.download': 'Download PDF',
+    'cv.download': 'Download PDF (English)',
+    'cv.downloadOther': 'Versão em português →',
     'cv.education': 'Education',
     'cv.scholarships': 'Scholarships',
     'cv.distinctions': 'Distinctions',
@@ -109,7 +110,8 @@ export const translations = {
     // CV page
     'cv.title': 'CV',
     'cv.subtitle': 'Formação, bolsas, distinções e referências',
-    'cv.download': 'Baixar PDF',
+    'cv.download': 'Baixar PDF (português)',
+    'cv.downloadOther': 'English version →',
     'cv.education': 'Formação',
     'cv.scholarships': 'Bolsas',
     'cv.distinctions': 'Distinções',
