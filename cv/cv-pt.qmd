@@ -37,7 +37,7 @@ Orientador: [Luiz Max Carvalho, Ph.D.](https://emap.fgv.br/professores/luiz-max-
 Bacharelado, Ciências Sociais\
 Orientadora: [Jaqueline Porto Zulini, Ph.D.](https://cpdoc.fgv.br/equipe/jaquelinezulini)
 
-*Escolas de verão e formação.* Summer Institute in Computational Social Science ([SICSS](https://sicss.io/)), Rio de Janeiro, 2024; bootcamp [ML4Good](https://www.ml4good.org), 2024; escrita acadêmica e publicação de artigos quantitativos em ciências sociais, IESP-UERJ, 2025; [Effective Altruism Global](https://www.effectivealtruism.org/ea-global), São Francisco, 2026 (financiamento integral).
+*Escolas de verão e formação.* Summer Institute in Computational Social Science ([SICSS](https://sicss.io/)), Rio de Janeiro, 2024; bootcamp [ML4Good](https://www.ml4good.org), 2024; escrita acadêmica de artigos quantitativos, IESP-UERJ, 2025; [Effective Altruism Global](https://www.effectivealtruism.org/ea-global), São Francisco, 2026 (financiamento integral).
 
 # \faFile\ Publicações
 
@@ -59,7 +59,7 @@ Orientadora: [Jaqueline Porto Zulini, Ph.D.](https://cpdoc.fgv.br/equipe/jaqueli
 
 - **`mape_municipios_dashboard`** (2025). Com Fernando Meireles. Dashboard sobre uma das bases mais completas de informações sobre municípios brasileiros, desenvolvido para o [MAPE](https://mape.org.br/). [[Código-fonte]](https://github.com/mape-iesp/MAPEmunicipios-Dashboard) · [[Link de acesso]](https://mape-municipios-dashboard.streamlit.app/)
 
-- **Indicadores LGBTQIA+ no Rio de Janeiro** (2026). Com Tomás Paixão Borges. Dashboard construído sobre a infraestrutura do `mape_municipios` para o mandato da deputada estadual Dani Balbi, reunindo dados da MUNIC, da PNS e do Censo SUAS sobre a população LGBTQIA+ do estado, incluindo a distribuição territorial dos equipamentos de assistência social.
+- **Indicadores LGBTQIA+ no Rio de Janeiro** (2026). Com Tomás Paixão Borges. Dashboard sobre a infraestrutura do `mape_municipios` para o mandato da deputada estadual Dani Balbi, reunindo dados da MUNIC, da PNS e do Censo SUAS sobre a população LGBTQIA+ do estado, incluindo a distribuição territorial dos equipamentos de assistência social.
 
 - **`Quarto-Model-IESP`** (2026). Com Matheus Cavalcanti Pestana. Template em Quarto para dissertações e teses do IESP-UERJ. [[Código-fonte]](https://github.com/felipelmc/Quarto-Model-IESP) · [[DOI]](https://doi.org/10.5281/zenodo.20819431)
 
@@ -107,7 +107,7 @@ ago 2025
 
 2019--2024
 
-:   Bolsa de mérito de 90% para a graduação na Fundação Getulio Vargas, concedida por desempenho no vestibular.
+:   Bolsa de mérito de 90% para a graduação na FGV, concedida por desempenho no vestibular.
 
 2019--2021
 
@@ -121,7 +121,7 @@ ago 2025
 
 2025
 
-:   Prêmio de Distinção Acadêmica Professor Carlos Eduardo Sarmento, Escola de Ciências Sociais (FGV CPDOC), pelo maior desempenho acadêmico entre os formandos de 2025.
+:   Prêmio de Distinção Acadêmica Professor Carlos Eduardo Sarmento (FGV CPDOC), pelo maior desempenho acadêmico entre os formandos de 2025.
 
 2024
 
@@ -133,23 +133,13 @@ ago 2025
 
 # \faUniversity\ Experiência em Pesquisa
 
-### Bolsa de pesquisa *Pensando o Direito*, MJSP [07/2026 -- Presente]{.date}
-
-*Pesquisador.* Revisão sistemática das evidências sobre um cardápio de políticas de segurança pública para a Amazônia Legal, organizado em torno da ideia de entrada qualificada do Estado em territórios vulnerabilizados, seguindo o protocolo OQF (*O Que Funciona?*), desenvolvido no MAPE. Conduzo busca, triagem e extração de evidências. Projeto coordenado por Djane Braz Duarte.
-
-*Entregas previstas.* (i) relatório técnico-analítico para o Ministério; (ii) artigo submetido a periódico qualificado; (iii) verbetes sobre as políticas revisadas no [Dicionário de Favelas Marielle Franco](https://wikifavelas.com.br).
+## Laboratórios, IESP-UERJ
 
 ### [NECON](http://necon.iesp.uerj.br) (IESP-UERJ) [01/2026 -- Presente]{.date}
 
 *Pesquisador* no Núcleo de Estudos sobre o Congresso, coordenado por Fabiano Santos. Trabalho nas bases de votações nominais e de produção legislativa do núcleo.
 
 *Entrega selecionada.* Nota técnica que aplica modelos espaciais de voto à disputa presidencial de 2026.
-
-### Projeto RESA, UFAC e IESP-UERJ [08/2025 -- Presente]{.date}
-
-*Pesquisador* nos impactos socioeconômicos e ambientais da produção agroextrativista de base familiar na Reserva Extrativista Chico Mendes, no Acre, com ênfase no que o cooperativismo muda no uso da terra e na renda das famílias. Cuido dos dados quantitativos e construo a plataforma pública de monitoramento. Coordenado por Luci Maria Teston (UFAC), com o IESP-UERJ como parceiro executor.
-
-*Entrega selecionada.* Versão preliminar da [plataforma de monitoramento](https://mapa-do-desmatamento-acre.streamlit.app/), com dados de desmatamento no Acre.
 
 ### [DOXA](https://www.lab-doxa.org.br/) (IESP-UERJ) [05/2025 -- Presente]{.date}
 
@@ -162,6 +152,22 @@ ago 2025
 *Pesquisador* no Laboratório de Monitoramento e Avaliação de Políticas e Eleições, coordenado por Fernando Meireles e Bruno Schaefer. Construo e mantenho a base `mape_municipios` e sua interface pública, e dou aulas na formação metodológica.
 
 *Entrega selecionada.* Aplicação em Streamlit que permite interagir com a `mape_municipios`, base que cobre 30 anos e 451 variáveis sobre municípios brasileiros.
+
+## Projetos financiados
+
+### Bolsa de pesquisa *Pensando o Direito*, MJSP [07/2026 -- Presente]{.date}
+
+*Pesquisador.* Revisão sistemática das evidências sobre um cardápio de políticas de segurança pública para a Amazônia Legal, organizado em torno da ideia de entrada qualificada do Estado em territórios vulnerabilizados, seguindo o protocolo OQF (*O Que Funciona?*) do MAPE. Conduzo busca, triagem e extração de evidências. Projeto coordenado por Djane Braz Duarte.
+
+*Entregas previstas.* (i) relatório técnico-analítico para o Ministério; (ii) artigo submetido a periódico qualificado; (iii) verbetes sobre as políticas revisadas no [Dicionário de Favelas Marielle Franco](https://wikifavelas.com.br).
+
+### Projeto RESA, UFAC e IESP-UERJ [08/2025 -- Presente]{.date}
+
+*Pesquisador* nos impactos socioeconômicos e ambientais da produção agroextrativista de base familiar na Reserva Extrativista Chico Mendes, no Acre, com ênfase no que o cooperativismo muda no uso da terra e na renda das famílias. Cuido dos dados quantitativos e construo a plataforma pública de monitoramento. Coordenado por Luci Maria Teston (UFAC), com o IESP-UERJ como parceiro executor.
+
+*Entrega selecionada.* Versão preliminar da [plataforma de monitoramento](https://mapa-do-desmatamento-acre.streamlit.app/), com dados de desmatamento no Acre.
+
+## Posições anteriores
 
 ### Escola de Administração Pública e de Empresas, FGV EBAPE [02/2025 -- 04/2025]{.date}
 
@@ -192,10 +198,6 @@ Minicurso no [LABIIA](https://labiialab.com.br) sobre o uso de agentes de IA na 
 ### Agentes de IA para pesquisa em ciências sociais [05/2026]{.date}
 
 Minicurso no [CERES](https://ceres-iesp.uerj.br), IESP-UERJ: uma introdução ao Claude Code. [[Arquivos]](https://github.com/felipelmc/Presentations/tree/main/Intro-to-ClaudeCode-CERES-2026)
-
-### Sociologia para Enfermagem [2025.2]{.date}
-
-Estágio docência na UERJ, em disciplina de graduação.
 
 ### Machine Learning [2025.2]{.date}
 

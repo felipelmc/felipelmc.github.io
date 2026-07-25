@@ -133,23 +133,13 @@ Aug 2025
 
 # \faUniversity\ Research Experience
 
-### *Pensando o Direito* research grant, MJSP [07/2026 -- Present]{.date}
-
-*Researcher.* Systematic review of the evidence on a set of public security policies for the Legal Amazon, organized around the idea of a qualified entry of the State into vulnerable territories, following the OQF (*O Que Funciona?*) protocol developed at MAPE. I run the search protocol, screening, and evidence extraction. Project coordinated by Djane Braz Duarte.
-
-*Expected deliveries.* (i) an analytical report for the Ministry; (ii) an article submitted to a peer-reviewed journal; (iii) entries on the reviewed policies in the [Dicionário de Favelas Marielle Franco](https://wikifavelas.com.br).
+## Laboratories, IESP-UERJ
 
 ### [NECON](http://necon.iesp.uerj.br) (IESP-UERJ) [01/2026 -- Present]{.date}
 
 *Researcher* at the Center for Studies on Congress, coordinated by Fabiano Santos. I work on the lab's databases on roll-call votes and legislative production.
 
 *Selected delivery.* A technical note applying spatial models of voting to the 2026 presidential race.
-
-### RESA project, UFAC and IESP-UERJ [08/2025 -- Present]{.date}
-
-*Researcher* on the socioeconomic and environmental impacts of family-based agroextractive production in the Chico Mendes Extractive Reserve, in Acre, with an emphasis on what cooperatives change in land use and in household income. I handle the quantitative data and build the project's public monitoring platform. Coordinated by Luci Maria Teston (UFAC), with IESP-UERJ as a partner institution.
-
-*Selected delivery.* A preliminary version of the [monitoring platform](https://mapa-do-desmatamento-acre.streamlit.app/), covering deforestation in Acre.
 
 ### [DOXA](https://www.lab-doxa.org.br/) (IESP-UERJ) [05/2025 -- Present]{.date}
 
@@ -162,6 +152,22 @@ Aug 2025
 *Researcher* at the Laboratory for Monitoring and Evaluation of Policies and Elections, coordinated by Fernando Meireles and Bruno Schaefer. I build and maintain the `mape_municipios` database and its public interface, and teach in the lab's methodological training.
 
 *Selected delivery.* A Streamlit application that lets users interact with `mape_municipios`, a database covering 30 years and 451 variables on Brazilian municipalities.
+
+## Funded projects
+
+### *Pensando o Direito* research grant, MJSP [07/2026 -- Present]{.date}
+
+*Researcher.* Systematic review of the evidence on a set of public security policies for the Legal Amazon, organized around the idea of a qualified entry of the State into vulnerable territories, following the OQF (*O Que Funciona?*) protocol developed at MAPE. I run the search protocol, screening, and evidence extraction. Project coordinated by Djane Braz Duarte.
+
+*Expected deliveries.* (i) an analytical report for the Ministry; (ii) an article submitted to a peer-reviewed journal; (iii) entries on the reviewed policies in the [Dicionário de Favelas Marielle Franco](https://wikifavelas.com.br).
+
+### RESA project, UFAC and IESP-UERJ [08/2025 -- Present]{.date}
+
+*Researcher* on the socioeconomic and environmental impacts of family-based agroextractive production in the Chico Mendes Extractive Reserve, in Acre, with an emphasis on what cooperatives change in land use and in household income. I handle the quantitative data and build the project's public monitoring platform. Coordinated by Luci Maria Teston (UFAC), with IESP-UERJ as a partner institution.
+
+*Selected delivery.* A preliminary version of the [monitoring platform](https://mapa-do-desmatamento-acre.streamlit.app/), covering deforestation in Acre.
+
+## Earlier positions
 
 ### School of Public and Business Administration, FGV EBAPE [02/2025 -- 04/2025]{.date}
 
@@ -192,10 +198,6 @@ Short course at [LABIIA](https://labiialab.com.br) on the use of AI agents in ac
 ### AI agents for social science research [05/2026]{.date}
 
 Short course at [CERES](https://ceres-iesp.uerj.br), IESP-UERJ: an introduction to Claude Code. [[Files]](https://github.com/felipelmc/Presentations/tree/main/Intro-to-ClaudeCode-CERES-2026)
-
-### Sociology for Nursing [Fall 2025]{.date}
-
-Teaching internship (*estágio docência*) at UERJ, in an undergraduate course.
 
 ### Machine Learning [Fall 2025]{.date}
 
