@@ -1,0 +1,119 @@
+---
+// A project card. With a screenshot, the image sits in a browser-like frame
+// whose address bar shows the real domain; without one, the card is text only.
+// Variants: `featured` (Projects page top: description, stats), `standard`
+// (Projects grid), `home` (home page: slimmer, fixed image height per row).
+import CiteDialog from './CiteDialog.astro';
+import LinkList from './LinkList.astro';
+import Icon from './ui/Icon.astro';
+import type { Locale, Project } from '../data/types';
+import { joinPeople, tr, useTranslations } from '../i18n/utils';
+
+interface Props {
+  project: Project;
+  locale: Locale;
+  variant?: 'featured' | 'standard' | 'home';
+  /** Image is above the fold: load eagerly. */
+  eager?: boolean;
+  as?: 'h2' | 'h3';
+  class?: string;
+}
+
+const { project: p, locale, variant = 'standard', eager = false, as: Title = 'h3', class: className } = Astro.props;
+const t = useTranslations(locale);
+const featured = variant === 'featured';
+const home = variant === 'home';
+const primary = p.links.find((l) => ['live', 'site', 'data'].includes(l.kind)) ?? p.links[0];
+const image = p.shot ? (p.shot.image ?? p.slug) : undefined;
+const title = tr(p.title, locale);
+const showStack = !home && (p.stack?.length || p.coursework || p.privateDeployment);
+---
+
+<article
+  id={p.slug}
+  data-project
+  data-categories={p.categories.join(' ')}
+  class:list={['card group/card flex scroll-mt-24 flex-col overflow-hidden transition-[border-color,box-shadow] duration-150 hover:border-line-strong hover:shadow-lift', className]}
+>
+  {image && (
+    <>
+      <div class="flex h-7 items-center gap-2 border-b border-line bg-sunken px-3" aria-hidden="true">
+        <span class="h-2 w-2 shrink-0 rounded-full border border-line-strong"></span>
+        <span class="truncate font-mono text-meta text-ink-3">{p.shot!.domain}</span>
+      </div>
+      <div class:list={['relative overflow-hidden border-b border-line bg-sunken', home ? 'aspect-[16/10] md:aspect-auto md:h-[15rem] lg:h-[18rem]' : 'aspect-[16/10]']}>
+        <img
+          src={`/img/projects/thumbs/${image}.webp`}
+          srcset={`/img/projects/thumbs/${image}.webp 800w, /img/projects/${image}.webp 1600w`}
+          sizes={featured ? '(min-width: 1024px) 36rem, (min-width: 768px) 50vw, 100vw' : '(min-width: 1024px) 28rem, (min-width: 768px) 50vw, 100vw'}
+          width="1600"
+          height="1000"
+          alt={p.shot!.alt[locale]}
+          loading={eager ? 'eager' : 'lazy'}
+          decoding="async"
+          class="h-full w-full object-cover object-top transition-[transform,filter] duration-300 ease-out group-hover/card:-translate-y-1 motion-reduce:transition-none dark:brightness-[.8] dark:group-hover/card:brightness-100"
+        />
+      </div>
+    </>
+  )}
+
+  <div class:list={['flex flex-1 flex-col', featured ? 'gap-3 p-5 sm:p-6' : 'gap-2.5 p-5']}>
+    <p class="meta">
+      {p.year}{p.context && <> · {tr(p.context, locale)}</>}
+    </p>
+
+    <Title class:list={['text-h3 font-semibold text-ink', p.code && 'font-mono !tracking-[-0.02em]']}>
+      {primary ? (
+        <a href={primary.href} target="_blank" rel="noopener noreferrer" class="transition-colors duration-150 hover:text-accent">{title}</a>
+      ) : title}
+    </Title>
+
+    {p.award && (
+      <p>
+        {p.award.href ? (
+          <a href={p.award.href} target="_blank" rel="noopener noreferrer" class="chip-award font-medium hover:bg-award/15">
+            <Icon name="star" class="h-3 w-3" />{p.award.label[locale]}
+          </a>
+        ) : (
+          <span class="chip-award font-medium"><Icon name="star" class="h-3 w-3" />{p.award.label[locale]}</span>
+        )}
+      </p>
+    )}
+
+    <p class="text-small text-ink-2 text-pretty">{p.tagline[locale]}</p>
+    {featured && p.descriptionHtml && <p class="text-sm leading-relaxed text-ink-3" set:html={p.descriptionHtml[locale]} />}
+
+    {featured && p.stats && (
+      <dl class="flex flex-wrap gap-x-6 gap-y-2 py-1">
+        {p.stats.map((s) => (
+          <div class="flex items-baseline gap-1.5">
+            <dt class="sr-only">{s.label[locale]}</dt>
+            <dd class="font-mono text-lg font-medium tracking-[-0.02em] text-ink">{tr(s.value, locale)}</dd>
+            <dd class="text-sm text-ink-3" aria-hidden="true">{s.label[locale]}</dd>
+          </div>
+        ))}
+      </dl>
+    )}
+
+    {!home && p.collaborators?.length && (
+      <p class="text-sm text-ink-3">{t('common.jointWith')} {joinPeople(p.collaborators, locale)}.</p>
+    )}
+
+    <div class="mt-auto flex flex-col gap-3 pt-2">
+      {showStack && (
+        <ul class="flex flex-wrap gap-1.5">
+          {p.privateDeployment && <li class="chip">{t('projects.private')}</li>}
+          {p.coursework && <li class="chip">{t('projects.coursework')}</li>}
+          {p.stack?.map((s) => <li class="chip-stack">{s}</li>)}
+        </ul>
+      )}
+      {(p.links.length > 0 || p.citation) && (
+        <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2 border-t border-line pt-3">
+          <LinkList links={p.links} locale={locale} coldStart={p.coldStart} />
+          {p.citation && <button type="button" class="action" data-dialog={`cite-${p.citation.key}`}>{t('common.bibtex')}</button>}
+        </div>
+      )}
+    </div>
+  </div>
+  {p.citation && <CiteDialog citation={p.citation} locale={locale} />}
+</article>

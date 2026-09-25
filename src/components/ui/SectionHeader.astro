@@ -1,0 +1,35 @@
+---
+// Numbered section heading: `01  Title ─────────── View all →`.
+// With `gutter`, the number sits in the same 7rem column as the dates of the
+// entries below it, so on long pages numbers, dates and index line up.
+import Icon from './Icon.astro';
+
+interface Props {
+  number?: string;
+  title: string;
+  id?: string;
+  href?: string;
+  hrefLabel?: string;
+  /** Heading level; section headings on a page are h2. */
+  as?: 'h2' | 'h3';
+  gutter?: boolean;
+  /** Hide the link on small screens (the page repeats it after the section). */
+  linkDesktopOnly?: boolean;
+}
+
+const { number, title, id, href, hrefLabel, as: Tag = 'h2', gutter = false, linkDesktopOnly = false } = Astro.props;
+---
+
+<div class:list={['mb-7 items-center gap-3 sm:gap-4', gutter ? 'grid sm:grid-cols-[7rem_minmax(0,1fr)] sm:gap-x-6' : 'flex']}>
+  {number && <span class="shrink-0 font-mono text-meta text-accent" aria-hidden="true">{number}</span>}
+  <div class:list={['flex min-w-0 items-center gap-3 sm:gap-4', gutter ? '' : 'flex-1']}>
+    <Tag id={id} class="min-w-0 scroll-mt-24 text-[1.5rem] font-semibold leading-tight tracking-[-0.02em] text-ink text-balance sm:text-[1.625rem]">{title}</Tag>
+    <span class="h-px min-w-4 flex-1 bg-line" aria-hidden="true"></span>
+    {href && (
+      <a href={href} class:list={['group shrink-0 items-center gap-1.5 text-sm text-ink-2 transition-colors duration-150 hover:text-accent', linkDesktopOnly ? 'hidden sm:inline-flex' : 'inline-flex']}>
+        {hrefLabel}
+        <Icon name="arrow-right" class="h-3.5 w-3.5 transition-transform duration-150 group-hover:translate-x-0.5" />
+      </a>
+    )}
+  </div>
+</div>

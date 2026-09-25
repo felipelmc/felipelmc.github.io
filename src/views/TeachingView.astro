@@ -1,0 +1,101 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LinkList from '../components/LinkList.astro';
+import PageHeader from '../components/ui/PageHeader.astro';
+import PageIndex from '../components/ui/PageIndex.astro';
+import SectionHeader from '../components/ui/SectionHeader.astro';
+import { courseNotes, courses } from '../data/teaching';
+import type { Course, CourseNotes, Link, Locale } from '../data/types';
+import { htmlLang, peopleHtml, tr, useTranslations } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const lang = htmlLang(locale);
+
+const shortCourses = courses.filter((c) => c.kind === 'short-course');
+const assistance = courses.filter((c) => c.kind === 'ta');
+const notesByLevel = [
+  { id: 'notes-graduate', label: t('materials.graduate'), items: courseNotes.filter((n) => n.level === 'graduate') },
+  { id: 'notes-undergraduate', label: t('materials.undergraduate'), items: courseNotes.filter((n) => n.level === 'undergraduate') },
+].filter((g) => g.items.length);
+
+const sections = [
+  { id: 'short-courses', label: t('teaching.short') },
+  { id: 'assistance', label: t('teaching.assistance') },
+  { id: 'notes', label: t('materials.notes') },
+];
+
+const instructorsLine = (c: Course | CourseNotes) =>
+  c.instructors?.length
+    ? `${t(c.instructors.length > 1 ? 'common.instructors' : 'common.instructor')}: ${peopleHtml(c.instructors, locale)}.`
+    : '';
+const noteLinks = (n: CourseNotes): Link[] => [
+  ...(n.site ? [{ kind: 'site' as const, href: n.site }] : []),
+  ...(n.repo ? [{ kind: 'repo' as const, href: n.repo }] : []),
+];
+const titleLang = (c: Course) => (typeof c.title === 'string' && c.titleLang && c.titleLang !== lang ? c.titleLang : undefined);
+---
+
+<Layout title={t('teaching.title')} description={t('meta.teaching')}>
+  <PageHeader kicker={t('teaching.kicker')} title={t('teaching.title')} subtitle={t('teaching.subtitle')} />
+
+  <div class="grid gap-10 lg:grid-cols-[12rem_minmax(0,1fr)] lg:gap-16">
+    <PageIndex items={sections} label={t('teaching.title')} />
+
+    <div class="min-w-0 space-y-20">
+      {[
+        { id: 'short-courses', n: '01', title: t('teaching.short'), items: shortCourses },
+        { id: 'assistance', n: '02', title: t('teaching.assistance'), items: assistance },
+      ].map((group) => (
+        <section aria-labelledby={group.id}>
+          <SectionHeader gutter number={group.n} id={group.id} title={group.title} />
+          <ol class="divide-y divide-line">
+            {group.items.map((c) => (
+              <li id={c.id} class="grid scroll-mt-24 gap-x-6 gap-y-1 py-5 first:pt-0 sm:grid-cols-[7rem_1fr]">
+                <p class="meta pt-1">{tr(c.term, locale)}</p>
+                <div class="min-w-0">
+                  <h3 class="text-h3 font-semibold text-ink text-pretty" lang={titleLang(c)}>{tr(c.title, locale)}</h3>
+                  <p class="mt-0.5 text-sm text-ink-3">
+                    <span set:html={tr(c.whereHtml, locale)} />{c.level && <> · {c.level[locale]}</>}
+                  </p>
+                  {c.descriptionHtml && <p class="mt-2 max-w-prose text-small text-ink-2" set:html={tr(c.descriptionHtml, locale)} />}
+                  {c.instructors?.length && <p class="mt-1 text-sm text-ink-3" set:html={instructorsLine(c)} />}
+                  {c.links?.length && (
+                    <div class="mt-2.5 flex flex-wrap items-baseline gap-x-5 gap-y-2"><LinkList links={c.links} locale={locale} /></div>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))}
+
+      <section aria-labelledby="notes-title" id="notes" class="scroll-mt-24">
+        <SectionHeader gutter number="03" id="notes-title" title={t('materials.notes')} />
+        <p class="-mt-3 mb-8 max-w-prose text-sm text-ink-3 sm:pl-[8.5rem]">{t('teaching.notesIntro')}</p>
+        <div class="space-y-10">
+          {notesByLevel.map((g) => (
+            <div>
+              <h3 id={g.id} class="eyebrow mb-4">{g.label}</h3>
+              <ul class="grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 sm:[&>li:last-child:nth-child(odd)]:col-span-2">
+                {g.items.map((n) => (
+                  <li id={n.id} class="flex scroll-mt-24 flex-col gap-2 bg-panel p-5">
+                    <p class="meta">{n.institution} · {n.term}</p>
+                    <h4 class="text-h3 font-semibold text-ink">{tr(n.title, locale)}</h4>
+                    <p class="text-sm leading-relaxed text-ink-2">{n.description[locale]}</p>
+                    {n.instructors?.length && <p class="text-sm text-ink-3" set:html={instructorsLine(n)} />}
+                    <div class="mt-auto flex flex-wrap items-baseline gap-x-5 gap-y-2 pt-2"><LinkList links={noteLinks(n)} locale={locale} /></div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>

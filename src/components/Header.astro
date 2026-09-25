@@ -1,123 +1,110 @@
 ---
-import { useTranslations } from '../i18n/utils';
+import Icon from './ui/Icon.astro';
+import Mark from './ui/Mark.astro';
+import { asLocale, getLocalePath, useTranslations } from '../i18n/utils';
 
-const locale = Astro.currentLocale ?? 'en';
+const locale = asLocale(Astro.currentLocale);
 const t = useTranslations(locale);
 const currentPath = Astro.url.pathname;
 
-// Build the same page URL in the other language
-const otherLocale = locale === 'en' ? 'pt-br' : 'en';
-const otherLocalePath = (() => {
-  if (locale === 'en') {
-    return `/pt-br${currentPath === '/' ? '' : currentPath}`;
-  } else {
-    const stripped = currentPath.replace(/^\/pt-br/, '') || '/';
-    return stripped;
-  }
-})();
+// The same page in the other language: add or strip the /pt-br prefix.
+const otherLocalePath = locale === 'en'
+  ? `/pt-br${currentPath === '/' ? '' : currentPath}`
+  : currentPath.replace(/^\/pt-br/, '') || '/';
 
+const home = getLocalePath(locale, '/');
 const navItems = [
-  { href: locale === 'en' ? '/' : '/pt-br', label: t('nav.about') },
-  { href: locale === 'en' ? '/publications' : '/pt-br/publications', label: t('nav.publications') },
-  { href: locale === 'en' ? '/teaching' : '/pt-br/teaching', label: t('nav.teaching') },
-  { href: locale === 'en' ? '/materials' : '/pt-br/materials', label: t('nav.materials') },
-  { href: locale === 'en' ? '/cv' : '/pt-br/cv', label: t('nav.cv') },
+  { href: getLocalePath(locale, '/projects'), label: t('nav.projects') },
+  { href: getLocalePath(locale, '/publications'), label: t('nav.research') },
+  { href: getLocalePath(locale, '/teaching'), label: t('nav.teaching') },
+  { href: getLocalePath(locale, '/cv'), label: t('nav.cv') },
 ];
 
-const isActive = (href: string) => {
-  if (href === '/' || href === '/pt-br') {
-    return currentPath === '/' || currentPath === '/pt-br' || currentPath === '/pt-br/';
-  }
-  return currentPath === href || currentPath.startsWith(href + '/');
-};
+const isActive = (href: string) => currentPath === href || currentPath.startsWith(href + '/');
 ---
 
-<header class="sticky top-0 z-50 bg-surface/90 dark:bg-surface-dark/90 backdrop-blur-md border-b border-border dark:border-border-dark">
-  <nav class="max-w-content mx-auto px-6 sm:px-8 lg:px-32 xl:px-48 2xl:px-64 py-4">
-    <div class="flex items-center justify-between">
-      <a href={locale === 'en' ? '/' : '/pt-br'} class="font-serif text-lg text-ink dark:text-ink-dark hover:text-accent dark:hover:text-accent-dark transition-colors">
-        Felipe Lamarca
+<header class="sticky top-0 z-50 border-b border-line bg-canvas/85 backdrop-blur-md" data-print-hide>
+  <nav class="mx-auto flex h-14 max-w-content items-center justify-between gap-4 px-4 sm:px-6 lg:px-8" aria-label="Main">
+    <a href={home} class="group flex items-center gap-2.5 rounded-btn" aria-label={`Felipe Lamarca · ${t('nav.home')}`}>
+      <Mark class="h-6 w-6 transition-transform duration-300 group-hover:rotate-90 motion-reduce:transition-none" />
+      <span class="text-[0.9375rem] font-medium tracking-[-0.01em] text-ink transition-colors duration-150 group-hover:text-accent">Felipe Lamarca</span>
+    </a>
+
+    <div class="flex items-center gap-1 sm:gap-2">
+      <ul class="hidden items-center gap-1 md:flex">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              aria-current={isActive(item.href) ? 'page' : undefined}
+              class:list={[
+                'relative block rounded-btn px-3 py-1.5 text-sm transition-colors duration-150',
+                isActive(item.href)
+                  ? 'text-ink after:absolute after:inset-x-3 after:-bottom-[13px] after:h-0.5 after:bg-accent'
+                  : 'text-ink-2 hover:text-ink',
+              ]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <a
+        href={otherLocalePath}
+        hreflang={locale === 'en' ? 'pt-BR' : 'en'}
+        class="ml-1 flex items-center rounded-btn border border-line px-2 py-1 font-mono text-[11px] tracking-[0.06em] text-ink-3 transition-colors duration-150 hover:border-line-strong hover:text-ink"
+        aria-label={t('nav.switchLabel')}
+        title={t('nav.switchLabel')}
+      >
+        <span class={locale === 'en' ? 'text-ink' : ''}>EN</span>
+        <span class="px-1 text-line-strong" aria-hidden="true">/</span>
+        <span class={locale === 'pt-br' ? 'text-ink' : ''}>PT</span>
       </a>
 
-      <div class="flex items-center gap-5">
-        <ul class="hidden md:flex items-center gap-6 text-sm">
-          {navItems.map((item) => (
-            <li>
-              <a
-                href={item.href}
-                class:list={[
-                  'tracking-wide transition-colors',
-                  isActive(item.href)
-                    ? 'text-accent dark:text-accent-dark'
-                    : 'text-ink-secondary dark:text-ink-secondary-dark hover:text-ink dark:hover:text-ink-dark'
-                ]}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+      <button
+        id="theme-toggle"
+        type="button"
+        class="grid h-9 w-9 place-items-center rounded-btn text-ink-3 transition-colors duration-150 hover:bg-sunken hover:text-ink"
+        aria-label={t('nav.theme')}
+        aria-pressed="false"
+      >
+        <Icon name="sun" class="hidden h-[18px] w-[18px] dark:block" />
+        <Icon name="moon" class="block h-[18px] w-[18px] dark:hidden" />
+      </button>
 
-        <!-- Language switcher -->
-        <a
-          href={otherLocalePath}
-          class="px-2 py-2 text-xs tracking-widest font-medium text-ink-muted dark:text-ink-muted-dark hover:text-ink dark:hover:text-ink-dark transition-colors"
-          title={otherLocale === 'en' ? 'Switch to English' : 'Mudar para Português'}
-        >
-          {locale === 'en' ? 'PT' : 'EN'}
-        </a>
-
-        <button
-          id="theme-toggle"
-          class="p-2.5 rounded text-ink-muted dark:text-ink-muted-dark hover:text-ink dark:hover:text-ink-dark transition-colors"
-          aria-label="Toggle theme"
-          aria-pressed="false"
-        >
-          <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-          </svg>
-          <svg class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-          </svg>
-        </button>
-
-        <button
-          id="mobile-menu-toggle"
-          class="md:hidden p-2.5 rounded text-ink-muted dark:text-ink-muted-dark hover:text-ink dark:hover:text-ink-dark transition-colors"
-          aria-label="Toggle menu"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-        >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
+      <button
+        id="mobile-menu-toggle"
+        type="button"
+        class="grid h-9 w-9 place-items-center rounded-btn text-ink-2 transition-colors duration-150 hover:bg-sunken hover:text-ink md:hidden"
+        aria-label={t('nav.menu')}
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <Icon name="menu" class="h-5 w-5" />
+      </button>
     </div>
+  </nav>
 
-    <ul id="mobile-menu" class="hidden md:hidden mt-4 pb-2 space-y-1 text-sm">
+  <div id="mobile-menu" class="hidden border-t border-line md:hidden">
+    <ul class="mx-auto max-w-content px-4 py-2 sm:px-6">
       {navItems.map((item) => (
         <li>
           <a
             href={item.href}
+            aria-current={isActive(item.href) ? 'page' : undefined}
             class:list={[
-              'block py-2 tracking-wide transition-colors',
-              isActive(item.href)
-                ? 'text-accent dark:text-accent-dark'
-                : 'text-ink-secondary dark:text-ink-secondary-dark'
+              'flex items-center justify-between border-b border-line py-3 text-base last:border-0',
+              isActive(item.href) ? 'text-accent' : 'text-ink',
             ]}
           >
             {item.label}
+            <Icon name="arrow-right" class="h-4 w-4 text-ink-3" />
           </a>
         </li>
       ))}
-      <li class="pt-2 border-t border-border dark:border-border-dark">
-        <a href={otherLocalePath} class="block py-2 text-xs tracking-widest font-medium text-ink-muted dark:text-ink-muted-dark">
-          {locale === 'en' ? 'Português (PT-BR)' : 'English (EN)'}
-        </a>
-      </li>
     </ul>
-  </nav>
+  </div>
 </header>
 
 <script>
@@ -130,7 +117,7 @@ const isActive = (href: string) => {
     themeToggle?.setAttribute('aria-pressed', String(isDark));
     document
       .querySelector('meta[name="theme-color"]')
-      ?.setAttribute('content', isDark ? '#0e0d0b' : '#faf8f5');
+      ?.setAttribute('content', isDark ? '#0B0D10' : '#F6F6F3');
   };
   syncTheme();
 

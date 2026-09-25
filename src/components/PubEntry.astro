@@ -1,0 +1,59 @@
+---
+// One research output: mono year, type tag, serif title, venue, co-authors,
+// note, and actions (Abstract as a <details>, BibTeX dialog, links).
+import CiteDialog from './CiteDialog.astro';
+import LinkList from './LinkList.astro';
+import type { Locale, Publication } from '../data/types';
+import { htmlLang, joinPeople, tr, useTranslations, type TranslationKey } from '../i18n/utils';
+
+interface Props {
+  pub: Publication;
+  locale: Locale;
+  /** Heading level of the title. */
+  as?: 'h3' | 'h4';
+  /** Show the type tag (useful in mixed lists; redundant under a type heading). */
+  showType?: boolean;
+}
+
+const { pub, locale, as: Title = 'h3', showType = true } = Astro.props;
+const t = useTranslations(locale);
+const pageLang = htmlLang(locale);
+const titleLang = typeof pub.title === 'string' && pub.titleLang && pub.titleLang !== pageLang ? pub.titleLang : undefined;
+const abstractLang = pub.abstractLang && pub.abstractLang !== pageLang ? pub.abstractLang : undefined;
+const typeLabel = t(`pub.type.${pub.type}` as TranslationKey);
+const hasActions = !!(pub.abstract || pub.citation || pub.links?.length);
+---
+
+<article id={pub.id} class="grid scroll-mt-24 gap-x-6 gap-y-1 border-b border-line py-6 first:pt-0 last:border-0 sm:grid-cols-[7rem_minmax(0,1fr)]">
+  <p class="meta pt-1">{pub.year}</p>
+  <div class="min-w-0">
+    {showType && <p class="mb-2"><span class="chip">{typeLabel}</span></p>}
+    <Title class="font-serif text-h3 font-medium text-ink text-pretty" lang={titleLang}>{tr(pub.title, locale)}</Title>
+    {pub.venueHtml && <p class="mt-1 text-small text-ink-2" set:html={tr(pub.venueHtml, locale)} />}
+    {pub.authors?.length && (
+      <p class="mt-1 text-sm text-ink-3">{t('common.jointWith')} {joinPeople(pub.authors, locale)}.</p>
+    )}
+    {pub.note && <p class="mt-1 text-sm italic text-ink-3">{tr(pub.note, locale)}</p>}
+
+    {hasActions && (
+      <div class="mt-3 flex flex-wrap items-baseline gap-x-5 gap-y-2">
+        {pub.abstract && (
+          <details class="group open:basis-full">
+            <summary class="action cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+              {t('common.abstract')}
+              <span class="inline-block transition-transform duration-150 group-open:rotate-180" aria-hidden="true">↓</span>
+            </summary>
+            <p class="mt-3 max-w-prose border-l-2 border-accent/40 pl-4 text-[0.9375rem] leading-relaxed text-ink-2" lang={abstractLang}>
+              {tr(pub.abstract, locale)}
+            </p>
+          </details>
+        )}
+        {pub.citation && (
+          <button type="button" class="action" data-dialog={`cite-${pub.citation.key}`}>{t('common.bibtex')}</button>
+        )}
+        {pub.links && <LinkList links={pub.links} locale={locale} />}
+      </div>
+    )}
+  </div>
+  {pub.citation && <CiteDialog citation={pub.citation} locale={locale} />}
+</article>

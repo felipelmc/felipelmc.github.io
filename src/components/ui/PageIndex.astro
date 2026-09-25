@@ -1,0 +1,54 @@
+---
+// Section index for long reading pages: a sticky mono list in the left column
+// on desktop (the current section is highlighted while scrolling), a
+// horizontally scrolling row of links on small screens.
+interface Props {
+  items: { id: string; label: string }[];
+  label: string;
+}
+
+const { items, label } = Astro.props;
+---
+
+<nav aria-label={label} class="page-index -mx-4 overflow-x-auto px-4 lg:sticky lg:top-24 lg:mx-0 lg:self-start lg:overflow-visible lg:px-0" data-print-hide>
+  <ol class="flex w-max gap-x-5 border-y border-line py-3 font-mono text-meta lg:w-auto lg:flex-col lg:border-y-0 lg:border-l lg:py-0">
+    {items.map((item, i) => (
+      <li>
+        <a
+          href={`#${item.id}`}
+          data-index-link={item.id}
+          class="flex gap-2 whitespace-nowrap text-ink-2 transition-colors duration-150 hover:text-accent aria-[current=true]:text-ink lg:-ml-px lg:whitespace-normal lg:border-l-2 lg:border-transparent lg:py-1.5 lg:pl-4 lg:aria-[current=true]:border-accent"
+        >
+          <span class="text-accent" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>{item.label}
+        </a>
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<script>
+  // Highlight the section currently in view. Headings carry the ids the index
+  // links to; the last heading above the upper third of the viewport wins.
+  const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-index-link]'));
+  const targets = links
+    .map((a) => document.getElementById(a.dataset.indexLink ?? ''))
+    .filter((el): el is HTMLElement => !!el);
+
+  if (links.length && targets.length) {
+    const update = () => {
+      const line = window.innerHeight * 0.33;
+      let current = targets[0].id;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top <= line) current = el.id;
+      }
+      links.forEach((a) => a.setAttribute('aria-current', String(a.dataset.indexLink === current)));
+    };
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => { update(); ticking = false; });
+    }, { passive: true });
+    update();
+  }
+</script>

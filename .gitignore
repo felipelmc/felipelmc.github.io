@@ -18,3 +18,7 @@ cv/*.log
 
 CLAUDE.md
 .claude
+# Redesign QA output (screenshots, inventories, classic-site snapshot) and raw
+# project captures; only the optimized WebP in public/img/projects/ ships.
+.qa/
+.shots-raw/

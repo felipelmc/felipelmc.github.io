@@ -1,41 +1,67 @@
 ---
+import '@fontsource-variable/geist';
+import '@fontsource-variable/geist-mono';
+import '@fontsource-variable/newsreader/opsz.css';
+import '@fontsource-variable/newsreader/opsz-italic.css';
+import geistLatin from '@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { asLocale, htmlLang, useTranslations } from '../i18n/utils';
+import { profile } from '../data/profile';
 import '../styles/global.css';
 
 interface Props {
   title: string;
+  /** Replaces the default "<title> | Felipe Lamarca" (the home page leads with the name). */
+  fullTitle?: string;
   description?: string;
+  /** Ignored; the locale comes from the route. Pages not yet on the shared views still pass it. */
   lang?: string;
 }
 
-const { title, description = 'Felipe Lamarca – Computational Political Scientist', lang = 'en' } = Astro.props;
+const { title, fullTitle: fullTitleProp, description = 'Felipe Lamarca – Computational Political Scientist' } = Astro.props;
+const locale = asLocale(Astro.currentLocale);
+const t = useTranslations(locale);
+const isPt = locale === 'pt-br';
 
-const isPt = lang === 'pt-BR';
 const path = Astro.url.pathname;
 const enPath = isPt ? (path.replace(/^\/pt-br/, '') || '/') : path;
 const ptPath = isPt ? path : (path === '/' ? '/pt-br/' : `/pt-br${path}`);
 const canonicalURL = new URL(path, Astro.site);
 const enURL = new URL(enPath, Astro.site);
 const ptURL = new URL(ptPath, Astro.site);
-const ogImage = new URL('/img/profilepic/og-image.jpg', Astro.site);
-const fullTitle = `${title} | Felipe Lamarca`;
+const ogImage = new URL('/img/og-image.jpg', Astro.site);
+const ogAlt = isPt
+  ? 'Felipe Lamarca, cientista político computacional, ao lado de um mapa de pontos dos municípios brasileiros'
+  : 'Felipe Lamarca, computational political scientist, next to a dot map of Brazilian municipalities';
+const fullTitle = fullTitleProp ?? `${title} | Felipe Lamarca`;
+
+// schema.org Person, so search engines connect the site with the profiles.
+const personLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: profile.name,
+  url: 'https://felipelamarca.com/',
+  image: new URL(profile.portrait.src, Astro.site).href,
+  jobTitle: profile.role[locale],
+  affiliation: [
+    { '@type': 'CollegeOrUniversity', name: 'IESP-UERJ', url: 'https://iesp.uerj.br/' },
+    { '@type': 'Organization', name: 'AtlasIntel', url: 'https://atlasintel.org/' },
+  ],
+  alumniOf: [{ '@type': 'CollegeOrUniversity', name: 'Fundação Getulio Vargas (FGV)' }],
+  sameAs: profile.social.filter((s) => s.id !== 'email').map((s) => s.href),
+};
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={htmlLang(locale)}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#faf8f5" />
+    <meta name="theme-color" content="#F6F6F3" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Inter:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
-    />
+    <link rel="preload" href={geistLatin} as="font" type="font/woff2" crossorigin />
     <link rel="canonical" href={canonicalURL} />
     <link rel="alternate" hreflang="en" href={enURL} />
     <link rel="alternate" hreflang="pt-BR" href={ptURL} />
@@ -48,27 +74,31 @@ const fullTitle = `${title} | Felipe Lamarca`;
     <meta property="og:site_name" content="Felipe Lamarca" />
     <meta property="og:locale" content={isPt ? 'pt_BR' : 'en_US'} />
     <meta property="og:image" content={ogImage} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <title>{title} | Felipe Lamarca</title>
+    <title>{fullTitle}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
     <script is:inline>
       const theme = localStorage.getItem('theme') ||
         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       document.documentElement.classList.toggle('dark', theme === 'dark');
-      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#0e0d0b' : '#faf8f5');
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#0B0D10' : '#F6F6F3');
     </script>
   </head>
-  <body class="min-h-screen flex flex-col">
+  <body class="flex min-h-screen flex-col">
     <a
       href="#main"
-      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:px-4 focus:py-2 bg-surface dark:bg-surface-dark text-accent dark:text-accent-dark rounded shadow-lg"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[60] focus:rounded-btn focus:bg-panel focus:px-4 focus:py-2 focus:text-accent focus:shadow-lift"
     >
-      {isPt ? 'Pular para o conteúdo' : 'Skip to content'}
+      {t('nav.skip')}
     </a>
     <Header />
-    <main id="main" class="flex-1 w-full max-w-content mx-auto px-6 sm:px-8 lg:px-32 xl:px-48 2xl:px-64 py-16">
+    <main id="main" class="mx-auto w-full max-w-content flex-1 px-4 pb-24 pt-10 sm:px-6 sm:pt-14 lg:px-8">
       <slot />
     </main>
     <Footer />

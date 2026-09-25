@@ -1,0 +1,77 @@
+[
+  {
+    "slug": "relicaria",
+    "url": "https://relicaria.streamlit.app/",
+    "kind": "streamlit",
+    "clickBefore": [
+      "button[role=\"tab\"]:has-text(\"Instruções\")"
+    ],
+    "delayMs": 1000,
+    "note": "Without an uploaded document every result tab is empty; the Instruções tab is the one-click view that fills the frame."
+  },
+  {
+    "slug": "mape-dashboard",
+    "url": "https://mape-municipios-dashboard.streamlit.app/",
+    "kind": "streamlit",
+    "clickBefore": [
+      "button[role=\"tab\"]:has-text(\"Painel (Brasil)\")"
+    ],
+    "waitFor": "[data-testid=\"stPlotlyChart\"] .js-plotly-plot >> visible=true",
+    "scrollTo": "h2:has-text(\"Painel de indicadores\") >> visible=true",
+    "delayMs": 4000,
+    "note": "Brasil panel: KPI row plus the municipal choropleth."
+  },
+  {
+    "slug": "acre-deforestation",
+    "url": "https://mapa-do-desmatamento-acre.streamlit.app/",
+    "kind": "streamlit",
+    "clickBefore": [
+      "a[data-testid=\"stTopNavLink\"]:has-text(\"Acre\")"
+    ],
+    "waitFor": "[data-testid=\"stPlotlyChart\"] .js-plotly-plot >> visible=true",
+    "scrollTo": "[data-testid=\"stMarkdownContainer\"]:has-text(\"Monitoramento de impactos\") >> visible=true",
+    "delayMs": 4000,
+    "note": "The Acre page (one click from the landing text page), scrolled to the subtitle: year picker and the state-wide PRODES map."
+  },
+  {
+    "slug": "mapemunicipios",
+    "url": "https://felipelamarca.com/MAPEmunicipios/",
+    "kind": "static",
+    "delayMs": 500,
+    "note": "Landing hero: headline, install snippet, headline numbers."
+  },
+  {
+    "slug": "abcp-2026",
+    "url": "https://felipelamarca.com/Programacao-ABCP-2026/",
+    "kind": "static",
+    "clock": "2026-08-05T10:40:00-03:00",
+    "hide": [
+      "#dica-inicio"
+    ],
+    "delayMs": 500,
+    "note": "A live-schedule app: the clock is frozen mid-conference (day 2, 10:40 Belém) so 'Agora' shows sessions in progress and the header clock is stable between runs. The first-visit tip is hidden."
+  },
+  {
+    "slug": "comida-di-buteco",
+    "url": "https://felipelamarca.com/ComidaDiButeco/",
+    "kind": "static",
+    "waitFor": "#map canvas",
+    "delayMs": 3000,
+    "note": "Default view: RJ filter, list plus map with every bar."
+  },
+  {
+    "slug": "dhbb-parentescos",
+    "url": "https://felipelamarca.com/DHBB-Parentescos/",
+    "kind": "static",
+    "clickBefore": [
+      ".block:has-text(\"pelo menos 3\")"
+    ],
+    "waitFor": "#mynetwork canvas",
+    "waitForHidden": "#loadingBar",
+    "seed": 1,
+    "clock": "2026-01-01T12:00:00Z",
+    "timeoutMs": 300000,
+    "delayMs": 3000,
+    "note": "The hub is two buttons; one click opens the kinship graph of people linked to at least 3 others. vis-network needs ~1 min to stabilise (the loading bar hides when done); seed + clock pin its random initial layout (vis seeds from Math.random and Date) so reruns give near-identical images."
+  }
+]

@@ -18,11 +18,29 @@ export const news: NewsItem[] = [
     href: '/publications',
   },
   {
+    date: '2026-09-14',
+    label: { en: 'Sep 2026', 'pt-br': 'set 2026' },
+    text: {
+      en: 'Published a DOXA discussion paper on how the population of the state of Rio de Janeiro gets information about politics, with its replication package.',
+      'pt-br': 'Publiquei um texto para discussão do DOXA sobre como a população do estado do Rio de Janeiro se informa sobre política, com o pacote de replicação.',
+    },
+    href: '/publications',
+  },
+  {
+    date: '2026-08-17',
+    label: { en: 'Aug 2026', 'pt-br': 'ago 2026' },
+    text: {
+      en: 'Taught a short course on AI agents for social science research (an introduction to Claude Code) at MAPE’s Methodological Training, IESP-UERJ.',
+      'pt-br': 'Ministrei um minicurso sobre agentes de IA para pesquisa em ciências sociais (uma introdução ao Claude Code) na Formação Metodológica do MAPE, IESP-UERJ.',
+    },
+    href: '/teaching',
+  },
+  {
     date: '2026-08-01',
     label: { en: 'Aug 2026', 'pt-br': 'ago 2026' },
     text: {
-      en: '“Da gaveta ao plenário”, joint work with Lucas Calabró Berti, will be presented at the XV ABCP Meeting in Belém, Brazil.',
-      'pt-br': '“Da gaveta ao plenário”, trabalho conjunto com Lucas Calabró Berti, será apresentado no XV Encontro da ABCP, em Belém.',
+      en: '“Da gaveta ao plenário”, joint work with Lucas Calabró Berti, was presented at the XV ABCP Meeting in Belém, Brazil.',
+      'pt-br': '“Da gaveta ao plenário”, trabalho conjunto com Lucas Calabró Berti, foi apresentado no XV Encontro da ABCP, em Belém.',
     },
     href: '/publications',
   },
