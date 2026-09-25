@@ -380,6 +380,11 @@ export const cv: Cv = {
       email: 'brunoschaefer at iesp dot uerj dot br',
     },
     {
+      name: 'Fabiano Santos, Ph.D.',
+      institution: 'IESP-UERJ',
+      email: 'fsantos at iesp dot uerj dot br',
+    },
+    {
       name: 'Jaqueline Zulini, Ph.D.',
       institution: 'FGV CPDOC',
       note: { en: 'B.A. advisor', 'pt-br': 'orientadora de graduação' },

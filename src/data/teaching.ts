@@ -215,26 +215,6 @@ export const courseNotes: CourseNotes[] = [
     site: 'https://felipelamarca.com/Survey-Research/',
   },
   {
-    id: 'political-theory-i',
-    title: { en: 'Political Theory I', 'pt-br': 'Teoria Política I' },
-    institution: 'IESP-UERJ',
-    term: '2025.1',
-    level: 'graduate',
-    description: {
-      en: 'Political theory: its place within political science, the history of political ideas, and Aristotle, Machiavelli, Locke, and Rousseau.',
-      'pt-br': 'Teoria política: seu lugar na ciência política, a história das ideias políticas e Aristóteles, Maquiavel, Locke e Rousseau.',
-    },
-    instructors: [
-      {
-        name: 'Paulo Cassimiro',
-        affiliation: 'IESP-UERJ',
-        url: 'https://iesp.uerj.br/pesquisador/paulo-henrique-paschoeto-cassimiro-2/',
-      },
-    ],
-    repo: 'https://github.com/felipelmc/Political-Theory-I',
-    site: 'https://felipelamarca.com/Political-Theory-I/',
-  },
-  {
     id: 'deep-learning',
     title: 'Deep Learning',
     institution: 'FGV EMAp',
