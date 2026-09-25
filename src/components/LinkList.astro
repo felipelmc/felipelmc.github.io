@@ -1,5 +1,7 @@
 ---
 // A row of small mono action links (Live app ↗ · Code ↗ · DOI ↗) from Link data.
+// `coldStart` marks the live link of an app that sleeps when idle (Streamlit
+// Community Cloud) with a moon icon; the page explains it once, below the grid.
 import Icon from './ui/Icon.astro';
 import type { Link, Locale } from '../data/types';
 import { tr, useTranslations, type TranslationKey } from '../i18n/utils';
@@ -7,24 +9,32 @@ import { tr, useTranslations, type TranslationKey } from '../i18n/utils';
 interface Props {
   links: Link[];
   locale: Locale;
+  coldStart?: boolean;
 }
 
-const { links, locale } = Astro.props;
+const { links, locale, coldStart = false } = Astro.props;
 const t = useTranslations(locale);
 const labelFor = (link: Link) => (link.label ? tr(link.label, locale) : t(`link.${link.kind}` as TranslationKey));
 ---
 
 {links.map((link) => {
   const external = /^https?:/.test(link.href);
-  const label = labelFor(link);
+  const sleepy = coldStart && link.kind === 'live';
   return (
     <a
       href={link.href}
       class="action"
+      title={sleepy ? t('projects.coldStart') : undefined}
       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
     >
-      {label}
+      {labelFor(link)}
       {external && <Icon name="arrow-up-right" class="h-3 w-3" />}
+      {sleepy && (
+        <>
+          <Icon name="moon" class="h-3 w-3 text-ink-3" />
+          <span class="sr-only">({t('projects.coldStart')})</span>
+        </>
+      )}
     </a>
   );
 })}

@@ -22,12 +22,13 @@ const compact = projects.filter((p) => p.tier === 'compact');
 const years = projects.map((p) => p.year);
 const categories = (['ai', 'apps', 'data', 'software', 'viz'] as ProjectCategory[])
   .map((c) => ({ c, n: projects.filter((p) => p.categories.includes(c)).length }))
-  .filter(({ n }) => n > 0);
+  // A filter that isolates a single project isn't worth a button.
+  .filter(({ n }) => n >= 2);
 const catLabel = (c: ProjectCategory) => t(`projects.cat.${c}` as TranslationKey);
 const count = t('projects.count').replace('{n}', String(projects.length));
 ---
 
-<Layout title={t('projects.title')} description={t('projects.subtitle')}>
+<Layout title={t('projects.title')} description={t('meta.projects')}>
   <PageHeader kicker={`${count} · ${Math.min(...years)}–${Math.max(...years)}`} title={t('projects.title')} subtitle={t('projects.subtitle')} />
 
   <div id="project-filters" role="group" aria-label={t('projects.filter')} class="-mx-4 mb-10 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0" data-print-hide hidden>
@@ -44,6 +45,9 @@ const count = t('projects.count').replace('{n}', String(projects.length));
     <div class="grid gap-6 md:grid-cols-2">
       {featured.map((p, i) => <ProjectCard project={p} locale={locale} variant="featured" eager={i < 2} as="h2" />)}
     </div>
+    {projects.some((p) => p.coldStart) && (
+      <p class="meta mt-4 flex items-center gap-1.5"><Icon name="moon" class="h-3 w-3" />{t('projects.coldStartNote')}</p>
+    )}
   </section>
 
   <section class="mt-20" data-project-group aria-labelledby="more-projects">

@@ -23,29 +23,46 @@ const t = useTranslations(locale);
 const path = (p: string) => getLocalePath(locale, p);
 
 const homeProjects = projects.filter((p) => p.home).sort((a, b) => a.home! - b.home!);
-// Asymmetric 7/5, 5/7 rhythm for the four home cards.
+// Asymmetric 7/5, 5/7 rhythm for the four home cards; the "home" card variant
+// gives both cards in a row the same image height.
 const spans = ['md:col-span-7', 'md:col-span-5', 'md:col-span-5', 'md:col-span-7'];
 const featuredPubs = publications.filter((p) => p.featured).sort((a, b) => a.featured! - b.featured!);
 const nextTalk = talks.find((talk) => talk.upcoming);
-const scholarly = profile.social.filter((s) => ['scholar', 'orcid', 'lattes'].includes(s.id));
+const socialOrder = ['github', 'scholar', 'orcid', 'lattes', 'linkedin', 'email'];
+const social = socialOrder.map((id) => profile.social.find((s) => s.id === id)!).filter(Boolean);
 const teaser = photos.slice(0, 4);
+const sectionGap = 'mt-20 sm:mt-24';
 ---
 
-<Layout title={profile.role[locale]} description={profile.statement[locale]}>
+<Layout
+  title={profile.role[locale]}
+  fullTitle={`${profile.name} · ${profile.role[locale]}`}
+  description={t('meta.home')}
+>
   <!-- Hero -->
-  <section class="grid items-start gap-12 lg:grid-cols-12 lg:gap-10 xl:gap-16" aria-labelledby="hero-name">
-    <div class="lg:col-span-7 lg:pt-4">
-      <p class="eyebrow mb-6">{t('home.kicker')}</p>
+  <section class="grid items-start gap-12 lg:grid-cols-2 lg:gap-12 xl:gap-16" aria-labelledby="hero-name">
+    <div class="lg:pt-2">
+      <div class="mb-6 flex items-center gap-3">
+        <img
+          src={profile.portrait.src}
+          width="40"
+          height="40"
+          alt=""
+          fetchpriority="high"
+          class="h-10 w-10 shrink-0 rounded-full object-cover"
+        />
+        <p class="eyebrow">{t('home.kicker')}</p>
+      </div>
       <h1 id="hero-name" class="text-display font-semibold text-ink text-balance">{profile.name}</h1>
-      <p class="mt-6 max-w-[36ch] font-serif text-[1.375rem] leading-[1.4] text-ink-2 text-pretty sm:text-[1.5rem]">
+      <p class="mt-6 max-w-[34ch] font-serif text-[1.375rem] leading-[1.4] text-ink-2 text-pretty sm:text-[1.5rem]">
         {profile.statement[locale]}
       </p>
 
-      <dl class="mt-8 grid grid-cols-[5.5rem_1fr] gap-x-4 gap-y-2 font-mono text-[0.8125rem]">
+      <dl class="mt-8 grid grid-cols-[6rem_minmax(0,1fr)] gap-x-4 gap-y-2.5">
         {profile.facts.map((f) => (
           <>
-            <dt class="text-ink-3">{f.key[locale]}</dt>
-            <dd class="text-ink" set:html={f.html[locale]} />
+            <dt class="pt-0.5 font-mono text-meta text-ink-3">{f.key[locale]}</dt>
+            <dd class="text-small text-ink" set:html={f.html[locale]} />
           </>
         ))}
       </dl>
@@ -57,52 +74,57 @@ const teaser = photos.slice(0, 4);
         <a href={profile.cvPdf[locale]} class="btn-ghost" target="_blank" rel="noopener noreferrer">
           {t('home.cvPdf')}<Icon name="download" class="h-4 w-4" />
         </a>
-        <ul class="flex items-center sm:ml-2">
-          {profile.social.map((s) => (
-            <li>
-              <a
-                href={s.href}
-                class="grid h-10 w-10 place-items-center rounded-btn text-ink-3 transition-colors duration-150 hover:bg-sunken hover:text-ink"
-                {...(s.id === 'email' ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
-                aria-label={s.label}
-                title={s.label}
-              >
-                <Icon name={s.id} class="h-[18px] w-[18px]" />
-              </a>
-            </li>
-          ))}
-        </ul>
       </div>
+      <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+        {social.map((s) => (
+          <li>
+            <a
+              href={s.href}
+              class="action"
+              {...(s.id === 'email' ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
+            >
+              {s.id === 'email' ? t('home.email') : s.label}
+              {s.id !== 'email' && <Icon name="arrow-up-right" class="h-3 w-3" />}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
 
-    <Fig1 locale={locale} class="mx-auto w-full max-w-md lg:col-span-5 lg:max-w-none" />
+    <Fig1 locale={locale} class="mx-auto w-full max-w-lg lg:max-w-none" />
   </section>
 
   <!-- 01 Projects -->
-  <section class="mt-24 sm:mt-32" aria-labelledby="home-projects">
-    <SectionHeader number="01" id="home-projects" title={t('home.projects')} href={path('/projects')} hrefLabel={t('home.allProjects')} />
+  <section class={sectionGap} aria-labelledby="home-projects">
+    <SectionHeader number="01" id="home-projects" title={t('home.projects')} href={path('/projects')} hrefLabel={t('home.allProjects')} linkDesktopOnly />
     <div class="grid gap-6 md:grid-cols-12">
       {homeProjects.map((p, i) => (
-        <ProjectCard project={p} locale={locale} class={spans[i % spans.length]} />
+        <ProjectCard project={p} locale={locale} variant="home" class={spans[i % spans.length]} />
       ))}
     </div>
+    {homeProjects.some((p) => p.coldStart) && (
+      <p class="meta mt-4 flex items-center gap-1.5"><Icon name="moon" class="h-3 w-3" />{t('projects.coldStartNote')}</p>
+    )}
+    <a href={path('/projects')} class="mt-6 flex items-center justify-between rounded-btn border border-line px-4 py-3 text-sm text-ink-2 sm:hidden">
+      {t('home.allProjects')}<Icon name="arrow-right" class="h-4 w-4" />
+    </a>
   </section>
 
   <!-- 02 Research -->
-  <section class="mt-24 sm:mt-32" aria-labelledby="home-research">
-    <SectionHeader number="02" id="home-research" title={t('home.research')} href={path('/publications')} hrefLabel={t('home.allResearch')} />
+  <section class={sectionGap} aria-labelledby="home-research">
+    <SectionHeader number="02" id="home-research" title={t('home.research')} href={path('/publications')} hrefLabel={t('home.allResearch')} linkDesktopOnly />
     <div class="grid gap-10 lg:grid-cols-12">
       <div class="lg:col-span-8">
         {featuredPubs.map((pub) => <PubEntry pub={pub} locale={locale} />)}
       </div>
-      <aside class="space-y-5 lg:col-span-4">
-        {nextTalk && (
+      {nextTalk && (
+        <aside class="lg:col-span-4">
           <div class="card p-5">
             <p class="eyebrow mb-3 !text-accent">{t('home.nextTalk')}</p>
             <p class="meta">{nextTalk.dateLabel[locale]}</p>
             <p class="mt-1 font-medium leading-snug text-ink">
               {nextTalk.eventUrl ? (
-                <a href={nextTalk.eventUrl} class="link !text-ink" target="_blank" rel="noopener noreferrer">{tr(nextTalk.event, locale)}</a>
+                <a href={nextTalk.eventUrl} class="transition-colors duration-150 hover:text-accent" target="_blank" rel="noopener noreferrer">{tr(nextTalk.event, locale)}</a>
               ) : tr(nextTalk.event, locale)}
             </p>
             {nextTalk.detail && <p class="mt-1 text-sm text-ink-3">{tr(nextTalk.detail, locale)}</p>}
@@ -110,32 +132,22 @@ const teaser = photos.slice(0, 4);
               {nextTalk.title}
             </p>
           </div>
-        )}
-        <div class="card p-5">
-          <p class="eyebrow mb-3">{t('home.scholarProfiles')}</p>
-          <ul class="space-y-1">
-            {scholarly.map((s) => (
-              <li>
-                <a href={s.href} class="group flex items-center justify-between rounded-btn py-1.5 text-ink-2 transition-colors duration-150 hover:text-accent" target="_blank" rel="noopener noreferrer">
-                  <span class="flex items-center gap-2.5"><Icon name={s.id} class="h-4 w-4 text-ink-3 group-hover:text-accent" />{s.label}</span>
-                  <Icon name="arrow-up-right" class="h-3.5 w-3.5 text-ink-3" />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </aside>
+        </aside>
+      )}
     </div>
+    <a href={path('/publications')} class="mt-6 flex items-center justify-between rounded-btn border border-line px-4 py-3 text-sm text-ink-2 sm:hidden">
+      {t('home.allResearch')}<Icon name="arrow-right" class="h-4 w-4" />
+    </a>
   </section>
 
   <!-- 03 News -->
-  <section class="mt-24 sm:mt-32" aria-labelledby="home-news">
+  <section class={sectionGap} aria-labelledby="home-news">
     <SectionHeader number="03" id="home-news" title={t('home.news')} href="/rss.xml" hrefLabel="RSS" />
     <NewsList locale={locale} />
   </section>
 
   <!-- 04 About -->
-  <section class="mt-24 sm:mt-32" aria-labelledby="home-about">
+  <section class={sectionGap} aria-labelledby="home-about">
     <SectionHeader number="04" id="home-about" title={t('home.about')} />
     <div class="grid gap-10 lg:grid-cols-12">
       <div class="lg:col-span-4">
@@ -146,7 +158,7 @@ const teaser = photos.slice(0, 4);
           alt={profile.name}
           loading="lazy"
           decoding="async"
-          class="aspect-square w-full max-w-[18rem] rounded-card border border-line object-cover"
+          class="aspect-square w-full max-w-[15rem] rounded-full object-cover"
         />
       </div>
       <div class="max-w-prose space-y-4 leading-relaxed text-ink lg:col-span-8">
@@ -162,8 +174,8 @@ const teaser = photos.slice(0, 4);
   </section>
 
   <!-- 05 Photography -->
-  <section class="mt-24 sm:mt-32" aria-labelledby="home-photos">
-    <SectionHeader number="05" id="home-photos" title={t('home.photography')} href={path('/photography')} hrefLabel={t('home.allPhotos')} />
+  <section class={sectionGap} aria-labelledby="home-photos">
+    <SectionHeader number="05" id="home-photos" title={t('home.photography')} href={path('/photography')} hrefLabel={t('home.allPhotos')} linkDesktopOnly />
     <ul class="grid grid-cols-2 gap-0.5 overflow-hidden rounded-card border border-line bg-line md:grid-cols-4">
       {teaser.map((photo, i) => (
         <li>
@@ -177,10 +189,12 @@ const teaser = photos.slice(0, 4);
               decoding="async"
               class="aspect-[4/3] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none"
             />
-            <span class="absolute bottom-2 left-2 rounded-chip bg-black/55 px-1.5 py-0.5 font-mono text-[0.6875rem] text-white/90">{String(i + 1).padStart(2, '0')}</span>
           </a>
         </li>
       ))}
     </ul>
+    <a href={path('/photography')} class="mt-6 flex items-center justify-between rounded-btn border border-line px-4 py-3 text-sm text-ink-2 sm:hidden">
+      {t('home.allPhotos')}<Icon name="arrow-right" class="h-4 w-4" />
+    </a>
   </section>
 </Layout>

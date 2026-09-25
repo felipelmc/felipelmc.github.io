@@ -17,11 +17,13 @@
   --accent-ink: 255 255 255;
   --award: 138 90 0;
   --shadow: 14 17 22;
-  --d1: 181 221 214;
-  --d2: 127 196 186;
-  --d3: 58 158 146;
-  --d4: 10 111 105;
-  --d5: 5 61 57;
+  --d1: 90 192 171;
+  --d2: 46 157 142;
+  --d3: 24 121 112;
+  --d4: 14 86 82;
+  --d5: 5 53 53;
+  /* Inline links: the accent in light mode; a calmer teal in dark mode. */
+  --link: 10 111 105;
 }
 
 .dark {
@@ -42,6 +44,7 @@
   --d3: 47 163 149;
   --d4: 63 208 190;
   --d5: 168 239 228;
+  --link: 94 190 178;
 }
 
 @view-transition {
@@ -99,10 +102,10 @@
 @layer components {
   /* Inline text link: accent color with an underline that thickens on hover. */
   .link {
-    @apply text-accent underline decoration-accent/35 decoration-1 underline-offset-[3px] transition-[text-decoration-color,text-decoration-thickness] duration-150;
+    @apply text-link underline decoration-link/35 decoration-1 underline-offset-[3px] transition-[text-decoration-color,text-decoration-thickness] duration-150;
   }
   .link:hover {
-    @apply decoration-accent decoration-2;
+    @apply decoration-link decoration-2;
   }
 
   /* Small monospace label: section kickers, metadata, dates. */
@@ -126,7 +129,7 @@
 
   /* Tag/chip: `.chip` neutral; `.chip-accent`, `.chip-award`, `.chip-stack` variants. */
   .chip {
-    @apply inline-flex items-center gap-1 rounded-chip border border-line px-2 py-0.5 font-mono text-[0.6875rem] leading-4 tracking-[0.02em] text-ink-3;
+    @apply inline-flex items-center gap-1 rounded-chip border border-line px-2 py-0.5 font-mono text-meta tracking-[0.02em] text-ink-3;
   }
   .chip-accent {
     @apply chip border-transparent bg-accent/10 text-accent;
@@ -135,7 +138,7 @@
     @apply chip border-award/30 bg-award/10 text-award;
   }
   .chip-stack {
-    @apply chip lowercase;
+    @apply chip;
   }
 
   /* Action row under an entry: Abstract · BibTeX · DOI ↗ */
@@ -156,6 +159,13 @@
     text-wrap: pretty;
   }
 }
+
+/* Fig. 1: dark dots on a light ground read smaller than light-on-dark, so the
+   light theme draws them a little bigger and dims the grid. */
+.fig-dots { stroke-width: 5.5px; }
+.dark .fig-dots { stroke-width: 5px; }
+.fig-graticule { opacity: 0.7; }
+.dark .fig-graticule { opacity: 1; }
 
 /* Fig. 1: the dot groups fade in once, low → high, under ~900 ms. */
 @keyframes fig-in {
@@ -193,6 +203,13 @@
     --ink-3: 95 101 110;
     --accent: 10 111 105;
     --line: 222 222 216;
+    --line-strong: 201 201 193;
+    --link: 10 111 105;
+    --d1: 90 192 171;
+    --d2: 46 157 142;
+    --d3: 24 121 112;
+    --d4: 14 86 82;
+    --d5: 5 53 53;
   }
 
   body {

@@ -40,7 +40,7 @@ const noteLinks = (n: CourseNotes): Link[] => [
 const titleLang = (c: Course) => (typeof c.title === 'string' && c.titleLang && c.titleLang !== lang ? c.titleLang : undefined);
 ---
 
-<Layout title={t('teaching.title')} description={t('teaching.subtitle')}>
+<Layout title={t('teaching.title')} description={t('meta.teaching')}>
   <PageHeader kicker={t('teaching.kicker')} title={t('teaching.title')} subtitle={t('teaching.subtitle')} />
 
   <div class="grid gap-10 lg:grid-cols-[12rem_minmax(0,1fr)] lg:gap-16">
@@ -52,17 +52,17 @@ const titleLang = (c: Course) => (typeof c.title === 'string' && c.titleLang && 
         { id: 'assistance', n: '02', title: t('teaching.assistance'), items: assistance },
       ].map((group) => (
         <section aria-labelledby={group.id}>
-          <SectionHeader number={group.n} id={group.id} title={group.title} />
+          <SectionHeader gutter number={group.n} id={group.id} title={group.title} />
           <ol class="divide-y divide-line">
             {group.items.map((c) => (
               <li id={c.id} class="grid scroll-mt-24 gap-x-6 gap-y-1 py-5 first:pt-0 sm:grid-cols-[7rem_1fr]">
                 <p class="meta pt-1">{tr(c.term, locale)}</p>
                 <div class="min-w-0">
-                  <h3 class="text-[1.0625rem] font-semibold leading-snug text-ink text-pretty" lang={titleLang(c)}>{tr(c.title, locale)}</h3>
+                  <h3 class="text-h3 font-semibold text-ink text-pretty" lang={titleLang(c)}>{tr(c.title, locale)}</h3>
                   <p class="mt-0.5 text-sm text-ink-3">
                     <span set:html={tr(c.whereHtml, locale)} />{c.level && <> · {c.level[locale]}</>}
                   </p>
-                  {c.descriptionHtml && <p class="mt-2 max-w-prose text-[0.9375rem] leading-relaxed text-ink-2" set:html={tr(c.descriptionHtml, locale)} />}
+                  {c.descriptionHtml && <p class="mt-2 max-w-prose text-small text-ink-2" set:html={tr(c.descriptionHtml, locale)} />}
                   {c.instructors?.length && <p class="mt-1 text-sm text-ink-3" set:html={instructorsLine(c)} />}
                   {c.links?.length && (
                     <div class="mt-2.5 flex flex-wrap items-baseline gap-x-5 gap-y-2"><LinkList links={c.links} locale={locale} /></div>
@@ -75,8 +75,8 @@ const titleLang = (c: Course) => (typeof c.title === 'string' && c.titleLang && 
       ))}
 
       <section aria-labelledby="notes-title" id="notes" class="scroll-mt-24">
-        <SectionHeader number="03" id="notes-title" title={t('materials.notes')} />
-        <p class="-mt-3 mb-8 max-w-prose text-sm text-ink-3">{t('teaching.notesIntro')}</p>
+        <SectionHeader gutter number="03" id="notes-title" title={t('materials.notes')} />
+        <p class="-mt-3 mb-8 max-w-prose text-sm text-ink-3 sm:pl-[8.5rem]">{t('teaching.notesIntro')}</p>
         <div class="space-y-10">
           {notesByLevel.map((g) => (
             <div>
@@ -85,7 +85,7 @@ const titleLang = (c: Course) => (typeof c.title === 'string' && c.titleLang && 
                 {g.items.map((n) => (
                   <li id={n.id} class="flex scroll-mt-24 flex-col gap-2 bg-panel p-5">
                     <p class="meta">{n.institution} · {n.term}</p>
-                    <h4 class="text-[1.0625rem] font-semibold leading-snug text-ink">{tr(n.title, locale)}</h4>
+                    <h4 class="text-h3 font-semibold text-ink">{tr(n.title, locale)}</h4>
                     <p class="text-sm leading-relaxed text-ink-2">{n.description[locale]}</p>
                     {n.instructors?.length && <p class="text-sm text-ink-3" set:html={instructorsLine(n)} />}
                     <div class="mt-auto flex flex-wrap items-baseline gap-x-5 gap-y-2 pt-2"><LinkList links={noteLinks(n)} locale={locale} /></div>

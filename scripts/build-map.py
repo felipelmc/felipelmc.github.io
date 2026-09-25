@@ -13,6 +13,8 @@ Inputs, downloaded once into .qa/map-cache/ (gitignored) and reused after:
     dados/<uf>/<uf>-e000544-ab.json   per-municipality eleitorado (e) and
                                       comparecimento (c), plus a UF total row
   IBGE Localidades 2022 (GeoPackage):   the point of each municipal seat
+  IBGE malhas API v3, country mesh 2022 (qualidade intermediaria): Brazil's
+    national outline, drawn as a thin line under the dots
   mape_municipios directory (MAPE/IESP-UERJ, pinned commit): independent
     TSE<->IBGE crosswalk and polygon centroids, used ONLY as validation.
 
@@ -52,15 +54,19 @@ TSE_BASE = 'https://resultados.tse.jus.br/oficial/ele2022/544/'
 TSE_CONFIG = TSE_BASE + 'config/mun-e000544-cm.json'
 IBGE_GPKG = ('https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/'
              'localidades/Localidades_do_Brasil/2022/Localidades_Brasil_gpkg.zip')
+IBGE_OUTLINE = ('https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR'
+                '?periodo=2022&formato=application/vnd.geo+json&qualidade=intermediaria')
 MAPE_DIR = ('https://raw.githubusercontent.com/mape-iesp/MAPEmunicipios-ETL/'
             '75b8316eb8820b767503d50e767aba3156d3245e/dados/fonte/00_diretorios/municipios.csv.gz')
 
 # ── Figure parameters ──────────────────────────────────────────────────────
 WIDTH = 1000          # viewBox width, in SVG units
-PAD = 8               # margin around the outermost seats (> half the dot)
+PAD = 8               # margin around the outermost seat or outline point (> half the dot)
 DOT = 5               # dot diameter = stroke-width, in viewBox units
 CENTRAL_LAT = -15.0   # equirectangular, x scaled by cos(CENTRAL_LAT)
 GRATICULE_STEP = 5    # degrees
+OUTLINE_TOL = 0.6     # Douglas-Peucker tolerance for the outline, in viewBox units
+OUTLINE_MIN_AREA = 50 # outline rings smaller than this (units²) are dropped; a dot covers ~20
 N_BINS = 5
 EXPECTED = 5570       # municipalities in 2022 (IBGE count incl. DF and Noronha)
 
@@ -175,6 +181,29 @@ def load_ibge_seats(refresh: bool) -> dict[str, tuple[float, float, str]]:
     return out
 
 
+def load_ibge_outline(refresh: bool) -> list[list[tuple[float, float]]]:
+    """Exterior rings of Brazil's national outline as (lat, lon), IBGE mesh 2022.
+
+    Holes are dropped: at this quality they are a few sub-pixel slivers. The API
+    answers gzip-encoded whether asked or not; the cache keeps the bytes as served.
+    """
+    raw = fetch(IBGE_OUTLINE, 'malha-BR-2022-intermediaria.geojson', refresh)
+    if raw[:2] == b'\x1f\x8b':
+        raw = gzip.decompress(raw)
+    rings: list[list[tuple[float, float]]] = []
+    for f in json.loads(raw)['features']:
+        g = f['geometry']
+        if g['type'] == 'Polygon':
+            polys = [g['coordinates']]
+        elif g['type'] == 'MultiPolygon':
+            polys = g['coordinates']
+        else:
+            raise SystemExit(f'outline: unexpected geometry {g["type"]}')
+        for poly in polys:
+            rings.append([(float(c[1]), float(c[0])) for c in poly[0]])
+    return rings
+
+
 def load_mape_directory(refresh: bool) -> dict[str, tuple[str, float, float]] | None:
     """IBGE code -> (TSE code, centroid lat, centroid lon). Validation only."""
     try:
@@ -209,6 +238,62 @@ def fmt(v: float) -> str:
     return f'{v:.3f}'
 
 
+def ring_area(pts: list[tuple[float, float]]) -> float:
+    """Unsigned shoelace area of a closed ring."""
+    return abs(sum(x0 * y1 - x1 * y0 for (x0, y0), (x1, y1) in zip(pts, pts[1:]))) / 2
+
+
+def simplify(pts: list[tuple[float, float]], tol: float) -> list[tuple[float, float]]:
+    """Douglas-Peucker, iterative; ties go to the first vertex, so it is deterministic."""
+    keep = [False] * len(pts)
+    keep[0] = keep[-1] = True
+    stack = [(0, len(pts) - 1)]
+    while stack:
+        a, b = stack.pop()
+        (ax, ay), (bx, by) = pts[a], pts[b]
+        dx, dy = bx - ax, by - ay
+        length = math.hypot(dx, dy)
+        best, idx = -1.0, -1
+        for i in range(a + 1, b):
+            x, y = pts[i]
+            d = abs(dy * (x - ax) - dx * (y - ay)) / length if length else math.hypot(x - ax, y - ay)
+            if d > best:
+                best, idx = d, i
+        if best > tol:
+            keep[idx] = True
+            stack += [(a, idx), (idx, b)]
+    return [p for p, k in zip(pts, keep) if k]
+
+
+def tenths(v: int) -> str:
+    """An integer count of tenths as the shortest plain decimal: 30 -> '3', -5 -> '-0.5'."""
+    whole, frac = divmod(abs(v), 10)
+    return f'{"-" if v < 0 else ""}{whole}' + (f'.{frac}' if frac else '')
+
+
+def ring_path(pts: list[tuple[float, float]]) -> str:
+    """A closed ring as SVG path data: absolute start, then relative steps in tenths.
+
+    Steps are differences of the rounded absolute positions, so rounding never
+    accumulates along the ring.
+    """
+    q: list[tuple[int, int]] = []
+    for x, y in pts:
+        p = (rnd(x * 10), rnd(y * 10))
+        if not q or p != q[-1]:
+            q.append(p)
+    if len(q) > 1 and q[-1] == q[0]:
+        q.pop()
+    if len(q) < 3:
+        return ''
+    out = [f'M{tenths(q[0][0])} {tenths(q[0][1])}l']
+    for (x0, y0), (x1, y1) in zip(q, q[1:]):
+        for v in (x1 - x0, y1 - y0):
+            t = tenths(v)
+            out.append(t if len(out) == 1 or t.startswith('-') else ' ' + t)
+    return ''.join(out) + 'z'
+
+
 # ── Build ──────────────────────────────────────────────────────────────────
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -219,6 +304,7 @@ def main() -> None:
     log('Loading inputs')
     tse = load_tse_municipalities(args.refresh)
     seats = load_ibge_seats(args.refresh)
+    outline = load_ibge_outline(args.refresh)
     mape = load_mape_directory(args.refresh)
 
     # Join the 2022 municipality list (TSE) to IBGE seats on the IBGE code.
@@ -263,15 +349,22 @@ def main() -> None:
         log(f'  electorate {sum_e:,}, turnout {sum_c:,} ({national:.4f}), abroad excluded')
 
     # Projection: equirectangular, x shrunk by cos(central latitude), north up.
+    # The frame fits the seats and the outline together: the outline reaches
+    # past the outermost seats (Acre to the west, Roraima to the north), and
+    # Fernando de Noronha's seat lies east of it.
     k = math.cos(math.radians(CENTRAL_LAT))
-    lats = [seats[cd][0] for cd in codes]
-    lons = [seats[cd][1] for cd in codes]
+    lats = [seats[cd][0] for cd in codes] + [lat for ring in outline for lat, _ in ring]
+    lons = [seats[cd][1] for cd in codes] + [lon for ring in outline for _, lon in ring]
     lat_max, lat_min, lon_min, lon_max = max(lats), min(lats), min(lons), max(lons)
     s = (WIDTH - 2 * PAD) / ((lon_max - lon_min) * k)
     height = rnd((lat_max - lat_min) * s + 2 * PAD)
 
+    def proj(lat: float, lon: float) -> tuple[float, float]:
+        return PAD + (lon - lon_min) * k * s, PAD + (lat_max - lat) * s
+
     def px(lat: float, lon: float) -> tuple[int, int]:
-        return rnd(PAD + (lon - lon_min) * k * s), rnd(PAD + (lat_max - lat) * s)
+        x, y = proj(lat, lon)
+        return rnd(x), rnd(y)
 
     # Classification: quintile breaks, rounded to 3 decimals BEFORE binning so
     # the legend's printed edges are exactly the thresholds used.
@@ -315,6 +408,22 @@ def main() -> None:
         if 0 <= y <= height:
             grat.append(f'M0 {y}H{WIDTH}')
 
+    # Outline: exterior rings through the same projection as the dots, islands
+    # smaller than a few dots dropped (their seats still show), largest
+    # ring first, then simplified and written in tenths of a unit.
+    rings = []
+    for ring in outline:
+        pts = [proj(lat, lon) for lat, lon in ring]
+        area = ring_area(pts)
+        if area >= OUTLINE_MIN_AREA:
+            rings.append((-area, pts))
+    rings.sort()
+    simplified = [simplify(pts, OUTLINE_TOL) for _, pts in rings]
+    outline_d = ''.join(ring_path(pts) for pts in simplified)
+    log(f'  outline: {len(rings)} of {len(outline)} rings kept, '
+        f'{sum(len(pts) for _, pts in rings)} -> {sum(len(p) for p in simplified)} vertices, '
+        f'{len(outline_d):,} bytes of path data')
+
     # ── Write the Astro component ──
     dot_attrs = f'fill="none" stroke-linecap="round" stroke-width="{DOT}"'
     lines = [
@@ -331,6 +440,8 @@ def main() -> None:
         f'preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false" class={{Astro.props.class}}>',
         f'<path class="fig-graticule" style="stroke: rgb(var(--line)); stroke-width: 1; fill: none; '
         f'vector-effect: non-scaling-stroke" d="{"".join(grat)}"/>',
+        f'<path class="fig-outline" style="stroke: rgb(var(--line-strong)); stroke-width: 1; fill: none; '
+        f'vector-effect: non-scaling-stroke; stroke-linejoin: round" d="{outline_d}"/>',
     ]
     for b in sorted(groups):
         pts = sorted(groups[b], key=lambda p: (p[1], p[0]))

@@ -2,15 +2,17 @@
 // Top of an inner page: mono kicker, title, one-line subtitle, optional extras.
 interface Props {
   kicker?: string;
+  /** Keep the kicker's own casing (e.g. an @handle). */
+  kickerAsIs?: boolean;
   title: string;
   subtitle?: string;
 }
 
-const { kicker, title, subtitle } = Astro.props;
+const { kicker, kickerAsIs = false, title, subtitle } = Astro.props;
 ---
 
 <header class="mb-12 max-w-3xl sm:mb-16">
-  {kicker && <p class="eyebrow mb-4">{kicker}</p>}
+  {kicker && <p class:list={['eyebrow mb-4', kickerAsIs && '!normal-case']}>{kicker}</p>}
   <h1 class="text-[2.25rem] font-semibold leading-[1.05] tracking-[-0.03em] text-ink sm:text-[2.75rem]">{title}</h1>
   {subtitle && <p class="mt-4 text-lg leading-relaxed text-ink-2 text-pretty">{subtitle}</p>}
   <slot />

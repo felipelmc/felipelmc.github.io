@@ -35,7 +35,7 @@ const pad = (n: number) => String(n).padStart(2, '0');
             decoding="async"
             class="aspect-[4/3] w-full object-cover transition duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
           />
-          <span class="absolute bottom-2 left-2 rounded-chip bg-black/55 px-1.5 py-0.5 font-mono text-[0.6875rem] text-white/90 opacity-0 transition-opacity duration-150 group-hover:opacity-100 group-focus-visible:opacity-100" aria-hidden="true">{pad(i + 1)}</span>
+          <span class="block bg-panel px-2.5 py-1.5 text-left font-mono text-meta text-ink-3 transition-colors duration-150 group-hover:text-accent" aria-hidden="true">{pad(i + 1)}</span>
         </button>
       </li>
     ))}

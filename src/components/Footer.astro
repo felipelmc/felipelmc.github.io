@@ -1,5 +1,6 @@
 ---
 import Icon from './ui/Icon.astro';
+import Mark from './ui/Mark.astro';
 import { profile } from '../data/profile';
 import { news } from '../data/news';
 import { asLocale, getLocalePath, useTranslations } from '../i18n/utils';
@@ -23,10 +24,10 @@ const links = [
 <footer class="border-t border-line" data-print-hide>
   <div class="mx-auto grid max-w-content gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1fr_auto] md:items-start lg:px-8">
     <div class="space-y-3">
-      <p class="flex items-center gap-2.5">
-        <span class="grid h-6 w-6 place-items-center rounded-[6px] bg-accent font-mono text-[10px] font-semibold text-accent-ink" aria-hidden="true">FL</span>
-        <span class="font-medium text-ink">{profile.name}</span>
-        <span class="text-sm text-ink-3">· {profile.role[locale]}</span>
+      <p class="flex flex-wrap items-center gap-x-2.5 gap-y-1">
+        <Mark class="h-5 w-5" />
+        <span class="whitespace-nowrap font-medium text-ink">{profile.name}</span>
+        <span class="basis-full text-sm text-ink-3 sm:basis-auto">{profile.role[locale]}</span>
       </p>
       <ul class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
         {links.map((l) => (

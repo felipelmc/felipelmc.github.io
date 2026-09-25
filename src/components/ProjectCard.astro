@@ -1,7 +1,8 @@
 ---
-// A project in a browser-like frame: address bar with the real domain, a 16:10
-// screenshot (or a typographic placeholder), then year/context, title,
-// tagline, stats, chips and links.
+// A project card. With a screenshot, the image sits in a browser-like frame
+// whose address bar shows the real domain; without one, the card is text only.
+// Variants: `featured` (Projects page top: description, stats), `standard`
+// (Projects grid), `home` (home page: slimmer, fixed image height per row).
 import CiteDialog from './CiteDialog.astro';
 import LinkList from './LinkList.astro';
 import Icon from './ui/Icon.astro';
@@ -11,8 +12,7 @@ import { joinPeople, tr, useTranslations } from '../i18n/utils';
 interface Props {
   project: Project;
   locale: Locale;
-  /** featured: larger type, description and stats. */
-  variant?: 'featured' | 'standard';
+  variant?: 'featured' | 'standard' | 'home';
   /** Image is above the fold: load eagerly. */
   eager?: boolean;
   as?: 'h2' | 'h3';
@@ -22,9 +22,11 @@ interface Props {
 const { project: p, locale, variant = 'standard', eager = false, as: Title = 'h3', class: className } = Astro.props;
 const t = useTranslations(locale);
 const featured = variant === 'featured';
+const home = variant === 'home';
 const primary = p.links.find((l) => ['live', 'site', 'data'].includes(l.kind)) ?? p.links[0];
 const image = p.shot ? (p.shot.image ?? p.slug) : undefined;
 const title = tr(p.title, locale);
+const showStack = !home && (p.stack?.length || p.coursework || p.privateDeployment);
 ---
 
 <article
@@ -33,32 +35,26 @@ const title = tr(p.title, locale);
   data-categories={p.categories.join(' ')}
   class:list={['card group/card flex scroll-mt-24 flex-col overflow-hidden transition-[border-color,box-shadow] duration-150 hover:border-line-strong hover:shadow-lift', className]}
 >
-  <div class="flex h-7 items-center gap-2 border-b border-line bg-sunken px-3" aria-hidden="true">
-    <span class="h-2 w-2 rounded-full border border-line-strong"></span>
-    <span class="truncate font-mono text-[0.6875rem] text-ink-3">{p.shot?.domain ?? (primary ? new URL(primary.href).host + new URL(primary.href).pathname.replace(/\/$/, '') : p.slug)}</span>
-  </div>
-
-  {image ? (
-    <div class="relative aspect-[16/10] overflow-hidden border-b border-line bg-sunken">
-      <img
-        src={`/img/projects/thumbs/${image}.webp`}
-        srcset={`/img/projects/thumbs/${image}.webp 800w, /img/projects/${image}.webp 1600w`}
-        sizes={featured ? '(min-width: 1024px) 36rem, (min-width: 768px) 50vw, 100vw' : '(min-width: 1024px) 24rem, (min-width: 768px) 50vw, 100vw'}
-        width="1600"
-        height="1000"
-        alt={p.shot!.alt[locale]}
-        loading={eager ? 'eager' : 'lazy'}
-        decoding="async"
-        class="h-full w-full object-cover object-top transition-transform duration-300 ease-out group-hover/card:-translate-y-1 motion-reduce:transition-none dark:brightness-[.92]"
-      />
-    </div>
-  ) : (
-    <div class="relative grid aspect-[16/10] place-items-center overflow-hidden border-b border-line bg-sunken [background-image:radial-gradient(rgb(var(--line-strong))_1px,transparent_1px)] [background-size:14px_14px]">
-      <div class="rounded-btn border border-line bg-panel px-4 py-3 text-center shadow-card">
-        <p class:list={['text-ink', p.code ? 'font-mono text-sm' : 'text-sm font-medium']}>{title}</p>
-        <p class="meta mt-1">{p.privateDeployment ? t('projects.private') : t('projects.noPreview')}</p>
+  {image && (
+    <>
+      <div class="flex h-7 items-center gap-2 border-b border-line bg-sunken px-3" aria-hidden="true">
+        <span class="h-2 w-2 shrink-0 rounded-full border border-line-strong"></span>
+        <span class="truncate font-mono text-meta text-ink-3">{p.shot!.domain}</span>
       </div>
-    </div>
+      <div class:list={['relative overflow-hidden border-b border-line bg-sunken', home ? 'aspect-[16/10] md:aspect-auto md:h-[15rem] lg:h-[18rem]' : 'aspect-[16/10]']}>
+        <img
+          src={`/img/projects/thumbs/${image}.webp`}
+          srcset={`/img/projects/thumbs/${image}.webp 800w, /img/projects/${image}.webp 1600w`}
+          sizes={featured ? '(min-width: 1024px) 36rem, (min-width: 768px) 50vw, 100vw' : '(min-width: 1024px) 28rem, (min-width: 768px) 50vw, 100vw'}
+          width="1600"
+          height="1000"
+          alt={p.shot!.alt[locale]}
+          loading={eager ? 'eager' : 'lazy'}
+          decoding="async"
+          class="h-full w-full object-cover object-top transition-[transform,filter] duration-300 ease-out group-hover/card:-translate-y-1 motion-reduce:transition-none dark:brightness-[.8] dark:group-hover/card:brightness-100"
+        />
+      </div>
+    </>
   )}
 
   <div class:list={['flex flex-1 flex-col', featured ? 'gap-3 p-5 sm:p-6' : 'gap-2.5 p-5']}>
@@ -66,7 +62,7 @@ const title = tr(p.title, locale);
       {p.year}{p.context && <> · {tr(p.context, locale)}</>}
     </p>
 
-    <Title class:list={['leading-tight tracking-[-0.015em] text-ink', featured ? 'text-xl font-semibold' : 'text-lg font-semibold', p.code && 'font-mono !tracking-[-0.02em]']}>
+    <Title class:list={['text-h3 font-semibold text-ink', p.code && 'font-mono !tracking-[-0.02em]']}>
       {primary ? (
         <a href={primary.href} target="_blank" rel="noopener noreferrer" class="transition-colors duration-150 hover:text-accent">{title}</a>
       ) : title}
@@ -84,7 +80,7 @@ const title = tr(p.title, locale);
       </p>
     )}
 
-    <p class:list={['leading-relaxed text-ink-2 text-pretty', featured ? 'text-[0.9375rem]' : 'text-sm']}>{p.tagline[locale]}</p>
+    <p class="text-small text-ink-2 text-pretty">{p.tagline[locale]}</p>
     {featured && p.descriptionHtml && <p class="text-sm leading-relaxed text-ink-3" set:html={p.descriptionHtml[locale]} />}
 
     {featured && p.stats && (
@@ -99,23 +95,22 @@ const title = tr(p.title, locale);
       </dl>
     )}
 
-    {p.collaborators?.length && (
+    {!home && p.collaborators?.length && (
       <p class="text-sm text-ink-3">{t('common.jointWith')} {joinPeople(p.collaborators, locale)}.</p>
     )}
 
     <div class="mt-auto flex flex-col gap-3 pt-2">
-      {(p.stack?.length || p.coursework || p.privateDeployment) && (
+      {showStack && (
         <ul class="flex flex-wrap gap-1.5">
-          {p.coursework && <li class="chip">{t('projects.coursework')}</li>}
           {p.privateDeployment && <li class="chip">{t('projects.private')}</li>}
+          {p.coursework && <li class="chip">{t('projects.coursework')}</li>}
           {p.stack?.map((s) => <li class="chip-stack">{s}</li>)}
         </ul>
       )}
       {(p.links.length > 0 || p.citation) && (
         <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2 border-t border-line pt-3">
-          <LinkList links={p.links} locale={locale} />
+          <LinkList links={p.links} locale={locale} coldStart={p.coldStart} />
           {p.citation && <button type="button" class="action" data-dialog={`cite-${p.citation.key}`}>{t('common.bibtex')}</button>}
-          {p.coldStart && <span class="meta ml-auto">{t('projects.coldStart')}</span>}
         </div>
       )}
     </div>

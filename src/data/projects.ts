@@ -12,7 +12,6 @@ export const projects: Project[] = [
   {
     slug: 'relicaria',
     title: 'RelicárIA',
-    code: true,
     year: 2025,
     tier: 'featured',
     home: 1,
@@ -22,7 +21,7 @@ export const projects: Project[] = [
       'pt-br': 'Plataforma que combina IA e análise de dados para extrair e visualizar informações de documentos históricos.',
     },
     collaborators: [danielle],
-    stack: ['python', 'streamlit', 'ocr', 'ner', 'llm'],
+    stack: ['Python', 'Streamlit', 'OCR', 'NER', 'LLM'],
     links: [
       { kind: 'live', href: 'https://relicaria.streamlit.app/' },
       { kind: 'repo', href: 'https://github.com/felipelmc/RelicarIA' },
@@ -68,7 +67,7 @@ export const projects: Project[] = [
     },
     context: 'MAPE · IESP-UERJ',
     collaborators: [{ name: 'Fernando Meireles', affiliation: 'IESP-UERJ' }],
-    stack: ['python', 'streamlit'],
+    stack: ['Python', 'Streamlit'],
     links: [
       { kind: 'live', href: 'https://mape-municipios-dashboard.streamlit.app/' },
       { kind: 'repo', href: 'https://github.com/mape-iesp/MAPEmunicipios-Dashboard' },
@@ -98,7 +97,7 @@ export const projects: Project[] = [
       { value: { en: '5,570', 'pt-br': '5.570' }, label: { en: 'municipalities', 'pt-br': 'municípios' } },
       { value: '17', label: { en: 'thematic dimensions', 'pt-br': 'dimensões temáticas' } },
     ],
-    stack: ['r'],
+    stack: ['R'],
     links: [
       { kind: 'data', href: 'https://felipelamarca.com/MAPEmunicipios/', label: { en: 'Data site', 'pt-br': 'Site dos dados' } },
       { kind: 'repo', href: 'https://github.com/mape-iesp/MAPEmunicipios' },
@@ -127,7 +126,7 @@ export const projects: Project[] = [
       'pt-br': 'Mapeia os dados de desmatamento do PRODES/INPE no Acre e na Reserva Extrativista Chico Mendes, ano a ano. Parte de um estudo sobre a produção agroextrativista familiar na reserva, coordenado por Luci Maria Teston (UFAC).',
     },
     context: { en: 'RESA project · UFAC and IESP-UERJ', 'pt-br': 'Projeto RESA · UFAC e IESP-UERJ' },
-    stack: ['python', 'streamlit'],
+    stack: ['Python', 'Streamlit'],
     links: [{ kind: 'live', href: 'https://mapa-do-desmatamento-acre.streamlit.app/' }],
     coldStart: true,
     shot: {
@@ -150,7 +149,7 @@ export const projects: Project[] = [
       'pt-br': 'Extração de parentescos entre os verbetados do Dicionário Histórico-Biográfico Brasileiro (DHBB) e visualização em grafos interativos.',
     },
     context: { en: 'FGV CPDOC · funded by CAPES', 'pt-br': 'FGV CPDOC · financiamento CAPES' },
-    stack: ['python', 'graphs'],
+    stack: ['Python', 'Graphs'],
     links: [{ kind: 'site', href: 'https://felipelamarca.com/DHBB-Parentescos/' }],
     shot: {
       domain: 'felipelamarca.com/DHBB-Parentescos',
@@ -170,7 +169,7 @@ export const projects: Project[] = [
       en: 'Comida di Buteco is a contest that picks the best bars in cities across Brazil. This project uses web scraping and geolocation to map those bars nationwide.',
       'pt-br': 'Comida di Buteco é um concurso que elege os melhores botecos de várias cidades brasileiras. Este projeto usa webscraping e geolocalização para mapear esses bares em todo o Brasil.',
     },
-    stack: ['web scraping', 'geolocation', 'maplibre'],
+    stack: ['Web scraping', 'Geolocation', 'MapLibre'],
     links: [
       { kind: 'site', href: 'https://felipelamarca.com/ComidaDiButeco/' },
       { kind: 'repo', href: 'https://github.com/felipelmc/ComidaDiButeco' },
@@ -199,7 +198,7 @@ export const projects: Project[] = [
       { value: '170', label: { en: 'sessions', 'pt-br': 'atividades' } },
       { value: '579', label: { en: 'papers with abstracts', 'pt-br': 'trabalhos com resumo' } },
     ],
-    stack: ['javascript'],
+    stack: ['JavaScript'],
     links: [
       { kind: 'site', href: 'https://felipelamarca.com/Programacao-ABCP-2026/' },
       { kind: 'repo', href: 'https://github.com/felipelmc/Programacao-ABCP-2026' },
@@ -224,7 +223,7 @@ export const projects: Project[] = [
       'pt-br': 'Template Quarto para teses e dissertações do IESP-UERJ.',
     },
     collaborators: [{ name: 'Matheus Cavalcanti Pestana', affiliation: 'IESP-UERJ' }],
-    stack: ['quarto', 'latex'],
+    stack: ['Quarto', 'LaTeX'],
     links: [
       { kind: 'repo', href: 'https://github.com/felipelmc/Quarto-Model-IESP' },
       { kind: 'doi', href: 'https://doi.org/10.5281/zenodo.20819431' },
@@ -253,7 +252,7 @@ export const projects: Project[] = [
       'pt-br': 'Dashboard construído sobre a infraestrutura do mape_municipios para o mandato da deputada estadual Dani Balbi, reunindo dados da MUNIC, da PNS e do Censo SUAS sobre a população LGBTQIA+ do estado do Rio de Janeiro, incluindo a distribuição territorial dos equipamentos de assistência social.',
     },
     collaborators: [{ name: 'Tomás Paixão Borges', affiliation: 'IESP-UERJ' }],
-    stack: ['python'],
+    stack: ['Python'],
     links: [],
     privateDeployment: true,
   },

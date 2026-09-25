@@ -7,7 +7,7 @@ export const fig1 = {
   /** Municipalities drawn, one dot each (the 2022 municipal map: 5,568 + Brasília + Fernando de Noronha). */
   count: 5570,
   /** Distinct dot positions after rounding to the 1000-unit grid; a few neighbouring seats share one. */
-  points: 5547,
+  points: 5543,
   variable: {
     en: 'turnout in the first round of the 2022 general election',
     'pt-br': 'comparecimento no 1º turno das eleições gerais de 2022',

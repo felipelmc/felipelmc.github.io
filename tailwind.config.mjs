@@ -27,6 +27,7 @@ export default {
         },
         accent: { DEFAULT: v('accent'), ink: v('accent-ink') },
         award: v('award'),
+        link: v('link'),
       },
       maxWidth: {
         content: '75rem',
@@ -44,6 +45,9 @@ export default {
       fontSize: {
         display: ['clamp(2.75rem, 6vw, 4.5rem)', { lineHeight: '1', letterSpacing: '-0.035em' }],
         meta: ['0.75rem', { lineHeight: '1rem', letterSpacing: '0.01em' }],
+        // One size for card titles, entry headings and paper titles; one for taglines.
+        h3: ['1.1875rem', { lineHeight: '1.35', letterSpacing: '-0.015em' }],
+        small: ['0.9375rem', { lineHeight: '1.6' }],
       },
       transitionDuration: {
         150: '150ms',

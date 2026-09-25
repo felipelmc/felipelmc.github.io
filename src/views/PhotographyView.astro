@@ -13,8 +13,8 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 ---
 
-<Layout title={t('photography.title')} description={t('photography.title')}>
-  <PageHeader kicker="@veryfirsttake" title={t('photography.title')}>
+<Layout title={t('photography.title')} description={t('meta.photography')}>
+  <PageHeader kicker="@veryfirsttake" kickerAsIs title={t('photography.title')}>
     <p class="mt-4 text-lg leading-relaxed text-ink-2 text-pretty" set:html={t('about.photography')} />
   </PageHeader>
   <PhotoStrip />

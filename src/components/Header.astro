@@ -1,5 +1,6 @@
 ---
 import Icon from './ui/Icon.astro';
+import Mark from './ui/Mark.astro';
 import { asLocale, getLocalePath, useTranslations } from '../i18n/utils';
 
 const locale = asLocale(Astro.currentLocale);
@@ -25,7 +26,7 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
 <header class="sticky top-0 z-50 border-b border-line bg-canvas/85 backdrop-blur-md" data-print-hide>
   <nav class="mx-auto flex h-14 max-w-content items-center justify-between gap-4 px-4 sm:px-6 lg:px-8" aria-label="Main">
     <a href={home} class="group flex items-center gap-2.5 rounded-btn" aria-label={`Felipe Lamarca · ${t('nav.home')}`}>
-      <span class="grid h-7 w-7 place-items-center rounded-[7px] bg-accent font-mono text-[11px] font-semibold tracking-tight text-accent-ink" aria-hidden="true">FL</span>
+      <Mark class="h-6 w-6 transition-transform duration-300 group-hover:rotate-90 motion-reduce:transition-none" />
       <span class="text-[0.9375rem] font-medium tracking-[-0.01em] text-ink transition-colors duration-150 group-hover:text-accent">Felipe Lamarca</span>
     </a>
 

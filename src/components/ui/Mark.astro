@@ -1,0 +1,16 @@
+---
+// The site mark: a 3×3 grid of dots in Fig. 1's colour ramp, darkening (or,
+// in dark mode, brightening) along the diagonal, like a tiny version of the map.
+interface Props {
+  class?: string;
+}
+
+const { class: className = 'h-7 w-7' } = Astro.props;
+const cells = [0, 1, 2].flatMap((r) => [0, 1, 2].map((c) => ({ r, c, bin: r + c + 1 })));
+---
+
+<svg class={className} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  {cells.map(({ r, c, bin }) => (
+    <circle cx={4 + c * 8} cy={4 + r * 8} r="3.3" style={`fill: rgb(var(--d${bin}))`} />
+  ))}
+</svg>
