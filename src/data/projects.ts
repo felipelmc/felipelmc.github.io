@@ -22,7 +22,7 @@ export const projects: Project[] = [
       'pt-br': 'Plataforma que combina IA e análise de dados para extrair e visualizar informações de documentos históricos.',
     },
     collaborators: [danielle],
-    stack: ['python', 'streamlit', 'ocr', 'ner'],
+    stack: ['python', 'streamlit', 'ocr', 'ner', 'llm'],
     links: [
       { kind: 'live', href: 'https://relicaria.streamlit.app/' },
       { kind: 'repo', href: 'https://github.com/felipelmc/RelicarIA' },
@@ -90,10 +90,13 @@ export const projects: Project[] = [
     home: 3,
     categories: ['apps'],
     tagline: {
-      en: 'The programme of the 15th ABCP Meeting (Belém, 2026) in real time: what’s on right now, a personal schedule, and all 813 papers with their abstracts.',
-      'pt-br': 'Programação do 15º Encontro da ABCP (Belém, 2026) em tempo real: o que está rolando agora, agenda pessoal e os 813 trabalhos com resumo.',
+      en: 'The programme of the 15th ABCP Meeting (Belém, 2026) in real time: what’s on right now, a personal agenda, a calendar, and search across every paper and abstract. What you mark stays on your device.',
+      'pt-br': 'Programação do 15º Encontro da ABCP (Belém, 2026) em tempo real: o que está rolando agora, agenda pessoal, calendário e busca em todos os trabalhos e resumos. O que você marca fica só no seu aparelho.',
     },
-    stats: [{ value: '813', label: { en: 'papers', 'pt-br': 'trabalhos' } }],
+    stats: [
+      { value: '170', label: { en: 'sessions', 'pt-br': 'atividades' } },
+      { value: '579', label: { en: 'papers with abstracts', 'pt-br': 'trabalhos com resumo' } },
+    ],
     stack: ['javascript'],
     links: [
       { kind: 'site', href: 'https://felipelamarca.com/Programacao-ABCP-2026/' },
@@ -119,8 +122,8 @@ export const projects: Project[] = [
       'pt-br': 'Versão preliminar da plataforma pública de monitoramento do projeto RESA, com dados de desmatamento no Acre.',
     },
     descriptionHtml: {
-      en: 'Part of a study of family-based agroextractive production in the Chico Mendes Extractive Reserve, coordinated by Luci Maria Teston (UFAC).',
-      'pt-br': 'Parte de um estudo sobre a produção agroextrativista familiar na Reserva Extrativista Chico Mendes, coordenado por Luci Maria Teston (UFAC).',
+      en: 'Maps PRODES/INPE deforestation data for Acre and the Chico Mendes Extractive Reserve, year by year. Part of a study of family-based agroextractive production in the reserve, coordinated by Luci Maria Teston (UFAC).',
+      'pt-br': 'Mapeia os dados de desmatamento do PRODES/INPE no Acre e na Reserva Extrativista Chico Mendes, ano a ano. Parte de um estudo sobre a produção agroextrativista familiar na reserva, coordenado por Luci Maria Teston (UFAC).',
     },
     context: { en: 'RESA project · UFAC and IESP-UERJ', 'pt-br': 'Projeto RESA · UFAC e IESP-UERJ' },
     stack: ['python', 'streamlit'],
@@ -142,14 +145,13 @@ export const projects: Project[] = [
     tier: 'featured',
     categories: ['data'],
     tagline: {
-      en: 'One of the most complete databases on Brazilian municipalities, covering 30 years, 17 dimensions, 31 surveys and 451 variables. I build and maintain it and its public interface.',
-      'pt-br': 'Um dos mais completos bancos de dados sobre os municípios brasileiros, cobrindo 30 anos, 17 dimensões, 31 pesquisas e 451 variáveis. Construo e mantenho a base e sua interface pública.',
+      en: 'One of the most complete databases on Brazilian municipalities, organized in 17 thematic dimensions and documented as an R package. I build and maintain it and its public interface.',
+      'pt-br': 'Um dos mais completos bancos de dados sobre os municípios brasileiros, organizado em 17 dimensões temáticas e documentado como pacote R. Construo e mantenho a base e sua interface pública.',
     },
     context: 'MAPE · IESP-UERJ',
     stats: [
       { value: { en: '5,570', 'pt-br': '5.570' }, label: { en: 'municipalities', 'pt-br': 'municípios' } },
-      { value: '451', label: { en: 'variables', 'pt-br': 'variáveis' } },
-      { value: '30', label: { en: 'years', 'pt-br': 'anos' } },
+      { value: '17', label: { en: 'thematic dimensions', 'pt-br': 'dimensões temáticas' } },
     ],
     stack: ['r'],
     links: [
@@ -175,6 +177,10 @@ export const projects: Project[] = [
       en: 'A RAG-based conversational AI that simulates an 18th-century apothecary, providing information on medicinal practices based on historical pharmacological sources from the late 18th century.',
       'pt-br': 'IA conversacional baseada em RAG que simula um boticário do século XVIII, fornecendo informações sobre práticas medicinais com base em fontes farmacológicas históricas do final do século XVIII.',
     },
+    descriptionHtml: {
+      en: 'Its knowledge comes from two historical pharmacopoeias, the <em>Farmacopeia Geral do Reino</em> (1794) and the <em>Farmacopeia Naval</em> (1779).',
+      'pt-br': 'Seu conhecimento vem de duas farmacopeias históricas, a <em>Farmacopeia Geral do Reino</em> (1794) e a <em>Farmacopeia Naval</em> (1779).',
+    },
     collaborators: [danielle],
     stack: ['python', 'streamlit', 'rag', 'llm'],
     links: [{ kind: 'live', href: 'https://boticaria.streamlit.app/' }],
@@ -196,8 +202,8 @@ export const projects: Project[] = [
     tier: 'standard',
     categories: ['viz', 'data'],
     tagline: {
-      en: 'Extracts kinship ties between the people profiled in the Dicionário Histórico-Biográfico Brasileiro (DHBB) and visualizes them as graphs.',
-      'pt-br': 'Extração de parentescos entre os verbetados do Dicionário Histórico-Biográfico Brasileiro (DHBB) e visualização em grafos.',
+      en: 'Extracts kinship ties between the people profiled in the Dicionário Histórico-Biográfico Brasileiro (DHBB) and visualizes them as interactive graphs: 6,785 people and 5,547 ties in the full graph.',
+      'pt-br': 'Extração de parentescos entre os verbetados do Dicionário Histórico-Biográfico Brasileiro (DHBB) e visualização em grafos interativos: 6.785 pessoas e 5.547 laços no grafo completo.',
     },
     context: { en: 'FGV CPDOC · funded by CAPES', 'pt-br': 'FGV CPDOC · financiamento CAPES' },
     stack: ['python', 'graphs'],
@@ -258,14 +264,14 @@ export const projects: Project[] = [
   {
     slug: 'comida-di-buteco',
     title: 'Comida di Buteco',
-    year: 2025,
+    year: 2026,
     tier: 'standard',
     categories: ['viz', 'data'],
     tagline: {
       en: 'Comida di Buteco is a contest that picks the best bars in cities across Brazil. This project uses web scraping and geolocation to map those bars nationwide.',
       'pt-br': 'Comida di Buteco é um concurso que elege os melhores botecos de várias cidades brasileiras. Este projeto usa webscraping e geolocalização para mapear esses bares em todo o Brasil.',
     },
-    stack: ['web scraping', 'geolocation'],
+    stack: ['web scraping', 'geolocation', 'maplibre'],
     links: [
       { kind: 'site', href: 'https://felipelamarca.com/ComidaDiButeco/' },
       { kind: 'repo', href: 'https://github.com/felipelmc/ComidaDiButeco' },
@@ -279,29 +285,17 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: 'scielo-summarizer',
-    title: 'SciELO-Summarizer',
-    code: true,
-    year: 2024,
-    tier: 'standard',
-    categories: ['ai'],
-    tagline: {
-      en: 'Scrapes papers from SciELO and summarizes them using Llama3.',
-      'pt-br': 'Extrai artigos do SciELO e os resume utilizando Llama3.',
-    },
-    stack: ['python', 'llama3', 'web scraping'],
-    links: [{ kind: 'repo', href: 'https://github.com/felipelmc/SciELO-Summarizer' }],
-  },
-  {
     slug: 'formula1-viz',
-    title: 'Formula1-Viz',
+    title: 'Visual F1',
     year: 2023,
     tier: 'standard',
     categories: ['viz'],
+    coursework: true,
     tagline: {
-      en: 'Data visualization of Formula 1 races in D3.js.',
-      'pt-br': 'Visualização de dados de competições de Fórmula 1 em D3.js.',
+      en: 'Visualizations of Formula 1 in D3.js: the sport’s history, constructors in bar races, and pit-stop times by team. Final project of the Data Visualization course at FGV.',
+      'pt-br': 'Visualizações da Fórmula 1 em D3.js: a história do esporte, as construtoras em bar races e os tempos de pit stop por equipe. Projeto final da disciplina de Visualização de Dados da FGV.',
     },
+    collaborators: [{ name: 'Ana Carolina Erthal' }, { name: 'Guilherme de Melo' }],
     stack: ['d3.js'],
     links: [
       { kind: 'site', href: 'https://felipelamarca.com/Formula1-Viz/' },
@@ -310,21 +304,21 @@ export const projects: Project[] = [
     shot: {
       domain: 'felipelamarca.com/Formula1-Viz',
       alt: {
-        en: 'Formula 1 pit-stop visualization',
-        'pt-br': 'Visualização de pit stops da Fórmula 1',
+        en: 'Landing page of the Visual F1 project',
+        'pt-br': 'Página inicial do projeto Visual F1',
       },
     },
   },
   {
     slug: 'nascidos-vivos-viz',
-    title: 'Nascidos-Vivos-Viz',
+    title: 'Você em dados',
     year: 2023,
     tier: 'standard',
     categories: ['viz'],
     coursework: true,
     tagline: {
-      en: 'A D3.js visualization built for the Data Visualization course at FGV EMAp.',
-      'pt-br': 'Visualização em D3.js elaborada para a disciplina de Visualização de Dados da FGV EMAp.',
+      en: 'Newborns’ Apgar scores across the municipalities of Rio de Janeiro, year by year, with histograms by sex, birth weight, type of delivery and mother’s age. SINASC data via Base dos Dados; built in D3.js for the Data Visualization course at FGV EMAp.',
+      'pt-br': 'O índice de Apgar dos recém-nascidos nos municípios do Rio de Janeiro, ano a ano, com histogramas por sexo, peso ao nascer, tipo de parto e idade da mãe. Dados do SINASC via Base dos Dados; feito em D3.js para a disciplina de Visualização de Dados da FGV EMAp.',
     },
     stack: ['d3.js'],
     links: [
@@ -334,13 +328,27 @@ export const projects: Project[] = [
     shot: {
       domain: 'felipelamarca.com/Nascidos-Vivos-Viz',
       alt: {
-        en: 'Live-births data visualization',
-        'pt-br': 'Visualização de dados de nascidos vivos',
+        en: 'Map of average Apgar scores by municipality in Rio de Janeiro',
+        'pt-br': 'Mapa do índice de Apgar médio por município do Rio de Janeiro',
       },
     },
   },
 
   // ── Compact ───────────────────────────────────────────────────────────────
+  {
+    slug: 'scielo-summarizer',
+    title: 'SciELO-Summarizer',
+    code: true,
+    year: 2024,
+    tier: 'compact',
+    categories: ['ai'],
+    tagline: {
+      en: 'Scrapes papers from SciELO and summarizes them using Llama3.',
+      'pt-br': 'Extrai artigos do SciELO e os resume utilizando Llama3.',
+    },
+    stack: ['python', 'llama3', 'web scraping'],
+    links: [{ kind: 'repo', href: 'https://github.com/felipelmc/SciELO-Summarizer' }],
+  },
   {
     slug: 'electoral-concentration',
     title: 'Electoral-Concentration',
