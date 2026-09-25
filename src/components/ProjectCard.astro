@@ -1,0 +1,124 @@
+---
+// A project in a browser-like frame: address bar with the real domain, a 16:10
+// screenshot (or a typographic placeholder), then year/context, title,
+// tagline, stats, chips and links.
+import CiteDialog from './CiteDialog.astro';
+import LinkList from './LinkList.astro';
+import Icon from './ui/Icon.astro';
+import type { Locale, Project } from '../data/types';
+import { joinPeople, tr, useTranslations } from '../i18n/utils';
+
+interface Props {
+  project: Project;
+  locale: Locale;
+  /** featured: larger type, description and stats. */
+  variant?: 'featured' | 'standard';
+  /** Image is above the fold: load eagerly. */
+  eager?: boolean;
+  as?: 'h2' | 'h3';
+  class?: string;
+}
+
+const { project: p, locale, variant = 'standard', eager = false, as: Title = 'h3', class: className } = Astro.props;
+const t = useTranslations(locale);
+const featured = variant === 'featured';
+const primary = p.links.find((l) => ['live', 'site', 'data'].includes(l.kind)) ?? p.links[0];
+const image = p.shot ? (p.shot.image ?? p.slug) : undefined;
+const title = tr(p.title, locale);
+---
+
+<article
+  id={p.slug}
+  data-project
+  data-categories={p.categories.join(' ')}
+  class:list={['card group/card flex scroll-mt-24 flex-col overflow-hidden transition-[border-color,box-shadow] duration-150 hover:border-line-strong hover:shadow-lift', className]}
+>
+  <div class="flex h-7 items-center gap-2 border-b border-line bg-sunken px-3" aria-hidden="true">
+    <span class="h-2 w-2 rounded-full border border-line-strong"></span>
+    <span class="truncate font-mono text-[0.6875rem] text-ink-3">{p.shot?.domain ?? (primary ? new URL(primary.href).host + new URL(primary.href).pathname.replace(/\/$/, '') : p.slug)}</span>
+  </div>
+
+  {image ? (
+    <div class="relative aspect-[16/10] overflow-hidden border-b border-line bg-sunken">
+      <img
+        src={`/img/projects/thumbs/${image}.webp`}
+        srcset={`/img/projects/thumbs/${image}.webp 800w, /img/projects/${image}.webp 1600w`}
+        sizes={featured ? '(min-width: 1024px) 36rem, (min-width: 768px) 50vw, 100vw' : '(min-width: 1024px) 24rem, (min-width: 768px) 50vw, 100vw'}
+        width="1600"
+        height="1000"
+        alt={p.shot!.alt[locale]}
+        loading={eager ? 'eager' : 'lazy'}
+        decoding="async"
+        class="h-full w-full object-cover object-top transition-transform duration-300 ease-out group-hover/card:-translate-y-1 motion-reduce:transition-none dark:brightness-[.92]"
+      />
+    </div>
+  ) : (
+    <div class="relative grid aspect-[16/10] place-items-center overflow-hidden border-b border-line bg-sunken [background-image:radial-gradient(rgb(var(--line-strong))_1px,transparent_1px)] [background-size:14px_14px]">
+      <div class="rounded-btn border border-line bg-panel px-4 py-3 text-center shadow-card">
+        <p class:list={['text-ink', p.code ? 'font-mono text-sm' : 'text-sm font-medium']}>{title}</p>
+        <p class="meta mt-1">{p.privateDeployment ? t('projects.private') : t('projects.noPreview')}</p>
+      </div>
+    </div>
+  )}
+
+  <div class:list={['flex flex-1 flex-col', featured ? 'gap-3 p-5 sm:p-6' : 'gap-2.5 p-5']}>
+    <p class="meta">
+      {p.year}{p.context && <> · {tr(p.context, locale)}</>}
+    </p>
+
+    <Title class:list={['leading-tight tracking-[-0.015em] text-ink', featured ? 'text-xl font-semibold' : 'text-lg font-semibold', p.code && 'font-mono !tracking-[-0.02em]']}>
+      {primary ? (
+        <a href={primary.href} target="_blank" rel="noopener noreferrer" class="transition-colors duration-150 hover:text-accent">{title}</a>
+      ) : title}
+    </Title>
+
+    {p.award && (
+      <p>
+        {p.award.href ? (
+          <a href={p.award.href} target="_blank" rel="noopener noreferrer" class="chip-award font-medium hover:bg-award/15">
+            <Icon name="star" class="h-3 w-3" />{p.award.label[locale]}
+          </a>
+        ) : (
+          <span class="chip-award font-medium"><Icon name="star" class="h-3 w-3" />{p.award.label[locale]}</span>
+        )}
+      </p>
+    )}
+
+    <p class:list={['leading-relaxed text-ink-2 text-pretty', featured ? 'text-[0.9375rem]' : 'text-sm']}>{p.tagline[locale]}</p>
+    {featured && p.descriptionHtml && <p class="text-sm leading-relaxed text-ink-3" set:html={p.descriptionHtml[locale]} />}
+
+    {featured && p.stats && (
+      <dl class="flex flex-wrap gap-x-6 gap-y-2 py-1">
+        {p.stats.map((s) => (
+          <div class="flex items-baseline gap-1.5">
+            <dt class="sr-only">{s.label[locale]}</dt>
+            <dd class="font-mono text-lg font-medium tracking-[-0.02em] text-ink">{tr(s.value, locale)}</dd>
+            <dd class="text-sm text-ink-3" aria-hidden="true">{s.label[locale]}</dd>
+          </div>
+        ))}
+      </dl>
+    )}
+
+    {p.collaborators?.length && (
+      <p class="text-sm text-ink-3">{t('common.jointWith')} {joinPeople(p.collaborators, locale)}.</p>
+    )}
+
+    <div class="mt-auto flex flex-col gap-3 pt-2">
+      {(p.stack?.length || p.coursework || p.privateDeployment) && (
+        <ul class="flex flex-wrap gap-1.5">
+          {p.coursework && <li class="chip">{t('projects.coursework')}</li>}
+          {p.privateDeployment && <li class="chip">{t('projects.private')}</li>}
+          {p.stack?.map((s) => <li class="chip-stack">{s}</li>)}
+        </ul>
+      )}
+      {(p.links.length > 0 || p.citation) && (
+        <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2 border-t border-line pt-3">
+          <LinkList links={p.links} locale={locale} />
+          {p.citation && <button type="button" class="action" data-dialog={`cite-${p.citation.key}`}>{t('common.bibtex')}</button>}
+          {p.coldStart && <span class="meta ml-auto">{t('projects.coldStart')}</span>}
+        </div>
+      )}
+    </div>
+  </div>
+  {p.citation && <CiteDialog citation={p.citation} locale={locale} />}
+</article>

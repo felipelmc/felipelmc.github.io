@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PhotoStrip from '../components/PhotoStrip.astro';
+import PageHeader from '../components/ui/PageHeader.astro';
+import type { Locale } from '../data/types';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<Layout title={t('photography.title')} description={t('photography.title')}>
+  <PageHeader kicker="@veryfirsttake" title={t('photography.title')}>
+    <p class="mt-4 text-lg leading-relaxed text-ink-2 text-pretty" set:html={t('about.photography')} />
+  </PageHeader>
+  <PhotoStrip />
+</Layout>

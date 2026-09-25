@@ -1,0 +1,78 @@
+---
+// BibTeX in a native <dialog>. Open it with any element carrying
+// data-dialog="cite-<key>". The citation is stored once, raw, in src/data/;
+// Astro escapes it here, and the copy button reads the rendered textContent.
+import Icon from './ui/Icon.astro';
+import type { Citation, Locale } from '../data/types';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  citation: Citation;
+  locale: Locale;
+}
+
+const { citation, locale } = Astro.props;
+const t = useTranslations(locale);
+const id = `cite-${citation.key}`;
+---
+
+<dialog
+  id={id}
+  aria-labelledby={`${id}-title`}
+  class="m-auto w-[min(44rem,calc(100vw-2rem))] rounded-card border border-line bg-panel p-0 text-ink shadow-lift backdrop:bg-black/55 backdrop:backdrop-blur-[2px]"
+>
+  <div class="flex items-center justify-between border-b border-line px-5 py-3">
+    <h2 id={`${id}-title`} class="eyebrow">{t('common.bibtex')}</h2>
+    <button type="button" data-dialog-close class="grid h-8 w-8 place-items-center rounded-btn text-ink-3 hover:bg-sunken hover:text-ink" aria-label={t('common.close')}>
+      <Icon name="close" class="h-4 w-4" />
+    </button>
+  </div>
+  <pre class="max-h-[60vh] overflow-auto bg-sunken/60 px-5 py-4 text-[0.8125rem] leading-relaxed text-ink-2"><code id={`bib-${citation.key}`}>{citation.bibtex}</code></pre>
+  <div class="flex justify-end border-t border-line px-5 py-3">
+    <button type="button" data-copy={`bib-${citation.key}`} class="btn-primary py-1.5">
+      <Icon name="copy" class="h-4 w-4" />
+      <span data-copy-label data-idle={t('common.copy')} data-done={t('common.copied')}>{t('common.copy')}</span>
+    </button>
+  </div>
+</dialog>
+
+<script>
+  document.addEventListener('click', async (event) => {
+    const target = event.target as HTMLElement;
+
+    const opener = target.closest<HTMLElement>('[data-dialog]');
+    if (opener) {
+      (document.getElementById(opener.dataset.dialog ?? '') as HTMLDialogElement | null)?.showModal();
+      return;
+    }
+
+    const closer = target.closest<HTMLElement>('[data-dialog-close]');
+    if (closer) {
+      closer.closest('dialog')?.close();
+      return;
+    }
+
+    // A click on the dialog element itself (not its content) is a backdrop click.
+    if (target instanceof HTMLDialogElement) {
+      target.close();
+      return;
+    }
+
+    const copy = target.closest<HTMLButtonElement>('[data-copy]');
+    if (copy) {
+      const text = document.getElementById(copy.dataset.copy ?? '')?.textContent ?? '';
+      const label = copy.querySelector<HTMLElement>('[data-copy-label]');
+      try {
+        await navigator.clipboard.writeText(text);
+        if (label) {
+          label.textContent = label.dataset.done ?? '';
+          setTimeout(() => { label.textContent = label.dataset.idle ?? ''; }, 1800);
+        }
+      } catch {
+        // Clipboard blocked: select the text so it can be copied by hand.
+        const code = document.getElementById(copy.dataset.copy ?? '');
+        if (code) window.getSelection()?.selectAllChildren(code);
+      }
+    }
+  });
+</script>

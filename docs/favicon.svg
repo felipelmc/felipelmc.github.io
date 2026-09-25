@@ -1,4 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#4338ca"/>
-  <text x="32" y="43" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="500" fill="#ffffff" text-anchor="middle">FL</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .bg { fill: #0A6F69; }
+    .fg { fill: #FFFFFF; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #3FD0BE; }
+      .fg { fill: #04201D; }
+    }
+  </style>
+  <rect class="bg" width="32" height="32" rx="7"/>
+  <!-- F -->
+  <rect class="fg" x="6" y="8" width="3" height="16"/>
+  <rect class="fg" x="6" y="8" width="9" height="3"/>
+  <rect class="fg" x="6" y="14.5" width="7" height="3"/>
+  <!-- L -->
+  <rect class="fg" x="17.5" y="8" width="3" height="16"/>
+  <rect class="fg" x="17.5" y="21" width="9" height="3"/>
 </svg>

@@ -2,10 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Theme tokens: RGB triplets read by tailwind.config.mjs as rgb(var(--x) / a).
+   --d1…--d5 are the sequential ramp of the data figures (low → high). */
+:root {
+  --bg: 246 246 243;
+  --surface: 255 255 255;
+  --sunken: 237 237 232;
+  --line: 222 222 216;
+  --line-strong: 201 201 193;
+  --ink: 14 17 22;
+  --ink-2: 68 74 84;
+  --ink-3: 95 101 110;
+  --accent: 10 111 105;
+  --accent-ink: 255 255 255;
+  --award: 138 90 0;
+  --shadow: 14 17 22;
+  --d1: 181 221 214;
+  --d2: 127 196 186;
+  --d3: 58 158 146;
+  --d4: 10 111 105;
+  --d5: 5 61 57;
+}
+
+.dark {
+  --bg: 11 13 16;
+  --surface: 18 21 26;
+  --sunken: 24 28 34;
+  --line: 36 42 50;
+  --line-strong: 52 60 70;
+  --ink: 236 238 241;
+  --ink-2: 179 186 196;
+  --ink-3: 138 146 157;
+  --accent: 63 208 190;
+  --accent-ink: 4 32 29;
+  --award: 242 193 78;
+  --shadow: 0 0 0;
+  --d1: 34 81 76;
+  --d2: 38 119 111;
+  --d3: 47 163 149;
+  --d4: 63 208 190;
+  --d5: 168 239 228;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
 @layer base {
   html {
-    scroll-behavior: smooth;
     color-scheme: light;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
   }
 
   html.dark {
@@ -13,42 +61,101 @@
   }
 
   body {
-    @apply font-sans antialiased leading-relaxed;
-    @apply bg-surface text-ink;
-    @apply dark:bg-surface-dark dark:text-ink-dark;
+    @apply bg-canvas font-sans text-ink antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.65;
   }
 
   ::selection {
-    @apply bg-accent/20 text-accent;
+    @apply bg-accent/20 text-ink;
   }
 
-  .dark ::selection {
-    @apply bg-accent-dark/20 text-accent-dark;
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-canvas;
+  }
+
+  code, kbd, samp, pre {
+    @apply font-mono;
+  }
+
+  /* Display utilities (flex, grid) would otherwise beat the UA's [hidden]. */
+  [hidden] {
+    display: none !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) {
+      animation: none !important;
+    }
   }
 }
 
 @layer components {
+  /* Inline text link: accent color with an underline that thickens on hover. */
   .link {
-    @apply relative inline-block text-accent dark:text-accent-dark;
-    @apply after:absolute after:bottom-0 after:left-0 after:h-[1px];
-    @apply after:w-0 after:bg-current after:transition-all after:duration-300;
-    @apply hover:after:w-full;
+    @apply text-accent underline decoration-accent/35 decoration-1 underline-offset-[3px] transition-[text-decoration-color,text-decoration-thickness] duration-150;
+  }
+  .link:hover {
+    @apply decoration-accent decoration-2;
   }
 
+  /* Small monospace label: section kickers, metadata, dates. */
+  .eyebrow {
+    @apply font-mono text-meta uppercase tracking-[0.08em] text-ink-3;
+  }
+
+  .meta {
+    @apply font-mono text-meta text-ink-3;
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-btn px-4 py-2 text-sm font-medium transition-colors duration-150;
+  }
+  .btn-primary {
+    @apply btn bg-accent text-accent-ink hover:bg-accent/90;
+  }
+  .btn-ghost {
+    @apply btn border border-line-strong text-ink hover:border-accent hover:text-accent;
+  }
+
+  /* Tag/chip: `.chip` neutral; `.chip-accent`, `.chip-award`, `.chip-stack` variants. */
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-chip border border-line px-2 py-0.5 font-mono text-[0.6875rem] leading-4 tracking-[0.02em] text-ink-3;
+  }
+  .chip-accent {
+    @apply chip border-transparent bg-accent/10 text-accent;
+  }
+  .chip-award {
+    @apply chip border-award/30 bg-award/10 text-award;
+  }
+  .chip-stack {
+    @apply chip lowercase;
+  }
+
+  /* Action row under an entry: Abstract · BibTeX · DOI ↗ */
+  .action {
+    @apply inline-flex items-center gap-1 font-mono text-meta text-ink-2 underline decoration-line-strong underline-offset-4 transition-colors duration-150 hover:text-accent hover:decoration-accent;
+  }
+
+  .card {
+    @apply rounded-card border border-line bg-panel shadow-card dark:shadow-none;
+  }
+
+  /* Legacy classes still used by pages not yet redesigned. */
   .section-title {
-    @apply font-serif font-medium text-2xl mb-8 tracking-[0.01em];
-    @apply text-ink dark:text-ink-dark;
-    @apply pt-6 border-t border-border dark:border-border-dark;
+    @apply mb-6 border-t border-line pt-6 font-serif text-2xl font-medium text-ink;
   }
-
   .subsection-title {
-    @apply font-serif font-medium text-lg mb-4;
-    @apply text-ink dark:text-ink-dark;
+    @apply mb-4 font-serif text-xl font-medium text-ink;
   }
-
   .pub-entry {
-    @apply py-5 border-b border-border last:border-b-0;
-    @apply dark:border-border-dark;
+    @apply border-b border-line py-5 last:border-b-0;
   }
 }
 
@@ -56,15 +163,33 @@
   .text-balance {
     text-wrap: balance;
   }
+  .text-pretty {
+    text-wrap: pretty;
+  }
 }
+
+/* Fig. 1: the dot groups fade in once, low → high, under ~900 ms. */
+@keyframes fig-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.fig-dots {
+  animation: fig-in 420ms ease-out both;
+}
+.fig-dots[data-bin='2'] { animation-delay: 110ms; }
+.fig-dots[data-bin='3'] { animation-delay: 220ms; }
+.fig-dots[data-bin='4'] { animation-delay: 330ms; }
+.fig-dots[data-bin='5'] { animation-delay: 440ms; }
 
 @media print {
   header,
   footer,
+  dialog,
   .modal,
   #photo-lightbox,
   #photography,
-  [data-modal] {
+  [data-modal],
+  [data-print-hide] {
     display: none !important;
   }
 
@@ -72,20 +197,24 @@
      backgrounds, so force the light palette on paper. */
   html.dark {
     color-scheme: light;
+    --bg: 255 255 255;
+    --surface: 255 255 255;
+    --ink: 14 17 22;
+    --ink-2: 68 74 84;
+    --ink-3: 95 101 110;
+    --accent: 10 111 105;
+    --line: 222 222 216;
   }
 
-  html.dark body {
+  body {
     background: #fff !important;
-    color: #1a1714 !important;
-  }
-
-  html.dark * {
-    color: inherit !important;
-    background: transparent !important;
-    border-color: #ddd !important;
   }
 
   a {
     text-decoration: underline;
+  }
+
+  details > *:not(summary) {
+    display: block !important;
   }
 }

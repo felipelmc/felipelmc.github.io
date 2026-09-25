@@ -21,8 +21,8 @@ export const news: NewsItem[] = [
     date: '2026-08-01',
     label: { en: 'Aug 2026', 'pt-br': 'ago 2026' },
     text: {
-      en: '“Da gaveta ao plenário”, joint work with Lucas Calabró Berti, will be presented at the XV ABCP Meeting in Belém, Brazil.',
-      'pt-br': '“Da gaveta ao plenário”, trabalho conjunto com Lucas Calabró Berti, será apresentado no XV Encontro da ABCP, em Belém.',
+      en: '“Da gaveta ao plenário”, joint work with Lucas Calabró Berti, was presented at the XV ABCP Meeting in Belém, Brazil.',
+      'pt-br': '“Da gaveta ao plenário”, trabalho conjunto com Lucas Calabró Berti, foi apresentado no XV Encontro da ABCP, em Belém.',
     },
     href: '/publications',
   },

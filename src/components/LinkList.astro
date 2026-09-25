@@ -1,0 +1,30 @@
+---
+// A row of small mono action links (Live app ↗ · Code ↗ · DOI ↗) from Link data.
+import Icon from './ui/Icon.astro';
+import type { Link, Locale } from '../data/types';
+import { tr, useTranslations, type TranslationKey } from '../i18n/utils';
+
+interface Props {
+  links: Link[];
+  locale: Locale;
+}
+
+const { links, locale } = Astro.props;
+const t = useTranslations(locale);
+const labelFor = (link: Link) => (link.label ? tr(link.label, locale) : t(`link.${link.kind}` as TranslationKey));
+---
+
+{links.map((link) => {
+  const external = /^https?:/.test(link.href);
+  const label = labelFor(link);
+  return (
+    <a
+      href={link.href}
+      class="action"
+      {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+    >
+      {label}
+      {external && <Icon name="arrow-up-right" class="h-3 w-3" />}
+    </a>
+  );
+})}
