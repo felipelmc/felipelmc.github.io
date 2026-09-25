@@ -14,22 +14,33 @@ export const publications: Publication[] = [
       'pt-br': 'Estimação de preferências no Congresso brasileiro.',
     },
     note: {
-      en: 'M.A. dissertation in progress at IESP-UERJ.',
-      'pt-br': 'Dissertação de mestrado em andamento no IESP-UERJ.',
+      en: 'M.A. dissertation in progress at IESP-UERJ. Advisor: Fernando Meireles.',
+      'pt-br': 'Dissertação de mestrado em andamento no IESP-UERJ. Orientador: Fernando Meireles.',
     },
     featured: 1,
   },
   {
     id: 'como-se-informa',
-    type: 'working-paper',
+    type: 'discussion-paper',
     year: 2026,
-    title: 'Como a população do estado do Rio de Janeiro se informa sobre política?',
+    title: 'Como a população do estado do Rio de Janeiro se informa sobre política? Uma análise de survey.',
     titleLang: 'pt-BR',
-    authors: [
-      { name: 'Fernando Meireles', affiliation: 'IESP-UERJ' },
-      { name: 'Argelina Cheibub Figueiredo', affiliation: 'IESP-UERJ' },
+    venueHtml: '<em>Textos para Discussão do DOXA</em> (IESP-UERJ)',
+    note: {
+      en: 'September 2026. Data from a DOXA–Quaest survey, July 2023.',
+      'pt-br': 'Setembro de 2026. Dados de um survey do DOXA com a Quaest, julho de 2023.',
+    },
+    abstract:
+      'Este texto analisa como a população do estado do Rio de Janeiro se informa sobre política, a partir de um survey realizado pelo DOXA em parceria com a Quaest em julho de 2023. Cerca de 21% dos fluminenses dizem se informar sobre política todos os dias, enquanto 54% o fazem raramente ou nunca. O noticiário da TV segue como a principal fonte de informação política, mas as redes sociais têm um espaço de destaque, sobretudo entre os eleitores de Bolsonaro. A capital tem uma proporção menor de pessoas que nunca se informam sobre política do que o restante do estado. Quem se informa principalmente pela TV e quem se informa principalmente pela internet formam públicos distintos, sobretudo em idade e escolaridade. A aprovação do governo Lula era maior entre quem se informa pela TV, e quem nunca se informa sobre política declara com mais frequência não saber avaliar o governo estadual e não se identificar com ideologias ou partidos.',
+    abstractLang: 'pt-BR',
+    links: [
+      { kind: 'pdf', href: 'https://github.com/felipelmc/td-doxa-informacao-politica/blob/main/reports/report1-informacao.pdf' },
+      {
+        kind: 'repo',
+        href: 'https://github.com/felipelmc/td-doxa-informacao-politica',
+        label: { en: 'Replication package', 'pt-br': 'Pacote de replicação' },
+      },
     ],
-    venueHtml: '<em>DOXA — Laboratório de Estudos Eleitorais, de Comunicação Política e Opinião Pública (IESP-UERJ)</em>',
   },
   {
     id: 'quantos-votos',

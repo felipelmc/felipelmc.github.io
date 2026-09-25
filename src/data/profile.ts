@@ -30,8 +30,15 @@ export const profile = {
     {
       key: { en: 'now', 'pt-br': 'agora' } as L,
       html: {
-        en: `M.A. in Political Science · ${a('https://iesp.uerj.br/en/', 'IESP-UERJ')}`,
-        'pt-br': `Mestrado em Ciência Política · ${a('https://iesp.uerj.br/', 'IESP-UERJ')}`,
+        en: `M.A. student in Political Science · ${a('https://iesp.uerj.br/en/', 'IESP-UERJ')}`,
+        'pt-br': `Mestrando em Ciência Política · ${a('https://iesp.uerj.br/', 'IESP-UERJ')}`,
+      } as L,
+    },
+    {
+      key: { en: 'thesis', 'pt-br': 'dissertação' } as L,
+      html: {
+        en: '<a href="/publications#dissertation" class="link">Preference estimation in the Brazilian Congress</a>',
+        'pt-br': '<a href="/pt-br/publications#dissertation" class="link">Estimação de preferências no Congresso brasileiro</a>',
       } as L,
     },
     {

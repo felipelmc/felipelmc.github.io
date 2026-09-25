@@ -38,7 +38,7 @@ export interface Citation {
 
 // ── Research ────────────────────────────────────────────────────────────────
 
-export type PublicationType = 'dissertation' | 'working-paper' | 'article' | 'technical-note';
+export type PublicationType = 'dissertation' | 'working-paper' | 'discussion-paper' | 'article' | 'technical-note';
 
 export interface Publication {
   id: string;
@@ -146,21 +146,7 @@ export interface Project {
 }
 
 // ── CV ──────────────────────────────────────────────────────────────────────
-
-export interface CvLab {
-  name: string;
-  url: string;
-  coordinators: string;
-  description: L;
-}
-
-export interface CvAffiliation {
-  role: L;
-  org: string;
-  orgUrl?: string;
-  descriptionHtml?: L;
-  labs?: CvLab[];
-}
+// Mirrors the PDF CV (cv/cv-en.qmd, cv/cv-pt.qmd); keep the two in step.
 
 export interface CvRow {
   /** Left column: years or a date label. */
@@ -171,20 +157,50 @@ export interface CvRow {
   subHtml?: Text;
 }
 
+/** A dated position or project, as in the PDF's experience sections. */
+export interface CvEntry {
+  /** Date range, e.g. "01/2026 – present". */
+  when: Text;
+  /** Heading: institution or project, may contain links. */
+  titleHtml: Text;
+  /** Role and description paragraph. */
+  bodyHtml?: Text;
+  /** "Selected delivery" line, without the label. */
+  deliveryHtml?: Text;
+  /** Bullet items (e.g. consulting clients). */
+  itemsHtml?: L<string[]>;
+}
+
+export interface CvGroup {
+  id: string;
+  title: L;
+  entries: CvEntry[];
+}
+
+export interface CvSkill {
+  label: L;
+  html: Text;
+}
+
 export interface CvReference {
   name: string;
   institution: string;
-  role: L;
+  /** e.g. "M.A. advisor"; omitted when the PDF gives none. */
+  note?: L;
   /** Obfuscated address, e.g. "fernando dot meireles at iesp dot uerj dot br". */
   email: string;
 }
 
 export interface Cv {
   lastUpdated: L;
-  affiliations: CvAffiliation[];
   education: CvRow[];
+  /** Research experience: IESP-UERJ labs, funded projects, earlier positions. */
+  research: CvGroup[];
+  professional: CvEntry[];
+  /** Fellowships and grants. */
   scholarships: CvRow[];
   distinctions: CvRow[];
   training: CvRow[];
+  skills: CvSkill[];
   references: CvReference[];
 }

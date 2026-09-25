@@ -6,6 +6,29 @@ const undergraduate = { en: 'Undergraduate', 'pt-br': 'Graduação' };
 // Courses taught (short courses) and teaching assistance, newest first.
 export const courses: Course[] = [
   {
+    id: 'mape-agents-2026',
+    kind: 'short-course',
+    title: {
+      en: 'AI agents for social science research: an introduction to Claude Code',
+      'pt-br': 'Agentes de IA para pesquisa em ciências sociais: uma introdução ao Claude Code',
+    },
+    whereHtml: {
+      en: 'Methodological Training of <a href="https://mape.org.br/" class="link" target="_blank" rel="noopener noreferrer">MAPE</a>',
+      'pt-br': 'Formação Metodológica do <a href="https://mape.org.br/" class="link" target="_blank" rel="noopener noreferrer">MAPE</a>',
+    },
+    term: { en: 'August 2026', 'pt-br': 'Agosto 2026' },
+    date: '2026-08-17',
+    level: graduate,
+    descriptionHtml: {
+      en: 'From chat to agents: installing Claude Code, CLAUDE.md and skills, plan mode and context management, with live demos of a literature search through the OpenAlex API and of roll-call data from the Chamber of Deputies API.',
+      'pt-br': 'Do chat ao agente: instalação do Claude Code, CLAUDE.md e skills, plan mode e gerenciamento de contexto, com demonstrações ao vivo de uma busca de literatura pela API da OpenAlex e de dados de votações pela API da Câmara dos Deputados.',
+    },
+    links: [
+      { kind: 'files', href: 'https://github.com/felipelmc/Presentations/tree/main/AgentesIA-FMMAPE-2026' },
+      { kind: 'pdf', href: 'https://github.com/felipelmc/Presentations/blob/main/AgentesIA-FMMAPE-2026/slides.pdf' },
+    ],
+  },
+  {
     id: 'labiia-2026',
     kind: 'short-course',
     title: {
