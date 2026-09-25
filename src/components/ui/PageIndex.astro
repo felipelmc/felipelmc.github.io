@@ -1,0 +1,22 @@
+---
+// Section index for long reading pages: a sticky mono list in the left column
+// on desktop, a wrapping row of links on small screens.
+interface Props {
+  items: { id: string; label: string }[];
+  label: string;
+}
+
+const { items, label } = Astro.props;
+---
+
+<nav aria-label={label} class="lg:sticky lg:top-24 lg:self-start" data-print-hide>
+  <ol class="flex flex-wrap gap-x-4 gap-y-2 border-y border-line py-3 font-mono text-meta lg:flex-col lg:gap-y-0 lg:border-y-0 lg:border-l lg:py-0">
+    {items.map((item, i) => (
+      <li>
+        <a href={`#${item.id}`} class="flex gap-2 text-ink-3 transition-colors duration-150 hover:text-accent lg:-ml-px lg:border-l lg:border-transparent lg:py-1.5 lg:pl-4 lg:hover:border-accent">
+          <span class="text-accent" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>{item.label}
+        </a>
+      </li>
+    ))}
+  </ol>
+</nav>

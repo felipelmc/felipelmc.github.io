@@ -146,17 +146,6 @@
   .card {
     @apply rounded-card border border-line bg-panel shadow-card dark:shadow-none;
   }
-
-  /* Legacy classes still used by pages not yet redesigned. */
-  .section-title {
-    @apply mb-6 border-t border-line pt-6 font-serif text-2xl font-medium text-ink;
-  }
-  .subsection-title {
-    @apply mb-4 font-serif text-xl font-medium text-ink;
-  }
-  .pub-entry {
-    @apply border-b border-line py-5 last:border-b-0;
-  }
 }
 
 @layer utilities {

@@ -22,6 +22,14 @@ export function joinPeople(people: { name: string; affiliation?: string }[], loc
   return new Intl.ListFormat(htmlLang(locale), { style: 'long', type: 'conjunction' }).format(names);
 }
 
+/** Like joinPeople, but each name links to its `url` when there is one (trusted HTML). */
+export function peopleHtml(people: { name: string; url?: string }[], locale: Locale): string {
+  const names = people.map((p) =>
+    p.url ? `<a href="${p.url}" class="link" target="_blank" rel="noopener noreferrer">${p.name}</a>` : p.name,
+  );
+  return new Intl.ListFormat(htmlLang(locale), { style: 'long', type: 'conjunction' }).format(names);
+}
+
 /** Resolve a per-locale pair of anything. */
 export function pick<T>(value: L<T>, locale: Locale): T {
   return value[locale];

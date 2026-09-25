@@ -1,0 +1,32 @@
+{
+  "hrefs": {
+    "https://www.linkedin.com/in/felipe-lamarca/?locale=en_US": "LinkedIn link is now an icon with an aria-label, and its URL dropped ?locale=en_US",
+    "https://github.com/felipelmc/BoticarIA": "BoticárIA removed from the site at Felipe’s request (2026-09-24)",
+    "https://boticaria.streamlit.app/": "BoticárIA removed from the site at Felipe’s request (2026-09-24)"
+  },
+  "strings": {
+    "linkedin": "LinkedIn link is now an icon with an aria-label, and its URL dropped ?locale=en_US",
+    "mape · coordinated by fernando meireles & bruno schaefer": "Lab coordinators now sit on their own line under the lab name",
+    "doxa · coordinated by fernando meireles & argelina cheibub figueiredo": "Lab coordinators now sit on their own line under the lab name",
+    "necon · coordinated by fabiano santos": "Lab coordinators now sit on their own line under the lab name",
+    "2024-present": "Degree labels and dates aligned with the PDF CV (M.A., 2025–; B.Sc.)",
+    "m.sc. in political science": "Degree labels and dates aligned with the PDF CV (M.A., 2025–; B.Sc.)",
+    "b.a. in data science and artificial intelligence": "Degree labels and dates aligned with the PDF CV (M.A., 2025–; B.Sc.)",
+    "access link": "Link labels renamed (Live app, Code)",
+    "open-source tools": "Open-source Tools moved to /projects (citable software stays in Research #software)",
+    "source code": "Link labels renamed (Live app, Code)",
+    "bibtex citation": "Citation dialog heading is now \"BibTeX\"",
+    "introdução aos agentes de ia na pesquisa acadêmica": "English Teaching page now uses the English course titles from cv-en.qmd",
+    "agentes de ia para pesquisa em ciências sociais: uma introdução ao claude code": "English Teaching page now uses the English course titles from cv-en.qmd",
+    "mape · coordenado por fernando meireles & bruno schaefer": "Lab coordinators now sit on their own line under the lab name",
+    "doxa · coordenado por fernando meireles & argelina cheibub figueiredo": "Lab coordinators now sit on their own line under the lab name",
+    "necon · coordenado por fabiano santos": "Lab coordinators now sit on their own line under the lab name",
+    "2024-atual": "Degree labels and dates aligned with the PDF CV (M.A., 2025–; B.Sc.)",
+    "preference estimation in the brazilian congress": "Portuguese pages now show the Portuguese dissertation title (cv-pt.qmd)",
+    "link de acesso": "Link labels renamed (Live app, Code)",
+    "ferramentas de código aberto": "Open-source Tools moved to /projects (citable software stays in Research #software)",
+    "código-fonte": "Link labels renamed (Live app, Code)",
+    "citação bibtex": "Citation dialog heading is now \"BibTeX\"",
+    "boticária": "BoticárIA removed from the site at Felipe’s request (2026-09-24)"
+  }
+}

@@ -21,8 +21,8 @@ export const profile = {
 
   /** Hero statement, set in the serif. */
   statement: {
-    en: 'I study Brazilian politics with data (Congress, elections, public opinion and public policy) and build the tools and databases that this research runs on.',
-    'pt-br': 'Estudo a política brasileira com dados (Congresso, eleições, opinião pública e políticas públicas) e construo as ferramentas e bases de dados em que essa pesquisa roda.',
+    en: 'Data scientist and social scientist. I work on elections, Congress and public opinion in Brazil, mostly in R and Python.',
+    'pt-br': 'Cientista de dados e cientista social. Trabalho com eleições, Congresso e opinião pública no Brasil, quase sempre em R e Python.',
   } as L,
 
   /** The mono "now / work / labs" list under the hero statement. */

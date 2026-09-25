@@ -3,23 +3,19 @@
     "slug": "relicaria",
     "url": "https://relicaria.streamlit.app/",
     "kind": "streamlit",
-    "clickBefore": ["button[role=\"tab\"]:has-text(\"Instruções\")"],
+    "clickBefore": [
+      "button[role=\"tab\"]:has-text(\"Instruções\")"
+    ],
     "delayMs": 1000,
     "note": "Without an uploaded document every result tab is empty; the Instruções tab is the one-click view that fills the frame."
-  },
-  {
-    "slug": "boticaria",
-    "url": "https://boticaria.streamlit.app/",
-    "kind": "streamlit",
-    "waitFor": "[data-testid=\"stChatInput\"]",
-    "delayMs": 1000,
-    "note": "Initial chat UI."
   },
   {
     "slug": "mape-dashboard",
     "url": "https://mape-municipios-dashboard.streamlit.app/",
     "kind": "streamlit",
-    "clickBefore": ["button[role=\"tab\"]:has-text(\"Painel (Brasil)\")"],
+    "clickBefore": [
+      "button[role=\"tab\"]:has-text(\"Painel (Brasil)\")"
+    ],
     "waitFor": "[data-testid=\"stPlotlyChart\"] .js-plotly-plot >> visible=true",
     "scrollTo": "h2:has-text(\"Painel de indicadores\") >> visible=true",
     "delayMs": 4000,
@@ -29,7 +25,9 @@
     "slug": "acre-deforestation",
     "url": "https://mapa-do-desmatamento-acre.streamlit.app/",
     "kind": "streamlit",
-    "clickBefore": ["a[data-testid=\"stTopNavLink\"]:has-text(\"Acre\")"],
+    "clickBefore": [
+      "a[data-testid=\"stTopNavLink\"]:has-text(\"Acre\")"
+    ],
     "waitFor": "[data-testid=\"stPlotlyChart\"] .js-plotly-plot >> visible=true",
     "scrollTo": "[data-testid=\"stMarkdownContainer\"]:has-text(\"Monitoramento de impactos\") >> visible=true",
     "delayMs": 4000,
@@ -47,7 +45,9 @@
     "url": "https://felipelamarca.com/Programacao-ABCP-2026/",
     "kind": "static",
     "clock": "2026-08-05T10:40:00-03:00",
-    "hide": ["#dica-inicio"],
+    "hide": [
+      "#dica-inicio"
+    ],
     "delayMs": 500,
     "note": "A live-schedule app: the clock is frozen mid-conference (day 2, 10:40 Belém) so 'Agora' shows sessions in progress and the header clock is stable between runs. The first-visit tip is hidden."
   },
@@ -60,25 +60,12 @@
     "note": "Default view: RJ filter, list plus map with every bar."
   },
   {
-    "slug": "formula1-viz",
-    "url": "https://felipelamarca.com/Formula1-Viz/",
-    "kind": "static",
-    "delayMs": 1500,
-    "note": "Project page: abstract and the summary-image collage (the visualisation itself is two clicks deep)."
-  },
-  {
-    "slug": "nascidos-vivos-viz",
-    "url": "https://felipelamarca.com/Nascidos-Vivos-Viz/",
-    "kind": "static",
-    "waitFor": "#viz svg path",
-    "delayMs": 2500,
-    "note": "Choropleth of mean Apgar-1 score by RJ municipality, year slider at 2020."
-  },
-  {
     "slug": "dhbb-parentescos",
     "url": "https://felipelamarca.com/DHBB-Parentescos/",
     "kind": "static",
-    "clickBefore": [".block:has-text(\"pelo menos 3\")"],
+    "clickBefore": [
+      ".block:has-text(\"pelo menos 3\")"
+    ],
     "waitFor": "#mynetwork canvas",
     "waitForHidden": "#loadingBar",
     "seed": 1,

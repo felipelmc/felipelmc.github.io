@@ -9,16 +9,26 @@ export default defineConfig({
   build: {
     assets: '_assets'
   },
-  // Legacy URLs from the previous Quarto site (still indexed and linked externally).
+  // Old URLs that are still indexed or linked externally: the previous Quarto
+  // site's pages, and pages removed in later restructures (Research, Talks,
+  // Work, and Notes, which is now a section of Teaching).
   redirects: {
     '/my-work/my-work.html': '/publications/',
     '/my-work': '/publications/',
     '/publications/publications.html': '/publications/',
-    '/learning/learning.html': '/materials/',
-    '/learning': '/materials/',
+    '/learning/learning.html': '/teaching/#notes',
+    '/learning': '/teaching/#notes',
     '/teaching/teaching.html': '/teaching/',
-    '/talking/talking.html': '/publications/',
-    '/talking': '/publications/'
+    '/talking/talking.html': '/publications/#talks',
+    '/talking': '/publications/#talks',
+    '/materials': '/teaching/#notes',
+    '/research': '/publications/',
+    '/talks': '/publications/#talks',
+    '/work': '/cv/',
+    '/pt-br/materials': '/pt-br/teaching/#notes',
+    '/pt-br/learning': '/pt-br/teaching/#notes',
+    '/pt-br/research': '/pt-br/publications/',
+    '/pt-br/work': '/pt-br/cv/'
   },
   i18n: {
     defaultLocale: 'en',

@@ -20,7 +20,9 @@ const featured = projects.filter((p) => p.tier === 'featured');
 const standard = projects.filter((p) => p.tier === 'standard');
 const compact = projects.filter((p) => p.tier === 'compact');
 const years = projects.map((p) => p.year);
-const categories: ProjectCategory[] = ['ai', 'apps', 'data', 'software', 'viz'];
+const categories = (['ai', 'apps', 'data', 'software', 'viz'] as ProjectCategory[])
+  .map((c) => ({ c, n: projects.filter((p) => p.categories.includes(c)).length }))
+  .filter(({ n }) => n > 0);
 const catLabel = (c: ProjectCategory) => t(`projects.cat.${c}` as TranslationKey);
 const count = t('projects.count').replace('{n}', String(projects.length));
 ---
@@ -30,10 +32,10 @@ const count = t('projects.count').replace('{n}', String(projects.length));
 
   <div id="project-filters" role="group" aria-label={t('projects.filter')} class="-mx-4 mb-10 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0" data-print-hide hidden>
     <button type="button" class="filter-chip" data-filter="all" aria-pressed="true">{t('projects.all')}</button>
-    {categories.map((c) => (
+    {categories.map(({ c, n }) => (
       <button type="button" class="filter-chip" data-filter={c} aria-pressed="false">
         {catLabel(c)}
-        <span class="text-ink-3">{projects.filter((p) => p.categories.includes(c)).length}</span>
+        <span class="text-ink-3">{n}</span>
       </button>
     ))}
   </div>
@@ -50,6 +52,7 @@ const count = t('projects.count').replace('{n}', String(projects.length));
       {standard.map((p) => <ProjectCard project={p} locale={locale} />)}
     </div>
 
+    {compact.length > 0 && (
     <ul class="mt-10 divide-y divide-line border-y border-line">
       {compact.map((p) => (
         <li id={p.slug} data-project data-categories={p.categories.join(' ')} class="grid scroll-mt-24 gap-x-6 gap-y-1 py-4 sm:grid-cols-[4rem_minmax(0,16rem)_1fr_auto] sm:items-baseline">
@@ -63,6 +66,7 @@ const count = t('projects.count').replace('{n}', String(projects.length));
         </li>
       ))}
     </ul>
+    )}
   </section>
 
   <section class="mt-20" aria-labelledby="client-work">
