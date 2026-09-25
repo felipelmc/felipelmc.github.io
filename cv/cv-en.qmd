@@ -1,24 +1,24 @@
 ---
 title: "Felipe Marques Esteves Lamarca"
+lang: en
+kicker: "Curriculum vitae · September 2026"
 ---
 
-::: contact
-\faEnvelope\ [felipe.lamarca@hotmail.com](mailto:felipe.lamarca@hotmail.com)
-\cvsep \faLink\ [felipelamarca.com](https://felipelamarca.com)
-\cvsep \faMapMarker\ Rio de Janeiro, Brazil
-
-\faGithub\ [GitHub](https://github.com/felipelmc)
-\cvsep \faLinkedin\ [LinkedIn](https://www.linkedin.com/in/felipe-lamarca/)
-\cvsep \faOrcid\ [ORCID](https://orcid.org/0000-0003-0002-3627)
-\cvsep \faGraduationCap\ [Google Scholar](https://scholar.google.com.br/citations?user=xPf8_64AAAAJ)
-\cvsep \faFile\ [Lattes](http://lattes.cnpq.br/2606938112682925)
+::: position
+M.A. student in Political Science, IESP-UERJ \cvsep Data Scientist, AtlasIntel
 :::
 
-# \faLightbulb\ Research Interests
+::: contact
+[felipe.lamarca@hotmail.com](mailto:felipe.lamarca@hotmail.com) \cvsep{} [felipelamarca.com](https://felipelamarca.com) \cvsep Rio de Janeiro, Brazil
 
-Legislative behavior; political behavior; public policy; text-as-data; causal inference; survey methods.
+[github.com/felipelmc](https://github.com/felipelmc) \cvsep{} [linkedin.com/in/felipe-lamarca](https://www.linkedin.com/in/felipe-lamarca/) \cvsep ORCID [0000-0003-0002-3627](https://orcid.org/0000-0003-0002-3627) \cvsep{} [Google Scholar](https://scholar.google.com.br/citations?user=xPf8_64AAAAJ) \cvsep{} [Lattes](http://lattes.cnpq.br/2606938112682925)
+:::
 
-# \faGraduationCap\ Education
+::: interests
+*Research interests.* Legislative behavior; political behavior; public policy; text-as-data; causal inference; survey methods.
+:::
+
+# Education
 
 ### Institute of Social and Political Studies, IESP-UERJ [03/2025 -- Present]{.date}
 
@@ -38,7 +38,7 @@ Advisor: [Jaqueline Porto Zulini, Ph.D.](https://cpdoc.fgv.br/equipe/jaquelinezu
 
 *Summer schools and training.* Summer Institute in Computational Social Science ([SICSS](https://sicss.io/)), Rio de Janeiro, 2024; [ML4Good](https://www.ml4good.org) bootcamp, 2024; academic writing and publication of quantitative papers in the social sciences, IESP-UERJ, 2025; [Effective Altruism Global](https://www.effectivealtruism.org/ea-global), San Francisco, 2026 (full funding).
 
-# \faFile\ Publications
+# Publications
 
 ## Peer-reviewed articles
 
@@ -57,62 +57,33 @@ Advisor: [Jaqueline Porto Zulini, Ph.D.](https://cpdoc.fgv.br/equipe/jaquelinezu
 
 - Santos, Fabiano, Carlos Freitas, and **Felipe M. E. Lamarca**. "Nota Técnica NECON sobre as próximas eleições presidenciais." NECON (IESP-UERJ), 2026.
 
-# \faCode\ Software
-
-- **`mape_municipios_dashboard`** (2025). With Fernando Meireles. A dashboard over one of the most comprehensive databases on Brazilian municipalities, built for [MAPE](https://mape.org.br/). [[Source code]](https://github.com/mape-iesp/MAPEmunicipios-Dashboard) · [[Access link]](https://mape-municipios-dashboard.streamlit.app/)
-
-- **LGBTQIA+ indicators in Rio de Janeiro** (2026). With Tomás Paixão Borges. A dashboard on the `mape_municipios` infrastructure for the office of state deputy Dani Balbi, bringing together MUNIC, PNS, and Censo SUAS data on the LGBTQIA+ population of the state, including the territorial distribution of social assistance facilities.
-
-- **`Quarto-Model-IESP`** (2026). With Matheus Cavalcanti Pestana. A Quarto template for IESP-UERJ dissertations and theses. [[Source code]](https://github.com/felipelmc/Quarto-Model-IESP) · [[DOI]](https://doi.org/10.5281/zenodo.20819431)
-
-- **`RelicárIA`** (2025). With Danielle Sanches de Almeida. A platform that combines AI and data analysis to extract and visualize information from historical documents. [[Source code]](https://github.com/felipelmc/RelicarIA) · [[Access link]](https://relicaria.streamlit.app/) · [[DOI]](https://doi.org/10.5281/zenodo.15536372)
-
-
-# \faBullhorn\ Conference Presentations
-
-Sep 2026
-
-:   [50th ANPOCS Annual Meeting](https://www.encontro2026.anpocs.org.br/), SPG 31 -- Methodology and Research Methods in the Social Sciences. *Quantos votos meu partido vai fazer? Um tutorial de validação preditiva com dados abertos (2016--2024)*.
-
-Aug 2026
-
-:   XV Meeting of the Brazilian Political Science Association (ABCP), Belém. *Da gaveta ao plenário: os caminhos da aprovação de pautas na Câmara dos Deputados*.
-
-Nov 2025
-
-:   10th Student Week of the Postgraduate Programs of IESP-UERJ. *Quantos votos meu partido vai fazer? Prevendo o vote share nos municípios fluminenses*. [[Files]](https://github.com/felipelmc/Presentations/tree/main/GT-Jornada-Discente-IESP-2025)
-
-Aug 2025
-
-:   [24th Congress of the Global Basic Income Network (BIEN)](https://bien2025.com.br/). *Fatores explicativos do apoio ou rejeição à criação de uma política municipal de renda básica: modelando a percepção dos cariocas*. [[PDF]](https://github.com/felipelmc/Presentations/blob/main/BIEN-2025/bien2025.pdf)
-
-# \faTrophy\ Fellowships, Grants, and Awards
+# Fellowships, Grants, and Awards
 
 ## Fellowships and grants
 
 2026--2027
 
-:   Graduate fellowship, Fundação Carlos Chagas Filho de Amparo à Pesquisa do Estado do Rio de Janeiro (FAPERJ Nota 10), awarded for first-year performance in the M.A. at IESP-UERJ.
+:   FAPERJ Nota 10 graduate fellowship, Fundação Carlos Chagas Filho de Amparo à Pesquisa do Estado do Rio de Janeiro, awarded for first-year performance in the M.A. at IESP-UERJ.
 
 2026
 
-:   Research grant, *Pensando o Direito* programme, Ministry of Justice and Public Security (MJSP).
+:   *Pensando o Direito* research grant, Ministry of Justice and Public Security (MJSP).
 
 2025--2026
 
-:   Master's fellowship, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES).
+:   CAPES master's fellowship, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior.
 
 2021--2022
 
-:   Undergraduate research fellowship (CNPq).
+:   CNPq undergraduate research fellowship.
 
 2019--2024
 
-:   90% merit scholarship for undergraduate study at the Getulio Vargas Foundation, awarded for performance in the entrance examination.
+:   FGV merit scholarship (90%) for undergraduate study, awarded for performance in the entrance examination.
 
 2019--2021
 
-:   Undergraduate research fellowship (FGV).
+:   FGV undergraduate research fellowship.
 
 ## Awards and distinctions
 
@@ -132,25 +103,56 @@ Aug 2025
 
 :   Best Paper Award, History and Social Sciences Students' Week (FGV CPDOC).
 
-# \faUniversity\ Research Experience
+# Software
+
+- **`mape_municipios_dashboard`** (2025). With Fernando Meireles. A dashboard over one of the most comprehensive databases on Brazilian municipalities, built for [MAPE](https://mape.org.br/). [[Source code]](https://github.com/mape-iesp/MAPEmunicipios-Dashboard) · [[Access link]](https://mape-municipios-dashboard.streamlit.app/)
+- **LGBTQIA+ indicators in Rio de Janeiro** (2026). With Tomás Paixão Borges. A dashboard on the `mape_municipios` infrastructure for the office of state deputy Dani Balbi, bringing together MUNIC, PNS, and Censo SUAS data on the LGBTQIA+ population of the state, including the territorial distribution of social assistance facilities.
+- **`Quarto-Model-IESP`** (2026). With Matheus Cavalcanti Pestana. A Quarto template for IESP-UERJ dissertations and theses. [[Source code]](https://github.com/felipelmc/Quarto-Model-IESP) · [[DOI]](https://doi.org/10.5281/zenodo.20819431)
+- **RelicárIA** (2025). With Danielle Sanches de Almeida. A platform that combines AI and data analysis to extract and visualize information from historical documents. [[Source code]](https://github.com/felipelmc/RelicarIA) · [[Access link]](https://relicaria.streamlit.app/) · [[DOI]](https://doi.org/10.5281/zenodo.15536372)
+
+# Conference Presentations
+
+Sep 2026
+
+:   [50th ANPOCS Annual Meeting](https://www.encontro2026.anpocs.org.br/), SPG 31 -- Methodology and Research Methods in the Social Sciences. *Quantos votos meu partido vai fazer? Um tutorial de validação preditiva com dados abertos (2016--2024)*.
+
+Aug 2026
+
+:   XV Meeting of the Brazilian Political Science Association (ABCP), Belém. *Da gaveta ao plenário: os caminhos da aprovação de pautas na Câmara dos Deputados*.
+
+Nov 2025
+
+:   10th Student Week of the Postgraduate Programs of IESP-UERJ. *Quantos votos meu partido vai fazer? Prevendo o vote share nos municípios fluminenses*. [[Files]](https://github.com/felipelmc/Presentations/tree/main/GT-Jornada-Discente-IESP-2025)
+
+Aug 2025
+
+:   [24th Congress of the Global Basic Income Network (BIEN)](https://bien2025.com.br/). *Fatores explicativos do apoio ou rejeição à criação de uma política municipal de renda básica: modelando a percepção dos cariocas*. [[PDF]](https://github.com/felipelmc/Presentations/blob/main/BIEN-2025/bien2025.pdf)
+
+# Research Experience
 
 ## Laboratories, IESP-UERJ
 
-### [NECON](http://necon.iesp.uerj.br) (IESP-UERJ) [01/2026 -- Present]{.date}
+### [NECON](http://necon.iesp.uerj.br), IESP-UERJ [01/2026 -- Present]{.date}
 
-*Researcher* at the Center for Studies on Congress, coordinated by Fabiano Santos. I work on the lab's databases on roll-call votes and legislative production.
+*Researcher*
+
+Center for Studies on Congress, coordinated by Fabiano Santos. I work on the lab's databases on roll-call votes and legislative production.
 
 *Selected delivery.* A technical note applying spatial models of voting to the 2026 presidential race.
 
-### [DOXA](https://www.lab-doxa.org.br/) (IESP-UERJ) [05/2025 -- Present]{.date}
+### [DOXA](https://www.lab-doxa.org.br/), IESP-UERJ [05/2025 -- Present]{.date}
 
-*Researcher* at the Laboratory of Electoral Studies, Political Communication and Public Opinion, coordinated by Fernando Meireles and Argelina Cheibub Figueiredo. I work on the design and analysis of the lab's public opinion surveys, including weighting and post-stratification.
+*Researcher*
+
+Laboratory of Electoral Studies, Political Communication and Public Opinion, coordinated by Fernando Meireles and Argelina Cheibub Figueiredo. I work on the design and analysis of the lab's public opinion surveys, including weighting and post-stratification.
 
 *Selected delivery.* Analysis of the DOXA survey on how the population of the state of Rio de Janeiro learns about politics, now a DOXA discussion paper.
 
-### [MAPE](https://mape.org.br/) (IESP-UERJ) [04/2025 -- Present]{.date}
+### [MAPE](https://mape.org.br/), IESP-UERJ [04/2025 -- Present]{.date}
 
-*Researcher* at the Laboratory for Monitoring and Evaluation of Policies and Elections, coordinated by Fernando Meireles and Bruno Schaefer. I build and maintain the `mape_municipios` database and its public interface, and teach in the lab's methodological training.
+*Researcher*
+
+Laboratory for Monitoring and Evaluation of Policies and Elections, coordinated by Fernando Meireles and Bruno Schaefer. I build and maintain the `mape_municipios` database and its public interface, and teach in the lab's methodological training.
 
 *Selected delivery.* A Streamlit application that lets users interact with `mape_municipios`, a database covering 30 years and 451 variables on Brazilian municipalities.
 
@@ -158,13 +160,17 @@ Aug 2025
 
 ### *Pensando o Direito* research grant, MJSP [07/2026 -- Present]{.date}
 
-*Researcher.* Systematic review of the evidence on a set of public security policies for the Legal Amazon, organized around the idea of a qualified entry of the State into vulnerable territories, following the OQF (*O Que Funciona?*) protocol developed at MAPE. I run the search protocol, screening, and evidence extraction. Project coordinated by Djane Braz Duarte.
+*Researcher*
+
+Systematic review of the evidence on a set of public security policies for the Legal Amazon, organized around the idea of a qualified entry of the State into vulnerable territories, following the OQF (*O Que Funciona?*) protocol developed at MAPE. I run the search protocol, screening, and evidence extraction. Project coordinated by Djane Braz Duarte.
 
 *Expected deliveries.* (i) an analytical report for the Ministry; (ii) an article submitted to a peer-reviewed journal; (iii) entries on the reviewed policies in the [Dicionário de Favelas Marielle Franco](https://wikifavelas.com.br).
 
 ### RESA project, UFAC and IESP-UERJ [08/2025 -- Present]{.date}
 
-*Researcher* on the socioeconomic and environmental impacts of family-based agroextractive production in the Chico Mendes Extractive Reserve, in Acre, with an emphasis on what cooperatives change in land use and in household income. I handle the quantitative data and build the project's public monitoring platform. Coordinated by Luci Maria Teston (UFAC), with IESP-UERJ as a partner institution.
+*Researcher*
+
+Socioeconomic and environmental impacts of family-based agroextractive production in the Chico Mendes Extractive Reserve, in Acre, with an emphasis on what cooperatives change in land use and in household income. I handle the quantitative data and build the project's public monitoring platform. Coordinated by Luci Maria Teston (UFAC), with IESP-UERJ as a partner institution.
 
 *Selected delivery.* A preliminary version of the [monitoring platform](https://mapa-do-desmatamento-acre.streamlit.app/), covering deforestation in Acre.
 
@@ -172,74 +178,83 @@ Aug 2025
 
 ### School of Public and Business Administration, FGV EBAPE [02/2025 -- 04/2025]{.date}
 
-*Research Assistant.* Digitized and systematized historical election results using OCR and LLMs, under the supervision of Prof. [Cesar Zucco, Ph.D.](https://professor.fgv.br/ebape/cesar-zucco)
+*Research Assistant*
+
+Digitized and systematized historical election results using OCR and LLMs, under the supervision of Prof. [Cesar Zucco, Ph.D.](https://professor.fgv.br/ebape/cesar-zucco)
 
 *Selected deliveries.* Databases extracted from historical images, source code, and a technical report.
 
 ### [CEBRAP](https://cebrap.org.br/) [10/2024 -- 02/2025]{.date}
 
-*Consultant* for the Center for Critical Imagination. Applied OCR and LLMs to the Brazilian Statistical Yearbooks, published as manuscripts, to systematize social assistance data since the early 20th century. In collaboration with [José Szwako, Ph.D.](https://iesp.uerj.br/pesquisador/jose-eduardo-leon-szwako/)
+*Consultant, Center for Critical Imagination*
+
+Applied OCR and LLMs to the Brazilian Statistical Yearbooks, published as manuscripts, to systematize social assistance data since the early 20th century. In collaboration with [José Szwako, Ph.D.](https://iesp.uerj.br/pesquisador/jose-eduardo-leon-szwako/)
 
 *Selected deliveries.* Databases extracted from PDFs, source code, and a technical report.
 
 ### School of Social Sciences, FGV CPDOC [06/2019 -- 09/2022]{.date}
 
-*Junior Research Fellow.* Supported by an FGV/CNPq fellowship, examined Executive-Legislative relations in the early 20th century using qualitative and quantitative methods. Supervised by Prof. [Jaqueline Porto Zulini, Ph.D.](https://cpdoc.fgv.br/equipe/jaquelinezulini)
+*Junior Research Fellow*
+
+Supported by an FGV/CNPq fellowship, examined Executive-Legislative relations in the early 20th century using qualitative and quantitative methods. Supervised by Prof. [Jaqueline Porto Zulini, Ph.D.](https://cpdoc.fgv.br/equipe/jaquelinezulini)
 
 *Selected deliveries.* Three technical reports and one peer-reviewed article.
 
-# \faChalkboardTeacher\ Teaching Experience
+# Teaching Experience
 
 ## Courses taught
 
-### AI agents for social science research [08/2026]{.date}
+Aug 2026
 
-Short course at the methodological training of [MAPE](https://mape.org.br/) (graduate): an introduction to Claude Code. [[Files]](https://github.com/felipelmc/Presentations/tree/main/AgentesIA-FMMAPE-2026)
+:   **AI agents for social science research.** Short course at the methodological training of [MAPE](https://mape.org.br/) (graduate): an introduction to Claude Code. [[Files]](https://github.com/felipelmc/Presentations/tree/main/AgentesIA-FMMAPE-2026)
 
-### Introduction to AI agents in academic research [06/2026]{.date}
+Jun 2026
 
-Short course at [LABIIA](https://labiialab.com.br) on the use of AI agents in academic research. [[Files]](https://github.com/felipelmc/Presentations/tree/main/Intro-to-ClaudeCode-LABIIA-2026)
+:   **Introduction to AI agents in academic research.** Short course at [LABIIA](https://labiialab.com.br) on the use of AI agents in academic research. [[Files]](https://github.com/felipelmc/Presentations/tree/main/Intro-to-ClaudeCode-LABIIA-2026)
 
-### AI agents for social science research [05/2026]{.date}
+May 2026
 
-Short course at [CERES](https://ceres-iesp.uerj.br), IESP-UERJ: an introduction to Claude Code. [[Files]](https://github.com/felipelmc/Presentations/tree/main/Intro-to-ClaudeCode-CERES-2026)
+:   **AI agents for social science research.** Short course at [CERES](https://ceres-iesp.uerj.br), IESP-UERJ: an introduction to Claude Code. [[Files]](https://github.com/felipelmc/Presentations/tree/main/Intro-to-ClaudeCode-CERES-2026)
 
-### Machine Learning [Fall 2025]{.date}
+2025.2
 
-Methodological training of [MAPE](https://mape.org.br/) (graduate). Recognizing, training, interpreting, and evaluating simple predictive models applied to social research. [[Files]](https://github.com/felipelmc/Presentations/tree/main/ML-FMMAPE-2025)
+:   **Machine Learning.** Methodological training of [MAPE](https://mape.org.br/) (graduate). Recognizing, training, interpreting, and evaluating simple predictive models applied to social research. [[Files]](https://github.com/felipelmc/Presentations/tree/main/ML-FMMAPE-2025)
 
-### Deep Learning & Text-as-Data [Fall 2025]{.date}
+2025.2
 
-10th Student Week of the Postgraduate Programs of IESP-UERJ (graduate). What a neural network is and how to train one, and text-as-data with deep learning. [[Files]](https://github.com/felipelmc/Presentations/tree/main/Minicurso-DL-Jornada-Discente-IESP-2025)
+:   **Deep Learning & Text-as-Data.** 10th Student Week of the Postgraduate Programs of IESP-UERJ (graduate). What a neural network is and how to train one, and text-as-data with deep learning. [[Files]](https://github.com/felipelmc/Presentations/tree/main/Minicurso-DL-Jornada-Discente-IESP-2025)
 
-### Automated Text Analysis [Spring 2025]{.date}
+2025.1
 
-Crash course on modern approaches to text-as-data in social science, at the [Summer Institute in Computational Social Science (SICSS) Brazil](https://sicss.io/2025/fgv-ecmi-brazil/). [[PDF]](https://github.com/felipelmc/Presentations/blob/main/SICSS-2025/sicss2025.pdf)
+:   **Automated Text Analysis.** Crash course on modern approaches to text-as-data in social science, at the [Summer Institute in Computational Social Science (SICSS) Brazil](https://sicss.io/2025/fgv-ecmi-brazil/). [[PDF]](https://github.com/felipelmc/Presentations/blob/main/SICSS-2025/sicss2025.pdf)
 
 ## Teaching assistantships
 
-### Advanced Text-as-Data [Spring 2025]{.date}
+2025.1
 
-IESP-UERJ Winter School (graduate). Deep learning, embeddings, transformers, and LLMs applied to political science. Instructors: [Tiago Ventura, Ph.D.](https://www.venturatiago.com/) and [Sebastián Vallejo Vera, Ph.D.](https://www.svallejovera.com/)\
-[[Course website]](https://tiagoventura.github.io/tad_iesp_workshop/)
+:   **Advanced Text-as-Data.** IESP-UERJ Winter School (graduate). Deep learning, embeddings, transformers, and LLMs applied to political science. Instructors: [Tiago Ventura, Ph.D.](https://www.venturatiago.com/) and [Sebastián Vallejo Vera, Ph.D.](https://www.svallejovera.com/) [[Course website]](https://tiagoventura.github.io/tad_iesp_workshop/)
 
-### Quantitative Methods II [Fall 2024]{.date}
+2024.2
 
-FGV CPDOC (undergraduate). Data exploration, inference, and regression. Instructor: [Jairo Nicolau, Ph.D.](https://cpdoc.fgv.br/equipe/jaironicolau)
+:   **Quantitative Methods II.** FGV CPDOC (undergraduate). Data exploration, inference, and regression. Instructor: [Jairo Nicolau, Ph.D.](https://cpdoc.fgv.br/equipe/jaironicolau)
 
-### Introduction to R [Fall 2020]{.date}
+2020.2
 
-FGV CPDOC (graduate). Programming for social science applications. Instructor: [Jimmy Medeiros, Ph.D.](https://cpdoc.fgv.br/equipe/JimmyMedeiros)
+:   **Introduction to R.** FGV CPDOC (graduate). Programming for social science applications. Instructor: [Jimmy Medeiros, Ph.D.](https://cpdoc.fgv.br/equipe/JimmyMedeiros)
 
-# \faBriefcase\ Professional Experience
+# Professional Experience
 
 ### [AtlasIntel](https://atlasintel.org/) [06/2025 -- Present]{.date}
 
-*Data Scientist* working on calibrating survey samples, political analysis, monitoring public opinion, and improving internal data pipelines.
+*Data Scientist*
+
+Calibrating survey samples, political analysis, monitoring public opinion, and improving internal data pipelines.
 
 *Selected delivery.* Cut the retrieval of Brazilian demographic data for sample weighting from a manual, multi-hour task to a single scripted call.
 
-### Independent Consultant in Data Science and Research [07/2024 -- 06/2025]{.date}
+### Independent consulting [07/2024 -- 06/2025]{.date}
+
+*Independent Consultant in Data Science and Research*
 
 Data and AI work, research support, and training for clients across sectors.
 
@@ -250,36 +265,70 @@ Data and AI work, research support, and training for clients across sectors.
 
 ### [Instituto Rio21](https://rio21.org/) [04/2022 -- 06/2025]{.date}
 
-*Data Scientist and Researcher.* Ran and analyzed surveys on public policy and urban security.
+*Data Scientist and Researcher*
+
+Ran and analyzed surveys on public policy and urban security.
 
 *Selected deliveries.* (i) An automated Python pipeline that cut report production from days to about an hour; (ii) interactive and programmatic maps for corporate audiences.
 
 ### Strategic Planning Superintendence, FGV [10/2024 -- 12/2024]{.date}
 
-*Data Science Intern.* Brought generative AI into decision-making pipelines and prepared presentations for FGV's executive leadership.
+*Data Science Intern*
+
+Brought generative AI into decision-making pipelines and prepared presentations for FGV's executive leadership.
 
 *Selected delivery.* A RAG pipeline for querying FGV researchers' publications in natural language.
 
 ### [Visagio](https://visagio.com/en/home/) [01/2024 -- 06/2024]{.date}
 
-*Part-time Data Scientist.* Optimization models, SQL pipelines, and Power BI dashboards for the pricing and operations teams.
+*Part-time Data Scientist*
+
+Optimization models, SQL pipelines, and Power BI dashboards for the pricing and operations teams.
 
 *Selected deliveries.* (i) A sample-size calculator for A/B tests in complex non-experimental settings; (ii) dashboards for expense auditing; (iii) analytics for allocating discount campaigns.
 
-# \faTools\ Skills and Languages
+# Skills and Languages
 
-*Programming.* R, Python, SQL, Git, LaTeX and Quarto.
+Programming
 
-*Methods.* Causal inference; survey sampling, weighting, and post-stratification; text-as-data and NLP; machine learning and deep learning.
+:   R, Python, SQL, Git, LaTeX and Quarto.
 
-*Tools.* Streamlit, DuckDB, Power BI, AWS, LLM APIs and RAG pipelines (OpenAI, Groq, xAI, LlamaIndex, LangChain), Docling and DocTR for OCR.
+Methods
 
-*Languages.* Portuguese (native); English (fluent).
+:   Causal inference; survey sampling, weighting, and post-stratification; text-as-data and NLP; machine learning and deep learning.
 
-# \faAddressCard\ References
+Tools
 
-Fernando Meireles, Ph.D. — IESP-UERJ, M.A. advisor · `fernando.meireles@iesp.uerj.br`\
-Argelina Cheibub Figueiredo, Ph.D. — IESP-UERJ · `argelina@iesp.uerj.br`\
-Bruno Schaefer, Ph.D. — IESP-UERJ · `brunoschaefer@iesp.uerj.br`\
-Jaqueline Zulini, Ph.D. — FGV CPDOC, B.A. advisor · `jaqueline.zulini@fgv.br`\
-Luiz Max Carvalho, Ph.D. — FGV EMAp, B.Sc. advisor · `luiz.fagundes@fgv.br`
+:   Streamlit, DuckDB, Power BI, AWS, LLM APIs and RAG pipelines (OpenAI, Groq, xAI, LlamaIndex, LangChain), Docling and DocTR for OCR.
+
+Languages
+
+:   Portuguese (native); English (fluent).
+
+# References
+
+::: references
+**Fernando Meireles, Ph.D.**\
+IESP-UERJ · M.A. advisor\
+`fernando.meireles@iesp.uerj.br`
+
+**Argelina Cheibub Figueiredo, Ph.D.**\
+IESP-UERJ\
+`argelina@iesp.uerj.br`
+
+**Bruno Schaefer, Ph.D.**\
+IESP-UERJ\
+`brunoschaefer@iesp.uerj.br`
+
+**Fabiano Santos, Ph.D.**\
+IESP-UERJ\
+`fsantos@iesp.uerj.br`
+
+**Jaqueline Zulini, Ph.D.**\
+FGV CPDOC · B.A. advisor\
+`jaqueline.zulini@fgv.br`
+
+**Luiz Max Carvalho, Ph.D.**\
+FGV EMAp · B.Sc. advisor\
+`luiz.fagundes@fgv.br`
+:::

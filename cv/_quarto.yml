@@ -5,22 +5,29 @@ project:
 filters:
   - _cv.lua
 
+# Formato do PDF. Todo o desenho está em _preamble.tex; aqui ficam só o
+# motor (LuaLaTeX, por causa das fontes OpenType em fonts/), a página e as
+# margens.
+#
+# A margem esquerda (37 mm) guarda uma coluna pendente de 22 mm para datas,
+# números de seção e rótulos; o bloco de texto (157 mm) fica com uma margem
+# reta. colorlinks: false = links na cor do texto em volta (hidelinks),
+# ainda clicáveis no PDF.
 format:
   pdf:
     documentclass: article
     papersize: a4
     fontsize: 10pt
-    fontfamily: tgpagella
     geometry:
-      - left=2cm
-      - right=2cm
-      - top=2cm
-      - bottom=2.2cm
+      - left=37mm
+      - right=16mm
+      - top=14mm
+      - bottom=18mm
+      - footskip=9mm
+      - headheight=0pt
+      - headsep=0pt
     include-in-header: _preamble.tex
-    colorlinks: true
-    linkcolor: cvlink
-    urlcolor: cvlink
-    citecolor: cvlink
+    colorlinks: false
     number-sections: false
-    pdf-engine: pdflatex
+    pdf-engine: lualatex
     keep-tex: false

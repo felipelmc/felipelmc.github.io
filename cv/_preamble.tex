@@ -1,123 +1,479 @@
 % ---------------------------------------------------------------------------
-% Formatação do currículo. Nada aqui precisa ser tocado no dia a dia: para
-% editar o conteúdo, mexa apenas em cv-en.qmd e cv-pt.qmd.
+% Formatação do currículo ("Plenário impresso"). Para editar o conteúdo,
+% mexa só em cv-en.qmd e cv-pt.qmd; o README explica as convenções.
+%
+% A versão impressa do site: Geist no texto, Newsreader itálico em todo
+% itálico do markdown (títulos, periódicos, cargos), Geist Mono nas datas,
+% rótulos e números de seção. À esquerda do texto há uma coluna pendente de
+% 22 mm (a coluna de datas do site) com datas, números e rótulos; o texto
+% fica com uma única margem reta.
+%
+% Três coisas são lidas do próprio markdown, sem marcação nova:
+%   - um parágrafo que é só `*Cargo*` logo depois do título da entrada é o
+%     cargo, em itálico cinza na linha de baixo;
+%   - um parágrafo que abre com `*Rótulo.*` (Selected delivery., Summer
+%     schools and training.) sai menor e em cinza;
+%   - `[[DOI]](url)` nunca fica sozinho no começo de uma linha.
+%
+% O contrato com o filtro _cv.lua está no cabeçalho dele: \cvnextdate,
+% \cvres, \cvsep, \cvlang, \cvkicker e os ambientes cvposition, cvcontact,
+% cvinterests e cvreferences.
 % ---------------------------------------------------------------------------
 
-\usepackage{fontawesome5}
+\makeatletter
+
+\usepackage{fontspec}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{xcolor}
-\usepackage{array}
 \usepackage{needspace}
 \usepackage{etoolbox}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
-
-% Justificação com protrusão e expansão. Sem isso, as linhas longas e
-% justificadas do corpo abrem buracos visíveis. O Quarto já carrega o
-% microtype sem opções, então aqui só se ajusta a configuração.
+\usepackage{tikz}
 \usepackage{microtype}
-\microtypesetup{protrusion=true, expansion=true, tracking=true}
-\SetTracking{encoding=*, shape=sc}{40}   % versalete pede entreletra
 
-\definecolor{cvmuted}{gray}{0.42}
-\definecolor{cvrule}{gray}{0.60}
-\definecolor{cvlink}{HTML}{7A2E2E}       % vinho; o azul puro pinta demais a página
+% --- Fontes ------------------------------------------------------------------
+% Arquivos estáticos em fonts/ (OFL; licenças ao lado). O Quarto põe
+% Scale=MatchLowercase como padrão global; aqui toda fonte diz a sua escala.
+%
+% Geist corre grande: em 10pt nominais com Scale=0.95 ela sai com 9,5pt
+% reais e altura-x maior que a de uma serifada de 11pt. Todo tamanho fixo do
+% desenho usa \cvsize{<pt reais>}{<entrelinha>}, que compensa a escala: ao
+% mudar \cv@scale, mude os tamanhos abaixo na mesma proporção.
+%
+% Escala, entrelinha e espaços seguram o currículo em 4 páginas cheias
+% (en e pt). A pt-BR é a mais longa e a primeira a estourar.
+
+\defaultfontfeatures{Ligatures=TeX}
+\newcommand\cv@scale{0.95}
+\newcommand\cvsize[2]{\fontsize{\fpeval{#1/\cv@scale}}{#2}\selectfont}
+
+% Texto: Geist; itálico: Newsreader (8% maior, para a serifa não parecer
+% miúda ao lado da Geist); negrito-itálico só aparece em títulos.
+\setmainfont{Geist-Regular.otf}[
+  Path = fonts/,
+  Scale = \cv@scale,
+  BoldFont = Geist-SemiBold.otf,
+  ItalicFont = Newsreader16pt-Italic.ttf,
+  ItalicFeatures = {Scale = \fpeval{\cv@scale*1.08}},
+  BoldItalicFont = Newsreader16pt-SemiBoldItalic.ttf,
+  BoldItalicFeatures = {Scale = \fpeval{\cv@scale*1.08}},
+]
+\setsansfont{Geist-Regular.otf}[
+  Path = fonts/,
+  Scale = \cv@scale,
+  BoldFont = Geist-SemiBold.otf,
+  ItalicFont = Newsreader16pt-Italic.ttf,
+  ItalicFeatures = {Scale = \fpeval{\cv@scale*1.08}},
+  BoldItalicFont = Newsreader16pt-SemiBoldItalic.ttf,
+  BoldItalicFeatures = {Scale = \fpeval{\cv@scale*1.08}},
+]
+% Código no meio do texto (`mape_municipios`, e-mails): um pouco menor que o
+% texto, porque a mono é larga.
+\setmonofont{GeistMono-Regular.otf}[
+  Path = fonts/,
+  Scale = \fpeval{\cv@scale*0.89},
+  BoldFont = GeistMono-Medium.otf,
+]
+% Mono dos rótulos (datas, números, \cvres): tamanho real via \cvsize.
+\newfontfamily\cvmono{GeistMono-Regular.otf}[
+  Path = fonts/,
+  Scale = \cv@scale,
+  BoldFont = GeistMono-Medium.otf,
+]
+\newfontfamily\cvmonocaps{GeistMono-Regular.otf}[
+  Path = fonts/,
+  Scale = \cv@scale,
+  LetterSpace = 6,
+]
+\newfontfamily\cvdisplay{Geist-SemiBold.otf}[
+  Path = fonts/,
+  Scale = \cv@scale,
+  LetterSpace = -1.5,
+]
+
+% --- Cores -------------------------------------------------------------------
+% Neutros em cinza puro (a impressão sai em toner preto); o verde só nos
+% números de seção, marcadores, rótulos de recurso e na marca.
+
+\definecolor{cvink}{gray}{0.07}
+\definecolor{cvink2}{gray}{0.29}
+\definecolor{cvink3}{gray}{0.40}
+\definecolor{cvhair}{gray}{0.79}
+\definecolor{cvaccent}{HTML}{0A6F69}
+\definecolor{cvd1}{HTML}{5AC0AB}
+\definecolor{cvd2}{HTML}{2E9D8E}
+\definecolor{cvd3}{HTML}{187970}
+\definecolor{cvd4}{HTML}{0E5652}
+\definecolor{cvd5}{HTML}{053535}
+
+\AtBeginDocument{\color{cvink}}
+
+% --- Medidas -----------------------------------------------------------------
+
+\newlength\cvcol    \setlength\cvcol{22mm}   % coluna pendente, com o respiro
+\newlength\cvgap    \setlength\cvgap{3mm}    % respiro até o texto
+\newlength\cvcolw   \setlength\cvcolw{\dimexpr\cvcol-\cvgap\relax}
 
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{0.062cm}
+\setlength{\parskip}{1.8pt}
+\linespread{1} % 9,5pt reais sobre 12pt
 
-% --- Nome + linha de contato ------------------------------------------------
-
-\newcommand{\cvname}[1]{%
-  \begingroup
-  \centering
-  {\huge\scshape #1\par}%
-  \nointerlineskip
-  \vspace{5pt}%
-  {\color{cvrule}\hrule height 0.6pt}%
-  \endgroup
-  \vspace{9pt}%
-}
-
-% O título do YAML (title:) vira o cabeçalho do currículo.
-\makeatletter
-\renewcommand{\maketitle}{\cvname{\@title}}
-\makeatother
-
-% Linha de contato: o bloco ::: contact do .qmd cai aqui.
-\newenvironment{cvcontact}
-  {\par\centering\small}
-  {\par\vspace{0.22cm}}
-
-\newcommand{\cvsep}{\hspace{0.45em}\textperiodcentered\hspace{0.45em}}
-
-% --- Seções (\section) ------------------------------------------------------
-
-\titleformat{\section}
-  [hang]
-  {\normalfont\large\scshape}
-  {}{0pt}
-  {}
-  [\vspace{-0.30cm}{\color{cvrule}\rule{\textwidth}{0.4pt}}]
-\titlespacing*{\section}{0pt}{0.36cm}{0.10cm}
-
-% --- Subseções (\subsection): agrupamentos dentro de uma seção --------------
-% Versalete no corpo do texto: separa da entrada por forma, não por tamanho.
-
-\titleformat{\subsection}
-  [hang]
-  {\normalfont\normalsize\scshape}
-  {}{0pt}
-  {}
-\titlespacing*{\subsection}{0pt}{0.30cm}{0.05cm}
-
-% --- Entradas (\subsubsection): cada emprego, curso, publicação etc. --------
-
-\titleformat{\subsubsection}
-  [hang]
-  {\normalsize\bfseries}
-  {}{0pt}
-  {}
-\titlespacing*{\subsubsection}{0pt}{0.30cm}{0.04cm}
-
-% Nada de título solto no pé da página.
-\pretocmd{\section}{\Needspace*{7\baselineskip}}{}{}
-\pretocmd{\subsection}{\Needspace*{5\baselineskip}}{}{}
-\pretocmd{\subsubsection}{\Needspace*{4\baselineskip}}{}{}
+\AtBeginDocument{\frenchspacing}   % um espaço só depois do ponto
 \widowpenalty=10000
 \clubpenalty=10000
+\raggedbottom
 
-% --- Data da entrada --------------------------------------------------------
-% Gerada pelo filtro _cv.lua a partir de [texto]{.date} num título de entrada.
+% Justificado: a 157 mm e 9,5pt a linha tem ~95 caracteres, medida em que o
+% bloco justificado com expansão fica regular.
+\microtypesetup{protrusion=true, expansion=true}
+\emergencystretch=1.2em
 
-\newcommand{\cvdate}[1]{%
-  \hfill{\normalfont\small\itshape\color{cvmuted}#1}%
+% Nomes próprios não se partem.
+\AtBeginDocument{%
+  \hyphenation{Lamarca Felipe Marques Esteves Meireles Fernando Figueiredo
+    Argelina Cheibub Schaefer Bruno Fabiano Santos Zulini Jaqueline Carvalho
+    Luiz Fagundes Zucco Szwako Teston Ventura Vallejo Nicolau Medeiros
+    Pestana Cavalcanti Paixão Borges Calabró Berti Sanches Balbi Duarte
+    AtlasIntel Visagio Artplan CEBRAP}}
+
+% --- A marca -----------------------------------------------------------------
+% A grade 3×3 do site: tom = linha + coluna + 1, do mais claro no alto à
+% esquerda ao mais escuro embaixo à direita. #1 = altura total (dos pontos).
+
+\newcommand\cvmark[1]{%
+  \begingroup
+  \pgfmathsetlengthmacro\cv@u{#1/22.6}%
+  \begin{tikzpicture}[x=\cv@u, y=\cv@u, baseline=0pt]
+    \foreach \r in {0,1,2}{%
+      \foreach \c in {0,1,2}{%
+        \pgfmathtruncatemacro\cv@bin{\r+\c+1}%
+        \fill[cvd\cv@bin] (3.3+8*\c, 3.3+8*2-8*\r) circle (3.3);
+      }%
+    }%
+  \end{tikzpicture}%
+  \endgroup
 }
 
-% --- Listas -----------------------------------------------------------------
+% --- Coluna pendente ---------------------------------------------------------
+% \cv@incol{...}: põe o conteúdo na coluna à esquerda, sem ocupar espaço nem
+% empurrar linhas (a caixa não tem altura nem profundidade). A primeira linha
+% fica na linha de base de quem chamou; as seguintes descem pela coluna.
 
-\setlist[itemize]{leftmargin=1.1em, topsep=0.06cm, itemsep=0.04cm, parsep=0pt}
-\setlist[itemize,1]{label=\textendash}
+\newcommand\cv@labelfont{\cvmono\cvsize{7.9}{9.8pt}\color{cvink3}}
+\newcommand\cv@incol[1]{%
+  \leavevmode\llap{\smash{\parbox[t]{\cvcolw}{\raggedright
+    \hyphenpenalty=10000 \exhyphenpenalty=10000
+    \leavevmode\cv@labelfont #1}}\hspace{\cvgap}}%
+}
 
-% Rótulo das listas de data (apresentações, bolsas, prêmios) numa coluna fixa,
-% senão cada item começa num recuo diferente.
+% Data da entrada. O filtro escreve \cvnextdate{Mar 2025 -- Present} antes
+% do título; o título a imprime e a apaga. O travessão fica colado ao
+% primeiro mês, para a data quebrar em "Mar 2025 –" / "Present".
+\ExplSyntaxOn
+\tl_new:N \g__cv_date_tl
+\NewDocumentCommand\cvnextdate{m}{
+  \tl_gset:Nn \g__cv_date_tl {#1}
+  \tl_greplace_all:Nnn \g__cv_date_tl { ~ -- } { \nobreakspace -- }
+}
+\NewDocumentCommand\cv@putdate{}{
+  \tl_if_empty:NF \g__cv_date_tl
+    { \cv@incol { \tl_use:N \g__cv_date_tl } \tl_gclear:N \g__cv_date_tl }
+}
+\ExplSyntaxOff
+
+% --- Seções (\section): 01 Título ────────────── -----------------------------
+
+% Texto para extração (ATS, copiar e colar): o número da coluna sai junto do
+% título, "01 Education", e não solto antes das datas.
+\newcommand\cv@actual[2]{%
+  \pdfstringdef\cv@at{#1}%
+  \pdfextension literal page {/Span <</ActualText (\cv@at)>> BDC}%
+  #2%
+  \pdfextension literal page {EMC}}
+\newcounter{cvsec}
+\newcommand\cv@sectitle[1]{%
+  \edef\cv@num{\two@digits{\value{cvsec}}}%
+  \llap{\makebox[\cvcol][l]{\cvmono\cvsize{8.4}{11pt}\color{cvaccent}%
+    \cv@actual{}{\cv@num}}}%
+  \cv@actual{\cv@num\space#1}{#1}\hspace{0.65em}%
+  {\color{cvhair}\leaders\hrule height 3.85pt depth -3.45pt\hfill}%
+}
+\titleformat{\section}[block]
+  {\normalfont\cvsize{13.6}{16.5pt}\bfseries\color{cvink}\hyphenpenalty=10000}
+  {}{0pt}{\cv@sectitle}
+\titlespacing*{\section}{0pt}{11.5pt}{4.5pt}
+
+% --- Subseções (\subsection): rótulo mono, como os grupos do site ------------
+
+\titleformat{\subsection}[block]
+  {\normalfont\cvmonocaps\cvsize{7.9}{10pt}\color{cvink3}}
+  {}{0pt}{\MakeUppercase}
+\titlespacing*{\subsection}{0pt}{7pt}{2.5pt}
+
+% --- Entradas (\subsubsection) ----------------------------------------------
+% Título em Geist SemiBold; a data (se houver) vai para a coluna, alinhada
+% com a primeira linha do título.
+
+\newlength\cv@hdw           % largura natural do último título de entrada
+\newcommand\cv@entryafter{1pt}
+\newif\ifcv@afterentry
+
+\newcommand\cv@entrytitle[1]{%
+  \cv@putdate
+  \sbox\z@{#1}\global\cv@hdw=\wd\z@
+  \unhbox\z@}
+\titleformat{\subsubsection}[block]
+  {\normalfont\cvsize{9.8}{12.6pt}\bfseries\color{cvink}\raggedright
+   \hyphenpenalty=10000}
+  {}{0pt}{\cv@entrytitle}
+  [\global\cv@afterentrytrue]
+\titlespacing*{\subsubsection}{0pt}{6.5pt}{\cv@entryafter}
+\AddToHook{para/begin}{\global\cv@afterentryfalse}
+
+% Cargo. Um parágrafo que é só um itálico (`*Researcher*`) logo depois do
+% título da entrada é o cargo: sai em linha própria, em itálico cinza.
+% Com \cv@roleinlinetrue ele sobe para a linha do título
+% ("NECON, IESP-UERJ · Researcher") quando cabe — economiza uma linha por
+% entrada, se um dia faltar página.
+\newif\ifcv@roleinline \cv@roleinlinefalse
+\newcommand\cv@rolesep{\hspace{0.55em}{\color{cvink3}\textperiodcentered}\hspace{0.55em}}
+\NewCommandCopy\cv@emph\emph
+\DeclareRobustCommand\emph[1]{%
+  \let\cv@emph@next\cv@emph
+  \ifvmode
+    \ifcv@afterentry
+      \let\cv@emph@next\cv@role@try
+    \else\ifcv@leadins
+      \cv@if@period{#1}{\let\cv@emph@next\cv@leadin}{}%
+    \fi\fi
+  \fi
+  \cv@emph@next{#1}}
+% Parágrafo que abre com um rótulo em itálico terminado em ponto
+% (`*Selected delivery.* …`, `*Summer schools and training.* …`): corpo um
+% pouco menor e em cinza, como as entregas no site.
+\newif\ifcv@leadins \cv@leadinstrue
+\ExplSyntaxOn
+\cs_new:Npn \cv@if@period #1
+  { \str_if_eq:eeTF { \str_item:nn {#1} {-1} } { . } }
+\ExplSyntaxOff
+\newcommand\cv@leadin[1]{%
+  \cvsize{9}{11.6pt}\color{cvink2}%
+  \AddToHookNext{para/after}{\normalsize\color{cvink}}%
+  \cv@emph{#1}}
+
+\newcommand\cv@role@try[1]{\def\cv@roletext{#1}\futurelet\cv@next\cv@role@b}
+\def\cv@role@b{%
+  \ifx\cv@next\@sptoken\let\cv@hadsp\space\else\let\cv@hadsp\@empty\fi
+  \@ifnextchar\par\cv@role@place{\cv@emph{\cv@roletext}\cv@hadsp}}
+\newcommand\cv@role@place{%
+  \sbox\tw@{\cv@rolesep{\itshape\color{cvink2}\cv@roletext}}%
+  \ifcv@roleinline
+    \ifdim\dimexpr\cv@hdw+\wd\tw@\relax<\linewidth
+      \nobreak
+      \vskip-\dimexpr\cv@entryafter+\baselineskip\relax
+      \noindent\hspace*{\cv@hdw}\usebox\tw@\par
+      \nobreak
+    \else
+      \cv@role@ownline
+    \fi
+  \else
+    \cv@role@ownline
+  \fi}
+\newcommand\cv@role@ownline{%
+  \leavevmode{\color{cvink2}\cv@emph{\cv@roletext}}}
+
+% Nada de título solto no pé da página. Cada título pede espaço para si e
+% para o que vem logo abaixo (seção → grupo → entrada → primeiras linhas);
+% um título que vem colado a outro não pede de novo (\if@nobreak), senão o
+% pedido dele empurraria só a entrada e deixaria o título de cima órfão.
+\newcommand\cv@needspace[1]{\if@nobreak\else\Needspace*{#1\baselineskip}\fi}
+\pretocmd{\section}{\cv@needspace{8}\stepcounter{cvsec}}{}{}
+\pretocmd{\subsection}{\cv@needspace{6}}{}{}
+\pretocmd{\subsubsection}{\cv@needspace{4}}{}{}
+
+% --- Listas ------------------------------------------------------------------
+% Marcadores: pontinhos verdes pendurados no respiro, o texto não recua.
+% Listas de descrição (datas, competências): o rótulo vai para a coluna.
+
+\newcommand\cvbullet{%
+  \tikz[baseline=0pt]\fill[cvaccent] (0,0.265em) circle (1.05pt);}
+
+\setlist[itemize]{
+  leftmargin=0pt, itemindent=0pt, labelwidth=0pt, labelsep=0pt,
+  align=right, label={\cvbullet\hspace{0.62em}},
+  topsep=2.4pt, itemsep=2pt, parsep=0pt, partopsep=0pt}
+
 \setlist[description]{
-  style=multiline, leftmargin=6.4em, labelwidth=5.8em, labelsep=0.6em,
-  align=left, font=\normalfont\bfseries,
-  topsep=0.06cm, itemsep=0.07cm, parsep=0pt
+  leftmargin=0pt, itemindent=0pt, labelwidth=0pt, labelsep=0pt,
+  align=left, font=\normalfont, format=\cv@incol,
+  topsep=2.4pt, itemsep=2.8pt, parsep=0pt, partopsep=0pt}
+
+% --- Pequenos elementos do filtro -------------------------------------------
+
+% Código como `mape_municipios` pode quebrar depois do sublinhado (com
+% relutância), para não abrir buracos na linha justificada.
+\DeclareRobustCommand\_{\textunderscore\penalty300\hskip\z@skip}
+
+% \cvsep: ponto médio entre itens. Antes de um link o .qmd escreve `\cvsep{}`
+% (senão o Pandoc lê `[texto]` como argumento opcional do comando cru); as
+% chaves vazias e o espaço depois delas são engolidos aqui.
+\newcommand\cv@sepwd{0.5em}
+\newcommand\cv@sepmark{\unskip\hspace{\cv@sepwd}{\color{cvink3}\textperiodcentered}\hspace{\cv@sepwd}}
+\newcommand\cvsep{\cv@sepmark\@ifnextchar\bgroup\cv@sep@eat\ignorespaces}
+\def\cv@sep@eat#1{\ignorespaces}
+
+% \cvres{DOI}: rótulo de recurso em mono, caixa-alta, no verde. O rótulo não
+% se parte e não fica sozinho no começo de uma linha: o link que o contém
+% gruda na palavra anterior.
+\ExplSyntaxOn
+\NewDocumentCommand\cvres{m}
+  {
+    \group_begin:
+    \cvmonocaps\cvsize{7.6}{12pt}\color{cvaccent}
+    \tl_set:Nn \l_tmpa_tl {#1}
+    \tl_replace_all:Nnn \l_tmpa_tl { ~ } { \nobreakspace }
+    \exp_args:NV \MakeUppercase \l_tmpa_tl
+    \group_end:
+  }
+\ExplSyntaxOff
+\AtBeginDocument{%
+  \let\cv@linkurl\hyper@linkurl
+  \def\hyper@linkurl#1#2{\cv@beforeres{#1}\cv@linkurl{#1}{#2}}}
+\newcommand\cv@beforeres[1]{%
+  \in@{\cvres}{#1}%
+  \ifin@\ifhmode\directlua{cv_glue_resource()}\fi\fi}
+% Antes de um link de recurso: se vem depois de "texto ", o espaço não
+% quebra (o rótulo gruda na palavra); se vem depois de " · " (DOI · PDF),
+% pode quebrar depois do ponto, nunca antes dele.
+\directlua{
+  local GLUE, GLYPH = node.id("glue"), node.id("glyph")
+  local function nobreak_before(head, n)
+    local pen = node.new("penalty")
+    pen.penalty = 10000
+    node.insert_before(head, n, pen)
+  end
+  function cv_glue_resource()
+    local nest = tex.nest[tex.nest.ptr]
+    local t = nest.tail
+    if not t or t.id \string~= GLUE then return end
+    local p = t.prev
+    if p and p.id == GLYPH and p.char == 0xB7 then
+      local g = p.prev
+      if g and g.id == GLUE then nobreak_before(nest.head, g) end
+    else
+      nobreak_before(nest.head, t)
+    end
+  end
 }
 
-% --- Tabelas (referências) --------------------------------------------------
+% --- Cabeçalho ---------------------------------------------------------------
 
-\usepackage{booktabs}
-\renewcommand{\arraystretch}{1.15}
-\AtBeginEnvironment{longtable}{\small}
+\renewcommand\maketitle{%
+  \begingroup
+  \parskip=0pt
+  \noindent{\cvmonocaps\cvsize{7.9}{10pt}\color{cvink3}%
+    \MakeUppercase{\cvkicker}}\par
+  \vspace{10pt}%
+  \noindent\llap{\makebox[\cvcol][l]{\cvmark{16.3pt}}}%
+  {\cvdisplay\cvsize{23}{26pt}\color{cvink}\@title}\par
+  \endgroup
+  \vspace{4pt}%
+}
 
-% --- Rodapé -----------------------------------------------------------------
+\newenvironment{cvposition}
+  {\par\cvsize{11.2}{14.3pt}\color{cvink2}}
+  {\par\vspace{6pt}}
+
+\newenvironment{cvcontact}
+  {\par\raggedright\cvsize{8.6}{12pt}\color{cvink}\setlength\parskip{0pt}%
+   \def\cv@sepwd{0.42em}}
+  {\par}
+
+\newenvironment{cvinterests}
+  {\par\vspace{8pt}\color{cvink2}\cv@leadinsfalse}
+  {\par\vspace{1pt}}
+
+% --- Referências: grade de duas colunas --------------------------------------
+% Cada parágrafo do bloco (nome \\ instituição \\ e-mail) vira uma célula;
+% duas por linha, na ordem do .qmd, em colunas de largura fixa. A grade é uma
+% caixa só: não se parte entre páginas.
+
+\newlength\cv@refgap \setlength\cv@refgap{6mm}
+\newlength\cv@refw
+\newcommand\cv@refcell[1]{%
+  \begin{tabular}[t]{@{}l@{}}#1\end{tabular}}
+\ExplSyntaxOn
+\seq_new:N \l__cv_refs_seq
+\tl_new:N \l__cv_refrows_tl
+\NewDocumentEnvironment{cvreferences}{+b}
+  {
+    \seq_set_split:Nnn \l__cv_refs_seq { \par } {#1}
+    \seq_remove_all:Nn \l__cv_refs_seq { }
+    \tl_clear:N \l__cv_refrows_tl
+    \int_step_inline:nnnn { 1 } { 2 } { \seq_count:N \l__cv_refs_seq }
+      {
+        \tl_put_right:Ne \l__cv_refrows_tl
+          {
+            \exp_not:N \cv@refcell { \exp_not:e { \seq_item:Nn \l__cv_refs_seq {##1} } } &
+            \exp_not:N \cv@refcell { \exp_not:e { \seq_item:Nn \l__cv_refs_seq { ##1 + 1 } } }
+            \exp_not:N \\ \exp_not:N \noalign { \exp_not:N \vskip 7pt }
+          }
+      }
+    \par
+    \group_begin:
+    \renewcommand\texttt[1]{{\cvmono\cvsize{8}{11.7pt}\color{cvink3}##1}}
+    \renewcommand\textbf[1]{{\cvsize{9.5}{11.7pt}\bfseries\color{cvink}##1}}
+    \cvsize{9}{11.7pt}\color{cvink2}
+    \renewcommand\arraystretch{1}
+    \setlength\tabcolsep{0pt}
+    \setlength\cv@refw{\dimexpr(\linewidth-\cv@refgap)/2\relax}
+    \noindent
+    \begin{tabular}{@{}p{\cv@refw}@{\hspace{\cv@refgap}}p{\cv@refw}@{}}
+      \tl_use:N \l__cv_refrows_tl
+    \end{tabular}
+    \par
+    \group_end:
+  }
+  { }
+\ExplSyntaxOff
+
+% --- Rodapé ------------------------------------------------------------------
 
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\fancyfoot[L]{\footnotesize\color{cvmuted}Felipe Lamarca}
-\fancyfoot[R]{\footnotesize\color{cvmuted}\thepage\ / \pageref{LastPage}}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhfoffset[L]{\cvcol}
+\fancyfoot[L]{%
+  \cvmark{5.4pt}\hspace{5pt}%
+  {\cvmono\cvsize{7.3}{9pt}\color{cvink3}Felipe Lamarca\cvsep felipelamarca.com}}
+\fancyfoot[R]{%
+  {\cvmono\cvsize{7.3}{9pt}\color{cvink3}\thepage\ / \pageref*{LastPage}}}
+
+% --- Metadados do PDF --------------------------------------------------------
+
+\AtBeginDocument{%
+  \def\cv@pt{pt}%
+  \ifx\cvlang\cv@pt
+    \hypersetup{
+      pdftitle={Currículo — Felipe Lamarca},
+      pdfsubject={Currículo acadêmico},
+      pdfkeywords={ciência política, ciência social computacional,
+        comportamento legislativo, text-as-data, inferência causal,
+        métodos de survey, IESP-UERJ}}
+  \else
+    \hypersetup{
+      pdftitle={Curriculum vitae — Felipe Lamarca},
+      pdfsubject={Academic curriculum vitae},
+      pdfkeywords={political science, computational social science,
+        legislative behavior, text-as-data, causal inference,
+        survey methods, IESP-UERJ}}
+  \fi
+  \hypersetup{
+    pdfauthor={Felipe Marques Esteves Lamarca},
+    pdfcreator={Quarto, LuaLaTeX}}%
+}
+
+\makeatother
