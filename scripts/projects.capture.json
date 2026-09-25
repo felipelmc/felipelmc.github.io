@@ -1,25 +1,14 @@
 [
   {
     "slug": "relicaria",
-    "url": "https://relicaria.streamlit.app/",
-    "kind": "streamlit",
-    "clickBefore": [
-      "button[role=\"tab\"]:has-text(\"Instruções\")"
+    "url": "https://relicariastudio.com.br/",
+    "kind": "static",
+    "waitFor": "text=Comece por um documento",
+    "hide": [
+      "div.border-b.bg-accent\\/10"
     ],
     "delayMs": 1000,
-    "note": "Without an uploaded document every result tab is empty; the Instruções tab is the one-click view that fills the frame."
-  },
-  {
-    "slug": "mape-dashboard",
-    "url": "https://mape-municipios-dashboard.streamlit.app/",
-    "kind": "streamlit",
-    "clickBefore": [
-      "button[role=\"tab\"]:has-text(\"Painel (Brasil)\")"
-    ],
-    "waitFor": "[data-testid=\"stPlotlyChart\"] .js-plotly-plot >> visible=true",
-    "scrollTo": "h2:has-text(\"Painel de indicadores\") >> visible=true",
-    "delayMs": 4000,
-    "note": "Brasil panel: KPI row plus the municipal choropleth."
+    "note": "RelicárIA Studio, the reading view before any document is loaded. The first-visit strip asking for a Groq API key is hidden."
   },
   {
     "slug": "acre-deforestation",
@@ -63,15 +52,8 @@
     "slug": "dhbb-parentescos",
     "url": "https://felipelamarca.com/DHBB-Parentescos/",
     "kind": "static",
-    "clickBefore": [
-      ".block:has-text(\"pelo menos 3\")"
-    ],
-    "waitFor": "#mynetwork canvas",
-    "waitForHidden": "#loadingBar",
-    "seed": 1,
-    "clock": "2026-01-01T12:00:00Z",
-    "timeoutMs": 300000,
-    "delayMs": 3000,
-    "note": "The hub is two buttons; one click opens the kinship graph of people linked to at least 3 others. vis-network needs ~1 min to stabilise (the loading bar hides when done); seed + clock pin its random initial layout (vis seeds from Math.random and Date) so reruns give near-identical images."
+    "waitFor": "#grafo-heroi g",
+    "delayMs": 1500,
+    "note": "Version 2 landing: headline plus the Vargas/Amaral Peixoto family graph. The graph is laid out on a fixed generation grid, so no seed or clock is needed."
   }
 ]

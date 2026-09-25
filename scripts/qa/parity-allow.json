@@ -2,7 +2,10 @@
   "hrefs": {
     "https://www.linkedin.com/in/felipe-lamarca/?locale=en_US": "LinkedIn link is now an icon with an aria-label, and its URL dropped ?locale=en_US",
     "https://github.com/felipelmc/BoticarIA": "BoticárIA removed from the site at Felipe’s request (2026-09-24)",
-    "https://boticaria.streamlit.app/": "BoticárIA removed from the site at Felipe’s request (2026-09-24)"
+    "https://boticaria.streamlit.app/": "BoticárIA removed from the site at Felipe’s request (2026-09-24)",
+    "https://github.com/mape-iesp/MAPEmunicipios-Dashboard": "mape_municipios_dashboard dropped from the site; mape_municipios stays as the one MAPE project, at Felipe’s request (2026-09-25). It stays in the PDF CV",
+    "https://mape-municipios-dashboard.streamlit.app/": "mape_municipios_dashboard dropped from the site; mape_municipios stays as the one MAPE project, at Felipe’s request (2026-09-25). It stays in the PDF CV",
+    "https://relicaria.streamlit.app/": "RelicárIA moved from Streamlit to RelicárIA Studio, https://relicariastudio.com.br/ (2026-09-25)"
   },
   "strings": {
     "linkedin": "LinkedIn link is now an icon with an aria-label, and its URL dropped ?locale=en_US",
@@ -39,6 +42,7 @@
     "afiliações": "Undated Affiliations cards replaced by dated research and professional experience from the PDF CV (2026-09-25)",
     "cientista de dados @ atlasintel": "Undated Affiliations cards replaced by dated research and professional experience from the PDF CV (2026-09-25)",
     "pesquisador @ iesp-uerj": "Undated Affiliations cards replaced by dated research and professional experience from the PDF CV (2026-09-25)",
-    "nome": "References table replaced by blocks listing the 5 references of the PDF CV"
+    "nome": "References table replaced by blocks listing the 5 references of the PDF CV",
+    "mape_municipios_dashboard": "mape_municipios_dashboard dropped from the site; mape_municipios stays as the one MAPE project, at Felipe’s request (2026-09-25). It stays in the PDF CV"
   }
 }

@@ -108,7 +108,7 @@ Orientadora: [Jaqueline Porto Zulini, Ph.D.](https://cpdoc.fgv.br/equipe/jaqueli
 - **`mape_municipios_dashboard`** (2025). Com Fernando Meireles. Dashboard sobre uma das bases mais completas de informações sobre municípios brasileiros, desenvolvido para o [MAPE](https://mape.org.br/). [[Código-fonte]](https://github.com/mape-iesp/MAPEmunicipios-Dashboard) · [[Link de acesso]](https://mape-municipios-dashboard.streamlit.app/)
 - **Indicadores LGBTQIA+ no Rio de Janeiro** (2026). Com Tomás Paixão Borges. Dashboard sobre a infraestrutura do `mape_municipios` para o mandato da deputada estadual Dani Balbi, reunindo dados da MUNIC, da PNS e do Censo SUAS sobre a população LGBTQIA+ do estado, incluindo a distribuição territorial dos equipamentos de assistência social.
 - **`Quarto-Model-IESP`** (2026). Com Matheus Cavalcanti Pestana. Template em Quarto para dissertações e teses do IESP-UERJ. [[Código-fonte]](https://github.com/felipelmc/Quarto-Model-IESP) · [[DOI]](https://doi.org/10.5281/zenodo.20819431)
-- **RelicárIA** (2025). Com Danielle Sanches de Almeida. Plataforma que combina IA e análise de dados para extrair e visualizar informações de documentos históricos. [[Código-fonte]](https://github.com/felipelmc/RelicarIA) · [[Link de acesso]](https://relicaria.streamlit.app/) · [[DOI]](https://doi.org/10.5281/zenodo.15536372)
+- **RelicárIA** (2025). Com Danielle Sanches de Almeida. Plataforma que combina IA e análise de dados para extrair e visualizar informações de documentos históricos. [[Código-fonte]](https://github.com/felipelmc/RelicarIA) · [[Link de acesso]](https://relicariastudio.com.br/) · [[DOI]](https://doi.org/10.5281/zenodo.15536372)
 
 # Apresentações em Congressos
 

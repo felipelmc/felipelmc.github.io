@@ -21,9 +21,9 @@ export const projects: Project[] = [
       'pt-br': 'Plataforma que combina IA e análise de dados para extrair e visualizar informações de documentos históricos.',
     },
     collaborators: [danielle],
-    stack: ['Python', 'Streamlit', 'OCR', 'NER', 'LLM'],
+    stack: ['React', 'OCR', 'NER', 'LLM'],
     links: [
-      { kind: 'live', href: 'https://relicaria.streamlit.app/' },
+      { kind: 'live', href: 'https://relicariastudio.com.br/' },
       { kind: 'repo', href: 'https://github.com/felipelmc/RelicarIA' },
       { kind: 'doi', href: 'https://doi.org/10.5281/zenodo.15536372' },
     ],
@@ -34,12 +34,11 @@ export const projects: Project[] = [
       },
       href: 'http://dhawards.org/dhawards2025/results/',
     },
-    coldStart: true,
     shot: {
-      domain: 'relicaria.streamlit.app',
+      domain: 'relicariastudio.com.br',
       alt: {
-        en: 'RelicárIA web app interface',
-        'pt-br': 'Interface do aplicativo RelicárIA',
+        en: 'RelicárIA Studio interface',
+        'pt-br': 'Interface do RelicárIA Studio',
       },
     },
     citation: {
@@ -54,43 +53,16 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: 'mape-dashboard',
-    title: 'mape_municipios_dashboard',
-    code: true,
-    year: 2025,
-    tier: 'featured',
-    home: 2,
-    categories: ['apps', 'data'],
-    tagline: {
-      en: 'A dashboard to interact with one of the most complete databases with information on Brazilian municipalities, collected by MAPE.',
-      'pt-br': 'Dashboard para interagir com uma das bases de dados mais completas sobre municípios brasileiros, coletada pelo MAPE.',
-    },
-    context: 'MAPE · IESP-UERJ',
-    collaborators: [{ name: 'Fernando Meireles', affiliation: 'IESP-UERJ' }],
-    stack: ['Python', 'Streamlit'],
-    links: [
-      { kind: 'live', href: 'https://mape-municipios-dashboard.streamlit.app/' },
-      { kind: 'repo', href: 'https://github.com/mape-iesp/MAPEmunicipios-Dashboard' },
-    ],
-    coldStart: true,
-    shot: {
-      domain: 'mape-municipios-dashboard.streamlit.app',
-      alt: {
-        en: 'The mape_municipios dashboard',
-        'pt-br': 'O dashboard do mape_municipios',
-      },
-    },
-  },
-  {
     slug: 'mapemunicipios',
     title: 'mape_municipios',
     code: true,
     year: 2025,
     tier: 'featured',
+    home: 2,
     categories: ['data'],
     tagline: {
-      en: 'One of the most complete databases on Brazilian municipalities, organized in 17 thematic dimensions and documented as an R package. I build and maintain it and its public interface.',
-      'pt-br': 'Um dos mais completos bancos de dados sobre os municípios brasileiros, organizado em 17 dimensões temáticas e documentado como pacote R. Construo e mantenho a base e sua interface pública.',
+      en: 'One of the most complete databases on Brazilian municipalities, organized in 17 thematic dimensions and documented as an R package. Made in partnership with researchers at MAPE, with whom I build and maintain the database and its public interface.',
+      'pt-br': 'Um dos mais completos bancos de dados sobre os municípios brasileiros, organizado em 17 dimensões temáticas e documentado como pacote R. Feito em parceria com pesquisadores do MAPE, com quem construo e mantenho a base e sua interface pública.',
     },
     context: 'MAPE · IESP-UERJ',
     stats: [
@@ -140,17 +112,24 @@ export const projects: Project[] = [
   {
     slug: 'dhbb-parentescos',
     title: 'DHBB-Parentescos',
-    year: 2024,
+    year: 2026,
     tier: 'featured',
     home: 4,
-    categories: ['viz', 'data'],
+    categories: ['ai', 'viz', 'data'],
     tagline: {
-      en: 'Extracts kinship ties between the people profiled in the Dicionário Histórico-Biográfico Brasileiro (DHBB) and visualizes them as interactive graphs.',
-      'pt-br': 'Extração de parentescos entre os verbetados do Dicionário Histórico-Biográfico Brasileiro (DHBB) e visualização em grafos interativos.',
+      en: 'Who is related to whom in Brazilian politics. Language models read the entries of the Dicionário Histórico-Biográfico Brasileiro (DHBB) and record each family tie they state, and every link in the network cites the passage it came from.',
+      'pt-br': 'Quem é parente de quem na política brasileira. Modelos de linguagem leem os verbetes do Dicionário Histórico-Biográfico Brasileiro (DHBB) e registram cada laço de família que eles afirmam, e cada ligação da rede traz o trecho do verbete de onde saiu.',
     },
     context: { en: 'FGV CPDOC · funded by CAPES', 'pt-br': 'FGV CPDOC · financiamento CAPES' },
-    stack: ['Python', 'Graphs'],
-    links: [{ kind: 'site', href: 'https://felipelamarca.com/DHBB-Parentescos/' }],
+    stats: [
+      { value: { en: '7,000', 'pt-br': '7.000' }, label: { en: 'entries read', 'pt-br': 'verbetes lidos' } },
+      { value: { en: '22,568', 'pt-br': '22.568' }, label: { en: 'kinship ties', 'pt-br': 'laços de parentesco' } },
+    ],
+    stack: ['Python', 'LLM', 'Graphs'],
+    links: [
+      { kind: 'site', href: 'https://felipelamarca.com/DHBB-Parentescos/' },
+      { kind: 'paper', href: 'https://felipelamarca.com/DHBB-Parentescos/artigo/' },
+    ],
     shot: {
       domain: 'felipelamarca.com/DHBB-Parentescos',
       alt: {
@@ -182,13 +161,11 @@ export const projects: Project[] = [
       },
     },
   },
-
-  // ── Standard ──────────────────────────────────────────────────────────────
   {
     slug: 'abcp-2026',
     title: 'Programação ABCP 2026',
     year: 2026,
-    tier: 'standard',
+    tier: 'featured',
     categories: ['apps'],
     tagline: {
       en: 'The programme of the 15th ABCP Meeting (Belém, 2026) in real time: what’s on right now, a personal agenda, a calendar, and search across every paper and abstract. What you mark stays on your device.',
@@ -211,6 +188,8 @@ export const projects: Project[] = [
       },
     },
   },
+
+  // ── Standard ──────────────────────────────────────────────────────────────
   {
     slug: 'quarto-model-iesp',
     title: 'Quarto-Model-IESP',
