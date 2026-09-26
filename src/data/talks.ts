@@ -43,6 +43,7 @@ export const talks: Talk[] = [
     titleLang: 'pt-BR',
     publicationId: 'quantos-votos',
     links: [
+      { kind: 'pdf', href: 'https://felipelamarca.com/Presentations/GT-Jornada-Discente-IESP-2025/jornada-discente-2025.pdf' },
       { kind: 'files', href: 'https://github.com/felipelmc/Presentations/tree/main/GT-Jornada-Discente-IESP-2025' },
     ],
   },
@@ -56,7 +57,7 @@ export const talks: Talk[] = [
       'Fatores explicativos do apoio ou rejeição à criação de uma política municipal de renda básica: modelando a percepção dos cariocas',
     titleLang: 'pt-BR',
     links: [
-      { kind: 'pdf', href: 'https://github.com/felipelmc/Presentations/blob/main/BIEN-2025/bien2025.pdf' },
+      { kind: 'pdf', href: 'https://felipelamarca.com/Presentations/BIEN-2025/bien2025.pdf' },
     ],
   },
 ];

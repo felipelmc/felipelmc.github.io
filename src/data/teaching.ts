@@ -24,8 +24,9 @@ export const courses: Course[] = [
       'pt-br': 'Do chat ao agente: instalação do Claude Code, CLAUDE.md e skills, plan mode e gerenciamento de contexto, com demonstrações ao vivo de uma busca de literatura pela API da OpenAlex e de dados de votações pela API da Câmara dos Deputados.',
     },
     links: [
+      { kind: 'slides', href: 'https://felipelamarca.com/Presentations/AgentesIA-FMMAPE-2026/slides.html' },
+      { kind: 'pdf', href: 'https://felipelamarca.com/Presentations/AgentesIA-FMMAPE-2026/slides.pdf' },
       { kind: 'files', href: 'https://github.com/felipelmc/Presentations/tree/main/AgentesIA-FMMAPE-2026' },
-      { kind: 'pdf', href: 'https://github.com/felipelmc/Presentations/blob/main/AgentesIA-FMMAPE-2026/slides.pdf' },
     ],
   },
   {
@@ -39,6 +40,8 @@ export const courses: Course[] = [
     term: { en: 'June 2026', 'pt-br': 'Junho 2026' },
     date: '2026-06-01',
     links: [
+      { kind: 'slides', href: 'https://felipelamarca.com/Presentations/Intro-to-ClaudeCode-LABIIA-2026/dia1.html', label: { en: 'Slides, day 1', 'pt-br': 'Slides, dia 1' } },
+      { kind: 'slides', href: 'https://felipelamarca.com/Presentations/Intro-to-ClaudeCode-LABIIA-2026/dia2.html', label: { en: 'Slides, day 2', 'pt-br': 'Slides, dia 2' } },
       { kind: 'files', href: 'https://github.com/felipelmc/Presentations/tree/main/Intro-to-ClaudeCode-LABIIA-2026' },
     ],
   },
@@ -53,6 +56,8 @@ export const courses: Course[] = [
     term: { en: 'May 2026', 'pt-br': 'Maio 2026' },
     date: '2026-05-01',
     links: [
+      { kind: 'slides', href: 'https://felipelamarca.com/Presentations/Intro-to-ClaudeCode-CERES-2026/slides.html' },
+      { kind: 'pdf', href: 'https://felipelamarca.com/Presentations/Intro-to-ClaudeCode-CERES-2026/slides.pdf' },
       { kind: 'files', href: 'https://github.com/felipelmc/Presentations/tree/main/Intro-to-ClaudeCode-CERES-2026' },
     ],
   },
@@ -72,6 +77,7 @@ export const courses: Course[] = [
       'pt-br': 'Fundamentos de aprendizado profundo: o que é e como treinar uma rede neural, e text-as-data com deep learning.',
     },
     links: [
+      { kind: 'pdf', href: 'https://felipelamarca.com/Presentations/Minicurso-DL-Jornada-Discente-IESP-2025/minicurso-dl-jornada-discente-2025.pdf' },
       { kind: 'files', href: 'https://github.com/felipelmc/Presentations/tree/main/Minicurso-DL-Jornada-Discente-IESP-2025' },
     ],
   },
@@ -91,6 +97,7 @@ export const courses: Course[] = [
       'pt-br': 'Fundamentos de aprendizado de máquina, com foco em reconhecer, treinar, interpretar e avaliar modelos preditivos simples aplicados à pesquisa social.',
     },
     links: [
+      { kind: 'pdf', href: 'https://felipelamarca.com/Presentations/ML-FMMAPE-2025/ml-fmmape.pdf' },
       { kind: 'files', href: 'https://github.com/felipelmc/Presentations/tree/main/ML-FMMAPE-2025' },
     ],
   },
@@ -102,7 +109,7 @@ export const courses: Course[] = [
     term: { en: 'July 2025', 'pt-br': 'Julho 2025' },
     date: '2025-07-01',
     links: [
-      { kind: 'pdf', href: 'https://github.com/felipelmc/Presentations/blob/main/SICSS-2025/sicss2025.pdf' },
+      { kind: 'pdf', href: 'https://felipelamarca.com/Presentations/SICSS-2025/sicss2025.pdf' },
     ],
   },
   {

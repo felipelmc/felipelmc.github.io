@@ -48,11 +48,11 @@ const titleLang = (c: Course) => (typeof c.title === 'string' && c.titleLang && 
 
     <div class="min-w-0 space-y-20">
       {[
-        { id: 'short-courses', n: '01', title: t('teaching.short'), items: shortCourses },
-        { id: 'assistance', n: '02', title: t('teaching.assistance'), items: assistance },
+        { id: 'short-courses', n: '01', title: t('teaching.short'), items: shortCourses, href: 'https://felipelamarca.com/Presentations/' },
+        { id: 'assistance', n: '02', title: t('teaching.assistance'), items: assistance, href: undefined },
       ].map((group) => (
         <section aria-labelledby={group.id}>
-          <SectionHeader gutter number={group.n} id={group.id} title={group.title} />
+          <SectionHeader gutter number={group.n} id={group.id} title={group.title} href={group.href} hrefLabel={group.href ? t('common.allSlides') : undefined} />
           <ol class="divide-y divide-line">
             {group.items.map((c) => (
               <li id={c.id} class="grid scroll-mt-24 gap-x-6 gap-y-1 py-5 first:pt-0 sm:grid-cols-[7rem_1fr]">

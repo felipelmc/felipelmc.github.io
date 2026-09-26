@@ -56,7 +56,7 @@ const num = (id: string) => String(sections.findIndex((s) => s.id === id) + 1).p
       ))}
 
       <section aria-labelledby="talks">
-        <SectionHeader gutter number={num('talks')} id="talks" title={t('publications.presentations')} />
+        <SectionHeader gutter number={num('talks')} id="talks" title={t('publications.presentations')} href="https://felipelamarca.com/Presentations/" hrefLabel={t('common.allSlides')} />
         <ol class="divide-y divide-line">
           {talks.map((talk) => (
             <li class="grid gap-x-6 gap-y-1 py-5 first:pt-0 sm:grid-cols-[7rem_minmax(0,1fr)]">
