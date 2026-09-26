@@ -18,6 +18,10 @@ export const talks: Talk[] = [
     title: 'Quantos votos meu partido vai fazer? Um tutorial de validação preditiva com dados abertos (2016-2024)',
     titleLang: 'pt-BR',
     publicationId: 'quantos-votos',
+    links: [
+      { kind: 'slides', href: 'https://felipelamarca.com/Presentations/Quantos-Votos-ANPOCS-2026/slides.html' },
+      { kind: 'pdf', href: 'https://felipelamarca.com/Presentations/Quantos-Votos-ANPOCS-2026/slides.pdf' },
+    ],
   },
   {
     date: '2026-08-01',
