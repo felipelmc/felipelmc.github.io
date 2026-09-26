@@ -28,7 +28,10 @@ export default defineConfig({
     '/pt-br/materials': '/pt-br/teaching/#notes',
     '/pt-br/learning': '/pt-br/teaching/#notes',
     '/pt-br/research': '/pt-br/publications/',
-    '/pt-br/work': '/pt-br/cv/'
+    '/pt-br/work': '/pt-br/cv/',
+    // The Goplerud (2023) slides moved into the Survey Research notes. This only
+    // takes effect once the old Apresentacao-Survey repo (and its Pages site) is gone.
+    '/Apresentacao-Survey': '/Survey-Research/trabalhos/apresentacao/'
   },
   i18n: {
     defaultLocale: 'en',
