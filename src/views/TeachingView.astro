@@ -76,7 +76,7 @@ const titleLang = (c: Course) => (typeof c.title === 'string' && c.titleLang && 
 
       <section aria-labelledby="notes-title" id="notes" class="scroll-mt-24">
         <SectionHeader gutter number="03" id="notes-title" title={t('materials.notes')} />
-        <p class="-mt-3 mb-8 max-w-prose text-sm text-ink-3 sm:pl-[8.5rem]">{t('teaching.notesIntro')}</p>
+        <p class="-mt-3 mb-8 max-w-prose text-sm text-ink-3 sm:pl-[8.5rem]" set:html={t('teaching.notesIntro')} />
         <div class="space-y-10">
           {notesByLevel.map((g) => (
             <div>
