@@ -1,5 +1,13 @@
 [
   {
+    "slug": "mapa-da-ciencia",
+    "url": "https://felipelamarca.com/mapa-da-ciencia/",
+    "kind": "static",
+    "waitFor": "#ceu-canvas",
+    "delayMs": 1500,
+    "note": "Project site opening: headline plus the sky of the pilot’s articles. With reduced motion the sky is drawn complete (2025) instead of lighting up year by year; the layout has no randomness."
+  },
+  {
     "slug": "relicaria",
     "url": "https://relicariastudio.com.br/",
     "kind": "static",

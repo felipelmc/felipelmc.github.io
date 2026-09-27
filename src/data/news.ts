@@ -18,6 +18,15 @@ export const news: NewsItem[] = [
     href: '/publications',
   },
   {
+    date: '2026-09-27',
+    label: { en: 'Sep 2026', 'pt-br': 'set 2026' },
+    text: {
+      en: 'Released mapa-da-ciencia 1.0, an observatory of the scientific literature built on local language models. Its pilot maps 4,275 political science articles from SciELO Brasil, 2010–2025.',
+      'pt-br': 'Lancei o mapa-da-ciencia 1.0, observatório da literatura científica com modelos de linguagem locais. O piloto mapeia 4.275 artigos de ciência política do SciELO Brasil, de 2010 a 2025.',
+    },
+    href: '/projects',
+  },
+  {
     date: '2026-09-14',
     label: { en: 'Sep 2026', 'pt-br': 'set 2026' },
     text: {

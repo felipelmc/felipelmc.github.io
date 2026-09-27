@@ -10,11 +10,57 @@ const danielle = { name: 'Danielle Sanches de Almeida', affiliation: 'FGV ECMI' 
 export const projects: Project[] = [
   // ── Featured ──────────────────────────────────────────────────────────────
   {
+    slug: 'mapa-da-ciencia',
+    title: 'mapa-da-ciencia',
+    code: true,
+    year: 2026,
+    tier: 'featured',
+    home: 1,
+    categories: ['ai', 'software', 'viz'],
+    tagline: {
+      en: 'A literature observatory built on local language models: what the literature is about, how research is done and where it is produced. The models run on your own computer through Ollama, so no text leaves your machine.',
+      'pt-br': 'Observatório da literatura científica com modelos de linguagem locais: sobre o que se escreve, como se pesquisa e onde se produz. Os modelos rodam no seu computador, via Ollama, e nenhum texto sai da sua máquina.',
+    },
+    descriptionHtml: {
+      en: 'Collects articles from SciELO and OpenAlex, maps topics over time with embeddings, classifies each abstract against a codebook you write (quoting the passage behind each answer, and validated against blind human coding), and counts production by state, country and institution. Runs from the command line, from Python or from a local web panel, and publishes as a static site. The pilot covers ten Brazilian political science journals, 2010–2025. Successor to SciELO-Summarizer (SICSS Brasil 2024).',
+      'pt-br': 'Coleta artigos do SciELO e do OpenAlex, mapeia os tópicos no tempo com embeddings, classifica cada resumo segundo um codebook seu (com o trecho que sustenta cada resposta e validação contra uma codificação humana cega) e conta a produção por UF, país e instituição. Roda pela linha de comando, pelo Python ou por um painel web local, e publica o resultado como site estático. O piloto cobre dez revistas brasileiras de ciência política, de 2010 a 2025. Sucessor do SciELO-Summarizer (SICSS Brasil 2024).',
+    },
+    stats: [
+      { value: { en: '4,275', 'pt-br': '4.275' }, label: { en: 'articles in the pilot', 'pt-br': 'artigos no piloto' } },
+      { value: '57', label: { en: 'topics', 'pt-br': 'tópicos' } },
+    ],
+    stack: ['Python', 'Ollama', 'FastAPI', 'Svelte'],
+    links: [
+      { kind: 'site', href: 'https://felipelamarca.com/mapa-da-ciencia/' },
+      { kind: 'live', href: 'https://felipelamarca.com/mapa-da-ciencia/demo/', label: 'Demo' },
+      { kind: 'repo', href: 'https://github.com/felipelmc/mapa-da-ciencia' },
+      { kind: 'doi', href: 'https://doi.org/10.5281/zenodo.22998585' },
+    ],
+    shot: {
+      domain: 'felipelamarca.com/mapa-da-ciencia',
+      alt: {
+        en: 'The mapa-da-ciencia site: the pilot’s articles drawn as a sky of topics',
+        'pt-br': 'O site do mapa-da-ciencia: os artigos do piloto desenhados como um céu de tópicos',
+      },
+    },
+    citation: {
+      key: 'mapa-da-ciencia',
+      bibtex: `@software{lamarca_mapa_da_ciencia,
+  author    = {Lamarca, Felipe},
+  title     = {mapa-da-ciencia: observatório da literatura científica com modelos de linguagem locais},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22998585},
+  url       = {https://doi.org/10.5281/zenodo.22998585}
+}`,
+    },
+  },
+  {
     slug: 'relicaria',
     title: 'RelicárIA',
     year: 2025,
     tier: 'featured',
-    home: 1,
+    home: 2,
     categories: ['ai', 'software'],
     tagline: {
       en: 'A platform that combines AI and data analysis to extract and visualize information from historical documents.',
@@ -58,7 +104,7 @@ export const projects: Project[] = [
     code: true,
     year: 2025,
     tier: 'featured',
-    home: 2,
+    home: 3,
     categories: ['data'],
     tagline: {
       en: 'One of the most complete databases on Brazilian municipalities, organized in 17 thematic dimensions and documented as an R package. Made in partnership with researchers at MAPE, with whom I build and maintain the database and its public interface.',
@@ -87,7 +133,6 @@ export const projects: Project[] = [
     title: { en: 'Deforestation monitor, Acre', 'pt-br': 'Monitor do desmatamento no Acre' },
     year: 2025,
     tier: 'featured',
-    home: 3,
     categories: ['apps', 'data', 'viz'],
     tagline: {
       en: 'A preliminary version of the RESA project’s public monitoring platform, covering deforestation in Acre.',
@@ -161,11 +206,13 @@ export const projects: Project[] = [
       },
     },
   },
+
+  // ── Standard ──────────────────────────────────────────────────────────────
   {
     slug: 'abcp-2026',
     title: 'Programação ABCP 2026',
     year: 2026,
-    tier: 'featured',
+    tier: 'standard',
     categories: ['apps'],
     tagline: {
       en: 'The programme of the 15th ABCP Meeting (Belém, 2026) in real time: what’s on right now, a personal agenda, a calendar, and search across every paper and abstract. What you mark stays on your device.',
@@ -188,8 +235,6 @@ export const projects: Project[] = [
       },
     },
   },
-
-  // ── Standard ──────────────────────────────────────────────────────────────
   {
     slug: 'quarto-model-iesp',
     title: 'Quarto-Model-IESP',

@@ -105,6 +105,7 @@ Advisor: [Jaqueline Porto Zulini, Ph.D.](https://cpdoc.fgv.br/equipe/jaquelinezu
 
 # Software
 
+- **`mapa-da-ciencia`** (2026). A literature observatory built on local language models: topics over time, codebook-based classification of abstracts with blind validation, and the geography of research production. [[Source code]](https://github.com/felipelmc/mapa-da-ciencia) · [[Access link]](https://felipelamarca.com/mapa-da-ciencia/) · [[DOI]](https://doi.org/10.5281/zenodo.22998585)
 - **`mape_municipios_dashboard`** (2025). With Fernando Meireles. A dashboard over one of the most comprehensive databases on Brazilian municipalities, built for [MAPE](https://mape.org.br/). [[Source code]](https://github.com/mape-iesp/MAPEmunicipios-Dashboard) · [[Access link]](https://mape-municipios-dashboard.streamlit.app/)
 - **LGBTQIA+ indicators in Rio de Janeiro** (2026). With Tomás Paixão Borges. A dashboard on the `mape_municipios` infrastructure for the office of state deputy Dani Balbi, bringing together MUNIC, PNS, and Censo SUAS data on the LGBTQIA+ population of the state, including the territorial distribution of social assistance facilities.
 - **`Quarto-Model-IESP`** (2026). With Matheus Cavalcanti Pestana. A Quarto template for IESP-UERJ dissertations and theses. [[Source code]](https://github.com/felipelmc/Quarto-Model-IESP) · [[DOI]](https://doi.org/10.5281/zenodo.20819431)

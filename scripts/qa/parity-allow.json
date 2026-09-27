@@ -5,7 +5,9 @@
     "https://boticaria.streamlit.app/": "BoticárIA removed from the site at Felipe’s request (2026-09-24)",
     "https://github.com/mape-iesp/MAPEmunicipios-Dashboard": "mape_municipios_dashboard dropped from the site; mape_municipios stays as the one MAPE project, at Felipe’s request (2026-09-25). It stays in the PDF CV",
     "https://mape-municipios-dashboard.streamlit.app/": "mape_municipios_dashboard dropped from the site; mape_municipios stays as the one MAPE project, at Felipe’s request (2026-09-25). It stays in the PDF CV",
-    "https://relicaria.streamlit.app/": "RelicárIA moved from Streamlit to RelicárIA Studio, https://relicariastudio.com.br/ (2026-09-25)"
+    "https://relicaria.streamlit.app/": "RelicárIA moved from Streamlit to RelicárIA Studio, https://relicariastudio.com.br/ (2026-09-25)",
+    "https://github.com/felipelmc/Presentations/blob/main/BIEN-2025/bien2025.pdf": "Slides now link to the copies served at felipelamarca.com/Presentations/ instead of the GitHub blob (commit 5ce9905)",
+    "https://github.com/felipelmc/Presentations/blob/main/SICSS-2025/sicss2025.pdf": "Slides now link to the copies served at felipelamarca.com/Presentations/ instead of the GitHub blob (commit 5ce9905)"
   },
   "strings": {
     "linkedin": "LinkedIn link is now an icon with an aria-label, and its URL dropped ?locale=en_US",
