@@ -6,7 +6,6 @@ import type { Talk } from './types';
 export const talks: Talk[] = [
   {
     date: '2026-09-30',
-    upcoming: true,
     dateLabel: { en: 'Sept–Oct 2026', 'pt-br': 'Set–Out 2026' },
     event: { en: '50th ANPOCS Annual Meeting', 'pt-br': '50º Encontro Anual da ANPOCS' },
     eventUrl:
