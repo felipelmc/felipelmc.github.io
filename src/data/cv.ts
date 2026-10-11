@@ -338,7 +338,7 @@ export const cv: Cv = {
       },
     },
     {
-      when: '2024',
+      when: '2025',
       html: {
         en: "1st place admission to the Master's program in Political Science at IESP-UERJ.",
         'pt-br': '1º lugar no ingresso ao Mestrado em Ciência Política no IESP-UERJ.',
