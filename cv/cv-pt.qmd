@@ -38,6 +38,155 @@ Orientadora: [Jaqueline Porto Zulini, Ph.D.](https://cpdoc.fgv.br/equipe/jaqueli
 
 *Escolas de verão e formação.* Summer Institute in Computational Social Science ([SICSS](https://sicss.io/)), Rio de Janeiro, 2024; bootcamp [ML4Good](https://www.ml4good.org), 2024; escrita acadêmica de artigos quantitativos, IESP-UERJ, 2025; [Effective Altruism Global](https://www.effectivealtruism.org/ea-global), São Francisco, 2026 (financiamento integral).
 
+# Experiência em Pesquisa
+
+## Laboratórios, IESP-UERJ
+
+### [NECON](http://necon.iesp.uerj.br), IESP-UERJ [01/2026 -- Presente]{.date}
+
+*Pesquisador*
+
+Núcleo de Estudos sobre o Congresso, coordenado por Fabiano Santos. Trabalho nas bases de votações nominais e de produção legislativa do núcleo.
+
+*Entrega selecionada.* Nota técnica que aplica modelos espaciais de voto à disputa presidencial de 2026.
+
+### [DOXA](https://www.lab-doxa.org.br/), IESP-UERJ [05/2025 -- Presente]{.date}
+
+*Pesquisador*
+
+Laboratório de Estudos Eleitorais, de Comunicação Política e Opinião Pública, coordenado por Fernando Meireles e Argelina Cheibub Figueiredo. Trabalho no desenho e na análise dos surveys, incluindo ponderação e pós-estratificação.
+
+*Entrega selecionada.* Análise do survey do DOXA sobre como a população do estado do Rio de Janeiro se informa sobre política, hoje um texto para discussão do DOXA.
+
+### [MAPE](https://mape.org.br/), IESP-UERJ [04/2025 -- Presente]{.date}
+
+*Pesquisador*
+
+Laboratório de Monitoramento e Avaliação de Políticas e Eleições, coordenado por Fernando Meireles e Bruno Schaefer. Construo e mantenho a base `mape_municipios` e sua interface pública, e dou aulas na formação metodológica.
+
+*Entrega selecionada.* Aplicação em Streamlit que permite interagir com a `mape_municipios`, base que cobre 30 anos e 451 variáveis sobre municípios brasileiros.
+
+## Projetos financiados
+
+### Bolsa de pesquisa *Pensando o Direito*, MJSP [07/2026 -- Presente]{.date}
+
+*Pesquisador*
+
+Revisão sistemática das evidências sobre políticas de segurança pública para a Amazônia Legal, organizada em torno da ideia de entrada qualificada do Estado em territórios vulnerabilizados e seguindo o protocolo OQF (*O Que Funciona?*) do MAPE. São 12 políticas em quatro eixos (do policiamento de proximidade e das câmeras corporais à Patrulha Maria da Penha e ao Plano Juventude Viva) e mais de 300 trabalhos. Conduzo busca, triagem e extração de evidências, com triagem e extração assistidas por modelos de linguagem e conferidas pela equipe. Projeto coordenado por Djane Braz Duarte.
+
+*Entregas previstas.* (i) relatório técnico-analítico para o Ministério; (ii) artigo submetido a periódico qualificado; (iii) verbetes sobre as políticas revisadas no [Dicionário de Favelas Marielle Franco](https://wikifavelas.com.br).
+
+### Projeto RESA, UFAC, IESP-UERJ e IFAC [08/2025 -- Presente]{.date}
+
+*Coordenador de Métodos e Análise Quantitativa*
+
+Impactos socioeconômicos e ambientais da produção agroextrativista de base familiar em reservas extrativistas e assentamentos do Acre, com foco no que o cooperativismo muda na renda das famílias e no desmatamento. O projeto foi um dos seis selecionados, entre 221 propostas, no edital de pesquisa em economia sustentável na Amazônia do Instituto Clima e Sociedade (iCS), com apoio do Bezos Earth Fund. Coordeno a frente quantitativa (dados primários e secundários, indicadores, plataforma de monitoramento e orientação de bolsistas em métodos). Coordenação geral de Luci Maria Teston (UFAC).
+
+*Entregas selecionadas.* (i) [Plataforma de monitoramento](https://mapa-do-desmatamento-acre.streamlit.app/) do desmatamento no Acre e na Resex Chico Mendes; (ii) relatório técnico sobre a pressão de desmatamento dentro e no entorno da Resex; (iii) [site de trabalho](https://felipelamarca.com/Legal-Acre/) com bases para toda a Amazônia Legal, cruzando desmatamento, cooperativismo, crédito rural e indicadores sociais.
+
+## Posições anteriores
+
+### Escola de Administração Pública e de Empresas, FGV EBAPE [02/2025 -- 04/2025]{.date}
+
+*Assistente de Pesquisa*
+
+Digitalização e sistematização de resultados eleitorais históricos com OCR e LLMs, com bases, código-fonte e relatório técnico como entregas. Supervisão do Prof. [Cesar Zucco, Ph.D.](https://professor.fgv.br/ebape/cesar-zucco)
+
+### [CEBRAP](https://cebrap.org.br/) [10/2024 -- 02/2025]{.date}
+
+*Consultor, Center for Critical Imagination*
+
+Apliquei OCR e LLMs aos Anuários Estatísticos Brasileiros, publicados como manuscritos, para sistematizar dados de assistência social desde o início do século XX, com bases, código-fonte e relatório técnico como entregas. Em colaboração com [José Szwako, Ph.D.](https://iesp.uerj.br/pesquisador/jose-eduardo-leon-szwako/)
+
+### Escola de Ciências Sociais, FGV CPDOC [06/2019 -- 09/2022]{.date}
+
+*Bolsista de Iniciação Científica*
+
+Com bolsa FGV/CNPq, examinei as relações Executivo-Legislativo no início do século XX com métodos qualitativos e quantitativos, em três relatórios técnicos e um artigo revisado por pares. Supervisão da Profa. [Jaqueline Porto Zulini, Ph.D.](https://cpdoc.fgv.br/equipe/jaquelinezulini)
+
+# Experiência Profissional
+
+### [AtlasIntel](https://atlasintel.org/) [06/2025 -- Presente]{.date}
+
+*Cientista de Dados*
+
+Calibragem amostral das pesquisas eleitorais da AtlasIntel, nacionais e subnacionais, na maior parte da América Latina, nos Estados Unidos (inclusive nas *midterms*), na Europa, em Israel e em Moçambique. No Brasil, participei da calibragem das pesquisas de todos os estados no ciclo de 2026. Desenho as pesquisas presenciais domiciliares probabilísticas da empresa (amostras em vários estágios, com sorteio proporcional ao tamanho e escolha do morador por grade de Kish). Introduzi experimentos *conjoint* nas pesquisas da empresa.
+
+### Consultoria independente [07/2024 -- Presente]{.date}
+
+*Consultor Independente em Ciência de Dados e Pesquisa*
+
+Dados, pesquisa e formação em métodos para organizações da sociedade civil, universidades e empresas.
+
+- [Fundação Roberto Marinho](https://www.frm.org.br/): ferramentas de dados para monitorar os programas educativos da fundação (Telecurso, co.liga, Canal Futura, Escola FRM e Aprendiz Legal), como o acompanhamento da aprendizagem e da formação de professores do Telecurso em Salvador, e treinamento da equipe em Python e machine learning.
+- [Plataforma CIPÓ](https://plataformacipo.org/): curso de machine learning para a equipe de pesquisa.
+- [GENI/UFF](https://geni.uff.br/): bases de dados, modelos estatísticos e ferramentas de dados para pesquisas sobre violência armada e controle territorial no estado do Rio de Janeiro.
+- [Artplan](https://artplan.com.br/): apliquei deep learning para segmentação em redes sociais.
+
+### [Instituto Rio21](https://rio21.org/) [04/2022 -- 06/2025]{.date}
+
+*Cientista de Dados e Pesquisador*
+
+Conduzi e analisei surveys sobre políticas públicas e segurança urbana, com um pipeline em Python que reduziu a produção de relatórios de dias para cerca de uma hora.
+
+### Superintendência de Planejamento Estratégico, FGV [10/2024 -- 12/2024]{.date}
+
+*Estagiário em Ciência de Dados*
+
+Pipeline RAG para consultar em linguagem natural as publicações dos pesquisadores da FGV.
+
+### [Visagio](https://visagio.com/en/home/) [01/2024 -- 06/2024]{.date}
+
+*Cientista de Dados em regime parcial*
+
+Modelos de otimização, pipelines em SQL e dashboards em Power BI para precificação e operações, além de uma calculadora de tamanho amostral para testes A/B.
+
+# Experiência Docente
+
+## Disciplinas e minicursos
+
+ago 2026
+
+:   **Agentes de IA para pesquisa em ciências sociais.** Minicurso na formação metodológica do [MAPE](https://mape.org.br/) (pós-graduação): uma introdução ao Claude Code. [[Arquivos]](https://github.com/felipelmc/Presentations/tree/main/AgentesIA-FMMAPE-2026)
+
+jun 2026
+
+:   **Introdução aos agentes de IA na pesquisa acadêmica.** Minicurso no [LABIIA](https://labiialab.com.br) sobre o uso de agentes de IA na pesquisa acadêmica. [[Arquivos]](https://github.com/felipelmc/Presentations/tree/main/Intro-to-ClaudeCode-LABIIA-2026)
+
+mai 2026
+
+:   **Agentes de IA para pesquisa em ciências sociais.** Minicurso no [CERES](https://ceres-iesp.uerj.br), IESP-UERJ: uma introdução ao Claude Code. [[Arquivos]](https://github.com/felipelmc/Presentations/tree/main/Intro-to-ClaudeCode-CERES-2026)
+
+2025.2
+
+:   **Machine Learning.** Formação metodológica do [MAPE](https://mape.org.br/) (pós-graduação). Reconhecer, treinar, interpretar e avaliar modelos preditivos simples aplicados à pesquisa social. [[Arquivos]](https://github.com/felipelmc/Presentations/tree/main/ML-FMMAPE-2025)
+
+2025.2
+
+:   **Deep Learning e Text-as-Data.** 10ª Jornada Discente dos Programas de Pós-Graduação do IESP-UERJ (pós-graduação). O que é uma rede neural e como treiná-la, e text-as-data com deep learning. [[Arquivos]](https://github.com/felipelmc/Presentations/tree/main/Minicurso-DL-Jornada-Discente-IESP-2025)
+
+2025.1
+
+:   **Análise Automatizada de Texto.** Curso intensivo sobre abordagens modernas de text-as-data em ciências sociais, no [Summer Institute in Computational Social Science (SICSS) Brasil](https://sicss.io/2025/fgv-ecmi-brazil/). [[PDF]](https://github.com/felipelmc/Presentations/blob/main/SICSS-2025/sicss2025.pdf)
+
+dez 2024
+
+:   **Python, análise de dados e machine learning para pesquisa.** Curso em quatro módulos para a equipe de pesquisa da [Plataforma CIPÓ](https://plataformacipo.org/), instituto sobre clima e governança internacional. Com Matheus Cavalcanti Pestana.
+
+## Monitoria
+
+2025.1
+
+:   **Advanced Text-as-Data.** IESP-UERJ Winter School (pós-graduação). Deep learning, embeddings, transformers e LLMs aplicados à ciência política. Instrutores: [Tiago Ventura, Ph.D.](https://www.venturatiago.com/) e [Sebastián Vallejo Vera, Ph.D.](https://www.svallejovera.com/) [[Site do curso]](https://tiagoventura.github.io/tad_iesp_workshop/)
+
+2024.2
+
+:   **Métodos Quantitativos II.** FGV CPDOC (graduação). Análise exploratória de dados, inferência e regressão. Instrutor: [Jairo Nicolau, Ph.D.](https://cpdoc.fgv.br/equipe/jaironicolau)
+
+2020.2
+
+:   **Introdução ao R.** FGV CPDOC (pós-graduação). Programação aplicada às ciências sociais. Instrutor: [Jimmy Medeiros, Ph.D.](https://cpdoc.fgv.br/equipe/JimmyMedeiros)
+
 # Publicações
 
 ## Artigos revisados por pares
@@ -129,155 +278,6 @@ nov 2025
 ago 2025
 
 :   [24º Congresso da Global Basic Income Network (BIEN)](https://bien2025.com.br/). *Fatores explicativos do apoio ou rejeição à criação de uma política municipal de renda básica: modelando a percepção dos cariocas*. [[PDF]](https://github.com/felipelmc/Presentations/blob/main/BIEN-2025/bien2025.pdf)
-
-# Experiência em Pesquisa
-
-## Laboratórios, IESP-UERJ
-
-### [NECON](http://necon.iesp.uerj.br), IESP-UERJ [01/2026 -- Presente]{.date}
-
-*Pesquisador*
-
-Núcleo de Estudos sobre o Congresso, coordenado por Fabiano Santos. Trabalho nas bases de votações nominais e de produção legislativa do núcleo.
-
-*Entrega selecionada.* Nota técnica que aplica modelos espaciais de voto à disputa presidencial de 2026.
-
-### [DOXA](https://www.lab-doxa.org.br/), IESP-UERJ [05/2025 -- Presente]{.date}
-
-*Pesquisador*
-
-Laboratório de Estudos Eleitorais, de Comunicação Política e Opinião Pública, coordenado por Fernando Meireles e Argelina Cheibub Figueiredo. Trabalho no desenho e na análise dos surveys, incluindo ponderação e pós-estratificação.
-
-*Entrega selecionada.* Análise do survey do DOXA sobre como a população do estado do Rio de Janeiro se informa sobre política, hoje um texto para discussão do DOXA.
-
-### [MAPE](https://mape.org.br/), IESP-UERJ [04/2025 -- Presente]{.date}
-
-*Pesquisador*
-
-Laboratório de Monitoramento e Avaliação de Políticas e Eleições, coordenado por Fernando Meireles e Bruno Schaefer. Construo e mantenho a base `mape_municipios` e sua interface pública, e dou aulas na formação metodológica.
-
-*Entrega selecionada.* Aplicação em Streamlit que permite interagir com a `mape_municipios`, base que cobre 30 anos e 451 variáveis sobre municípios brasileiros.
-
-## Projetos financiados
-
-### Bolsa de pesquisa *Pensando o Direito*, MJSP [07/2026 -- Presente]{.date}
-
-*Pesquisador*
-
-Revisão sistemática das evidências sobre políticas de segurança pública para a Amazônia Legal, organizada em torno da ideia de entrada qualificada do Estado em territórios vulnerabilizados e seguindo o protocolo OQF (*O Que Funciona?*) do MAPE. São 12 políticas em quatro eixos (do policiamento de proximidade e das câmeras corporais à Patrulha Maria da Penha e ao Plano Juventude Viva) e mais de 300 trabalhos. Conduzo busca, triagem e extração de evidências, com triagem e extração assistidas por modelos de linguagem e conferidas pela equipe. Projeto coordenado por Djane Braz Duarte.
-
-*Entregas previstas.* (i) relatório técnico-analítico para o Ministério; (ii) artigo submetido a periódico qualificado; (iii) verbetes sobre as políticas revisadas no [Dicionário de Favelas Marielle Franco](https://wikifavelas.com.br).
-
-### Projeto RESA, UFAC, IESP-UERJ e IFAC [08/2025 -- Presente]{.date}
-
-*Coordenador de Métodos e Análise Quantitativa*
-
-Impactos socioeconômicos e ambientais da produção agroextrativista de base familiar em reservas extrativistas e assentamentos do Acre, com foco no que o cooperativismo muda na renda das famílias e no desmatamento. O projeto foi um dos seis selecionados, entre 221 propostas, no edital de pesquisa em economia sustentável na Amazônia do Instituto Clima e Sociedade (iCS), com apoio do Bezos Earth Fund. Coordeno a frente quantitativa (dados primários e secundários, indicadores, plataforma de monitoramento e orientação de bolsistas em métodos). Coordenação geral de Luci Maria Teston (UFAC).
-
-*Entregas selecionadas.* (i) [Plataforma de monitoramento](https://mapa-do-desmatamento-acre.streamlit.app/) do desmatamento no Acre e na Resex Chico Mendes; (ii) relatório técnico sobre a pressão de desmatamento dentro e no entorno da Resex; (iii) [site de trabalho](https://felipelamarca.com/Legal-Acre/) com bases para toda a Amazônia Legal, cruzando desmatamento, cooperativismo, crédito rural e indicadores sociais.
-
-## Posições anteriores
-
-### Escola de Administração Pública e de Empresas, FGV EBAPE [02/2025 -- 04/2025]{.date}
-
-*Assistente de Pesquisa*
-
-Digitalização e sistematização de resultados eleitorais históricos com OCR e LLMs, com bases, código-fonte e relatório técnico como entregas. Supervisão do Prof. [Cesar Zucco, Ph.D.](https://professor.fgv.br/ebape/cesar-zucco)
-
-### [CEBRAP](https://cebrap.org.br/) [10/2024 -- 02/2025]{.date}
-
-*Consultor, Center for Critical Imagination*
-
-Apliquei OCR e LLMs aos Anuários Estatísticos Brasileiros, publicados como manuscritos, para sistematizar dados de assistência social desde o início do século XX, com bases, código-fonte e relatório técnico como entregas. Em colaboração com [José Szwako, Ph.D.](https://iesp.uerj.br/pesquisador/jose-eduardo-leon-szwako/)
-
-### Escola de Ciências Sociais, FGV CPDOC [06/2019 -- 09/2022]{.date}
-
-*Bolsista de Iniciação Científica*
-
-Com bolsa FGV/CNPq, examinei as relações Executivo-Legislativo no início do século XX com métodos qualitativos e quantitativos, em três relatórios técnicos e um artigo revisado por pares. Supervisão da Profa. [Jaqueline Porto Zulini, Ph.D.](https://cpdoc.fgv.br/equipe/jaquelinezulini)
-
-# Experiência Docente
-
-## Disciplinas e minicursos
-
-ago 2026
-
-:   **Agentes de IA para pesquisa em ciências sociais.** Minicurso na formação metodológica do [MAPE](https://mape.org.br/) (pós-graduação): uma introdução ao Claude Code. [[Arquivos]](https://github.com/felipelmc/Presentations/tree/main/AgentesIA-FMMAPE-2026)
-
-jun 2026
-
-:   **Introdução aos agentes de IA na pesquisa acadêmica.** Minicurso no [LABIIA](https://labiialab.com.br) sobre o uso de agentes de IA na pesquisa acadêmica. [[Arquivos]](https://github.com/felipelmc/Presentations/tree/main/Intro-to-ClaudeCode-LABIIA-2026)
-
-mai 2026
-
-:   **Agentes de IA para pesquisa em ciências sociais.** Minicurso no [CERES](https://ceres-iesp.uerj.br), IESP-UERJ: uma introdução ao Claude Code. [[Arquivos]](https://github.com/felipelmc/Presentations/tree/main/Intro-to-ClaudeCode-CERES-2026)
-
-2025.2
-
-:   **Machine Learning.** Formação metodológica do [MAPE](https://mape.org.br/) (pós-graduação). Reconhecer, treinar, interpretar e avaliar modelos preditivos simples aplicados à pesquisa social. [[Arquivos]](https://github.com/felipelmc/Presentations/tree/main/ML-FMMAPE-2025)
-
-2025.2
-
-:   **Deep Learning e Text-as-Data.** 10ª Jornada Discente dos Programas de Pós-Graduação do IESP-UERJ (pós-graduação). O que é uma rede neural e como treiná-la, e text-as-data com deep learning. [[Arquivos]](https://github.com/felipelmc/Presentations/tree/main/Minicurso-DL-Jornada-Discente-IESP-2025)
-
-2025.1
-
-:   **Análise Automatizada de Texto.** Curso intensivo sobre abordagens modernas de text-as-data em ciências sociais, no [Summer Institute in Computational Social Science (SICSS) Brasil](https://sicss.io/2025/fgv-ecmi-brazil/). [[PDF]](https://github.com/felipelmc/Presentations/blob/main/SICSS-2025/sicss2025.pdf)
-
-dez 2024
-
-:   **Python, análise de dados e machine learning para pesquisa.** Curso em quatro módulos para a equipe de pesquisa da [Plataforma CIPÓ](https://plataformacipo.org/), instituto sobre clima e governança internacional. Com Matheus Cavalcanti Pestana.
-
-## Monitoria
-
-2025.1
-
-:   **Advanced Text-as-Data.** IESP-UERJ Winter School (pós-graduação). Deep learning, embeddings, transformers e LLMs aplicados à ciência política. Instrutores: [Tiago Ventura, Ph.D.](https://www.venturatiago.com/) e [Sebastián Vallejo Vera, Ph.D.](https://www.svallejovera.com/) [[Site do curso]](https://tiagoventura.github.io/tad_iesp_workshop/)
-
-2024.2
-
-:   **Métodos Quantitativos II.** FGV CPDOC (graduação). Análise exploratória de dados, inferência e regressão. Instrutor: [Jairo Nicolau, Ph.D.](https://cpdoc.fgv.br/equipe/jaironicolau)
-
-2020.2
-
-:   **Introdução ao R.** FGV CPDOC (pós-graduação). Programação aplicada às ciências sociais. Instrutor: [Jimmy Medeiros, Ph.D.](https://cpdoc.fgv.br/equipe/JimmyMedeiros)
-
-# Experiência Profissional
-
-### [AtlasIntel](https://atlasintel.org/) [06/2025 -- Presente]{.date}
-
-*Cientista de Dados*
-
-Calibragem amostral das pesquisas eleitorais da AtlasIntel, nacionais e subnacionais, na maior parte da América Latina, nos Estados Unidos (inclusive nas *midterms*), na Europa, em Israel e em Moçambique. No Brasil, participei da calibragem das pesquisas de todos os estados no ciclo de 2026. Desenho as pesquisas presenciais domiciliares probabilísticas da empresa (amostras em vários estágios, com sorteio proporcional ao tamanho e escolha do morador por grade de Kish). Introduzi experimentos *conjoint* nas pesquisas da empresa.
-
-### Consultoria independente [07/2024 -- Presente]{.date}
-
-*Consultor Independente em Ciência de Dados e Pesquisa*
-
-Dados, pesquisa e formação em métodos para organizações da sociedade civil, universidades e empresas.
-
-- [Fundação Roberto Marinho](https://www.frm.org.br/): ferramentas de dados para monitorar os programas educativos da fundação (Telecurso, co.liga, Canal Futura, Escola FRM e Aprendiz Legal), como o acompanhamento da aprendizagem e da formação de professores do Telecurso em Salvador, e treinamento da equipe em Python e machine learning.
-- [Plataforma CIPÓ](https://plataformacipo.org/): curso de machine learning para a equipe de pesquisa.
-- [GENI/UFF](https://geni.uff.br/): bases de dados, modelos estatísticos e ferramentas de dados para pesquisas sobre violência armada e controle territorial no estado do Rio de Janeiro.
-- [Artplan](https://artplan.com.br/): apliquei deep learning para segmentação em redes sociais.
-
-### [Instituto Rio21](https://rio21.org/) [04/2022 -- 06/2025]{.date}
-
-*Cientista de Dados e Pesquisador*
-
-Conduzi e analisei surveys sobre políticas públicas e segurança urbana, com um pipeline em Python que reduziu a produção de relatórios de dias para cerca de uma hora.
-
-### Superintendência de Planejamento Estratégico, FGV [10/2024 -- 12/2024]{.date}
-
-*Estagiário em Ciência de Dados*
-
-Pipeline RAG para consultar em linguagem natural as publicações dos pesquisadores da FGV.
-
-### [Visagio](https://visagio.com/en/home/) [01/2024 -- 06/2024]{.date}
-
-*Cientista de Dados em regime parcial*
-
-Modelos de otimização, pipelines em SQL e dashboards em Power BI para precificação e operações, além de uma calculadora de tamanho amostral para testes A/B.
 
 # Competências e Idiomas
 

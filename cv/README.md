@@ -156,10 +156,13 @@ mexer no desenho, a ordem é: espaços entre seções e entradas, depois
 margens, depois o corpo (`\cv@scale` no `_preamble.tex`, hoje 9,5pt; não
 desça de 9,2pt).
 
-**Ordem das seções.** É a ordem que bancas de doutorado esperam: formação,
-publicações, bolsas e prêmios, software, apresentações, e só então as
-experiências. O que você produziu vem antes de onde você trabalhou. Se
-mexer nisso, mexa nos dois arquivos.
+**Ordem das seções.** No completo: formação, as três experiências (pesquisa,
+profissional, docente) e só então publicações, bolsas e prêmios, software,
+apresentações, competências e referências. Até outubro de 2026 a ordem era a
+inversa (o que você produziu antes de onde você trabalhou); mudou porque
+quem lê o CV, de institutos de pesquisa a bancas, procura primeiro onde e
+com o quê a pessoa trabalha. O resumido segue a mesma lógica, com a
+experiência antes da formação. Se mexer nisso, mexa nos dois idiomas.
 
 ## Conferências depois de renderizar
 
