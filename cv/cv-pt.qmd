@@ -42,6 +42,14 @@ Orientadora: [Jaqueline Porto Zulini, Ph.D.](https://cpdoc.fgv.br/equipe/jaqueli
 
 ## Laboratórios, IESP-UERJ
 
+### [DOXA](https://www.lab-doxa.org.br/), IESP-UERJ [02/2026 -- Presente]{.date}
+
+*Pesquisador*
+
+Laboratório de Estudos Eleitorais, de Comunicação Política e Opinião Pública, coordenado por Fernando Meireles e Argelina Cheibub Figueiredo. Trabalho no desenho e na análise dos surveys, incluindo ponderação e pós-estratificação.
+
+*Entrega selecionada.* Análise do survey do DOXA sobre como a população do estado do Rio de Janeiro se informa sobre política, hoje um texto para discussão do DOXA.
+
 ### [NECON](http://necon.iesp.uerj.br), IESP-UERJ [01/2026 -- Presente]{.date}
 
 *Pesquisador*
@@ -49,14 +57,6 @@ Orientadora: [Jaqueline Porto Zulini, Ph.D.](https://cpdoc.fgv.br/equipe/jaqueli
 Núcleo de Estudos sobre o Congresso, coordenado por Fabiano Santos. Trabalho nas bases de votações nominais e de produção legislativa do núcleo.
 
 *Entrega selecionada.* Nota técnica que aplica modelos espaciais de voto à disputa presidencial de 2026.
-
-### [DOXA](https://www.lab-doxa.org.br/), IESP-UERJ [05/2025 -- Presente]{.date}
-
-*Pesquisador*
-
-Laboratório de Estudos Eleitorais, de Comunicação Política e Opinião Pública, coordenado por Fernando Meireles e Argelina Cheibub Figueiredo. Trabalho no desenho e na análise dos surveys, incluindo ponderação e pós-estratificação.
-
-*Entrega selecionada.* Análise do survey do DOXA sobre como a população do estado do Rio de Janeiro se informa sobre política, hoje um texto para discussão do DOXA.
 
 ### [MAPE](https://mape.org.br/), IESP-UERJ [04/2025 -- Presente]{.date}
 

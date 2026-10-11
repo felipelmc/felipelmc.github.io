@@ -42,6 +42,14 @@ Advisor: [Jaqueline Porto Zulini, Ph.D.](https://cpdoc.fgv.br/equipe/jaquelinezu
 
 ## Laboratories, IESP-UERJ
 
+### [DOXA](https://www.lab-doxa.org.br/), IESP-UERJ [02/2026 -- Present]{.date}
+
+*Researcher*
+
+Laboratory of Electoral Studies, Political Communication and Public Opinion, coordinated by Fernando Meireles and Argelina Cheibub Figueiredo. I work on the design and analysis of the lab's public opinion surveys, including weighting and post-stratification.
+
+*Selected delivery.* Analysis of the DOXA survey on how the population of the state of Rio de Janeiro learns about politics, now a DOXA discussion paper.
+
 ### [NECON](http://necon.iesp.uerj.br), IESP-UERJ [01/2026 -- Present]{.date}
 
 *Researcher*
@@ -49,14 +57,6 @@ Advisor: [Jaqueline Porto Zulini, Ph.D.](https://cpdoc.fgv.br/equipe/jaquelinezu
 Center for Studies on Congress, coordinated by Fabiano Santos. I work on the lab's databases on roll-call votes and legislative production.
 
 *Selected delivery.* A technical note applying spatial models of voting to the 2026 presidential race.
-
-### [DOXA](https://www.lab-doxa.org.br/), IESP-UERJ [05/2025 -- Present]{.date}
-
-*Researcher*
-
-Laboratory of Electoral Studies, Political Communication and Public Opinion, coordinated by Fernando Meireles and Argelina Cheibub Figueiredo. I work on the design and analysis of the lab's public opinion surveys, including weighting and post-stratification.
-
-*Selected delivery.* Analysis of the DOXA survey on how the population of the state of Rio de Janeiro learns about politics, now a DOXA discussion paper.
 
 ### [MAPE](https://mape.org.br/), IESP-UERJ [04/2025 -- Present]{.date}
 

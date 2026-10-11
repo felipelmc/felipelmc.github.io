@@ -51,6 +51,22 @@ export const cv: Cv = {
       title: { en: 'Laboratories, IESP-UERJ', 'pt-br': 'Laboratórios, IESP-UERJ' },
       entries: [
         {
+          when: { en: '02/2026 – present', 'pt-br': '02/2026 – presente' },
+          titleHtml: `${a('https://www.lab-doxa.org.br/', 'DOXA')} (IESP-UERJ)`,
+          bodyHtml: {
+            en: "<em>Researcher</em> at the Laboratory of Electoral Studies, Political Communication and Public Opinion, coordinated by Fernando Meireles and Argelina Cheibub Figueiredo. I work on the design and analysis of the lab's public opinion surveys, including weighting and post-stratification.",
+            'pt-br': '<em>Pesquisador</em> no Laboratório de Estudos Eleitorais, de Comunicação Política e Opinião Pública, coordenado por Fernando Meireles e Argelina Cheibub Figueiredo. Trabalho no desenho e na análise dos surveys, incluindo ponderação e pós-estratificação.',
+          },
+          deliveryHtml: {
+            en: 'Analysis of the DOXA survey on how the population of the state of Rio de Janeiro learns about politics, now a DOXA discussion paper.',
+            'pt-br': 'Análise do survey do DOXA sobre como a população do estado do Rio de Janeiro se informa sobre política, hoje um texto para discussão do DOXA.',
+          },
+          shortHtml: {
+            en: "<em>Researcher.</em> Design and analysis of the lab's public opinion surveys, including weighting.",
+            'pt-br': '<em>Pesquisador.</em> Desenho e análise dos surveys do laboratório, incluindo ponderação.',
+          },
+        },
+        {
           when: { en: '01/2026 – present', 'pt-br': '01/2026 – presente' },
           titleHtml: `${a('http://necon.iesp.uerj.br', 'NECON')} (IESP-UERJ)`,
           bodyHtml: {
@@ -64,22 +80,6 @@ export const cv: Cv = {
           shortHtml: {
             en: '<em>Researcher.</em> Roll-call and legislative production databases at the Center for Studies on Congress.',
             'pt-br': '<em>Pesquisador.</em> Bases de votações nominais e de produção legislativa do Núcleo de Estudos sobre o Congresso.',
-          },
-        },
-        {
-          when: { en: '05/2025 – present', 'pt-br': '05/2025 – presente' },
-          titleHtml: `${a('https://www.lab-doxa.org.br/', 'DOXA')} (IESP-UERJ)`,
-          bodyHtml: {
-            en: "<em>Researcher</em> at the Laboratory of Electoral Studies, Political Communication and Public Opinion, coordinated by Fernando Meireles and Argelina Cheibub Figueiredo. I work on the design and analysis of the lab's public opinion surveys, including weighting and post-stratification.",
-            'pt-br': '<em>Pesquisador</em> no Laboratório de Estudos Eleitorais, de Comunicação Política e Opinião Pública, coordenado por Fernando Meireles e Argelina Cheibub Figueiredo. Trabalho no desenho e na análise dos surveys, incluindo ponderação e pós-estratificação.',
-          },
-          deliveryHtml: {
-            en: 'Analysis of the DOXA survey on how the population of the state of Rio de Janeiro learns about politics, now a DOXA discussion paper.',
-            'pt-br': 'Análise do survey do DOXA sobre como a população do estado do Rio de Janeiro se informa sobre política, hoje um texto para discussão do DOXA.',
-          },
-          shortHtml: {
-            en: "<em>Researcher.</em> Design and analysis of the lab's public opinion surveys, including weighting.",
-            'pt-br': '<em>Pesquisador.</em> Desenho e análise dos surveys do laboratório, incluindo ponderação.',
           },
         },
         {
