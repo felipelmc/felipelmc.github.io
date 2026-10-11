@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Renderiza os dois currículos, mostra quantas páginas cada um deu e copia os
-# PDFs para o site.
+# Renderiza os quatro currículos (completo e resumido, em inglês e em
+# português), mostra quantas páginas cada um deu e copia os PDFs para o site.
 #
 #   ./cv/render.sh
 #
@@ -16,23 +16,36 @@ for bindir in "$HOME/Library/TinyTeX/bin"/*; do
 done
 export PATH
 
-quarto render cv-en.qmd
-quarto render cv-pt.qmd
+# Cada currículo e o número de páginas em que ele deve fechar: o completo em
+# 4, o resumido em 2.
+specs="cv-en:4 cv-pt:4 cv-en-short:2 cv-pt-short:2"
+
+for spec in $specs; do
+  quarto render "${spec%%:*}.qmd"
+done
 
 mkdir -p ../public/files
-cp cv-en.pdf cv-pt.pdf ../public/files/
+for spec in $specs; do
+  cp "${spec%%:*}.pdf" ../public/files/
+done
 
-# Páginas de cada PDF. O desenho fecha em 4 páginas cheias; se aparecer 5,
-# olhe a última página (o README diz o que fazer).
+# Páginas de cada PDF. Se algum sair com outro número, olhe a última página
+# (o README diz o que fazer); o script termina com erro.
 pdfinfo_bin="$(command -v pdfinfo || true)"
 [ -z "$pdfinfo_bin" ] && [ -x /opt/homebrew/bin/pdfinfo ] && pdfinfo_bin=/opt/homebrew/bin/pdfinfo
 
+status=0
 echo
 if [ -n "$pdfinfo_bin" ]; then
-  for pdf in cv-en.pdf cv-pt.pdf; do
+  for spec in $specs; do
+    pdf="${spec%%:*}.pdf"
+    want="${spec##*:}"
     pages="$("$pdfinfo_bin" "$pdf" | awk '/^Pages:/ {print $2}')"
     note=""
-    [ "$pages" != "4" ] && note="   <- esperado: 4"
+    if [ "$pages" != "$want" ]; then
+      note="   <- esperado: $want"
+      status=1
+    fi
     printf '%s: %s páginas%s\n' "$pdf" "$pages" "$note"
   done
 else
@@ -43,3 +56,4 @@ fi
 echo
 echo "PDFs atualizados em cv/ e em public/files/."
 echo "Rode 'npm run build' na raiz para publicar."
+exit "$status"

@@ -1,13 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CvEntryRow from '../components/CvEntryRow.astro';
+import CvViewToggle from '../components/CvViewToggle.astro';
 import Icon from '../components/ui/Icon.astro';
 import PageHeader from '../components/ui/PageHeader.astro';
 import PageIndex from '../components/ui/PageIndex.astro';
 import SectionHeader from '../components/ui/SectionHeader.astro';
 import { cv } from '../data/cv';
 import { profile } from '../data/profile';
-import type { CvRow, Locale } from '../data/types';
+import type { CvRow, CvVariant, Locale } from '../data/types';
 import { getLocalePath, tr, useTranslations } from '../i18n/utils';
 
 interface Props {
@@ -18,19 +19,21 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 const other = locale === 'en' ? 'pt-br' : 'en';
 
-// Same order as the PDF CV.
-const sections = [
+// Two views: short (the default) and full (?v=full). Sections that only the
+// full view shows come last, so the numbers 01, 02… hold in both views.
+const sections: { id: string; label: string; only?: CvVariant }[] = [
   { id: 'education', label: t('cv.education') },
   { id: 'research', label: t('cv.research') },
   { id: 'professional', label: t('cv.professional') },
   { id: 'fellowships', label: t('cv.scholarships') },
   { id: 'awards', label: t('cv.distinctions') },
-  { id: 'training', label: t('cv.conferences') },
   { id: 'skills', label: t('cv.skills') },
-  { id: 'references', label: t('cv.references') },
+  { id: 'training', label: t('cv.conferences'), only: 'full' },
+  { id: 'references', label: t('cv.references'), only: 'full' },
 ];
 const num = (id: string) => String(sections.findIndex((s) => s.id === id) + 1).padStart(2, '0');
 const label = (id: string) => sections.find((s) => s.id === id)!.label;
+const only = (v?: CvVariant): Record<string, string> => (v ? { 'data-cv-only': v } : {});
 const rowSections: { id: string; rows: CvRow[]; noteHtml?: string }[] = [
   { id: 'fellowships', rows: cv.scholarships },
   { id: 'awards', rows: cv.distinctions },
@@ -40,101 +43,161 @@ const rowSections: { id: string; rows: CvRow[]; noteHtml?: string }[] = [
     noteHtml: t('cv.trainingNote').replace('{href}', `${getLocalePath(locale, '/publications')}#talks`),
   },
 ];
+const rowSection = (id: string) => rowSections.find((g) => g.id === id)!;
+
+// Lists use divide-y and first:pt-0, which go by DOM order, not by what is
+// visible: a hidden first item would leave a stray border and padding.
+const lists: [string, { only?: CvVariant }[]][] = [
+  ['research', cv.research],
+  ...cv.research.map((g): [string, { only?: CvVariant }[]] => [`research/${g.id}`, g.entries]),
+  ['professional', cv.professional],
+  ['scholarships', cv.scholarships],
+  ['distinctions', cv.distinctions],
+  ['training', cv.training],
+  ['skills', cv.skills],
+];
+for (const [name, items] of lists) {
+  if (items[0]?.only) throw new Error(`cv.ts: the first item of ${name} must show in both views`);
+}
+
+// Runs before paint: pick the view from ?v= (or from a #hash that only the
+// full view has) so the page never flashes the wrong one.
+const fullOnlyIds = sections.filter((s) => s.only === 'full').map((s) => s.id);
+const prePaint = `(function () {
+  var v = new URLSearchParams(location.search).get('v');
+  var full = v === 'full' || v === 'completo' || ${JSON.stringify(fullOnlyIds)}.indexOf(location.hash.slice(1)) > -1;
+  document.documentElement.dataset.cv = full ? 'full' : 'short';
+})();`;
 ---
 
 <Layout title={t('cv.title')} description={t('meta.cv')}>
+  <Fragment slot="head">
+    <script is:inline set:html={prePaint} />
+  </Fragment>
+
   <PageHeader kicker={t('cv.kicker')} title={t('cv.title')} subtitle={t('cv.subtitle')}>
-    <div class="mt-6 flex flex-wrap items-center gap-3">
-      <a href={profile.cvPdf[locale]} class="btn-primary" target="_blank" rel="noopener noreferrer">
-        <Icon name="download" class="h-4 w-4" />{t('cv.download')}
-      </a>
-      <a href={profile.cvPdf[other]} class="btn-ghost" target="_blank" rel="noopener noreferrer">{t('cv.downloadOther')}</a>
+    <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-3">
+      <CvViewToggle locale={locale} />
       <span class="meta">{cv.lastUpdated[locale]}</span>
+    </div>
+    <div class="mt-4 flex flex-wrap items-center gap-3">
+      <a href={profile.cvPdf.short[locale]} class="btn-primary" target="_blank" rel="noopener noreferrer" data-cv-only="short">
+        <Icon name="download" class="h-4 w-4" />{t('cv.downloadShort')}
+      </a>
+      <a href={profile.cvPdf.full[locale]} class="btn-primary" target="_blank" rel="noopener noreferrer" data-cv-only="full">
+        <Icon name="download" class="h-4 w-4" />{t('cv.downloadFull')}
+      </a>
+      <a href={profile.cvPdf.short[other]} class="btn-ghost" target="_blank" rel="noopener noreferrer" data-cv-only="short">{t('cv.downloadOther')}</a>
+      <a href={profile.cvPdf.full[other]} class="btn-ghost" target="_blank" rel="noopener noreferrer" data-cv-only="full">{t('cv.downloadOther')}</a>
     </div>
   </PageHeader>
 
   <div class="grid gap-10 lg:grid-cols-[12rem_minmax(0,1fr)] lg:gap-16">
-    <PageIndex items={sections} label={t('cv.title')} />
+    <PageIndex items={sections.map((s) => ({ id: s.id, label: s.label, attrs: only(s.only) }))} label={t('cv.title')} />
 
-    <div class="min-w-0 space-y-20">
-      <section aria-labelledby="education">
-        <SectionHeader gutter number={num('education')} id="education" title={label('education')} />
-        <ol class="divide-y divide-line">
-          {cv.education.map((r) => (
-            <li class="grid gap-x-6 gap-y-1 py-4 first:pt-0 sm:grid-cols-[7rem_minmax(0,1fr)]">
-              <p class="meta pt-1">{tr(r.when, locale)}</p>
-              <div class="min-w-0">
-                <p class="text-h3 font-semibold text-ink" set:html={tr(r.html, locale)} />
-                {r.subHtml && <p class="mt-0.5 text-sm text-ink-3" set:html={tr(r.subHtml, locale)} />}
-              </div>
-            </li>
-          ))}
-        </ol>
-      </section>
+    <div class="min-w-0">
+      <p class="mb-16 max-w-prose text-lg leading-relaxed text-ink-2 text-pretty" data-cv-only="short">{cv.summary[locale]}</p>
 
-      <section aria-labelledby="research">
-        <SectionHeader gutter number={num('research')} id="research" title={label('research')} />
-        <div class="space-y-12">
-          {cv.research.map((group) => (
-            <div>
-              <h3 class="eyebrow mb-4 sm:pl-[8.5rem]">{group.title[locale]}</h3>
-              <ol class="divide-y divide-line">
-                {group.entries.map((e) => <CvEntryRow entry={e} locale={locale} />)}
-              </ol>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section aria-labelledby="professional">
-        <SectionHeader gutter number={num('professional')} id="professional" title={label('professional')} />
-        <ol class="divide-y divide-line">
-          {cv.professional.map((e) => <CvEntryRow entry={e} locale={locale} />)}
-        </ol>
-      </section>
-
-      {rowSections.map((g) => (
-        <section aria-labelledby={g.id}>
-          <SectionHeader gutter number={num(g.id)} id={g.id} title={label(g.id)} />
-          {g.noteHtml && <p class="-mt-3 mb-6 max-w-prose text-sm text-ink-3 sm:pl-[8.5rem]" set:html={g.noteHtml} />}
+      <div class="space-y-20">
+        <section aria-labelledby="education">
+          <SectionHeader gutter number={num('education')} id="education" title={label('education')} />
           <ol class="divide-y divide-line">
-            {g.rows.map((r) => (
-              <li class="grid gap-x-6 gap-y-1 py-3.5 first:pt-0 sm:grid-cols-[7rem_minmax(0,1fr)]">
+            {cv.education.map((r) => (
+              <li class="grid gap-x-6 gap-y-1 py-4 first:pt-0 sm:grid-cols-[7rem_minmax(0,1fr)]">
                 <p class="meta pt-1">{tr(r.when, locale)}</p>
                 <div class="min-w-0">
-                  <p class="leading-relaxed text-ink" set:html={tr(r.html, locale)} />
-                  {r.subHtml && <p class="text-sm text-ink-3" set:html={tr(r.subHtml, locale)} />}
+                  <p class="text-h3 font-semibold text-ink" set:html={tr(r.html, locale)} />
+                  {r.subHtml && <p class="mt-0.5 text-sm text-ink-3" set:html={tr(r.subHtml, locale)} />}
                 </div>
               </li>
             ))}
           </ol>
         </section>
-      ))}
 
-      <section aria-labelledby="skills">
-        <SectionHeader gutter number={num('skills')} id="skills" title={label('skills')} />
-        <dl class="divide-y divide-line">
-          {cv.skills.map((s) => (
-            <div class="grid gap-x-6 gap-y-1 py-3.5 first:pt-0 sm:grid-cols-[7rem_minmax(0,1fr)]">
-              <dt class="meta pt-1">{s.label[locale]}</dt>
-              <dd class="leading-relaxed text-ink" set:html={tr(s.html, locale)} />
-            </div>
-          ))}
-        </dl>
-      </section>
+        <section aria-labelledby="research">
+          <SectionHeader gutter number={num('research')} id="research" title={label('research')} />
+          <div class="space-y-12">
+            {cv.research.map((group) => (
+              <div {...only(group.only)}>
+                <h3 class="eyebrow mb-4 sm:pl-[8.5rem]">{group.title[locale]}</h3>
+                <ol class="divide-y divide-line">
+                  {group.entries.map((e) => <CvEntryRow entry={e} locale={locale} />)}
+                </ol>
+              </div>
+            ))}
+          </div>
+        </section>
 
-      <section aria-labelledby="references">
-        <SectionHeader gutter number={num('references')} id="references" title={label('references')} />
-        <ul class="grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2">
-          {cv.references.map((r) => (
-            <li class="flex flex-col gap-1 bg-panel p-4 sm:[&:last-child:nth-child(odd)]:col-span-2">
-              <p class="font-medium text-ink">{r.name}</p>
-              <p class="text-sm text-ink-2">{r.institution}{r.note && <> · {r.note[locale]}</>}</p>
-              <p class="break-words font-mono text-meta text-ink-3">{r.email}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
+        <section aria-labelledby="professional">
+          <SectionHeader gutter number={num('professional')} id="professional" title={label('professional')} />
+          <ol class="divide-y divide-line">
+            {cv.professional.map((e) => <CvEntryRow entry={e} locale={locale} />)}
+          </ol>
+        </section>
+
+        {['fellowships', 'awards'].map((id) => {
+          const g = rowSection(id);
+          return (
+            <section aria-labelledby={g.id}>
+              <SectionHeader gutter number={num(g.id)} id={g.id} title={label(g.id)} />
+              <ol class="divide-y divide-line">
+                {g.rows.map((r) => (
+                  <li class="grid gap-x-6 gap-y-1 py-3.5 first:pt-0 sm:grid-cols-[7rem_minmax(0,1fr)]" {...only(r.only)}>
+                    <p class="meta pt-1">{tr(r.when, locale)}</p>
+                    <div class="min-w-0">
+                      <p class="leading-relaxed text-ink" set:html={tr(r.html, locale)} />
+                      {r.subHtml && <p class="text-sm text-ink-3" set:html={tr(r.subHtml, locale)} />}
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          );
+        })}
+
+        <section aria-labelledby="skills">
+          <SectionHeader gutter number={num('skills')} id="skills" title={label('skills')} />
+          <dl class="divide-y divide-line">
+            {cv.skills.map((s) => (
+              <div class="grid gap-x-6 gap-y-1 py-3.5 first:pt-0 sm:grid-cols-[7rem_minmax(0,1fr)]" {...only(s.only)}>
+                <dt class="meta pt-1">{s.label[locale]}</dt>
+                <dd class="leading-relaxed text-ink" set:html={tr(s.html, locale)} />
+              </div>
+            ))}
+          </dl>
+        </section>
+
+        {[rowSection('training')].map((g) => (
+          <section aria-labelledby={g.id} data-cv-only="full">
+            <SectionHeader gutter number={num(g.id)} id={g.id} title={label(g.id)} />
+            {g.noteHtml && <p class="-mt-3 mb-6 max-w-prose text-sm text-ink-3 sm:pl-[8.5rem]" set:html={g.noteHtml} />}
+            <ol class="divide-y divide-line">
+              {g.rows.map((r) => (
+                <li class="grid gap-x-6 gap-y-1 py-3.5 first:pt-0 sm:grid-cols-[7rem_minmax(0,1fr)]" {...only(r.only)}>
+                  <p class="meta pt-1">{tr(r.when, locale)}</p>
+                  <div class="min-w-0">
+                    <p class="leading-relaxed text-ink" set:html={tr(r.html, locale)} />
+                    {r.subHtml && <p class="text-sm text-ink-3" set:html={tr(r.subHtml, locale)} />}
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ))}
+
+        <section aria-labelledby="references" data-cv-only="full">
+          <SectionHeader gutter number={num('references')} id="references" title={label('references')} />
+          <ul class="grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2">
+            {cv.references.map((r) => (
+              <li class="flex flex-col gap-1 bg-panel p-4 sm:[&:last-child:nth-child(odd)]:col-span-2">
+                <p class="font-medium text-ink">{r.name}</p>
+                <p class="text-sm text-ink-2">{r.institution}{r.note && <> · {r.note[locale]}</>}</p>
+                <p class="break-words font-mono text-meta text-ink-3">{r.email}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
     </div>
   </div>
 </Layout>

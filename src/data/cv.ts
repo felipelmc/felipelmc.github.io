@@ -1,12 +1,19 @@
 import type { Cv } from './types';
 
-// Web CV. Mirrors the PDF CV (cv/cv-en.qmd, cv/cv-pt.qmd): keep the two in step.
+// Web CV. Mirrors the PDF CVs, the full one (cv/cv-en.qmd, cv/cv-pt.qmd) and the
+// short one (cv/cv-*-short.qmd): keep them in step. `shortHtml` and `only` decide
+// what the short view shows; the first item of a list never carries `only`.
 
 const a = (href: string, text: string) =>
   `<a href="${href}" class="link" target="_blank" rel="noopener noreferrer">${text}</a>`;
 
 export const cv: Cv = {
-  lastUpdated: { en: 'Last updated: September 2026', 'pt-br': 'Atualizado em setembro de 2026' },
+  lastUpdated: { en: 'Last updated: October 2026', 'pt-br': 'Atualizado em outubro de 2026' },
+
+  summary: {
+    en: "Data scientist and social scientist. I work on public opinion and elections, public policy evaluation, and data on the Amazon, mostly in R and Python. I currently calibrate election polls in several countries at AtlasIntel, coordinate the quantitative analysis of a project on cooperatives and deforestation in Acre, and work on a systematic review of public security policies for Brazil's Ministry of Justice.",
+    'pt-br': 'Cientista de dados e cientista social. Trabalho com pesquisas de opinião e eleições, avaliação de políticas públicas e dados sobre a Amazônia, quase sempre em R e Python. Hoje calibro pesquisas eleitorais em vários países na AtlasIntel, coordeno a análise quantitativa de um projeto sobre cooperativismo e desmatamento no Acre e participo de uma revisão sistemática de políticas de segurança pública para o Ministério da Justiça.',
+  },
 
   education: [
     {
@@ -54,6 +61,10 @@ export const cv: Cv = {
             en: 'A technical note applying spatial models of voting to the 2026 presidential race.',
             'pt-br': 'Nota técnica que aplica modelos espaciais de voto à disputa presidencial de 2026.',
           },
+          shortHtml: {
+            en: '<em>Researcher.</em> Roll-call and legislative production databases at the Center for Studies on Congress.',
+            'pt-br': '<em>Pesquisador.</em> Bases de votações nominais e de produção legislativa do Núcleo de Estudos sobre o Congresso.',
+          },
         },
         {
           when: { en: '05/2025 – present', 'pt-br': '05/2025 – presente' },
@@ -66,6 +77,10 @@ export const cv: Cv = {
             en: 'Analysis of the DOXA survey on how the population of the state of Rio de Janeiro learns about politics, now a DOXA discussion paper.',
             'pt-br': 'Análise do survey do DOXA sobre como a população do estado do Rio de Janeiro se informa sobre política, hoje um texto para discussão do DOXA.',
           },
+          shortHtml: {
+            en: "<em>Researcher.</em> Design and analysis of the lab's public opinion surveys, including weighting.",
+            'pt-br': '<em>Pesquisador.</em> Desenho e análise dos surveys do laboratório, incluindo ponderação.',
+          },
         },
         {
           when: { en: '04/2025 – present', 'pt-br': '04/2025 – presente' },
@@ -77,6 +92,10 @@ export const cv: Cv = {
           deliveryHtml: {
             en: 'A Streamlit application that lets users interact with mape_municipios, a database covering 30 years and 451 variables on Brazilian municipalities.',
             'pt-br': 'Aplicação em Streamlit que permite interagir com a mape_municipios, base que cobre 30 anos e 451 variáveis sobre municípios brasileiros.',
+          },
+          shortHtml: {
+            en: '<em>Researcher.</em> I build and maintain mape_municipios (30 years and 451 variables on Brazilian municipalities) and its public interface.',
+            'pt-br': '<em>Pesquisador.</em> Construo e mantenho a mape_municipios (30 anos e 451 variáveis sobre os municípios brasileiros) e sua interface pública.',
           },
         },
       ],
@@ -92,20 +111,28 @@ export const cv: Cv = {
             'pt-br': 'Bolsa de pesquisa <em>Pensando o Direito</em>, MJSP',
           },
           bodyHtml: {
-            en: `<em>Researcher.</em> Systematic review of the evidence on a set of public security policies for the Legal Amazon, organized around the idea of a qualified entry of the State into vulnerable territories, following the OQF (<em>O Que Funciona?</em>) protocol developed at MAPE. I run the search protocol, screening, and evidence extraction. Project coordinated by Djane Braz Duarte. <em>Expected deliveries:</em> (i) an analytical report for the Ministry; (ii) an article submitted to a peer-reviewed journal; (iii) entries on the reviewed policies in the ${a('https://wikifavelas.com.br', 'Dicionário de Favelas Marielle Franco')}.`,
-            'pt-br': `<em>Pesquisador.</em> Revisão sistemática das evidências sobre um cardápio de políticas de segurança pública para a Amazônia Legal, organizado em torno da ideia de entrada qualificada do Estado em territórios vulnerabilizados, seguindo o protocolo OQF (<em>O Que Funciona?</em>) do MAPE. Conduzo busca, triagem e extração de evidências. Projeto coordenado por Djane Braz Duarte. <em>Entregas previstas:</em> (i) relatório técnico-analítico para o Ministério; (ii) artigo submetido a periódico qualificado; (iii) verbetes sobre as políticas revisadas no ${a('https://wikifavelas.com.br', 'Dicionário de Favelas Marielle Franco')}.`,
+            en: `<em>Researcher.</em> Systematic review of the evidence on public security policies for the Legal Amazon, organized around the idea of a qualified entry of the State into vulnerable territories and following the OQF (<em>O Que Funciona?</em>) protocol developed at MAPE. It covers 12 policies in four areas, from community policing and body-worn cameras to the Patrulha Maria da Penha, cash transfers, and the Plano Juventude Viva, and more than 300 studies. I run the search, screening, and evidence extraction, with LLM-assisted screening and extraction checked by the team. Project coordinated by Djane Braz Duarte. <em>Expected deliveries:</em> (i) an analytical report for the Ministry; (ii) an article submitted to a peer-reviewed journal; (iii) entries on the reviewed policies in the ${a('https://wikifavelas.com.br', 'Dicionário de Favelas Marielle Franco')}.`,
+            'pt-br': `<em>Pesquisador.</em> Revisão sistemática das evidências sobre políticas de segurança pública para a Amazônia Legal, organizada em torno da ideia de entrada qualificada do Estado em territórios vulnerabilizados e seguindo o protocolo OQF (<em>O Que Funciona?</em>) do MAPE. São 12 políticas em quatro eixos, do policiamento de proximidade e das câmeras corporais à Patrulha Maria da Penha, à transferência de renda e ao Plano Juventude Viva, e mais de 300 trabalhos. Conduzo busca, triagem e extração de evidências, com triagem e extração assistidas por modelos de linguagem e conferidas pela equipe. Projeto coordenado por Djane Braz Duarte. <em>Entregas previstas:</em> (i) relatório técnico-analítico para o Ministério; (ii) artigo submetido a periódico qualificado; (iii) verbetes sobre as políticas revisadas no ${a('https://wikifavelas.com.br', 'Dicionário de Favelas Marielle Franco')}.`,
+          },
+          shortHtml: {
+            en: '<em>Researcher.</em> Systematic review of the evidence on 12 public security policies for the Legal Amazon, with a report for the Ministry of Justice and Public Security.',
+            'pt-br': '<em>Pesquisador.</em> Revisão sistemática das evidências sobre 12 políticas de segurança pública para a Amazônia Legal, com relatório para o Ministério da Justiça e Segurança Pública.',
           },
         },
         {
           when: { en: '08/2025 – present', 'pt-br': '08/2025 – presente' },
-          titleHtml: { en: 'RESA project, UFAC and IESP-UERJ', 'pt-br': 'Projeto RESA, UFAC e IESP-UERJ' },
+          titleHtml: { en: 'RESA project, UFAC, IESP-UERJ and IFAC', 'pt-br': 'Projeto RESA, UFAC, IESP-UERJ e IFAC' },
           bodyHtml: {
-            en: "<em>Researcher</em> on the socioeconomic and environmental impacts of family-based agroextractive production in the Chico Mendes Extractive Reserve, in Acre, with an emphasis on what cooperatives change in land use and in household income. I handle the quantitative data and build the project's public monitoring platform. Coordinated by Luci Maria Teston (UFAC), with IESP-UERJ as a partner institution.",
-            'pt-br': '<em>Pesquisador</em> nos impactos socioeconômicos e ambientais da produção agroextrativista de base familiar na Reserva Extrativista Chico Mendes, no Acre, com ênfase no que o cooperativismo muda no uso da terra e na renda das famílias. Cuido dos dados quantitativos e construo a plataforma pública de monitoramento. Coordenado por Luci Maria Teston (UFAC), com o IESP-UERJ como parceiro executor.',
+            en: `<em>Coordinator of Quantitative Methods and Analysis.</em> A project on the socioeconomic and environmental impacts of family-based agroextractive production in extractive reserves and rural settlements in Acre, focusing on what cooperatives change in household income and deforestation. It was one of six projects selected, out of 221 proposals, in the ${a('https://climaesociedade.org/edital-do-ics-com-apoio-do-bezos-earth-fund-seleciona-seis-projetos-sobre-economia-sustentavel-propostos-por-instituicoes-cientificas-da-amazonia/', 'Instituto Clima e Sociedade (iCS)')} call for research on sustainable economies in the Amazon, supported by the Bezos Earth Fund. I coordinate the quantitative work: collecting and analyzing primary and secondary data, building indicators, the public monitoring platform, and training research fellows in quantitative methods. Overall coordination by Luci Maria Teston (UFAC).`,
+            'pt-br': `<em>Coordenador de Métodos e Análise Quantitativa.</em> Projeto sobre os impactos socioeconômicos e ambientais da produção agroextrativista de base familiar em reservas extrativistas e assentamentos do Acre, com foco no que o cooperativismo muda na renda das famílias e no desmatamento. Foi um dos seis projetos selecionados, entre 221 propostas, no edital de pesquisa em economia sustentável na Amazônia do ${a('https://climaesociedade.org/edital-do-ics-com-apoio-do-bezos-earth-fund-seleciona-seis-projetos-sobre-economia-sustentavel-propostos-por-instituicoes-cientificas-da-amazonia/', 'Instituto Clima e Sociedade (iCS)')}, com apoio do Bezos Earth Fund. Coordeno a frente quantitativa: coleta e análise de dados primários e secundários, construção de indicadores, plataforma pública de monitoramento e orientação de bolsistas em métodos quantitativos. Coordenação geral de Luci Maria Teston (UFAC).`,
           },
           deliveryHtml: {
-            en: `A preliminary version of the ${a('https://mapa-do-desmatamento-acre.streamlit.app/', 'monitoring platform')}, covering deforestation in Acre.`,
-            'pt-br': `Versão preliminar da ${a('https://mapa-do-desmatamento-acre.streamlit.app/', 'plataforma de monitoramento')}, com dados de desmatamento no Acre.`,
+            en: `(i) A ${a('https://mapa-do-desmatamento-acre.streamlit.app/', 'monitoring platform')} for deforestation in Acre and the Chico Mendes Extractive Reserve; (ii) a technical report on deforestation pressure inside and around the reserve; (iii) a ${a('https://felipelamarca.com/Legal-Acre/', 'working site')} with data for the whole Legal Amazon, linking deforestation, cooperatives, rural credit, and social indicators.`,
+            'pt-br': `(i) ${a('https://mapa-do-desmatamento-acre.streamlit.app/', 'Plataforma de monitoramento')} do desmatamento no Acre e na Resex Chico Mendes; (ii) relatório técnico sobre a pressão de desmatamento dentro e no entorno da Resex; (iii) ${a('https://felipelamarca.com/Legal-Acre/', 'site de trabalho')} com bases para toda a Amazônia Legal, cruzando desmatamento, cooperativismo, crédito rural e indicadores sociais.`,
+          },
+          shortHtml: {
+            en: '<em>Coordinator of Quantitative Methods and Analysis.</em> I coordinate the quantitative analysis of a project on what agroextractive cooperatives change in household income and deforestation in Acre, selected in an Instituto Clima e Sociedade call supported by the Bezos Earth Fund.',
+            'pt-br': '<em>Coordenador de Métodos e Análise Quantitativa.</em> Coordeno a análise quantitativa de um projeto sobre o que o cooperativismo agroextrativista muda na renda das famílias e no desmatamento no Acre, selecionado no edital do Instituto Clima e Sociedade com apoio do Bezos Earth Fund.',
           },
         },
       ],
@@ -113,6 +140,7 @@ export const cv: Cv = {
     {
       id: 'earlier',
       title: { en: 'Earlier positions', 'pt-br': 'Posições anteriores' },
+      only: 'full',
       entries: [
         {
           when: '02/2025 – 04/2025',
@@ -162,37 +190,41 @@ export const cv: Cv = {
       when: { en: '06/2025 – present', 'pt-br': '06/2025 – presente' },
       titleHtml: a('https://atlasintel.org/', 'AtlasIntel'),
       bodyHtml: {
-        en: '<em>Data Scientist</em> working on calibrating survey samples, political analysis, monitoring public opinion, and improving internal data pipelines.',
-        'pt-br': '<em>Cientista de Dados</em> na calibração de amostras de surveys, análise política, monitoramento da opinião pública e melhoria dos pipelines internos de dados.',
+        en: "<em>Data Scientist.</em> Sample calibration for AtlasIntel's national and subnational election polls across most of Latin America, the United States (including the midterms), Europe, Israel and Mozambique. In Brazil, I worked on the calibration of polls in every state during the 2026 cycle. I design the company's probability-based face-to-face household surveys (multistage samples with PPS and Kish respondent selection). I introduced conjoint experiments into the company's surveys.",
+        'pt-br': '<em>Cientista de Dados.</em> Calibragem amostral das pesquisas eleitorais da AtlasIntel, nacionais e subnacionais, na maior parte da América Latina, nos Estados Unidos (inclusive nas <em>midterms</em>), na Europa, em Israel e em Moçambique. No Brasil, participei da calibragem das pesquisas de todos os estados no ciclo de 2026. Desenho as pesquisas presenciais domiciliares probabilísticas da empresa (amostras em vários estágios, com sorteio proporcional ao tamanho e escolha do morador por grade de Kish). Introduzi experimentos <em>conjoint</em> nas pesquisas da empresa.',
       },
-      deliveryHtml: {
-        en: 'Cut the retrieval of Brazilian demographic data for sample weighting from a manual, multi-hour task to a single scripted call.',
-        'pt-br': 'Reduzi a obtenção de dados demográficos para ponderação de amostras de horas de trabalho manual a uma chamada de script.',
+      shortHtml: {
+        en: '<em>Data Scientist.</em> Calibration of election polls in several countries, design of probability-based face-to-face surveys, and the introduction of conjoint experiments.',
+        'pt-br': '<em>Cientista de Dados.</em> Calibragem de pesquisas eleitorais em vários países, desenho de pesquisas presenciais probabilísticas e introdução de experimentos <em>conjoint</em>.',
       },
     },
     {
-      when: '07/2024 – 06/2025',
+      when: { en: '07/2024 – present', 'pt-br': '07/2024 – presente' },
       titleHtml: {
         en: 'Independent Consultant in Data Science and Research',
         'pt-br': 'Consultor Independente em Ciência de Dados e Pesquisa',
       },
       bodyHtml: {
-        en: 'Data and AI work, research support, and training for clients across sectors.',
-        'pt-br': 'Trabalhos de dados e IA, apoio à pesquisa e treinamentos para clientes de diversos setores.',
+        en: 'Data, research, and methods training for civil society organizations, universities, and companies.',
+        'pt-br': 'Dados, pesquisa e formação em métodos para organizações da sociedade civil, universidades e empresas.',
       },
       itemsHtml: {
         en: [
+          `${a('https://www.frm.org.br/', 'Fundação Roberto Marinho')}: data tools to monitor the foundation's education programs (Telecurso, co.liga, Canal Futura, Escola FRM, and Aprendiz Legal), including the pipeline that tracks student learning and teacher training in Telecurso's program with the Salvador municipal school system, and Python and machine learning training for the team.`,
+          `${a('https://plataformacipo.org/', 'Plataforma CIPÓ')}: a course in Python, data analysis, and machine learning for the research team of this institute on climate and international governance.`,
+          `${a('https://geni.uff.br/', 'GENI/UFF')}: databases, statistical models, and data tools for research on armed violence and territorial control in the state of Rio de Janeiro.`,
           `${a('https://artplan.com.br/', 'Artplan')}: applied deep learning to social media segmentation.`,
-          `${a('https://www.frm.org.br/', 'Fundação Roberto Marinho')}: dashboards in Streamlit and Power BI, an AWS data lake, and Python/ML training.`,
-          `${a('https://plataformacipo.org/', 'Plataforma CIPÓ')}: training modules in machine learning and data analysis.`,
-          `${a('https://geni.uff.br/', 'GENI/UFF')}: LLM and RAG tools for structured extraction from unstructured documents.`,
         ],
         'pt-br': [
+          `${a('https://www.frm.org.br/', 'Fundação Roberto Marinho')}: ferramentas de dados para monitorar os programas educativos da fundação (Telecurso, co.liga, Canal Futura, Escola FRM e Aprendiz Legal), entre elas o pipeline que acompanha a aprendizagem dos alunos e a formação dos professores do Telecurso na rede municipal de Salvador, e treinamento da equipe em Python e machine learning.`,
+          `${a('https://plataformacipo.org/', 'Plataforma CIPÓ')}: curso de Python, análise de dados e machine learning para a equipe de pesquisa do instituto, que trabalha com clima e governança internacional.`,
+          `${a('https://geni.uff.br/', 'GENI/UFF')}: bases de dados, modelos estatísticos e ferramentas de dados para pesquisas sobre violência armada e controle territorial no estado do Rio de Janeiro.`,
           `${a('https://artplan.com.br/', 'Artplan')}: apliquei deep learning para segmentação em redes sociais.`,
-          `${a('https://www.frm.org.br/', 'Fundação Roberto Marinho')}: dashboards em Streamlit e Power BI, data lake na AWS e treinamento em Python/ML.`,
-          `${a('https://plataformacipo.org/', 'Plataforma CIPÓ')}: módulos de treinamento em machine learning e análise de dados.`,
-          `${a('https://geni.uff.br/', 'GENI/UFF')}: ferramentas de LLM e RAG para extração estruturada de documentos não estruturados.`,
         ],
+      },
+      shortHtml: {
+        en: 'Data tools to monitor the education programs of Fundação Roberto Marinho, Python and machine learning courses for the teams of the foundation and of Plataforma CIPÓ, and data tools for research on armed violence at GENI/UFF.',
+        'pt-br': 'Ferramentas de dados para monitorar os programas educativos da Fundação Roberto Marinho, cursos de Python e machine learning para as equipes da fundação e da Plataforma CIPÓ, e ferramentas de dados para pesquisas sobre violência armada no GENI/UFF.',
       },
     },
     {
@@ -205,6 +237,10 @@ export const cv: Cv = {
       deliveryHtml: {
         en: '(i) An automated Python pipeline that cut report production from days to about an hour; (ii) interactive and programmatic maps for corporate audiences.',
         'pt-br': '(i) Pipeline automatizado em Python que reduziu a produção de relatórios de dias para cerca de uma hora; (ii) mapas interativos e programáticos para públicos corporativos.',
+      },
+      shortHtml: {
+        en: '<em>Data Scientist and Researcher.</em> Ran and analyzed opinion polls on public policy and urban security.',
+        'pt-br': '<em>Cientista de Dados e Pesquisador.</em> Conduzi e analisei pesquisas de opinião sobre políticas públicas e segurança urbana.',
       },
     },
     {
@@ -221,6 +257,7 @@ export const cv: Cv = {
         en: "A RAG pipeline for querying FGV researchers' publications in natural language.",
         'pt-br': 'Pipeline RAG para consultar as publicações dos pesquisadores da FGV em linguagem natural.',
       },
+      only: 'full',
     },
     {
       when: '01/2024 – 06/2024',
@@ -233,6 +270,7 @@ export const cv: Cv = {
         en: '(i) A sample-size calculator for A/B tests in complex non-experimental settings; (ii) Power BI dashboards for expense auditing; (iii) analytics for allocating discount campaigns.',
         'pt-br': '(i) Calculadora de tamanho amostral para testes A/B em contextos não experimentais complexos; (ii) dashboards em Power BI para auditoria de despesas; (iii) análises para alocação de campanhas de desconto.',
       },
+      only: 'full',
     },
   ],
 
@@ -265,6 +303,7 @@ export const cv: Cv = {
         en: 'Undergraduate research fellowship (CNPq).',
         'pt-br': 'Bolsa de iniciação científica (CNPq).',
       },
+      only: 'full',
     },
     {
       when: '2019–2024',
@@ -279,6 +318,7 @@ export const cv: Cv = {
         en: 'Undergraduate research fellowship (FGV).',
         'pt-br': 'Bolsa de iniciação científica (FGV).',
       },
+      only: 'full',
     },
   ],
 
@@ -308,8 +348,9 @@ export const cv: Cv = {
       when: '2020',
       html: {
         en: "Best Paper Award, History and Social Sciences Students' Week (FGV CPDOC).",
-        'pt-br': 'Melhor Trabalho, Semana de História e Ciências Sociais (FGV CPDOC).',
+        'pt-br': 'Prêmio de melhor artigo, Semana dos Estudantes de História e Ciências Sociais (FGV CPDOC).',
       },
+      only: 'full',
     },
   ],
 

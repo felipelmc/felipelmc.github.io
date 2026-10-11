@@ -113,6 +113,24 @@ export const courses: Course[] = [
     ],
   },
   {
+    id: 'cipo-2024',
+    kind: 'short-course',
+    title: {
+      en: 'Python, data analysis, and machine learning for research',
+      'pt-br': 'Python, análise de dados e machine learning para pesquisa',
+    },
+    whereHtml: {
+      en: 'Research team of <a href="https://plataformacipo.org/" class="link" target="_blank" rel="noopener noreferrer">Plataforma CIPÓ</a>',
+      'pt-br': 'Equipe de pesquisa da <a href="https://plataformacipo.org/" class="link" target="_blank" rel="noopener noreferrer">Plataforma CIPÓ</a>',
+    },
+    term: { en: 'December 2024', 'pt-br': 'Dezembro 2024' },
+    date: '2024-12-01',
+    descriptionHtml: {
+      en: 'Four modules for the research team of an institute on climate and international governance, from data types and charts to classification models, a neural network built from scratch, and open models run locally. Co-taught with Matheus Cavalcanti Pestana.',
+      'pt-br': 'Quatro módulos para a equipe de pesquisa de um instituto sobre clima e governança internacional, de tipos de dados e gráficos a modelos de classificação, uma rede neural construída do zero e modelos abertos rodando localmente. Com Matheus Cavalcanti Pestana.',
+    },
+  },
+  {
     id: 'advanced-tad-2025',
     kind: 'ta',
     title: 'Advanced Text-as-Data',

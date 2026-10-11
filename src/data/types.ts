@@ -146,7 +146,12 @@ export interface Project {
 }
 
 // ── CV ──────────────────────────────────────────────────────────────────────
-// Mirrors the PDF CV (cv/cv-en.qmd, cv/cv-pt.qmd); keep the two in step.
+// Mirrors the PDF CVs: the full one (cv/cv-en.qmd, cv/cv-pt.qmd) and the short
+// one (cv/cv-*-short.qmd). Keep them in step. The web CV has two views, short
+// (the default) and full, switched on the page.
+
+/** A view of the web CV. Items with `only` show in that view alone. */
+export type CvVariant = 'short' | 'full';
 
 export interface CvRow {
   /** Left column: years or a date label. */
@@ -155,6 +160,7 @@ export interface CvRow {
   html: Text;
   /** Optional second line, e.g. the institution. */
   subHtml?: Text;
+  only?: CvVariant;
 }
 
 /** A dated position or project, as in the PDF's experience sections. */
@@ -169,17 +175,25 @@ export interface CvEntry {
   deliveryHtml?: Text;
   /** Bullet items (e.g. consulting clients). */
   itemsHtml?: L<string[]>;
+  /**
+   * One or two sentences that replace bodyHtml in the short view, role
+   * included. Items and the delivery line show only in the full view.
+   */
+  shortHtml?: Text;
+  only?: CvVariant;
 }
 
 export interface CvGroup {
   id: string;
   title: L;
   entries: CvEntry[];
+  only?: CvVariant;
 }
 
 export interface CvSkill {
   label: L;
   html: Text;
+  only?: CvVariant;
 }
 
 export interface CvReference {
@@ -193,6 +207,8 @@ export interface CvReference {
 
 export interface Cv {
   lastUpdated: L;
+  /** Profile paragraph at the top of the short view (and of the short PDF). */
+  summary: L;
   education: CvRow[];
   /** Research experience: IESP-UERJ labs, funded projects, earlier positions. */
   research: CvGroup[];

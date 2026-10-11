@@ -1,6 +1,8 @@
 ---
 // A dated position or project on the web CV: date range in the 7rem column,
 // then heading, description, bullet items and the "selected delivery" line.
+// In the short view (CvView), `shortHtml` replaces the description, and the
+// items and delivery line are hidden.
 import type { CvEntry, Locale } from '../data/types';
 import { tr, useTranslations } from '../i18n/utils';
 
@@ -13,20 +15,22 @@ const { entry: e, locale } = Astro.props;
 const t = useTranslations(locale);
 const delivery = e.deliveryHtml ? tr(e.deliveryHtml, locale) : '';
 const deliveryLabel = t(/\(ii\)/.test(delivery) ? 'cv.deliveryMany' : 'cv.deliveryOne');
+const fullOnly = { 'data-cv-only': 'full' };
 ---
 
-<li class="grid gap-x-6 gap-y-1 py-5 first:pt-0 sm:grid-cols-[7rem_minmax(0,1fr)]">
+<li class="grid gap-x-6 gap-y-1 py-5 first:pt-0 sm:grid-cols-[7rem_minmax(0,1fr)]" {...(e.only ? { 'data-cv-only': e.only } : {})}>
   <p class="meta pt-1">{tr(e.when, locale)}</p>
   <div class="min-w-0 space-y-2">
     <h4 class="text-h3 font-semibold text-ink" set:html={tr(e.titleHtml, locale)} />
-    {e.bodyHtml && <p class="max-w-prose text-small text-ink-2" set:html={tr(e.bodyHtml, locale)} />}
+    {e.bodyHtml && <p class="max-w-prose text-small text-ink-2" {...(e.shortHtml ? fullOnly : {})} set:html={tr(e.bodyHtml, locale)} />}
+    {e.shortHtml && <p class="max-w-prose text-small text-ink-2" data-cv-only="short" set:html={tr(e.shortHtml, locale)} />}
     {e.itemsHtml && (
-      <ul class="max-w-prose list-disc space-y-1 pl-5 text-small text-ink-2 marker:text-line-strong">
+      <ul class="max-w-prose list-disc space-y-1 pl-5 text-small text-ink-2 marker:text-line-strong" {...fullOnly}>
         {e.itemsHtml[locale].map((item) => <li set:html={item} />)}
       </ul>
     )}
     {delivery && (
-      <p class="max-w-prose text-sm text-ink-3">
+      <p class="max-w-prose text-sm text-ink-3" {...fullOnly}>
         <span class="font-mono text-meta uppercase tracking-[0.06em] text-ink-3">{deliveryLabel}</span>{' '}
         <span set:html={delivery} />
       </p>

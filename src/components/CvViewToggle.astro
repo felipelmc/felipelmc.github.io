@@ -1,0 +1,53 @@
+---
+// "Summary | Full" switch for the web CV. The view lives on <html data-cv>,
+// set before paint by CvView's inline script from ?v=full (or a #hash that
+// only the full view has); global.css hides whatever belongs to the other
+// view. Without JS nothing is set, the full CV shows and this switch hides.
+import type { Locale } from '../data/types';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const t = useTranslations(Astro.props.locale);
+const segment = 'rounded-[5px] px-3 py-1 text-sm text-ink-3 transition-colors duration-150 hover:text-ink';
+---
+
+<div role="group" aria-label={t('cv.view')} class="inline-flex rounded-btn border border-line bg-sunken p-0.5" data-cv-toggle data-print-hide>
+  <button type="button" class={segment} data-cv-set="short">{t('cv.viewShort')}</button>
+  <button type="button" class={segment} data-cv-set="full">{t('cv.viewFull')}</button>
+</div>
+
+<script>
+  // Switch views, keep ?v=full in the address (and in the language switch, so
+  // the other locale opens the same view), and let the page index re-check
+  // which sections are visible.
+  const root = document.documentElement;
+  const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-cv-set]'));
+
+  const withView = (href: string, view: string) => {
+    const url = new URL(href, location.href);
+    if (view === 'full') url.searchParams.set('v', 'full');
+    else url.searchParams.delete('v');
+    return url;
+  };
+
+  const sync = () => {
+    const view = root.dataset.cv === 'short' ? 'short' : 'full';
+    buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.cvSet === view)));
+    history.replaceState(history.state, '', withView(location.href, view));
+    document.querySelectorAll<HTMLAnchorElement>('[data-locale-switch]').forEach((a) => {
+      a.href = withView(a.href, view).toString();
+    });
+    window.dispatchEvent(new Event('pageindex:refresh'));
+  };
+
+  buttons.forEach((b) =>
+    b.addEventListener('click', () => {
+      root.dataset.cv = b.dataset.cvSet;
+      sync();
+    }),
+  );
+  if (buttons.length) sync();
+</script>

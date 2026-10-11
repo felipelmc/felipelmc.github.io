@@ -135,16 +135,19 @@ export const projects: Project[] = [
     tier: 'featured',
     categories: ['apps', 'data', 'viz'],
     tagline: {
-      en: 'A preliminary version of the RESA project’s public monitoring platform, covering deforestation in Acre.',
-      'pt-br': 'Versão preliminar da plataforma pública de monitoramento do projeto RESA, com dados de desmatamento no Acre.',
+      en: 'The public monitoring platform of the RESA project, covering deforestation in Acre and in the Chico Mendes Extractive Reserve.',
+      'pt-br': 'Plataforma pública de monitoramento do Projeto RESA, com o desmatamento no Acre e na Reserva Extrativista Chico Mendes.',
     },
     descriptionHtml: {
-      en: 'Maps PRODES/INPE deforestation data for Acre and the Chico Mendes Extractive Reserve, year by year. Part of a study of family-based agroextractive production in the reserve, coordinated by Luci Maria Teston (UFAC).',
-      'pt-br': 'Mapeia os dados de desmatamento do PRODES/INPE no Acre e na Reserva Extrativista Chico Mendes, ano a ano. Parte de um estudo sobre a produção agroextrativista familiar na reserva, coordenado por Luci Maria Teston (UFAC).',
+      en: 'Maps PRODES/INPE deforestation data for Acre and the Chico Mendes Extractive Reserve, year by year, and compares the reserve with its surroundings. Part of the RESA project, on what agroextractive cooperatives change in household income and deforestation in Acre, selected in an Instituto Clima e Sociedade call supported by the Bezos Earth Fund. I coordinate the project’s quantitative work, under the overall coordination of Luci Maria Teston (UFAC).',
+      'pt-br': 'Mapeia os dados de desmatamento do PRODES/INPE no Acre e na Reserva Extrativista Chico Mendes, ano a ano, e compara a reserva com o entorno. Faz parte do Projeto RESA, sobre o que o cooperativismo agroextrativista muda na renda das famílias e no desmatamento no Acre, selecionado em edital do Instituto Clima e Sociedade com apoio do Bezos Earth Fund. Coordeno a frente quantitativa do projeto, sob a coordenação geral de Luci Maria Teston (UFAC).',
     },
-    context: { en: 'RESA project · UFAC and IESP-UERJ', 'pt-br': 'Projeto RESA · UFAC e IESP-UERJ' },
+    context: { en: 'RESA project · UFAC, IESP-UERJ and IFAC', 'pt-br': 'Projeto RESA · UFAC, IESP-UERJ e IFAC' },
     stack: ['Python', 'Streamlit'],
-    links: [{ kind: 'live', href: 'https://mapa-do-desmatamento-acre.streamlit.app/' }],
+    links: [
+      { kind: 'live', href: 'https://mapa-do-desmatamento-acre.streamlit.app/' },
+      { kind: 'site', href: 'https://felipelamarca.com/Legal-Acre/', label: { en: 'Working site', 'pt-br': 'Site de trabalho' } },
+    ],
     coldStart: true,
     shot: {
       domain: 'mapa-do-desmatamento-acre.streamlit.app',

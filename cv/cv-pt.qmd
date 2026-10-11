@@ -1,7 +1,7 @@
 ---
 title: "Felipe Marques Esteves Lamarca"
 lang: pt-BR
-kicker: "Currículo · setembro de 2026"
+kicker: "Currículo · outubro de 2026"
 ---
 
 ::: position
@@ -106,6 +106,7 @@ Orientadora: [Jaqueline Porto Zulini, Ph.D.](https://cpdoc.fgv.br/equipe/jaqueli
 # Software
 
 - **`mapa-da-ciencia`** (2026). Observatório da literatura científica com modelos de linguagem locais: tópicos no tempo, classificação de resumos por codebook com validação cega e geografia da produção. [[Código-fonte]](https://github.com/felipelmc/mapa-da-ciencia) · [[Link de acesso]](https://felipelamarca.com/mapa-da-ciencia/) · [[DOI]](https://doi.org/10.5281/zenodo.22998585)
+- **DHBB-Parentescos** (2026). Rede de parentesco da política brasileira extraída com modelos de linguagem dos verbetes do Dicionário Histórico-Biográfico Brasileiro: 22.568 laços, cada um com o trecho do verbete de onde saiu. [[Link de acesso]](https://felipelamarca.com/DHBB-Parentescos/) · [[Artigo]](https://felipelamarca.com/DHBB-Parentescos/artigo/)
 - **`mape_municipios_dashboard`** (2025). Com Fernando Meireles. Dashboard sobre uma das bases mais completas de informações sobre municípios brasileiros, desenvolvido para o [MAPE](https://mape.org.br/). [[Código-fonte]](https://github.com/mape-iesp/MAPEmunicipios-Dashboard) · [[Link de acesso]](https://mape-municipios-dashboard.streamlit.app/)
 - **Indicadores LGBTQIA+ no Rio de Janeiro** (2026). Com Tomás Paixão Borges. Dashboard sobre a infraestrutura do `mape_municipios` para o mandato da deputada estadual Dani Balbi, reunindo dados da MUNIC, da PNS e do Censo SUAS sobre a população LGBTQIA+ do estado, incluindo a distribuição territorial dos equipamentos de assistência social.
 - **`Quarto-Model-IESP`** (2026). Com Matheus Cavalcanti Pestana. Template em Quarto para dissertações e teses do IESP-UERJ. [[Código-fonte]](https://github.com/felipelmc/Quarto-Model-IESP) · [[DOI]](https://doi.org/10.5281/zenodo.20819431)
@@ -163,17 +164,17 @@ Laboratório de Monitoramento e Avaliação de Políticas e Eleições, coordena
 
 *Pesquisador*
 
-Revisão sistemática das evidências sobre um cardápio de políticas de segurança pública para a Amazônia Legal, organizado em torno da ideia de entrada qualificada do Estado em territórios vulnerabilizados, seguindo o protocolo OQF (*O Que Funciona?*) do MAPE. Conduzo busca, triagem e extração de evidências. Projeto coordenado por Djane Braz Duarte.
+Revisão sistemática das evidências sobre políticas de segurança pública para a Amazônia Legal, organizada em torno da ideia de entrada qualificada do Estado em territórios vulnerabilizados e seguindo o protocolo OQF (*O Que Funciona?*) do MAPE. São 12 políticas em quatro eixos (do policiamento de proximidade e das câmeras corporais à Patrulha Maria da Penha e ao Plano Juventude Viva) e mais de 300 trabalhos. Conduzo busca, triagem e extração de evidências, com triagem e extração assistidas por modelos de linguagem e conferidas pela equipe. Projeto coordenado por Djane Braz Duarte.
 
 *Entregas previstas.* (i) relatório técnico-analítico para o Ministério; (ii) artigo submetido a periódico qualificado; (iii) verbetes sobre as políticas revisadas no [Dicionário de Favelas Marielle Franco](https://wikifavelas.com.br).
 
-### Projeto RESA, UFAC e IESP-UERJ [08/2025 -- Presente]{.date}
+### Projeto RESA, UFAC, IESP-UERJ e IFAC [08/2025 -- Presente]{.date}
 
-*Pesquisador*
+*Coordenador de Métodos e Análise Quantitativa*
 
-Impactos socioeconômicos e ambientais da produção agroextrativista de base familiar na Reserva Extrativista Chico Mendes, no Acre, com ênfase no que o cooperativismo muda no uso da terra e na renda das famílias. Cuido dos dados quantitativos e construo a plataforma pública de monitoramento. Coordenado por Luci Maria Teston (UFAC), com o IESP-UERJ como parceiro executor.
+Impactos socioeconômicos e ambientais da produção agroextrativista de base familiar em reservas extrativistas e assentamentos do Acre, com foco no que o cooperativismo muda na renda das famílias e no desmatamento. O projeto foi um dos seis selecionados, entre 221 propostas, no edital de pesquisa em economia sustentável na Amazônia do Instituto Clima e Sociedade (iCS), com apoio do Bezos Earth Fund. Coordeno a frente quantitativa (dados primários e secundários, indicadores, plataforma de monitoramento e orientação de bolsistas em métodos). Coordenação geral de Luci Maria Teston (UFAC).
 
-*Entrega selecionada.* Versão preliminar da [plataforma de monitoramento](https://mapa-do-desmatamento-acre.streamlit.app/), com dados de desmatamento no Acre.
+*Entregas selecionadas.* (i) [Plataforma de monitoramento](https://mapa-do-desmatamento-acre.streamlit.app/) do desmatamento no Acre e na Resex Chico Mendes; (ii) relatório técnico sobre a pressão de desmatamento dentro e no entorno da Resex; (iii) [site de trabalho](https://felipelamarca.com/Legal-Acre/) com bases para toda a Amazônia Legal, cruzando desmatamento, cooperativismo, crédito rural e indicadores sociais.
 
 ## Posições anteriores
 
@@ -181,25 +182,19 @@ Impactos socioeconômicos e ambientais da produção agroextrativista de base fa
 
 *Assistente de Pesquisa*
 
-Digitalização e sistematização de resultados eleitorais históricos com OCR e LLMs, sob supervisão do Prof. [Cesar Zucco, Ph.D.](https://professor.fgv.br/ebape/cesar-zucco)
-
-*Entregas selecionadas.* Bases extraídas de imagens históricas, código-fonte e relatório técnico.
+Digitalização e sistematização de resultados eleitorais históricos com OCR e LLMs, com bases, código-fonte e relatório técnico como entregas. Supervisão do Prof. [Cesar Zucco, Ph.D.](https://professor.fgv.br/ebape/cesar-zucco)
 
 ### [CEBRAP](https://cebrap.org.br/) [10/2024 -- 02/2025]{.date}
 
 *Consultor, Center for Critical Imagination*
 
-Apliquei OCR e LLMs aos Anuários Estatísticos Brasileiros, publicados como manuscritos, para sistematizar dados de assistência social desde o início do século XX. Em colaboração com [José Szwako, Ph.D.](https://iesp.uerj.br/pesquisador/jose-eduardo-leon-szwako/)
-
-*Entregas selecionadas.* Bases extraídas de PDFs, código-fonte e relatório técnico.
+Apliquei OCR e LLMs aos Anuários Estatísticos Brasileiros, publicados como manuscritos, para sistematizar dados de assistência social desde o início do século XX, com bases, código-fonte e relatório técnico como entregas. Em colaboração com [José Szwako, Ph.D.](https://iesp.uerj.br/pesquisador/jose-eduardo-leon-szwako/)
 
 ### Escola de Ciências Sociais, FGV CPDOC [06/2019 -- 09/2022]{.date}
 
 *Bolsista de Iniciação Científica*
 
-Com bolsa FGV/CNPq, examinei as relações Executivo-Legislativo no início do século XX com métodos qualitativos e quantitativos. Supervisão da Profa. [Jaqueline Porto Zulini, Ph.D.](https://cpdoc.fgv.br/equipe/jaquelinezulini)
-
-*Entregas selecionadas.* Três relatórios técnicos e um artigo revisado por pares.
+Com bolsa FGV/CNPq, examinei as relações Executivo-Legislativo no início do século XX com métodos qualitativos e quantitativos, em três relatórios técnicos e um artigo revisado por pares. Supervisão da Profa. [Jaqueline Porto Zulini, Ph.D.](https://cpdoc.fgv.br/equipe/jaquelinezulini)
 
 # Experiência Docente
 
@@ -229,6 +224,10 @@ mai 2026
 
 :   **Análise Automatizada de Texto.** Curso intensivo sobre abordagens modernas de text-as-data em ciências sociais, no [Summer Institute in Computational Social Science (SICSS) Brasil](https://sicss.io/2025/fgv-ecmi-brazil/). [[PDF]](https://github.com/felipelmc/Presentations/blob/main/SICSS-2025/sicss2025.pdf)
 
+dez 2024
+
+:   **Python, análise de dados e machine learning para pesquisa.** Curso em quatro módulos para a equipe de pesquisa da [Plataforma CIPÓ](https://plataformacipo.org/), instituto sobre clima e governança internacional. Com Matheus Cavalcanti Pestana.
+
 ## Monitoria
 
 2025.1
@@ -249,44 +248,36 @@ mai 2026
 
 *Cientista de Dados*
 
-Calibração de amostras de surveys, análise política, monitoramento da opinião pública e melhoria dos pipelines internos de dados.
+Calibragem amostral das pesquisas eleitorais da AtlasIntel, nacionais e subnacionais, na maior parte da América Latina, nos Estados Unidos (inclusive nas *midterms*), na Europa, em Israel e em Moçambique. No Brasil, participei da calibragem das pesquisas de todos os estados no ciclo de 2026. Desenho as pesquisas presenciais domiciliares probabilísticas da empresa (amostras em vários estágios, com sorteio proporcional ao tamanho e escolha do morador por grade de Kish). Introduzi experimentos *conjoint* nas pesquisas da empresa.
 
-*Entrega selecionada.* Reduzi a obtenção de dados demográficos para ponderação de amostras de horas de trabalho manual a uma chamada de script.
-
-### Consultoria independente [07/2024 -- 06/2025]{.date}
+### Consultoria independente [07/2024 -- Presente]{.date}
 
 *Consultor Independente em Ciência de Dados e Pesquisa*
 
-Trabalhos de dados e IA, apoio à pesquisa e treinamentos para clientes de diversos setores.
+Dados, pesquisa e formação em métodos para organizações da sociedade civil, universidades e empresas.
 
+- [Fundação Roberto Marinho](https://www.frm.org.br/): ferramentas de dados para monitorar os programas educativos da fundação (Telecurso, co.liga, Canal Futura, Escola FRM e Aprendiz Legal), como o acompanhamento da aprendizagem e da formação de professores do Telecurso em Salvador, e treinamento da equipe em Python e machine learning.
+- [Plataforma CIPÓ](https://plataformacipo.org/): curso de machine learning para a equipe de pesquisa.
+- [GENI/UFF](https://geni.uff.br/): bases de dados, modelos estatísticos e ferramentas de dados para pesquisas sobre violência armada e controle territorial no estado do Rio de Janeiro.
 - [Artplan](https://artplan.com.br/): apliquei deep learning para segmentação em redes sociais.
-- [Fundação Roberto Marinho](https://www.frm.org.br/): dashboards em Streamlit e Power BI, data lake na AWS e treinamento em Python/ML.
-- [Plataforma CIPÓ](https://plataformacipo.org/): módulos de treinamento em machine learning e análise de dados.
-- [GENI/UFF](https://geni.uff.br/): ferramentas de LLM e RAG para extração estruturada de documentos não estruturados.
 
 ### [Instituto Rio21](https://rio21.org/) [04/2022 -- 06/2025]{.date}
 
 *Cientista de Dados e Pesquisador*
 
-Conduzi e analisei surveys sobre políticas públicas e segurança urbana.
-
-*Entregas selecionadas.* (i) Pipeline automatizado em Python que reduziu a produção de relatórios de dias para cerca de uma hora; (ii) mapas interativos e programáticos para públicos corporativos.
+Conduzi e analisei surveys sobre políticas públicas e segurança urbana, com um pipeline em Python que reduziu a produção de relatórios de dias para cerca de uma hora.
 
 ### Superintendência de Planejamento Estratégico, FGV [10/2024 -- 12/2024]{.date}
 
 *Estagiário em Ciência de Dados*
 
-Levei IA generativa a pipelines de tomada de decisão e preparei apresentações para a liderança executiva da FGV.
-
-*Entrega selecionada.* Pipeline RAG para consultar as publicações dos pesquisadores da FGV em linguagem natural.
+Pipeline RAG para consultar em linguagem natural as publicações dos pesquisadores da FGV.
 
 ### [Visagio](https://visagio.com/en/home/) [01/2024 -- 06/2024]{.date}
 
 *Cientista de Dados em regime parcial*
 
-Modelos de otimização, pipelines em SQL e dashboards em Power BI para as áreas de precificação e operações.
-
-*Entregas selecionadas.* (i) Calculadora de tamanho amostral para testes A/B em contextos não experimentais complexos; (ii) dashboards para auditoria de despesas; (iii) análises para alocar campanhas de desconto.
+Modelos de otimização, pipelines em SQL e dashboards em Power BI para precificação e operações, além de uma calculadora de tamanho amostral para testes A/B.
 
 # Competências e Idiomas
 

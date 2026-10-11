@@ -180,6 +180,21 @@
 .fig-dots[data-bin='4'] { animation-delay: 330ms; }
 .fig-dots[data-bin='5'] { animation-delay: 440ms; }
 
+/* Web CV views (CvView): <html data-cv="short|full">, set before paint;
+   [data-cv-only] belongs to one view. Without JS nothing is set: the full CV
+   shows and the switch hides. Print keeps whichever view is on screen. */
+html[data-cv='short'] [data-cv-only='full'],
+html:not([data-cv='short']) [data-cv-only='short'],
+html:not([data-cv]) [data-cv-toggle] {
+  display: none !important;
+}
+html[data-cv='short'] [data-cv-set='short'],
+html[data-cv='full'] [data-cv-set='full'] {
+  background-color: rgb(var(--surface));
+  color: rgb(var(--ink));
+  box-shadow: 0 1px 2px rgb(var(--shadow) / 0.1);
+}
+
 @media print {
   header,
   footer,

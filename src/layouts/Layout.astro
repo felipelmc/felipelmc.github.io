@@ -89,6 +89,8 @@ const personLd = {
       document.documentElement.classList.toggle('dark', theme === 'dark');
       document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#0B0D10' : '#F6F6F3');
     </script>
+    <!-- Pages put their own pre-paint scripts here (the CV view switch). -->
+    <slot name="head" />
   </head>
   <body class="flex min-h-screen flex-col">
     <a

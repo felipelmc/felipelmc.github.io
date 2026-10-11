@@ -1,21 +1,30 @@
 # Currículo
 
-Currículo em Quarto, em inglês (`cv-en.qmd`) e em português (`cv-pt.qmd`).
-O PDF é a versão impressa do site: mesmas fontes, mesma coluna de datas à
-esquerda, mesmos números de seção.
+Currículo em Quarto, em duas versões e duas línguas: o completo
+(`cv-en.qmd`, `cv-pt.qmd`, 4 páginas) e o resumido (`cv-en-short.qmd`,
+`cv-pt-short.qmd`, 2 páginas). O PDF é a versão impressa do site: mesmas
+fontes, mesma coluna de datas à esquerda, mesmos números de seção.
+
+O resumido é pensado para vagas fora da academia (institutos de pesquisa,
+*think tanks*): perfil no topo, experiência antes de formação e publicações,
+uma ou duas linhas por entrada e nada de referências. Não é gerado a partir
+do completo; é um arquivo próprio, porque a ordem das seções muda.
 
 ## Como atualizar
 
-Edite o `.qmd` do idioma — **os dois, sempre**, para não deixarem de bater — e
-rode, da raiz do repositório:
+Edite os `.qmd` — **os quatro, sempre** (completo e resumido, nas duas
+línguas), mais o CV da web em `src/data/cv.ts` (`bodyHtml` para o completo,
+`shortHtml` para o resumido), para não deixarem de bater — e rode, da raiz do
+repositório:
 
 ```bash
 ./cv/render.sh
 ```
 
-O script gera `cv-en.pdf` e `cv-pt.pdf` aqui, copia os dois para
-`public/files/` (de onde o site serve os downloads) e mostra quantas páginas
-cada um deu. Depois disso, `npm run build` na raiz regenera `docs/` e o PDF
+O script gera `cv-en.pdf`, `cv-pt.pdf`, `cv-en-short.pdf` e `cv-pt-short.pdf`
+aqui, copia os quatro para `public/files/` (de onde o site serve os
+downloads) e mostra quantas páginas cada um deu, terminando com erro se algum
+não fechar no número esperado (4 e 2). Depois disso, `npm run build` na raiz regenera `docs/` e o PDF
 novo entra no ar no próximo push.
 
 Para renderizar um só arquivo enquanto escreve: `quarto render cv-en.qmd`
@@ -27,14 +36,15 @@ dentro de `cv/`.
 |-----------------|------------------------------------------------------------------|
 | `cv-en.qmd`     | conteúdo do currículo em inglês                                   |
 | `cv-pt.qmd`     | conteúdo do currículo em português                                |
+| `cv-*-short.qmd` | o currículo resumido (2 páginas), em inglês e em português       |
 | `_quarto.yml`   | motor, página e margens — vale para os dois                       |
 | `_preamble.tex` | todo o desenho: fontes, cores, cabeçalho, seções, entradas, rodapé |
 | `_cv.lua`       | filtro Pandoc: datas, blocos `:::` e rótulos de recurso           |
 | `fonts/`        | as fontes do PDF e as licenças delas                              |
-| `render.sh`     | renderiza os dois, conta as páginas e copia para `public/files/`  |
+| `render.sh`     | renderiza os quatro, confere as páginas e copia para `public/files/` |
 
 Arquivos com `_` na frente são ignorados pelo Quarto na hora de renderizar o
-projeto, então só os dois `.qmd` viram PDF.
+projeto, então só os quatro `.qmd` viram PDF.
 
 ## Fontes e motor
 
@@ -94,13 +104,19 @@ esquerda, em mono cinza. Datas `MM/AAAA` viram "Jun 2025" (en) ou "jun 2025"
 (pt) sozinhas; use `--` entre início e fim.
 
 **Cargo.** Um parágrafo que é só um itálico, logo abaixo do título da
-entrada, é o cargo e sai em itálico cinza na linha de baixo:
+entrada, é o cargo e sai em itálico cinza na mesma linha do título
+("NECON, IESP-UERJ · Researcher"), ou na linha de baixo quando não cabe:
 
 ```markdown
 ### [NECON](http://necon.iesp.uerj.br), IESP-UERJ [01/2026 -- Present]{.date}
 
 *Researcher*
 ```
+
+O cargo na linha do título (`\cv@roleinlinetrue`, no `_preamble.tex`) foi
+ligado em outubro de 2026, quando as descrições ficaram mais longas: ele
+economiza uma linha por entrada. Desligá-lo devolve o cargo à linha própria,
+mas o completo deixa de caber em 4 páginas.
 
 **Rótulos em itálico.** Um parágrafo que começa com um itálico terminado em
 ponto — `*Selected delivery.*`, `*Expected deliveries.*`, `*Summer schools
@@ -130,9 +146,9 @@ quebra a linha sem abrir parágrafo, e `código` sai em Geist Mono.
 
 ## Duas coisas que quebram fácil
 
-**Paginação.** Os dois currículos fecham em **4 páginas cheias**: nenhum
-título solto no pé da página e a última página pelo menos três quartos
-cheia. O português corre mais longo que o inglês e é sempre o primeiro a
+**Paginação.** Os completos fecham em **4 páginas cheias** e os resumidos em
+**2**: nenhum título solto no pé da página e a última página pelo menos três
+quartos cheia. O português corre mais longo que o inglês e é sempre o primeiro a
 estourar. O `render.sh` avisa quando um PDF sai com outro número de páginas;
 aí olhe a última página. Se ela ficou rala ou virou uma quinta página, corte
 ou encurte alguma coisa no conteúdo antes de mexer no desenho. Se precisar
