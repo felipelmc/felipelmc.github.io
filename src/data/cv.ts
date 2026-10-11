@@ -120,7 +120,7 @@ export const cv: Cv = {
           },
         },
         {
-          when: { en: '08/2025 – present', 'pt-br': '08/2025 – presente' },
+          when: { en: '02/2026 – present', 'pt-br': '02/2026 – presente' },
           titleHtml: { en: 'RESA project, UFAC, IESP-UERJ and IFAC', 'pt-br': 'Projeto RESA, UFAC, IESP-UERJ e IFAC' },
           bodyHtml: {
             en: `<em>Coordinator of Quantitative Methods and Analysis.</em> A project on the socioeconomic and environmental impacts of family-based agroextractive production in extractive reserves and rural settlements in Acre, focusing on what cooperatives change in household income and deforestation. It was one of six projects selected, out of 221 proposals, in the ${a('https://climaesociedade.org/edital-do-ics-com-apoio-do-bezos-earth-fund-seleciona-seis-projetos-sobre-economia-sustentavel-propostos-por-instituicoes-cientificas-da-amazonia/', 'Instituto Clima e Sociedade (iCS)')} call for research on sustainable economies in the Amazon, supported by the Bezos Earth Fund. I coordinate the quantitative work: collecting and analyzing primary and secondary data, building indicators, the public monitoring platform, and training research fellows in quantitative methods. Overall coordination by Luci Maria Teston (UFAC).`,
