@@ -85,7 +85,19 @@ export const profile = {
     'pt-br': ['Comportamento legislativo', 'Métodos computacionais', 'Comportamento político', 'Pesquisa de survey', 'Inferência causal'],
   } as L<string[]>,
 
+  /** Small avatar (hero kicker on small screens) and the large hero portrait (lg and up). */
   portrait: { src: '/img/profilepic/me_at_iesp.webp', width: 576, height: 576 },
+  portraitLarge: { src: '/img/profilepic/me_at_iesp-lg.webp', width: 720, height: 720 },
+  /** The About section's photo. */
+  aboutPhoto: {
+    src: '/img/profilepic/me_with_parrot.webp',
+    width: 576,
+    height: 576,
+    alt: {
+      en: 'Felipe Lamarca smiling, with a parrot perched on one shoulder',
+      'pt-br': 'Felipe Lamarca sorrindo, com um papagaio no ombro',
+    } as L,
+  },
 
   /** CV PDFs: the 2-page short version and the full one (cv/README.md). */
   cvPdf: {

@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 /* Theme tokens: RGB triplets read by tailwind.config.mjs as rgb(var(--x) / a).
-   --d1…--d5 are the sequential ramp of the data figures (low → high). */
+   --d1…--d5 are a sequential teal ramp (low → high), the colours of the site
+   mark (ui/Mark, favicon.svg). */
 :root {
   --bg: 246 246 243;
   --surface: 255 255 255;
@@ -159,26 +160,6 @@
     text-wrap: pretty;
   }
 }
-
-/* Fig. 1: dark dots on a light ground read smaller than light-on-dark, so the
-   light theme draws them a little bigger and dims the grid. */
-.fig-dots { stroke-width: 5.5px; }
-.dark .fig-dots { stroke-width: 5px; }
-.fig-graticule { opacity: 0.7; }
-.dark .fig-graticule { opacity: 1; }
-
-/* Fig. 1: the dot groups fade in once, low → high, under ~900 ms. */
-@keyframes fig-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-.fig-dots {
-  animation: fig-in 420ms ease-out both;
-}
-.fig-dots[data-bin='2'] { animation-delay: 110ms; }
-.fig-dots[data-bin='3'] { animation-delay: 220ms; }
-.fig-dots[data-bin='4'] { animation-delay: 330ms; }
-.fig-dots[data-bin='5'] { animation-delay: 440ms; }
 
 /* Web CV views (CvView): <html data-cv="short|full">, set before paint;
    [data-cv-only] belongs to one view. Without JS nothing is set: the full CV

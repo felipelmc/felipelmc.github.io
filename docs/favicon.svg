@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <!-- The site mark: Fig. 1's colour ramp along the diagonal (see src/components/ui/Mark.astro). -->
+  <!-- The site mark: the --d1…--d5 colour ramp along the diagonal (see src/components/ui/Mark.astro). -->
   <style>
     .d1 { fill: #5AC0AB; } .d2 { fill: #2E9D8E; } .d3 { fill: #187970; } .d4 { fill: #0E5652; } .d5 { fill: #053535; }
     @media (prefers-color-scheme: dark) {

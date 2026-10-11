@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Fig1 from '../components/figures/Fig1.astro';
 import NewsList from '../components/NewsList.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import PubEntry from '../components/PubEntry.astro';
@@ -40,7 +39,7 @@ const sectionGap = 'mt-20 sm:mt-24';
   description={t('meta.home')}
 >
   <!-- Hero -->
-  <section class="grid items-start gap-12 lg:grid-cols-2 lg:gap-12 xl:gap-16" aria-labelledby="hero-name">
+  <section class="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-16 xl:gap-24" aria-labelledby="hero-name">
     <div class="lg:pt-2">
       <div class="mb-6 flex items-center gap-3">
         <img
@@ -48,8 +47,7 @@ const sectionGap = 'mt-20 sm:mt-24';
           width="40"
           height="40"
           alt=""
-          fetchpriority="high"
-          class="h-10 w-10 shrink-0 rounded-full object-cover"
+          class="h-10 w-10 shrink-0 rounded-full object-cover lg:hidden"
         />
         <p class="eyebrow">{t('home.kicker')}</p>
       </div>
@@ -91,7 +89,16 @@ const sectionGap = 'mt-20 sm:mt-24';
       </ul>
     </div>
 
-    <Fig1 locale={locale} class="mx-auto w-full max-w-lg lg:max-w-none" />
+    <!-- The portrait: a personal site leads with the person. Below lg the
+         small avatar in the kicker stands in for it. -->
+    <img
+      src={profile.portraitLarge.src}
+      width={profile.portraitLarge.width}
+      height={profile.portraitLarge.height}
+      alt=""
+      fetchpriority="high"
+      class="hidden aspect-square w-[20rem] rounded-full object-cover lg:block xl:w-[22rem]"
+    />
   </section>
 
   <!-- 01 Projects -->
@@ -152,10 +159,10 @@ const sectionGap = 'mt-20 sm:mt-24';
     <div class="grid gap-10 lg:grid-cols-12">
       <div class="lg:col-span-4">
         <img
-          src={profile.portrait.src}
-          width={profile.portrait.width}
-          height={profile.portrait.height}
-          alt={profile.name}
+          src={profile.aboutPhoto.src}
+          width={profile.aboutPhoto.width}
+          height={profile.aboutPhoto.height}
+          alt={profile.aboutPhoto.alt[locale]}
           loading="lazy"
           decoding="async"
           class="aspect-square w-full max-w-[15rem] rounded-full object-cover"
