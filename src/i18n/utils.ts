@@ -54,3 +54,14 @@ export function htmlLang(locale: Locale): 'en' | 'pt-BR' {
 export function asLocale(value: string | undefined): Locale {
   return value === 'pt-br' ? 'pt-br' : 'en';
 }
+
+// Month names as in the PDF CVs (cv/_cv.lua).
+const MONTHS: Record<Locale, string[]> = {
+  en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  'pt-br': ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'],
+};
+
+/** "02/2026 – present" → "Feb 2026 – present": spells out every MM/YYYY in a date label. */
+export function monthNames(label: string, locale: Locale): string {
+  return label.replace(/\b(0[1-9]|1[0-2])\/(\d{4})\b/g, (_, m, y) => `${MONTHS[locale][Number(m) - 1]} ${y}`);
+}

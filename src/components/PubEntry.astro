@@ -1,6 +1,8 @@
 ---
 // One research output: mono year, type tag, serif title, venue, co-authors,
-// note, and actions (Abstract as a <details>, BibTeX dialog, links).
+// note, and actions (Abstract as a <details>, BibTeX dialog, links). A paper
+// with a `figure` gets its thumbnail on the right (below the text on small
+// screens), linking to the full image.
 import CiteDialog from './CiteDialog.astro';
 import LinkList from './LinkList.astro';
 import type { Locale, Publication } from '../data/types';
@@ -13,19 +15,23 @@ interface Props {
   as?: 'h3' | 'h4';
   /** Show the type tag (useful in mixed lists; redundant under a type heading). */
   showType?: boolean;
+  /** Show the paper's figure, if it has one (off in narrow columns). */
+  showFigure?: boolean;
 }
 
-const { pub, locale, as: Title = 'h3', showType = true } = Astro.props;
+const { pub, locale, as: Title = 'h3', showType = true, showFigure = true } = Astro.props;
 const t = useTranslations(locale);
 const pageLang = htmlLang(locale);
 const titleLang = typeof pub.title === 'string' && pub.titleLang && pub.titleLang !== pageLang ? pub.titleLang : undefined;
 const abstractLang = pub.abstractLang && pub.abstractLang !== pageLang ? pub.abstractLang : undefined;
 const typeLabel = t(`pub.type.${pub.type}` as TranslationKey);
 const hasActions = !!(pub.abstract || pub.citation || pub.links?.length);
+const figure = showFigure ? pub.figure : undefined;
 ---
 
 <article id={pub.id} class="grid scroll-mt-24 gap-x-6 gap-y-1 border-b border-line py-6 first:pt-0 last:border-0 sm:grid-cols-[7rem_minmax(0,1fr)]">
   <p class="meta pt-1">{pub.year}</p>
+  <div class:list={['min-w-0', figure && 'md:grid md:grid-cols-[minmax(0,1fr)_11rem] md:items-start md:gap-x-8']}>
   <div class="min-w-0">
     {showType && <p class="mb-2"><span class="chip">{typeLabel}</span></p>}
     <Title class="font-serif text-h3 font-medium text-ink text-pretty" lang={titleLang}>{tr(pub.title, locale)}</Title>
@@ -54,6 +60,25 @@ const hasActions = !!(pub.abstract || pub.citation || pub.links?.length);
         {pub.links && <LinkList links={pub.links} locale={locale} />}
       </div>
     )}
+  </div>
+  {figure && (
+    <a
+      href={`/img/research/${pub.id}.webp`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-4 block max-w-[16rem] overflow-hidden rounded-chip border border-line bg-white transition-colors duration-150 hover:border-line-strong md:mt-1 md:max-w-none"
+    >
+      <img
+        src={`/img/research/thumbs/${pub.id}.webp`}
+        width={figure.width}
+        height={figure.height}
+        alt={figure.alt[locale]}
+        loading="lazy"
+        decoding="async"
+        class="h-auto w-full dark:brightness-90"
+      />
+    </a>
+  )}
   </div>
   {pub.citation && <CiteDialog citation={pub.citation} locale={locale} />}
 </article>

@@ -1,5 +1,7 @@
 ---
-// News as a timeline: mono date label, a dot on a 1px rule, the text.
+// News as a timeline in one narrow column: a dot on a 1px rule, the mono date
+// label, then the text. With `limit`, the older items sit behind an "Earlier"
+// disclosure, so the list stays about as tall as the column next to it.
 import Icon from './ui/Icon.astro';
 import { news } from '../data/news';
 import type { Locale } from '../data/types';
@@ -12,29 +14,45 @@ interface Props {
 
 const { locale, limit } = Astro.props;
 const t = useTranslations(locale);
-const items = limit ? news.slice(0, limit) : news;
+const groups = [
+  { items: limit ? news.slice(0, limit) : news, earlier: false },
+  { items: limit ? news.slice(limit) : [], earlier: true },
+].filter((g) => g.items.length);
 ---
 
-<ol class="relative max-w-3xl">
-  <span class="absolute bottom-3 left-[0.3125rem] top-3 w-px bg-line sm:left-[8rem]" aria-hidden="true"></span>
-  {items.map((item, i) => (
-    <li id={`news-${item.date}`} class="relative grid scroll-mt-24 gap-1 pb-6 pl-6 last:pb-0 sm:grid-cols-[7rem_minmax(0,1fr)] sm:gap-x-8 sm:pl-0">
-      <span
-        class:list={[
-          'absolute left-0 top-[0.5rem] h-[11px] w-[11px] rounded-full border-2 border-canvas sm:left-[calc(8rem-5px)]',
-          i === 0 ? 'bg-accent' : 'bg-line-strong',
-        ]}
-        aria-hidden="true"
-      ></span>
-      <p class="meta pt-1">{item.label[locale]}</p>
-      <p class="leading-relaxed text-ink-2">
-        {item.text[locale]}
-        {item.href && (
-          <a href={getLocalePath(locale, item.href)} class="link ml-1 whitespace-nowrap text-sm">
-            {t('common.more')}<Icon name="arrow-right" class="ml-0.5 inline h-3 w-3" />
-          </a>
-        )}
-      </p>
-    </li>
-  ))}
-</ol>
+{groups.map((g) => {
+  const list = (
+    <ol class="relative">
+      <span class="absolute bottom-3 left-[0.3125rem] top-3 w-px bg-line" aria-hidden="true"></span>
+      {g.items.map((item, i) => (
+        <li id={`news-${item.date}`} class="relative scroll-mt-24 pb-6 pl-6 last:pb-0">
+          <span
+            class:list={[
+              'absolute left-0 top-[0.375rem] h-[11px] w-[11px] rounded-full border-2 border-canvas',
+              i === 0 && !g.earlier ? 'bg-accent' : 'bg-line-strong',
+            ]}
+            aria-hidden="true"
+          ></span>
+          <p class="meta">{item.label[locale]}</p>
+          <p class="mt-1 text-small text-ink-2">
+            {item.text[locale]}
+            {item.href && (
+              <a href={getLocalePath(locale, item.href)} class="link ml-1 whitespace-nowrap text-sm">
+                {t('common.more')}<Icon name="arrow-right" class="ml-0.5 inline h-3 w-3" />
+              </a>
+            )}
+          </p>
+        </li>
+      ))}
+    </ol>
+  );
+  return g.earlier ? (
+    <details class="group mt-6">
+      <summary class="action cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+        {t('home.earlierNews')}
+        <span class="inline-block transition-transform duration-150 group-open:rotate-180" aria-hidden="true">↓</span>
+      </summary>
+      <div class="mt-6">{list}</div>
+    </details>
+  ) : list;
+})}

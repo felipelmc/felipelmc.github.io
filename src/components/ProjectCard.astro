@@ -1,8 +1,10 @@
 ---
 // A project card. With a screenshot, the image sits in a browser-like frame
 // whose address bar shows the real domain; without one, the card is text only.
-// Variants: `featured` (Projects page top: description, stats), `standard`
-// (Projects grid), `home` (home page: slimmer, fixed image height per row).
+// Variants: `featured` (Projects page top: large stats, the long description
+// behind a "Details" disclosure), `standard` (Projects grid), `home` (home
+// page: slimmer, fixed image height per row; below `sm` it collapses to a
+// compact row with a small thumbnail, the title and the tagline).
 import CiteDialog from './CiteDialog.astro';
 import LinkList from './LinkList.astro';
 import Icon from './ui/Icon.astro';
@@ -33,36 +35,36 @@ const showStack = !home && (p.stack?.length || p.coursework || p.privateDeployme
   id={p.slug}
   data-project
   data-categories={p.categories.join(' ')}
-  class:list={['card group/card flex scroll-mt-24 flex-col overflow-hidden transition-[border-color,box-shadow] duration-150 hover:border-line-strong hover:shadow-lift', className]}
+  class:list={['card group/card flex scroll-mt-24 overflow-hidden transition-[border-color,box-shadow] duration-150 hover:border-line-strong hover:shadow-lift', home ? 'flex-row sm:flex-col' : 'flex-col', className]}
 >
   {image && (
     <>
-      <div class="flex h-7 items-center gap-2 border-b border-line bg-sunken px-3" aria-hidden="true">
+      <div class:list={['h-7 items-center gap-2 border-b border-line bg-sunken px-3', home ? 'hidden sm:flex' : 'flex']} aria-hidden="true">
         <span class="h-2 w-2 shrink-0 rounded-full border border-line-strong"></span>
         <span class="truncate font-mono text-meta text-ink-3">{p.shot!.domain}</span>
       </div>
-      <div class:list={['relative overflow-hidden border-b border-line bg-sunken', home ? 'aspect-[16/10] md:aspect-auto md:h-[15rem] lg:h-[18rem]' : 'aspect-[16/10]']}>
+      <div class:list={['relative overflow-hidden border-line bg-sunken', home ? 'w-[6.5rem] shrink-0 border-r sm:aspect-[16/10] sm:w-auto sm:border-b sm:border-r-0 md:aspect-auto md:h-[15rem] lg:h-[18rem]' : 'aspect-[16/10] border-b']}>
         <img
           src={`/img/projects/thumbs/${image}.webp`}
           srcset={`/img/projects/thumbs/${image}.webp 800w, /img/projects/${image}.webp 1600w`}
-          sizes={featured ? '(min-width: 1024px) 36rem, (min-width: 768px) 50vw, 100vw' : '(min-width: 1024px) 28rem, (min-width: 768px) 50vw, 100vw'}
+          sizes={featured ? '(min-width: 1024px) 36rem, (min-width: 768px) 50vw, 100vw' : home ? '(min-width: 1024px) 36rem, (min-width: 768px) 50vw, (min-width: 640px) 100vw, 7rem' : '(min-width: 1024px) 28rem, (min-width: 768px) 50vw, 100vw'}
           width="1600"
           height="1000"
           alt={p.shot!.alt[locale]}
           loading={eager ? 'eager' : 'lazy'}
           decoding="async"
-          class="h-full w-full object-cover object-top transition-[transform,filter] duration-300 ease-out group-hover/card:-translate-y-1 motion-reduce:transition-none dark:brightness-[.8] dark:group-hover/card:brightness-100"
+          class:list={['h-full w-full object-cover transition-[transform,filter] duration-300 ease-out motion-reduce:transition-none dark:brightness-[.8] dark:group-hover/card:brightness-100', home ? 'absolute inset-0 object-left-top sm:static sm:object-top sm:group-hover/card:-translate-y-1' : 'object-top group-hover/card:-translate-y-1']}
         />
       </div>
     </>
   )}
 
-  <div class:list={['flex flex-1 flex-col', featured ? 'gap-3 p-5 sm:p-6' : 'gap-2.5 p-5']}>
+  <div class:list={['flex min-w-0 flex-1 flex-col', featured ? 'gap-3 p-5 sm:p-6' : home ? 'gap-1.5 p-4 sm:gap-2.5 sm:p-5' : 'gap-2.5 p-5']}>
     <p class="meta">
       {p.year}{p.context && <> · {tr(p.context, locale)}</>}
     </p>
 
-    <Title class:list={['text-h3 font-semibold text-ink', p.code && 'font-mono !tracking-[-0.02em]']}>
+    <Title class="text-h3 font-semibold text-ink">
       {primary ? (
         <a href={primary.href} target="_blank" rel="noopener noreferrer" class="transition-colors duration-150 hover:text-accent">{title}</a>
       ) : title}
@@ -80,26 +82,34 @@ const showStack = !home && (p.stack?.length || p.coursework || p.privateDeployme
       </p>
     )}
 
-    <p class="text-small text-ink-2 text-pretty">{p.tagline[locale]}</p>
-    {featured && p.descriptionHtml && <p class="text-sm leading-relaxed text-ink-3" set:html={p.descriptionHtml[locale]} />}
-
-    {featured && p.stats && (
-      <dl class="flex flex-wrap gap-x-6 gap-y-2 py-1">
+    {(featured || home) && p.stats && (
+      <dl class:list={['flex-wrap gap-x-6 gap-y-1', home ? 'hidden sm:flex' : 'flex']}>
         {p.stats.map((s) => (
           <div class="flex items-baseline gap-1.5">
             <dt class="sr-only">{s.label[locale]}</dt>
-            <dd class="font-mono text-lg font-medium tracking-[-0.02em] text-ink">{tr(s.value, locale)}</dd>
+            <dd class:list={['font-mono font-medium tracking-[-0.02em] text-ink', featured ? 'text-[1.375rem] leading-tight' : 'text-base']}>{tr(s.value, locale)}</dd>
             <dd class="text-sm text-ink-3" aria-hidden="true">{s.label[locale]}</dd>
           </div>
         ))}
       </dl>
     )}
 
+    <p class:list={['text-small text-ink-2 text-pretty', home && 'line-clamp-3 sm:line-clamp-none']}>{p.tagline[locale]}</p>
+    {featured && p.descriptionHtml && (
+      <details class="group">
+        <summary class="action cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+          {t('common.details')}
+          <span class="inline-block transition-transform duration-150 group-open:rotate-180" aria-hidden="true">↓</span>
+        </summary>
+        <p class="mt-2 text-sm leading-relaxed text-ink-3" set:html={p.descriptionHtml[locale]} />
+      </details>
+    )}
+
     {!home && p.collaborators?.length && (
       <p class="text-sm text-ink-3">{t('common.jointWith')} {joinPeople(p.collaborators, locale)}.</p>
     )}
 
-    <div class="mt-auto flex flex-col gap-3 pt-2">
+    <div class:list={['mt-auto flex-col gap-3 pt-2', home ? 'hidden sm:flex' : 'flex']}>
       {showStack && (
         <ul class="flex flex-wrap gap-1.5">
           {p.privateDeployment && <li class="chip">{t('projects.private')}</li>}

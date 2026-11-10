@@ -64,18 +64,17 @@ export const profile = {
     },
   ],
 
-  /** Full bio for the About section, one HTML string per paragraph. */
+  /**
+   * The About section, one HTML string per paragraph: training and research
+   * interests only. What he does now is in `facts`, right above it on the page.
+   */
   bio: {
     en: [
       `I'm a data scientist with a degree from the ${a('https://emap.fgv.br/en', 'School of Applied Mathematics')} (FGV EMAp) and a social scientist with a degree from the ${a('https://cpdoc.fgv.br/en', 'School of Social Sciences')} (FGV CPDOC). Currently, I'm pursuing a Master's degree in Political Science at the ${a('https://iesp.uerj.br/en/', 'Institute of Social and Political Studies')} (IESP-UERJ).`,
-      `I work as a data scientist at ${a('https://atlasintel.org/', 'AtlasIntel')}, where I calibrate election polls in Brazil and abroad, and do research at three laboratories: the Policy and Election Monitoring and Evaluation Laboratory (${a('https://mape.org.br/', 'MAPE')}), the Laboratory of Electoral Studies, Political Communication and Public Opinion (${a('https://www.lab-doxa.org.br/', 'DOXA')}), and the Center for Studies on Congress (${a('http://necon.iesp.uerj.br', 'NECON')}).`,
-      'I also coordinate the quantitative analysis of the RESA project, on what agroextractive cooperatives change in household income and deforestation in Acre, and work on a systematic review of public security policies for the Legal Amazon, with a <em>Pensando o Direito</em> grant from the Ministry of Justice.',
       'My research interests include political behavior, public policy, and the application of data science techniques to social science research. This broadly encompasses the use of machine learning, deep learning, causal inference, and survey methods to investigate political phenomena.',
     ],
     'pt-br': [
       `Sou cientista de dados formado pela ${a('https://emap.fgv.br/', 'Escola de Matemática Aplicada')} (FGV EMAp) e cientista social formado pela ${a('https://cpdoc.fgv.br/', 'Escola de Ciências Sociais')} (FGV CPDOC). Atualmente, curso o Mestrado em Ciência Política no ${a('https://iesp.uerj.br/', 'Instituto de Estudos Sociais e Políticos')} (IESP-UERJ).`,
-      `Trabalho como cientista de dados na ${a('https://atlasintel.org/', 'AtlasIntel')}, onde calibro pesquisas eleitorais no Brasil e em outros países, e faço pesquisa em três laboratórios: o Laboratório de Monitoramento e Avaliação de Políticas Públicas e Eleições (${a('https://mape.org.br/', 'MAPE')}), o Laboratório de Estudos Eleitorais, de Comunicação Política e Opinião Pública (${a('https://www.lab-doxa.org.br/', 'DOXA')}) e o Núcleo de Estudos sobre o Congresso (${a('http://necon.iesp.uerj.br', 'NECON')}).`,
-      'Também coordeno a análise quantitativa do Projeto RESA, sobre o que o cooperativismo agroextrativista muda na renda das famílias e no desmatamento no Acre, e participo de uma revisão sistemática de políticas de segurança pública para a Amazônia Legal, com bolsa do programa <em>Pensando o Direito</em>, do Ministério da Justiça.',
       'Meus interesses de pesquisa incluem comportamento político, políticas públicas e a aplicação de técnicas de ciência de dados à pesquisa em ciências sociais. Isso abrange o uso de aprendizado de máquina, aprendizado profundo, inferência causal e métodos de survey para investigar fenômenos políticos.',
     ],
   } as L<string[]>,

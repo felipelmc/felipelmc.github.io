@@ -41,6 +41,15 @@ export const publications: Publication[] = [
         label: { en: 'Replication package', 'pt-br': 'Pacote de replicação' },
       },
     ],
+    // Gráfico 2 of the paper (output/figuras/grafico2_fontes.png in the replication package).
+    figure: {
+      width: 1600,
+      height: 889,
+      alt: {
+        en: 'Bar chart of the main source of information about politics in the state of Rio de Janeiro: TV news leads with 39%, followed by social media with 20%',
+        'pt-br': 'Gráfico de barras da principal fonte de informação sobre política no estado do Rio de Janeiro: o noticiário da TV lidera com 39%, seguido das redes sociais, com 20%',
+      },
+    },
   },
   {
     id: 'quantos-votos',
@@ -56,6 +65,15 @@ export const publications: Publication[] = [
     abstract:
       'No Brasil, a modelagem estatística é usada no campo de Ciências Sociais quase exclusivamente para explicar fenômenos, raramente para prevê-los. A difusão de técnicas de machine learning, porém, vem dissolvendo a fronteira entre estudos preditivos e causais: a predição serve de benchmark para teorias, revela onde os modelos falham e disciplina o uso da informação disponível. Tendo isto em vista, este manuscrito parte de duas questões. A primeira é substantiva: é possível prever, com boa acurácia, o desempenho eleitoral dos partidos nas eleições proporcionais para vereador usando apenas informação disponível antes do pleito? A segunda é metodológica: como se conduz, na prática, um exercício preditivo rigoroso, dos dados brutos à validação dos resultados? Respondemos com um tutorial reprodutível aplicado aos 92 municípios fluminenses em três eleições (2016, 2020 e 2024), em expansão para o conjunto dos municípios brasileiros.',
     abstractLang: 'pt-BR',
+    // The calibration figure, as in the ANPOCS slides (Presentations/Quantos-Votos-ANPOCS-2026/img).
+    figure: {
+      width: 1600,
+      height: 1200,
+      alt: {
+        en: 'Scatter plot of predicted against observed vote share in 2024; the dashed diagonal marks a perfect forecast',
+        'pt-br': 'Dispersão da proporção de votos prevista contra a observada em 2024; a diagonal tracejada marca a previsão perfeita',
+      },
+    },
     featured: 2,
   },
   {

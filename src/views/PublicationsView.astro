@@ -21,18 +21,15 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 const lang = htmlLang(locale);
 
-const groups: { id: string; type: PublicationType; title: string }[] = [
-  { id: 'ma-dissertation', type: 'dissertation', title: t('research.dissertation') },
-  { id: 'working-papers', type: 'working-paper', title: t('research.working') },
-  { id: 'discussion-texts', type: 'discussion-paper', title: t('research.discussion') },
-  { id: 'articles', type: 'article', title: t('research.articles') },
-  { id: 'technical-notes', type: 'technical-note', title: t('publications.technical') },
-].filter((g) => publications.some((p) => p.type === g.type));
+// All written work is one list, newest first; each entry carries its type as
+// a tag, and within a year the types follow this order.
+const typeOrder: PublicationType[] = ['dissertation', 'working-paper', 'discussion-paper', 'article', 'technical-note'];
+const papers = [...publications].sort((a, b) => b.year - a.year || typeOrder.indexOf(a.type) - typeOrder.indexOf(b.type));
 
 const software = projects.filter((p) => p.citation);
 
 const sections = [
-  ...groups.map((g) => ({ id: g.id, label: g.title })),
+  { id: 'papers', label: t('research.papers') },
   { id: 'talks', label: t('publications.presentations') },
   ...(software.length ? [{ id: 'software', label: t('research.software') }] : []),
 ];
@@ -46,14 +43,12 @@ const num = (id: string) => String(sections.findIndex((s) => s.id === id) + 1).p
     <PageIndex items={sections} label={t('research.title')} />
 
     <div class="min-w-0 space-y-20">
-      {groups.map((g) => (
-        <section aria-labelledby={g.id}>
-          <SectionHeader gutter number={num(g.id)} id={g.id} title={g.title} />
-          <div>
-            {publications.filter((p) => p.type === g.type).map((pub) => <PubEntry pub={pub} locale={locale} showType={false} />)}
-          </div>
-        </section>
-      ))}
+      <section aria-labelledby="papers">
+        <SectionHeader gutter number={num('papers')} id="papers" title={t('research.papers')} />
+        <div>
+          {papers.map((pub) => <PubEntry pub={pub} locale={locale} />)}
+        </div>
+      </section>
 
       <section aria-labelledby="talks">
         <SectionHeader gutter number={num('talks')} id="talks" title={t('publications.presentations')} href="https://felipelamarca.com/Presentations/" hrefLabel={t('common.allSlides')} />
@@ -97,7 +92,7 @@ const num = (id: string) => String(sections.findIndex((s) => s.id === id) + 1).p
               <li class="grid gap-x-6 gap-y-1 py-5 first:pt-0 sm:grid-cols-[7rem_minmax(0,1fr)]">
                 <p class="meta pt-1">{p.year}</p>
                 <div class="min-w-0">
-                  <h3 class:list={['text-h3 font-semibold text-ink', p.code && 'font-mono']}>{tr(p.title, locale)}</h3>
+                  <h3 class="text-h3 font-semibold text-ink">{tr(p.title, locale)}</h3>
                   <p class="mt-1 text-small text-ink-2">{p.tagline[locale]}</p>
                   <div class="mt-2.5 flex flex-wrap items-baseline gap-x-5 gap-y-2">
                     <LinkList links={p.links.filter((l) => l.kind === 'doi')} locale={locale} />

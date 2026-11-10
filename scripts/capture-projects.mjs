@@ -1,5 +1,6 @@
 // Screenshots of each live project for the Projects page: a 1440×900 viewport
-// at 2× (raw PNG in .shots-raw/, gitignored), encoded to 16:10 WebP in
+// (or the target's own, narrower one, so the page's content reads larger on a
+// card) at 2× (raw PNG in .shots-raw/, gitignored), encoded to 16:10 WebP in
 // public/img/projects/ (1600×1000) and public/img/projects/thumbs/ (800×500).
 //
 // Manual only — never part of `npm run build`:
@@ -12,6 +13,12 @@
 //
 // Targets live in scripts/projects.capture.json:
 //   { slug, url, kind: 'streamlit' | 'static',
+//     viewport?: { width, height } instead of 1440×900; must be 16:10 and at
+//       least 800 wide. A narrower one is how a shot "zooms in": the cards show
+//       it ~600px wide, so a 1440px page comes out with unreadably small text,
+//     upload?: { file, selector? } — a file (path from the repo root) set on a
+//       file input (default `input[type=file]`) after the page loads, e.g. a
+//       sample document for an app that starts empty,
 //     waitFor?: selector that must be visible,
 //     waitForHidden?: selector that must disappear (e.g. a loading bar),
 //     hide?: selectors hidden with injected CSS,
@@ -108,8 +115,12 @@ for (const target of targets) {
   }
   const t0 = Date.now();
   console.log(`\n→ ${target.slug} (${target.kind}) ${target.url}`);
+  const viewport = target.viewport ?? VIEWPORT;
+  if (viewport.width * 10 !== viewport.height * 16 || viewport.width < 800) {
+    throw new Error(`${target.slug}: viewport must be 16:10 and at least 800 wide, got ${viewport.width}×${viewport.height}`);
+  }
   const context = await browser.newContext({
-    viewport: VIEWPORT,
+    viewport,
     deviceScaleFactor: SCALE,
     reducedMotion: 'reduce',
     colorScheme: 'light',
@@ -142,7 +153,7 @@ for (const target of targets) {
     const png = await page.screenshot({ animations: 'disabled', caret: 'hide' });
     await writeFile(join(RAW_DIR, `${target.slug}.png`), png);
     log(`title: ${JSON.stringify(await page.title())} · ${page.url()}`);
-    await guard(page, png);
+    await guard(page, png, viewport);
     const sizes = await encode(png, target.slug);
     results.push({ slug: target.slug, status: 'ok', ...sizes, secs: secs(t0) });
     log(`✓ ${fmt(sizes['1600'])} B / ${fmt(sizes['800'])} B in ${secs(t0)} s`);
@@ -259,6 +270,11 @@ async function streamlitIdle(page, timeout = DEFAULT_TIMEOUT) {
 async function prepareStatic(page, t) {
   await page.goto(t.url, { waitUntil: 'load' });
   await settle(page);
+  if (t.upload) {
+    await page.locator(t.upload.selector ?? 'input[type=file]').first().setInputFiles(join(ROOT, t.upload.file));
+    log(`uploaded ${t.upload.file}`);
+    await settle(page);
+  }
   for (const sel of t.clickBefore ?? []) {
     await click(page, sel);
     await settle(page);
@@ -275,7 +291,8 @@ async function finish(page, t) {
     log(`scrolled to ${t.scrollTo}`);
   }
   // Park the pointer where it can't trigger hover states.
-  await page.mouse.move(VIEWPORT.width - 1, VIEWPORT.height - 1);
+  const size = page.viewportSize() ?? VIEWPORT;
+  await page.mouse.move(size.width - 1, size.height - 1);
   await settle(page);
   await plotlyMapsReady(page);
   if (t.delayMs) await page.waitForTimeout(t.delayMs);
@@ -365,7 +382,7 @@ async function hideSelectors(page, selectors) {
   await page.addStyleTag({ content: `${selectors.join(',\n')} { display: none !important; }` });
 }
 
-async function guard(page, png) {
+async function guard(page, png, viewport) {
   const text = await page.evaluate(() => {
     const out = [];
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
@@ -389,7 +406,7 @@ async function guard(page, png) {
   if (stdev < MIN_STDEV) throw new CaptureFailure(`image is nearly uniform (mean channel stdev ${stdev.toFixed(2)})`);
 
   const { width, height } = await sharp(png).metadata();
-  if (width !== VIEWPORT.width * SCALE || height !== VIEWPORT.height * SCALE) {
+  if (width !== viewport.width * SCALE || height !== viewport.height * SCALE) {
     throw new CaptureFailure(`unexpected raw size ${width}×${height}`);
   }
 }

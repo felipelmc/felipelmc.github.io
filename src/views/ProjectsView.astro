@@ -61,7 +61,7 @@ const count = t('projects.count').replace('{n}', String(projects.length));
       {compact.map((p) => (
         <li id={p.slug} data-project data-categories={p.categories.join(' ')} class="grid scroll-mt-24 gap-x-6 gap-y-1 py-4 sm:grid-cols-[4rem_minmax(0,16rem)_1fr_auto] sm:items-baseline">
           <span class="meta">{p.year}</span>
-          <h3 class:list={['text-ink', p.code ? 'font-mono text-[0.9375rem]' : 'font-medium']}>{tr(p.title, locale)}</h3>
+          <h3 class="font-medium text-ink">{tr(p.title, locale)}</h3>
           <p class="text-sm text-ink-2">
             {p.tagline[locale]}
             {p.coursework && <span class="chip ml-1 align-middle">{t('projects.coursework')}</span>}

@@ -1,20 +1,23 @@
 ---
-// Contact-sheet grid of the photos in src/data/photos.ts plus a lightbox
-// (prev/next, arrow keys, Escape, focus kept inside). Used by the
+// The photo gallery: justified rows that keep each photo's own proportions
+// (no cropping), a caption under each one (number, title, month taken), plus
+// a lightbox (prev/next, arrow keys, Escape, focus kept inside). Used by the
 // Photography page; translates via t() so both locales share it.
-import { useTranslations } from '../i18n/utils';
+//
+// The rows are plain CSS: every tile grows and starts in proportion to its
+// aspect ratio (--r), so tiles that share a row end up with the same height.
+import { asLocale, monthNames, useTranslations } from '../i18n/utils';
 import { photos, photoSrc, photoThumb } from '../data/photos';
 
-const locale = Astro.currentLocale ?? 'en';
+const locale = asLocale(Astro.currentLocale);
 const t = useTranslations(locale);
-const altLang = locale === 'pt-br' ? 'pt-br' : 'en';
 const pad = (n: number) => String(n).padStart(2, '0');
 ---
 
 <section id="photography" aria-label={t('photos.gallery')}>
-  <ul class="grid grid-cols-2 gap-0.5 overflow-hidden rounded-card border border-line bg-line md:grid-cols-3 lg:grid-cols-4">
+  <ul class="photo-rows flex flex-wrap gap-x-1.5 gap-y-4">
     {photos.map((photo, i) => (
-      <li id={`photo-${i + 1}`} class="scroll-mt-24">
+      <li id={`photo-${i + 1}`} class="photo-tile min-w-0 scroll-mt-24" style={`--r:${(photo.width / photo.height).toFixed(4)}`}>
         <button
           type="button"
           data-photo
@@ -22,25 +25,58 @@ const pad = (n: number) => String(n).padStart(2, '0');
           data-full={photoSrc(photo)}
           data-width={photo.width}
           data-height={photo.height}
-          data-alt={photo.alt[altLang]}
-          aria-label={photo.alt[altLang]}
-          class="group relative block w-full cursor-zoom-in overflow-hidden bg-sunken focus-visible:z-10"
+          data-alt={photo.alt[locale]}
+          aria-label={photo.alt[locale]}
+          class="group block w-full cursor-zoom-in text-left"
         >
-          <img
-            src={photoThumb(photo)}
-            width={photo.thumbWidth}
-            height={photo.thumbHeight}
-            alt={photo.alt[altLang]}
-            loading="lazy"
-            decoding="async"
-            class="aspect-[4/3] w-full object-cover transition duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-          />
-          <span class="block bg-panel px-2.5 py-1.5 text-left font-mono text-meta text-ink-3 transition-colors duration-150 group-hover:text-accent" aria-hidden="true">{pad(i + 1)}</span>
+          <span class="block overflow-hidden rounded-[4px] bg-sunken">
+            <img
+              src={photoThumb(photo)}
+              width={photo.thumbWidth}
+              height={photo.thumbHeight}
+              alt={photo.alt[locale]}
+              loading="lazy"
+              decoding="async"
+              class="block h-auto w-full transition duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+            />
+          </span>
+          <span class="mt-1.5 flex items-baseline gap-2 font-mono text-meta text-ink-3" aria-hidden="true">
+            <span class="text-accent">{pad(i + 1)}</span>
+            <span class="min-w-0 truncate text-ink-2 transition-colors duration-150 group-hover:text-accent">{photo.title[locale]}</span>
+            {photo.taken && <span class="shrink-0">{monthNames(photo.taken, locale)}</span>}
+          </span>
         </button>
       </li>
     ))}
   </ul>
 </section>
+
+<style>
+  /* --h is the target row height; a row's real height grows from it until the
+     row is full. The ::after soaks up the last row's free space, so its tiles
+     stay at the target height instead of stretching. */
+  .photo-rows {
+    --h: 7.5rem;
+  }
+  .photo-rows::after {
+    content: '';
+    flex-grow: 100000;
+  }
+  .photo-tile {
+    flex-grow: calc(var(--r) * 100);
+    flex-basis: calc(var(--r) * var(--h));
+  }
+  @media (min-width: 640px) {
+    .photo-rows {
+      --h: 10.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .photo-rows {
+      --h: 13rem;
+    }
+  }
+</style>
 
 <div
   id="photo-lightbox"

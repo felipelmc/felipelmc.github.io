@@ -56,6 +56,13 @@ export interface Publication {
   abstractLang?: ContentLang;
   links?: Link[];
   citation?: Citation;
+  /**
+   * A figure from the paper, shown as a thumbnail next to its entry on the
+   * Research page. Files: /img/research/<id>.webp (up to 1600px wide) and
+   * /img/research/thumbs/<id>.webp (480px), committed pre-optimized; `width`
+   * and `height` are those of the full file.
+   */
+  figure?: { width: number; height: number; alt: L };
   /** Shown in the home page's Research section, in this order. */
   featured?: number;
 }
@@ -81,13 +88,38 @@ export interface Talk {
 
 // ── Teaching ────────────────────────────────────────────────────────────────
 
+/** One run of a course that was taught more than once. */
+export interface CourseEdition {
+  /** Becomes the row's anchor (the ids each edition had as its own entry). */
+  id: string;
+  term: Text;
+  /** Institution/venue line, may contain links. */
+  whereHtml: Text;
+  level?: L;
+  /** This edition's own title, when it differed from the course's. */
+  title?: Text;
+  /** What this edition covered, when the editions differed. */
+  descriptionHtml?: Text;
+  links?: Link[];
+}
+
 export interface Course {
   id: string;
   kind: 'short-course' | 'ta';
   title: Text;
   titleLang?: ContentLang;
-  /** Institution/venue line, may contain links. */
-  whereHtml: Text;
+  /** Institution/venue line, may contain links. Omitted when `editions` carry it. */
+  whereHtml?: Text;
+  /**
+   * A course taught more than once is one entry: `term` spans the editions
+   * and each edition lists its own venue, level and materials, newest first.
+   */
+  editions?: CourseEdition[];
+  /**
+   * Still ahead. Set by hand, like a talk's, so a rebuild on CI reproduces the
+   * committed docs/. Clear it once the course has been taught.
+   */
+  upcoming?: boolean;
   term: Text;
   /** ISO date for ordering (newest first). */
   date: string;
@@ -116,8 +148,6 @@ export type ProjectCategory = 'ai' | 'apps' | 'data' | 'software' | 'viz';
 export interface Project {
   slug: string;
   title: Text;
-  /** Render the title in monospace (package/repo names). */
-  code?: boolean;
   year: number;
   tier: 'featured' | 'standard' | 'compact';
   /** Position on the home page, if shown there. */

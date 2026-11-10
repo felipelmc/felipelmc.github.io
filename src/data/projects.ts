@@ -12,7 +12,6 @@ export const projects: Project[] = [
   {
     slug: 'mapa-da-ciencia',
     title: 'mapa-da-ciencia',
-    code: true,
     year: 2026,
     tier: 'featured',
     home: 1,
@@ -83,8 +82,8 @@ export const projects: Project[] = [
     shot: {
       domain: 'relicariastudio.com.br',
       alt: {
-        en: 'RelicárIA Studio interface',
-        'pt-br': 'Interface do RelicárIA Studio',
+        en: 'RelicárIA Studio’s reading view with a historical document open',
+        'pt-br': 'A tela de leitura do RelicárIA Studio com um documento histórico aberto',
       },
     },
     citation: {
@@ -101,7 +100,6 @@ export const projects: Project[] = [
   {
     slug: 'mapemunicipios',
     title: 'mape_municipios',
-    code: true,
     year: 2025,
     tier: 'featured',
     home: 3,
@@ -241,7 +239,6 @@ export const projects: Project[] = [
   {
     slug: 'quarto-model-iesp',
     title: 'Quarto-Model-IESP',
-    code: true,
     year: 2026,
     tier: 'standard',
     categories: ['software'],

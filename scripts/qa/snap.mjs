@@ -34,10 +34,20 @@ for (const theme of themes) {
       const res = await page.goto(server.base + path, { waitUntil: 'networkidle' });
       await page.evaluate(() => document.fonts.ready);
       // Full-page screenshots don't scroll, so lazy images below the fold would
-      // stay blank: load them all first.
+      // stay blank: load them all first. Loading is not enough, though: Chrome
+      // paints `decoding="async"` images far below the viewport as empty boxes
+      // in a full-page capture, so decode each one and scroll the page once.
       await page.evaluate(async () => {
-        document.querySelectorAll('img[loading="lazy"]').forEach((img) => { img.loading = 'eager'; });
-        await Promise.all([...document.images].map((img) => (img.complete ? null : new Promise((r) => { img.onload = img.onerror = r; }))));
+        const imgs = [...document.images].filter((img) => img.getAttribute('src'));
+        imgs.forEach((img) => { img.loading = 'eager'; img.decoding = 'sync'; });
+        await Promise.all(imgs.map((img) => (img.complete ? null : new Promise((r) => { img.onload = img.onerror = r; }))));
+        await Promise.all(imgs.map((img) => img.decode().catch(() => {})));
+        for (let y = 0; y < document.documentElement.scrollHeight; y += window.innerHeight) {
+          window.scrollTo(0, y);
+          await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+        }
+        window.scrollTo(0, 0);
+        await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
       });
       const checks = await page.evaluate(() => ({
         overflow: document.documentElement.scrollWidth > window.innerWidth + 1,

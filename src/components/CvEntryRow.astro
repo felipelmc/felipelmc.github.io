@@ -1,10 +1,10 @@
 ---
-// A dated position or project on the web CV: date range in the 7rem column,
-// then heading, description, bullet items and the "selected delivery" line.
+// A dated position or project on the web CV: date range in the 7rem column
+// (months spelled out as in the PDF, breaking only at the dash), then heading, description, bullet items and the "selected delivery" line.
 // In the short view (CvView), `shortHtml` replaces the description, and the
 // items and delivery line are hidden.
 import type { CvEntry, Locale } from '../data/types';
-import { tr, useTranslations } from '../i18n/utils';
+import { monthNames, tr, useTranslations } from '../i18n/utils';
 
 interface Props {
   entry: CvEntry;
@@ -16,10 +16,13 @@ const t = useTranslations(locale);
 const delivery = e.deliveryHtml ? tr(e.deliveryHtml, locale) : '';
 const deliveryLabel = t(/\(ii\)/.test(delivery) ? 'cv.deliveryMany' : 'cv.deliveryOne');
 const fullOnly = { 'data-cv-only': 'full' };
+const [from, to] = monthNames(tr(e.when, locale), locale).split(' – ');
 ---
 
 <li class="grid gap-x-6 gap-y-1 py-5 first:pt-0 sm:grid-cols-[7rem_minmax(0,1fr)]" {...(e.only ? { 'data-cv-only': e.only } : {})}>
-  <p class="meta pt-1">{tr(e.when, locale)}</p>
+  <p class="meta pt-1">
+    <span class="whitespace-nowrap">{from}{to && ' –'}</span>{to && <>{' '}<span class="whitespace-nowrap">{to}</span></>}
+  </p>
   <div class="min-w-0 space-y-2">
     <h4 class="text-h3 font-semibold text-ink" set:html={tr(e.titleHtml, locale)} />
     {e.bodyHtml && <p class="max-w-prose text-small text-ink-2" {...(e.shortHtml ? fullOnly : {})} set:html={tr(e.bodyHtml, locale)} />}

@@ -3,25 +3,40 @@
     "slug": "mapa-da-ciencia",
     "url": "https://felipelamarca.com/mapa-da-ciencia/",
     "kind": "static",
+    "viewport": {
+      "width": 1040,
+      "height": 650
+    },
     "waitFor": "#ceu-canvas",
     "delayMs": 1500,
-    "note": "Project site opening: headline plus the sky of the pilot’s articles. With reduced motion the sky is drawn complete (2025) instead of lighting up year by year; the layout has no randomness."
+    "note": "Project site opening at 1040px wide, so the sky of the pilot’s articles and its topic labels stay readable on a card. With reduced motion the sky is drawn complete (2025) instead of lighting up year by year; the layout has no randomness."
   },
   {
     "slug": "relicaria",
     "url": "https://relicariastudio.com.br/",
     "kind": "static",
-    "waitFor": "text=Comece por um documento",
+    "viewport": {
+      "width": 1040,
+      "height": 650
+    },
+    "upload": {
+      "file": "scripts/fixtures/lei-aurea-1888.pdf"
+    },
+    "waitFor": "text=lei-aurea-1888.pdf",
     "hide": [
       "div.border-b.bg-accent\\/10"
     ],
-    "delayMs": 1000,
-    "note": "RelicárIA Studio, the reading view before any document is loaded. The first-visit strip asking for a Groq API key is hidden."
+    "delayMs": 2500,
+    "note": "RelicárIA Studio, the reading view with a document loaded: a one-page PDF of the Lei Áurea (Lei n.º 3.353, 13 May 1888; public domain), kept in scripts/fixtures/. Nothing is processed, so the counters stay at zero (extraction needs a Groq API key). The first-visit strip asking for that key is hidden."
   },
   {
     "slug": "acre-deforestation",
     "url": "https://mapa-do-desmatamento-acre.streamlit.app/",
     "kind": "streamlit",
+    "viewport": {
+      "width": 1200,
+      "height": 750
+    },
     "clickBefore": [
       "a[data-testid=\"stTopNavLink\"]:has-text(\"Acre\")"
     ],
@@ -34,6 +49,10 @@
     "slug": "mapemunicipios",
     "url": "https://felipelamarca.com/MAPEmunicipios/",
     "kind": "static",
+    "viewport": {
+      "width": 1040,
+      "height": 650
+    },
     "delayMs": 500,
     "note": "Landing hero: headline, install snippet, headline numbers."
   },
@@ -41,6 +60,10 @@
     "slug": "abcp-2026",
     "url": "https://felipelamarca.com/Programacao-ABCP-2026/",
     "kind": "static",
+    "viewport": {
+      "width": 1040,
+      "height": 650
+    },
     "clock": "2026-08-05T10:40:00-03:00",
     "hide": [
       "#dica-inicio"
@@ -52,6 +75,10 @@
     "slug": "comida-di-buteco",
     "url": "https://felipelamarca.com/ComidaDiButeco/",
     "kind": "static",
+    "viewport": {
+      "width": 1040,
+      "height": 650
+    },
     "waitFor": "#map canvas",
     "delayMs": 3000,
     "note": "Default view: RJ filter, list plus map with every bar."
@@ -60,6 +87,10 @@
     "slug": "dhbb-parentescos",
     "url": "https://felipelamarca.com/DHBB-Parentescos/",
     "kind": "static",
+    "viewport": {
+      "width": 1040,
+      "height": 650
+    },
     "waitFor": "#grafo-heroi g",
     "delayMs": 1500,
     "note": "Version 2 landing: headline plus the Vargas/Amaral Peixoto family graph. The graph is laid out on a fixed generation grid, so no seed or clock is needed."

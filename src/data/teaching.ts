@@ -3,62 +3,84 @@ import type { Course, CourseNotes } from './types';
 const graduate = { en: 'Graduate', 'pt-br': 'Pós-Graduação' };
 const undergraduate = { en: 'Undergraduate', 'pt-br': 'Graduação' };
 
-// Courses taught (short courses) and teaching assistance, newest first.
+// Courses taught (short courses) and teaching assistance, newest first. Short
+// courses are dated by month; teaching assistance by academic term (2025.1).
 export const courses: Course[] = [
   {
-    id: 'mape-agents-2026',
+    id: 'usp-agents-2026',
     kind: 'short-course',
     title: {
-      en: 'AI agents for social science research: an introduction to Claude Code',
-      'pt-br': 'Agentes de IA para pesquisa em ciências sociais: uma introdução ao Claude Code',
+      en: 'AI agents for research: artificial intelligence and autonomy in social research',
+      'pt-br': 'Agentes de IA para pesquisa: inteligência artificial e autonomia na pesquisa social',
     },
     whereHtml: {
-      en: 'Methodological Training of <a href="https://mape.org.br/" class="link" target="_blank" rel="noopener noreferrer">MAPE</a>',
-      'pt-br': 'Formação Metodológica do <a href="https://mape.org.br/" class="link" target="_blank" rel="noopener noreferrer">MAPE</a>',
+      en: 'Graduate Student Seminar of the Department of Political Science, USP',
+      'pt-br': 'Seminário Discente do Departamento de Ciência Política da USP',
     },
-    term: { en: 'August 2026', 'pt-br': 'Agosto 2026' },
-    date: '2026-08-17',
-    level: graduate,
+    term: { en: 'November 2026', 'pt-br': 'Novembro 2026' },
+    date: '2026-11-11',
+    upcoming: true,
     descriptionHtml: {
-      en: 'From chat to agents: installing Claude Code, CLAUDE.md and skills, plan mode and context management, with live demos of a literature search through the OpenAlex API and of roll-call data from the Chamber of Deputies API.',
-      'pt-br': 'Do chat ao agente: instalação do Claude Code, CLAUDE.md e skills, plan mode e gerenciamento de contexto, com demonstrações ao vivo de uma busca de literatura pela API da OpenAlex e de dados de votações pela API da Câmara dos Deputados.',
+      en: 'Two 90-minute sessions: from chatbot to agent (what changes when the model can act), then practical skills and governance, with skills, hooks, MCP and AGENTS.md. Co-taught with Manoel Galdino and Tales Mançano.',
+      'pt-br': 'Duas sessões de 1h30: do chatbot ao agente (o que muda quando o modelo pode agir) e, depois, habilidades práticas e governança, com skills, hooks, MCP e AGENTS.md. Com Manoel Galdino e Tales Mançano.',
     },
     links: [
-      { kind: 'slides', href: 'https://felipelamarca.com/Presentations/AgentesIA-FMMAPE-2026/slides.html' },
-      { kind: 'pdf', href: 'https://felipelamarca.com/Presentations/AgentesIA-FMMAPE-2026/slides.pdf' },
-      { kind: 'files', href: 'https://github.com/felipelmc/Presentations/tree/main/AgentesIA-FMMAPE-2026' },
+      { kind: 'site', href: 'https://mancano-tales.github.io/course-llm-agents-for-research/' },
+      { kind: 'repo', href: 'https://github.com/mancano-tales/course-llm-agents-for-research' },
     ],
   },
   {
-    id: 'labiia-2026',
-    kind: 'short-course',
-    title: {
-      en: 'Introduction to AI agents in academic research',
-      'pt-br': 'Introdução aos agentes de IA na pesquisa acadêmica',
-    },
-    whereHtml: '<a href="https://labiialab.com.br" class="link" target="_blank" rel="noopener noreferrer">LABIIA</a>',
-    term: { en: 'June 2026', 'pt-br': 'Junho 2026' },
-    date: '2026-06-01',
-    links: [
-      { kind: 'slides', href: 'https://felipelamarca.com/Presentations/Intro-to-ClaudeCode-LABIIA-2026/dia1.html', label: { en: 'Slides, day 1', 'pt-br': 'Slides, dia 1' } },
-      { kind: 'slides', href: 'https://felipelamarca.com/Presentations/Intro-to-ClaudeCode-LABIIA-2026/dia2.html', label: { en: 'Slides, day 2', 'pt-br': 'Slides, dia 2' } },
-      { kind: 'files', href: 'https://github.com/felipelmc/Presentations/tree/main/Intro-to-ClaudeCode-LABIIA-2026' },
-    ],
-  },
-  {
-    id: 'ceres-2026',
+    id: 'ai-agents-2026',
     kind: 'short-course',
     title: {
       en: 'AI agents for social science research: an introduction to Claude Code',
       'pt-br': 'Agentes de IA para pesquisa em ciências sociais: uma introdução ao Claude Code',
     },
-    whereHtml: '<a href="https://ceres-iesp.uerj.br" class="link" target="_blank" rel="noopener noreferrer">CERES</a>, IESP-UERJ',
-    term: { en: 'May 2026', 'pt-br': 'Maio 2026' },
-    date: '2026-05-01',
-    links: [
-      { kind: 'slides', href: 'https://felipelamarca.com/Presentations/Intro-to-ClaudeCode-CERES-2026/slides.html' },
-      { kind: 'pdf', href: 'https://felipelamarca.com/Presentations/Intro-to-ClaudeCode-CERES-2026/slides.pdf' },
-      { kind: 'files', href: 'https://github.com/felipelmc/Presentations/tree/main/Intro-to-ClaudeCode-CERES-2026' },
+    term: { en: 'May–August 2026', 'pt-br': 'Maio–agosto 2026' },
+    date: '2026-08-17',
+    editions: [
+      {
+        id: 'mape-agents-2026',
+        term: { en: 'August 2026', 'pt-br': 'Agosto 2026' },
+        whereHtml: {
+          en: 'Methodological Training of <a href="https://mape.org.br/" class="link" target="_blank" rel="noopener noreferrer">MAPE</a>',
+          'pt-br': 'Formação Metodológica do <a href="https://mape.org.br/" class="link" target="_blank" rel="noopener noreferrer">MAPE</a>',
+        },
+        level: graduate,
+        descriptionHtml: {
+          en: 'From chat to agents: installing Claude Code, CLAUDE.md and skills, plan mode and context management, with live demos of a literature search through the OpenAlex API and of roll-call data from the Chamber of Deputies API.',
+          'pt-br': 'Do chat ao agente: instalação do Claude Code, CLAUDE.md e skills, plan mode e gerenciamento de contexto, com demonstrações ao vivo de uma busca de literatura pela API da OpenAlex e de dados de votações pela API da Câmara dos Deputados.',
+        },
+        links: [
+          { kind: 'slides', href: 'https://felipelamarca.com/Presentations/AgentesIA-FMMAPE-2026/slides.html' },
+          { kind: 'pdf', href: 'https://felipelamarca.com/Presentations/AgentesIA-FMMAPE-2026/slides.pdf' },
+          { kind: 'files', href: 'https://github.com/felipelmc/Presentations/tree/main/AgentesIA-FMMAPE-2026' },
+        ],
+      },
+      {
+        id: 'labiia-2026',
+        term: { en: 'June 2026', 'pt-br': 'Junho 2026' },
+        whereHtml: '<a href="https://labiialab.com.br" class="link" target="_blank" rel="noopener noreferrer">LABIIA</a>',
+        title: {
+          en: 'Introduction to AI agents in academic research',
+          'pt-br': 'Introdução aos agentes de IA na pesquisa acadêmica',
+        },
+        links: [
+          { kind: 'slides', href: 'https://felipelamarca.com/Presentations/Intro-to-ClaudeCode-LABIIA-2026/dia1.html', label: { en: 'Slides, day 1', 'pt-br': 'Slides, dia 1' } },
+          { kind: 'slides', href: 'https://felipelamarca.com/Presentations/Intro-to-ClaudeCode-LABIIA-2026/dia2.html', label: { en: 'Slides, day 2', 'pt-br': 'Slides, dia 2' } },
+          { kind: 'files', href: 'https://github.com/felipelmc/Presentations/tree/main/Intro-to-ClaudeCode-LABIIA-2026' },
+        ],
+      },
+      {
+        id: 'ceres-2026',
+        term: { en: 'May 2026', 'pt-br': 'Maio 2026' },
+        whereHtml: '<a href="https://ceres-iesp.uerj.br" class="link" target="_blank" rel="noopener noreferrer">CERES</a>, IESP-UERJ',
+        links: [
+          { kind: 'slides', href: 'https://felipelamarca.com/Presentations/Intro-to-ClaudeCode-CERES-2026/slides.html' },
+          { kind: 'pdf', href: 'https://felipelamarca.com/Presentations/Intro-to-ClaudeCode-CERES-2026/slides.pdf' },
+          { kind: 'files', href: 'https://github.com/felipelmc/Presentations/tree/main/Intro-to-ClaudeCode-CERES-2026' },
+        ],
+      },
     ],
   },
   {
@@ -69,7 +91,7 @@ export const courses: Course[] = [
       en: '10th Student Week of the Postgraduate Programs, IESP-UERJ',
       'pt-br': '10ª Jornada Discente dos Programas de Pós-Graduação, IESP-UERJ',
     },
-    term: '2025.2',
+    term: { en: 'November 2025', 'pt-br': 'Novembro 2025' },
     date: '2025-11-01',
     level: graduate,
     descriptionHtml: {
@@ -89,7 +111,7 @@ export const courses: Course[] = [
       en: 'Methodological Training of <a href="https://mape.org.br/" class="link" target="_blank" rel="noopener noreferrer">MAPE</a>',
       'pt-br': 'Formação Metodológica do <a href="https://mape.org.br/" class="link" target="_blank" rel="noopener noreferrer">MAPE</a>',
     },
-    term: '2025.2',
+    term: { en: 'September 2025', 'pt-br': 'Setembro 2025' },
     date: '2025-09-01',
     level: graduate,
     descriptionHtml: {

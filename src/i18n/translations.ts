@@ -16,7 +16,6 @@ export const translations = {
     // Publications page
     'publications.presentations': 'Presentations',
     'common.allSlides': 'All slides',
-    'publications.technical': 'Technical Notes',
 
     // Notes (materials) page
     'materials.notes': 'Course Notes',
@@ -27,6 +26,7 @@ export const translations = {
     'teaching.title': 'Teaching',
     'teaching.subtitle': "Courses I've taught or assisted in, across social science and data science",
     'teaching.short': 'Short Courses',
+    'teaching.editions': '{n} editions',
     'teaching.assistance': 'Teaching Assistance',
 
     // CV page
@@ -58,6 +58,7 @@ export const translations = {
     'nav.skip': 'Skip to content',
     'common.more': 'More',
     'common.abstract': 'Abstract',
+    'common.details': 'Details',
     'common.bibtex': 'BibTeX',
     'common.copy': 'Copy',
     'common.copied': 'Copied',
@@ -82,6 +83,7 @@ export const translations = {
     'home.allResearch': 'All research',
     'home.nextTalk': 'Next talk',
     'home.news': 'News',
+    'home.earlierNews': 'Earlier',
     'home.about': 'About',
     'home.photography': 'Photography',
     'home.allPhotos': 'All photos',
@@ -123,12 +125,9 @@ export const translations = {
     'meta.cv': 'Curriculum vitae of Felipe Lamarca: education, research and professional experience, fellowships, awards, skills and references.',
     'meta.photography': 'Photography by Felipe Lamarca, a hobby he posts on Instagram as @veryfirsttake.',
     'research.title': 'Research',
-    'research.kicker': 'Dissertation · papers · talks',
+    'research.kicker': 'Papers · talks · software',
     'research.subtitle': 'Dissertation, working papers, discussion papers, peer-reviewed publications, technical notes and conference presentations.',
-    'research.dissertation': 'M.A. Dissertation',
-    'research.discussion': 'Discussion Papers',
-    'research.working': 'Working Papers',
-    'research.articles': 'Peer Reviewed Papers',
+    'research.papers': 'Papers',
     'research.software': 'Citable software',
     'research.softwareNote': 'Tools with a DOI. Screenshots and the other projects are on the Projects page.',
     'teaching.kicker': 'Courses · assistantships · notes',
@@ -157,7 +156,6 @@ export const translations = {
     // Publications page
     'publications.presentations': 'Apresentações',
     'common.allSlides': 'Todos os slides',
-    'publications.technical': 'Notas Técnicas',
 
     // Notes (materials) page
     'materials.notes': 'Notas de Curso',
@@ -168,6 +166,7 @@ export const translations = {
     'teaching.title': 'Ensino',
     'teaching.subtitle': 'Cursos que ministrei ou nos quais atuei como monitor',
     'teaching.short': 'Cursos Curtos',
+    'teaching.editions': '{n} edições',
     'teaching.assistance': 'Monitoria',
 
     // CV page
@@ -199,6 +198,7 @@ export const translations = {
     'nav.skip': 'Pular para o conteúdo',
     'common.more': 'Mais',
     'common.abstract': 'Resumo',
+    'common.details': 'Detalhes',
     'common.bibtex': 'BibTeX',
     'common.copy': 'Copiar',
     'common.copied': 'Copiado',
@@ -223,6 +223,7 @@ export const translations = {
     'home.allResearch': 'Toda a pesquisa',
     'home.nextTalk': 'Próxima apresentação',
     'home.news': 'Novidades',
+    'home.earlierNews': 'Anteriores',
     'home.about': 'Sobre',
     'home.photography': 'Fotografia',
     'home.allPhotos': 'Todas as fotos',
@@ -264,12 +265,9 @@ export const translations = {
     'meta.cv': 'Currículo de Felipe Lamarca: formação, experiência em pesquisa e profissional, bolsas, prêmios, habilidades e referências.',
     'meta.photography': 'Fotografias de Felipe Lamarca, um hobby que ele publica no Instagram como @veryfirsttake.',
     'research.title': 'Pesquisa',
-    'research.kicker': 'Dissertação · artigos · apresentações',
+    'research.kicker': 'Trabalhos · apresentações · software',
     'research.subtitle': 'Dissertação, working papers, textos para discussão, publicações revisadas por pares, notas técnicas e apresentações em congressos.',
-    'research.dissertation': 'Dissertação de Mestrado',
-    'research.discussion': 'Textos para Discussão',
-    'research.working': 'Working Papers',
-    'research.articles': 'Artigos Revisados por Pares',
+    'research.papers': 'Trabalhos',
     'research.software': 'Software citável',
     'research.softwareNote': 'Ferramentas com DOI. As capturas e os demais projetos estão na página de Projetos.',
     'teaching.kicker': 'Cursos · monitorias · notas',
