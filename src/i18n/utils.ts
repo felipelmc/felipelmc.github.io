@@ -35,10 +35,14 @@ export function pick<T>(value: L<T>, locale: Locale): T {
   return value[locale];
 }
 
-/** Site path for a locale: `/projects` → `/pt-br/projects` in Portuguese. */
+/**
+ * Site path for a locale: `/projects` → `/projects/`, or `/pt-br/projects/` in
+ * Portuguese. Always ends with a slash, the form GitHub Pages serves directly
+ * (it answers `/projects` with a redirect to `/projects/`).
+ */
 export function getLocalePath(locale: string, path: string): string {
-  if (locale === 'en') return path;
-  return `/pt-br${path === '/' ? '' : path}`;
+  const withSlash = path.endsWith('/') ? path : `${path}/`;
+  return locale === 'en' ? withSlash : `/pt-br${withSlash}`;
 }
 
 export function getOtherLocale(locale: string): Locale {

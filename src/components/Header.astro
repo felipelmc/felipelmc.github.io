@@ -8,7 +8,7 @@ const currentPath = Astro.url.pathname;
 
 // The same page in the other language: add or strip the /pt-br prefix.
 const otherLocalePath = locale === 'en'
-  ? `/pt-br${currentPath === '/' ? '' : currentPath}`
+  ? `/pt-br${currentPath}`
   : currentPath.replace(/^\/pt-br/, '') || '/';
 
 const home = getLocalePath(locale, '/');
@@ -19,7 +19,8 @@ const navItems = [
   { href: getLocalePath(locale, '/cv'), label: t('nav.cv') },
 ];
 
-const isActive = (href: string) => currentPath === href || currentPath.startsWith(href + '/');
+// Menu hrefs end with a slash; the current path may or may not (the dev server accepts both).
+const isActive = (href: string) => (currentPath.endsWith('/') ? currentPath : `${currentPath}/`).startsWith(href);
 ---
 
 <header class="sticky top-0 z-50 border-b border-line bg-canvas" data-print-hide>
