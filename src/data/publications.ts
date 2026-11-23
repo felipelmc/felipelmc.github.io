@@ -43,15 +43,19 @@ export const publications: Publication[] = [
     year: 2026,
     title: 'Como a população do estado do Rio de Janeiro se informa sobre política? Uma análise de survey.',
     titleLang: 'pt-BR',
-    venueHtml: '<em>Textos para Discussão do DOXA</em> (IESP-UERJ)',
+    venueHtml: {
+      en: '<em>Textos para Discussão do DOXA</em>, no. 3 (IESP-UERJ)',
+      'pt-br': '<em>Textos para Discussão do DOXA</em>, n. 3 (IESP-UERJ)',
+    },
     note: {
-      en: 'September 2026. Data from a DOXA–Quaest survey, July 2023.',
-      'pt-br': 'Setembro de 2026. Dados de um survey do DOXA com a Quaest, julho de 2023.',
+      en: 'November 2026. Data from a DOXA–Quaest survey, July 2023.',
+      'pt-br': 'Novembro de 2026. Dados de um survey do DOXA com a Quaest, julho de 2023.',
     },
     abstract:
       'Este texto analisa como a população do estado do Rio de Janeiro se informa sobre política, a partir de um survey realizado pelo DOXA em parceria com a Quaest em julho de 2023. Cerca de 21% dos fluminenses dizem se informar sobre política todos os dias, enquanto 54% o fazem raramente ou nunca. O noticiário da TV segue como a principal fonte de informação política, mas as redes sociais têm um espaço de destaque, sobretudo entre os eleitores de Bolsonaro. A capital tem uma proporção menor de pessoas que nunca se informam sobre política do que o restante do estado. Quem se informa principalmente pela TV e quem se informa principalmente pela internet formam públicos distintos, sobretudo em idade e escolaridade. A aprovação do governo Lula era maior entre quem se informa pela TV, e quem nunca se informa sobre política declara com mais frequência não saber avaliar o governo estadual e não se identificar com ideologias ou partidos.',
     abstractLang: 'pt-BR',
     links: [
+      { kind: 'doi', href: 'https://doi.org/10.5281/zenodo.24485143' },
       { kind: 'pdf', href: 'https://github.com/felipelmc/td-doxa-informacao-politica/blob/main/reports/report1-informacao.pdf' },
       {
         kind: 'repo',
@@ -59,6 +63,22 @@ export const publications: Publication[] = [
         label: { en: 'Replication package', 'pt-br': 'Pacote de replicação' },
       },
     ],
+    // The entry in the replication package's README ("Como citar").
+    citation: {
+      key: 'como-se-informa',
+      bibtex: `@techreport{lamarca2026informacao,
+  author      = {Lamarca, Felipe},
+  title       = {Como a população do estado do {Rio de Janeiro} se informa sobre política? {U}ma análise de \\textit{survey}},
+  institution = {DOXA, Instituto de Estudos Sociais e Políticos, Universidade do Estado do Rio de Janeiro},
+  type        = {Texto para Discussão},
+  number      = {3},
+  address     = {Rio de Janeiro},
+  year        = {2026},
+  month       = nov,
+  doi         = {10.5281/zenodo.24485143},
+  url         = {https://doi.org/10.5281/zenodo.24485143}
+}`,
+    },
     // Gráfico 2 of the paper (output/figuras/grafico2_fontes.png in the replication package).
     figure: {
       width: 1600,

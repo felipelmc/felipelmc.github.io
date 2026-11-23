@@ -200,7 +200,7 @@ dez 2024
 
 ## Textos para discussão
 
-- **Lamarca, Felipe M. E.** "Como a população do estado do Rio de Janeiro se informa sobre política? Uma análise de survey." Textos para Discussão do DOXA (IESP-UERJ), 2026. [[PDF]](https://github.com/felipelmc/td-doxa-informacao-politica/blob/main/reports/report1-informacao.pdf) · [[Pacote de replicação]](https://github.com/felipelmc/td-doxa-informacao-politica)
+- **Lamarca, Felipe M. E.** "Como a população do estado do Rio de Janeiro se informa sobre política? Uma análise de survey." Textos para Discussão do DOXA (IESP-UERJ), 2026. [[PDF]](https://github.com/felipelmc/td-doxa-informacao-politica/blob/main/reports/report1-informacao.pdf) · [[Pacote de replicação]](https://github.com/felipelmc/td-doxa-informacao-politica) · [[DOI]](https://doi.org/10.5281/zenodo.24485143)
 
 ## Notas técnicas
 
