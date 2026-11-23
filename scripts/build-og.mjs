@@ -11,29 +11,22 @@ const font = (pkg, file) => pathToFileURL(resolve('node_modules/@fontsource-vari
 const portrait = pathToFileURL(resolve('public/img/profilepic/me_at_iesp-lg.webp')).href;
 
 const html = `<!doctype html><html><head><meta charset="utf-8"><style>
-@font-face { font-family: Geist; src: url(${font('geist', 'geist-latin-wght-normal.woff2')}) format('woff2'); font-weight: 100 900; }
-@font-face { font-family: 'Geist Mono'; src: url(${font('geist-mono', 'geist-mono-latin-wght-normal.woff2')}) format('woff2'); font-weight: 100 900; }
-@font-face { font-family: Newsreader; src: url(${font('newsreader', 'newsreader-latin-opsz-normal.woff2')}) format('woff2'); font-weight: 200 800; }
-:root { --bg: 246 246 243; --line: 222 222 216;
-  --d1: 90 192 171; --d2: 46 157 142; --d3: 24 121 112; --d4: 14 86 82; --d5: 5 53 53; }
+@font-face { font-family: 'Source Sans 3'; src: url(${font('source-sans-3', 'source-sans-3-latin-wght-normal.woff2')}) format('woff2'); font-weight: 200 900; }
+@font-face { font-family: 'Source Serif 4'; src: url(${font('source-serif-4', 'source-serif-4-latin-opsz-normal.woff2')}) format('woff2'); font-weight: 200 900; }
 * { margin: 0; box-sizing: border-box; }
-body { width: 1200px; height: 630px; background: rgb(var(--bg)); color: #0E1116; font-family: Geist, sans-serif;
-  display: grid; grid-template-columns: 1fr 400px; align-items: center; gap: 56px; padding: 0 88px 0 80px; }
-.kicker { font-family: 'Geist Mono', monospace; font-size: 17px; letter-spacing: .08em; text-transform: uppercase; color: #5F656E;
-  display: flex; align-items: center; gap: 14px; }
-.mark { width: 30px; height: 30px; }
-h1 { font-size: 92px; font-weight: 600; letter-spacing: -0.035em; line-height: 1; margin-top: 34px; }
-.statement { font-family: Newsreader, serif; font-size: 31px; line-height: 1.35; color: #444A54; margin-top: 26px; max-width: 30ch; }
-.url { font-family: 'Geist Mono', monospace; font-size: 18px; color: #0A6F69; margin-top: 40px; }
-.portrait { width: 400px; height: 400px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 1px rgb(var(--line)); }
+body { width: 1200px; height: 630px; background: #FFFFFF; color: #16181E; font-family: 'Source Sans 3', sans-serif;
+  display: grid; grid-template-columns: 1fr 380px; align-items: center; gap: 64px; padding: 0 88px 0 84px;
+  border-top: 10px solid #27507F; }
+.kicker { font-size: 19px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: #626874; }
+h1 { font-family: 'Source Serif 4', serif; font-size: 92px; font-weight: 600; letter-spacing: -0.02em; line-height: 1; margin-top: 26px; }
+.statement { font-family: 'Source Serif 4', serif; font-size: 32px; line-height: 1.38; color: #3E4450; margin-top: 30px; max-width: 30ch; }
+.url { font-size: 21px; font-weight: 600; letter-spacing: .02em; color: #27507F; margin-top: 40px; }
+.portrait { width: 380px; height: 380px; border-radius: 50%; object-fit: cover; }
 </style></head><body>
 <div>
-  <p class="kicker">
-    <svg class="mark" viewBox="0 0 24 24">${[0, 1, 2].flatMap((r) => [0, 1, 2].map((c) => `<circle cx="${4 + c * 8}" cy="${4 + r * 8}" r="3.3" style="fill: rgb(var(--d${r + c + 1}))"/>`)).join('')}</svg>
-    Computational political scientist
-  </p>
+  <p class="kicker">Computational political scientist</p>
   <h1>Felipe Lamarca</h1>
-  <p class="statement">Data scientist and social scientist. Elections, public opinion and data for public policy in Brazil.</p>
+  <p class="statement">Statistical and computational methods to understand political and social phenomena.</p>
   <p class="url">felipelamarca.com</p>
 </div>
 <img class="portrait" src="${portrait}" alt="">
@@ -47,7 +40,7 @@ const page = await browser.newPage({ viewport: { width: 1200, height: 630 }, dev
 await page.goto(pathToFileURL(resolve('.qa/og.html')).href, { waitUntil: 'load' });
 await page.evaluate(() => document.fonts.ready);
 const loaded = await page.evaluate(() => [...document.fonts].filter((f) => f.status === 'loaded').map((f) => f.family));
-if (loaded.length < 3) throw new Error(`fonts not loaded: ${loaded.join(', ')}`);
+if (loaded.length < 2) throw new Error(`fonts not loaded: ${loaded.join(', ')}`);
 if (!(await page.evaluate(() => document.querySelector('img.portrait').naturalWidth > 0))) throw new Error('portrait not loaded');
 const jpeg = await page.screenshot({ type: 'jpeg', quality: 88 });
 await browser.close();

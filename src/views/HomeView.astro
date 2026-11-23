@@ -1,17 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import MapaProposicoes from '../components/MapaProposicoes.astro';
 import NewsList from '../components/NewsList.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-import PubEntry from '../components/PubEntry.astro';
-import Icon from '../components/ui/Icon.astro';
-import SectionHeader from '../components/ui/SectionHeader.astro';
-import { photos, photoThumb } from '../data/photos';
 import { profile } from '../data/profile';
-import { projects } from '../data/projects';
-import { publications } from '../data/publications';
-import { talks } from '../data/talks';
 import type { Locale } from '../data/types';
-import { getLocalePath, htmlLang, tr, useTranslations } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
 
 interface Props {
   locale: Locale;
@@ -19,18 +12,8 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
-const path = (p: string) => getLocalePath(locale, p);
-
-const homeProjects = projects.filter((p) => p.home).sort((a, b) => a.home! - b.home!);
-// Asymmetric 7/5, 5/7 rhythm for the four home cards; the "home" card variant
-// gives both cards in a row the same image height.
-const spans = ['md:col-span-7', 'md:col-span-5', 'md:col-span-5', 'md:col-span-7'];
-const featuredPubs = publications.filter((p) => p.featured).sort((a, b) => a.featured! - b.featured!);
-const nextTalk = talks.find((talk) => talk.upcoming);
-const socialOrder = ['github', 'scholar', 'orcid', 'lattes', 'linkedin', 'email'];
-const social = socialOrder.map((id) => profile.social.find((s) => s.id === id)!).filter(Boolean);
-const teaser = photos.slice(0, 4);
-const sectionGap = 'mt-20 sm:mt-24';
+const order = ['email', 'github', 'scholar', 'orcid', 'lattes', 'linkedin'];
+const links = order.map((id) => profile.social.find((s) => s.id === id)!).filter(Boolean);
 ---
 
 <Layout
@@ -38,169 +21,45 @@ const sectionGap = 'mt-20 sm:mt-24';
   fullTitle={`${profile.name} · ${profile.role[locale]}`}
   description={t('meta.home')}
 >
-  <!-- Hero -->
-  <section class="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-12 xl:gap-16" aria-labelledby="hero-name">
-    <div class="lg:pt-2">
-      <div class="mb-6 flex items-center gap-3">
+  <!-- One screen: who he is, in running prose, and the map of bills from the
+       dissertation beside it. Everything else is in the menu. -->
+  <div class="grid items-start gap-x-16 gap-y-10 lg:grid-cols-[minmax(0,23rem)_minmax(0,1fr)]">
+    <section aria-labelledby="hero-name">
+      <div class="flex items-center gap-4">
         <img
           src={profile.portrait.src}
-          width="40"
-          height="40"
+          width="64"
+          height="64"
           alt=""
-          class="h-10 w-10 shrink-0 rounded-full object-cover lg:hidden"
+          fetchpriority="high"
+          class="h-16 w-16 shrink-0 rounded-full object-cover"
         />
-        <p class="eyebrow">{t('home.kicker')}</p>
+        <h1 id="hero-name" class="text-[2.375rem] font-semibold leading-[1.05] tracking-[-0.015em] text-ink sm:text-[2.75rem]">{profile.name}</h1>
       </div>
-      <h1 id="hero-name" class="text-display font-semibold text-ink text-balance">{profile.name}</h1>
-      <p class="mt-6 max-w-[34ch] font-serif text-[1.375rem] leading-[1.4] text-ink-2 text-pretty sm:text-[1.5rem] lg:max-w-none">
-        {profile.statement[locale]}
+      <p class="mt-4 text-small text-ink-2">
+        {profile.positions[locale].map((line, i) => <>{i > 0 && <br />}<span set:html={line} /></>)}
       </p>
 
-      <dl class="mt-8 grid grid-cols-[6rem_minmax(0,1fr)] gap-x-4 gap-y-2.5">
-        {profile.facts.map((f) => (
-          <>
-            <dt class="pt-0.5 font-mono text-meta text-ink-3">{f.key[locale]}</dt>
-            <dd class="text-small text-ink" set:html={f.html[locale]} />
-          </>
-        ))}
-      </dl>
-
-      <div class="mt-9 flex flex-wrap items-center gap-3">
-        <a href={path('/projects')} class="btn-primary">
-          {t('home.seeProjects')}<Icon name="arrow-right" class="h-4 w-4" />
-        </a>
-        <a href={profile.cvPdf.short[locale]} class="btn-ghost" target="_blank" rel="noopener noreferrer">
-          {t('home.cvPdf')}<Icon name="download" class="h-4 w-4" />
-        </a>
+      <div class="mt-6 space-y-4 text-ink text-pretty">
+        {profile.intro[locale].map((paragraph) => <p set:html={paragraph} />)}
       </div>
-      <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-2">
-        {social.map((s) => (
-          <li>
-            <a
-              href={s.href}
-              class="action"
-              {...(s.id === 'email' ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
-            >
-              {s.id === 'email' ? t('home.email') : s.label}
-              {s.id !== 'email' && <Icon name="arrow-up-right" class="h-3 w-3" />}
-            </a>
-          </li>
+
+      <p class="mt-6 text-small leading-7 text-ink-3">
+        <a href={profile.cvPdf.short[locale]} class="link" target="_blank" rel="noopener noreferrer">{t('home.cvPdf')}</a>
+        {links.map((s) => (
+          <> · <a href={s.href} class="link" {...(s.id === 'email' ? {} : { target: '_blank', rel: 'noopener noreferrer' })}>{s.id === 'email' ? t('home.email') : s.label}</a></>
         ))}
-      </ul>
-    </div>
-
-    <!-- The portrait: a personal site leads with the person. Below lg the
-         small avatar in the kicker stands in for it. -->
-    <img
-      src={profile.portraitLarge.src}
-      width={profile.portraitLarge.width}
-      height={profile.portraitLarge.height}
-      alt=""
-      fetchpriority="high"
-      class="hidden aspect-square w-[20rem] rounded-full object-cover lg:block xl:w-[24rem]"
-    />
-  </section>
-
-  <!-- 01 Projects -->
-  <section class={sectionGap} aria-labelledby="home-projects">
-    <SectionHeader number="01" id="home-projects" title={t('home.projects')} href={path('/projects')} hrefLabel={t('home.allProjects')} linkDesktopOnly />
-    <div class="grid gap-6 md:grid-cols-12">
-      {homeProjects.map((p, i) => (
-        <ProjectCard project={p} locale={locale} variant="home" class={spans[i % spans.length]} />
-      ))}
-    </div>
-    {homeProjects.some((p) => p.coldStart) && (
-      <p class="meta mt-4 flex items-center gap-1.5"><Icon name="moon" class="h-3 w-3" />{t('projects.coldStartNote')}</p>
-    )}
-    <a href={path('/projects')} class="mt-6 flex items-center justify-between rounded-btn border border-line px-4 py-3 text-sm text-ink-2 sm:hidden">
-      {t('home.allProjects')}<Icon name="arrow-right" class="h-4 w-4" />
-    </a>
-  </section>
-
-  <!-- 02 Research and 03 News share a row from lg up: the papers on the
-       left, the news as a narrow timeline on the right (with the next talk,
-       when one is marked `upcoming`, above it). -->
-  <div class:list={[sectionGap, 'grid gap-x-12 gap-y-20 sm:gap-y-24 lg:grid-cols-12 xl:gap-x-16']}>
-    <section class="lg:col-span-7" aria-labelledby="home-research">
-      <SectionHeader number="02" id="home-research" title={t('home.research')} href={path('/publications')} hrefLabel={t('home.allResearch')} linkDesktopOnly />
-      <div>
-        {featuredPubs.map((pub) => <PubEntry pub={pub} locale={locale} showFigure={false} />)}
-      </div>
-      <a href={path('/publications')} class="mt-6 flex items-center justify-between rounded-btn border border-line px-4 py-3 text-sm text-ink-2 sm:hidden">
-        {t('home.allResearch')}<Icon name="arrow-right" class="h-4 w-4" />
-      </a>
+      </p>
     </section>
 
-    <section class="lg:col-span-5" aria-labelledby="home-news">
-      <SectionHeader number="03" id="home-news" title={t('home.news')} href="/rss.xml" hrefLabel="RSS" />
-      {nextTalk && (
-        <div class="card mb-8 p-5">
-          <p class="eyebrow mb-3 !text-accent">{t('home.nextTalk')}</p>
-          <p class="meta">{nextTalk.dateLabel[locale]}</p>
-          <p class="mt-1 font-medium leading-snug text-ink">
-            {nextTalk.eventUrl ? (
-              <a href={nextTalk.eventUrl} class="transition-colors duration-150 hover:text-accent" target="_blank" rel="noopener noreferrer">{tr(nextTalk.event, locale)}</a>
-            ) : tr(nextTalk.event, locale)}
-          </p>
-          {nextTalk.detail && <p class="mt-1 text-sm text-ink-3">{tr(nextTalk.detail, locale)}</p>}
-          <p class="mt-3 font-serif text-[1.0625rem] italic leading-snug text-ink-2" lang={nextTalk.titleLang && nextTalk.titleLang !== htmlLang(locale) ? nextTalk.titleLang : undefined}>
-            {nextTalk.title}
-          </p>
-        </div>
-      )}
-      <NewsList locale={locale} limit={5} />
-    </section>
+    <MapaProposicoes locale={locale} />
   </div>
 
-  <!-- 04 About -->
-  <section class={sectionGap} aria-labelledby="home-about">
-    <SectionHeader number="04" id="home-about" title={t('home.about')} />
-    <div class="grid gap-10 lg:grid-cols-12">
-      <div class="lg:col-span-4">
-        <img
-          src={profile.aboutPhoto.src}
-          width={profile.aboutPhoto.width}
-          height={profile.aboutPhoto.height}
-          alt={profile.aboutPhoto.alt[locale]}
-          loading="lazy"
-          decoding="async"
-          class="aspect-square w-full max-w-[15rem] rounded-full object-cover"
-        />
-      </div>
-      <div class="max-w-prose space-y-4 leading-relaxed text-ink lg:col-span-8">
-        {profile.bio[locale].map((para) => <p set:html={para} />)}
-        <ul class="flex flex-wrap gap-2 pt-2">
-          {profile.interests[locale].map((i) => <li class="chip">{i}</li>)}
-        </ul>
-        <p class="pt-2 text-sm text-ink-3">
-          {t('home.email')}: <a href={`mailto:${profile.email}`} class="link">{profile.email}</a>
-        </p>
-      </div>
+  <section class="mt-10 border-t border-ink pt-5 sm:mt-12" aria-labelledby="home-news">
+    <div class="mb-4 flex items-baseline justify-between gap-4">
+      <h2 id="home-news" class="text-[1.1875rem] font-semibold text-ink">{t('home.news')}</h2>
+      <a href="/rss.xml" class="action">RSS</a>
     </div>
-  </section>
-
-  <!-- 05 Photography -->
-  <section class={sectionGap} aria-labelledby="home-photos">
-    <SectionHeader number="05" id="home-photos" title={t('home.photography')} href={path('/photography')} hrefLabel={t('home.allPhotos')} linkDesktopOnly />
-    <ul class="grid grid-cols-2 gap-0.5 overflow-hidden rounded-card border border-line bg-line md:grid-cols-4">
-      {teaser.map((photo, i) => (
-        <li>
-          <a href={`${path('/photography')}#photo-${i + 1}`} class="group relative block overflow-hidden bg-sunken">
-            <img
-              src={photoThumb(photo)}
-              width={photo.thumbWidth}
-              height={photo.thumbHeight}
-              alt={photo.alt[locale]}
-              loading="lazy"
-              decoding="async"
-              class="aspect-[4/3] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none"
-            />
-          </a>
-        </li>
-      ))}
-    </ul>
-    <a href={path('/photography')} class="mt-6 flex items-center justify-between rounded-btn border border-line px-4 py-3 text-sm text-ink-2 sm:hidden">
-      {t('home.allPhotos')}<Icon name="arrow-right" class="h-4 w-4" />
-    </a>
+    <NewsList locale={locale} limit={3} />
   </section>
 </Layout>

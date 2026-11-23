@@ -1,19 +1,25 @@
 ---
-// Top of an inner page: mono kicker, title, one-line subtitle, optional extras.
+// Top of an inner page: small kicker, serif title, one-line subtitle, optional
+// extras. From `lg` up it starts at the content column, to the right of the
+// 12rem rail that holds the page index; `flush` keeps it at the page edge (for
+// pages without a rail, such as the gallery).
 interface Props {
   kicker?: string;
   /** Keep the kicker's own casing (e.g. an @handle). */
   kickerAsIs?: boolean;
   title: string;
   subtitle?: string;
+  flush?: boolean;
 }
 
-const { kicker, kickerAsIs = false, title, subtitle } = Astro.props;
+const { kicker, kickerAsIs = false, title, subtitle, flush = false } = Astro.props;
 ---
 
-<header class="mb-12 max-w-3xl sm:mb-16">
-  {kicker && <p class:list={['eyebrow mb-4', kickerAsIs && '!normal-case']}>{kicker}</p>}
-  <h1 class="text-[2.25rem] font-semibold leading-[1.05] tracking-[-0.03em] text-ink sm:text-[2.75rem]">{title}</h1>
-  {subtitle && <p class="mt-4 text-lg leading-relaxed text-ink-2 text-pretty">{subtitle}</p>}
-  <slot />
+<header class:list={['mb-10 sm:mb-14', !flush && 'lg:pl-[16rem]']}>
+  <div class="max-w-3xl">
+    {kicker && <p class:list={['eyebrow mb-3', kickerAsIs && '!normal-case !tracking-normal']}>{kicker}</p>}
+    <h1 class="text-[2.25rem] font-semibold leading-[1.1] tracking-[-0.02em] text-ink sm:text-[2.75rem]">{title}</h1>
+    {subtitle && <p class="mt-4 text-lg leading-relaxed text-ink-2 text-pretty">{subtitle}</p>}
+    <slot />
+  </div>
 </header>

@@ -1,58 +1,45 @@
 ---
-// News as a timeline in one narrow column: a dot on a 1px rule, the mono date
-// label, then the text. With `limit`, the older items sit behind an "Earlier"
-// disclosure, so the list stays about as tall as the column next to it.
-import Icon from './ui/Icon.astro';
+// News on the home page: the newest items side by side, each under its date
+// (an item marked `upcoming` gets the accent and an "Upcoming" tag), and the
+// older ones as a dated list behind an "Earlier" disclosure.
 import { news } from '../data/news';
 import type { Locale } from '../data/types';
-import { getLocalePath, useTranslations } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
 
 interface Props {
   locale: Locale;
+  /** How many items sit side by side. */
   limit?: number;
 }
 
-const { locale, limit } = Astro.props;
+const { locale, limit = 3 } = Astro.props;
 const t = useTranslations(locale);
-const groups = [
-  { items: limit ? news.slice(0, limit) : news, earlier: false },
-  { items: limit ? news.slice(limit) : [], earlier: true },
-].filter((g) => g.items.length);
+const recent = news.slice(0, limit);
+const earlier = news.slice(limit);
 ---
 
-{groups.map((g) => {
-  const list = (
-    <ol class="relative">
-      <span class="absolute bottom-3 left-[0.3125rem] top-3 w-px bg-line" aria-hidden="true"></span>
-      {g.items.map((item, i) => (
-        <li id={`news-${item.date}`} class="relative scroll-mt-24 pb-6 pl-6 last:pb-0">
-          <span
-            class:list={[
-              'absolute left-0 top-[0.375rem] h-[11px] w-[11px] rounded-full border-2 border-canvas',
-              i === 0 && !g.earlier ? 'bg-accent' : 'bg-line-strong',
-            ]}
-            aria-hidden="true"
-          ></span>
-          <p class="meta">{item.label[locale]}</p>
-          <p class="mt-1 text-small text-ink-2">
-            {item.text[locale]}
-            {item.href && (
-              <a href={getLocalePath(locale, item.href)} class="link ml-1 whitespace-nowrap text-sm">
-                {t('common.more')}<Icon name="arrow-right" class="ml-0.5 inline h-3 w-3" />
-              </a>
-            )}
-          </p>
+<ol class="grid gap-x-10 gap-y-6 md:grid-cols-3">
+  {recent.map((item) => (
+    <li id={`news-${item.date}`} class="scroll-mt-24">
+      <p class:list={['meta flex flex-wrap items-center gap-x-2 gap-y-1', item.upcoming && '!text-accent']}>
+        <span class:list={[item.upcoming && 'font-semibold']}>{item.label[locale]}</span>
+        {item.upcoming && <span class="chip-accent">{t('common.upcoming')}</span>}
+      </p>
+      <p class="mt-1 text-small text-ink-2 text-pretty">{item.text[locale]}</p>
+    </li>
+  ))}
+</ol>
+
+{earlier.length > 0 && (
+  <details class="mt-6">
+    <summary class="action cursor-pointer list-none [&::-webkit-details-marker]:hidden">{t('home.earlierNews')}</summary>
+    <ol class="mt-4 divide-y divide-line">
+      {earlier.map((item) => (
+        <li id={`news-${item.date}`} class="grid scroll-mt-24 gap-x-6 gap-y-1 py-3 first:pt-0 last:pb-0 sm:grid-cols-dated">
+          <p class="meta sm:pt-0.5">{item.label[locale]}</p>
+          <p class="max-w-prose text-small text-ink-2 text-pretty">{item.text[locale]}</p>
         </li>
       ))}
     </ol>
-  );
-  return g.earlier ? (
-    <details class="group mt-6">
-      <summary class="action cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-        {t('home.earlierNews')}
-        <span class="inline-block transition-transform duration-150 group-open:rotate-180" aria-hidden="true">↓</span>
-      </summary>
-      <div class="mt-6">{list}</div>
-    </details>
-  ) : list;
-})}
+  </details>
+)}

@@ -1,0 +1,124 @@
+---
+// The home page's central piece: the map of bills from Felipe's dissertation.
+// Each dot is a bill introduced in the Chamber of Deputies since 1988, placed
+// by the text of its justification; the bills of one theme are lit in the
+// accent colour over all the others in grey. A theme lights up when its name
+// is hovered, focused or tapped; nothing moves by itself.
+//
+// Every layer is an image used as a mask (public/img/mapa/<slug>.webp, drawn
+// by scripts/build-mapa.py) and painted with a theme token, so the same files
+// serve light and dark. Only images are published, never the data.
+import { mapa } from '../data/mapa';
+import type { Locale } from '../data/types';
+import { htmlLang } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const number = new Intl.NumberFormat(htmlLang(locale));
+const layer = (slug: string) => `--m: url(/img/mapa/${slug}.webp)`;
+const themesLabel = { en: 'Themes', 'pt-br': 'Temas' }[locale];
+---
+
+<figure data-mapa>
+  <div class="items-start gap-x-8 gap-y-5 sm:grid sm:grid-cols-[minmax(0,1fr)_11.5rem]">
+    <div class="relative" style={`aspect-ratio: ${mapa.width} / ${mapa.height}`} role="img" aria-label={mapa.alt[locale]}>
+      <span class="mapa-camada" style={layer('todas')}></span>
+      {mapa.themes.map((t, i) => <span class="mapa-camada mapa-tema" data-camada={t.slug} data-ligada={i === 0 ? '' : undefined} style={layer(t.slug)}></span>)}
+    </div>
+
+    <div class="mt-5 sm:mt-1">
+      <p class="eyebrow mb-2">{themesLabel}</p>
+      <ul class="mapa-lista grid grid-cols-2 gap-x-6 sm:block">
+        {mapa.themes.map((t, i) => (
+          <li>
+            <button type="button" data-tema={t.slug} aria-pressed={i === 0 ? 'true' : 'false'}>
+              <span>{t.label[locale]}</span>
+              <span class="n">{number.format(t.n)}</span>
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <figcaption class="mt-4 max-w-prose text-small text-ink-3 text-pretty">
+    {mapa.caption[locale]} {mapa.source[locale]}
+  </figcaption>
+</figure>
+
+<style>
+  .mapa-camada {
+    position: absolute;
+    inset: 0;
+    background-color: rgb(var(--map-base));
+    -webkit-mask: var(--m) center / contain no-repeat;
+    mask: var(--m) center / contain no-repeat;
+  }
+  .mapa-tema {
+    background-color: rgb(var(--accent));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .mapa-tema[data-ligada] {
+    opacity: 1;
+  }
+
+  .mapa-lista button {
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+    border-left: 2px solid transparent;
+    padding: 0.25rem 0 0.25rem 0.75rem;
+    margin-left: -0.75rem;
+    text-align: left;
+    font-size: 0.9375rem;
+    line-height: 1.35;
+    color: rgb(var(--ink-2));
+    transition: color 0.15s;
+  }
+  .mapa-lista button:hover {
+    color: rgb(var(--ink));
+  }
+  .mapa-lista button[aria-pressed='true'] {
+    border-left-color: rgb(var(--accent));
+    font-weight: 600;
+    color: rgb(var(--ink));
+  }
+  .mapa-lista .n {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+    color: rgb(var(--ink-3));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mapa-tema {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  // One theme is lit at a time: the one whose name was last hovered, focused
+  // or tapped. Without JavaScript the first theme stays lit.
+  const figura = document.querySelector<HTMLElement>('[data-mapa]');
+  if (figura) {
+    const botoes = Array.from(figura.querySelectorAll<HTMLButtonElement>('[data-tema]'));
+    const camadas = Array.from(figura.querySelectorAll<HTMLElement>('.mapa-tema'));
+    const acender = (slug: string | undefined) => {
+      camadas.forEach((c) => c.toggleAttribute('data-ligada', c.dataset.camada === slug));
+      botoes.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.tema === slug)));
+    };
+    botoes.forEach((b) => {
+      const escolher = () => acender(b.dataset.tema);
+      b.addEventListener('pointerenter', escolher);
+      b.addEventListener('focus', escolher);
+      b.addEventListener('click', escolher);
+    });
+  }
+</script>

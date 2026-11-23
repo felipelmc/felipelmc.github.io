@@ -4,24 +4,8 @@ import type { Talk } from './types';
 // (the first of the month when only the month is known).
 
 export const talks: Talk[] = [
-  {
-    date: '2026-09-30',
-    dateLabel: { en: 'Sept–Oct 2026', 'pt-br': 'Set–Out 2026' },
-    event: { en: '50th ANPOCS Annual Meeting', 'pt-br': '50º Encontro Anual da ANPOCS' },
-    eventUrl:
-      'https://www.encontro2026.anpocs.org.br/atividade/view?q=eyJwYXJhbXMiOiJ7XCJJRF9BVElWSURBREVcIjpcIjI1NlwifSIsImgiOiI4NTI4YmNkMTY2NWRlOWE3MmE5YzBiYzI5NDQ1NWE5NSJ9&ID_ATIVIDADE=256',
-    detail: {
-      en: 'SPG 31, Methodology and Research Methods in the Social Sciences',
-      'pt-br': 'SPG 31, Metodologia e Métodos de Pesquisa em Ciências Sociais',
-    },
-    title: 'Quantos votos meu partido vai fazer? Um tutorial de validação preditiva com dados abertos (2016-2024)',
-    titleLang: 'pt-BR',
-    publicationId: 'quantos-votos',
-    links: [
-      { kind: 'slides', href: 'https://felipelamarca.com/Presentations/Quantos-Votos-ANPOCS-2026/slides.html' },
-      { kind: 'pdf', href: 'https://felipelamarca.com/Presentations/Quantos-Votos-ANPOCS-2026/slides.pdf' },
-    ],
-  },
+  // The ANPOCS 2026 paper (Quantos votos) was accepted but not presented, so it is
+  // not listed here; its slides are linked from the paper in publications.ts.
   {
     date: '2026-08-01',
     dateLabel: { en: 'August 2026', 'pt-br': 'Agosto 2026' },

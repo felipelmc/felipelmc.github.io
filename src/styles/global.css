@@ -3,49 +3,44 @@
 @tailwind utilities;
 
 /* Theme tokens: RGB triplets read by tailwind.config.mjs as rgb(var(--x) / a).
-   --d1…--d5 are a sequential teal ramp (low → high), the colours of the site
-   mark (ui/Mark, favicon.svg). */
+   Light is the site's face; dark is opt-in from the header toggle. The page is
+   plain white and the one colour is the navy of the figures in Felipe's
+   dissertation (its "thesisblue"), used for links and for the highlighted
+   bills of the map on the home page. --map-base is the grey of the other bills. */
 :root {
-  --bg: 246 246 243;
+  --bg: 255 255 255;
   --surface: 255 255 255;
-  --sunken: 237 237 232;
-  --line: 222 222 216;
-  --line-strong: 201 201 193;
-  --ink: 14 17 22;
-  --ink-2: 68 74 84;
-  --ink-3: 95 101 110;
-  --accent: 10 111 105;
+  --sunken: 245 245 247;
+  --line: 226 227 231;
+  --line-strong: 196 198 205;
+  --ink: 22 24 30;
+  --ink-2: 62 66 76;
+  --ink-3: 98 102 113;
+  --accent: 39 80 127;
   --accent-ink: 255 255 255;
-  --award: 138 90 0;
-  --shadow: 14 17 22;
-  --d1: 90 192 171;
-  --d2: 46 157 142;
-  --d3: 24 121 112;
-  --d4: 14 86 82;
-  --d5: 5 53 53;
-  /* Inline links: the accent in light mode; a calmer teal in dark mode. */
-  --link: 10 111 105;
+  --award: 128 84 0;
+  --shadow: 22 24 30;
+  --link: 39 80 127;
+  --map-base: 176 180 190;
+  /* Names, headings and entry titles. */
+  --font-heading: 'Source Serif 4 Variable', Georgia, serif;
 }
 
 .dark {
-  --bg: 11 13 16;
-  --surface: 18 21 26;
-  --sunken: 24 28 34;
-  --line: 36 42 50;
-  --line-strong: 52 60 70;
-  --ink: 236 238 241;
-  --ink-2: 179 186 196;
-  --ink-3: 138 146 157;
-  --accent: 63 208 190;
-  --accent-ink: 4 32 29;
-  --award: 242 193 78;
+  --bg: 15 17 22;
+  --surface: 22 25 32;
+  --sunken: 28 32 40;
+  --line: 42 46 56;
+  --line-strong: 66 71 86;
+  --ink: 232 234 238;
+  --ink-2: 186 190 200;
+  --ink-3: 144 149 162;
+  --accent: 138 176 222;
+  --accent-ink: 12 24 44;
+  --award: 232 190 92;
   --shadow: 0 0 0;
-  --d1: 34 81 76;
-  --d2: 38 119 111;
-  --d3: 47 163 149;
-  --d4: 63 208 190;
-  --d5: 168 239 228;
-  --link: 94 190 178;
+  --link: 138 176 222;
+  --map-base: 96 102 118;
 }
 
 @view-transition {
@@ -67,11 +62,17 @@
   body {
     @apply bg-canvas font-sans text-ink antialiased;
     font-size: 1.0625rem;
-    line-height: 1.65;
+    line-height: 1.6;
+    font-kerning: normal;
+    font-optical-sizing: auto;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
   }
 
   ::selection {
-    @apply bg-accent/20 text-ink;
+    @apply bg-accent/15 text-ink;
   }
 
   :focus-visible {
@@ -101,25 +102,32 @@
 }
 
 @layer components {
-  /* Inline text link: accent color with an underline that thickens on hover. */
+  /* Inline text link: the accent with an underline that firms up on hover. */
   .link {
-    @apply text-link underline decoration-link/35 decoration-1 underline-offset-[3px] transition-[text-decoration-color,text-decoration-thickness] duration-150;
+    @apply text-link underline decoration-link/30 decoration-1 underline-offset-[3px] transition-[text-decoration-color] duration-150;
   }
   .link:hover {
-    @apply decoration-link decoration-2;
+    @apply decoration-link;
   }
 
-  /* Small monospace label: section kickers, metadata, dates. */
+  /* Small label: page kickers, the keys of a list, group names. */
   .eyebrow {
-    @apply font-mono text-meta uppercase tracking-[0.08em] text-ink-3;
+    @apply font-sans text-[0.8125rem] font-semibold leading-5 text-ink-3;
   }
 
+  /* Dates and other metadata, in aligned figures. */
   .meta {
-    @apply font-mono text-meta text-ink-3;
+    @apply text-meta tabular-nums text-ink-3;
+  }
+
+  /* Title of an entry, card or project (papers use a lighter weight). */
+  .entry-title {
+    @apply text-h3 font-semibold text-ink;
+    font-family: var(--font-heading);
   }
 
   .btn {
-    @apply inline-flex items-center gap-2 rounded-btn px-4 py-2 text-sm font-medium transition-colors duration-150;
+    @apply inline-flex items-center gap-2 rounded-btn px-4 py-2 text-sm font-semibold transition-colors duration-150;
   }
   .btn-primary {
     @apply btn bg-accent text-accent-ink hover:bg-accent/90;
@@ -128,31 +136,31 @@
     @apply btn border border-line-strong text-ink hover:border-accent hover:text-accent;
   }
 
-  /* Tag/chip: `.chip` neutral; `.chip-accent`, `.chip-award`, `.chip-stack` variants. */
+  /* Tag: `.chip` neutral; `.chip-accent` and `.chip-award` variants. */
   .chip {
-    @apply inline-flex items-center gap-1 rounded-chip border border-line px-2 py-0.5 font-mono text-meta tracking-[0.02em] text-ink-3;
+    @apply inline-flex items-center gap-1 rounded-chip border border-line px-1.5 text-[0.75rem] font-medium leading-5 text-ink-3;
   }
   .chip-accent {
-    @apply chip border-transparent bg-accent/10 text-accent;
+    @apply chip border-accent/40 text-accent;
   }
   .chip-award {
-    @apply chip border-award/30 bg-award/10 text-award;
-  }
-  .chip-stack {
-    @apply chip;
+    @apply chip border-award/40 text-award;
   }
 
-  /* Action row under an entry: Abstract · BibTeX · DOI ↗ */
+  /* Action under an entry, a plain small link: Abstract · BibTeX · PDF */
   .action {
-    @apply inline-flex items-center gap-1 font-mono text-meta text-ink-2 underline decoration-line-strong underline-offset-4 transition-colors duration-150 hover:text-accent hover:decoration-accent;
+    @apply inline-flex items-center gap-1 text-[0.875rem] leading-5 text-link underline decoration-link/30 decoration-1 underline-offset-[3px] transition-[text-decoration-color] duration-150 hover:decoration-link;
   }
 
   .card {
-    @apply rounded-card border border-line bg-panel shadow-card dark:shadow-none;
+    @apply rounded-card border border-line bg-panel;
   }
 }
 
 @layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
   .text-balance {
     text-wrap: balance;
   }
@@ -194,18 +202,14 @@ html[data-cv='full'] [data-cv-set='full'] {
     color-scheme: light;
     --bg: 255 255 255;
     --surface: 255 255 255;
-    --ink: 14 17 22;
-    --ink-2: 68 74 84;
-    --ink-3: 95 101 110;
-    --accent: 10 111 105;
-    --line: 222 222 216;
-    --line-strong: 201 201 193;
-    --link: 10 111 105;
-    --d1: 90 192 171;
-    --d2: 46 157 142;
-    --d3: 24 121 112;
-    --d4: 14 86 82;
-    --d5: 5 53 53;
+    --ink: 22 24 30;
+    --ink-2: 62 66 76;
+    --ink-3: 98 102 113;
+    --accent: 39 80 127;
+    --line: 226 227 231;
+    --line-strong: 196 198 205;
+    --link: 39 80 127;
+    --map-base: 176 180 190;
   }
 
   body {

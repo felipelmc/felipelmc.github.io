@@ -1,7 +1,7 @@
 ---
 title: "Felipe Marques Esteves Lamarca"
 lang: pt-BR
-kicker: "Currículo · outubro de 2026"
+kicker: "Currículo · novembro de 2026"
 ---
 
 ::: position
@@ -23,7 +23,7 @@ Mestrando em Ciência Política, IESP-UERJ \cvsep Cientista de dados, AtlasIntel
 ### Instituto de Estudos Sociais e Políticos, IESP-UERJ [03/2025 -- Presente]{.date}
 
 Mestrado, Ciência Política\
-Dissertação: *Estimação de preferências no Congresso brasileiro*\
+Dissertação: *Preferências políticas em proposições legislativas: evidências da Câmara dos Deputados, 1988–2026*\
 Orientador: [Fernando Meireles, Ph.D.](https://iesp.uerj.br/pesquisador/fernando-meireles/)
 
 ### Escola de Matemática Aplicada, Fundação Getulio Vargas [02/2021 -- 12/2024]{.date}
@@ -68,11 +68,11 @@ Laboratório de Monitoramento e Avaliação de Políticas e Eleições, coordena
 
 ## Projetos financiados
 
-### Bolsa de pesquisa *Pensando o Direito*, MJSP [07/2026 -- Presente]{.date}
+### Bolsa de pesquisa *Pensando o Direito*, MJSP [07/2026 -- 11/2026]{.date}
 
 *Pesquisador*
 
-Revisão sistemática das evidências sobre políticas de segurança pública para a Amazônia Legal, organizada em torno da ideia de entrada qualificada do Estado em territórios vulnerabilizados e seguindo o protocolo OQF (*O Que Funciona?*) do MAPE. São 12 políticas em quatro eixos (do policiamento de proximidade e das câmeras corporais à Patrulha Maria da Penha e ao Plano Juventude Viva) e mais de 300 trabalhos. Conduzo busca, triagem e extração de evidências, com triagem e extração assistidas por modelos de linguagem e conferidas pela equipe. Projeto coordenado por Djane Braz Duarte.
+Revisão sistemática das evidências sobre políticas de segurança pública para a Amazônia Legal, organizada em torno da ideia de entrada qualificada do Estado em territórios vulnerabilizados e seguindo o protocolo OQF (*O Que Funciona?*) do MAPE. São 12 políticas em quatro eixos (do policiamento de proximidade e das câmeras corporais à Patrulha Maria da Penha e ao Plano Juventude Viva) e mais de 300 trabalhos. Conduzi busca, triagem e extração de evidências, com triagem e extração assistidas por modelos de linguagem e conferidas pela equipe. Projeto coordenado por Djane Braz Duarte.
 
 *Entregas previstas.* (i) relatório técnico-analítico para o Ministério; (ii) artigo submetido a periódico qualificado; (iii) verbetes sobre as políticas revisadas no [Dicionário de Favelas Marielle Franco](https://wikifavelas.com.br).
 
@@ -263,9 +263,6 @@ dez 2024
 
 # Apresentações em Congressos
 
-set 2026
-
-:   [50º Encontro Anual da ANPOCS](https://www.encontro2026.anpocs.org.br/), SPG 31 -- Metodologia e Métodos de Pesquisa em Ciências Sociais. *Quantos votos meu partido vai fazer? Um tutorial de validação preditiva com dados abertos (2016--2024)*.
 
 ago 2026
 

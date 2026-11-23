@@ -1,7 +1,7 @@
 ---
 title: "Felipe Marques Esteves Lamarca"
 lang: en
-kicker: "Curriculum vitae (short) · October 2026"
+kicker: "Curriculum vitae (short) · November 2026"
 ---
 
 ::: position
@@ -17,7 +17,7 @@ Full CV: [felipelamarca.com/cv](https://felipelamarca.com/cv/?v=full)
 :::
 
 ::: interests
-*Profile.* Data scientist and social scientist. I work on public opinion and elections, public policy evaluation, and data on the Amazon, mostly in R and Python. I currently calibrate election polls in several countries at AtlasIntel, coordinate the quantitative analysis of a project on cooperatives and deforestation in Acre, and work on a systematic review of public security policies for Brazil's Ministry of Justice.
+*Profile.* Data scientist and social scientist. I apply statistical and computational methods to opinion polls, elections, legislative behavior and public policy evaluation, mostly in R and Python. I currently calibrate election polls in several countries at AtlasIntel and coordinate the quantitative analysis of a project on cooperatives and deforestation in Acre. In 2026 I also worked on a systematic review of public security policies for Brazil's Ministry of Justice.
 :::
 
 # Experience
@@ -34,7 +34,7 @@ Calibration of election polls in several countries, design of probability-based 
 
 I coordinate the quantitative analysis of a project on what agroextractive cooperatives change in household income and deforestation in Acre, selected in an Instituto Clima e Sociedade call supported by the Bezos Earth Fund. [[Platform]](https://mapa-do-desmatamento-acre.streamlit.app/) · [[Working site]](https://felipelamarca.com/Legal-Acre/)
 
-### *Pensando o Direito* research grant, MJSP [07/2026 -- Present]{.date}
+### *Pensando o Direito* research grant, MJSP [07/2026 -- 11/2026]{.date}
 
 *Researcher*
 
@@ -63,7 +63,7 @@ Ran and analyzed surveys on public policy and urban security.
 ### Institute of Social and Political Studies, IESP-UERJ [03/2025 -- Present]{.date}
 
 M.A., Political Science\
-Dissertation: *Preference estimation in the Brazilian Congress* \cvsep Advisor: [Fernando Meireles, Ph.D.](https://iesp.uerj.br/pesquisador/fernando-meireles/)
+Dissertation: *Political preferences in legislative proposals: evidence from the Brazilian Chamber of Deputies, 1988–2026* \cvsep Advisor: [Fernando Meireles, Ph.D.](https://iesp.uerj.br/pesquisador/fernando-meireles/)
 
 ### School of Applied Mathematics, Getulio Vargas Foundation [02/2021 -- 12/2024]{.date}
 
@@ -92,9 +92,6 @@ B.A., Social Sciences
 
 # Recent Presentations
 
-Sep 2026
-
-:   [50th ANPOCS Annual Meeting](https://www.encontro2026.anpocs.org.br/). *Quantos votos meu partido vai fazer? Um tutorial de validação preditiva com dados abertos (2016--2024)*.
 
 Aug 2026
 

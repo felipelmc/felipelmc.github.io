@@ -19,7 +19,6 @@ export const courses: Course[] = [
     },
     term: { en: 'November 2026', 'pt-br': 'Novembro 2026' },
     date: '2026-11-11',
-    upcoming: true,
     descriptionHtml: {
       en: 'Two 90-minute sessions: from chatbot to agent (what changes when the model can act), then practical skills and governance, with skills, hooks, MCP and AGENTS.md. Co-taught with Manoel Galdino and Tales Mançano.',
       'pt-br': 'Duas sessões de 1h30: do chatbot ao agente (o que muda quando o modelo pode agir) e, depois, habilidades práticas e governança, com skills, hooks, MCP e AGENTS.md. Com Manoel Galdino e Tales Mançano.',

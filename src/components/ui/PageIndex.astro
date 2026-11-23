@@ -1,27 +1,30 @@
 ---
-// Section index for long reading pages: a sticky mono list in the left column
+// Section index for long reading pages: a sticky list in the left column
 // on desktop (the current section is highlighted while scrolling), a
 // horizontally scrolling row of links on small screens. `attrs` go on the
-// item's <li> (the CV marks its full-only sections with data-cv-only); items
-// that can be hidden must come last, so the numbers of the others hold.
+// item's <li> (the CV marks its full-only sections with data-cv-only).
+import { asLocale, useTranslations } from '../../i18n/utils';
+
 interface Props {
   items: { id: string; label: string; attrs?: Record<string, string> }[];
   label: string;
 }
 
 const { items, label } = Astro.props;
+const heading = useTranslations(asLocale(Astro.currentLocale))('common.onThisPage');
 ---
 
 <nav aria-label={label} class="page-index -mx-4 overflow-x-auto px-4 lg:sticky lg:top-24 lg:mx-0 lg:self-start lg:overflow-visible lg:px-0" data-print-hide>
-  <ol class="flex w-max gap-x-5 border-y border-line py-3 font-mono text-meta lg:w-auto lg:flex-col lg:border-y-0 lg:border-l lg:py-0">
-    {items.map((item, i) => (
+  <p class="eyebrow mb-3 hidden lg:block" aria-hidden="true">{heading}</p>
+  <ol class="flex w-max gap-x-5 border-y border-line py-3 text-sm lg:w-auto lg:flex-col lg:border-y-0 lg:border-l lg:py-0">
+    {items.map((item) => (
       <li {...item.attrs}>
         <a
           href={`#${item.id}`}
           data-index-link={item.id}
-          class="flex gap-2 whitespace-nowrap text-ink-2 transition-colors duration-150 hover:text-accent aria-[current=true]:text-ink lg:-ml-px lg:whitespace-normal lg:border-l-2 lg:border-transparent lg:py-1.5 lg:pl-4 lg:aria-[current=true]:border-accent"
+          class="block whitespace-nowrap text-ink-2 transition-colors duration-150 hover:text-accent aria-[current=true]:font-semibold aria-[current=true]:text-ink lg:-ml-px lg:whitespace-normal lg:border-l-2 lg:border-transparent lg:py-1 lg:pl-4 lg:aria-[current=true]:border-accent"
         >
-          <span class="text-accent" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>{item.label}
+          {item.label}
         </a>
       </li>
     ))}

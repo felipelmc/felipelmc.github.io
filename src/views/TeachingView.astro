@@ -43,10 +43,10 @@ const titleLang = (c: Course) => (typeof c.title === 'string' && c.titleLang && 
 <Layout title={t('teaching.title')} description={t('meta.teaching')}>
   <PageHeader kicker={t('teaching.kicker')} title={t('teaching.title')} subtitle={t('teaching.subtitle')} />
 
-  <div class="grid gap-10 lg:grid-cols-[12rem_minmax(0,1fr)] lg:gap-16">
+  <div class="grid gap-10 lg:grid-cols-rail lg:gap-16">
     <PageIndex items={sections} label={t('teaching.title')} />
 
-    <div class="min-w-0 space-y-20">
+    <div class="min-w-0 space-y-16">
       {[
         { id: 'short-courses', n: '01', title: t('teaching.short'), items: shortCourses, href: 'https://felipelamarca.com/Presentations/' },
         { id: 'assistance', n: '02', title: t('teaching.assistance'), items: assistance, href: undefined },
@@ -61,7 +61,7 @@ const titleLang = (c: Course) => (typeof c.title === 'string' && c.titleLang && 
                   {c.upcoming && <span class="chip-accent">{t('common.upcoming')}</span>}
                 </p>
                 <div class="min-w-0">
-                  <h3 class="text-h3 font-semibold text-ink text-pretty" lang={titleLang(c)}>{tr(c.title, locale)}</h3>
+                  <h3 class="entry-title text-pretty" lang={titleLang(c)}>{tr(c.title, locale)}</h3>
                   {c.whereHtml && (
                     <p class="mt-0.5 text-sm text-ink-3">
                       <span set:html={tr(c.whereHtml, locale)} />{c.level && <> · {c.level[locale]}</>}
@@ -105,18 +105,20 @@ const titleLang = (c: Course) => (typeof c.title === 'string' && c.titleLang && 
         <div class="space-y-10">
           {notesByLevel.map((g) => (
             <div>
-              <h3 id={g.id} class="eyebrow mb-4">{g.label}</h3>
-              <ul class="grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 sm:[&>li:last-child:nth-child(odd)]:col-span-2">
+              <h3 id={g.id} class="eyebrow mb-3 sm:pl-[8.5rem]">{g.label}</h3>
+              <ol class="divide-y divide-line">
                 {g.items.map((n) => (
-                  <li id={n.id} class="flex scroll-mt-24 flex-col gap-2 bg-panel p-5">
-                    <p class="meta">{n.institution} · {n.term}</p>
-                    <h4 class="text-h3 font-semibold text-ink">{tr(n.title, locale)}</h4>
-                    <p class="text-sm leading-relaxed text-ink-2">{n.description[locale]}</p>
-                    {n.instructors?.length && <p class="text-sm text-ink-3" set:html={instructorsLine(n)} />}
-                    <div class="mt-auto flex flex-wrap items-baseline gap-x-5 gap-y-2 pt-2"><LinkList links={noteLinks(n)} locale={locale} /></div>
+                  <li id={n.id} class="grid scroll-mt-24 gap-x-6 gap-y-1 py-5 first:pt-0 sm:grid-cols-dated">
+                    <p class="meta self-start sm:pt-1">{n.term}<span class="sm:hidden"> · </span><span class="sm:block">{n.institution}</span></p>
+                    <div class="min-w-0">
+                      <h4 class="entry-title">{tr(n.title, locale)}</h4>
+                      <p class="mt-1 max-w-prose text-small text-ink-2">{n.description[locale]}</p>
+                      {n.instructors?.length && <p class="mt-1 text-sm text-ink-3" set:html={instructorsLine(n)} />}
+                      <div class="mt-2.5 flex flex-wrap items-baseline gap-x-5 gap-y-2"><LinkList links={noteLinks(n)} locale={locale} /></div>
+                    </div>
                   </li>
                 ))}
-              </ul>
+              </ol>
             </div>
           ))}
         </div>

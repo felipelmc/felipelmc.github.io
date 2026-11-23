@@ -1,9 +1,11 @@
 ---
-import '@fontsource-variable/geist';
-import '@fontsource-variable/geist-mono';
-import '@fontsource-variable/newsreader/opsz.css';
-import '@fontsource-variable/newsreader/opsz-italic.css';
-import geistLatin from '@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url';
+import '@fontsource-variable/source-sans-3';
+import '@fontsource-variable/source-sans-3/wght-italic.css';
+import '@fontsource-variable/source-serif-4/opsz.css';
+import '@fontsource-variable/source-serif-4/opsz-italic.css';
+import '@fontsource-variable/source-code-pro';
+import sansLatin from '@fontsource-variable/source-sans-3/files/source-sans-3-latin-wght-normal.woff2?url';
+import serifLatin from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-opsz-normal.woff2?url';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { asLocale, htmlLang, useTranslations } from '../i18n/utils';
@@ -59,9 +61,10 @@ const personLd = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#F6F6F3" />
+    <meta name="theme-color" content="#FFFFFF" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preload" href={geistLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={sansLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={serifLatin} as="font" type="font/woff2" crossorigin />
     <link rel="canonical" href={canonicalURL} />
     <link rel="alternate" hreflang="en" href={enURL} />
     <link rel="alternate" hreflang="pt-BR" href={ptURL} />
@@ -84,10 +87,10 @@ const personLd = {
     <title>{fullTitle}</title>
     <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
     <script is:inline>
-      const theme = localStorage.getItem('theme') ||
-        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      // Light unless the visitor chose dark with the header toggle.
+      const theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
       document.documentElement.classList.toggle('dark', theme === 'dark');
-      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#0B0D10' : '#F6F6F3');
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#0F1116' : '#FFFFFF');
     </script>
     <!-- Pages put their own pre-paint scripts here (the CV view switch). -->
     <slot name="head" />

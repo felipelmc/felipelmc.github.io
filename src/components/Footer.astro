@@ -1,6 +1,5 @@
 ---
 import Icon from './ui/Icon.astro';
-import Mark from './ui/Mark.astro';
 import { profile } from '../data/profile';
 import { news } from '../data/news';
 import { asLocale, getLocalePath, useTranslations } from '../i18n/utils';
@@ -13,52 +12,49 @@ const t = useTranslations(locale);
 const year = Math.max(...news.map((n) => Number(n.date.slice(0, 4))));
 
 const links = [
-  { href: getLocalePath(locale, '/projects'), label: t('nav.projects') },
   { href: getLocalePath(locale, '/publications'), label: t('nav.research') },
+  { href: getLocalePath(locale, '/projects'), label: t('nav.projects') },
   { href: getLocalePath(locale, '/teaching'), label: t('nav.teaching') },
   { href: getLocalePath(locale, '/cv'), label: t('nav.cv') },
   { href: getLocalePath(locale, '/photography'), label: t('footer.photography') },
 ];
 ---
 
-<footer class="border-t border-line" data-print-hide>
-  <div class="mx-auto grid max-w-content gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1fr_auto] md:items-start lg:px-8">
-    <div class="space-y-3">
-      <p class="flex flex-wrap items-center gap-x-2.5 gap-y-1">
-        <Mark class="h-5 w-5" />
-        <span class="whitespace-nowrap font-medium text-ink">{profile.name}</span>
-        <span class="basis-full text-sm text-ink-3 sm:basis-auto">{profile.role[locale]}</span>
-      </p>
-      <ul class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-        {links.map((l) => (
-          <li><a href={l.href} class="text-ink-2 transition-colors duration-150 hover:text-accent">{l.label}</a></li>
-        ))}
-      </ul>
+<footer class="mt-8 border-t border-line" data-print-hide>
+  <div class="mx-auto max-w-content px-4 py-10 sm:px-6 lg:grid lg:grid-cols-rail lg:gap-x-16 lg:px-8">
+    <p class="font-heading text-[1.0625rem] font-semibold text-ink">{profile.name}</p>
+    <div class="mt-3 lg:mt-0">
+      <div class="flex flex-wrap items-start justify-between gap-x-8 gap-y-5">
+        <div class="space-y-2">
+          <p class="text-sm text-ink-3">{profile.role[locale]}</p>
+          <ul class="flex flex-wrap gap-x-5 gap-y-1 text-sm">
+            {links.map((l) => (
+              <li><a href={l.href} class="text-ink-2 transition-colors duration-150 hover:text-accent">{l.label}</a></li>
+            ))}
+          </ul>
+        </div>
+        <ul class="-m-2 flex flex-wrap items-center">
+          {profile.social.map((s) => (
+            <li>
+              <a
+                href={s.href}
+                class="grid h-9 w-9 place-items-center rounded-btn text-ink-3 transition-colors duration-150 hover:text-accent"
+                {...(s.id === 'email' ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
+                aria-label={s.label}
+                title={s.label}
+              >
+                <Icon name={s.id} class="h-4 w-4" />
+              </a>
+            </li>
+          ))}
+          <li>
+            <a href="/rss.xml" class="grid h-9 w-9 place-items-center rounded-btn text-ink-3 transition-colors duration-150 hover:text-accent" aria-label="RSS" title="RSS">
+              <Icon name="rss" class="h-4 w-4" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p class="meta mt-6">© {year} {profile.name} · {t('footer.colophon')}</p>
     </div>
-
-    <ul class="flex flex-wrap items-center gap-1">
-      {profile.social.map((s) => (
-        <li>
-          <a
-            href={s.href}
-            class="grid h-9 w-9 place-items-center rounded-btn text-ink-3 transition-colors duration-150 hover:bg-sunken hover:text-ink"
-            {...(s.id === 'email' ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
-            aria-label={s.label}
-            title={s.label}
-          >
-            <Icon name={s.id} class="h-4 w-4" />
-          </a>
-        </li>
-      ))}
-      <li>
-        <a href="/rss.xml" class="grid h-9 w-9 place-items-center rounded-btn text-ink-3 transition-colors duration-150 hover:bg-sunken hover:text-ink" aria-label="RSS" title="RSS">
-          <Icon name="rss" class="h-4 w-4" />
-        </a>
-      </li>
-    </ul>
-
-    <p class="meta border-t border-line pt-5 md:col-span-2">
-      © {year} {profile.name} · {t('footer.colophon')}
-    </p>
   </div>
 </footer>

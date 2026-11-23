@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import CiteDialog from '../components/CiteDialog.astro';
 import LinkList from '../components/LinkList.astro';
 import PubEntry from '../components/PubEntry.astro';
-import Icon from '../components/ui/Icon.astro';
 import PageHeader from '../components/ui/PageHeader.astro';
 import PageIndex from '../components/ui/PageIndex.astro';
 import SectionHeader from '../components/ui/SectionHeader.astro';
@@ -39,10 +38,10 @@ const num = (id: string) => String(sections.findIndex((s) => s.id === id) + 1).p
 <Layout title={t('research.title')} description={t('meta.research')}>
   <PageHeader kicker={t('research.kicker')} title={t('research.title')} subtitle={t('research.subtitle')} />
 
-  <div class="grid gap-10 lg:grid-cols-[12rem_minmax(0,1fr)] lg:gap-16">
+  <div class="grid gap-10 lg:grid-cols-rail lg:gap-16">
     <PageIndex items={sections} label={t('research.title')} />
 
-    <div class="min-w-0 space-y-20">
+    <div class="min-w-0 space-y-16">
       <section aria-labelledby="papers">
         <SectionHeader gutter number={num('papers')} id="papers" title={t('research.papers')} />
         <div>
@@ -60,7 +59,7 @@ const num = (id: string) => String(sections.findIndex((s) => s.id === id) + 1).p
                 {talk.upcoming && <span class="chip-accent">{t('common.upcoming')}</span>}
               </p>
               <div class="min-w-0">
-                <p class="text-h3 font-semibold text-ink">
+                <p class="entry-title">
                   {talk.eventUrl ? (
                     <a href={talk.eventUrl} class="transition-colors duration-150 hover:text-accent" target="_blank" rel="noopener noreferrer">{tr(talk.event, locale)}</a>
                   ) : tr(talk.event, locale)}
@@ -72,7 +71,7 @@ const num = (id: string) => String(sections.findIndex((s) => s.id === id) + 1).p
                 {(talk.links?.length || talk.publicationId) && (
                   <div class="mt-2.5 flex flex-wrap items-baseline gap-x-5 gap-y-2">
                     {talk.publicationId && (
-                      <a href={`#${talk.publicationId}`} class="action">{t('link.paper')}<Icon name="arrow-right" class="h-3 w-3" /></a>
+                      <a href={`#${talk.publicationId}`} class="action">{t('link.paper')}</a>
                     )}
                     {talk.links && <LinkList links={talk.links} locale={locale} />}
                   </div>
@@ -92,12 +91,12 @@ const num = (id: string) => String(sections.findIndex((s) => s.id === id) + 1).p
               <li class="grid gap-x-6 gap-y-1 py-5 first:pt-0 sm:grid-cols-[7rem_minmax(0,1fr)]">
                 <p class="meta pt-1">{p.year}</p>
                 <div class="min-w-0">
-                  <h3 class="text-h3 font-semibold text-ink">{tr(p.title, locale)}</h3>
-                  <p class="mt-1 text-small text-ink-2">{p.tagline[locale]}</p>
+                  <h3 class="entry-title">{tr(p.title, locale)}</h3>
+                  <p class="mt-1 max-w-prose text-small text-ink-2">{p.tagline[locale]}</p>
                   <div class="mt-2.5 flex flex-wrap items-baseline gap-x-5 gap-y-2">
                     <LinkList links={p.links.filter((l) => l.kind === 'doi')} locale={locale} />
                     <button type="button" class="action" data-dialog={`cite-${p.citation!.key}`}>{t('common.bibtex')}</button>
-                    <a href={`${getLocalePath(locale, '/projects')}#${p.slug}`} class="action">{t('nav.projects')}<Icon name="arrow-right" class="h-3 w-3" /></a>
+                    <a href={`${getLocalePath(locale, '/projects')}#${p.slug}`} class="action">{t('nav.projects')}</a>
                   </div>
                 </div>
                 <CiteDialog citation={p.citation!} locale={locale} />

@@ -1,7 +1,7 @@
 ---
 title: "Felipe Marques Esteves Lamarca"
 lang: pt-BR
-kicker: "Currículo resumido · outubro de 2026"
+kicker: "Currículo resumido · novembro de 2026"
 ---
 
 ::: position
@@ -17,7 +17,7 @@ Versão completa: [felipelamarca.com/pt-br/cv](https://felipelamarca.com/pt-br/c
 :::
 
 ::: interests
-*Perfil.* Cientista de dados e cientista social. Trabalho com pesquisas de opinião e eleições, avaliação de políticas públicas e dados sobre a Amazônia, quase sempre em R e Python. Hoje calibro pesquisas eleitorais em vários países na AtlasIntel, coordeno a análise quantitativa de um projeto sobre cooperativismo e desmatamento no Acre e participo de uma revisão sistemática de políticas de segurança pública para o Ministério da Justiça.
+*Perfil.* Cientista de dados e cientista social. Aplico métodos estatísticos e computacionais a pesquisas de opinião, eleições, comportamento legislativo e avaliação de políticas públicas, quase sempre em R e Python. Hoje calibro pesquisas eleitorais em vários países na AtlasIntel e coordeno a análise quantitativa de um projeto sobre cooperativismo e desmatamento no Acre. Em 2026, participei também de uma revisão sistemática de políticas de segurança pública para o Ministério da Justiça.
 :::
 
 # Experiência
@@ -34,7 +34,7 @@ Calibragem de pesquisas eleitorais em vários países, desenho de pesquisas pres
 
 Coordeno a análise quantitativa de um projeto sobre o que o cooperativismo agroextrativista muda na renda das famílias e no desmatamento no Acre, selecionado no edital do Instituto Clima e Sociedade com apoio do Bezos Earth Fund. [[Plataforma]](https://mapa-do-desmatamento-acre.streamlit.app/) · [[Site de trabalho]](https://felipelamarca.com/Legal-Acre/)
 
-### Bolsa de pesquisa *Pensando o Direito*, MJSP [07/2026 -- Presente]{.date}
+### Bolsa de pesquisa *Pensando o Direito*, MJSP [07/2026 -- 11/2026]{.date}
 
 *Pesquisador*
 
@@ -63,7 +63,7 @@ Conduzi e analisei surveys sobre políticas públicas e segurança urbana.
 ### Instituto de Estudos Sociais e Políticos, IESP-UERJ [03/2025 -- Presente]{.date}
 
 Mestrado, Ciência Política\
-Dissertação: *Estimação de preferências no Congresso brasileiro* \cvsep Orientador: [Fernando Meireles, Ph.D.](https://iesp.uerj.br/pesquisador/fernando-meireles/)
+Dissertação: *Preferências políticas em proposições legislativas: evidências da Câmara dos Deputados, 1988–2026* \cvsep Orientador: [Fernando Meireles, Ph.D.](https://iesp.uerj.br/pesquisador/fernando-meireles/)
 
 ### Escola de Matemática Aplicada, Fundação Getulio Vargas [02/2021 -- 12/2024]{.date}
 
@@ -92,9 +92,6 @@ Bacharelado, Ciências Sociais
 
 # Apresentações Recentes
 
-set 2026
-
-:   [50º Encontro Anual da ANPOCS](https://www.encontro2026.anpocs.org.br/). *Quantos votos meu partido vai fazer? Um tutorial de validação preditiva com dados abertos (2016--2024)*.
 
 ago 2026
 

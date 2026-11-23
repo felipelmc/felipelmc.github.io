@@ -1,7 +1,7 @@
 ---
 title: "Felipe Marques Esteves Lamarca"
 lang: en
-kicker: "Curriculum vitae · October 2026"
+kicker: "Curriculum vitae · November 2026"
 ---
 
 ::: position
@@ -23,7 +23,7 @@ M.A. student in Political Science, IESP-UERJ \cvsep Data Scientist, AtlasIntel
 ### Institute of Social and Political Studies, IESP-UERJ [03/2025 -- Present]{.date}
 
 M.A., Political Science\
-Dissertation: *Preference estimation in the Brazilian Congress*\
+Dissertation: *Political preferences in legislative proposals: evidence from the Brazilian Chamber of Deputies, 1988–2026*\
 Advisor: [Fernando Meireles, Ph.D.](https://iesp.uerj.br/pesquisador/fernando-meireles/)
 
 ### School of Applied Mathematics, Getulio Vargas Foundation [02/2021 -- 12/2024]{.date}
@@ -68,11 +68,11 @@ Laboratory for Monitoring and Evaluation of Policies and Elections, coordinated 
 
 ## Funded projects
 
-### *Pensando o Direito* research grant, MJSP [07/2026 -- Present]{.date}
+### *Pensando o Direito* research grant, MJSP [07/2026 -- 11/2026]{.date}
 
 *Researcher*
 
-Systematic review of the evidence on public security policies for the Legal Amazon, organized around the idea of a qualified entry of the State into vulnerable territories and following the OQF (*O Que Funciona?*) protocol developed at MAPE. It covers 12 policies in four areas (from community policing and body-worn cameras to the Patrulha Maria da Penha and the Plano Juventude Viva) and more than 300 studies. I run the search, screening, and evidence extraction, with LLM-assisted screening and extraction checked by the team. Project coordinated by Djane Braz Duarte.
+Systematic review of the evidence on public security policies for the Legal Amazon, organized around the idea of a qualified entry of the State into vulnerable territories and following the OQF (*O Que Funciona?*) protocol developed at MAPE. It covers 12 policies in four areas (from community policing and body-worn cameras to the Patrulha Maria da Penha and the Plano Juventude Viva) and more than 300 studies. I ran the search, screening, and evidence extraction, with LLM-assisted screening and extraction checked by the team. Project coordinated by Djane Braz Duarte.
 
 *Expected deliveries.* (i) an analytical report for the Ministry; (ii) an article submitted to a peer-reviewed journal; (iii) entries on the reviewed policies in the [Dicionário de Favelas Marielle Franco](https://wikifavelas.com.br).
 
@@ -263,9 +263,6 @@ Dec 2024
 
 # Conference Presentations
 
-Sep 2026
-
-:   [50th ANPOCS Annual Meeting](https://www.encontro2026.anpocs.org.br/), SPG 31 -- Methodology and Research Methods in the Social Sciences. *Quantos votos meu partido vai fazer? Um tutorial de validação preditiva com dados abertos (2016--2024)*.
 
 Aug 2026
 

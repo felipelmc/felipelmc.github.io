@@ -19,85 +19,37 @@ export const profile = {
     'pt-br': 'Cientista Político Computacional',
   } as L,
 
-  /** Hero statement, set in the serif. */
-  statement: {
-    en: 'Data scientist and social scientist. I study elections, Congress and public opinion in Brazil, and build data and tools for public policy on the Amazon, public security and education.',
-    'pt-br': 'Cientista de dados e cientista social. Estudo eleições, Congresso e opinião pública no Brasil e construo dados e ferramentas para políticas públicas na Amazônia, na segurança e na educação.',
-  } as L,
-
-  /** The mono "now / thesis / work / projects / labs" list under the hero statement. */
-  facts: [
-    {
-      key: { en: 'now', 'pt-br': 'agora' } as L,
-      html: {
-        en: `M.A. student in Political Science · ${a('https://iesp.uerj.br/en/', 'IESP-UERJ')}`,
-        'pt-br': `Mestrando em Ciência Política · ${a('https://iesp.uerj.br/', 'IESP-UERJ')}`,
-      } as L,
-    },
-    {
-      key: { en: 'thesis', 'pt-br': 'dissertação' } as L,
-      html: {
-        en: '<a href="/publications#dissertation" class="link">Preference estimation in the Brazilian Congress</a>',
-        'pt-br': '<a href="/pt-br/publications#dissertation" class="link">Estimação de preferências no Congresso brasileiro</a>',
-      } as L,
-    },
-    {
-      key: { en: 'work', 'pt-br': 'trabalho' } as L,
-      html: {
-        en: `Data Scientist · ${a('https://atlasintel.org/', 'AtlasIntel')}`,
-        'pt-br': `Cientista de dados · ${a('https://atlasintel.org/', 'AtlasIntel')}`,
-      } as L,
-    },
-    {
-      key: { en: 'projects', 'pt-br': 'projetos' } as L,
-      html: {
-        en: '<a href="/projects#acre-deforestation" class="link">RESA</a> (Amazon) · <a href="/cv?v=full#research" class="link">Pensando o Direito</a> (Ministry of Justice)',
-        'pt-br': '<a href="/pt-br/projects#acre-deforestation" class="link">RESA</a> (Amazônia) · <a href="/pt-br/cv?v=full#research" class="link">Pensando o Direito</a> (MJSP)',
-      } as L,
-    },
-    {
-      key: { en: 'labs', 'pt-br': 'labs' } as L,
-      html: {
-        en: [a('https://mape.org.br/', 'MAPE'), a('https://www.lab-doxa.org.br/', 'DOXA'), a('http://necon.iesp.uerj.br', 'NECON')].join(' · '),
-        'pt-br': [a('https://mape.org.br/', 'MAPE'), a('https://www.lab-doxa.org.br/', 'DOXA'), a('http://necon.iesp.uerj.br', 'NECON')].join(' · '),
-      } as L,
-    },
-  ],
-
-  /**
-   * The About section, one HTML string per paragraph: training and research
-   * interests only. What he does now is in `facts`, right above it on the page.
-   */
-  bio: {
+  /** The two lines under the name on the home page: what he is now, and where. */
+  positions: {
     en: [
-      `I'm a data scientist with a degree from the ${a('https://emap.fgv.br/en', 'School of Applied Mathematics')} (FGV EMAp) and a social scientist with a degree from the ${a('https://cpdoc.fgv.br/en', 'School of Social Sciences')} (FGV CPDOC). Currently, I'm pursuing a Master's degree in Political Science at the ${a('https://iesp.uerj.br/en/', 'Institute of Social and Political Studies')} (IESP-UERJ).`,
-      'My research interests include political behavior, public policy, and the application of data science techniques to social science research. This broadly encompasses the use of machine learning, deep learning, causal inference, and survey methods to investigate political phenomena.',
+      `M.A. student in Political Science, ${a('https://iesp.uerj.br/en/', 'IESP-UERJ')}`,
+      `Data scientist, ${a('https://atlasintel.org/', 'AtlasIntel')}`,
     ],
     'pt-br': [
-      `Sou cientista de dados formado pela ${a('https://emap.fgv.br/', 'Escola de Matemática Aplicada')} (FGV EMAp) e cientista social formado pela ${a('https://cpdoc.fgv.br/', 'Escola de Ciências Sociais')} (FGV CPDOC). Atualmente, curso o Mestrado em Ciência Política no ${a('https://iesp.uerj.br/', 'Instituto de Estudos Sociais e Políticos')} (IESP-UERJ).`,
-      'Meus interesses de pesquisa incluem comportamento político, políticas públicas e a aplicação de técnicas de ciência de dados à pesquisa em ciências sociais. Isso abrange o uso de aprendizado de máquina, aprendizado profundo, inferência causal e métodos de survey para investigar fenômenos políticos.',
+      `Mestrando em Ciência Política, ${a('https://iesp.uerj.br/', 'IESP-UERJ')}`,
+      `Cientista de dados, ${a('https://atlasintel.org/', 'AtlasIntel')}`,
     ],
   } as L<string[]>,
 
-  interests: {
-    en: ['Legislative behavior', 'Computational methods', 'Political behavior', 'Survey research', 'Causal inference'],
-    'pt-br': ['Comportamento legislativo', 'Métodos computacionais', 'Comportamento político', 'Pesquisa de survey', 'Inferência causal'],
+  /**
+   * The home page's text, one HTML string per paragraph: who he is and what he
+   * does, in running prose (positions and affiliations only; projects are not
+   * presented as jobs). The second paragraph carries the defense date: rewrite
+   * it after 3 December 2026.
+   */
+  intro: {
+    en: [
+      `I am a data scientist and a social scientist, trained at ${a('https://emap.fgv.br/en', 'FGV EMAp')} and ${a('https://cpdoc.fgv.br/en', 'FGV CPDOC')}. I use statistical and computational methods to understand political and social phenomena, such as elections, legislative behavior, public opinion and public policy.`,
+      `In my <a href="/publications#dissertation" class="link">dissertation</a>, which I defend on 3 December 2026, I measure the preferences of deputies from the text of more than 100,000 bills introduced in the Chamber since 1988. I do research at ${a('https://mape.org.br/', 'MAPE')}, ${a('https://www.lab-doxa.org.br/', 'DOXA')} and ${a('http://necon.iesp.uerj.br', 'NECON')}.`,
+    ],
+    'pt-br': [
+      `Sou cientista de dados e cientista social, formado pela ${a('https://emap.fgv.br/', 'FGV EMAp')} e pela ${a('https://cpdoc.fgv.br/', 'FGV CPDOC')}. Uso métodos estatísticos e computacionais para entender fenômenos políticos e sociais, como eleições, comportamento legislativo, opinião pública e políticas públicas.`,
+      `Na <a href="/pt-br/publications#dissertation" class="link">dissertação</a>, que defendo em 3 de dezembro de 2026, meço as preferências dos deputados a partir do texto de mais de 100 mil proposições apresentadas na Câmara desde 1988. Faço pesquisa no ${a('https://mape.org.br/', 'MAPE')}, no ${a('https://www.lab-doxa.org.br/', 'DOXA')} e no ${a('http://necon.iesp.uerj.br', 'NECON')}.`,
+    ],
   } as L<string[]>,
 
-  /** Small avatar (hero kicker on small screens) and the large hero portrait (lg and up). */
+  /** The portrait: `portrait` is the small one next to the name on the home page (a circle with transparent corners). */
   portrait: { src: '/img/profilepic/me_at_iesp.webp', width: 576, height: 576 },
-  portraitLarge: { src: '/img/profilepic/me_at_iesp-lg.webp', width: 720, height: 720 },
-  /** The About section's photo. */
-  aboutPhoto: {
-    src: '/img/profilepic/me_with_parrot.webp',
-    width: 576,
-    height: 576,
-    alt: {
-      en: 'Felipe Lamarca smiling, with a parrot perched on one shoulder',
-      'pt-br': 'Felipe Lamarca sorrindo, com um papagaio no ombro',
-    } as L,
-  },
-
   /** CV PDFs: the 2-page short version and the full one (cv/README.md). */
   cvPdf: {
     short: { en: '/files/cv-en-short.pdf', 'pt-br': '/files/cv-pt-short.pdf' } as L,
@@ -114,4 +66,5 @@ export const profile = {
   ] as SocialLink[],
 
   instagram: { handle: '@veryfirsttake', href: 'https://www.instagram.com/veryfirsttake/' },
+
 };

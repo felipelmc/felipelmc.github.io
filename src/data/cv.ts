@@ -8,11 +8,11 @@ const a = (href: string, text: string) =>
   `<a href="${href}" class="link" target="_blank" rel="noopener noreferrer">${text}</a>`;
 
 export const cv: Cv = {
-  lastUpdated: { en: 'Last updated: October 2026', 'pt-br': 'Atualizado em outubro de 2026' },
+  lastUpdated: { en: 'Last updated: November 2026', 'pt-br': 'Atualizado em novembro de 2026' },
 
   summary: {
-    en: "Data scientist and social scientist. I work on public opinion and elections, public policy evaluation, and data on the Amazon, mostly in R and Python. I currently calibrate election polls in several countries at AtlasIntel, coordinate the quantitative analysis of a project on cooperatives and deforestation in Acre, and work on a systematic review of public security policies for Brazil's Ministry of Justice.",
-    'pt-br': 'Cientista de dados e cientista social. Trabalho com pesquisas de opinião e eleições, avaliação de políticas públicas e dados sobre a Amazônia, quase sempre em R e Python. Hoje calibro pesquisas eleitorais em vários países na AtlasIntel, coordeno a análise quantitativa de um projeto sobre cooperativismo e desmatamento no Acre e participo de uma revisão sistemática de políticas de segurança pública para o Ministério da Justiça.',
+    en: "Data scientist and social scientist. I apply statistical and computational methods to opinion polls, elections, legislative behavior and public policy evaluation, mostly in R and Python. I currently calibrate election polls in several countries at AtlasIntel and coordinate the quantitative analysis of a project on cooperatives and deforestation in Acre. In 2026 I also worked on a systematic review of public security policies for Brazil's Ministry of Justice.",
+    'pt-br': 'Cientista de dados e cientista social. Aplico métodos estatísticos e computacionais a pesquisas de opinião, eleições, comportamento legislativo e avaliação de políticas públicas, quase sempre em R e Python. Hoje calibro pesquisas eleitorais em vários países na AtlasIntel e coordeno a análise quantitativa de um projeto sobre cooperativismo e desmatamento no Acre. Em 2026, participei também de uma revisão sistemática de políticas de segurança pública para o Ministério da Justiça.',
   },
 
   education: [
@@ -105,14 +105,14 @@ export const cv: Cv = {
       title: { en: 'Funded projects', 'pt-br': 'Projetos financiados' },
       entries: [
         {
-          when: { en: '07/2026 – present', 'pt-br': '07/2026 – presente' },
+          when: '07/2026 – 11/2026',
           titleHtml: {
             en: '<em>Pensando o Direito</em> research grant, MJSP',
             'pt-br': 'Bolsa de pesquisa <em>Pensando o Direito</em>, MJSP',
           },
           bodyHtml: {
-            en: `<em>Researcher.</em> Systematic review of the evidence on public security policies for the Legal Amazon, organized around the idea of a qualified entry of the State into vulnerable territories and following the OQF (<em>O Que Funciona?</em>) protocol developed at MAPE. It covers 12 policies in four areas, from community policing and body-worn cameras to the Patrulha Maria da Penha, cash transfers, and the Plano Juventude Viva, and more than 300 studies. I run the search, screening, and evidence extraction, with LLM-assisted screening and extraction checked by the team. Project coordinated by Djane Braz Duarte. <em>Expected deliveries:</em> (i) an analytical report for the Ministry; (ii) an article submitted to a peer-reviewed journal; (iii) entries on the reviewed policies in the ${a('https://wikifavelas.com.br', 'Dicionário de Favelas Marielle Franco')}.`,
-            'pt-br': `<em>Pesquisador.</em> Revisão sistemática das evidências sobre políticas de segurança pública para a Amazônia Legal, organizada em torno da ideia de entrada qualificada do Estado em territórios vulnerabilizados e seguindo o protocolo OQF (<em>O Que Funciona?</em>) do MAPE. São 12 políticas em quatro eixos, do policiamento de proximidade e das câmeras corporais à Patrulha Maria da Penha, à transferência de renda e ao Plano Juventude Viva, e mais de 300 trabalhos. Conduzo busca, triagem e extração de evidências, com triagem e extração assistidas por modelos de linguagem e conferidas pela equipe. Projeto coordenado por Djane Braz Duarte. <em>Entregas previstas:</em> (i) relatório técnico-analítico para o Ministério; (ii) artigo submetido a periódico qualificado; (iii) verbetes sobre as políticas revisadas no ${a('https://wikifavelas.com.br', 'Dicionário de Favelas Marielle Franco')}.`,
+            en: `<em>Researcher.</em> Systematic review of the evidence on public security policies for the Legal Amazon, organized around the idea of a qualified entry of the State into vulnerable territories and following the OQF (<em>O Que Funciona?</em>) protocol developed at MAPE. It covers 12 policies in four areas, from community policing and body-worn cameras to the Patrulha Maria da Penha, cash transfers, and the Plano Juventude Viva, and more than 300 studies. I ran the search, screening, and evidence extraction, with LLM-assisted screening and extraction checked by the team. Project coordinated by Djane Braz Duarte. <em>Expected deliveries:</em> (i) an analytical report for the Ministry; (ii) an article submitted to a peer-reviewed journal; (iii) entries on the reviewed policies in the ${a('https://wikifavelas.com.br', 'Dicionário de Favelas Marielle Franco')}.`,
+            'pt-br': `<em>Pesquisador.</em> Revisão sistemática das evidências sobre políticas de segurança pública para a Amazônia Legal, organizada em torno da ideia de entrada qualificada do Estado em territórios vulnerabilizados e seguindo o protocolo OQF (<em>O Que Funciona?</em>) do MAPE. São 12 políticas em quatro eixos, do policiamento de proximidade e das câmeras corporais à Patrulha Maria da Penha, à transferência de renda e ao Plano Juventude Viva, e mais de 300 trabalhos. Conduzi busca, triagem e extração de evidências, com triagem e extração assistidas por modelos de linguagem e conferidas pela equipe. Projeto coordenado por Djane Braz Duarte. <em>Entregas previstas:</em> (i) relatório técnico-analítico para o Ministério; (ii) artigo submetido a periódico qualificado; (iii) verbetes sobre as políticas revisadas no ${a('https://wikifavelas.com.br', 'Dicionário de Favelas Marielle Franco')}.`,
           },
           shortHtml: {
             en: '<em>Researcher.</em> Systematic review of the evidence on 12 public security policies for the Legal Amazon, with a report for the Ministry of Justice and Public Security.',

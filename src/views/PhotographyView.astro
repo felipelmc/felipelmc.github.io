@@ -14,7 +14,7 @@ const t = useTranslations(locale);
 ---
 
 <Layout title={t('photography.title')} description={t('meta.photography')}>
-  <PageHeader kicker="@veryfirsttake" kickerAsIs title={t('photography.title')}>
+  <PageHeader flush kicker="@veryfirsttake" kickerAsIs title={t('photography.title')}>
     <p class="mt-4 text-lg leading-relaxed text-ink-2 text-pretty" set:html={t('about.photography')} />
   </PageHeader>
   <PhotoStrip />

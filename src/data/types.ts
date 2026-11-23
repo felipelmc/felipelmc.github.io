@@ -50,6 +50,8 @@ export interface Publication {
   authors?: Person[];
   /** Journal/lab/venue line, may contain <em>. */
   venueHtml?: Text;
+  /** One sentence on what the paper does, shown under its title. */
+  summary?: Text;
   /** Status or presentation note, e.g. "Presented at ABCP 2026." */
   note?: Text;
   abstract?: Text;

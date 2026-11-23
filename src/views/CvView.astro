@@ -92,13 +92,13 @@ const prePaint = `(function () {
     </div>
   </PageHeader>
 
-  <div class="grid gap-10 lg:grid-cols-[12rem_minmax(0,1fr)] lg:gap-16">
+  <div class="grid gap-10 lg:grid-cols-rail lg:gap-16">
     <PageIndex items={sections.map((s) => ({ id: s.id, label: s.label, attrs: only(s.only) }))} label={t('cv.title')} />
 
     <div class="min-w-0">
       <p class="mb-16 max-w-prose text-lg leading-relaxed text-ink-2 text-pretty" data-cv-only="short">{cv.summary[locale]}</p>
 
-      <div class="space-y-20">
+      <div class="space-y-16">
         <section aria-labelledby="education">
           <SectionHeader gutter number={num('education')} id="education" title={label('education')} />
           <ol class="divide-y divide-line">
@@ -106,7 +106,7 @@ const prePaint = `(function () {
               <li class="grid gap-x-6 gap-y-1 py-4 first:pt-0 sm:grid-cols-[7rem_minmax(0,1fr)]">
                 <p class="meta pt-1">{tr(r.when, locale)}</p>
                 <div class="min-w-0">
-                  <p class="text-h3 font-semibold text-ink" set:html={tr(r.html, locale)} />
+                  <p class="entry-title" set:html={tr(r.html, locale)} />
                   {r.subHtml && <p class="mt-0.5 text-sm text-ink-3" set:html={tr(r.subHtml, locale)} />}
                 </div>
               </li>
@@ -187,12 +187,12 @@ const prePaint = `(function () {
 
         <section aria-labelledby="references" data-cv-only="full">
           <SectionHeader gutter number={num('references')} id="references" title={label('references')} />
-          <ul class="grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2">
+          <ul class="grid gap-x-10 gap-y-6 sm:grid-cols-2 sm:pl-[8.5rem]">
             {cv.references.map((r) => (
-              <li class="flex flex-col gap-1 bg-panel p-4 sm:[&:last-child:nth-child(odd)]:col-span-2">
-                <p class="font-medium text-ink">{r.name}</p>
+              <li class="flex flex-col gap-0.5">
+                <p class="font-heading font-semibold text-ink">{r.name}</p>
                 <p class="text-sm text-ink-2">{r.institution}{r.note && <> · {r.note[locale]}</>}</p>
-                <p class="break-words font-mono text-meta text-ink-3">{r.email}</p>
+                <p class="meta break-words">{r.email}</p>
               </li>
             ))}
           </ul>

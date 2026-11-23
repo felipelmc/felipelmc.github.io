@@ -10,10 +10,12 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      // The Source superfamily: sans for text and labels, serif for names,
+      // headings and titles, mono only for code (the BibTeX dialog).
       fontFamily: {
-        sans: ['"Geist Variable"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        mono: ['"Geist Mono Variable"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
-        serif: ['"Newsreader Variable"', 'Georgia', 'serif'],
+        sans: ['"Source Sans 3 Variable"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['"Source Serif 4 Variable"', 'Georgia', 'serif'],
+        mono: ['"Source Code Pro Variable"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       colors: {
         canvas: v('bg'),
@@ -30,23 +32,28 @@ export default {
         link: v('link'),
       },
       maxWidth: {
-        content: '75rem',
-        prose: '68ch',
+        content: '70rem',
+        prose: '66ch',
+      },
+      // Every page is a 12rem rail (portrait, section names, page index) and a
+      // content column, from `lg` up; dated lists hang their dates in 7rem.
+      gridTemplateColumns: {
+        rail: '12rem minmax(0, 1fr)',
+        dated: '7rem minmax(0, 1fr)',
       },
       borderRadius: {
-        chip: '6px',
-        btn: '8px',
-        card: '12px',
+        chip: '3px',
+        btn: '4px',
+        card: '6px',
       },
       boxShadow: {
-        card: '0 1px 2px rgb(var(--shadow) / 0.06)',
         lift: '0 14px 30px -14px rgb(var(--shadow) / 0.28)',
       },
       fontSize: {
-        display: ['clamp(2.75rem, 6vw, 4.5rem)', { lineHeight: '1', letterSpacing: '-0.035em' }],
-        meta: ['0.75rem', { lineHeight: '1rem', letterSpacing: '0.01em' }],
-        // One size for card titles, entry headings and paper titles; one for taglines.
-        h3: ['1.1875rem', { lineHeight: '1.35', letterSpacing: '-0.015em' }],
+        display: ['clamp(2.5rem, 5vw, 3.25rem)', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
+        meta: ['0.8125rem', { lineHeight: '1.25rem' }],
+        // One size for entry, card and paper titles; one for taglines.
+        h3: ['1.1875rem', { lineHeight: '1.35', letterSpacing: '-0.005em' }],
         small: ['0.9375rem', { lineHeight: '1.6' }],
       },
       transitionDuration: {

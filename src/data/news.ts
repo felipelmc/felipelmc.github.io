@@ -5,15 +5,39 @@ export interface NewsItem {
   text: { en: string; 'pt-br': string };
   /** Site-relative path in its EN form; PT pages prefix /pt-br */
   href?: string;
+  /**
+   * Still ahead: the date label takes the accent and an "Upcoming" tag. Set by
+   * hand, like a talk's, and cleared once the date has passed.
+   */
+  upcoming?: boolean;
 }
 
 export const news: NewsItem[] = [
   {
+    date: '2026-12-03',
+    label: { en: '3 Dec 2026', 'pt-br': '3 dez 2026' },
+    text: {
+      en: 'I will defend my M.A. dissertation, “Political preferences in legislative proposals: evidence from the Brazilian Chamber of Deputies, 1988–2026”, at IESP-UERJ on 3 December. Committee: Fernando Meireles (advisor), Fabiano Santos, Cesar Zucco and Mauricio Izumi.',
+      'pt-br': 'Defendo minha dissertação de mestrado, “Preferências políticas em proposições legislativas: evidências da Câmara dos Deputados, 1988–2026”, no IESP-UERJ, em 3 de dezembro. Banca: Fernando Meireles (orientador), Fabiano Santos, Cesar Zucco e Mauricio Izumi.',
+    },
+    href: '/publications',
+    upcoming: true,
+  },
+  {
+    date: '2026-11-11',
+    label: { en: 'Nov 2026', 'pt-br': 'nov 2026' },
+    text: {
+      en: 'Taught a short course on AI agents for research at the Graduate Student Seminar of the Department of Political Science, USP, with Manoel Galdino and Tales Mançano.',
+      'pt-br': 'Ministrei um minicurso sobre agentes de IA para pesquisa no Seminário Discente do Departamento de Ciência Política da USP, com Manoel Galdino e Tales Mançano.',
+    },
+    href: '/teaching',
+  },
+  {
     date: '2026-09-30',
     label: { en: 'Sep–Oct 2026', 'pt-br': 'set–out 2026' },
     text: {
-      en: '“Quantos votos meu partido vai fazer?”, joint work with Tomás Paixão Borges, will be presented at the 50th ANPOCS Annual Meeting (SPG 31 — Methodology and Research Methods in the Social Sciences).',
-      'pt-br': '“Quantos votos meu partido vai fazer?”, trabalho conjunto com Tomás Paixão Borges, será apresentado no 50º Encontro Anual da ANPOCS (SPG 31 — Metodologia e Métodos de Pesquisa em Ciências Sociais).',
+      en: '“Quantos votos meu partido vai fazer?”, joint work with Tomás Paixão Borges, was accepted for presentation at the 50th ANPOCS Annual Meeting (SPG 31 — Methodology and Research Methods in the Social Sciences).',
+      'pt-br': '“Quantos votos meu partido vai fazer?”, trabalho conjunto com Tomás Paixão Borges, foi aceito para apresentação no 50º Encontro Anual da ANPOCS (SPG 31 — Metodologia e Métodos de Pesquisa em Ciências Sociais).',
     },
     href: '/publications',
   },

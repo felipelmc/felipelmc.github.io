@@ -24,7 +24,7 @@ const [from, to] = monthNames(tr(e.when, locale), locale).split(' – ');
     <span class="whitespace-nowrap">{from}{to && ' –'}</span>{to && <>{' '}<span class="whitespace-nowrap">{to}</span></>}
   </p>
   <div class="min-w-0 space-y-2">
-    <h4 class="text-h3 font-semibold text-ink" set:html={tr(e.titleHtml, locale)} />
+    <h4 class="entry-title" set:html={tr(e.titleHtml, locale)} />
     {e.bodyHtml && <p class="max-w-prose text-small text-ink-2" {...(e.shortHtml ? fullOnly : {})} set:html={tr(e.bodyHtml, locale)} />}
     {e.shortHtml && <p class="max-w-prose text-small text-ink-2" data-cv-only="short" set:html={tr(e.shortHtml, locale)} />}
     {e.itemsHtml && (
@@ -34,7 +34,7 @@ const [from, to] = monthNames(tr(e.when, locale), locale).split(' – ');
     )}
     {delivery && (
       <p class="max-w-prose text-sm text-ink-3" {...fullOnly}>
-        <span class="font-mono text-meta uppercase tracking-[0.06em] text-ink-3">{deliveryLabel}</span>{' '}
+        <span class="eyebrow">{deliveryLabel}</span>{' '}
         <span set:html={delivery} />
       </p>
     )}

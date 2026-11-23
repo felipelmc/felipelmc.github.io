@@ -10,12 +10,30 @@ export const publications: Publication[] = [
     type: 'dissertation',
     year: 2026,
     title: {
-      en: 'Preference estimation in the Brazilian Congress.',
-      'pt-br': 'Estimação de preferências no Congresso brasileiro.',
+      en: 'Political preferences in legislative proposals: evidence from the Brazilian Chamber of Deputies, 1988–2026.',
+      'pt-br': 'Preferências políticas em proposições legislativas: evidências da Câmara dos Deputados, 1988–2026.',
     },
+    summary: {
+      en: 'A new way of measuring the preferences of legislators, from contextual embeddings of the justifications of more than 100,000 bills introduced in the Chamber of Deputies since 1988.',
+      'pt-br': 'Uma nova forma de medir as preferências dos deputados, a partir de embeddings contextuais das justificações de mais de 100 mil proposições apresentadas na Câmara dos Deputados desde 1988.',
+    },
+    // The map of the bills with one theme (health) in blue, drawn by scripts/build-mapa.py.
+    figure: {
+      width: 1600,
+      height: 1561,
+      alt: {
+        en: 'Map in which each dot is a bill introduced in the Chamber of Deputies since 1988, placed by the text of its justification; the health bills, in blue, gather in one region',
+        'pt-br': 'Mapa em que cada ponto é uma proposição apresentada na Câmara dos Deputados desde 1988, posicionada pelo texto da sua justificação; as de saúde, em azul, se concentram em uma região',
+      },
+    },
+    // Title, abstract and committee as in the thesis (BR-Congress-Preferences, reports/thesis/thesis.qmd).
     note: {
-      en: 'M.A. dissertation in progress at IESP-UERJ. Advisor: Fernando Meireles.',
-      'pt-br': 'Dissertação de mestrado em andamento no IESP-UERJ. Orientador: Fernando Meireles.',
+      en: 'M.A. dissertation, IESP-UERJ. Advisor: Fernando Meireles. Defense on 3 December 2026. Committee: Fabiano Santos (IESP-UERJ), Cesar Zucco (Columbia University) and Mauricio Izumi (UFES).',
+      'pt-br': 'Dissertação de mestrado, IESP-UERJ. Orientador: Fernando Meireles. Defesa em 3 de dezembro de 2026. Banca: Fabiano Santos (IESP-UERJ), Cesar Zucco (Columbia University) e Mauricio Izumi (UFES).',
+    },
+    abstract: {
+      en: 'The preferences of legislators are central to several areas of political science, from spatial models of legislative politics to the study of policymaking, executive–legislative relations and polarization. The two usual sources have known limits: roll-call votes often capture the division between government and opposition more than ideology, as in Brazil, and elite surveys are costly and usually anonymous, so that they place parties and not individual legislators. In this dissertation, we propose and test a new strategy for measuring preferences, based on contextual embeddings of the justifications of bills, which in Brazil any deputy may introduce individually, without depending on party leaders. We build an original corpus with the full texts of more than 100,000 bills introduced in the Brazilian Chamber of Deputies since 1988, covering the whole democratic period. Deputies and parties are compared through operations on the vectors of their bills, and the estimates are set against roll-call votes and the Brazilian Legislative Survey. A series of tests shows the usefulness of the measure: it yields estimates of party cohesion that agree with what the literature expects, carries signs of ideology, and does not reproduce the division between government and opposition that organizes the votes. The dissertation thus contributes an original corpus, which allows a series of estimates about Brazilian deputies to be computed and opens an agenda of research, such as the study of polarization over time, of the cohesion of parties across the whole period and of how the characteristics of deputies relate to their preferences.',
+      'pt-br': 'As preferências dos legisladores são centrais para diversas áreas da ciência política, dos modelos espaciais da política legislativa ao estudo da produção de políticas, das relações entre Executivo e Legislativo e da polarização. As duas fontes usuais têm limites conhecidos: as votações nominais frequentemente capturam a divisão entre governo e oposição mais do que a ideologia, como no Brasil, e os surveys com os próprios legisladores são caros e em geral anônimos, de modo que posicionam partidos, e não legisladores individuais. Nesta dissertação, propomos e testamos uma nova estratégia de mensuração de preferências, baseada em embeddings contextuais das justificações das proposições, que no Brasil qualquer deputado pode apresentar individualmente, sem depender das lideranças partidárias. Construímos um corpus original com o texto integral de mais de 100 mil proposições apresentadas na Câmara dos Deputados desde 1988, o que cobre todo o período democrático. Deputados e partidos são comparados por meio de operações com os vetores de suas proposições, e as estimativas são confrontadas com as votações nominais e com os surveys. Uma série de testes mostra a utilidade da medida: ela produz estimativas de coesão partidária que concordam com o que a literatura espera, carrega sinais de ideologia e não reproduz a divisão entre governo e oposição que organiza os votos. A dissertação contribui, assim, com um corpus original, que permite calcular uma série de estimativas sobre os deputados brasileiros e abre uma agenda de pesquisa, como o estudo da polarização ao longo do tempo, da coesão dos partidos em todo o período e da relação entre as características dos deputados e suas preferências.',
     },
     featured: 1,
   },
@@ -59,12 +77,16 @@ export const publications: Publication[] = [
     titleLang: 'pt-BR',
     authors: [{ name: 'Tomás Paixão Borges', affiliation: 'IESP-UERJ' }],
     note: {
-      en: 'To be presented at the 50th Annual Meeting of the Brazilian National Association of Graduate Studies and Research in Social Sciences (ANPOCS).',
-      'pt-br': 'A ser apresentado no 50º Encontro Anual da ANPOCS.',
+      en: 'Accepted for presentation at the 50th Annual Meeting of the Brazilian National Association of Graduate Studies and Research in Social Sciences (ANPOCS).',
+      'pt-br': 'Aceito para apresentação no 50º Encontro Anual da ANPOCS.',
     },
     abstract:
       'No Brasil, a modelagem estatística é usada no campo de Ciências Sociais quase exclusivamente para explicar fenômenos, raramente para prevê-los. A difusão de técnicas de machine learning, porém, vem dissolvendo a fronteira entre estudos preditivos e causais: a predição serve de benchmark para teorias, revela onde os modelos falham e disciplina o uso da informação disponível. Tendo isto em vista, este manuscrito parte de duas questões. A primeira é substantiva: é possível prever, com boa acurácia, o desempenho eleitoral dos partidos nas eleições proporcionais para vereador usando apenas informação disponível antes do pleito? A segunda é metodológica: como se conduz, na prática, um exercício preditivo rigoroso, dos dados brutos à validação dos resultados? Respondemos com um tutorial reprodutível aplicado aos 92 municípios fluminenses em três eleições (2016, 2020 e 2024), em expansão para o conjunto dos municípios brasileiros.',
     abstractLang: 'pt-BR',
+    links: [
+      { kind: 'slides', href: 'https://felipelamarca.com/Presentations/Quantos-Votos-ANPOCS-2026/slides.html' },
+      { kind: 'pdf', href: 'https://felipelamarca.com/Presentations/Quantos-Votos-ANPOCS-2026/slides.pdf', label: { en: 'Slides (PDF)', 'pt-br': 'Slides (PDF)' } },
+    ],
     // The calibration figure, as in the ANPOCS slides (Presentations/Quantos-Votos-ANPOCS-2026/img).
     figure: {
       width: 1600,
