@@ -9,9 +9,8 @@ filters:
 # motor (LuaLaTeX, por causa das fontes OpenType em fonts/), a página e as
 # margens.
 #
-# A margem esquerda (37 mm) guarda uma coluna pendente de 22 mm para datas,
-# números de seção e rótulos; o bloco de texto (157 mm) fica com uma margem
-# reta. colorlinks: false = links na cor do texto em volta (hidelinks),
+# A margem esquerda (37 mm) guarda uma coluna pendente de 22 mm para datas
+# e rótulos; o bloco de texto (157 mm) fica com uma margem reta. colorlinks: false = links na cor do texto em volta (hidelinks),
 # ainda clicáveis no PDF.
 format:
   pdf:

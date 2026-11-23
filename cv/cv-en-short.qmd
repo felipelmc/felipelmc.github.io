@@ -17,7 +17,7 @@ Full CV: [felipelamarca.com/cv](https://felipelamarca.com/cv/?v=full)
 :::
 
 ::: interests
-*Profile.* Data scientist and social scientist. I apply statistical and computational methods to opinion polls, elections, legislative behavior and public policy evaluation, mostly in R and Python. I currently calibrate election polls in several countries at AtlasIntel and coordinate the quantitative analysis of a project on cooperatives and deforestation in Acre. In 2026 I also worked on a systematic review of public security policies for Brazil's Ministry of Justice.
+*Profile.* Data scientist and social scientist. I apply statistical and computational methods to opinion polls, elections, legislative behavior and public policy evaluation, primarily in R and Python. I currently calibrate election polls in several countries at AtlasIntel and coordinate the quantitative analysis of a project on cooperatives and deforestation in Acre. In 2026, I also took part in a systematic review of public security policies for Brazil's Ministry of Justice.
 :::
 
 # Experience

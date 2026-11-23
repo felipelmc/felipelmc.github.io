@@ -1,12 +1,13 @@
 % ---------------------------------------------------------------------------
-% Formatação do currículo ("Plenário impresso"). Para editar o conteúdo,
-% mexa só em cv-en.qmd e cv-pt.qmd; o README explica as convenções.
+% Formatação do currículo. Para editar o conteúdo, mexa só nos .qmd; o README
+% explica as convenções.
 %
-% A versão impressa do site: Geist no texto, Newsreader itálico em todo
-% itálico do markdown (títulos, periódicos, cargos), Geist Mono nas datas,
-% rótulos e números de seção. À esquerda do texto há uma coluna pendente de
-% 22 mm (a coluna de datas do site) com datas, números e rótulos; o texto
-% fica com uma única margem reta.
+% A versão impressa do site: página branca, Source Sans 3 no texto e nos
+% rótulos, Source Serif 4 no nome, nos títulos e em todo itálico do markdown
+% (títulos de trabalhos, periódicos, cargos), e o azul dos gráficos da
+% dissertação (#27507F) nos marcadores e nos rótulos de recurso. À esquerda do
+% texto há uma coluna pendente de 22 mm (a coluna de datas do site) com datas
+% e rótulos; o texto fica com uma única margem reta.
 %
 % Três coisas são lidas do próprio markdown, sem marcação nova:
 %   - um parágrafo que é só `*Cargo*` logo depois do título da entrada é o
@@ -34,79 +35,76 @@
 \usepackage{microtype}
 
 % --- Fontes ------------------------------------------------------------------
-% Arquivos estáticos em fonts/ (OFL; licenças ao lado). O Quarto põe
-% Scale=MatchLowercase como padrão global; aqui toda fonte diz a sua escala.
+% A família Source, como no site. Arquivos estáticos em fonts/ (OFL; licença
+% ao lado), nas versões oficiais da Adobe. O Quarto põe Scale=MatchLowercase
+% como padrão global; aqui toda fonte diz a sua escala.
 %
-% Geist corre grande: em 10pt nominais com Scale=0.95 ela sai com 9,5pt
-% reais e altura-x maior que a de uma serifada de 11pt. Todo tamanho fixo do
-% desenho usa \cvsize{<pt reais>}{<entrelinha>}, que compensa a escala: ao
-% mudar \cv@scale, mude os tamanhos abaixo na mesma proporção.
+% Todo tamanho fixo do desenho usa \cvsize{<pt reais>}{<entrelinha>}, que
+% compensa a escala: ao mudar \cv@scale, os tamanhos continuam reais.
 %
 % Escala, entrelinha e espaços seguram o currículo em 4 páginas cheias
 % (en e pt). A pt-BR é a mais longa e a primeira a estourar.
 
 \defaultfontfeatures{Ligatures=TeX}
-\newcommand\cv@scale{0.95}
+\newcommand\cv@scale{1}
 \newcommand\cvsize[2]{\fontsize{\fpeval{#1/\cv@scale}}{#2}\selectfont}
 
-% Texto: Geist; itálico: Newsreader (8% maior, para a serifa não parecer
-% miúda ao lado da Geist); negrito-itálico só aparece em títulos.
-\setmainfont{Geist-Regular.otf}[
+% Texto: Source Sans 3; itálico e negrito-itálico: Source Serif 4, um pouco
+% menor para a altura-x casar com a da sem serifa.
+\setmainfont{SourceSans3-Regular.otf}[
   Path = fonts/,
   Scale = \cv@scale,
-  BoldFont = Geist-SemiBold.otf,
-  ItalicFont = Newsreader16pt-Italic.ttf,
-  ItalicFeatures = {Scale = \fpeval{\cv@scale*1.08}},
-  BoldItalicFont = Newsreader16pt-SemiBoldItalic.ttf,
-  BoldItalicFeatures = {Scale = \fpeval{\cv@scale*1.08}},
+  BoldFont = SourceSans3-Semibold.otf,
+  ItalicFont = SourceSerif4-It.otf,
+  ItalicFeatures = {Scale = \fpeval{\cv@scale*0.97}},
+  BoldItalicFont = SourceSerif4-SemiboldIt.otf,
+  BoldItalicFeatures = {Scale = \fpeval{\cv@scale*0.97}},
 ]
-\setsansfont{Geist-Regular.otf}[
+\setsansfont{SourceSans3-Regular.otf}[
   Path = fonts/,
   Scale = \cv@scale,
-  BoldFont = Geist-SemiBold.otf,
-  ItalicFont = Newsreader16pt-Italic.ttf,
-  ItalicFeatures = {Scale = \fpeval{\cv@scale*1.08}},
-  BoldItalicFont = Newsreader16pt-SemiBoldItalic.ttf,
-  BoldItalicFeatures = {Scale = \fpeval{\cv@scale*1.08}},
+  BoldFont = SourceSans3-Semibold.otf,
+  ItalicFont = SourceSans3-It.otf,
+  BoldItalicFont = SourceSans3-SemiboldIt.otf,
 ]
-% Código no meio do texto (`mape_municipios`, e-mails): um pouco menor que o
-% texto, porque a mono é larga.
-\setmonofont{GeistMono-Regular.otf}[
+% Código no meio do texto (`mape_municipios`): um pouco menor que o texto,
+% porque a mono é larga.
+\setmonofont{SourceCodePro-Regular.otf}[
   Path = fonts/,
-  Scale = \fpeval{\cv@scale*0.89},
-  BoldFont = GeistMono-Medium.otf,
+  Scale = \fpeval{\cv@scale*0.88},
 ]
-% Mono dos rótulos (datas, números, \cvres): tamanho real via \cvsize.
-\newfontfamily\cvmono{GeistMono-Regular.otf}[
+% Rótulos (datas, grupos, recursos, rodapé): Source Sans com algarismos
+% tabulares; tamanho real via \cvsize.
+\newfontfamily\cvlabel{SourceSans3-Regular.otf}[
   Path = fonts/,
   Scale = \cv@scale,
-  BoldFont = GeistMono-Medium.otf,
+  BoldFont = SourceSans3-Semibold.otf,
+  Numbers = Tabular,
 ]
-\newfontfamily\cvmonocaps{GeistMono-Regular.otf}[
+% Títulos de seção e de entrada: Source Serif 4 Semibold.
+\newfontfamily\cvhead{SourceSerif4-Semibold.otf}[
   Path = fonts/,
   Scale = \cv@scale,
-  LetterSpace = 6,
+  BoldFont = SourceSerif4-Semibold.otf,
+  ItalicFont = SourceSerif4-SemiboldIt.otf,
+  BoldItalicFont = SourceSerif4-SemiboldIt.otf,
 ]
-\newfontfamily\cvdisplay{Geist-SemiBold.otf}[
+% O nome, no corte de título da serifa.
+\newfontfamily\cvdisplay{SourceSerif4Display-Semibold.otf}[
   Path = fonts/,
   Scale = \cv@scale,
-  LetterSpace = -1.5,
+  LetterSpace = -1,
 ]
 
 % --- Cores -------------------------------------------------------------------
-% Neutros em cinza puro (a impressão sai em toner preto); o verde só nos
-% números de seção, marcadores, rótulos de recurso e na marca.
+% Neutros em cinza puro (a impressão sai em toner preto); o azul dos gráficos
+% da dissertação só nos marcadores e nos rótulos de recurso.
 
 \definecolor{cvink}{gray}{0.07}
 \definecolor{cvink2}{gray}{0.29}
 \definecolor{cvink3}{gray}{0.40}
 \definecolor{cvhair}{gray}{0.79}
-\definecolor{cvaccent}{HTML}{0A6F69}
-\definecolor{cvd1}{HTML}{5AC0AB}
-\definecolor{cvd2}{HTML}{2E9D8E}
-\definecolor{cvd3}{HTML}{187970}
-\definecolor{cvd4}{HTML}{0E5652}
-\definecolor{cvd5}{HTML}{053535}
+\definecolor{cvaccent}{HTML}{27507F}
 
 \AtBeginDocument{\color{cvink}}
 
@@ -118,7 +116,7 @@
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1.8pt}
-\linespread{1} % 9,5pt reais sobre 12pt
+\linespread{1} % 10pt sobre 12pt
 
 \AtBeginDocument{\frenchspacing}   % um espaço só depois do ponto
 \widowpenalty=10000
@@ -138,30 +136,12 @@
     Pestana Cavalcanti Paixão Borges Calabró Berti Sanches Balbi Duarte
     AtlasIntel Visagio Artplan CEBRAP}}
 
-% --- A marca -----------------------------------------------------------------
-% A grade 3×3 do site: tom = linha + coluna + 1, do mais claro no alto à
-% esquerda ao mais escuro embaixo à direita. #1 = altura total (dos pontos).
-
-\newcommand\cvmark[1]{%
-  \begingroup
-  \pgfmathsetlengthmacro\cv@u{#1/22.6}%
-  \begin{tikzpicture}[x=\cv@u, y=\cv@u, baseline=0pt]
-    \foreach \r in {0,1,2}{%
-      \foreach \c in {0,1,2}{%
-        \pgfmathtruncatemacro\cv@bin{\r+\c+1}%
-        \fill[cvd\cv@bin] (3.3+8*\c, 3.3+8*2-8*\r) circle (3.3);
-      }%
-    }%
-  \end{tikzpicture}%
-  \endgroup
-}
-
 % --- Coluna pendente ---------------------------------------------------------
 % \cv@incol{...}: põe o conteúdo na coluna à esquerda, sem ocupar espaço nem
 % empurrar linhas (a caixa não tem altura nem profundidade). A primeira linha
 % fica na linha de base de quem chamou; as seguintes descem pela coluna.
 
-\newcommand\cv@labelfont{\cvmono\cvsize{7.9}{9.8pt}\color{cvink3}}
+\newcommand\cv@labelfont{\cvlabel\cvsize{8.5}{10pt}\color{cvink3}}
 \newcommand\cv@incol[1]{%
   \leavevmode\llap{\smash{\parbox[t]{\cvcolw}{\raggedright
     \hyphenpenalty=10000 \exhyphenpenalty=10000
@@ -183,37 +163,27 @@
 }
 \ExplSyntaxOff
 
-% --- Seções (\section): 01 Título ────────────── -----------------------------
+% --- Seções (\section): Título ──────────────── ------------------------------
+% Sem número: o título em serifa e um fio até a margem direita.
 
-% Texto para extração (ATS, copiar e colar): o número da coluna sai junto do
-% título, "01 Education", e não solto antes das datas.
-\newcommand\cv@actual[2]{%
-  \pdfstringdef\cv@at{#1}%
-  \pdfextension literal page {/Span <</ActualText (\cv@at)>> BDC}%
-  #2%
-  \pdfextension literal page {EMC}}
-\newcounter{cvsec}
 \newcommand\cv@sectitle[1]{%
-  \edef\cv@num{\two@digits{\value{cvsec}}}%
-  \llap{\makebox[\cvcol][l]{\cvmono\cvsize{8.4}{11pt}\color{cvaccent}%
-    \cv@actual{}{\cv@num}}}%
-  \cv@actual{\cv@num\space#1}{#1}\hspace{0.65em}%
+  #1\hspace{0.65em}%
   {\color{cvhair}\leaders\hrule height 3.85pt depth -3.45pt\hfill}%
 }
 \titleformat{\section}[block]
-  {\normalfont\cvsize{13.6}{16.5pt}\bfseries\color{cvink}\hyphenpenalty=10000}
+  {\normalfont\cvhead\cvsize{13.6}{16.5pt}\color{cvink}\hyphenpenalty=10000}
   {}{0pt}{\cv@sectitle}
 \titlespacing*{\section}{0pt}{11.5pt}{4.5pt}
 
-% --- Subseções (\subsection): rótulo mono, como os grupos do site ------------
+% --- Subseções (\subsection): rótulo pequeno, como os grupos do site ---------
 
 \titleformat{\subsection}[block]
-  {\normalfont\cvmonocaps\cvsize{7.9}{10pt}\color{cvink3}}
-  {}{0pt}{\MakeUppercase}
+  {\normalfont\cvlabel\bfseries\cvsize{8.8}{10.5pt}\color{cvink3}}
+  {}{0pt}{}
 \titlespacing*{\subsection}{0pt}{7pt}{2.5pt}
 
 % --- Entradas (\subsubsection) ----------------------------------------------
-% Título em Geist SemiBold; a data (se houver) vai para a coluna, alinhada
+% Título em Source Serif Semibold; a data (se houver) vai para a coluna, alinhada
 % com a primeira linha do título.
 
 \newlength\cv@hdw           % largura natural do último título de entrada
@@ -225,7 +195,7 @@
   \sbox\z@{#1}\global\cv@hdw=\wd\z@
   \unhbox\z@}
 \titleformat{\subsubsection}[block]
-  {\normalfont\cvsize{9.8}{12.6pt}\bfseries\color{cvink}\raggedright
+  {\normalfont\cvhead\cvsize{10}{12.6pt}\color{cvink}\raggedright
    \hyphenpenalty=10000}
   {}{0pt}{\cv@entrytitle}
   [\global\cv@afterentrytrue]
@@ -289,7 +259,7 @@
 % um título que vem colado a outro não pede de novo (\if@nobreak), senão o
 % pedido dele empurraria só a entrada e deixaria o título de cima órfão.
 \newcommand\cv@needspace[1]{\if@nobreak\else\Needspace*{#1\baselineskip}\fi}
-\pretocmd{\section}{\cv@needspace{8}\stepcounter{cvsec}}{}{}
+\pretocmd{\section}{\cv@needspace{8}}{}{}
 \pretocmd{\subsection}{\cv@needspace{6}}{}{}
 \pretocmd{\subsubsection}{\cv@needspace{4}}{}{}
 
@@ -324,18 +294,18 @@
 \newcommand\cvsep{\cv@sepmark\@ifnextchar\bgroup\cv@sep@eat\ignorespaces}
 \def\cv@sep@eat#1{\ignorespaces}
 
-% \cvres{DOI}: rótulo de recurso em mono, caixa-alta, no verde. O rótulo não
+% \cvres{DOI}: rótulo de recurso, pequeno e no azul. O rótulo não
 % se parte e não fica sozinho no começo de uma linha: o link que o contém
 % gruda na palavra anterior.
 \ExplSyntaxOn
 \NewDocumentCommand\cvres{m}
   {
     \group_begin:
-    \cvmonocaps\cvsize{7.6}{12pt}\color{cvaccent}
+    \cvlabel\bfseries\cvsize{8.3}{12pt}\color{cvaccent}
     \tl_set:Nn \l_tmpa_tl {#1}
     \tl_replace_all:Nnn \l_tmpa_tl { ~ } { \nobreakspace }
-    % \mbox: nem o hífen de CÓDIGO-FONTE abre uma quebra.
-    \mbox { \exp_args:NV \MakeUppercase \l_tmpa_tl }
+    % \mbox: nem o hífen de Código-fonte abre uma quebra.
+    \mbox { \tl_use:N \l_tmpa_tl }
     \group_end:
   }
 \ExplSyntaxOff
@@ -374,11 +344,9 @@
 \renewcommand\maketitle{%
   \begingroup
   \parskip=0pt
-  \noindent{\cvmonocaps\cvsize{7.9}{10pt}\color{cvink3}%
-    \MakeUppercase{\cvkicker}}\par
-  \vspace{10pt}%
-  \noindent\llap{\makebox[\cvcol][l]{\cvmark{16.3pt}}}%
-  {\cvdisplay\cvsize{23}{26pt}\color{cvink}\@title}\par
+  \noindent{\cvlabel\cvsize{8.8}{10.5pt}\color{cvink3}\cvkicker}\par
+  \vspace{8pt}%
+  \noindent{\cvdisplay\cvsize{24}{27pt}\color{cvink}\@title}\par
   \endgroup
   \vspace{4pt}%
 }
@@ -424,8 +392,8 @@
       }
     \par
     \group_begin:
-    \renewcommand\texttt[1]{{\cvmono\cvsize{8}{11.7pt}\color{cvink3}##1}}
-    \renewcommand\textbf[1]{{\cvsize{9.5}{11.7pt}\bfseries\color{cvink}##1}}
+    \renewcommand\texttt[1]{{\cvlabel\cvsize{8.5}{11.7pt}\color{cvink3}##1}}
+    \renewcommand\textbf[1]{{\cvhead\cvsize{9.6}{11.7pt}\color{cvink}##1}}
     \cvsize{9}{11.7pt}\color{cvink2}
     \renewcommand\arraystretch{1}
     \setlength\tabcolsep{0pt}
@@ -448,10 +416,9 @@
 \renewcommand{\footrulewidth}{0pt}
 \fancyhfoffset[L]{\cvcol}
 \fancyfoot[L]{%
-  \cvmark{5.4pt}\hspace{5pt}%
-  {\cvmono\cvsize{7.3}{9pt}\color{cvink3}Felipe Lamarca\cvsep felipelamarca.com}}
+  {\cvlabel\cvsize{7.8}{9pt}\color{cvink3}Felipe Lamarca\cvsep felipelamarca.com}}
 \fancyfoot[R]{%
-  {\cvmono\cvsize{7.3}{9pt}\color{cvink3}\thepage\ / \pageref*{LastPage}}}
+  {\cvlabel\cvsize{7.8}{9pt}\color{cvink3}\thepage\ / \pageref*{LastPage}}}
 
 % --- Metadados do PDF --------------------------------------------------------
 

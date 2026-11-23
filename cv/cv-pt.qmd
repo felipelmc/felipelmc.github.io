@@ -74,7 +74,7 @@ Laboratório de Monitoramento e Avaliação de Políticas e Eleições, coordena
 
 Revisão sistemática das evidências sobre políticas de segurança pública para a Amazônia Legal, organizada em torno da ideia de entrada qualificada do Estado em territórios vulnerabilizados e seguindo o protocolo OQF (*O Que Funciona?*) do MAPE. São 12 políticas em quatro eixos (do policiamento de proximidade e das câmeras corporais à Patrulha Maria da Penha e ao Plano Juventude Viva) e mais de 300 trabalhos. Conduzi busca, triagem e extração de evidências, com triagem e extração assistidas por modelos de linguagem e conferidas pela equipe. Projeto coordenado por Djane Braz Duarte.
 
-*Entregas previstas.* (i) relatório técnico-analítico para o Ministério; (ii) artigo submetido a periódico qualificado; (iii) verbetes sobre as políticas revisadas no [Dicionário de Favelas Marielle Franco](https://wikifavelas.com.br).
+*Entregas.* (i) relatório técnico-analítico para o Ministério; (ii) artigo submetido a periódico qualificado; (iii) verbetes sobre as políticas revisadas no [Dicionário de Favelas Marielle Franco](https://wikifavelas.com.br).
 
 ### Projeto RESA, UFAC, IESP-UERJ e IFAC [02/2026 -- Presente]{.date}
 

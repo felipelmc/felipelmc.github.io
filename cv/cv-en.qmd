@@ -74,7 +74,7 @@ Laboratory for Monitoring and Evaluation of Policies and Elections, coordinated 
 
 Systematic review of the evidence on public security policies for the Legal Amazon, organized around the idea of a qualified entry of the State into vulnerable territories and following the OQF (*O Que Funciona?*) protocol developed at MAPE. It covers 12 policies in four areas (from community policing and body-worn cameras to the Patrulha Maria da Penha and the Plano Juventude Viva) and more than 300 studies. I ran the search, screening, and evidence extraction, with LLM-assisted screening and extraction checked by the team. Project coordinated by Djane Braz Duarte.
 
-*Expected deliveries.* (i) an analytical report for the Ministry; (ii) an article submitted to a peer-reviewed journal; (iii) entries on the reviewed policies in the [Dicionário de Favelas Marielle Franco](https://wikifavelas.com.br).
+*Deliveries.* (i) an analytical report for the Ministry; (ii) an article submitted to a peer-reviewed journal; (iii) entries on the reviewed policies in the [Dicionário de Favelas Marielle Franco](https://wikifavelas.com.br).
 
 ### RESA project, UFAC, IESP-UERJ and IFAC [02/2026 -- Present]{.date}
 

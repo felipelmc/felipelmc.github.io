@@ -3,7 +3,8 @@
 Currículo em Quarto, em duas versões e duas línguas: o completo
 (`cv-en.qmd`, `cv-pt.qmd`, 4 páginas) e o resumido (`cv-en-short.qmd`,
 `cv-pt-short.qmd`, 2 páginas). O PDF é a versão impressa do site: mesmas
-fontes, mesma coluna de datas à esquerda, mesmos números de seção.
+fontes, mesmo azul, mesma coluna de datas à esquerda, títulos em serifa sem
+número.
 
 O resumido é pensado para vagas fora da academia (institutos de pesquisa,
 *think tanks*): perfil no topo, experiência antes de formação e publicações,
@@ -37,6 +38,7 @@ dentro de `cv/`.
 | `cv-en.qmd`     | conteúdo do currículo em inglês                                   |
 | `cv-pt.qmd`     | conteúdo do currículo em português                                |
 | `cv-*-short.qmd` | o currículo resumido (2 páginas), em inglês e em português       |
+| `cv-*-atlas.qmd` | variante avulsa do resumido, em inglês e em português (ver abaixo) |
 | `_quarto.yml`   | motor, página e margens — vale para os dois                       |
 | `_preamble.tex` | todo o desenho: fontes, cores, cabeçalho, seções, entradas, rodapé |
 | `_cv.lua`       | filtro Pandoc: datas, blocos `:::` e rótulos de recurso           |
@@ -44,21 +46,35 @@ dentro de `cv/`.
 | `render.sh`     | renderiza os quatro, confere as páginas e copia para `public/files/` |
 
 Arquivos com `_` na frente são ignorados pelo Quarto na hora de renderizar o
-projeto, então só os quatro `.qmd` viram PDF.
+projeto. O `render.sh` só renderiza e publica os quatro `.qmd` principais.
+
+**Variante da Atlas.** `cv-en-atlas.qmd` e `cv-pt-atlas.qmd` são o currículo
+resumido com cortes: sem a linha "versão completa", perfil mais curto, sem as
+entradas do Projeto RESA, da bolsa *Pensando o Direito* e da consultoria
+independente, e com a frase de docência reduzida. Não vão para o site.
+Renderize cada uma com `quarto render cv-pt-atlas.qmd` dentro de `cv/`; hoje
+fecham em 2 páginas, a segunda pela metade. Quando o resumido mudar, repita a
+mudança nelas.
 
 ## Fontes e motor
 
-O PDF usa as fontes do site: **Geist** no texto, **Geist Mono** em datas,
-rótulos e números de seção, e **Newsreader** itálico em todo itálico do
-markdown (títulos de trabalhos, periódicos, cargos). Os arquivos estáticos
-estão em `fonts/` — só os seis que o PDF usa — com as licenças (`OFL-*.txt`,
-SIL Open Font License, que permite redistribuir junto do projeto). Ficam no
-repositório para o PDF sair igual em qualquer máquina, sem instalar nada no
-sistema.
+O PDF usa as fontes do site, a família Source: **Source Sans 3** no texto,
+nas datas e nos rótulos; **Source Serif 4** no nome, nos títulos de seção e
+de entrada e em todo itálico do markdown (títulos de trabalhos, periódicos,
+cargos); **Source Code Pro** só em código. A cor é o azul dos gráficos da
+dissertação (`#27507F`), nos marcadores e nos rótulos de recurso. Os arquivos
+estáticos estão em `fonts/`, só os nove que o PDF usa, nas versões oficiais da
+Adobe, com a licença (`OFL-Source.txt`, SIL Open Font License, que permite
+redistribuir junto do projeto). Ficam no repositório para o PDF sair igual em
+qualquer máquina, sem instalar nada no sistema.
 
 Por causa delas o motor é **LuaLaTeX** (`pdf-engine: lualatex`): o pdflatex
-não lê fontes OpenType. O itálico é Newsreader de propósito — é assim que o
-site compõe títulos —, então não troque o `ItalicFont` achando que é erro.
+não lê fontes OpenType. O itálico é em serifa de propósito, porque é assim
+que o site compõe títulos, então não troque o `ItalicFont` achando que é erro.
+
+Até novembro de 2026 o PDF seguia o site anterior (Geist, Newsreader, Geist
+Mono, verde, a marca de pontos e seções numeradas). O Felipe escolheu, vendo
+as opções lado a lado, o texto sem serifa e as seções sem número.
 
 ## Convenções do conteúdo
 
@@ -100,7 +116,7 @@ imprime `[texto](url)` literalmente.
 Entradas são sempre `###`, mesmo quando não há um `##` acima.
 
 **Data da entrada.** O `[...]{.date}` no fim do título vai para a coluna da
-esquerda, em mono cinza. Datas `MM/AAAA` viram "Jun 2025" (en) ou "jun 2025"
+esquerda, em cinza. Datas `MM/AAAA` viram "Jun 2025" (en) ou "jun 2025"
 (pt) sozinhas; use `--` entre início e fim.
 
 **Cargo.** Um parágrafo que é só um itálico, logo abaixo do título da
@@ -135,14 +151,14 @@ Aug 2026
 O rótulo precisa caber em ~11 caracteres ("Programming", "2026–2027").
 
 **Recursos.** Links para material escrevem-se com colchetes duplos e saem
-como etiquetas pequenas em verde, sem colchetes:
+como etiquetas pequenas em azul, sem colchetes:
 
 ```markdown
 [[DOI]](https://doi.org/…) · [[PDF]](https://…)
 ```
 
 Fora isso: `--` vira travessão curto (–), uma barra invertida no fim da linha
-quebra a linha sem abrir parágrafo, e `código` sai em Geist Mono.
+quebra a linha sem abrir parágrafo, e `código` sai em Source Code Pro.
 
 ## Duas coisas que quebram fácil
 
@@ -153,8 +169,8 @@ estourar. O `render.sh` avisa quando um PDF sai com outro número de páginas;
 aí olhe a última página. Se ela ficou rala ou virou uma quinta página, corte
 ou encurte alguma coisa no conteúdo antes de mexer no desenho. Se precisar
 mexer no desenho, a ordem é: espaços entre seções e entradas, depois
-margens, depois o corpo (`\cv@scale` no `_preamble.tex`, hoje 9,5pt; não
-desça de 9,2pt).
+margens, depois o corpo (o `fontsize` do `_quarto.yml` e o `\cv@scale` do
+`_preamble.tex`, hoje 10pt; não desça de 9,2pt).
 
 **Ordem das seções.** No completo: formação, as três experiências (pesquisa,
 profissional, docente) e só então publicações, bolsas e prêmios, software,
@@ -175,8 +191,8 @@ pdffonts cv-pt.pdf                 # todas "emb yes"; nenhuma "Type 3"
 pdftotext cv-pt.pdf - | head -60   # ordem de leitura
 ```
 
-No `pdftotext`, cada seção deve sair como "01 Education", e cada data logo
-antes do título da sua entrada. É assim que sistemas de triagem (ATS) e o
+No `pdftotext`, cada seção deve sair com o seu título numa linha própria
+("Education"), e cada data logo antes do título da sua entrada. É assim que sistemas de triagem (ATS) e o
 copiar-e-colar leem o PDF. Se as datas aparecerem todas juntas antes dos
 títulos, algum tamanho de fonte mudou demais: os títulos de entrada precisam
 ficar a menos de 5% do tamanho do corpo.

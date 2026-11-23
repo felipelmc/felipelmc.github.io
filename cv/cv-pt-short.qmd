@@ -17,7 +17,7 @@ Versão completa: [felipelamarca.com/pt-br/cv](https://felipelamarca.com/pt-br/c
 :::
 
 ::: interests
-*Perfil.* Cientista de dados e cientista social. Aplico métodos estatísticos e computacionais a pesquisas de opinião, eleições, comportamento legislativo e avaliação de políticas públicas, quase sempre em R e Python. Hoje calibro pesquisas eleitorais em vários países na AtlasIntel e coordeno a análise quantitativa de um projeto sobre cooperativismo e desmatamento no Acre. Em 2026, participei também de uma revisão sistemática de políticas de segurança pública para o Ministério da Justiça.
+*Perfil.* Cientista de dados e cientista social. Aplico métodos estatísticos e computacionais a pesquisas de opinião, eleições, comportamento legislativo e avaliação de políticas públicas, principalmente em R e Python. Atualmente, calibro pesquisas eleitorais em diversos países na AtlasIntel e coordeno a análise quantitativa de um projeto sobre cooperativismo e desmatamento no Acre. Em 2026, integrei também a equipe de uma revisão sistemática de políticas de segurança pública para o Ministério da Justiça.
 :::
 
 # Experiência
