@@ -34,17 +34,17 @@ export const profile = {
   /**
    * The home page's text, one HTML string per paragraph: who he is and what he
    * does, in running prose (positions and affiliations only; projects are not
-   * presented as jobs). The second paragraph carries the defense date: rewrite
-   * it after 3 December 2026.
+   * presented as jobs). The second paragraph names his research groups only;
+   * Felipe took the dissertation out of this text.
    */
   intro: {
     en: [
       `I am a data scientist and a social scientist, trained at ${a('https://emap.fgv.br/en', 'FGV EMAp')} and ${a('https://cpdoc.fgv.br/en', 'FGV CPDOC')}. I use statistical and computational methods to understand political and social phenomena, such as elections, legislative behavior, public opinion and public policy.`,
-      `In my <a href="/publications#dissertation" class="link">dissertation</a>, which I defend on 3 December 2026, I measure the preferences of deputies from the text of more than 100,000 bills introduced in the Chamber since 1988. I do research at ${a('https://mape.org.br/', 'MAPE')}, ${a('https://www.lab-doxa.org.br/', 'DOXA')} and ${a('http://necon.iesp.uerj.br', 'NECON')}.`,
+      `I do research at ${a('https://mape.org.br/', 'MAPE')}, ${a('https://www.lab-doxa.org.br/', 'DOXA')} and ${a('http://necon.iesp.uerj.br', 'NECON')}.`,
     ],
     'pt-br': [
       `Sou cientista de dados e cientista social, formado pela ${a('https://emap.fgv.br/', 'FGV EMAp')} e pela ${a('https://cpdoc.fgv.br/', 'FGV CPDOC')}. Uso métodos estatísticos e computacionais para entender fenômenos políticos e sociais, como eleições, comportamento legislativo, opinião pública e políticas públicas.`,
-      `Na <a href="/pt-br/publications#dissertation" class="link">dissertação</a>, que defendo em 3 de dezembro de 2026, meço as preferências dos deputados a partir do texto de mais de 100 mil proposições apresentadas na Câmara desde 1988. Faço pesquisa no ${a('https://mape.org.br/', 'MAPE')}, no ${a('https://www.lab-doxa.org.br/', 'DOXA')} e no ${a('http://necon.iesp.uerj.br', 'NECON')}.`,
+      `Faço pesquisa no ${a('https://mape.org.br/', 'MAPE')}, no ${a('https://www.lab-doxa.org.br/', 'DOXA')} e no ${a('http://necon.iesp.uerj.br', 'NECON')}.`,
     ],
   } as L<string[]>,
 

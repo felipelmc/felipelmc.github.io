@@ -30,12 +30,8 @@ export const mapa = {
     { slug: 'direitos-humanos', label: { en: 'Human rights', 'pt-br': 'Direitos humanos' }, n: 15094 },
   ] as MapaCamada[],
   caption: {
-    en: 'Each dot is a bill introduced in the Chamber of Deputies since 1988, placed by the text of its justification: bills that say similar things sit close together.',
-    'pt-br': 'Cada ponto é uma proposição apresentada na Câmara dos Deputados desde 1988, posicionada pelo texto da sua justificação: proposições que dizem coisas parecidas ficam próximas.',
-  } as L,
-  source: {
-    en: 'From my M.A. dissertation.',
-    'pt-br': 'Da minha dissertação de mestrado.',
+    en: 'Bills introduced in the Chamber of Deputies (1988–2026) by theme',
+    'pt-br': 'Proposições apresentadas na Câmara dos Deputados (1988–2026), por tema',
   } as L,
   alt: {
     en: 'Map of about 94,000 dots, one per bill; the bills of the selected theme appear in blue and gather in one region',
