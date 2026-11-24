@@ -20,10 +20,23 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 const lang = htmlLang(locale);
 
-// All written work is one list, newest first; each entry carries its type as
-// a tag, and within a year the types follow this order.
-const typeOrder: PublicationType[] = ['dissertation', 'working-paper', 'discussion-paper', 'article', 'technical-note'];
-const papers = [...publications].sort((a, b) => b.year - a.year || typeOrder.indexOf(a.type) - typeOrder.indexOf(b.type));
+// Written work is split by kind, in this order, because the kinds do not weigh
+// the same; inside a group, newest first. Only the last group mixes two types,
+// so only there each entry shows its type under the year.
+const groupTypes: { id: string; label: string; types: PublicationType[] }[] = [
+  { id: 'papers-dissertation', label: t('research.group.dissertation'), types: ['dissertation'] },
+  { id: 'papers-working', label: t('research.group.working'), types: ['working-paper'] },
+  { id: 'papers-peer', label: t('research.group.peer'), types: ['article'] },
+  { id: 'papers-other', label: t('research.group.other'), types: ['discussion-paper', 'technical-note'] },
+];
+const groups = groupTypes
+  .map((g) => ({
+    ...g,
+    papers: publications
+      .filter((p) => g.types.includes(p.type))
+      .sort((a, b) => b.year - a.year || g.types.indexOf(a.type) - g.types.indexOf(b.type)),
+  }))
+  .filter((g) => g.papers.length);
 
 const software = projects.filter((p) => p.citation);
 
@@ -44,8 +57,15 @@ const num = (id: string) => String(sections.findIndex((s) => s.id === id) + 1).p
     <div class="min-w-0 space-y-16">
       <section aria-labelledby="papers">
         <SectionHeader gutter number={num('papers')} id="papers" title={t('research.papers')} />
-        <div>
-          {papers.map((pub) => <PubEntry pub={pub} locale={locale} />)}
+        <div class="space-y-12">
+          {groups.map((g) => (
+            <div>
+              <h3 id={g.id} class="eyebrow mb-4 scroll-mt-24 text-[0.9375rem] text-ink-2 sm:pl-[8.5rem]">{g.label}</h3>
+              <div>
+                {g.papers.map((pub) => <PubEntry pub={pub} locale={locale} as="h4" showType={g.types.length > 1} />)}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
