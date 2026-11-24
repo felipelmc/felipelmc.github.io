@@ -90,6 +90,69 @@ export const publications: Publication[] = [
     },
   },
   {
+    id: 'mape-municipios',
+    type: 'working-paper',
+    year: 2026,
+    title: 'Mapeamento Abrangente dos Municípios Brasileiros (mape_municipios): Um Banco de Dados para Pesquisa e Gestão Pública.',
+    titleLang: 'pt-BR',
+    // In the order of the preprint, where Felipe is the third author. The names are those of the
+    // manuscript: SciELO's record cuts the surname of Jorge Lucas Nery de Oliveira.
+    authors: [
+      { name: 'Bruno Marques Schaefer' },
+      { name: 'Fernando Meireles' },
+      { name: 'Tomás Paixão Borges' },
+      { name: 'Carlos Freitas' },
+      { name: 'Renan Suzano' },
+      { name: 'Guilherme Duque' },
+      { name: 'Antonio Carlos Tiburcio' },
+      { name: 'Bianca Cesário da Silva' },
+      { name: 'Frederico Augusto Auad de Gomes Filho' },
+      { name: 'Juliana Leitão' },
+      { name: 'Izabela Borges de Vasconcelos' },
+      { name: 'Olga Caldas' },
+      { name: 'Jorge Lucas Nery de Oliveira' },
+      { name: 'Luisa Barreto Fernandes' },
+      { name: 'Davi Athaydes Leite' },
+    ],
+    venueHtml: '<em>SciELO Preprints</em>',
+    abstract:
+      'Este artigo apresenta o mape_municipios, um banco de dados abrangente sobre os municípios brasileiros que cobre mais de duas mil variáveis em 17 dimensões ao longo de 36 anos (1991-2026). O banco consolida informações de fontes oficiais e acadêmicas, facilitando análises sobre políticas públicas, desigualdades regionais e impactos de diferentes programas governamentais. Com um formato padronizado e acessível, permite o cruzamento de dados entre áreas como saúde, educação, assistência social, meio ambiente e finanças municipais de forma rápida e estruturada. Além disso, possibilita investigações sobre a relação entre indicadores municipais e políticas implementadas temporalmente. A estruturação dos dados segue um processo rigoroso de coleta, transformação e padronização, garantindo transparência e replicabilidade. Além de descrevermos este processo de coleta e sistematização da base dos dados, apresentamos também alguns usos potenciais: i) criação de tipologias de municípios a partir do cruzamento de variáveis (vulnerabilidade social vs. ambiental); ii) evolução temporal de indicadores (taxas de mortalidade por condições sensíveis à atenção primária (CSAP); e iii) aplicação de modelos multivariados. A partir deste banco, esperamos contribuir com pesquisadores e formuladores de políticas públicas no desenvolvimento de análises, teste de hipóteses e embasamento de decisões.',
+    abstractLang: 'pt-BR',
+    links: [
+      { kind: 'doi', href: 'https://doi.org/10.1590/SciELOPreprints.19032' },
+      { kind: 'pdf', href: 'https://preprints.scielo.org/index.php/scielo/preprint/download/19032/40037' },
+    ],
+    // Written by hand: the BibTeX that SciELO Preprints exports has no authors.
+    citation: {
+      key: 'mape-municipios',
+      bibtex: `@article{schaefer2026mape,
+  author    = {Bruno Marques Schaefer and
+               Fernando Meireles and
+               Felipe Lamarca and
+               Tomás Paixão Borges and
+               Carlos Freitas and
+               Renan Suzano and
+               Guilherme Duque and
+               Antonio Carlos Tiburcio and
+               Bianca Cesário da Silva and
+               Frederico Augusto Auad de Gomes Filho and
+               Juliana Leitão and
+               Izabela Borges de Vasconcelos and
+               Olga Caldas and
+               Jorge Lucas Nery de Oliveira and
+               Luisa Barreto Fernandes and
+               Davi Athaydes Leite},
+  title     = {Mapeamento Abrangente dos Municípios Brasileiros (mape\\_municipios): Um Banco de Dados para Pesquisa e Gestão Pública},
+  journal   = {SciELO Preprints},
+  year      = {2026},
+  month     = nov,
+  doi       = {10.1590/SciELOPreprints.19032},
+  url       = {https://doi.org/10.1590/SciELOPreprints.19032},
+  note      = {Preprint}
+}`,
+    },
+  },
+  {
     id: 'quantos-votos',
     type: 'working-paper',
     year: 2026,

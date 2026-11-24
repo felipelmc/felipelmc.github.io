@@ -195,6 +195,7 @@ dez 2024
 
 ## Working papers
 
+- Schaefer, Bruno Marques, Fernando Meireles, **Felipe M. E. Lamarca** et al. "Mapeamento Abrangente dos Municípios Brasileiros (mape_municipios): Um Banco de Dados para Pesquisa e Gestão Pública." *SciELO Preprints*, 2026. [[DOI]](https://doi.org/10.1590/SciELOPreprints.19032)
 - **Lamarca, Felipe M. E.** e Tomás Paixão Borges. "Quantos votos meu partido vai fazer? Um tutorial de validação preditiva com dados abertos (2016--2024)." 2026.
 - **Lamarca, Felipe M. E.** e Lucas Calabró Berti. "Da gaveta ao plenário: os caminhos da aprovação de pautas na Câmara dos Deputados." 2026.
 

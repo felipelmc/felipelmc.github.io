@@ -77,6 +77,7 @@ B.A., Social Sciences
 
 ## Publications
 
+- Schaefer, Bruno Marques, Fernando Meireles, **Felipe M. E. Lamarca**, et al. "Mapeamento Abrangente dos Municípios Brasileiros (mape_municipios): Um Banco de Dados para Pesquisa e Gestão Pública." *SciELO Preprints*, 2026. [[DOI]](https://doi.org/10.1590/SciELOPreprints.19032)
 - **Lamarca, Felipe M. E.**, and Tomás Paixão Borges. "Quantos votos meu partido vai fazer? Um tutorial de validação preditiva com dados abertos (2016--2024)." Working paper, 2026.
 - **Lamarca, Felipe M. E.**, and Lucas Calabró Berti. "Da gaveta ao plenário: os caminhos da aprovação de pautas na Câmara dos Deputados." Working paper, 2026.
 - **Lamarca, Felipe M. E.** "Como a população do estado do Rio de Janeiro se informa sobre política? Uma análise de survey." Textos para Discussão do DOXA (IESP-UERJ), 2026. [[PDF]](https://github.com/felipelmc/td-doxa-informacao-politica/blob/main/reports/report1-informacao.pdf) · [[DOI]](https://doi.org/10.5281/zenodo.24485143)
