@@ -22,7 +22,8 @@ const lang = htmlLang(locale);
 
 // Written work is split by kind, in this order, because the kinds do not weigh
 // the same; inside a group, newest first. Only the last group mixes two types,
-// so only there each entry shows its type under the year.
+// so only there each entry shows its type under the year. A hairline separates
+// one group from the next; papers within a group are separated by space alone.
 const groupTypes: { id: string; label: string; types: PublicationType[] }[] = [
   { id: 'papers-dissertation', label: t('research.group.dissertation'), types: ['dissertation'] },
   { id: 'papers-working', label: t('research.group.working'), types: ['working-paper'] },
@@ -57,9 +58,9 @@ const num = (id: string) => String(sections.findIndex((s) => s.id === id) + 1).p
     <div class="min-w-0 space-y-16">
       <section aria-labelledby="papers">
         <SectionHeader gutter number={num('papers')} id="papers" title={t('research.papers')} />
-        <div class="space-y-12">
+        <div>
           {groups.map((g) => (
-            <div>
+            <div class="mt-8 border-t border-line pt-8 first:mt-0 first:border-t-0 first:pt-0">
               <h3 id={g.id} class="eyebrow mb-4 scroll-mt-24 text-[0.9375rem] text-ink-2 sm:pl-[8.5rem]">{g.label}</h3>
               <div>
                 {g.papers.map((pub) => <PubEntry pub={pub} locale={locale} as="h4" showType={g.types.length > 1} />)}

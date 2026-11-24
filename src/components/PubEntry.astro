@@ -1,7 +1,8 @@
 ---
 // One research output: year and type in the date column, serif title, an
 // optional one-sentence summary, venue, co-authors, note, and actions
-// (Abstract as a <details>, BibTeX dialog, links). A paper
+// (Abstract as a <details>, BibTeX dialog, links). Entries carry no rule of
+// their own: on the Research page a hairline separates groups, not papers. A paper
 // with a `figure` gets its thumbnail on the right (below the text on small
 // screens), linking to the full image.
 import CiteDialog from './CiteDialog.astro';
@@ -32,7 +33,7 @@ const figure = showFigure ? pub.figure : undefined;
 const lead = pub.type === 'dissertation';
 ---
 
-<article id={pub.id} class="grid scroll-mt-24 gap-x-6 gap-y-1.5 border-b border-line py-6 first:pt-0 last:border-0 last:pb-0 sm:grid-cols-dated">
+<article id={pub.id} class="grid scroll-mt-24 gap-x-6 gap-y-1.5 py-6 first:pt-0 last:pb-0 sm:grid-cols-dated">
   <p class="meta sm:pt-1">
     <span class="font-semibold text-ink-2">{pub.year}</span>
     {showType && <><span class="sm:hidden"> · </span><span class="sm:block">{typeLabel}</span></>}
